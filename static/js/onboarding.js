@@ -14,12 +14,52 @@
     const keySave = document.getElementById('onboarding-key-save');
     const keyMessage = document.getElementById('onboarding-key-message');
     const aiState = document.getElementById('onboarding-ai-state');
+    const guideOverlay = document.getElementById('deepseek-guide-overlay');
+    const guideDialog = guideOverlay?.querySelector('.deepseek-guide-dialog');
+    const guideOpen = document.getElementById('open-deepseek-guide');
+    const guideClose = document.getElementById('close-deepseek-guide');
+    const guideBack = document.getElementById('deepseek-guide-back');
+    const guideNext = document.getElementById('deepseek-guide-next');
+    const guideCount = document.getElementById('deepseek-guide-count');
+    const guideTitle = document.getElementById('deepseek-guide-title');
+    const guideImage = document.getElementById('deepseek-guide-image');
+    const guideDescription = document.getElementById('deepseek-guide-description');
+    const guideWarning = document.getElementById('deepseek-guide-warning');
+    const guideDots = document.getElementById('deepseek-guide-dots');
     const storageKey = 'cet-onboarding-v1';
     let step = 0;
     let csrf = '';
     let configured = false;
     let lastFocus = null;
     let opened = false;
+    let guideStep = 0;
+    let guideLastFocus = null;
+    const guideSteps = [
+        {
+            title: '进入 DeepSeek 开放平台',
+            description: '打开 DeepSeek 官网，选择“API 开放平台”。如果尚未登录，请先注册或登录 DeepSeek 账户。',
+            warning: '普通聊天与开放平台属于同一 DeepSeek 服务，但本站需要开放平台创建的 API Key。',
+            alt: 'DeepSeek 官网首页，页面下方有 API 开放平台入口',
+        },
+        {
+            title: '在左侧找到 API keys',
+            description: '登录开放平台后，在左侧导航中选择“API keys”，进入密钥管理页面。',
+            warning: '如果手机页面没有显示左侧导航，先打开页面菜单，再选择 API keys。',
+            alt: 'DeepSeek 开放平台左侧导航，其中包含 API keys 入口',
+        },
+        {
+            title: '创建并立即复制 API Key',
+            description: '点击“创建 API key”，填写便于识别的名称。创建后立即复制以 sk- 开头的完整内容，再回到学习台粘贴。',
+            warning: '完整 Key 通常只在创建时显示一次。不要截图、公开或发给他人；本站也不会再次回显完整 Key。',
+            alt: 'DeepSeek API keys 页面，右上角有创建 API key 按钮',
+        },
+        {
+            title: '确认账户余额可以调用',
+            description: '在“用量信息”查看余额。余额不足时前往充值页补充；回到学习台后点击“验证并保存”。',
+            warning: '充值金额由你自行决定。本站会记录本机调用用量与估算费用，但不等同于 DeepSeek 的完整账单。',
+            alt: 'DeepSeek 用量信息页面，显示账户余额与充值入口',
+        },
+    ];
 
     function readState() {
         try { return localStorage.getItem(storageKey); }
@@ -35,6 +75,45 @@
     function focusableElements() {
         return [...dialog.querySelectorAll('a[href],button:not([disabled]),input:not([disabled]),summary,[tabindex]:not([tabindex="-1"])')]
             .filter(element => !element.closest('[hidden]') && element.offsetParent !== null);
+    }
+
+    function guideFocusableElements() {
+        if (!guideDialog) return [];
+        return [...guideDialog.querySelectorAll('a[href],button:not([disabled]),[tabindex]:not([tabindex="-1"])')]
+            .filter(element => element.offsetParent !== null);
+    }
+
+    function renderGuideStep(nextStep) {
+        guideStep = Math.min(guideSteps.length - 1, Math.max(0, Number(nextStep) || 0));
+        const item = guideSteps[guideStep];
+        const source = guideDialog?.getAttribute(`data-guide-src-${guideStep}`) || '';
+        guideCount.textContent = `第 ${guideStep + 1} 步，共 ${guideSteps.length} 步`;
+        guideTitle.textContent = item.title;
+        guideDescription.textContent = item.description;
+        guideWarning.textContent = item.warning;
+        guideImage.src = source;
+        guideImage.alt = item.alt;
+        guideBack.disabled = guideStep === 0;
+        guideNext.textContent = guideStep === guideSteps.length - 1 ? '我已了解，返回填写' : '下一步';
+        guideDots.innerHTML = guideSteps.map((_, index) => `<span${index === guideStep ? ' class="is-current" aria-current="step"' : ''}><span class="sr-only">第 ${index + 1} 步</span></span>`).join('');
+    }
+
+    function openGuide() {
+        if (!guideOverlay || !guideDialog) return;
+        guideLastFocus = document.activeElement;
+        dialog.inert = true;
+        dialog.setAttribute('aria-hidden', 'true');
+        renderGuideStep(0);
+        guideOverlay.hidden = false;
+        requestAnimationFrame(() => guideDialog.focus({preventScroll: true}));
+    }
+
+    function closeGuide() {
+        if (!guideOverlay || guideOverlay.hidden) return;
+        guideOverlay.hidden = true;
+        dialog.inert = false;
+        dialog.removeAttribute('aria-hidden');
+        if (guideLastFocus && document.contains(guideLastFocus)) guideLastFocus.focus();
     }
 
     function updateStep(nextStep) {
@@ -165,6 +244,24 @@
         } finally {
             keySave.disabled = false;
         }
+    });
+
+    guideOpen?.addEventListener('click', openGuide);
+    guideClose?.addEventListener('click', closeGuide);
+    guideBack?.addEventListener('click', () => renderGuideStep(guideStep - 1));
+    guideNext?.addEventListener('click', () => {
+        if (guideStep < guideSteps.length - 1) renderGuideStep(guideStep + 1);
+        else closeGuide();
+    });
+    guideOverlay?.addEventListener('click', event => { if (event.target === guideOverlay) closeGuide(); });
+    guideOverlay?.addEventListener('keydown', event => {
+        if (event.key === 'Escape') { event.preventDefault(); closeGuide(); return; }
+        if (event.key !== 'Tab') return;
+        const focusable = guideFocusableElements();
+        if (!focusable.length) return;
+        const first = focusable[0], last = focusable.at(-1);
+        if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+        else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
     });
 
     overlay.addEventListener('click', event => {

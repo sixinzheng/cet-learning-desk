@@ -335,6 +335,8 @@ def init_db():
         CREATE TABLE IF NOT EXISTS ai_conversations (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             title TEXT NOT NULL DEFAULT '英语学习对话',
+            language TEXT NOT NULL DEFAULT 'zh',
+            scenario_key TEXT NOT NULL DEFAULT 'casual',
             created_at TEXT NOT NULL DEFAULT (datetime('now','localtime')),
             updated_at TEXT NOT NULL DEFAULT (datetime('now','localtime'))
         );
@@ -364,11 +366,13 @@ def init_db():
 
         CREATE TABLE IF NOT EXISTS ai_daily_greetings (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
-            greeting_date TEXT NOT NULL UNIQUE,
+            greeting_date TEXT NOT NULL,
+            language TEXT NOT NULL DEFAULT 'zh',
             greeting TEXT NOT NULL,
             source TEXT NOT NULL DEFAULT 'local',
             snapshot_json TEXT NOT NULL DEFAULT '{}',
-            created_at TEXT NOT NULL DEFAULT (datetime('now','localtime'))
+            created_at TEXT NOT NULL DEFAULT (datetime('now','localtime')),
+            UNIQUE(greeting_date, language)
         );
 
         CREATE TABLE IF NOT EXISTS ai_action_drafts (
@@ -498,6 +502,59 @@ def init_db():
     }
     if 'vocabulary_count' not in existing_study_logs_columns:
         conn.execute("ALTER TABLE study_logs ADD COLUMN vocabulary_count INTEGER DEFAULT 0")
+
+    # 双语学习助理：旧对话保持中文普通场景；会话语言与场景创建后不可变。
+    conversation_columns = {
+        row[1] for row in conn.execute("PRAGMA table_info(ai_conversations)").fetchall()
+    }
+    if 'language' not in conversation_columns:
+        conn.execute("ALTER TABLE ai_conversations ADD COLUMN language TEXT NOT NULL DEFAULT 'zh'")
+    if 'scenario_key' not in conversation_columns:
+        conn.execute("ALTER TABLE ai_conversations ADD COLUMN scenario_key TEXT NOT NULL DEFAULT 'casual'")
+    conn.execute(
+        "INSERT OR IGNORE INTO user_settings (key,value) VALUES ('assistant_language','zh')"
+    )
+
+    # 旧问候表的 greeting_date 带单列 UNIQUE，无法同日缓存中英文；一次性无损重建。
+    greeting_columns = {
+        row[1] for row in conn.execute("PRAGMA table_info(ai_daily_greetings)").fetchall()
+    }
+    greeting_table = conn.execute(
+        "SELECT sql FROM sqlite_master WHERE type='table' AND name='ai_daily_greetings'"
+    ).fetchone()
+    greeting_sql = (greeting_table[0] if greeting_table else '') or ''
+    needs_greeting_rebuild = (
+        'language' not in greeting_columns
+        or 'UNIQUE(greeting_date, language)' not in greeting_sql.replace('\n', ' ')
+    )
+    if needs_greeting_rebuild:
+        conn.execute("DROP TABLE IF EXISTS ai_daily_greetings_language_legacy")
+        conn.execute("ALTER TABLE ai_daily_greetings RENAME TO ai_daily_greetings_language_legacy")
+        conn.execute('''
+            CREATE TABLE ai_daily_greetings (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                greeting_date TEXT NOT NULL,
+                language TEXT NOT NULL DEFAULT 'zh',
+                greeting TEXT NOT NULL,
+                source TEXT NOT NULL DEFAULT 'local',
+                snapshot_json TEXT NOT NULL DEFAULT '{}',
+                created_at TEXT NOT NULL DEFAULT (datetime('now','localtime')),
+                UNIQUE(greeting_date, language)
+            )
+        ''')
+        legacy_columns = {
+            row[1] for row in conn.execute(
+                "PRAGMA table_info(ai_daily_greetings_language_legacy)"
+            ).fetchall()
+        }
+        language_expr = "COALESCE(language,'zh')" if 'language' in legacy_columns else "'zh'"
+        conn.execute(f'''
+            INSERT OR IGNORE INTO ai_daily_greetings
+            (id,greeting_date,language,greeting,source,snapshot_json,created_at)
+            SELECT id,greeting_date,{language_expr},greeting,source,snapshot_json,created_at
+            FROM ai_daily_greetings_language_legacy
+        ''')
+        conn.execute("DROP TABLE ai_daily_greetings_language_legacy")
 
     # 隐藏的「未分类」根节点让 category_id=0 始终满足外键约束；
     # 页面分类树会过滤它，用户只会看到自己创建的目录。

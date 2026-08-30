@@ -26,7 +26,40 @@ async function auditViewport(browser, width, height) {
     };
     await page.screenshot({path: path.join(output, `onboarding-${width}.png`), fullPage: false});
 
-    for (let index = 0; index < 3; index += 1) await page.locator('#onboarding-next').click();
+    await page.locator('#onboarding-next').click();
+    await page.waitForTimeout(450);
+    await page.screenshot({path: path.join(output, `onboarding-ai-${width}.png`), fullPage: false});
+    await page.locator('#open-deepseek-guide').click();
+    await page.locator('#deepseek-guide-overlay').waitFor({state: 'visible'});
+    const guide = {
+        titles: [],
+        imageSources: [],
+        imagesLoaded: true,
+        viewportOverflow: 0,
+        focusReturned: false,
+    };
+    for (let index = 0; index < 4; index += 1) {
+        await page.locator('#deepseek-guide-image').evaluate(image => {
+            if (image.complete && image.naturalWidth > 0) return;
+            return new Promise((resolve, reject) => {
+                image.addEventListener('load', resolve, {once: true});
+                image.addEventListener('error', () => reject(new Error(`Guide image failed: ${image.src}`)), {once: true});
+            });
+        });
+        guide.titles.push(await page.locator('#deepseek-guide-title').textContent());
+        guide.imageSources.push(await page.locator('#deepseek-guide-image').getAttribute('src'));
+        guide.imagesLoaded = guide.imagesLoaded && await page.locator('#deepseek-guide-image').evaluate(image => image.complete && image.naturalWidth > 0);
+        if (index === 0) {
+            await page.screenshot({path: path.join(output, `deepseek-guide-${width}.png`), fullPage: false});
+        }
+        if (index < 3) await page.locator('#deepseek-guide-next').click();
+    }
+    guide.viewportOverflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
+    await page.locator('#deepseek-guide-next').click();
+    await page.locator('#deepseek-guide-overlay').waitFor({state: 'hidden'});
+    guide.focusReturned = await page.evaluate(() => document.activeElement?.id === 'open-deepseek-guide');
+
+    for (let index = 0; index < 2; index += 1) await page.locator('#onboarding-next').click();
     const lastTitle = await page.locator('[data-onboarding-panel="3"] h2').textContent();
     await page.locator('#onboarding-next').click();
     await page.locator('#onboarding-overlay').waitFor({state: 'hidden'});
@@ -51,7 +84,7 @@ async function auditViewport(browser, width, height) {
     const supportClosed = await page.locator('#support-modal').isHidden();
     const focusReturned = await page.evaluate(() => document.activeElement?.id === 'support-author-button');
     await context.close();
-    return {first, lastTitle, stored, stayedDismissed, support, supportClosed, focusReturned, errors};
+    return {first, guide, lastTitle, stored, stayedDismissed, support, supportClosed, focusReturned, errors};
 }
 
 (async () => {
@@ -65,6 +98,13 @@ async function auditViewport(browser, width, height) {
     const failed = [desktop, mobile].some(result =>
         result.first.panelCount !== 4 ||
         !result.first.firstTitle.includes('词汇任务') ||
+        result.guide.titles.length !== 4 ||
+        !result.guide.titles[0].includes('开放平台') ||
+        !result.guide.titles[3].includes('账户余额') ||
+        new Set(result.guide.imageSources).size !== 4 ||
+        !result.guide.imagesLoaded ||
+        result.guide.viewportOverflow > 1 ||
+        !result.guide.focusReturned ||
         !result.lastTitle.includes('尊重你的边界') ||
         result.stored.status !== 'completed' ||
         !result.stayedDismissed ||

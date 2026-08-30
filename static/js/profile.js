@@ -8,6 +8,8 @@
     let previewLastFocus = null;
     let skills = [];
     let supportLastFocus = null;
+    let updateLastFocus = null;
+    let updateRelease = null;
 
     function escapeHtml(value) {
         return String(value ?? '').replace(/[&<>'"]/g, char => ({
@@ -128,6 +130,9 @@
     function renderSkills(items) {
         skills = items || [];
         const box = $('profile-skills');
+        const enabledCount = skills.filter(skill => skill.enabled).length;
+        const count = $('skill-summary-count');
+        if (count) count.textContent = `已启用 ${enabledCount} / 共 ${skills.length} 个`;
         if (!skills.length) {
             box.innerHTML = '<div class="empty-state"><h3>暂无 Skill</h3><p>可先创建一个自定义 Skill。</p></div>';
             return;
@@ -137,16 +142,30 @@
             const instructions = skill.user_instructions
                 ? `<p class="skill-item__rules">已补充规则：${escapeHtml(skill.user_instructions.slice(0, 90))}${skill.user_instructions.length > 90 ? '…' : ''}</p>`
                 : '<p class="skill-item__rules">尚未添加个人补充规则</p>';
-            return `<article class="skill-item${skill.enabled ? ' is-enabled' : ''}" data-skill="${escapeHtml(skill.slug)}">
-                <div class="skill-item__index"><span>${tag}</span><strong>${escapeHtml(skill.display_name)}</strong></div>
-                <div class="skill-item__copy"><p>${escapeHtml(skill.description)}</p>${instructions}</div>
-                <div class="skill-item__actions">
-                    <button class="skill-switch" type="button" role="switch" aria-checked="${skill.enabled}" data-skill-toggle="${escapeHtml(skill.slug)}"><span>${skill.enabled ? '已启用' : '已关闭'}</span></button>
-                    <a class="text-link" href="/control?skill=${encodeURIComponent(skill.slug)}">去控制优化</a>
-                    ${skill.is_builtin ? '' : `<button class="text-button skill-delete" type="button" data-skill-delete="${escapeHtml(skill.slug)}">删除</button>`}
+            const panelId = `skill-panel-${escapeHtml(skill.slug)}`;
+            return `<details class="skill-item${skill.enabled ? ' is-enabled' : ''}" data-skill="${escapeHtml(skill.slug)}">
+                <summary aria-controls="${panelId}">
+                    <span class="skill-item__index"><span>${tag}</span><strong>${escapeHtml(skill.display_name)}</strong></span>
+                    <span class="skill-item__purpose">${escapeHtml(skill.description)}</span>
+                    <span class="skill-item__state${skill.enabled ? ' is-on' : ''}">${skill.enabled ? '已启用' : '已关闭'}</span>
+                    <span class="skill-item__chevron" aria-hidden="true"></span>
+                </summary>
+                <div class="skill-item__panel" id="${panelId}">
+                    <div class="skill-item__copy"><p>${escapeHtml(skill.description)}</p>${instructions}</div>
+                    <div class="skill-item__actions">
+                        <button class="skill-switch" type="button" role="switch" aria-checked="${skill.enabled}" data-skill-toggle="${escapeHtml(skill.slug)}"><span>${skill.enabled ? '已启用' : '已关闭'}</span></button>
+                        <a class="text-link" href="/control?skill=${encodeURIComponent(skill.slug)}">去控制优化</a>
+                        ${skill.is_builtin ? '' : `<button class="text-button skill-delete" type="button" data-skill-delete="${escapeHtml(skill.slug)}">删除</button>`}
+                    </div>
                 </div>
-            </article>`;
+            </details>`;
         }).join('');
+        box.querySelectorAll('.skill-item').forEach(item => item.addEventListener('toggle', () => {
+            if (!item.open) return;
+            box.querySelectorAll('.skill-item[open]').forEach(other => {
+                if (other !== item) other.open = false;
+            });
+        }));
         box.querySelectorAll('[data-skill-toggle]').forEach(button => button.addEventListener('click', async () => {
             const current = skills.find(skill => skill.slug === button.dataset.skillToggle);
             if (!current) return;
@@ -251,6 +270,155 @@
             : '未返回余额';
     }
 
+    function platformLabel(platform) {
+        return platform === 'windows' ? 'Windows 安装版' : (platform === 'android' ? 'Android 安装版' : '源码浏览器版');
+    }
+
+    function formatBytes(value) {
+        const bytes = Number(value || 0);
+        if (!bytes) return '未提供体积';
+        if (bytes < 1024 * 1024) return `${Math.ceil(bytes / 1024)} KB`;
+        return `${(bytes / 1024 / 1024).toFixed(1)} MB`;
+    }
+
+    function renderUpdateProgress(progress) {
+        if (!progress) return;
+        const holder = $('update-progress');
+        holder.hidden = !['backing_up', 'backup_ready', 'ready_for_native', 'downloading', 'verifying', 'installing'].includes(progress.stage);
+        $('update-progress-bar').style.width = `${Math.max(0, Math.min(100, Number(progress.percent || 0)))}%`;
+        if (progress.message) $('update-state-copy').textContent = progress.message;
+        $('update-state').dataset.state = progress.stage || 'idle';
+    }
+
+    function renderUpdateStatus(data) {
+        $('update-current-version').textContent = `v${data.current_version || root.dataset.appVersion}`;
+        $('update-platform').textContent = platformLabel(data.platform || root.dataset.appPlatform);
+        $('update-release-link').href = data.release_url || 'https://github.com/sixinzheng/cet-learning-desk/releases';
+        $('update-release-link').hidden = false;
+        if (!data.update_available) {
+            $('update-state-title').textContent = '已经是最新稳定版';
+            $('update-state-copy').textContent = `当前 v${data.current_version}，没有发现更高的稳定版本。`;
+            $('update-check').textContent = '重新检查';
+        } else if (!data.install_supported) {
+            $('update-state-title').textContent = `稳定版 v${data.latest_version} 可用`;
+            $('update-state-copy').textContent = '源码浏览器版不会改动 Git 工作区，请从 Release 页面下载安装包。';
+            $('update-check').textContent = '重新检查';
+        } else {
+            $('update-state-title').textContent = `发现稳定版 v${data.latest_version}`;
+            $('update-state-copy').textContent = `发布于 ${String(data.published_at || '').slice(0, 10) || '日期未提供'} · ${formatBytes(data.download_size)}`;
+            showUpdateModal(data);
+        }
+        renderUpdateProgress(data.progress);
+    }
+
+    function closeUpdateModal() {
+        const overlay = $('update-modal');
+        overlay.hidden = true;
+        document.body.classList.remove('has-modal-open');
+        if (updateLastFocus && document.contains(updateLastFocus)) updateLastFocus.focus();
+    }
+
+    function showUpdateModal(data) {
+        updateRelease = data;
+        if (document.activeElement && document.activeElement !== document.body) {
+            updateLastFocus = document.activeElement;
+        }
+        updateLastFocus ||= $('update-check');
+        $('update-modal-meta').textContent = `v${data.current_version} → v${data.latest_version} · ${formatBytes(data.download_size)} · ${String(data.published_at || '').slice(0, 10) || '发布日期未提供'}`;
+        $('update-modal-notes').textContent = data.release_notes || '本次发布未提供更新说明。';
+        $('update-modal').hidden = false;
+        document.body.classList.add('has-modal-open');
+        requestAnimationFrame(() => $('update-modal').querySelector('[role="dialog"]')?.focus());
+    }
+
+    function initUpdateCenter() {
+        const overlay = $('update-modal');
+        const dialog = overlay?.querySelector('[role="dialog"]');
+        if (!overlay || !dialog) return;
+        overlay.querySelectorAll('[data-update-close]').forEach(button => button.addEventListener('click', closeUpdateModal));
+        overlay.addEventListener('click', event => { if (event.target === overlay) closeUpdateModal(); });
+        overlay.addEventListener('keydown', event => {
+            if (event.key === 'Escape') { event.preventDefault(); closeUpdateModal(); return; }
+            if (event.key !== 'Tab') return;
+            const focusable = [...dialog.querySelectorAll('button:not([disabled]),a[href],[tabindex]:not([tabindex="-1"])')].filter(element => element.offsetParent !== null);
+            if (!focusable.length) return;
+            const first = focusable[0], last = focusable.at(-1);
+            if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+            else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+        });
+        $('update-check').addEventListener('click', async () => {
+            const button = $('update-check');
+            updateLastFocus = button;
+            button.disabled = true;
+            button.textContent = '正在检查…';
+            $('update-state-title').textContent = '连接 GitHub 稳定发布通道';
+            $('update-state-copy').textContent = '只读取公开 Release，不会下载或安装。';
+            try {
+                const data = await api('/api/app/update/status');
+                csrf = csrf || data.csrf_token;
+                renderUpdateStatus(data);
+            } catch (error) {
+                $('update-state').dataset.state = 'error';
+                $('update-state-title').textContent = '检查失败';
+                $('update-state-copy').textContent = error.message || '暂时无法读取 GitHub Release，请稍后重试。';
+                button.textContent = '重试检查';
+            } finally { button.disabled = false; }
+        });
+        $('update-install').addEventListener('click', async () => {
+            if (!updateRelease) return;
+            const button = $('update-install');
+            button.disabled = true;
+            button.textContent = '正在校验并备份…';
+            $('update-state-title').textContent = '正在保护学习数据';
+            $('update-state-copy').textContent = '备份通过完整性检查前不会下载更新。';
+            renderUpdateProgress({stage: 'backing_up', percent: 20});
+            try {
+                const prepared = await api('/api/app/update/prepare', {
+                    method: 'POST', headers: {'X-CSRF-Token': csrf}, body: JSON.stringify({confirm: true}),
+                });
+                closeUpdateModal();
+                $('update-state-title').textContent = '备份已验证';
+                renderUpdateProgress(prepared.progress);
+                window.location.href = prepared.native_action;
+            } catch (error) {
+                $('update-state').dataset.state = 'error';
+                $('update-state-title').textContent = '已安全停止更新';
+                $('update-state-copy').textContent = error.message || '更新准备失败，当前程序和数据均未修改。';
+                button.disabled = false;
+                button.textContent = '重试安全更新';
+            }
+        });
+    }
+
+    function initSkillDisclosure() {
+        const disclosure = $('skills');
+        if (!disclosure) return;
+        const revealHash = () => {
+            if (window.location.hash !== '#skills') return;
+            disclosure.open = true;
+            requestAnimationFrame(() => disclosure.scrollIntoView({block: 'start'}));
+        };
+        document.querySelector('a[href="#skills"]')?.addEventListener('click', () => { disclosure.open = true; });
+        window.addEventListener('hashchange', revealHash);
+        revealHash();
+    }
+
+    window.CETUpdateNative = {
+        onProgress(payload) {
+            let progress = payload;
+            if (typeof payload === 'string') {
+                try {
+                    progress = JSON.parse(payload);
+                } catch (_error) {
+                    progress = {message: payload};
+                }
+            }
+            renderUpdateProgress(progress || {});
+            if (progress?.title) $('update-state-title').textContent = progress.title;
+            if (progress?.message) $('update-state-copy').textContent = progress.message;
+        },
+    };
+
     async function refreshStatus(withBalance = false) {
         const status = await api('/api/ai/config/status');
         csrf = status.csrf_token;
@@ -260,6 +428,8 @@
     }
 
     initSupportModal();
+    initUpdateCenter();
+    initSkillDisclosure();
 
     try {
         const [books] = await Promise.all([

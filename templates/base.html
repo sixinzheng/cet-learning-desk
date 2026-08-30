@@ -85,6 +85,10 @@
                     <p class="onboarding-lead">可选联网能力</p>
                     <h2>连接 DeepSeek，让 AI 在全站开始工作</h2>
                     <p class="onboarding-intro">API Key 会先通过余额接口验证；验证成功后立即启用，不会在页面或接口中返回完整密钥。</p>
+                    <div class="onboarding-api-explainer">
+                        <div><strong>API Key 是什么？</strong><p>它是一串以 <code>sk-</code> 开头的专用通行证，让这个学习台可以代表你调用 DeepSeek。它不是登录密码，但同样需要保密；调用产生的费用由你的 DeepSeek 账户余额结算。</p></div>
+                        <button class="btn btn-secondary" id="open-deepseek-guide" type="button">查看四步图文教程</button>
+                    </div>
                     <div class="onboarding-ai-state" id="onboarding-ai-state" role="status">
                         <span class="status-dot" aria-hidden="true"></span>
                         <div><strong>正在检查 AI 配置</strong><p>基础背词、复习和题库不依赖 AI。</p></div>
@@ -137,6 +141,32 @@
                     <button class="btn btn-primary" id="onboarding-next" type="button">下一步</button>
                 </footer>
             </div>
+        </section>
+    </div>
+
+    <div class="modal-overlay deepseek-guide-overlay" id="deepseek-guide-overlay" hidden>
+        <section class="deepseek-guide-dialog" role="dialog" aria-modal="true" aria-labelledby="deepseek-guide-title" tabindex="-1"
+                 data-guide-src-0="{{ asset('images/onboarding/deepseek/01-home.png') }}"
+                 data-guide-src-1="{{ asset('images/onboarding/deepseek/02-api-keys.png') }}"
+                 data-guide-src-2="{{ asset('images/onboarding/deepseek/03-create-key.png') }}"
+                 data-guide-src-3="{{ asset('images/onboarding/deepseek/04-balance.png') }}">
+            <header class="deepseek-guide-header">
+                <div><span id="deepseek-guide-count">第 1 步，共 4 步</span><h2 id="deepseek-guide-title">进入 DeepSeek 开放平台</h2></div>
+                <button class="icon-button" id="close-deepseek-guide" type="button" aria-label="关闭 API Key 获取教程">×</button>
+            </header>
+            <div class="deepseek-guide-body">
+                <div class="deepseek-guide-visual"><img id="deepseek-guide-image" src="{{ asset('images/onboarding/deepseek/01-home.png') }}" alt="DeepSeek 官网首页，页面下方有 API 开放平台入口"></div>
+                <div class="deepseek-guide-copy">
+                    <p id="deepseek-guide-description">打开 DeepSeek 官网，选择“API 开放平台”。如果尚未登录，请先注册或登录 DeepSeek 账户。</p>
+                    <p class="deepseek-guide-warning" id="deepseek-guide-warning">网站对话账号和开放平台使用同一账户体系，但 API 调用需要单独创建 Key。</p>
+                    <a class="text-link" id="deepseek-platform-link" href="https://platform.deepseek.com/api_keys" target="_blank" rel="noopener noreferrer">打开 DeepSeek 开放平台</a>
+                </div>
+            </div>
+            <footer class="deepseek-guide-actions">
+                <button class="btn btn-secondary" id="deepseek-guide-back" type="button" disabled>上一步</button>
+                <div class="deepseek-guide-dots" id="deepseek-guide-dots" aria-label="教程进度"></div>
+                <button class="btn btn-primary" id="deepseek-guide-next" type="button">下一步</button>
+            </footer>
         </section>
     </div>
 

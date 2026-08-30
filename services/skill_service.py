@@ -16,6 +16,13 @@ BUILTIN_SKILLS = (
         'source_path': '',
     },
     {
+        'slug': 'english-conversation-companion',
+        'display_name': '地道英语陪聊',
+        'description': '以当代美式英语进行场景陪聊，按当前段位调节难度并提供轻量表达优化。',
+        'feature_prefixes': [],
+        'source_path': 'skills/english-conversation-companion/SKILL.md',
+    },
+    {
         'slug': 'writing-coach',
         'display_name': '写作教练',
         'description': '按四六级标准批改作文，解释问题并给出可执行修改。',

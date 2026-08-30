@@ -1,7 +1,7 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
   "productName": "四六级学习台",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "identifier": "cn.cet.learningdesk",
   "build": {
     "frontendDist": "../web"
@@ -26,6 +26,7 @@
   },
   "bundle": {
     "active": true,
+    "createUpdaterArtifacts": true,
     "targets": ["nsis"],
     "icon": ["icons/icon.ico"],
     "externalBin": ["binaries/cet-backend"],
@@ -33,6 +34,17 @@
       "nsis": {
         "installMode": "currentUser",
         "languages": ["SimpChinese", "English"]
+      }
+    }
+  },
+  "plugins": {
+    "updater": {
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaW5pIHB1YmxpYyBrZXk6IDc3Mzc3MERENjVBNkMxMgpSV1FTYkZyV0RYZHpCK3JFcFpweld6bExuUU5aMUMwblcyRXRBL0ptV3ZhWDNqazQ0SVpraFRYcAo=",
+      "endpoints": [
+        "https://github.com/sixinzheng/cet-learning-desk/releases/latest/download/latest.json"
+      ],
+      "windows": {
+        "installMode": "passive"
       }
     }
   }

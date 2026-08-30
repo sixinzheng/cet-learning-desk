@@ -6,6 +6,8 @@ from flask import Flask, redirect, render_template, url_for
 from database import init_db
 from config import get_api_key, get_session_secret, load_config
 from runtime_paths import resource_path
+from app_version import APP_VERSION
+from services.update_service import current_platform
 
 
 def create_app():
@@ -57,6 +59,7 @@ def create_app():
     from routes.api_words import bp as words_bp
     from routes.api_writing import bp as writing_bp
     from routes.api_ai import bp as ai_bp
+    from routes.api_update import bp as update_bp
 
     app.register_blueprint(words_bp, url_prefix='/api/words')
     app.register_blueprint(study_bp, url_prefix='/api/study')
@@ -68,6 +71,7 @@ def create_app():
     app.register_blueprint(practice_bp, url_prefix='/api/practice')
     app.register_blueprint(cloze_bp, url_prefix='/api/practice')
     app.register_blueprint(ai_bp, url_prefix='/api/ai')
+    app.register_blueprint(update_bp, url_prefix='/api/app/update')
 
     # 只有用户在阅读页明确开启过自动补库时才跨重启恢复；
     # 测试库和新安装默认不会发起付费 AI 请求。
@@ -97,7 +101,12 @@ def create_app():
     @app.route('/<any(learn,growth,profile,study,review,reading,listening,writing,cloze,control,notes,export,diagnostic):page>')
     def page(page):
         if page == 'profile':
-            return render_template(page_templates[page], ai_configured=bool(get_api_key()))
+            return render_template(
+                page_templates[page],
+                ai_configured=bool(get_api_key()),
+                app_version=APP_VERSION,
+                app_platform=current_platform(),
+            )
         return render_template(page_templates[page])
 
     @app.route('/level')

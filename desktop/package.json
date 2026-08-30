@@ -1,7 +1,7 @@
 {
   "name": "cet-learning-desk",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.3.0",
   "description": "四六级学习台桌面客户端",
   "scripts": {
     "tauri": "tauri",

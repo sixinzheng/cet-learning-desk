@@ -13,6 +13,7 @@ PYTHON_TARGET = ANDROID_ROOT / 'app' / 'src' / 'main' / 'python'
 ASSET_TARGET = ANDROID_ROOT / 'app' / 'src' / 'main' / 'assets' / 'app_resources'
 
 PYTHON_FILES = (
+    'app_version.py',
     'app.py',
     'config.py',
     'database.py',
@@ -61,7 +62,7 @@ def main() -> None:
         if path.is_file()
     )
     manifest = {
-        'version': '0.2.0',
+        'version': '0.3.0',
         'file_count': len(files),
         'files': files,
     }

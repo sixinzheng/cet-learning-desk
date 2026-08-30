@@ -6,7 +6,7 @@ $apksigner = Join-Path $buildTools "apksigner.bat"
 $zipalign = Join-Path $buildTools "zipalign.exe"
 $keytool = "C:\Program Files\Java\latest\jdk-21\bin\keytool.exe"
 $unsignedApk = Join-Path $androidRoot "app\build\outputs\apk\release\app-release-unsigned.apk"
-$signedApk = Join-Path $androidRoot "app\build\outputs\apk\release\四六级学习台-Android-arm64-v0.2.0.apk"
+$signedApk = Join-Path $androidRoot "app\build\outputs\apk\release\CET-Learning-Desk-Android-arm64-v0.3.0.apk"
 $signingRoot = Join-Path $env:LOCALAPPDATA "CETLearningDesk\signing"
 $keyStore = Join-Path $signingRoot "android-release.jks"
 $secretFile = Join-Path $signingRoot "android-signing-secret.clixml"
@@ -14,7 +14,7 @@ $alias = "cet-learning-desk"
 
 foreach ($required in @($apksigner, $zipalign, $keytool, $unsignedApk)) {
     if (-not (Test-Path -LiteralPath $required)) {
-        throw "缺少 Android 签名依赖：$required"
+        throw "Missing Android signing dependency: $required"
     }
 }
 
@@ -22,7 +22,7 @@ New-Item -ItemType Directory -Path $signingRoot -Force | Out-Null
 
 if (-not (Test-Path -LiteralPath $keyStore)) {
     if (Test-Path -LiteralPath $secretFile) {
-        throw "发现签名密码但缺少密钥库；为避免生成无法持续更新的第二套密钥，构建已停止。"
+        throw "Signing password exists but the keystore is missing. Refusing to create a second key."
     }
     $bytes = New-Object byte[] 32
     $generator = [Security.Cryptography.RandomNumberGenerator]::Create()
@@ -40,10 +40,10 @@ if (-not (Test-Path -LiteralPath $keyStore)) {
         '-dname', 'CN=CET Learning Desk, OU=Learning, O=CET Learning Desk, L=Beijing, ST=Beijing, C=CN'
     )
     & $keytool $keyArguments
-    if ($LASTEXITCODE -ne 0) { throw "生成 Android 发布密钥失败" }
+    if ($LASTEXITCODE -ne 0) { throw "Failed to generate the Android release key." }
 } else {
     if (-not (Test-Path -LiteralPath $secretFile)) {
-        throw "Android 发布密钥存在，但当前 Windows 用户的加密密码文件缺失。"
+        throw "The Android release key exists but its encrypted password file is missing."
     }
     $secure = Import-Clixml -LiteralPath $secretFile
     $pointer = [Runtime.InteropServices.Marshal]::SecureStringToBSTR($secure)
@@ -57,7 +57,7 @@ if (-not (Test-Path -LiteralPath $keyStore)) {
 try {
     $env:CET_ANDROID_SIGNING_PASSWORD = $password
     & $zipalign -c -P 16 -v 4 $unsignedApk
-    if ($LASTEXITCODE -ne 0) { throw "APK zipalign 校验失败" }
+    if ($LASTEXITCODE -ne 0) { throw "APK zipalign verification failed." }
     $signArguments = @(
         'sign', '--ks', $keyStore, '--ks-key-alias', $alias,
         '--ks-pass', 'env:CET_ANDROID_SIGNING_PASSWORD',
@@ -65,9 +65,9 @@ try {
         '--out', $signedApk, $unsignedApk
     )
     & $apksigner $signArguments
-    if ($LASTEXITCODE -ne 0) { throw "APK 签名失败" }
+    if ($LASTEXITCODE -ne 0) { throw "APK signing failed." }
     & $apksigner verify --verbose --print-certs $signedApk
-    if ($LASTEXITCODE -ne 0) { throw "APK 签名验证失败" }
+    if ($LASTEXITCODE -ne 0) { throw "APK signature verification failed." }
 } finally {
     Remove-Item Env:CET_ANDROID_SIGNING_PASSWORD -ErrorAction SilentlyContinue
     $password = $null

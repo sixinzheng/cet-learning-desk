@@ -10,22 +10,28 @@ const notesState = {
     drawerLastFocus: null,
     drawerTouchStart: null,
     aiAbort: null,
+    assistantLanguage: 'zh',
+    conversationLanguage: null,
+    scenarioKey: 'casual',
+    scenes: [],
     rankIdentity: getRankChatIdentity(1, '童生'),
 };
 const noteEl = id => document.getElementById(id);
 
 document.addEventListener('DOMContentLoaded', async () => {
     await Promise.all([loadTodayNote(), loadCalendar(), loadNoteHistory(), loadAIState(), loadRankIdentity(), loadMemories(), loadConversations()]);
-    if (notesState.conversationId) loadConversation(notesState.conversationId);
+    if (notesState.conversationId) loadConversation(notesState.conversationId, true);
     noteEl('notes-chat-form').addEventListener('submit', event => { event.preventDefault(); if (notesState.aiAbort) { notesState.aiAbort.abort(); return; } sendNoteChat(noteEl('notes-chat-input').value.trim()); });
     noteEl('notes-search-send').addEventListener('click', () => {
         const query = noteEl('notes-ai-search').value.trim();
-        if (query) sendNoteChat(`请在我的历史笔记中查找与“${query}”有关的内容，并标出日期和原文。`);
+        if (query) sendNoteChat(notesState.assistantLanguage === 'en'
+            ? `Please search my saved notes for “${query}” and keep the original dates and excerpts.`
+            : `请在我的历史笔记中查找与“${query}”有关的内容，并标出日期和原文。`);
     });
-    noteEl('notes-new-chat').addEventListener('click', () => {
-        notesState.conversationId = null; localStorage.removeItem('cet-ai-conversation');
-        noteEl('notes-ai-chat').innerHTML = '<div class="assistant-empty"><strong>新的对话已经准备好</strong><p>这次可以从另一个问题开始。</p></div>';
-    });
+    noteEl('notes-new-chat').addEventListener('click', startEmptyConversation);
+    document.querySelectorAll('#notes-app [data-assistant-language]').forEach(button => button.addEventListener('click', () => switchAssistantLanguage(button.dataset.assistantLanguage)));
+    noteEl('notes-scene-grid').addEventListener('click', event => { const button = event.target.closest('[data-scene-key]'); if (button) startEnglishScene(button.dataset.sceneKey); });
+    noteEl('notes-english-controls').addEventListener('click', event => { const button = event.target.closest('[data-turn-prompt]'); if (button) sendNoteChat(button.dataset.turnPrompt); });
     noteEl('memory-clear').addEventListener('click', clearMemories);
     noteEl('note-history-search').addEventListener('input', event => renderNoteHistory(event.target.value));
     noteEl('note-modal-close').addEventListener('click', () => closeNoteModal());
@@ -85,7 +91,64 @@ function handleNoteDrawerKeydown(event) {
     else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
 }
 
-async function loadAIState() { try { const status = await api('/api/ai/config/status'); notesState.csrf = status.csrf_token; if (!status.configured) noteEl('notes-ai-chat').insertAdjacentHTML('afterbegin','<div class="region-state region-state--empty"><strong>AI 尚未配置</strong><span>笔记编辑仍可使用；到“我的 → AI 服务”配置后即可开始对话。</span></div>'); } catch (_) { notesState.csrf = ''; } }
+async function loadAIState() {
+    try {
+        const [status, preferences] = await Promise.all([api('/api/ai/config/status'), api('/api/ai/preferences')]);
+        notesState.csrf = status.csrf_token;
+        notesState.assistantLanguage = preferences.language || 'zh';
+        notesState.scenes = preferences.scenes || [];
+        renderAssistantLanguageUI();
+        if (!status.configured) noteEl('notes-ai-chat').insertAdjacentHTML('afterbegin','<div class="region-state region-state--empty"><strong>AI 尚未配置</strong><span>笔记编辑仍可使用；到“我的 → AI 服务”配置后即可开始对话。</span></div>');
+    } catch (_) { notesState.csrf = ''; }
+}
+
+function renderAssistantLanguageUI() {
+    document.querySelectorAll('#notes-app [data-assistant-language]').forEach(button => {
+        button.setAttribute('aria-pressed', button.dataset.assistantLanguage === notesState.assistantLanguage ? 'true' : 'false');
+    });
+    const english = notesState.assistantLanguage === 'en';
+    noteEl('notes-ai-title').textContent = english ? 'Chat naturally, keep what matters' : '和学习助理深入聊一聊';
+    noteEl('notes-chat-input').placeholder = english ? 'Say anything in English…' : '输入英语学习问题…';
+    noteEl('notes-chat-form').querySelector('button').textContent = english ? 'Send' : '发送';
+    noteEl('notes-ai-search').placeholder = english ? 'Search notes: relative clauses, essay openings…' : '搜索笔记，例如：定语从句、作文开头…';
+    noteEl('notes-scene-grid').innerHTML = notesState.scenes.map(scene => `<button type="button" data-scene-key="${scene.key}"><strong>${scene.label_en}</strong><span>${scene.label}</span></button>`).join('');
+    renderSceneVisibility();
+}
+
+function renderSceneVisibility() {
+    noteEl('notes-english-scenes').hidden = notesState.assistantLanguage !== 'en' || Boolean(notesState.conversationId);
+    const effectiveLanguage = notesState.conversationId ? notesState.conversationLanguage : notesState.assistantLanguage;
+    noteEl('notes-english-controls').hidden = effectiveLanguage !== 'en';
+    noteEl('notes-chat-input').placeholder = effectiveLanguage === 'en' ? 'Continue in natural English…' : '输入英语学习问题…';
+}
+
+function startEmptyConversation() {
+    if (notesState.aiAbort) notesState.aiAbort.abort();
+    notesState.conversationId = null; notesState.conversationLanguage = null; notesState.scenarioKey = 'casual';
+    localStorage.removeItem('cet-ai-conversation');
+    noteEl('notes-ai-chat').innerHTML = notesState.assistantLanguage === 'en'
+        ? '<div class="assistant-empty"><strong>Pick a scene or start typing</strong><p>Your study buddy can open the conversation first.</p></div>'
+        : '<div class="assistant-empty"><strong>新的对话已经准备好</strong><p>这次可以从另一个问题开始。</p></div>';
+    renderSceneVisibility(); loadConversations(); noteEl('notes-chat-input').focus();
+}
+
+async function switchAssistantLanguage(language) {
+    if (language === notesState.assistantLanguage) return;
+    if (notesState.aiAbort) notesState.aiAbort.abort();
+    document.querySelectorAll('#notes-app [data-assistant-language]').forEach(button => button.disabled = true);
+    try {
+        await api('/api/ai/preferences', {method:'PUT', headers:{'X-CSRF-Token':notesState.csrf}, body:JSON.stringify({language})});
+        notesState.assistantLanguage = language;
+        renderAssistantLanguageUI(); startEmptyConversation();
+    } catch (error) { showToast(error.message || '语言切换失败，请重试。', 'error'); }
+    finally { document.querySelectorAll('#notes-app [data-assistant-language]').forEach(button => button.disabled = false); }
+}
+
+async function startEnglishScene(sceneKey) {
+    startEmptyConversation();
+    notesState.scenarioKey = sceneKey;
+    await sendNoteChat('', false, {start_scene:true, scenario_key:sceneKey, language:'en'});
+}
 async function loadRankIdentity() { try { const data = await api('/api/level/detail'); notesState.rankIdentity = getRankChatIdentity(data.level?.rank, data.level?.name); } catch (_) { notesState.rankIdentity = getRankChatIdentity(1, '童生'); } }
 async function loadTodayNote() { try { const data = await api('/api/notes/today'); noteEl('note-content').value = data.content || ''; notesState.currentOriginal = data.content || ''; noteEl('note-date-title').textContent = `今日笔记 · ${data.date}`; } catch (error) { noteEl('note-save-state').textContent = error.message || '今日笔记加载失败，请刷新重试。'; } }
 async function saveNote() { const state = noteEl('note-save-state'); state.textContent = '正在保存…'; try { await api('/api/notes/save', {method: 'POST', body: JSON.stringify({content: noteEl('note-content').value})}); notesState.currentOriginal = noteEl('note-content').value; state.textContent = '已保存到本机。'; await Promise.all([loadNoteHistory(), loadCalendar()]); showToast('笔记已保存。', 'success'); } catch (_) { state.textContent = '保存失败，请重试。'; } }
@@ -276,35 +339,35 @@ function decorateStreamedNoteMessage(node, result) {
     if (result.memory_candidate) node.bubble.appendChild(memoryNode(result.memory_candidate));
 }
 
-function addNoteChatRetry(node,message) {
+function addNoteChatRetry(node,message,options={}) {
     const status=document.createElement('p');status.className='assistant-stream-status';status.textContent='连接中断，以上内容已保留。';
     const retry=document.createElement('button');retry.type='button';retry.className='text-button';retry.textContent='重试回答';
-    retry.onclick=()=>{retry.disabled=true;sendNoteChat(message,false);};node.bubble.append(status,retry);
+    retry.onclick=()=>{retry.disabled=true;sendNoteChat(message,false,options);};node.bubble.append(status,retry);
 }
-async function sendNoteChat(message,showUser=true) {
-    if (!message) return;
+async function sendNoteChat(message,showUser=true,options={}) {
+    if (!message && !options.start_scene) return;
     const input=noteEl('notes-chat-input'), button=noteEl('notes-chat-form').querySelector('button');
-    if(showUser)appendMessage('user',message); input.value='';
+    if(showUser && message)appendMessage('user',message); input.value='';
     const node=appendMessage('assistant','');
     notesState.aiAbort=new AbortController();button.disabled=false;button.textContent='停止生成';
     const writer=createAITypewriter(node.copy,{onUpdate:()=>{node.article.parentElement.scrollTop=node.article.parentElement.scrollHeight;}});
     try {
-        const response=await fetch('/api/ai/chat',{method:'POST',headers:{'Content-Type':'application/json','X-CSRF-Token':notesState.csrf},body:JSON.stringify({message,conversation_id:notesState.conversationId}),signal:notesState.aiAbort.signal});
+        const response=await fetch('/api/ai/chat',{method:'POST',headers:{'Content-Type':'application/json','X-CSRF-Token':notesState.csrf},body:JSON.stringify({message,conversation_id:notesState.conversationId,language:notesState.assistantLanguage,scenario_key:notesState.scenarioKey,...options}),signal:notesState.aiAbort.signal});
         if(!response.ok){const error=await response.json().catch(()=>({}));throw new Error(error.error||'AI 请求失败。');}
         const result=await consumeAIStream(response,{onDelta:text=>writer.append(text),onDone:data=>writer.finish(data.message)});
-        notesState.conversationId=result.conversation_id;localStorage.setItem('cet-ai-conversation',String(result.conversation_id));
+        notesState.conversationId=result.conversation_id;notesState.conversationLanguage=result.language||notesState.assistantLanguage;notesState.scenarioKey=result.scenario_key||notesState.scenarioKey;localStorage.setItem('cet-ai-conversation',String(result.conversation_id));renderSceneVisibility();
         await writer.finish(result.message);renderSafeMarkdown(node.copy,result.message);decorateStreamedNoteMessage(node,result);loadConversations();
     } catch(error) {
         writer.stop();
         if(error.name==='AbortError')node.copy.textContent+=node.copy.textContent?'\n（已停止生成）':'已停止生成。';
-        else {if(!node.copy.textContent)node.copy.textContent=error.message||'这次没有连接上 AI。';addNoteChatRetry(node,message);}
-    } finally {notesState.aiAbort=null;button.disabled=false;button.textContent='发送';input.focus();}
+        else {if(!node.copy.textContent)node.copy.textContent=error.message||'这次没有连接上 AI。';addNoteChatRetry(node,message,options);}
+    } finally {notesState.aiAbort=null;button.disabled=false;button.textContent=notesState.assistantLanguage==='en'?'Send':'发送';input.focus();}
 }
 
-async function loadConversations() { try { const data=await api('/api/ai/conversations'), area=noteEl('notes-conversations'); area.innerHTML=''; if(!data.conversations.length){area.innerHTML='<p class="muted">还没有 AI 对话。</p>';return;} data.conversations.forEach(item=>{const wrap=document.createElement('div');wrap.className='conversation-item';const button=document.createElement('button');button.type='button';button.className='conversation-link';button.dataset.id=item.id;button.setAttribute('aria-pressed',notesState.conversationId===item.id?'true':'false');const strong=document.createElement('strong');strong.textContent=item.title;const span=document.createElement('span');span.textContent=`${item.message_count} 条消息 · ${item.updated_at.slice(0,16)}`;button.append(strong,span);button.onclick=()=>selectConversation(item.id);const del=document.createElement('button');del.type='button';del.className='conversation-delete';del.setAttribute('aria-label',`删除对话：${item.title}`);del.textContent='删除';del.onclick=(event)=>{event.stopPropagation();deleteConversation(item.id);};wrap.append(button,del);if(notesState.conversationId===item.id)wrap.classList.add('is-active');area.appendChild(wrap)}); } catch(_){} }
+async function loadConversations() { try { const data=await api('/api/ai/conversations'), area=noteEl('notes-conversations'); area.innerHTML=''; if(!data.conversations.length){area.innerHTML='<p class="muted">还没有 AI 对话。</p>';return;} data.conversations.forEach(item=>{const wrap=document.createElement('div');wrap.className='conversation-item';const button=document.createElement('button');button.type='button';button.className='conversation-link';button.dataset.id=item.id;button.setAttribute('aria-pressed',notesState.conversationId===item.id?'true':'false');const strong=document.createElement('strong');strong.textContent=item.title;const span=document.createElement('span');const language=item.language==='en'?'English':'中文';const scene=item.language==='en'?(item.scenario_label_en||'Just chat'):'';span.textContent=`${language}${scene?` · ${scene}`:''} · ${item.message_count} 条 · ${item.updated_at.slice(0,16)}`;button.append(strong,span);button.onclick=()=>selectConversation(item.id);const del=document.createElement('button');del.type='button';del.className='conversation-delete';del.setAttribute('aria-label',`删除对话：${item.title}`);del.textContent='删除';del.onclick=(event)=>{event.stopPropagation();deleteConversation(item.id);};wrap.append(button,del);if(notesState.conversationId===item.id)wrap.classList.add('is-active');area.appendChild(wrap)}); } catch(_){} }
 async function selectConversation(id) { try { await loadConversation(id); document.querySelectorAll('.conversation-item').forEach(wrap=>{const button=wrap.querySelector('.conversation-link');const active=Number(button.dataset.id)===notesState.conversationId;wrap.classList.toggle('is-active',active);button.setAttribute('aria-pressed',active?'true':'false');}); } catch(_){} }
 async function deleteConversation(id) { if(!window.confirm('删除这条对话？对话中的消息也会一并删除，且不可恢复。'))return; try { await api(`/api/ai/conversations/${id}`,{method:'DELETE',headers:{'X-CSRF-Token':notesState.csrf}}); if(notesState.conversationId===id){notesState.conversationId=null;localStorage.removeItem('cet-ai-conversation');noteEl('notes-ai-chat').innerHTML='<div class="assistant-empty"><strong>新的对话已经准备好</strong><p>这次可以从另一个问题开始。</p></div>';} loadConversations(); showToast('对话已删除。','success'); } catch(error){ showToast(error.message,'error'); } }
-async function loadConversation(id) { try { const data=await api(`/api/ai/conversations/${id}/messages`), thread=noteEl('notes-ai-chat'); notesState.conversationId=id;localStorage.setItem('cet-ai-conversation',String(id));thread.innerHTML='';data.messages.forEach(item=>thread.appendChild(messageNode(item.role,item.content,item.citations||[])));thread.scrollTop=thread.scrollHeight; } catch(_){} }
+async function loadConversation(id,auto=false) { try { const data=await api(`/api/ai/conversations/${id}/messages`), thread=noteEl('notes-ai-chat'); const meta=data.conversation||{}; if(auto&&meta.language&&meta.language!==notesState.assistantLanguage){notesState.conversationId=null;localStorage.removeItem('cet-ai-conversation');renderSceneVisibility();return;} notesState.conversationId=id;notesState.conversationLanguage=meta.language||'zh';notesState.scenarioKey=meta.scenario_key||'casual';localStorage.setItem('cet-ai-conversation',String(id));thread.innerHTML='';data.messages.forEach(item=>thread.appendChild(messageNode(item.role,item.content,item.citations||[])));thread.scrollTop=thread.scrollHeight;renderSceneVisibility();noteEl('notes-chat-input').placeholder=notesState.conversationLanguage==='en'?'Continue this conversation in English…':'输入英语学习问题…'; } catch(_){} }
 async function loadMemories() { try { const data=await api('/api/ai/memories'), area=noteEl('memory-list'); area.innerHTML=''; noteEl('memory-clear').disabled=!data.memories.length; if(!data.memories.length){area.innerHTML='<p class="muted">暂无已确认记忆。学习一段时间或在对话中确认后会出现在这里。</p>';return;} data.memories.forEach(item=>{const article=document.createElement('article');const copy=document.createElement('div');const type=document.createElement('span');const p=document.createElement('p');type.textContent=item.memory_type==='system_fact'?'学习事实':'你确认的信息';p.textContent=item.content;copy.append(type,p);const remove=document.createElement('button');remove.type='button';remove.textContent='删除';remove.onclick=()=>deleteMemory(item.id);article.append(copy,remove);area.appendChild(article)}); } catch(_){} }
 async function deleteMemory(id) { try { await api(`/api/ai/memories/${id}`,{method:'DELETE',headers:{'X-CSRF-Token':notesState.csrf}});loadMemories(); } catch(error){showToast(error.message,'error')} }
 async function clearMemories() { if(!window.confirm('清空全部 AI 记忆？原始学习记录和笔记不会被删除。'))return;try{await api('/api/ai/memories',{method:'DELETE',headers:{'X-CSRF-Token':notesState.csrf}});loadMemories();showToast('AI 记忆已清空。','success')}catch(error){showToast(error.message,'error')} }

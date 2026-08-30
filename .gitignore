@@ -26,6 +26,7 @@ node_modules/
 /desktop/tauri-temp/
 /desktop/src-tauri/target/
 /desktop/src-tauri/binaries/*.exe
+/dist/
 
 # Android-generated sources, tools and build output
 /android/.gradle/

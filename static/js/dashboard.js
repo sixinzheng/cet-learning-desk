@@ -8,6 +8,8 @@
     let aiCsrf = '';
     let aiConversation = null;
     let aiAbort = null;
+    let aiLanguage = 'zh';
+    let aiScenes = [];
     let currentRankIdentity = getRankChatIdentity(1, '童生');
     const AI_AVATAR = (document.querySelector('#ai-avatar') && document.querySelector('#ai-avatar').src) || '/static/images/ai-avatar.png';
     const userAvatar = () => currentRankIdentity.src;
@@ -172,7 +174,7 @@
         const bubble = document.createElement('div');
         bubble.className = 'ai-message__bubble';
         const label = document.createElement('strong');
-        label.textContent = role === 'user' ? currentRankIdentity.name : '学习助理';
+        label.textContent = role === 'user' ? currentRankIdentity.name : (aiLanguage === 'en' ? 'Study buddy' : '学习助理');
         const copy = document.createElement('p');
         copy.textContent = String(text || '').replace(/\*\*(.*?)\*\*/g, '$1');
         bubble.append(label, copy);
@@ -232,46 +234,97 @@
 
     async function loadAssistant() {
         try {
-            const [status, greeting, conversationData] = await Promise.all([
-                api('/api/ai/config/status'), api('/api/ai/greeting'), api('/api/ai/conversations'),
+            const [status, preferences] = await Promise.all([
+                api('/api/ai/config/status'), api('/api/ai/preferences'),
             ]);
             aiCsrf = status.csrf_token;
+            aiLanguage = preferences.language || 'zh';
+            aiScenes = preferences.scenes || [];
+            renderAssistantLanguageUI();
+            const [greeting, conversationData] = await Promise.all([
+                api(`/api/ai/greeting?language=${encodeURIComponent(aiLanguage)}`),
+                api(`/api/ai/conversations?language=${encodeURIComponent(aiLanguage)}`),
+            ]);
             $('ai-greeting').querySelector('p').textContent = greeting.greeting;
             $('ai-greeting').dataset.source = greeting.source;
+            $('ai-chat-messages').innerHTML = '';
             const latest = conversationData.conversations?.[0];
             if (latest) {
                 aiConversation = latest.id;
                 const messageData = await api(`/api/ai/conversations/${latest.id}/messages`);
                 (messageData.messages || []).slice(-2).forEach(message => addChatMessage(message.role, message.content, message.citations || []));
             } else if (!status.configured) {
-                addChatMessage('assistant', 'DeepSeek 尚未配置。你仍能看到本地数据问候；到“我的”填写 API Key 后即可开始完整问答。');
+                addChatMessage('assistant', aiLanguage === 'en'
+                    ? 'DeepSeek is not configured yet. Your data greeting still works; add an API Key under “我的” when you want to start chatting.'
+                    : 'DeepSeek 尚未配置。你仍能看到本地数据问候；到“我的”填写 API Key 后即可开始完整问答。');
             }
         } catch (_) {
-            $('ai-greeting').querySelector('p').textContent = '暂时没能读取学习问候，请刷新页面重试。';
+            $('ai-greeting').querySelector('p').textContent = aiLanguage === 'en'
+                ? 'I could not load today’s learning greeting. Please refresh and try again.'
+                : '暂时没能读取学习问候，请刷新页面重试。';
         }
     }
 
-    function addAssistantRetry(node, message) {
+    function renderAssistantLanguageUI() {
+        document.querySelectorAll('#ai-quick-chat [data-assistant-language]').forEach(button => {
+            button.setAttribute('aria-pressed', button.dataset.assistantLanguage === aiLanguage ? 'true' : 'false');
+        });
+        const english = aiLanguage === 'en';
+        $('home-english-scenes').hidden = !english;
+        $('ai-chat-title').textContent = english ? 'A real conversation, tuned to your learning' : '带着你的数据，回答今天的问题';
+        $('ai-chat-input').placeholder = english ? 'Say anything—or ask about your notes and learning…' : '例如：我前几天的笔记里是不是记过定语从句？';
+        $('ai-chat-form').querySelector('button[type="submit"]').textContent = english ? 'Send' : '发送问题';
+        const select = $('home-scene-select');
+        select.innerHTML = aiScenes.map(scene => `<option value="${scene.key}">${scene.label} · ${scene.label_en}</option>`).join('');
+        const prompts = $('home-ai-prompts');
+        prompts.innerHTML = english
+            ? '<button type="button" data-ai-prompt="What should we talk about today based on my recent learning?">Pick a topic</button><button type="button" data-ai-prompt="Can you help me find a useful idea from my recent notes?">Find a note</button><button type="button" data-ai-prompt="Give me one natural English expression I can use today, then chat with me about it.">Useful expression</button>'
+            : '<button type="button" data-ai-prompt="根据我最近的数据，今天先学什么？">今天先学什么</button><button type="button" data-ai-prompt="帮我找找笔记里和从句有关的内容。">查找从句笔记</button><button type="button" data-ai-prompt="请解释一个我最近最需要巩固的英语知识点。">解释薄弱点</button>';
+    }
+
+    async function switchAssistantLanguage(language) {
+        if (language === aiLanguage) return;
+        if (aiAbort) aiAbort.abort();
+        document.querySelectorAll('#ai-quick-chat [data-assistant-language]').forEach(button => button.disabled = true);
+        try {
+            await api('/api/ai/preferences', {
+                method: 'PUT', headers: {'X-CSRF-Token': aiCsrf},
+                body: JSON.stringify({language}),
+            });
+            aiLanguage = language; aiConversation = null;
+            $('ai-chat-messages').innerHTML = '';
+            $('ai-greeting').querySelector('p').textContent = language === 'en'
+                ? 'Loading a greeting from your recent learning…'
+                : '正在结合你最近的学习记录准备今天的第一句话…';
+            await loadAssistant();
+        } catch (error) {
+            showToast(error.message || '语言切换失败，请重试。', 'error');
+        } finally {
+            document.querySelectorAll('#ai-quick-chat [data-assistant-language]').forEach(button => button.disabled = false);
+        }
+    }
+
+    function addAssistantRetry(node, message, options = {}) {
         const status = document.createElement('p');
         status.className = 'assistant-stream-status';
         status.textContent = '连接中断，以上内容已保留。';
         const retry = document.createElement('button');
         retry.type = 'button'; retry.className = 'text-button'; retry.textContent = '重试回答';
-        retry.addEventListener('click', () => { retry.disabled = true; sendAssistant(message, false); });
+        retry.addEventListener('click', () => { retry.disabled = true; sendAssistant(message, false, options); });
         node.bubble.append(status, retry);
     }
 
-    async function sendAssistant(message, showUser = true) {
+    async function sendAssistant(message, showUser = true, options = {}) {
         const input = $('ai-chat-input');
         const button = $('ai-chat-form').querySelector('button[type="submit"]');
-        if (showUser) addChatMessage('user', message);
+        if (showUser && message) addChatMessage('user', message);
         input.value = '';
         const node = addChatMessage('assistant', '');
         aiAbort = new AbortController();
         button.disabled = false; button.textContent = '停止生成';
         const writer = createAITypewriter(node.copy, {onUpdate: () => { node.article.parentElement.scrollTop = node.article.parentElement.scrollHeight; }});
         try {
-            const response = await fetch('/api/ai/chat', {method: 'POST', headers: {'Content-Type': 'application/json', 'X-CSRF-Token': aiCsrf}, body: JSON.stringify({message, conversation_id: aiConversation}), signal: aiAbort.signal});
+            const response = await fetch('/api/ai/chat', {method: 'POST', headers: {'Content-Type': 'application/json', 'X-CSRF-Token': aiCsrf}, body: JSON.stringify({message, conversation_id: aiConversation, language: aiLanguage, ...options}), signal: aiAbort.signal});
             if (!response.ok) { const err = await response.json().catch(() => ({})); throw new Error(err.error || 'AI 请求失败。'); }
             const result = await consumeAIStream(response, {onDelta: text => writer.append(text), onDone: data => writer.finish(data.message)});
             aiConversation = result.conversation_id;
@@ -281,13 +334,18 @@
             if (error.name === 'AbortError') node.copy.textContent += node.copy.textContent ? '\n（已停止生成）' : '已停止生成。';
             else {
                 if (!node.copy.textContent) node.copy.textContent = error.message || '这次没有连接上 AI。';
-                addAssistantRetry(node, message);
+                addAssistantRetry(node, message, options);
             }
-        } finally { aiAbort = null; button.disabled = false; button.textContent = '发送问题'; input.focus(); }
+        } finally { aiAbort = null; button.disabled = false; button.textContent = aiLanguage === 'en' ? 'Send' : '发送问题'; input.focus(); }
     }
 
     $('ai-chat-form')?.addEventListener('submit', event => { event.preventDefault(); if (aiAbort) { aiAbort.abort(); return; } const message = $('ai-chat-input').value.trim(); if (message) sendAssistant(message); });
-    document.querySelectorAll('[data-ai-prompt]').forEach(button => button.addEventListener('click', () => { $('ai-chat-input').value = button.dataset.aiPrompt; sendAssistant(button.dataset.aiPrompt); }));
+    $('home-ai-prompts')?.addEventListener('click', event => { const button = event.target.closest('[data-ai-prompt]'); if (!button) return; $('ai-chat-input').value = button.dataset.aiPrompt; sendAssistant(button.dataset.aiPrompt); });
+    document.querySelectorAll('#ai-quick-chat [data-assistant-language]').forEach(button => button.addEventListener('click', () => switchAssistantLanguage(button.dataset.assistantLanguage)));
+    $('home-scene-start')?.addEventListener('click', () => {
+        aiConversation = null; $('ai-chat-messages').innerHTML = '';
+        sendAssistant('', false, {start_scene: true, scenario_key: $('home-scene-select').value, language: 'en'});
+    });
     $('wb-select').addEventListener('change', async event => {
         await loadBook(event.target.value);
         try { await api('/api/words/current-wordbook', {method: 'PUT', body: JSON.stringify({book_id: Number(event.target.value)})}); showToast('当前词库已切换。', 'success'); }

@@ -52,11 +52,12 @@ FORM: 既有纸墨编辑式界面的任务台重组，不新增视觉世界或�
         </main>
 
         <section class="ai-quick-chat" id="ai-quick-chat" aria-labelledby="ai-chat-title">
-            <div class="ai-chat-heading"><div><p class="eyebrow">STUDY COMPANION / AI 助理</p><h2 id="ai-chat-title">带着你的数据，回答今天的问题</h2></div><a href="/notes#assistant" class="text-link">完整对话</a></div>
+            <div class="ai-chat-heading"><div><p class="eyebrow">STUDY COMPANION / AI 助理</p><h2 id="ai-chat-title">带着你的数据，回答今天的问题</h2></div><div class="ai-chat-heading__actions"><div class="assistant-language-switch" role="group" aria-label="学习助理回答语言"><button type="button" data-assistant-language="zh" aria-pressed="true">中文</button><button type="button" data-assistant-language="en" aria-pressed="false">English</button></div><a href="/notes#assistant" class="text-link">完整对话</a></div></div>
             <div class="ai-greeting" id="ai-greeting" aria-live="polite"><img id="ai-avatar" class="chat-avatar chat-avatar--ai avatar--greeting" src="{{ asset('images/ai-avatar.png') }}" alt="学习助理头像"><p>正在结合你最近的学习记录准备今天的第一句话…</p></div>
+            <div id="home-english-scenes" class="assistant-scene-compact" hidden><label for="home-scene-select">英语场景</label><div><select id="home-scene-select"></select><button id="home-scene-start" class="btn btn-secondary" type="button">开始场景</button></div></div>
             <div class="ai-chat-messages" id="ai-chat-messages" aria-live="polite" aria-label="最近对话"></div>
             <form class="ai-chat-form" id="ai-chat-form"><label class="sr-only" for="ai-chat-input">向学习助理提问</label><textarea id="ai-chat-input" rows="2" maxlength="1200" placeholder="例如：我前几天的笔记里是不是记过定语从句？"></textarea><button class="btn btn-primary" type="submit">发送问题</button></form>
-            <div class="ai-chat-prompts" aria-label="快捷提问"><button type="button" data-ai-prompt="根据我最近的数据，今天先学什么？">今天先学什么</button><button type="button" data-ai-prompt="帮我找找笔记里和从句有关的内容。">查找从句笔记</button><button type="button" data-ai-prompt="请解释一个我最近最需要巩固的英语知识点。">解释薄弱点</button></div>
+            <div id="home-ai-prompts" class="ai-chat-prompts" aria-label="快捷提问"><button type="button" data-ai-prompt="根据我最近的数据，今天先学什么？">今天先学什么</button><button type="button" data-ai-prompt="帮我找找笔记里和从句有关的内容。">查找从句笔记</button><button type="button" data-ai-prompt="请解释一个我最近最需要巩固的英语知识点。">解释薄弱点</button></div>
             <p class="ai-chat-privacy">AI 只读取本站学习摘要与已保存笔记；任何笔记写入都需要再次确认。</p>
         </section>
 

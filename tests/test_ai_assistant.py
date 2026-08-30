@@ -1,5 +1,6 @@
 import json
 import os
+import re
 import tempfile
 import unittest
 from datetime import date, timedelta
@@ -144,6 +145,126 @@ class AIAssistantContractTests(unittest.TestCase):
         self.assertIn('"name": "童生"', prompt)
         self.assertIn('"rank": 1', prompt)
         self.assertIn("你当前是童生", response.get_data(as_text=True))
+
+    def test_assistant_language_preference_persists_and_rejects_invalid_value(self):
+        initial = self.client.get('/api/ai/preferences').get_json()
+        self.assertEqual(initial['language'], 'zh')
+        self.assertEqual(len(initial['scenes']), 7)
+        token = initial['csrf_token']
+        saved = self.client.put('/api/ai/preferences', json={'language': 'en'}, headers={'X-CSRF-Token': token})
+        self.assertEqual(saved.status_code, 200)
+        self.assertEqual(self.client.get('/api/ai/preferences').get_json()['language'], 'en')
+        invalid = self.client.put('/api/ai/preferences', json={'language': 'fr'}, headers={'X-CSRF-Token': token})
+        self.assertEqual(invalid.status_code, 400)
+
+    def test_english_scene_starts_without_fake_user_message_and_keeps_metadata(self):
+        config.save_api_key('test-english-scene')
+        headers = {'X-CSRF-Token': self.csrf()}
+        stream_result = iter([
+            {'type': 'delta', 'text': 'Your train is late—plot twist! 🚆'},
+            {'type': 'done', 'content': 'Your train is late—plot twist! 🚆 What would you do first?', 'usage': {}, 'model': 'deepseek-v4-flash'},
+        ])
+        with mock.patch('routes.api_ai.stream_deepseek', return_value=stream_result) as model:
+            response = self.client.post('/api/ai/chat', json={'language': 'en', 'scenario_key': 'travel', 'start_scene': True}, headers=headers)
+        self.assertEqual(response.status_code, 200)
+        self.assertIn('"language": "en"', response.get_data(as_text=True))
+        system_prompt = model.call_args.args[0][0]['content']
+        self.assertIn('English Conversation Companion', system_prompt)
+        self.assertIn('active scene is Travel', system_prompt)
+        db = database.get_db()
+        conversation = db.execute('SELECT * FROM ai_conversations').fetchone()
+        roles = [row['role'] for row in db.execute('SELECT role FROM ai_messages ORDER BY id')]
+        db.close()
+        self.assertEqual(conversation['language'], 'en')
+        self.assertEqual(conversation['scenario_key'], 'travel')
+        self.assertEqual(roles, ['assistant'])
+
+    def test_chat_sends_only_the_latest_six_rounds_of_context(self):
+        config.save_api_key('test-context-window')
+        db = database.get_db()
+        db.execute("INSERT INTO ai_conversations (title,language,scenario_key) VALUES ('Context','en','casual')")
+        conversation_id = db.execute('SELECT last_insert_rowid() AS id').fetchone()['id']
+        for index in range(8):
+            db.execute("INSERT INTO ai_messages (conversation_id,role,content) VALUES (?,'user',?)", (conversation_id, f'user-{index}'))
+            db.execute("INSERT INTO ai_messages (conversation_id,role,content) VALUES (?,'assistant',?)", (conversation_id, f'assistant-{index}'))
+        db.commit(); db.close()
+        stream_result = iter([{'type': 'done', 'content': 'Got it.', 'usage': {}, 'model': 'deepseek-v4-flash'}])
+        with mock.patch('routes.api_ai.stream_deepseek', return_value=stream_result) as model:
+            self.client.post('/api/ai/chat', json={'message': 'latest-user', 'conversation_id': conversation_id, 'language': 'en'}, headers={'X-CSRF-Token': self.csrf()})
+        messages = model.call_args.args[0]
+        history_text = '\n'.join(item['content'] for item in messages[1:])
+        self.assertLessEqual(len(messages[1:]), 12)
+        self.assertIn('latest-user', history_text)
+        self.assertIn('assistant-7', history_text)
+        self.assertNotIn('user-0', history_text)
+
+    def test_daily_greetings_are_cached_separately_by_language(self):
+        zh = self.client.get('/api/ai/greeting?language=zh').get_json()
+        en = self.client.get('/api/ai/greeting?language=en').get_json()
+        self.assertEqual(zh['language'], 'zh')
+        self.assertEqual(en['language'], 'en')
+        self.assertNotEqual(zh['greeting'], en['greeting'])
+        db = database.get_db()
+        rows = db.execute('SELECT language,COUNT(*) AS n FROM ai_daily_greetings GROUP BY language').fetchall()
+        db.close()
+        self.assertEqual({row['language']: row['n'] for row in rows}, {'zh': 1, 'en': 1})
+
+    def test_english_note_intent_creates_a_confirm_only_draft(self):
+        response = self.client.post('/api/ai/chat', json={'message': 'Save this to my notes: use a softer transition.', 'language': 'en'}, headers={'X-CSRF-Token': self.csrf()})
+        text = response.get_data(as_text=True)
+        self.assertIn('"type": "append_note"', text)
+        db = database.get_db()
+        draft = db.execute('SELECT status,payload_json FROM ai_action_drafts').fetchone()
+        note_count = db.execute('SELECT COUNT(*) AS n FROM notes').fetchone()['n']
+        db.close()
+        self.assertEqual(draft['status'], 'pending')
+        self.assertEqual(note_count, 0)
+
+    def test_existing_conversation_language_and_scene_are_immutable(self):
+        db = database.get_db()
+        db.execute("INSERT INTO ai_conversations (title,language,scenario_key) VALUES ('旧对话','zh','casual')")
+        conversation_id = db.execute('SELECT last_insert_rowid() AS id').fetchone()['id']
+        db.commit(); db.close()
+        response = self.client.post(
+            '/api/ai/chat',
+            json={'message': 'Please switch this old thread.', 'conversation_id': conversation_id, 'language': 'en', 'scenario_key': 'travel'},
+            headers={'X-CSRF-Token': self.csrf()},
+        )
+        self.assertEqual(response.status_code, 200)
+        db = database.get_db()
+        conversation = db.execute('SELECT language,scenario_key FROM ai_conversations WHERE id=?', (conversation_id,)).fetchone()
+        db.close()
+        self.assertEqual((conversation['language'], conversation['scenario_key']), ('zh', 'casual'))
+
+    def test_chinese_rescue_changes_one_reply_without_changing_english_mode(self):
+        config.save_api_key('test-one-turn-rescue')
+        headers = {'X-CSRF-Token': self.csrf()}
+        streams = [
+            iter([{'type':'done','content':'这句话的意思是……','usage':{},'model':'deepseek-v4-flash'}]),
+            iter([{'type':'done','content':'Back to English.','usage':{},'model':'deepseek-v4-flash'}]),
+        ]
+        with mock.patch('routes.api_ai.stream_deepseek', side_effect=streams) as model:
+            first = self.client.post('/api/ai/chat', json={'message':'Please explain the last point in Chinese for this reply only.', 'language':'en'}, headers=headers)
+            conversation_id = int(re.search(r'"conversation_id": (\d+)', first.get_data(as_text=True)).group(1))
+            self.client.post('/api/ai/chat', json={'message':'Thanks—keep going.', 'conversation_id':conversation_id, 'language':'en'}, headers=headers)
+        first_system = model.call_args_list[0].args[0][0]['content']
+        second_system = model.call_args_list[1].args[0][0]['content']
+        self.assertIn('For this reply only', first_system)
+        self.assertNotIn('For this reply only', second_system)
+        db = database.get_db()
+        language = db.execute('SELECT language FROM ai_conversations WHERE id=?', (conversation_id,)).fetchone()['language']
+        db.close()
+        self.assertEqual(language, 'en')
+
+    def test_disabled_english_companion_does_not_create_empty_conversation(self):
+        token = self.csrf()
+        self.client.put('/api/ai/skills/english-conversation-companion', json={'enabled':False}, headers={'X-CSRF-Token':token})
+        response = self.client.post('/api/ai/chat', json={'language':'en','scenario_key':'daily','start_scene':True}, headers={'X-CSRF-Token':token})
+        self.assertEqual(response.status_code, 409)
+        db = database.get_db()
+        count = db.execute('SELECT COUNT(*) AS n FROM ai_conversations').fetchone()['n']
+        db.close()
+        self.assertEqual(count, 0)
 
     def test_deepseek_image_input_uses_official_experimental_vision_model(self):
         config.save_api_key("sk-test")

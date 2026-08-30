@@ -1,0 +1,4 @@
+interface:
+  display_name: "English Conversation Companion"
+  short_description: "用地道美式英语进行分场景陪聊与轻量表达优化"
+  default_prompt: "Use $english-conversation-companion to continue a natural American English conversation within the site's data and confirmation boundaries."

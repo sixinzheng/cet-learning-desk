@@ -1,28 +1,31 @@
 {% extends "base.html" %}
 {% block title %}我的设置 · 四六级学习台{% endblock %}
 {% block content %}
-<div class="page-shell settings-page" id="profile-app" data-ai-configured="{{ 'true' if ai_configured else 'false' }}">
-    <header class="page-heading"><div><p class="eyebrow">LOCAL SETTINGS / 我的</p><h1>工具、能力与本地服务</h1><p>在这里管理学习工具、AI 能力和本地数据；完整词书目录收纳在页面底部。</p></div><a class="btn btn-secondary" href="/growth">查看段位档案</a></header>
+<div class="page-shell settings-page" id="profile-app" data-ai-configured="{{ 'true' if ai_configured else 'false' }}" data-app-version="{{ app_version }}" data-app-platform="{{ app_platform }}">
+    <header class="page-heading"><div><p class="eyebrow">LOCAL SETTINGS / 我的</p><h1>工具、能力与本地服务</h1><p>在这里管理学习工具、AI 能力、本地数据与完整词书目录。</p></div><a class="btn btn-secondary" href="/growth">查看段位档案</a></header>
     <div data-region-status class="region-state region-state--loading">正在读取本地设置…</div>
     <div class="settings-layout">
-        <nav class="settings-index" aria-label="设置目录"><a href="#tools">学习工具</a><a href="#skills">AI Skills</a><a href="#services">AI 服务</a><a href="#local-data">本地数据</a><a href="#support">支持作者</a><a href="#wordbooks">词库</a></nav>
+        <nav class="settings-index" aria-label="设置目录"><a href="#tools">学习工具</a><a href="#skills">AI Skills</a><a href="#services">AI 服务</a><a href="#local-data">本地数据</a><a href="#wordbooks">词库</a><a href="#updates">安全更新</a><a href="#support">支持作者</a></nav>
         <div class="settings-content">
             <section id="tools" class="settings-section"><div><p class="eyebrow">TOOLS</p><h2>学习工具</h2><p>笔记用于复盘，导出用于生成可打印练习。</p></div><div class="tool-links"><a href="/notes"><b>学习笔记</b><span>查看、编辑与整理历史笔记</span></a><a href="/export"><b>打印导出</b><span>选择阅读题生成 Word 文件</span></a><button id="open-onboarding" class="tool-link-button" type="button"><b>重新查看新手指引</b><span>了解基本功能、AI 配置和六维段位</span></button></div></section>
-            <section id="skills" class="settings-section settings-section--skills">
-                <div><p class="eyebrow">SKILL MANAGER</p><h2>选择 AI 可以使用的能力</h2><p>关闭后，对应的全站 AI 调用会真正停止。内置 Skill 不能删除，但可以补充规则；自定义 Skill 可随时删除。</p><a class="text-link" href="/control">进入完整 AI 工作台</a></div>
-                <div class="skill-settings-panel">
-                    <div id="profile-skills" class="skill-list" aria-live="polite"><p>正在读取 Skill 目录…</p></div>
-                    <details class="skill-create">
-                        <summary>新增自定义 Skill</summary>
-                        <form id="skill-create-form">
-                            <label for="skill-name">名称</label><input id="skill-name" maxlength="60" required placeholder="例如：翻译复盘助手">
-                            <label for="skill-description">用途说明</label><input id="skill-description" maxlength="240" placeholder="它负责什么，不负责什么">
-                            <label for="skill-instructions">使用规则</label><textarea id="skill-instructions" rows="5" maxlength="12000" placeholder="写明输出格式、证据边界和你的偏好"></textarea>
-                            <button class="btn btn-primary" type="submit">创建 Skill</button><span id="skill-create-state" role="status"></span>
-                        </form>
-                    </details>
+            <details id="skills" class="settings-section settings-section--skills settings-disclosure">
+                <summary><span><span class="eyebrow">SKILL MANAGER</span><strong>AI Skills</strong><small id="skill-summary-count">正在读取能力目录…</small></span><span class="settings-disclosure__action"><span>展开管理</span><span>收起目录</span></span></summary>
+                <div class="settings-disclosure__body settings-disclosure__body--skills">
+                    <div class="settings-disclosure__intro"><h2>选择 AI 可以使用的能力</h2><p>关闭后，对应的全站 AI 调用会真正停止。内置 Skill 不能删除，但可以补充规则；自定义 Skill 可随时删除。</p><a class="text-link" href="/control">进入完整 AI 工作台</a></div>
+                    <div class="skill-settings-panel">
+                        <div id="profile-skills" class="skill-list" aria-live="polite"><p>正在读取 Skill 目录…</p></div>
+                        <details class="skill-create">
+                            <summary>新增自定义 Skill</summary>
+                            <form id="skill-create-form">
+                                <label for="skill-name">名称</label><input id="skill-name" maxlength="60" required placeholder="例如：翻译复盘助手">
+                                <label for="skill-description">用途说明</label><input id="skill-description" maxlength="240" placeholder="它负责什么，不负责什么">
+                                <label for="skill-instructions">使用规则</label><textarea id="skill-instructions" rows="5" maxlength="12000" placeholder="写明输出格式、证据边界和你的偏好"></textarea>
+                                <button class="btn btn-primary" type="submit">创建 Skill</button><span id="skill-create-state" role="status"></span>
+                            </form>
+                        </details>
+                    </div>
                 </div>
-            </section>
+            </details>
             <section id="services" class="settings-section settings-section--ai">
                 <div><p class="eyebrow">DEEPSEEK / AI SERVICE</p><h2>让 AI 在全站开始工作</h2><p>密钥经 DeepSeek 余额接口验证后，优先保存到 Windows 凭据管理器；不可用时使用当前用户 DPAPI 加密兜底。页面和接口都不会返回完整密钥。</p></div>
                 <div class="ai-settings-panel">
@@ -36,6 +39,20 @@
                 </div>
             </section>
             <section id="local-data" class="settings-section"><div><p class="eyebrow">PRIVACY</p><h2>本地数据说明</h2><p>词汇状态、复习进度、学习日志、段位与笔记保存在这台电脑的 SQLite 数据库中。本网站没有新增云同步或多用户功能。</p></div><div class="local-note"><strong>需要备份时</strong><p>先退出正在运行的网站，再复制项目中的数据库文件。不要在网站运行时直接替换数据库。</p></div></section>
+            <details id="wordbooks" class="settings-section settings-section--wordbooks settings-disclosure">
+                <summary><span><span class="eyebrow">WORDBOOKS</span><strong>完整词库目录</strong><small>查看封面、收录量、掌握进度与预览</small></span><span class="settings-disclosure__action"><span>展开管理</span><span>收起目录</span></span></summary>
+                <div id="profile-wordbooks" class="wordbook-list"><p>正在读取词库…</p></div>
+            </details>
+            <section id="updates" class="settings-section settings-section--updates">
+                <div><p class="eyebrow">SAFE UPDATE</p><h2>一键安全更新</h2><p>只检查公开仓库的稳定 Release。安装前先生成并校验数据库备份，不会拉取主分支或改动源码目录。</p></div>
+                <div class="update-center" aria-live="polite">
+                    <div class="update-version-line"><div><span>当前版本</span><strong id="update-current-version">v{{ app_version }}</strong></div><div><span>运行平台</span><strong id="update-platform">{% if app_platform == 'windows' %}Windows 安装版{% elif app_platform == 'android' %}Android 安装版{% else %}源码浏览器版{% endif %}</strong></div></div>
+                    <div class="update-state" id="update-state"><span class="update-state__mark" aria-hidden="true"></span><div><strong id="update-state-title">尚未检查</strong><p id="update-state-copy">只有点击按钮后才会联网检查，不会在后台自动下载。</p></div></div>
+                    <div class="update-progress" id="update-progress" hidden><span id="update-progress-bar"></span></div>
+                    <div class="update-actions"><button id="update-check" class="btn btn-primary" type="button">检查安全更新</button><a id="update-release-link" class="btn btn-secondary" href="https://github.com/sixinzheng/cet-learning-desk/releases" target="_blank" rel="noopener noreferrer" hidden>打开 GitHub Release</a></div>
+                    <p class="field-help">更新前备份保存在本机数据目录，校验通过后才会进入系统安装；最多保留最近 3 份。</p>
+                </div>
+            </section>
             <section id="support" class="settings-section settings-section--support">
                 <div><p class="eyebrow">SUPPORT</p><h2>支持一下作者</h2><p>如果这个学习台让你的备考更清楚、更有动力，可以自愿支持后续维护。</p></div>
                 <div class="support-author-panel">
@@ -43,10 +60,6 @@
                     <button id="support-author-button" class="btn btn-primary" type="button">查看微信与支付宝付款码</button>
                 </div>
             </section>
-            <details id="wordbooks" class="settings-section settings-section--wordbooks settings-disclosure">
-                <summary><span><span class="eyebrow">WORDBOOKS</span><strong>完整词库目录</strong><small>查看封面、收录量、掌握进度与预览</small></span><span class="settings-disclosure__action"><span>展开管理</span><span>收起目录</span></span></summary>
-                <div id="profile-wordbooks" class="wordbook-list"><p>正在读取词库…</p></div>
-            </details>
         </div>
     </div>
 
@@ -68,6 +81,20 @@
             </div>
             <p class="support-modal__thanks">不论是否支持，都谢谢你认真使用这个网站。愿每一次学习都能留下看得见的进步。</p>
             <button type="button" class="btn btn-secondary support-modal__done" data-support-close>关闭</button>
+        </section>
+    </div>
+
+    <div class="modal-overlay update-modal" id="update-modal" hidden>
+        <section class="modal-card update-modal__card" role="dialog" aria-modal="true" aria-labelledby="update-modal-title" tabindex="-1">
+            <header class="modal-header update-modal__header">
+                <div><h2 id="update-modal-title">发现新的稳定版本</h2><p id="update-modal-meta">正在读取发布信息…</p></div>
+                <button type="button" class="icon-button" data-update-close aria-label="关闭更新确认弹窗">×</button>
+            </header>
+            <div class="update-modal__body">
+                <div class="update-data-promise"><strong>你的学习数据会怎样处理？</strong><p>安装前先在线备份当前 SQLite 数据库并执行完整性检查。备份失败、下载中断或校验失败都会停止更新，当前版本和数据保持原样。</p></div>
+                <div><h3>本次更新</h3><p id="update-modal-notes" class="update-release-notes"></p></div>
+            </div>
+            <footer class="update-modal__actions"><button type="button" class="btn btn-secondary" data-update-close>暂不更新</button><button type="button" class="btn btn-primary" id="update-install">备份并安全更新</button></footer>
         </section>
     </div>
 </div>

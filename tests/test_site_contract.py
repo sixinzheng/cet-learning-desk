@@ -195,6 +195,19 @@ class StaticDesignContractTests(unittest.TestCase):
         self.assertIn("window.location.pathname === '/'", script)
         self.assertIn("cet:open-onboarding", script)
         self.assertIn("/api/ai/config/verify-save", script)
+        self.assertIn('id="open-deepseek-guide"', base)
+        self.assertIn('id="deepseek-guide-overlay"', base)
+        self.assertIn("https://platform.deepseek.com/api_keys", base)
+        for image in (
+            "images/onboarding/deepseek/01-home.png",
+            "images/onboarding/deepseek/02-api-keys.png",
+            "images/onboarding/deepseek/03-create-key.png",
+            "images/onboarding/deepseek/04-balance.png",
+        ):
+            self.assertIn(image, base)
+            self.assertTrue((ROOT / "static" / image).is_file())
+        self.assertIn("const guideSteps", script)
+        self.assertIn("data-guide-src-${guideStep}", script)
 
     def test_profile_supports_onboarding_replay_and_author_support_codes(self):
         profile = (ROOT / "templates" / "profile.html").read_text(encoding="utf-8")
@@ -205,6 +218,23 @@ class StaticDesignContractTests(unittest.TestCase):
         self.assertTrue((ROOT / "static" / "images" / "support" / "wechat-pay.png").is_file())
         self.assertTrue((ROOT / "static" / "images" / "support" / "alipay.jpg").is_file())
         self.assertIn("量力而行", profile)
+
+    def test_profile_wordbooks_precede_support_in_navigation_and_content(self):
+        profile = (ROOT / "templates" / "profile.html").read_text(encoding="utf-8")
+        navigation = profile[profile.index('<nav class="settings-index"'):profile.index('</nav>')]
+        self.assertLess(navigation.index('href="#wordbooks"'), navigation.index('href="#support"'))
+        self.assertLess(profile.index('id="wordbooks"'), profile.index('id="support"'))
+
+    def test_bilingual_assistant_controls_exist_on_home_and_notes_only(self):
+        home = (ROOT / "templates" / "index.html").read_text(encoding="utf-8")
+        notes = (ROOT / "templates" / "notes.html").read_text(encoding="utf-8")
+        control = (ROOT / "templates" / "control.html").read_text(encoding="utf-8")
+        for document in (home, notes):
+            self.assertIn('data-assistant-language="zh"', document)
+            self.assertIn('data-assistant-language="en"', document)
+        self.assertNotIn('data-assistant-language', control)
+        self.assertIn('notes-scene-grid', notes)
+        self.assertIn('home-scene-select', home)
 
     def test_design_tokens_and_breakpoints_are_declared(self):
         css = (ROOT / "static" / "css" / "style.css").read_text(encoding="utf-8")
