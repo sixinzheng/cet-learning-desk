@@ -20,7 +20,13 @@ if (-not (Test-Path -LiteralPath (Join-Path $buildDeps "PyInstaller")) -or
 }
 
 $env:PYTHONPATH = "$projectRoot;$buildDeps;$(Join-Path $projectRoot '.runtime_deps');$(Join-Path $projectRoot '.deps')"
-& $Python (Join-Path $projectRoot "scripts\build_distribution_seed.py")
+$privateSource = Join-Path $projectRoot "data\vocab.db"
+$distributionSource = Join-Path $projectRoot "resources\distribution\vocab.seed.db"
+$seedSource = if (Test-Path -LiteralPath $privateSource) { $privateSource } else { $distributionSource }
+if (-not (Test-Path -LiteralPath $seedSource)) {
+    throw "No database source is available for the distribution seed"
+}
+& $Python (Join-Path $projectRoot "scripts\build_distribution_seed.py") --source $seedSource --output $distributionSource
 if ($LASTEXITCODE -ne 0) { throw "Failed to build distribution seed database" }
 
 $distDir = Join-Path $desktopRoot "pyinstaller-dist"

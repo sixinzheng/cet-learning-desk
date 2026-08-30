@@ -13,7 +13,14 @@ class DistributionSeedTests(unittest.TestCase):
     def test_seed_contains_content_but_no_personal_rows(self):
         with tempfile.TemporaryDirectory() as tmp:
             output = pathlib.Path(tmp) / 'vocab.seed.db'
-            counts = build_seed(ROOT / 'data' / 'vocab.db', output)
+            # CI intentionally never receives data/vocab.db because that file is
+            # the developer's private working database.  Exercise the sanitizer
+            # against the checked-in, already-sanitized distribution source so
+            # this release gate is reproducible on a clean checkout.
+            counts = build_seed(
+                ROOT / 'resources' / 'distribution' / 'vocab.seed.db',
+                output,
+            )
             self.assertGreater(counts['words'], 1000)
             self.assertEqual(counts['personal_rows'], 0)
             db = sqlite3.connect(output)
