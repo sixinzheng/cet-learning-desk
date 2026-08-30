@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}单词专练 · 四六级学习台{% endblock %}
+{% block content %}
+<div class="page-shell cloze-page" id="cloze-app">
+    <header class="page-heading"><div><p class="eyebrow">WORD CLOZE / 单词专练</p><h1>按四六级题型，完成选词填空</h1><p>文章中只保留挖空；请根据上下文从统一候选词中选择，每个词最多使用一次。</p></div><div style="display:flex;gap:.6rem;flex-wrap:wrap"><button id="cloze-refresh" class="btn btn-secondary" type="button">换一篇文章</button><button id="cloze-ai-generate" class="btn btn-secondary" type="button">AI 生成新文章</button></div></header>
+    <div data-region-status class="region-state region-state--loading">正在准备选词填空…</div>
+    <section class="cloze-workbench">
+        <article class="cloze-passage">
+            <div class="section-heading"><div><p class="eyebrow">PASSAGE / 文章</p><h2 id="cloze-title">读取中</h2></div><span id="cloze-difficulty" class="difficulty-badge">难度 --</span></div>
+            <div id="cloze-content" class="cloze-content region-ready" aria-label="选词填空文章"></div>
+        </article>
+        <aside class="cloze-side">
+            <div class="section-heading"><div><p class="eyebrow">WORD BANK / 候选词</p><h2>候选词与干扰项</h2></div><strong id="cloze-progress">已填 0/0</strong></div>
+            <div id="cloze-bank" class="cloze-bank" aria-live="polite"></div>
+            <p id="cloze-current-hint" class="muted" role="status">先选择文章中的一个空，再从词库中作答。</p>
+            <div id="cloze-result" class="cloze-result" hidden></div>
+            <button id="cloze-submit" class="btn btn-primary btn-block" type="button">提交并批改</button>
+        </aside>
+    </section>
+</div>
+{% endblock %}
+{% block scripts %}<script src="{{ asset('js/cloze.js') }}"></script>{% endblock %}

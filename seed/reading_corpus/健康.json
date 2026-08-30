@@ -1,0 +1,2469 @@
+[
+  {
+    "corpus_id": "cet-human-sample-health-l1-01",
+    "title": "When a Sleep Clinic Comes Closer",
+    "topic": "健康",
+    "difficulty": 1,
+    "source_id": "src-健康-01",
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20260321/754429a75c0648648f3febb1542b7191/c.html",
+    "source_title": "China Focus: Sleepless no more? China scales up sleep care nationwide",
+    "source_published_at": "2026-03-21",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "URL可访问；核验了标题、日期、门诊增长、地级市服务要求及非药物疗法等可见事实。",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "content": "For years, a sleep clinic in a county hospital received about 200 visits annually. That number later reached roughly 600. The change does not necessarily mean that three times as many residents suddenly developed insomnia. It may also show that more people recognize sleep problems and are willing to ask for professional help.\n\nAccess matters in that decision. Chinese health authorities required every prefecture-level city to have at least one hospital offering sleep-clinic services by the end of 2025. Some places extended the service to county hospitals. When care is nearby, a patient does not have to travel to a famous hospital in a distant city or continue suffering alone.\n\nThe wider service also changes what treatment can mean. A sleeping pill is not the only possible response. Clinics may use cognitive behavioral therapy, lifestyle changes, exercise, meditation or medical devices, depending on the patient. Such care is holistic: it considers several connected parts of a person's health rather than one symptom only.\n\nMore clinics, therefore, are useful for two reasons. They make help easier to reach, and they can replace a narrow idea of treatment with a fuller examination of why a person cannot sleep well.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "Which change in sleep care does the text explain?",
+        "options": [
+          "Why medication is the only reliable answer to insomnia",
+          "Why all sleep problems have recently tripled",
+          "Why large-city hospitals should close their sleep centers",
+          "Why wider sleep-clinic access can improve both help-seeking and treatment"
+        ],
+        "answer": "D",
+        "explanation": "全文从就医意愿、服务可及性和多元治疗三方面说明扩大睡眠门诊的意义。",
+        "evidence_text": "More clinics, therefore, are useful for two reasons. They make help easier to reach, and they can replace a narrow idea of treatment with a fuller examination of why a person cannot sleep well."
+      },
+      {
+        "type": "detail",
+        "question": "What were prefecture-level cities required to provide by the end of 2025?",
+        "options": [
+          "A free meditation class in every neighborhood",
+          "A famous specialist in every county",
+          "Three times as many hospital beds",
+          "At least one hospital with sleep-clinic services"
+        ],
+        "answer": "D",
+        "explanation": "第二段直接说明每个地级市至少要有一家医院提供睡眠门诊服务。",
+        "evidence_text": "Chinese health authorities required every prefecture-level city to have at least one hospital offering sleep-clinic services by the end of 2025."
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “holistic” most nearly mean in the passage?",
+        "options": [
+          "Designed only for young people",
+          "Available only in major cities",
+          "Limited to one medicine",
+          "Considering connected parts of health"
+        ],
+        "answer": "D",
+        "explanation": "冒号后的解释表明 holistic 指综合考虑健康中彼此关联的多个部分。",
+        "evidence_text": "Such care is holistic: it considers several connected parts of a person's health rather than one symptom only."
+      },
+      {
+        "type": "inference",
+        "question": "Why might clinic visits rise even without an equal rise in insomnia?",
+        "options": [
+          "County clinics may refuse local residents.",
+          "Patients may be more willing and able to seek help.",
+          "Hospitals may count every visitor three times.",
+          "Exercise may cause sleep disorders."
+        ],
+        "answer": "B",
+        "explanation": "文章指出增长也可能反映认知提高、求助意愿增强及服务距离缩短，而非患病人数同比增长。",
+        "evidence_text": "It may also show that more people recognize sleep problems and are willing to ask for professional help."
+      },
+      {
+        "type": "attitude",
+        "question": "Why does the passage support bringing sleep clinics closer to patients?",
+        "options": [
+          "Indifferent because treatment choices never change",
+          "Doubtful because nearby care has no practical value",
+          "Alarmed because all non-drug treatments are unsafe",
+          "Supportive because it improves access and broadens care"
+        ],
+        "answer": "D",
+        "explanation": "结尾明确肯定更多门诊在可及性与治疗观念上的双重价值。",
+        "evidence_text": "They make help easier to reach, and they can replace a narrow idea of treatment with a fuller examination of why a person cannot sleep well."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-human-sample-health-l2-01",
+    "title": "A Healthy Plate Begins Before Dinner",
+    "topic": "健康",
+    "difficulty": 2,
+    "source_id": "src-健康-02",
+    "source_name": "中国政府网英文版",
+    "source_url": "https://english.www.gov.cn/policies/policywatch/202503/19/content_WS67da21e3c6d0868f4e8f0f6b.html",
+    "source_title": "Guideline aims to promote balanced nutrition, healthier lifestyles",
+    "source_published_at": "2025-03-19",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "URL可访问；核验了标题、日期、2030目标、盐糖油与膳食纤维建议，以及全供应链思路。",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "content": "Advice about healthy eating often arrives at the dinner table: use less salt, choose fresh fruit, or carefully control the size of a meal. A national food and nutrition guideline for 2025-2030 takes a wider view. It treats the meal as the final point in a much longer system.\n\nThe guideline gives consumers clear reference points. It aims to raise daily fiber intake to 25-30 grams, limit salt to 5 grams, and keep added sugar at 25 grams. Yet information alone cannot guarantee a better diet. A family may understand the numbers but still find nutritious food expensive, unavailable or difficult to prepare.\n\nFor that reason, the plan begins before food reaches a kitchen. It connects nutrition with breeding, farming, processing, storage, transport and cooking. Research can improve the quality of products, while smarter storage may reduce waste. Portion-control tools can also turn an abstract recommendation into an action a cook can repeat. In this sense, abstract means existing mainly as an idea rather than as an immediately usable step.\n\nThis approach does not remove personal responsibility. People still decide what to buy and eat. However, it recognizes that choice is shaped by supply and price. A healthy plate is more likely when public information and the food system point in the same direction.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "Which two forces must align to produce a healthier plate?",
+        "options": [
+          "Nutrition targets should be kept secret from consumers",
+          "Food waste matters more than human health",
+          "Families should grow every food they eat",
+          "Healthy eating depends on both personal choices and the food system"
+        ],
+        "answer": "D",
+        "explanation": "文章由餐桌建议转向供应链，最后强调个人选择与食物系统需要同向作用。",
+        "evidence_text": "A healthy plate is more likely when public information and the food system point in the same direction."
+      },
+      {
+        "type": "detail",
+        "question": "What daily salt limit is mentioned?",
+        "options": [
+          "30 grams",
+          "50 grams",
+          "5 grams",
+          "25 grams"
+        ],
+        "answer": "C",
+        "explanation": "第二段明确给出每日盐摄入限制为5克。",
+        "evidence_text": "It aims to raise daily fiber intake to 25-30 grams, limit salt to 5 grams, and keep added sugar at 25 grams."
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “abstract” mean here?",
+        "options": [
+          "Easy to repeat every day",
+          "Too costly to measure",
+          "Mainly an idea, not yet a usable step",
+          "Produced on a farm"
+        ],
+        "answer": "C",
+        "explanation": "正文在该词后直接给出语境定义。",
+        "evidence_text": "In this sense, abstract means existing mainly as an idea rather than as an immediately usable step."
+      },
+      {
+        "type": "inference",
+        "question": "Why does the plan include storage and transport?",
+        "options": [
+          "Because every product must have the same price",
+          "Because consumers are unable to learn simple numbers",
+          "Because cooking should be removed from homes",
+          "Because diet is affected by how nutritious food reaches people"
+        ],
+        "answer": "D",
+        "explanation": "文章指出选择受供应和价格影响，因此储运等环节会影响健康食物是否可得。",
+        "evidence_text": "However, it recognizes that choice is shaped by supply and price."
+      },
+      {
+        "type": "attitude",
+        "question": "Where does the passage place personal responsibility for eating well?",
+        "options": [
+          "It should be replaced entirely by government action.",
+          "It has no connection with daily meals.",
+          "It matters only to food researchers.",
+          "It remains important but is not the whole explanation."
+        ],
+        "answer": "D",
+        "explanation": "作者既保留个人选择责任，又指出系统条件会塑造选择，态度是有保留的肯定。",
+        "evidence_text": "This approach does not remove personal responsibility. People still decide what to buy and eat."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-human-sample-health-l3-01",
+    "title": "What a Fitness Survey Can—and Cannot—Do",
+    "topic": "健康",
+    "difficulty": 3,
+    "source_id": "src-健康-03",
+    "source_name": "中国政府网英文版",
+    "source_url": "https://english.www.gov.cn/news/202504/22/content_WS68072ac6c6d0868f4e8f1f60.html",
+    "source_title": "6th national campaign for fitness underway",
+    "source_published_at": "2025-04-22",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "URL可访问；核验了抽样规模、年龄范围、实时上传、新指标、历次监测与个性化建议。",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "content": "A national fitness survey can look like a giant collection of pushups, body measurements and detailed questionnaires. China's sixth monitoring campaign, conducted across 31 provincial-level regions, planned to gather information from 248,000 people aged 3 to 79. But the real value of such a survey lies less in any single score than in the comparisons it makes possible.\n\nRepeated every five years, the campaign can reveal movement that an individual may not notice. The 2020 report, for example, found modest overall progress while also recording rising weight and weaker muscular strength in some groups. The latest campaign added measures related to particular exercises and required weight and body mass index. Data were uploaded to a national platform in real time for the first time, a step intended to improve authenticity. Here, authenticity refers to confidence that records reflect what was actually measured.\n\nNational patterns can guide decisions about public fitness facilities or programs. Local results can serve another purpose. At one testing site, experts offered exercise suggestions based on each person's weaknesses; one participant discovered a balance problem and planned targeted training. Thus, the same measurement may inform both a policy and a private routine.\n\nStill, a survey is a map, not the journey. It can identify a weak area, but it cannot exercise on someone's behalf. Nor does an average describe every citizen. Good monitoring therefore requires two careful moves: compare groups without hiding their differences, and connect diagnosis with realistic opportunities to act.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "Which judgment best summarizes the survey's role?",
+        "options": [
+          "The replacement of exercise by data collection",
+          "The history of one local sports center",
+          "The uses and limits of large-scale fitness monitoring",
+          "The rules of a national pushup competition"
+        ],
+        "answer": "C",
+        "explanation": "文章说明监测如何服务公共政策与个人训练，同时强调数据不能替代行动且平均数不能代表所有人。",
+        "evidence_text": "Still, a survey is a map, not the journey."
+      },
+      {
+        "type": "detail",
+        "question": "What was new about the handling of data in the latest campaign?",
+        "options": [
+          "It was kept separately by every participant.",
+          "It was uploaded in real time to a national platform.",
+          "It was collected only from senior citizens.",
+          "It excluded body weight and exercise habits."
+        ],
+        "answer": "B",
+        "explanation": "第二段直接说明首次实时上传至国家平台。",
+        "evidence_text": "Data were uploaded to a national platform in real time for the first time, a step intended to improve authenticity."
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “authenticity” refer to in this passage?",
+        "options": [
+          "The popularity of a sport",
+          "Confidence that measurements are genuine",
+          "The difficulty of a questionnaire",
+          "Agreement between every age group"
+        ],
+        "answer": "B",
+        "explanation": "同句后半部分给出了该词的明确定义。",
+        "evidence_text": "Here, authenticity refers to confidence that records reflect what was actually measured."
+      },
+      {
+        "type": "inference",
+        "question": "What does the balance-problem example demonstrate about fitness-survey data?",
+        "options": [
+          "To prove that balance is the only important fitness measure",
+          "To argue that national averages are always wrong",
+          "To suggest that experts should avoid personal advice",
+          "To show how broad data can lead to an individual action"
+        ],
+        "answer": "D",
+        "explanation": "该例承接“地方结果的另一用途”，展示测量如何转化为个人针对性训练。",
+        "evidence_text": "At one testing site, experts offered exercise suggestions based on each person's weaknesses; one participant discovered a balance problem and planned targeted training."
+      },
+      {
+        "type": "attitude",
+        "question": "How does the author assess fitness monitoring?",
+        "options": [
+          "Sufficient by itself to improve public health",
+          "Dangerous because comparisons are never fair",
+          "Useful when interpreted carefully and linked to action",
+          "Worthless unless every citizen receives one score"
+        ],
+        "answer": "C",
+        "explanation": "作者肯定监测的诊断作用，同时用两个条件限定其价值。",
+        "evidence_text": "Good monitoring therefore requires two careful moves: compare groups without hiding their differences, and connect diagnosis with realistic opportunities to act."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-human-sample-health-l4-01",
+    "title": "The Work Hidden Inside One Life-Expectancy Target",
+    "topic": "健康",
+    "difficulty": 4,
+    "source_id": "src-健康-04",
+    "source_name": "中国政府网英文版",
+    "source_url": "https://english.www.gov.cn/policies/latestreleases/202607/13/content_WS6a54d4e4c6d00ca5f9a0c287.html",
+    "source_title": "China targets average life expectancy of 80 by 2030 in new five-year health plan",
+    "source_published_at": "2026-07-13",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "URL可访问；核验了80岁目标、2025基线、控烟、全生命周期服务、基层资源、康复人才与病历共享。",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "content": "A target of 80 years is easy to repeat. It is also easy to misunderstand. China's health plan for 2026-2030 aims to raise average life expectancy from 79.25 years in 2025 to 80 by 2030. The difference appears small, yet a national average changes only when many risks are reduced across a very large population. The headline number is therefore better read as a summary of coordinated work than as a promise about any one person's lifespan.\n\nSome measures try to prevent illness before hospital treatment is needed. The plan seeks smoke-free environments and stronger cessation services, with a target of reducing smoking among people aged 15 and above to 20 percent. Other measures follow people through different stages of life: cancer screening and HPV vaccination for eligible girls, occupational-health protection, and better care for older adults with disabilities or dementia. This life-cycle approach recognizes that the most relevant risk is not identical at age 13, 40 and 80.\n\nAccess creates a second challenge. Major hospitals may offer advanced treatment, but routine prevention and rehabilitation must also be available near where people live. The plan therefore calls for locally appropriate primary-care distribution and more rehabilitation professionals. It also proposes cross-provincial sharing of records and medical images. Interoperable records—records that different systems can exchange and use—could spare patients repeated tests, although technology cannot compensate for an absent clinic or an overworked therapist.\n\nThe life-expectancy target has political force because it is measurable. Its weakness is that an average can rise while some regions or groups remain behind. Success should therefore be judged twice: first by the national figure, and then by whether preventive care, skilled workers and usable services become more evenly available.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What argument does the passage make about the 80-year target?",
+        "options": [
+          "It makes prevention and rehabilitation unnecessary.",
+          "It summarizes many connected health efforts and must be checked against fair access.",
+          "It guarantees that every citizen will live to exactly 80.",
+          "It can be achieved mainly by expanding major hospitals."
+        ],
+        "answer": "B",
+        "explanation": "文章把单一指标拆解为预防、全生命周期服务、基层可及性与公平性，并要求双重评价。",
+        "evidence_text": "The headline number is therefore better read as a summary of coordinated work than as a promise about any one person's lifespan."
+      },
+      {
+        "type": "detail",
+        "question": "Which smoking-related goal does the plan include?",
+        "options": [
+          "Measuring smoking only among older adults",
+          "Ending all tobacco sales before 2027",
+          "Providing cessation services only in major hospitals",
+          "Reducing the rate among people aged 15 and above to 20 percent"
+        ],
+        "answer": "D",
+        "explanation": "第二段明确给出15岁及以上人群吸烟率降至20%的目标。",
+        "evidence_text": "The plan seeks smoke-free environments and stronger cessation services, with a target of reducing smoking among people aged 15 and above to 20 percent."
+      },
+      {
+        "type": "word_guess",
+        "question": "What are “interoperable” records?",
+        "options": [
+          "Records available only to one local clinic",
+          "Paper records that cannot be copied",
+          "Records containing no medical images",
+          "Records that different systems can exchange and use"
+        ],
+        "answer": "D",
+        "explanation": "破折号之间直接定义了 interoperable。",
+        "evidence_text": "Interoperable records—records that different systems can exchange and use—could spare patients repeated tests, although technology cannot compensate for an absent clinic or an overworked therapist."
+      },
+      {
+        "type": "inference",
+        "question": "Why can a 0.75-year increase in national life expectancy require extensive work?",
+        "options": [
+          "Life expectancy is unrelated to public services.",
+          "The plan actually intends a much lower figure.",
+          "Moving a national average requires improvements affecting many people and risks.",
+          "The 2025 figure was calculated for only one hospital."
+        ],
+        "answer": "C",
+        "explanation": "前后句构成隐含对比：数字差距小，但改变全国平均值需要大规模、多风险协同行动。",
+        "evidence_text": "The difference appears small, yet a national average changes only when many risks are reduced across a very large population."
+      },
+      {
+        "type": "attitude",
+        "question": "What keeps a national life-expectancy average from being a complete success measure?",
+        "options": [
+          "Useful only for comparing individuals",
+          "Valuable but incomplete without distributional evidence",
+          "Meaningless under all circumstances",
+          "More important than every health service"
+        ],
+        "answer": "B",
+        "explanation": "结尾认可指标的可测量性，同时警示平均值会遮蔽落后地区或群体。",
+        "evidence_text": "Its weakness is that an average can rise while some regions or groups remain behind."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-human-sample-health-l5-01",
+    "title": "Why Prevention Must Become an Operating Principle",
+    "topic": "健康",
+    "difficulty": 5,
+    "source_id": "src-健康-05",
+    "source_name": "中国政府网英文版",
+    "source_url": "https://english.www.gov.cn/policies/latestreleases/202205/20/content_WS62874295c6d02e533532b0bd.html",
+    "source_title": "China to promote national health during 14th Five-Year Plan",
+    "source_published_at": "2022-05-20",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "URL可访问；核验了预防优先、资源差距、应急体系、心理健康、重点群体及服务创新等可见事实。",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "content": "Health policy is often judged at the hospital door: Was treatment available, quick and affordable? A 2022 national plan for the 2021-2025 period proposed a wider test. It placed prevention, emergency readiness, everyday living conditions and equitable basic services inside the same health framework. The important shift was conceptual. Health was not to be treated merely as the medical sector's product, but as a consideration running through public policy.\n\nThat principle matters because many causes of illness arise before a patient enters a clinic. Food and drug safety, working conditions, mental-health support, infection control and the physical environment shape who becomes ill and when. Monitoring and early-warning systems can also detect a threat before ordinary treatment capacity is overwhelmed. Prevention in this sense is anticipatory: it acts in view of a risk rather than waiting for damage to become fully visible.\n\nYet broad responsibility can produce a familiar administrative problem. If health belongs to every policy, each institution may assume that another one will handle it. A slogan becomes operational only when duties, indicators and channels for coordination are specified. The plan's attention to emergency mechanisms, chronic-disease management and services for women, children, older people, workers and people with disabilities illustrates the range involved; it does not by itself prove that gaps have closed.\n\nEquity complicates evaluation further. An increase in national life expectancy may coexist with unequal access between urban and rural communities or among regions and social groups. Faster registration and day-care services improve efficiency for those who reach a facility, whereas a shortage of primary care leaves a different barrier untouched. These are related achievements, not interchangeable ones.\n\nA prevention-first system should consequently be assessed through a chain of evidence: whether risks were identified, whether responsible bodies acted, whether basic services became reachable, and whether disadvantaged groups experienced improvement. The strongest promise of the plan is not a single target. It is the claim that health outcomes should be traced back to the institutions and conditions that produce them.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What is the passage's central claim?",
+        "options": [
+          "Every public institution already performs identical health duties.",
+          "Hospital speed is the only valid measure of a health system.",
+          "National averages make local evidence unnecessary.",
+          "Prevention becomes meaningful when health responsibility is translated into coordinated, equitable action."
+        ],
+        "answer": "D",
+        "explanation": "全文论证预防优先必须从概念转化为明确责任、协作、服务可及性与公平证据。",
+        "evidence_text": "A slogan becomes operational only when duties, indicators and channels for coordination are specified."
+      },
+      {
+        "type": "detail",
+        "question": "Which factor does the passage identify as shaping health before clinical treatment?",
+        "options": [
+          "Hospital decoration",
+          "Medical school rankings",
+          "The number of newspaper reports",
+          "Working conditions"
+        ],
+        "answer": "D",
+        "explanation": "第二段列出工作条件等在就医前就影响健康的因素。",
+        "evidence_text": "Food and drug safety, working conditions, mental-health support, infection control and the physical environment shape who becomes ill and when."
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “anticipatory” mean in the passage?",
+        "options": [
+          "Limited to hospital registration",
+          "Unrelated to visible damage",
+          "Responding only after treatment fails",
+          "Acting with a future risk in mind"
+        ],
+        "answer": "D",
+        "explanation": "冒号后的释义说明它指在风险完全造成损害前采取行动。",
+        "evidence_text": "Prevention in this sense is anticipatory: it acts in view of a risk rather than waiting for damage to become fully visible."
+      },
+      {
+        "type": "inference",
+        "question": "Why might declaring health to be part of every policy be insufficient?",
+        "options": [
+          "Prevention always costs more than emergency treatment.",
+          "Shared responsibility can become unclear responsibility without assigned duties.",
+          "Public policy cannot affect health conditions.",
+          "Only doctors are permitted to collect evidence."
+        ],
+        "answer": "B",
+        "explanation": "作者指出广泛责任可能导致机构互相等待，因此需要明确职责和协调渠道。",
+        "evidence_text": "If health belongs to every policy, each institution may assume that another one will handle it."
+      },
+      {
+        "type": "inference",
+        "question": "What does the contrast between faster registration and scarce primary care show?",
+        "options": [
+          "Efficiency at a facility does not automatically solve geographic or service access.",
+          "Registration should be removed from all hospitals.",
+          "Primary care and day care are the same achievement.",
+          "Rural communities do not need medical facilities."
+        ],
+        "answer": "A",
+        "explanation": "该对比区分了到院后的效率与能否获得基层服务这两个不可互换的维度。",
+        "evidence_text": "Faster registration and day-care services improve efficiency for those who reach a facility, whereas a shortage of primary care leaves a different barrier untouched."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-human-health-l1-06",
+    "title": "A Stable Fund Is a Starting Point",
+    "topic": "健康",
+    "difficulty": 1,
+    "source_id": "src-健康-06",
+    "source_name": "中国政府网英文版",
+    "source_url": "https://english.www.gov.cn/archive/statistics/202601/30/content_WS697cb0a3c6d00ca5f9a08d9e.html",
+    "source_title": "China's medical insurance fund sees stable operation",
+    "source_published_at": "2026-01-30",
+    "retrieved_at": "2026-08-29",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "content": "A medical insurance fund receives money and pays for covered care. In 2025, China's basic medical insurance fund collected about 2.95 trillion yuan and spent 2.42 trillion yuan. Because revenue was higher than expenditure, the report described the fund's operation as stable.\n\nThat description is important, but it answers only one question. It shows that the fund could meet its recorded payments during the year. It does not tell a patient which medicines were covered, how quickly a claim was handled, or whether care was easy to reach. Those experiences depend on benefit rules and local services as well as the size of the fund.\n\nThe figures also include different accounts. The pooled fund for employee insurance, including maternity insurance, received 1.83 trillion yuan and paid 1.36 trillion yuan. Maternity benefits made up 135.97 billion yuan of that spending. Pooled means shared across insured members instead of saved for one person's exclusive use.\n\nFinancial stability therefore supports medical security, but it is not the same as complete protection. A strong evaluation needs two views: whether the common fund can continue paying, and whether members receive useful care when they need it.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "Which distinction organizes the passage?",
+        "options": [
+          "The difference between hospitals and pharmacies",
+          "The difference between annual and monthly exercise",
+          "The difference between private and public transport",
+          "The difference between fund stability and patients' actual protection"
+        ],
+        "answer": "D",
+        "explanation": "文章承认收支稳定的重要性，同时指出它不能完整代表患者获得的保障。",
+        "evidence_text": "Financial stability therefore supports medical security, but it is not the same as complete protection."
+      },
+      {
+        "type": "detail",
+        "question": "How much did the basic medical insurance fund spend in 2025?",
+        "options": [
+          "2.42 trillion yuan",
+          "2.95 trillion yuan",
+          "1.36 trillion yuan",
+          "1.83 trillion yuan"
+        ],
+        "answer": "A",
+        "explanation": "首段明确给出支出约2.42万亿元。",
+        "evidence_text": "In 2025, China's basic medical insurance fund collected about 2.95 trillion yuan and spent 2.42 trillion yuan."
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “pooled” mean in this context?",
+        "options": [
+          "Counted twice in a report",
+          "Shared among insured members",
+          "Hidden from all members",
+          "Paid only to one hospital"
+        ],
+        "answer": "B",
+        "explanation": "正文直接解释 pooled 是参保人共同使用的资金。",
+        "evidence_text": "Pooled means shared across insured members instead of saved for one person's exclusive use."
+      },
+      {
+        "type": "inference",
+        "question": "Why might a financially stable fund still leave a patient dissatisfied?",
+        "options": [
+          "Coverage rules or local access may not meet that patient's needs.",
+          "Revenue must always equal expenditure exactly.",
+          "Insurance funds cannot pay for any medicine.",
+          "Maternity care is unrelated to health."
+        ],
+        "answer": "A",
+        "explanation": "第二段指出患者体验还取决于保障规则和地方服务。",
+        "evidence_text": "Those experiences depend on benefit rules and local services as well as the size of the fund."
+      },
+      {
+        "type": "attitude",
+        "question": "How does the author treat the financial figures?",
+        "options": [
+          "As proof that every medical problem is solved",
+          "As numbers with no public value",
+          "As a reason to end pooled insurance",
+          "As necessary evidence that needs service evidence beside it"
+        ],
+        "answer": "D",
+        "explanation": "作者认可财务数据，但要求同时查看参保人的实际服务。",
+        "evidence_text": "A strong evaluation needs two views: whether the common fund can continue paying, and whether members receive useful care when they need it."
+      }
+    ],
+    "source_verification": "URL可访问；已核验标题、日期与本文采用的可见事实。"
+  },
+  {
+    "corpus_id": "cet-human-health-l1-07",
+    "title": "Mental Health Help Before a Crisis",
+    "topic": "健康",
+    "difficulty": 1,
+    "source_id": "src-健康-07",
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20240514/51576986d2234a25835977eb7fd46d0a/c.html",
+    "source_title": "China Focus: Enhanced public psychological services safeguard people's health",
+    "source_published_at": "2024-05-14",
+    "retrieved_at": "2026-08-29",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "content": "Counseling often begins after a person says that something is wrong. A public psychological service system tries to act earlier. It can teach families and schools to notice difficulties, provide nearby places for discussion, and make seeking help feel ordinary rather than shameful.\n\nMore than 300 Chinese cities joined pilots for such a system from 2018. In the pilot cities, 96 percent of rural villages and urban neighborhoods had created psychological service offices after five years. Beijing's Xicheng District placed centers in all 15 neighborhoods, where residents could attend seminars, group counseling and other activities.\n\nThe local setting changes the meaning of access. Someone may avoid a distant psychiatric hospital because of travel, cost or stigma. A neighborhood center cannot replace specialist treatment for a serious condition, but it can be a first door. Staff may recognize risk, offer basic support or guide a resident toward medical care. Stigma means a negative social judgment that makes people hide a problem.\n\nChildren need several doors to work together. A 2023-2025 action plan called for cooperation among schools, families, society and public authorities. The point is not to turn every teacher or parent into a therapist. It is to make early concern easier to express and professional help easier to find.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What role does the passage give neighborhood psychological services?",
+        "options": [
+          "A system used only after every crisis",
+          "A private service for medical researchers",
+          "An accessible first step that complements specialist treatment",
+          "A complete replacement for mental-health hospitals"
+        ],
+        "answer": "C",
+        "explanation": "文章把社区服务定位为早期识别和转介的第一入口，而非替代专科。",
+        "evidence_text": "A neighborhood center cannot replace specialist treatment for a serious condition, but it can be a first door."
+      },
+      {
+        "type": "detail",
+        "question": "What share of communities in pilot cities had service offices after five years?",
+        "options": [
+          "100 percent",
+          "15 percent",
+          "40 percent",
+          "96 percent"
+        ],
+        "answer": "D",
+        "explanation": "第二段给出96%的明确数据。",
+        "evidence_text": "In the pilot cities, 96 percent of rural villages and urban neighborhoods had created psychological service offices after five years."
+      },
+      {
+        "type": "word_guess",
+        "question": "In the passage, what is “stigma”?",
+        "options": [
+          "A negative judgment that discourages openness",
+          "A medical device used in counseling",
+          "A fee charged by neighborhood centers",
+          "A type of school examination"
+        ],
+        "answer": "A",
+        "explanation": "正文直接说明污名会使人隐藏问题。",
+        "evidence_text": "Stigma means a negative social judgment that makes people hide a problem."
+      },
+      {
+        "type": "inference",
+        "question": "Why can a nearby center encourage earlier help-seeking?",
+        "options": [
+          "It guarantees that no specialist will be needed.",
+          "It prevents families from discussing concerns.",
+          "It limits services to severe emergencies.",
+          "It may reduce practical barriers and make support seem normal."
+        ],
+        "answer": "D",
+        "explanation": "文章把距离、成本和污名列为不求助的障碍，社区入口可降低这些障碍。",
+        "evidence_text": "Someone may avoid a distant psychiatric hospital because of travel, cost or stigma."
+      },
+      {
+        "type": "attitude",
+        "question": "What is the author's position on cooperation around children's mental health?",
+        "options": [
+          "Supportive only if teachers become therapists",
+          "Uncertain whether early concern has value",
+          "Supportive, while preserving the role of professionals",
+          "Opposed because parents should work alone"
+        ],
+        "answer": "C",
+        "explanation": "结尾认可多方协作，但明确不要求教师或家长充当治疗师。",
+        "evidence_text": "The point is not to turn every teacher or parent into a therapist."
+      }
+    ],
+    "source_verification": "URL可访问；已核验标题、日期与本文采用的可见事实。"
+  },
+  {
+    "corpus_id": "cet-human-health-l1-08",
+    "title": "A Quiet Image and a Wider Sleep Question",
+    "topic": "健康",
+    "difficulty": 1,
+    "source_id": "src-健康-08",
+    "source_name": "China Daily",
+    "source_url": "https://global.chinadaily.com.cn/a/202603/25/WS69c3263aa310d6866eb3fad3.html",
+    "source_title": "From mindful drops to healthier nights - Chinadaily.com.cn",
+    "source_published_at": "2026-03-25",
+    "retrieved_at": "2026-08-29",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "content": "Imagine a drop of water landing gently and spreading across the body. A meditation exercise uses this picture to move attention away from anxious thoughts at bedtime. The method is one example of growing interest in non-drug support for sleep problems.\n\nInterest does not equal proof. A calming exercise may help some people, while another person may have sleep apnea, depression, pain or a medicine-related problem that needs medical assessment. The useful question is not whether meditation is natural or fashionable. It is whether the method fits the cause and whether improvement can be observed safely.\n\nChina recognized “sleep health specialist” as a new occupation in 2025. The change reflects demand for support outside hospitals, but a new title also creates a need for clear training and referral rules. Nonclinical means not involving medical diagnosis or hospital treatment. A nonclinical worker can teach a routine or help someone record sleep habits; that worker should not pretend to diagnose a disease.\n\nSleep care works best as a ladder. Simple habits and relaxation may be a reasonable first step for ordinary restlessness. Persistent or dangerous symptoms require movement to qualified medical care. The ladder makes room for new services without asking one technique to solve every sleepless night.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What model of sleep care does the author recommend?",
+        "options": [
+          "Fashionable services without referral rules",
+          "A ladder moving from simple support to medical care when needed",
+          "One meditation method for every sleep disorder",
+          "Medication before any assessment"
+        ],
+        "answer": "B",
+        "explanation": "结尾用阶梯比喻区分普通支持与需要专业医疗的情况。",
+        "evidence_text": "Sleep care works best as a ladder."
+      },
+      {
+        "type": "detail",
+        "question": "What occupational change occurred in 2025?",
+        "options": [
+          "Sleep health specialist became a recognized occupation.",
+          "All sleep clinics became meditation centers.",
+          "Doctors stopped assessing sleep apnea.",
+          "Nonclinical workers received diagnostic authority."
+        ],
+        "answer": "A",
+        "explanation": "第三段明确说明2025年新增职业认定。",
+        "evidence_text": "China recognized “sleep health specialist” as a new occupation in 2025."
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “nonclinical” mean here?",
+        "options": [
+          "Unable to involve any human contact",
+          "Proven to cure every disorder",
+          "Restricted to prescription drugs",
+          "Outside medical diagnosis or hospital treatment"
+        ],
+        "answer": "D",
+        "explanation": "正文直接给出该词的语境解释。",
+        "evidence_text": "Nonclinical means not involving medical diagnosis or hospital treatment."
+      },
+      {
+        "type": "inference",
+        "question": "Why are referral rules important for sleep specialists?",
+        "options": [
+          "A new occupation removes the need for doctors.",
+          "Sleep habits cannot be recorded outside hospitals.",
+          "Some symptoms may indicate conditions needing medical assessment.",
+          "Every relaxing exercise is medically dangerous."
+        ],
+        "answer": "C",
+        "explanation": "文章指出不同原因需要不同处理，非临床人员必须知道何时转介。",
+        "evidence_text": "A nonclinical worker can teach a routine or help someone record sleep habits; that worker should not pretend to diagnose a disease."
+      },
+      {
+        "type": "attitude",
+        "question": "How does the passage view meditation for sleep?",
+        "options": [
+          "Appropriate only after long-term medication",
+          "Potentially useful, but dependent on cause and evidence",
+          "Certain to cure serious sleep disorders",
+          "Valueless because it uses imagination"
+        ],
+        "answer": "B",
+        "explanation": "作者不否定冥想，但用适配病因和安全观察限定其使用。",
+        "evidence_text": "It is whether the method fits the cause and whether improvement can be observed safely."
+      }
+    ],
+    "source_verification": "URL可访问；已核验标题、日期与本文采用的可见事实。"
+  },
+  {
+    "corpus_id": "cet-human-health-l1-09",
+    "title": "A Health Device at an Expo Is Still a Question",
+    "topic": "健康",
+    "difficulty": 1,
+    "source_id": "src-健康-09",
+    "source_name": "中国政府网英文版",
+    "source_url": "https://english.www.gov.cn/news/202504/13/content_WS67fba05dc6d0868f4e8f1a48.html",
+    "source_title": "China International Consumer Products Expo unveils tech-driven future",
+    "source_published_at": "2025-04-13",
+    "retrieved_at": "2026-08-29",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "content": "At a consumer expo, a continuous glucose monitor can look like a promise: more information, better health. Light-therapy glasses, massage robots and brain-computer interfaces create a similar impression. They turn invisible body signals into numbers or offer a new way to respond.\n\nAn exhibition is good at showing possibility. It is not designed to prove long-term benefit for every user. A device may work accurately in a demonstration but still be costly, uncomfortable or difficult to interpret at home. A number can also worry a healthy person or encourage treatment without a doctor's advice.\n\nThis does not make health technology unhelpful. Continuous monitoring can reveal patterns that a single clinic test misses. Accessible interfaces may assist people whose movement or communication is limited. The key word is validation: careful testing that checks whether a product does what it claims for the people who will actually use it.\n\nConsumers therefore need three questions after the excitement of a display. What problem is this device meant to solve? What evidence supports its use? Who can explain the result or respond when the reading is unusual? Innovation becomes healthcare only when an attractive object fits a safe system of use.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What warning does the passage give about expo health devices?",
+        "options": [
+          "A striking demonstration is not enough to establish safe everyday value.",
+          "All health technologies should be rejected.",
+          "Consumer expos should display only medicine.",
+          "Body signals should never be measured."
+        ],
+        "answer": "A",
+        "explanation": "全文区分展览展示的可能性与真实长期使用所需证据和支持。",
+        "evidence_text": "An exhibition is good at showing possibility. It is not designed to prove long-term benefit for every user."
+      },
+      {
+        "type": "detail",
+        "question": "Which benefit of continuous monitoring is identified?",
+        "options": [
+          "It removes every need for interpretation.",
+          "It guarantees low cost at home.",
+          "It prevents unusual readings.",
+          "It may reveal patterns missed by one clinic test."
+        ],
+        "answer": "D",
+        "explanation": "第三段直接说明持续监测可能发现单次检查遗漏的规律。",
+        "evidence_text": "Continuous monitoring can reveal patterns that a single clinic test misses."
+      },
+      {
+        "type": "word_guess",
+        "question": "What is “validation” according to the passage?",
+        "options": [
+          "Automatic approval by consumers",
+          "A price comparison between devices",
+          "Careful testing of a product's claims and users",
+          "A colorful presentation at an expo"
+        ],
+        "answer": "C",
+        "explanation": "冒号后给出验证的完整定义。",
+        "evidence_text": "The key word is validation: careful testing that checks whether a product does what it claims for the people who will actually use it."
+      },
+      {
+        "type": "inference",
+        "question": "What concern motivates the question about explaining an unusual result?",
+        "options": [
+          "Exhibitors must provide lifelong treatment.",
+          "Data can create decisions or anxiety and may require professional support.",
+          "Every device reading is wrong.",
+          "Consumers cannot understand any number."
+        ],
+        "answer": "B",
+        "explanation": "文章指出数字可能引发担忧或不当治疗，因此异常结果需要解释和响应。",
+        "evidence_text": "A number can also worry a healthy person or encourage treatment without a doctor's advice."
+      },
+      {
+        "type": "attitude",
+        "question": "Which phrase best captures the author's stance?",
+        "options": [
+          "Open to innovation, demanding evidence and safe use",
+          "Hostile to all consumer technology",
+          "Certain that display quality equals health benefit",
+          "Interested only in product appearance"
+        ],
+        "answer": "A",
+        "explanation": "作者承认技术用途，同时设置验证和使用系统的条件。",
+        "evidence_text": "Innovation becomes healthcare only when an attractive object fits a safe system of use."
+      }
+    ],
+    "source_verification": "URL可访问；已核验标题、日期与本文采用的可见事实。"
+  },
+  {
+    "corpus_id": "cet-human-health-l2-10",
+    "title": "Coverage Is Large; Usefulness Is Personal",
+    "topic": "健康",
+    "difficulty": 2,
+    "source_id": "src-健康-10",
+    "source_name": "中国政府网英文版",
+    "source_url": "https://english.www.gov.cn/archive/statistics/202603/16/content_WS69b776b7c6d00ca5f9a09ea3.html",
+    "source_title": "China's basic medical insurance covers 1.33 bln people",
+    "source_published_at": "2026-03-16",
+    "retrieved_at": "2026-08-29",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "content": "About 1.33 billion people were enrolled in China's basic medical insurance at the end of 2025, representing 95 percent of the population. The scale makes the system a broad social platform. It also makes a simple percentage easy to overread.\n\nEnrollment answers whether a person is inside the system. It does not fully answer what happens after illness. In 2025, insured people made 22.23 billion visits under the schemes, and direct settlement for treatment outside a patient's home province reached 541 million cases. Direct settlement matters because it can spare a patient from paying the whole bill first and seeking reimbursement later. Reimbursement is repayment of an eligible cost under the insurance rules.\n\nThe system also negotiated lower prices for medicines and medical supplies. Lower prices can stretch a common fund and reduce individual payments, yet access still depends on whether a needed item is covered and available locally. A national total cannot show every difference among diseases, hospitals or regions.\n\nFor that reason, coverage should be read as an entrance measure, not a complete score of care. The next measures concern depth: the share of a bill paid, the services included, the ease of settlement and the protection offered to people with high medical needs. A very wide doorway is valuable, but people also need a workable path once they enter.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "Why is medical-insurance coverage treated as only an entrance measure?",
+        "options": [
+          "Insurance is useful only at hospital entrances.",
+          "Coverage rates describe every regional difference.",
+          "Patients must enter a system before becoming ill.",
+          "Enrollment shows inclusion but not the full quality or depth of benefits."
+        ],
+        "answer": "D",
+        "explanation": "文章区分参保广度与待遇深度、结算便利及实际可得服务。",
+        "evidence_text": "For that reason, coverage should be read as an entrance measure, not a complete score of care."
+      },
+      {
+        "type": "detail",
+        "question": "What proportion of the population was covered at the end of 2025?",
+        "options": [
+          "95 percent",
+          "100 percent",
+          "54.1 percent",
+          "75 percent"
+        ],
+        "answer": "A",
+        "explanation": "首句给出覆盖率为95%。",
+        "evidence_text": "About 1.33 billion people were enrolled in China's basic medical insurance at the end of 2025, representing 95 percent of the population."
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “reimbursement” mean?",
+        "options": [
+          "A count of medical visits",
+          "Repayment of an eligible expense",
+          "A hospital's original price",
+          "A refusal to cover treatment"
+        ],
+        "answer": "B",
+        "explanation": "正文直接解释为按规则偿还符合条件的费用。",
+        "evidence_text": "Reimbursement is repayment of an eligible cost under the insurance rules."
+      },
+      {
+        "type": "inference",
+        "question": "Why can direct settlement help a patient traveling outside the home province?",
+        "options": [
+          "It may reduce the need to advance the entire cost.",
+          "It guarantees that every treatment is free.",
+          "It removes all differences in local supply.",
+          "It lowers the national enrollment rate."
+        ],
+        "answer": "A",
+        "explanation": "直接结算可避免患者先全额垫付再报销。",
+        "evidence_text": "Direct settlement matters because it can spare a patient from paying the whole bill first and seeking reimbursement later."
+      },
+      {
+        "type": "attitude",
+        "question": "What limitation remains behind the reported 95-percent insurance coverage?",
+        "options": [
+          "Too small to have social importance",
+          "Proof that benefit rules no longer matter",
+          "Meaningless because visits are not counted",
+          "Impressive, but insufficient as a complete performance measure"
+        ],
+        "answer": "D",
+        "explanation": "作者承认规模价值，同时要求继续审视待遇深度。",
+        "evidence_text": "The scale makes the system a broad social platform. It also makes a simple percentage easy to overread."
+      }
+    ],
+    "source_verification": "URL可访问；已核验标题、日期与本文采用的可见事实。"
+  },
+  {
+    "corpus_id": "cet-human-health-l2-11",
+    "title": "Knowing Health Information Is a Practical Skill",
+    "topic": "健康",
+    "difficulty": 2,
+    "source_id": "src-健康-11",
+    "source_name": "中国政府网英文版",
+    "source_url": "https://english.www.gov.cn/archive/statistics/202601/07/content_WS695e1c8ec6d00ca5f9a0877d.html",
+    "source_title": "China reports steady growth of health literacy",
+    "source_published_at": "2026-01-07",
+    "retrieved_at": "2026-08-29",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "content": "Health information is everywhere, but receiving it is not the same as using it. A national survey reported that China's health literacy rate reached 33.69 percent in 2025, up 1.82 percentage points in one year. The measure concerns whether people can obtain, understand and apply information that protects health.\n\nThat sequence contains three different barriers. A rural resident may not receive a clear message. Another person may read a warning but struggle with technical language. Someone else may understand the advice yet lack money, time or a nearby service for acting on it. A leaflet can help with the second barrier, but not necessarily the third.\n\nThe survey included 70,451 valid questionnaires from permanent residents aged 15 to 69 in 336 districts and counties. Urban literacy was 36.68 percent, compared with 30.58 percent in rural areas. The gap offers direction for policy, although it should not be used to label rural residents as less responsible. Literacy is an interaction between individual skills and the clarity and accessibility of institutions. Accessible here means understandable and practically reachable.\n\nProgress should therefore be tested beyond remembering facts. Can a person compare two claims, follow medicine instructions, recognize when professional help is needed and locate that help? A rising percentage is encouraging when it represents these real decisions rather than successful guessing on a questionnaire.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "How does the passage interpret health literacy?",
+        "options": [
+          "As personal responsibility unrelated to institutions",
+          "As a score limited to knowledge of medicines",
+          "As the practical ability to find, understand and act on health information",
+          "As simple exposure to a large number of leaflets"
+        ],
+        "answer": "C",
+        "explanation": "文章把健康素养拆分为获取、理解和行动，并强调制度可及性。",
+        "evidence_text": "The measure concerns whether people can obtain, understand and apply information that protects health."
+      },
+      {
+        "type": "detail",
+        "question": "How many valid questionnaires were included?",
+        "options": [
+          "336,000",
+          "33,690",
+          "36,680",
+          "70,451"
+        ],
+        "answer": "D",
+        "explanation": "第三段明确给出70,451份有效问卷。",
+        "evidence_text": "The survey included 70,451 valid questionnaires from permanent residents aged 15 to 69 in 336 districts and counties."
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “accessible” include in the author's definition?",
+        "options": [
+          "Being understandable and practically reachable",
+          "Being available only in cities",
+          "Being difficult enough for specialists",
+          "Being printed in technical language"
+        ],
+        "answer": "A",
+        "explanation": "正文直接定义 accessible 的两个方面。",
+        "evidence_text": "Accessible here means understandable and practically reachable."
+      },
+      {
+        "type": "inference",
+        "question": "Why does the writer say a leaflet may not solve the third barrier?",
+        "options": [
+          "Printed information can never improve understanding.",
+          "All readers already know what action to take.",
+          "Questionnaires prevent people from seeing doctors.",
+          "Understanding advice does not create money, time or local services."
+        ],
+        "answer": "D",
+        "explanation": "第三类障碍是采取行动所需的资源和服务，单纯信息材料无法自动补齐。",
+        "evidence_text": "Someone else may understand the advice yet lack money, time or a nearby service for acting on it."
+      },
+      {
+        "type": "attitude",
+        "question": "What is the author's judgment of the rising rate?",
+        "options": [
+          "Unhelpful because knowledge never matters",
+          "A reason to blame lower-scoring groups",
+          "Encouraging if it corresponds to better real-life decisions",
+          "Conclusive proof that every gap has disappeared"
+        ],
+        "answer": "C",
+        "explanation": "结尾有条件地肯定增长，条件是它反映真实决策能力。",
+        "evidence_text": "A rising percentage is encouraging when it represents these real decisions rather than successful guessing on a questionnaire."
+      }
+    ],
+    "source_verification": "URL可访问；已核验标题、日期与本文采用的可见事实。"
+  },
+  {
+    "corpus_id": "cet-human-health-l2-12",
+    "title": "What a Wellbeing Score Leaves Visible",
+    "topic": "健康",
+    "difficulty": 2,
+    "source_id": "src-健康-12",
+    "source_name": "China Daily",
+    "source_url": "https://global.chinadaily.com.cn/a/202509/24/WS68d39891a3108622abca29fd.html",
+    "source_title": "Chinese wellbeing scores 70/100, Tsinghua report finds - Chinadaily.com.cn",
+    "source_published_at": "2025-09-24",
+    "retrieved_at": "2026-08-29",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "content": "A survey of more than 50,000 people gave overall wellbeing in China a score of 70 out of 100. The single number is memorable. The three parts behind it are more revealing: physical wellbeing averaged 72, mental wellbeing 71 and social wellbeing 66.\n\nThe lower social score does not prove that every respondent felt lonely. An average combines people with very different lives. It does, however, invite questions about relationships, community participation and whether people can ask others for support. Those questions might be missed if attention stopped at the total of 70.\n\nThe survey also asked which aspects people had focused on during the previous year. Mental wellbeing was selected by 62.9 percent, physical wellbeing by 53.8 percent and social wellbeing by 24.3 percent. Focus is not the same as success. A person can care deeply about sleep or stress precisely because it remains difficult. Likewise, limited attention to social health may reflect satisfaction, neglect or a lack of clear ways to improve it.\n\nA composite score combines several measures into one result. It helps the public see a broad pattern, but the components are needed to decide where action may be useful. The best reading of 70 is therefore neither celebration nor alarm. It is an invitation to open the number, compare its parts and investigate the people whose experiences an average hides.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What reading strategy does the passage recommend for wellbeing scores?",
+        "options": [
+          "Assume that attention always brings success",
+          "Examine the components and variation behind the total",
+          "Treat the total as a description of every person",
+          "Ignore social wellbeing because it is lowest"
+        ],
+        "answer": "B",
+        "explanation": "文章主张拆开综合分数、比较组成并关注平均数掩盖的差异。",
+        "evidence_text": "It is an invitation to open the number, compare its parts and investigate the people whose experiences an average hides."
+      },
+      {
+        "type": "detail",
+        "question": "Which dimension had the lowest average?",
+        "options": [
+          "Physical wellbeing",
+          "Mental wellbeing",
+          "Social wellbeing",
+          "Financial wellbeing"
+        ],
+        "answer": "C",
+        "explanation": "第一段列出的社会福祉平均分66最低。",
+        "evidence_text": "The three parts behind it are more revealing: physical wellbeing averaged 72, mental wellbeing 71 and social wellbeing 66."
+      },
+      {
+        "type": "word_guess",
+        "question": "What is a “composite” score?",
+        "options": [
+          "A score reported by one person",
+          "A measure of social life only",
+          "An answer without any calculation",
+          "A result formed from several measures"
+        ],
+        "answer": "D",
+        "explanation": "第四段直接给出 composite 的定义。",
+        "evidence_text": "A composite score combines several measures into one result."
+      },
+      {
+        "type": "inference",
+        "question": "Why can strong focus on mental wellbeing indicate a problem rather than success?",
+        "options": [
+          "The survey excluded people without stress.",
+          "A lower percentage always means better health.",
+          "People may focus on an area because they are struggling with it.",
+          "Mental health cannot improve through attention."
+        ],
+        "answer": "C",
+        "explanation": "文中明确指出关注可能源于该问题仍然困难。",
+        "evidence_text": "A person can care deeply about sleep or stress precisely because it remains difficult."
+      },
+      {
+        "type": "attitude",
+        "question": "What role should the wellbeing score of 70 play for readers?",
+        "options": [
+          "Too simple to have any informational value",
+          "Useful as an opening for inquiry, not a final verdict",
+          "A complete reason for celebration",
+          "Proof of widespread loneliness"
+        ],
+        "answer": "B",
+        "explanation": "作者拒绝简单庆祝或恐慌，把总分视为进一步分析的入口。",
+        "evidence_text": "The best reading of 70 is therefore neither celebration nor alarm."
+      }
+    ],
+    "source_verification": "URL可访问；已核验标题、日期与本文采用的可见事实。"
+  },
+  {
+    "corpus_id": "cet-human-health-l2-13",
+    "title": "A Career Ladder for Better Elderly Care",
+    "topic": "健康",
+    "difficulty": 2,
+    "source_id": "src-健康-13",
+    "source_name": "中国政府网英文版",
+    "source_url": "https://english.www.gov.cn/policies/policywatch/202504/15/content_WS67fdc04ec6d0868f4e8f1b40.html",
+    "source_title": "National guideline for elderly care established",
+    "source_published_at": "2025-04-15",
+    "retrieved_at": "2026-08-29",
+    "source_replacement_note": "原清单为综合评估PDF且标题不可用于健康细分策展，改用同白名单中可直接核验的老年照护技能指南。",
+    "adaptation_note": "题材参考替换后的权威来源公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "content": "Helping an older person bathe, move or eat safely requires more than kindness. It requires observation, technique and judgment. China's first national guideline for evaluating elderly care workers creates eight skill levels, from apprentice to chief skilled master. It also aims for more than 80 percent of workers to hold basic competence certificates by 2030.\n\nA certificate can serve two audiences. Families gain a clearer signal when choosing a worker, while employees gain a visible route for developing a career. The route matters in a field where difficult physical and emotional work may otherwise look like a job with little progression. Competence means the demonstrated ability to perform work to an agreed standard.\n\nStandards, however, can fail if they become a paper exercise. A written test cannot fully show whether someone can communicate with a person who has dementia, notice a change in breathing or protect dignity during personal care. Assessment should therefore include observed practice, feedback and continued training. Employers must also provide enough time, equipment and staffing for trained workers to use what they know.\n\nProfessionalization is the process of building recognized skills, standards and career paths for an occupation. It can improve care and respect for workers, but certification alone cannot fill a large labor shortage. Pay, working conditions and social recognition influence whether capable people enter the field and remain there.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What can certification achieve—and not achieve—for elderly-care work?",
+        "options": [
+          "It can raise quality and career status but needs practical assessment and decent work conditions.",
+          "It should rely entirely on a written examination.",
+          "It will automatically remove the worker shortage.",
+          "It matters only to families, not employees."
+        ],
+        "answer": "A",
+        "explanation": "全文既说明证书的信号和职业阶梯价值，也强调实操、培训与工作条件。",
+        "evidence_text": "It can improve care and respect for workers, but certification alone cannot fill a large labor shortage."
+      },
+      {
+        "type": "detail",
+        "question": "How many skill levels does the guideline establish?",
+        "options": [
+          "Six",
+          "Eight",
+          "Ten",
+          "Four"
+        ],
+        "answer": "B",
+        "explanation": "第一段明确说明八个技能等级。",
+        "evidence_text": "China's first national guideline for evaluating elderly care workers creates eight skill levels, from apprentice to chief skilled master."
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “competence” mean in the passage?",
+        "options": [
+          "The number of years in one job",
+          "A family's opinion of a worker",
+          "Demonstrated ability to meet a work standard",
+          "A promise to accept low pay"
+        ],
+        "answer": "C",
+        "explanation": "正文直接定义了 competence。",
+        "evidence_text": "Competence means the demonstrated ability to perform work to an agreed standard."
+      },
+      {
+        "type": "inference",
+        "question": "Why does the author prefer observed practice to a written test alone?",
+        "options": [
+          "Families should issue certificates themselves.",
+          "Important care skills involve behavior and judgment in real situations.",
+          "Care workers never need factual knowledge.",
+          "Written tests are always more expensive."
+        ],
+        "answer": "B",
+        "explanation": "照护中的沟通、观察与尊严保护需要在实际操作中检验。",
+        "evidence_text": "A written test cannot fully show whether someone can communicate with a person who has dementia, notice a change in breathing or protect dignity during personal care."
+      },
+      {
+        "type": "attitude",
+        "question": "What is the author's stance toward professionalization?",
+        "options": [
+          "Supportive but aware of what standards cannot solve alone",
+          "Hostile because care needs no skill",
+          "Certain that certificates determine retention",
+          "Indifferent to working conditions"
+        ],
+        "answer": "A",
+        "explanation": "作者认可专业化，同时指出薪酬、条件和社会认可仍会影响从业者。",
+        "evidence_text": "Pay, working conditions and social recognition influence whether capable people enter the field and remain there."
+      }
+    ],
+    "source_verification": "原候选判废并换源；替换URL已核验标题、日期和可见事实。原清单为综合评估PDF且标题不可用于健康细分策展，改用同白名单中可直接核验的老年照护技能指南。"
+  },
+  {
+    "corpus_id": "cet-human-health-l3-14",
+    "title": "Why the Nearest Clinic Needs a Clear Job",
+    "topic": "健康",
+    "difficulty": 3,
+    "source_id": "src-健康-14",
+    "source_name": "中国政府网英文版",
+    "source_url": "https://english.www.gov.cn/policies/policywatch/202604/14/content_WS69ddd3cdc6d00ca5f9a0a632.html",
+    "source_title": "Primary healthcare to get shot in arm",
+    "source_published_at": "2026-04-14",
+    "retrieved_at": "2026-08-29",
+    "source_replacement_note": "原URL重定向政府网首页且无健康正文，改用同域可核验的分级诊疗政策报道。",
+    "adaptation_note": "题材参考替换后的权威来源公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "content": "More than 90 percent of Chinese residents can reach the nearest medical provider within 15 minutes, according to a 2026 policy report. Distance, however, is only one part of access. A nearby clinic has limited value if it cannot manage a common illness, obtain the right medicine or arrange a reliable referral.\n\nA tiered system gives different institutions different jobs. Community facilities are expected to handle common and chronic conditions. Secondary hospitals can add rehabilitation, nursing and palliative services, while tertiary hospitals concentrate on critical or complex cases. In principle, this division prevents a famous hospital from being crowded with problems that could be treated locally. It also allows specialists to support primary teams rather than replace them.\n\nThe flow must work in both directions. A patient whose condition becomes complicated needs a prompt move upward. After major treatment, that person may need to return to a local facility for rehabilitation or long-term follow-up. Between 2020 and 2025, two-way referrals reportedly rose by more than 50 percent. Two-way means that transfer can occur both toward specialist care and back toward community management.\n\nCapacity remains the hinge. In 2025, primary institutions handled 5.56 billion visits, or 52.6 percent of the national total. High volume does not itself establish quality. Local staff need training, medicine coordination and support from larger hospitals; patients need records that travel with them.\n\nThe success of tiered care is therefore not captured by a map of facilities. It appears in a patient's path: receiving appropriate care at the lowest effective level, moving without delay when risk rises, and returning home with continuing support rather than falling between institutions.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What condition does the author place on geographic access?",
+        "options": [
+          "Every clinic must perform complex surgery.",
+          "Distance is the only barrier that matters.",
+          "Tertiary hospitals should manage all chronic follow-up.",
+          "Nearby facilities must have defined capacity and dependable referral links."
+        ],
+        "answer": "D",
+        "explanation": "文章强调“近”必须与能力、药物和转诊路径结合。",
+        "evidence_text": "A nearby clinic has limited value if it cannot manage a common illness, obtain the right medicine or arrange a reliable referral."
+      },
+      {
+        "type": "detail",
+        "question": "What share of national visits did primary institutions handle in 2025?",
+        "options": [
+          "52.6 percent",
+          "90 percent",
+          "15 percent",
+          "50 percent"
+        ],
+        "answer": "A",
+        "explanation": "第四段给出52.6%的比例。",
+        "evidence_text": "In 2025, primary institutions handled 5.56 billion visits, or 52.6 percent of the national total."
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “two-way” describe in the referral system?",
+        "options": [
+          "Travel to two different provinces",
+          "Movement to specialist care and back to local management",
+          "Communication between two patients",
+          "A choice between medicine and surgery"
+        ],
+        "answer": "B",
+        "explanation": "正文直接说明上下转诊的双向含义。",
+        "evidence_text": "Two-way means that transfer can occur both toward specialist care and back toward community management."
+      },
+      {
+        "type": "inference",
+        "question": "Why might a patient return to a community facility after major treatment?",
+        "options": [
+          "Rehabilitation and long-term follow-up may be delivered closer to home.",
+          "The specialist hospital has no role in complex cases.",
+          "Medical records should remain at the tertiary hospital.",
+          "A local clinic can reverse every serious illness."
+        ],
+        "answer": "A",
+        "explanation": "第三段明确把康复和长期随访作为下转后的需要。",
+        "evidence_text": "After major treatment, that person may need to return to a local facility for rehabilitation or long-term follow-up."
+      },
+      {
+        "type": "attitude",
+        "question": "How does the author use the high volume of primary-care visits?",
+        "options": [
+          "As final proof of excellent care",
+          "As a reason to close secondary hospitals",
+          "As evidence that referrals are unnecessary",
+          "As evidence of scale that still requires quality checks"
+        ],
+        "answer": "D",
+        "explanation": "作者紧接着指出高数量本身不能确立质量。",
+        "evidence_text": "High volume does not itself establish quality."
+      }
+    ],
+    "source_verification": "原候选判废并换源；替换URL已核验标题、日期和可见事实。原URL重定向政府网首页且无健康正文，改用同域可核验的分级诊疗政策报道。"
+  },
+  {
+    "corpus_id": "cet-human-health-l3-15",
+    "title": "Finding Dementia Before a Family Reaches Crisis",
+    "topic": "健康",
+    "difficulty": 3,
+    "source_id": "src-健康-15",
+    "source_name": "中国政府网英文版",
+    "source_url": "https://english.www.gov.cn/english.www.gov.cn/news/202501/04/content_WS6778d68fc6d0868f4e8ee83a.html",
+    "source_title": "China launches action plan to tackle dementia amid aging population challenge",
+    "source_published_at": "2025-01-04",
+    "retrieved_at": "2026-08-29",
+    "source_replacement_note": "原清单PDF为宏观规划报告且非健康专文，改用同白名单可核验的失智症行动计划报道。",
+    "adaptation_note": "题材参考替换后的权威来源公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "content": "Dementia often enters public attention through a crisis: an older person gets lost, leaves a stove on or can no longer recognize a relative. A national action plan announced in 2025 attempts to move attention earlier. By 2030, it seeks a continuous system covering prevention, screening, diagnosis, treatment, rehabilitation and care.\n\nEarly screening has a particular purpose. Forgetfulness can be dismissed as normal aging, so a person may reach specialist care only after daily function has declined sharply. A short cognitive check cannot diagnose dementia by itself, but it can identify someone who needs fuller assessment. Screening is the preliminary search for possible risk among people who may not yet have a confirmed condition.\n\nThe plan also addresses what happens after diagnosis. It proposes dedicated dementia units in half of care institutions that have more than 100 beds and adequate service capacity. It sets a cumulative target of training 15 million dementia care personnel by 2030. These two goals acknowledge that diagnosis without suitable care can simply transfer anxiety from the clinic to the family.\n\nNumbers require careful interpretation. A target for trained personnel may count brief courses and advanced professional preparation together unless standards are clear. Similarly, creating a unit says little about its staffing, activities or respect for residents. Families need practical guidance, respite and continuity, not only a labeled room.\n\nThe plan's strongest feature is its chain rather than any single target. Prevention cannot eliminate every case, screening is not diagnosis, and diagnosis is not care. Linking the stages makes it less likely that an older person will be identified at one point and abandoned before the next.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "Why does the passage emphasize a chain of dementia services?",
+        "options": [
+          "Prevention can eliminate every case.",
+          "Families need only a labeled care unit.",
+          "Each stage has limits and must connect to the next stage.",
+          "Screening can replace diagnosis and care."
+        ],
+        "answer": "C",
+        "explanation": "文章逐层区分预防、筛查、诊断和照护，中心是阶段衔接。",
+        "evidence_text": "Prevention cannot eliminate every case, screening is not diagnosis, and diagnosis is not care."
+      },
+      {
+        "type": "detail",
+        "question": "What training target is mentioned for 2030?",
+        "options": [
+          "One hundred care institutions",
+          "One million family doctors",
+          "Fifteen million dementia care personnel",
+          "Half a million neurologists"
+        ],
+        "answer": "C",
+        "explanation": "第三段给出累计培训1500万照护人员的目标。",
+        "evidence_text": "It sets a cumulative target of training 15 million dementia care personnel by 2030."
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “screening” mean in this context?",
+        "options": [
+          "An initial search for possible risk",
+          "A final confirmation of dementia",
+          "A residential care service",
+          "A treatment that reverses memory loss"
+        ],
+        "answer": "A",
+        "explanation": "正文直接说明筛查是对潜在风险的初步寻找。",
+        "evidence_text": "Screening is the preliminary search for possible risk among people who may not yet have a confirmed condition."
+      },
+      {
+        "type": "inference",
+        "question": "Why can diagnosis alone increase family anxiety?",
+        "options": [
+          "Diagnosis always makes symptoms worse.",
+          "Care institutions refuse diagnosed residents.",
+          "Screening results are never explained.",
+          "Families may learn of the condition without receiving usable care support."
+        ],
+        "answer": "D",
+        "explanation": "文中指出如果没有合适照护，诊断只是把压力从诊室转给家庭。",
+        "evidence_text": "These two goals acknowledge that diagnosis without suitable care can simply transfer anxiety from the clinic to the family."
+      },
+      {
+        "type": "attitude",
+        "question": "When do trained-personnel targets become meaningful in dementia services?",
+        "options": [
+          "Certain to describe every family's experience",
+          "More important than continuity of care",
+          "Useful, but meaningful only with clear standards and service quality",
+          "Unnecessary because plans need no measurement"
+        ],
+        "answer": "C",
+        "explanation": "第四段质疑培训口径和挂牌单位的实际质量，态度审慎。",
+        "evidence_text": "A target for trained personnel may count brief courses and advanced professional preparation together unless standards are clear."
+      }
+    ],
+    "source_verification": "原候选判废并换源；替换URL已核验标题、日期和可见事实。原清单PDF为宏观规划报告且非健康专文，改用同白名单可核验的失智症行动计划报道。"
+  },
+  {
+    "corpus_id": "cet-human-health-l3-16",
+    "title": "When Weight Control Becomes Public Health",
+    "topic": "健康",
+    "difficulty": 3,
+    "source_id": "src-健康-16",
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20250316/3acec5e7186e494cb667207ccfc57279/c.html",
+    "source_title": "China Focus: Losing pounds goes viral amid China's wellness wave",
+    "source_published_at": "2025-03-16",
+    "retrieved_at": "2026-08-29",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "content": "A playful online slogan about losing weight can attract attention that a medical warning cannot. In 2025, discussion of new weight-management clinics spread widely on Chinese social media as authorities shifted emphasis from treating disease toward protecting health earlier. The public response made obesity visible, but visibility can push in two directions.\n\nOne direction is constructive. More than half of Chinese adults were reported to be overweight or obese, and the rate was projected to reach 70.5 percent by 2030 if unchecked. Excess weight raises the risk of diabetes and high blood pressure. Multidisciplinary clinics can connect nutrition, endocrinology, exercise and other services instead of offering a single quick solution. Public interest may also support ordinary habits: 49.6 percent of residents took part in sports and fitness activities in 2024, considerably more than in 2018.\n\nThe other direction is commercial and social pressure. A popular campaign may persuade a healthy person that a smaller body is automatically a healthier body. Clinics may over-treat, while sellers attach health claims to fashionable foods or services. Medicalization occurs when a broad human condition is increasingly defined and managed as a medical problem. It can bring expert help to genuine risk, yet it can also narrow attention to weight alone.\n\nA responsible campaign should therefore separate health indicators from appearance. Waist measures, blood pressure, metabolism, sleep and daily function may matter alongside body weight. Professional services should assess complications and long-term behavior, while public messages avoid shame. Going viral is useful only if attention develops into informed, sustainable action rather than a rush toward the newest treatment.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What tension in weight-control campaigns does the passage explore?",
+        "options": [
+          "They prove that body weight is the sole health indicator.",
+          "They can support prevention but also encourage pressure and over-treatment.",
+          "They must choose between exercise and all medical care.",
+          "They are useful only when they avoid public attention."
+        ],
+        "answer": "B",
+        "explanation": "文章分别分析公共关注的建设性方向和商业化、审美压力方向。",
+        "evidence_text": "The public response made obesity visible, but visibility can push in two directions."
+      },
+      {
+        "type": "detail",
+        "question": "What participation figure is reported for sports and fitness in 2024?",
+        "options": [
+          "18.7 percent",
+          "49.6 percent",
+          "50.5 percent",
+          "70.5 percent"
+        ],
+        "answer": "B",
+        "explanation": "第二段给出49.6%的参与比例。",
+        "evidence_text": "Public interest may also support ordinary habits: 49.6 percent of residents took part in sports and fitness activities in 2024, considerably more than in 2018."
+      },
+      {
+        "type": "word_guess",
+        "question": "What is “medicalization”?",
+        "options": [
+          "Removing doctors from public-health programs",
+          "Measuring exercise participation",
+          "Making every treatment free",
+          "Defining and managing more of life as a medical problem"
+        ],
+        "answer": "D",
+        "explanation": "正文直接定义 medicalization。",
+        "evidence_text": "Medicalization occurs when a broad human condition is increasingly defined and managed as a medical problem."
+      },
+      {
+        "type": "inference",
+        "question": "Why does the author list sleep and daily function beside weight?",
+        "options": [
+          "Body weight has no medical relevance.",
+          "Daily function can be measured only in hospitals.",
+          "Health assessment should not be reduced to appearance or one number.",
+          "Sleep always determines a person's weight."
+        ],
+        "answer": "C",
+        "explanation": "结尾主张区分健康指标和外貌，多维指标用于避免单一体重判断。",
+        "evidence_text": "A responsible campaign should therefore separate health indicators from appearance."
+      },
+      {
+        "type": "attitude",
+        "question": "Which view of public popularity is expressed?",
+        "options": [
+          "It has no possible health benefit.",
+          "It is valuable only when converted into informed and lasting behavior.",
+          "It guarantees safe treatment decisions.",
+          "It should replace professional assessment."
+        ],
+        "answer": "B",
+        "explanation": "最后一句对“出圈”给予有条件的认可。",
+        "evidence_text": "Going viral is useful only if attention develops into informed, sustainable action rather than a rush toward the newest treatment."
+      }
+    ],
+    "source_verification": "URL可访问；已核验标题、日期与本文采用的可见事实。"
+  },
+  {
+    "corpus_id": "cet-human-health-l3-17",
+    "title": "Personal Weight Care Needs More Than a New Sign",
+    "topic": "健康",
+    "difficulty": 3,
+    "source_id": "src-健康-17",
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20250410/a759e9b781334ed5aec787ebd40e563a/c.html",
+    "source_title": "China strives to expand weight management services",
+    "source_published_at": "2025-04-10",
+    "retrieved_at": "2026-08-29",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "content": "A national effort encouraged qualified hospitals to establish weight-management clinics with near-complete coverage by June 2025. Coverage can make professional help easier to find, but opening a room and hanging a sign do not define what happens inside.\n\nDifferent patients need different paths. An older adult with diabetes, a pregnant woman, a child and a healthy adult concerned about appearance cannot be placed on one standard diet. The policy therefore called for classified management and personalized services for key groups. Major hospitals could operate prevention centers and inpatient services, whereas primary institutions would concentrate on education, follow-up, routine health management and referral. Classified means organized into groups whose risks and needs require different responses.\n\nTechnology may connect these levels. Wearable devices can record movement or other signals between visits, and internet services can reduce unnecessary travel. Artificial intelligence may summarize patterns for a clinician. Yet more data do not automatically produce a better plan. A device can be inaccurate, a patient may stop wearing it, and an algorithm may miss pregnancy, medication or mental-health context unless professionals ask.\n\nThe distribution of responsibility is therefore as important as the number of clinics. Primary teams need clear rules for recognizing complications; hospitals need workable referral channels; specialists need to return understandable advice for follow-up. Success should be judged by continuity rather than attendance alone. A patient benefits when assessment, an achievable plan, monitoring and adjustment remain connected long enough for health—not merely a lower number on a scale—to improve.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "According to the passage, what makes a weight-management clinic meaningful?",
+        "options": [
+          "Personalized, continuous care linked across service levels",
+          "A new sign and high first-day attendance",
+          "One diet used for every patient",
+          "Data collection without professional questions"
+        ],
+        "answer": "A",
+        "explanation": "文章认为挂牌和覆盖不足，关键是分层个性化、转诊与持续调整。",
+        "evidence_text": "Success should be judged by continuity rather than attendance alone."
+      },
+      {
+        "type": "detail",
+        "question": "What role is assigned mainly to primary institutions?",
+        "options": [
+          "Education, follow-up and referral",
+          "National regulation of wearable devices",
+          "Treatment limited to pregnant women",
+          "Complex inpatient surgery"
+        ],
+        "answer": "A",
+        "explanation": "第二段直接列出基层机构的教育、随访、健康管理和转诊职责。",
+        "evidence_text": "Major hospitals could operate prevention centers and inpatient services, whereas primary institutions would concentrate on education, follow-up, routine health management and referral."
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “classified” management involve?",
+        "options": [
+          "Ranking patients by appearance",
+          "Using the same plan at different hospitals",
+          "Grouping people by relevant risks and needs",
+          "Keeping all services secret"
+        ],
+        "answer": "C",
+        "explanation": "正文明确解释 classified 的含义。",
+        "evidence_text": "Classified means organized into groups whose risks and needs require different responses."
+      },
+      {
+        "type": "inference",
+        "question": "Why can an AI summary be insufficient for a clinician?",
+        "options": [
+          "Algorithms can operate only in primary clinics.",
+          "Important medical or personal context may be absent from the data.",
+          "Wearable devices never record any useful signal.",
+          "Clinicians are forbidden to ask patients questions."
+        ],
+        "answer": "B",
+        "explanation": "文章列举妊娠、药物和心理背景说明数据可能缺少决定性语境。",
+        "evidence_text": "A device can be inaccurate, a patient may stop wearing it, and an algorithm may miss pregnancy, medication or mental-health context unless professionals ask."
+      },
+      {
+        "type": "attitude",
+        "question": "Under what condition would rapid weight-clinic growth count as progress?",
+        "options": [
+          "Promising if service quality and connections grow with it",
+          "Harmful regardless of design",
+          "Sufficient to solve obesity by itself",
+          "Useful only for collecting attendance data"
+        ],
+        "answer": "A",
+        "explanation": "作者认可扩大可及性，但将质量和连续性作为条件。",
+        "evidence_text": "Coverage can make professional help easier to find, but opening a room and hanging a sign do not define what happens inside."
+      }
+    ],
+    "source_verification": "URL可访问；已核验标题、日期与本文采用的可见事实。"
+  },
+  {
+    "corpus_id": "cet-human-health-l4-18",
+    "title": "The Clinic Must See the Person, Not Just the Profile",
+    "topic": "健康",
+    "difficulty": 4,
+    "source_id": "src-健康-18",
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20250416/647f0e0f3b7245bbbab8b3e3df283323/c.html",
+    "source_title": "More weight management clinics opened across China to serve healthy life",
+    "source_published_at": "2025-04-16",
+    "retrieved_at": "2026-08-29",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "content": "An AI assistant used in an Anhui hospital could assemble a structured health profile in about 30 seconds. For a busy weight-management clinic, that speed is attractive. Doctors can review diet, activity and other information before choosing an intervention; photo-based food recognition may also help estimate daily intake. The danger is not that the profile contains data, but that its neatness can be mistaken for completeness.\n\nWeight care brings together unusually different motives and risks. Some patients have diabetes or early cardiovascular problems. A child may show obesity-related developmental changes. Another visitor may not meet a clinical definition of obesity and may be responding mainly to pressure for a slimmer figure. The same reduction target could be necessary for one person, unsafe for another and psychologically damaging for a third.\n\nMultidisciplinary clinics try to manage this variation. One children's hospital linked endocrinology, cardiology and psychology; a Wuhan center brought together 14 departments and planned screening, tiered treatment, complication prevention and long-term follow-up. Multidisciplinary means that professionals with different expertise examine a shared problem. The arrangement is valuable only if their judgments are integrated rather than offered as a confusing list of separate opinions.\n\nTechnology should make that integration easier, not decide the patient's goal. An AI diet plan needs review for disease, age, culture, affordability and the household's actual cooking. A rapid profile should prompt conversation about sleep, body image and previous attempts, including information that a form did not ask.\n\nThis is why efficiency and personalization can conflict. Standardized data save clinical time; understanding an individual consumes it. A well-designed service uses the saved minutes to ask better questions. Its outcome is not the fastest plan but a plan that the patient can safely follow, revise and eventually manage with less dependence on the clinic.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What principle should guide the use of AI in weight clinics?",
+        "options": [
+          "Accept a structured profile as a complete account of every patient.",
+          "Give all patients the same numerical goal.",
+          "Judge success by how quickly a plan is produced.",
+          "Use rapid data processing to support, not replace, contextual clinical judgment."
+        ],
+        "answer": "D",
+        "explanation": "文章以完整性错觉为中心，要求AI节省的时间用于更深入的个体判断。",
+        "evidence_text": "Technology should make that integration easier, not decide the patient's goal."
+      },
+      {
+        "type": "detail",
+        "question": "How many departments were integrated in the Wuhan center?",
+        "options": [
+          "Thirty",
+          "Fifty",
+          "Three",
+          "Fourteen"
+        ],
+        "answer": "D",
+        "explanation": "第三段明确提到14个科室。",
+        "evidence_text": "One children's hospital linked endocrinology, cardiology and psychology; a Wuhan center brought together 14 departments and planned screening, tiered treatment, complication prevention and long-term follow-up."
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “multidisciplinary” describe?",
+        "options": [
+          "A single department offering many forms",
+          "Several kinds of professionals working on one problem",
+          "One algorithm processing several photos",
+          "A patient attending the same clinic repeatedly"
+        ],
+        "answer": "B",
+        "explanation": "正文直接给出多学科的定义。",
+        "evidence_text": "Multidisciplinary means that professionals with different expertise examine a shared problem."
+      },
+      {
+        "type": "inference",
+        "question": "Why could one reduction target harm a visitor without clinical obesity?",
+        "options": [
+          "The goal may reinforce body-image pressure rather than address a health risk.",
+          "Every visitor without diabetes should gain weight.",
+          "Clinical definitions are based only on age.",
+          "Psychological factors never affect eating."
+        ],
+        "answer": "A",
+        "explanation": "第二段把审美压力与真实临床风险区分开，统一目标可能造成心理伤害。",
+        "evidence_text": "Another visitor may not meet a clinical definition of obesity and may be responding mainly to pressure for a slimmer figure."
+      },
+      {
+        "type": "attitude",
+        "question": "How does the author resolve the tension between speed and personalization?",
+        "options": [
+          "Remove standardized data from the clinic.",
+          "Allow the algorithm to set all goals.",
+          "Prefer the fastest plan even if it cannot be followed.",
+          "Let automation save time that clinicians then use for better inquiry."
+        ],
+        "answer": "D",
+        "explanation": "结尾明确提出用节省的时间问更好的问题。",
+        "evidence_text": "A well-designed service uses the saved minutes to ask better questions."
+      }
+    ],
+    "source_verification": "URL可访问；已核验标题、日期与本文采用的可见事实。"
+  },
+  {
+    "corpus_id": "cet-human-health-l4-19",
+    "title": "Care That Crosses the Front Door",
+    "topic": "健康",
+    "difficulty": 4,
+    "source_id": "src-健康-19",
+    "source_name": "China Daily",
+    "source_url": "https://global.chinadaily.com.cn/a/202408/17/WS66c07e9ca31060630b9239bc.html",
+    "source_title": "China improves health services for elderly unable to care for themselves - Chinadaily.com.cn",
+    "source_published_at": "2024-08-17",
+    "retrieved_at": "2026-08-29",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "content": "A clinic is accessible only if the patient can reach it—or if care can reach the patient. A 2024-2027 campaign in China focuses on people aged 65 and above who cannot manage daily life independently. Eligible primary health institutions, rehabilitation centers and care facilities are asked to provide basic services, consultation and guidance on transfer for treatment. Teams should also make home visits with at least two professionals.\n\nThe two-person rule may appear inefficient when staff are scarce. Inside a private home, however, it can protect both sides. One worker can assist with movement while the other observes, equipment can be handled more safely, and there is a witness if consent or conduct is later questioned. The visit is not simply a clinic appointment moved to another address; the environment changes the risks.\n\nAt least once a year, the program calls for an assessment of lifestyle and health, a physical examination and health guidance. Annual contact creates a baseline, but a fixed schedule may miss rapid decline. A caregiver therefore needs a clear channel for reporting new confusion, fever, falls or difficulty eating between visits. Baseline means an initial set of information used for later comparison.\n\nHome care also reveals conditions that a consulting room hides. A professional can notice dangerous steps, spoiled food, an empty medicine box or the exhaustion of a family member. Such observations may lead to a home modification, social assistance or transfer to medical care rather than another instruction sheet.\n\nYet entering a home is not automatically respectful. Staff need permission, privacy rules and attention to what the older person wants, even when relatives speak first. The proper aim is not to take control of a household. It is to make essential health support possible without requiring frail people to overcome the very limitations for which they need help.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "How does the passage redefine healthcare access for frail older adults?",
+        "options": [
+          "Annual examinations can replace all ongoing contact.",
+          "Home visits should be controlled entirely by relatives.",
+          "Services may need to enter the home with safety and dignity safeguards.",
+          "Patients should overcome mobility limits on their own."
+        ],
+        "answer": "C",
+        "explanation": "文章从服务上门、安全配置、居家观察和尊严边界论证可及性。",
+        "evidence_text": "A clinic is accessible only if the patient can reach it—or if care can reach the patient."
+      },
+      {
+        "type": "detail",
+        "question": "What minimum staffing is specified for a home visit?",
+        "options": [
+          "Four family members",
+          "One volunteer",
+          "Two professionals",
+          "Three specialists"
+        ],
+        "answer": "C",
+        "explanation": "第一段说明至少两名专业人员上门。",
+        "evidence_text": "Teams should also make home visits with at least two professionals."
+      },
+      {
+        "type": "word_guess",
+        "question": "What is a “baseline” in health monitoring?",
+        "options": [
+          "Initial information for later comparison",
+          "The final diagnosis after treatment",
+          "A rule for hospital payment",
+          "A household privacy agreement"
+        ],
+        "answer": "A",
+        "explanation": "正文直接定义 baseline。",
+        "evidence_text": "Baseline means an initial set of information used for later comparison."
+      },
+      {
+        "type": "inference",
+        "question": "Why might two workers be safer than one during a home visit?",
+        "options": [
+          "Every home procedure requires two doctors by law.",
+          "Older adults refuse to speak to one worker.",
+          "Two workers eliminate all privacy risks.",
+          "They can share physical tasks and provide mutual accountability."
+        ],
+        "answer": "D",
+        "explanation": "第二段说明共同搬动、观察和见证能保护患者与工作人员。",
+        "evidence_text": "One worker can assist with movement while the other observes, equipment can be handled more safely, and there is a witness if consent or conduct is later questioned."
+      },
+      {
+        "type": "attitude",
+        "question": "What boundary does the author set for home care?",
+        "options": [
+          "Relatives should always answer instead of the patient.",
+          "Privacy matters only in hospitals.",
+          "Support should not erase the older person's consent and control.",
+          "Professionals should direct every household decision."
+        ],
+        "answer": "C",
+        "explanation": "结尾强调许可、隐私和本人意愿，上门不等于接管家庭。",
+        "evidence_text": "The proper aim is not to take control of a household."
+      }
+    ],
+    "source_verification": "URL可访问；已核验标题、日期与本文采用的可见事实。"
+  },
+  {
+    "corpus_id": "cet-human-health-l4-20",
+    "title": "Aging at Home Requires an Organized Neighborhood",
+    "topic": "健康",
+    "difficulty": 4,
+    "source_id": "src-健康-20",
+    "source_name": "China Daily",
+    "source_url": "https://global.chinadaily.com.cn/a/202402/05/WS65c019eea3104efcbdae9a15_4.html",
+    "source_title": "Basic nationwide elderly care service system a step closer - Chinadaily.com.cn",
+    "source_published_at": "2024-02-05",
+    "retrieved_at": "2026-08-29",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "content": "A 94-year-old Hangzhou resident preferred her own home to a care institution because the neighborhood kept her connected with younger people. Remaining at home, however, did not mean receiving no care. Neighbors and community services arranged meal delivery when collecting food became unsafe. The case exposes a false choice in debates about aging: independence does not require isolation.\n\nBy the end of 2023, China had created about 235,000 home-based care beds, while 418,000 older people had received door-to-door services. Nearly 1.5 million households had undergone age-friendly modifications. A “home bed” is not merely a piece of furniture. It usually means that organized care normally associated with an institution is delivered to a registered person at home.\n\nInstitutional capacity remains necessary. The country had more than 400,000 elderly care facilities and 8.2 million beds by the end of September 2023. Some people need continuous nursing that a household cannot safely provide. Others mainly require meals, medication support, repairs or occasional medical visits. A functional system must distinguish these needs without making admission to an institution the default answer.\n\nCommunity centers can operate as hubs between the two settings. They may hold beds for temporary or intensive support while coordinating delivery and medical care for people who stay home. The model uses scarce professional staff across a neighborhood, but coordination itself has costs: schedules, records, transport and emergency response must be reliable.\n\nCounting beds therefore gives an incomplete picture. An unused bed in the wrong place does not support anyone, while a meal arriving at the right hour can preserve health and dignity. Evaluation should ask whether each older resident receives the level of help that makes a preferred living arrangement safe, socially connected and sustainable.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "Which false choice does the passage reject?",
+        "options": [
+          "That home modifications can improve safety",
+          "That older people must choose between total independence and institutional care",
+          "That community centers can coordinate different services",
+          "That some residents require continuous nursing"
+        ],
+        "answer": "B",
+        "explanation": "文章用居家但有组织支持的案例打破“独立或机构”的二选一。",
+        "evidence_text": "The case exposes a false choice in debates about aging: independence does not require isolation."
+      },
+      {
+        "type": "detail",
+        "question": "How many households had received age-friendly modifications?",
+        "options": [
+          "About 235,000",
+          "About 418,000",
+          "Nearly 1.5 million",
+          "More than 8.2 million"
+        ],
+        "answer": "C",
+        "explanation": "第二段给出近150万户的数字。",
+        "evidence_text": "Nearly 1.5 million households had undergone age-friendly modifications."
+      },
+      {
+        "type": "word_guess",
+        "question": "What does a home-based care “bed” represent in the passage?",
+        "options": [
+          "A bed sold by a community store",
+          "A place reserved in every hospital",
+          "A temporary meal-delivery schedule",
+          "An organized package of care delivered at home"
+        ],
+        "answer": "D",
+        "explanation": "正文说明“家庭床位”是把机构式组织照护送到登记居民家中。",
+        "evidence_text": "It usually means that organized care normally associated with an institution is delivered to a registered person at home."
+      },
+      {
+        "type": "inference",
+        "question": "Why does the author say coordination has costs?",
+        "options": [
+          "Institutional beds are always cheaper than meals.",
+          "Older people cannot express living preferences.",
+          "Home-based networks still require dependable logistics, records and emergency plans.",
+          "Community care uses no professional workers."
+        ],
+        "answer": "C",
+        "explanation": "第四段列出排班、记录、交通和应急响应等组织成本。",
+        "evidence_text": "The model uses scarce professional staff across a neighborhood, but coordination itself has costs: schedules, records, transport and emergency response must be reliable."
+      },
+      {
+        "type": "attitude",
+        "question": "What measure of success does the author prefer?",
+        "options": [
+          "The lowest possible level of home assistance",
+          "Whether support makes a person's chosen arrangement safe and sustainable",
+          "The national bed total by itself",
+          "The number of people moved into institutions"
+        ],
+        "answer": "B",
+        "explanation": "结尾提出以需求匹配、偏好、安全和持续性评价。",
+        "evidence_text": "Evaluation should ask whether each older resident receives the level of help that makes a preferred living arrangement safe, socially connected and sustainable."
+      }
+    ],
+    "source_verification": "URL可访问；已核验标题、日期与本文采用的可见事实。"
+  },
+  {
+    "corpus_id": "cet-human-health-l4-21",
+    "title": "The Three-Minute Walk Is Part of the Care",
+    "topic": "健康",
+    "difficulty": 4,
+    "source_id": "src-健康-21",
+    "source_name": "China Daily",
+    "source_url": "https://global.chinadaily.com.cn/a/202411/03/WS67270289a310f1265a1cb12a.html",
+    "source_title": "Beijing improves accessibility in service for senior citizens - Chinadaily.com.cn",
+    "source_published_at": "2024-11-03",
+    "retrieved_at": "2026-08-29",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "content": "For a 93-year-old resident of a Beijing care center, the nearby hospital was only a three-minute walk away. That short distance did more than save travel time. It reduced uncertainty about what would happen if her condition changed. The center partnered with the hospital for check-ups, treatment and access to inpatient services, joining daily assistance with medical backup.\n\nThe arrangement reflects the preferences of many older residents. Beijing had more than 570 care institutions, about 1,500 service stations and over 2,000 meal-assistance points, yet less than one percent of its 4.95 million older residents chose institutional care. Among residents aged 80 and above, 95.3 percent reportedly preferred home-based support. Preference does not establish that home is safe for every person, but it should shape how capacity is built.\n\nA hybrid model can stretch limited nursing beds. The center described in the source also coordinated meals, medical help and home repairs for people living nearby. Hybrid means combining elements that are usually treated as separate—in this case residential care, community support, home services and hospital access. The model allows a person to receive a different intensity of help as needs change without losing the local relationships that make assistance familiar.\n\nIts apparent simplicity depends on hidden agreements. Who notices that a meal was not collected? Which record follows a resident to hospital? Can a home worker obtain urgent advice? Who pays when a minor repair prevents a serious fall? Unless organizations answer these questions, a network can become several disconnected logos.\n\nAccessibility is therefore relational as well as physical. A service is close not merely when it is measured in minutes, but when the next responsible person is identifiable. The three-minute walk matters because an institutional partnership turns distance into a dependable route.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What turns a three-minute walk into genuine healthcare accessibility?",
+        "options": [
+          "Proximity becomes valuable when organizations create a dependable care route.",
+          "Every older adult should live beside a hospital.",
+          "Institutional care is always preferred to home support.",
+          "Counting service stations is enough to show coordination."
+        ],
+        "answer": "A",
+        "explanation": "文章从物理距离推进到责任关系和机构协作。",
+        "evidence_text": "Accessibility is therefore relational as well as physical."
+      },
+      {
+        "type": "detail",
+        "question": "What proportion of Beijing's older residents used institutional care?",
+        "options": [
+          "About three percent",
+          "Nearly 50 percent",
+          "More than 95 percent",
+          "Less than one percent"
+        ],
+        "answer": "D",
+        "explanation": "第二段明确说明不足1%。",
+        "evidence_text": "Beijing had more than 570 care institutions, about 1,500 service stations and over 2,000 meal-assistance points, yet less than one percent of its 4.95 million older residents chose institutional care."
+      },
+      {
+        "type": "word_guess",
+        "question": "What makes the model “hybrid”?",
+        "options": [
+          "It serves only people living in institutions.",
+          "It replaces professionals with family members.",
+          "It combines residential, community, home and hospital support.",
+          "It uses two kinds of meal delivery."
+        ],
+        "answer": "C",
+        "explanation": "正文直接说明其组合的四类支持。",
+        "evidence_text": "Hybrid means combining elements that are usually treated as separate—in this case residential care, community support, home services and hospital access."
+      },
+      {
+        "type": "inference",
+        "question": "What weakness does the uncollected-meal example test?",
+        "options": [
+          "Hospitals should deliver every meal.",
+          "Small events reveal whether responsibility across the network is actually assigned.",
+          "Meal services are more important than medical treatment.",
+          "Older residents cannot decide what to eat."
+        ],
+        "answer": "B",
+        "explanation": "该问题用于检验多个机构之间是否存在明确的监测和响应责任。",
+        "evidence_text": "Unless organizations answer these questions, a network can become several disconnected logos."
+      },
+      {
+        "type": "attitude",
+        "question": "How does the writer treat home-care preference?",
+        "options": [
+          "As important guidance that must still be tested against individual safety",
+          "As proof that care institutions are unnecessary",
+          "As a choice that should override every medical risk",
+          "As a statistic with no planning value"
+        ],
+        "answer": "A",
+        "explanation": "作者尊重偏好，但明确其不能证明居家对每个人都安全。",
+        "evidence_text": "Preference does not establish that home is safe for every person, but it should shape how capacity is built."
+      }
+    ],
+    "source_verification": "URL可访问；已核验标题、日期与本文采用的可见事实。"
+  },
+  {
+    "corpus_id": "cet-human-health-l5-22",
+    "title": "A Fall-Prevention Trial Designed for the Village",
+    "topic": "健康",
+    "difficulty": 5,
+    "source_id": "src-健康-22",
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20250827/b66096ad811c4fffa54567b20a73e9f5/c.html",
+    "source_title": "Chinese researchers shed light on preventing \"invisible killer\" among rural elderly",
+    "source_published_at": "2025-08-27",
+    "retrieved_at": "2026-08-29",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "content": "A health intervention can succeed in a specialist center and fail in the place where it is most needed. A Chinese fall-prevention trial took the opposite route: it began with the constraints of rural primary care. Village doctors led simplified exercises for lower-limb strength and balance, while health-education videos used local dialects. The design avoided reliance on costly equipment or rehabilitation specialists.\n\nThe randomized trial involved 2,610 people aged 60 and above who faced high fall risk. During an average follow-up of 358 days, 29.7 percent of participants receiving the program reported at least one fall, compared with 38.3 percent in the control group. The rate per person-year fell from 1.4 to 0.8, and the share experiencing injuries declined from 21.6 to 15.2 percent. Multiple measures matter because fewer people falling, fewer repeated falls and fewer injuries are related but not identical outcomes.\n\nThe local dialect was not decorative. Instructions that sound simple to a researcher may be misunderstood, forgotten or feel socially distant to an older villager. Comprehension affects whether an exercise is performed correctly and repeatedly. Adherence means continuing to follow an agreed program over time; it is often the point at which an effective idea loses value outside a trial.\n\nThe study's practical strength also creates questions about transfer. Trial participants were identified as high-risk and received organized follow-up. Routine clinics must decide who screens residents, how frequently doctors check technique and what happens when pain or dizziness appears. A program simplified too far may become ineffective, while one protected by extra research staff may no longer be affordable.\n\nThe central lesson is not that rural care should accept a lower scientific standard. It is that scientific design must include delivery conditions. Randomization supports confidence that the observed difference was connected with the intervention; village leadership, comprehensible language and modest equipment make it plausible that the intervention can travel beyond the study. Both kinds of evidence are necessary before a promising result becomes public service.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What two forms of evidence does the passage say the trial needs?",
+        "options": [
+          "Evidence from cities and evidence from private hospitals",
+          "Evidence about exercise and evidence against health education",
+          "Evidence of lower cost and proof that follow-up is unnecessary",
+          "Evidence of causal effect and evidence that delivery fits local conditions"
+        ],
+        "answer": "D",
+        "explanation": "结尾区分随机试验的效果证据与乡村实施条件支持的可推广证据。",
+        "evidence_text": "Both kinds of evidence are necessary before a promising result becomes public service."
+      },
+      {
+        "type": "detail",
+        "question": "What proportion of the intervention group reported at least one fall?",
+        "options": [
+          "29.7 percent",
+          "38.3 percent",
+          "15.2 percent",
+          "21.6 percent"
+        ],
+        "answer": "A",
+        "explanation": "第二段明确给出干预组29.7%。",
+        "evidence_text": "During an average follow-up of 358 days, 29.7 percent of participants receiving the program reported at least one fall, compared with 38.3 percent in the control group."
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “adherence” refer to here?",
+        "options": [
+          "Translating a video once",
+          "Continuing the program over time",
+          "Selecting people at high risk",
+          "Comparing two trial groups"
+        ],
+        "answer": "B",
+        "explanation": "正文直接定义 adherence 为持续执行方案。",
+        "evidence_text": "Adherence means continuing to follow an agreed program over time; it is often the point at which an effective idea loses value outside a trial."
+      },
+      {
+        "type": "inference",
+        "question": "Why could extra research staff reduce transferability?",
+        "options": [
+          "Routine clinics may be unable to reproduce that level of support affordably.",
+          "Researchers make all exercise instructions inaccurate.",
+          "Village doctors cannot participate in studies.",
+          "High-risk residents never need follow-up."
+        ],
+        "answer": "A",
+        "explanation": "试验若依赖日常体系没有的额外人员，其成本和实施强度就难复制。",
+        "evidence_text": "A program simplified too far may become ineffective, while one protected by extra research staff may no longer be affordable."
+      },
+      {
+        "type": "inference",
+        "question": "What function did local-dialect videos likely serve?",
+        "options": [
+          "They replaced the need for any village doctor.",
+          "They made randomization possible.",
+          "They lowered participants' biological fall risk directly.",
+          "They improved understanding and repeated correct practice."
+        ],
+        "answer": "D",
+        "explanation": "语言可理解性会影响动作是否正确且持续完成。",
+        "evidence_text": "Comprehension affects whether an exercise is performed correctly and repeatedly."
+      }
+    ],
+    "source_verification": "URL可访问；已核验标题、日期与本文采用的可见事实。"
+  },
+  {
+    "corpus_id": "cet-human-health-l5-23",
+    "title": "Four Numbers Cannot Make Health a Solo Project",
+    "topic": "健康",
+    "difficulty": 5,
+    "source_id": "src-健康-23",
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20251024/ee7532b40cfa471caa4476df083f35f9/c.html",
+    "source_title": "Update: China aims to raise average life expectancy to around 80 years in 5 years",
+    "source_published_at": "2025-10-24",
+    "retrieved_at": "2026-08-29",
+    "source_replacement_note": "清单来源与04报道标题及事实重复，改用新华社同主题但独立的预防和基层医疗报道。",
+    "adaptation_note": "题材参考替换后的权威来源公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "content": "A health official described a future in which people manage four familiar numbers: weight, blood pressure, blood lipids and blood glucose. These indicators connect everyday behavior with risks for chronic diseases. They are useful because they can be measured repeatedly and can prompt action before a heart attack, stroke or diabetes complication occurs.\n\nThe phrase “master of one's own health” can express agency. A person can learn what a result means, change food or activity, take medicine correctly and seek help early. Yet mastery is not sovereignty. Blood pressure depends on biology, stress, work, housing, food supply and access to continuous care. A patient cannot personally create an affordable medicine, a safe walking environment or a nearby clinician. Agency means the capacity to make and carry out choices within real conditions; it should not be confused with total control over outcomes.\n\nThe same report paired personal management with stronger primary healthcare, mobile services and telemedicine. That pairing matters. Measurement without a response pathway can produce anxiety: a resident discovers a high reading but cannot obtain confirmation or treatment. Conversely, a clinic that waits for symptoms misses the preventive value of repeated information. The useful unit is therefore a loop—measurement, interpretation, feasible action, follow-up and adjustment.\n\nTargets can also distort attention. What is easily counted may receive priority over sleep, mental health, pain, social connection or functional ability. Even within the four indicators, a rapid numerical improvement can be achieved in a way that is difficult to sustain. Good practice considers trends and overall risk rather than rewarding one isolated reading.\n\nEquity changes what self-management requires. A smartphone consultation may reduce distance for one patient and exclude another who lacks a device, connectivity, privacy or digital confidence. Offering several channels is less technologically elegant than declaring one universal platform, but it is more consistent with unequal circumstances.\n\nPrevention works when responsibility is shared without becoming vague. Individuals need understandable information and realistic choices; primary teams need time and tools for follow-up; public institutions shape environments and access. Four numbers can organize attention. They should not become four ways to blame a person for conditions that collective systems also produce.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What qualification does the passage add to personal health management?",
+        "options": [
+          "Four indicators capture every aspect of health.",
+          "Public institutions should set personal goals for everyone.",
+          "Individual agency depends on supportive services and social conditions.",
+          "People have no useful role in prevention."
+        ],
+        "answer": "C",
+        "explanation": "全文反对把个人管理等同于完全控制，强调制度与环境共同责任。",
+        "evidence_text": "Prevention works when responsibility is shared without becoming vague."
+      },
+      {
+        "type": "detail",
+        "question": "Which four indicators are highlighted?",
+        "options": [
+          "Exercise, housing, work and diet",
+          "Weight, blood pressure, blood lipids and blood glucose",
+          "Sleep, pain, income and age",
+          "Temperature, height, eyesight and hearing"
+        ],
+        "answer": "B",
+        "explanation": "首句明确列出体重、血压、血脂和血糖。",
+        "evidence_text": "A health official described a future in which people manage four familiar numbers: weight, blood pressure, blood lipids and blood glucose."
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “agency” mean here?",
+        "options": [
+          "Capacity to choose and act within actual conditions",
+          "Complete control over biological outcomes",
+          "A government department collecting data",
+          "A single telemedicine platform"
+        ],
+        "answer": "A",
+        "explanation": "正文直接给出 agency 的语境定义。",
+        "evidence_text": "Agency means the capacity to make and carry out choices within real conditions; it should not be confused with total control over outcomes."
+      },
+      {
+        "type": "inference",
+        "question": "Why can measurement without a response pathway cause anxiety?",
+        "options": [
+          "Repeated information prevents early action.",
+          "Primary clinics refuse to measure chronic risk.",
+          "Every high reading proves an emergency.",
+          "A person may discover risk without access to confirmation or treatment."
+        ],
+        "answer": "D",
+        "explanation": "发现异常却无法获得复核和治疗，会把预防工具变成无处安放的担忧。",
+        "evidence_text": "Measurement without a response pathway can produce anxiety: a resident discovers a high reading but cannot obtain confirmation or treatment."
+      },
+      {
+        "type": "inference",
+        "question": "Why does the author favor several service channels?",
+        "options": [
+          "Smartphones have no healthcare use.",
+          "Every patient prefers face-to-face visits.",
+          "Different barriers make one digital route unequal in practice.",
+          "Mobile teams are always cheaper than telemedicine."
+        ],
+        "answer": "C",
+        "explanation": "设备、网络、隐私和数字能力差异使单一平台排除部分人。",
+        "evidence_text": "Offering several channels is less technologically elegant than declaring one universal platform, but it is more consistent with unequal circumstances."
+      }
+    ],
+    "source_verification": "原候选判废并换源；替换URL已核验标题、日期和可见事实。清单来源与04报道标题及事实重复，改用新华社同主题但独立的预防和基层医疗报道。"
+  },
+  {
+    "corpus_id": "cet-human-health-l5-24",
+    "title": "The Family Doctor as a Route Through the System",
+    "topic": "健康",
+    "difficulty": 5,
+    "source_id": "src-健康-24",
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20260825/b5f2ea82835f415092e2265429af7d63/c.html",
+    "source_title": "China moves to further improve family doctor services",
+    "source_published_at": "2026-08-25",
+    "retrieved_at": "2026-08-29",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "content": "A family doctor is sometimes described as a patient's first contact. The phrase can suggest a gate that delays entry to specialist care. New measures reported in 2026 imply a different model: the family doctor should be a route manager, solving suitable problems locally while accelerating movement when the problem exceeds local scope.\n\nUnder the measures, contracted residents would receive priority consultation with their designated family doctors. If another specialist in the same institution was needed, referral would occur with the patient's consent. For a higher-level hospital, family doctors could use reserved appointments, beds and fast-track channels within closely integrated medical alliances. This sequence makes first contact valuable only when the next contact is dependable.\n\nThe policy also broadened the job beyond chronic disease. Family doctors were expected to provide health education, vaccination-related help, referral and follow-up for common respiratory, digestive and vector-borne diseases, tuberculosis, HIV/AIDS and other infections, especially for older people and children. By the end of 2027, primary institutions were expected to include infectious-disease prevention in their service packages. Coordination here means joining prevention, initial assessment, transfer and follow-up so that no stage operates in isolation.\n\nBreadth introduces risk. An ever-growing task list can make a contract impressive on paper while shortening each consultation. Primary doctors need diagnostics, protective equipment, updated training and time; hospital specialists must respond to referrals rather than treating them as lower priority. Residents also need to understand that a contract is a continuing relationship, not a promise that one doctor personally delivers every service.\n\nConsent deserves attention as well. Efficient routing should not turn patients into objects moving along an administrative conveyor belt. A clinician must explain why escalation is recommended, what information will be shared and what alternatives exist. Priority access has public value when it reduces uncertainty without reducing agency.\n\nThe best measure is not the number of signatures on family-doctor contracts. It is whether a person knows whom to call, receives an appropriate first response and reaches additional care before delay causes harm. In that sense, continuity is produced by accountable handoffs, not by keeping every patient at the lowest level.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "How does the passage recast the family doctor's role?",
+        "options": [
+          "As a specialist limited to infectious diseases",
+          "As an accountable guide through levels of care, not simply a gatekeeper",
+          "As the only clinician a patient should ever see",
+          "As an administrator who signs contracts without treatment"
+        ],
+        "answer": "B",
+        "explanation": "文章以路径管理和可问责交接为中心，反对把首诊理解为阻挡。",
+        "evidence_text": "the family doctor should be a route manager, solving suitable problems locally while accelerating movement when the problem exceeds local scope."
+      },
+      {
+        "type": "detail",
+        "question": "What resource could family doctors use for higher-level referrals?",
+        "options": [
+          "Reserved appointments and fast-track channels",
+          "Public social-media voting",
+          "Unreviewed AI prescriptions",
+          "Only the patient's paper notes"
+        ],
+        "answer": "A",
+        "explanation": "第二段列出预约号、床位和快速转诊渠道。",
+        "evidence_text": "For a higher-level hospital, family doctors could use reserved appointments, beds and fast-track channels within closely integrated medical alliances."
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “coordination” mean in the passage?",
+        "options": [
+          "Adding diseases to a printed list",
+          "Keeping all patients in one clinic",
+          "Sharing information without consent",
+          "Connecting prevention, assessment, transfer and follow-up"
+        ],
+        "answer": "D",
+        "explanation": "正文直接定义协调为各环节相连接。",
+        "evidence_text": "Coordination here means joining prevention, initial assessment, transfer and follow-up so that no stage operates in isolation."
+      },
+      {
+        "type": "inference",
+        "question": "How can a longer task list weaken family-doctor services?",
+        "options": [
+          "Patients stop needing chronic-disease care.",
+          "Service contracts automatically expire.",
+          "Workload may rise without the time and resources needed for each responsibility.",
+          "Doctors become unable to make any referral."
+        ],
+        "answer": "C",
+        "explanation": "文章指出纸面任务增长会压缩诊疗时间，若不补充条件就会削弱执行。",
+        "evidence_text": "An ever-growing task list can make a contract impressive on paper while shortening each consultation."
+      },
+      {
+        "type": "inference",
+        "question": "Why does the writer emphasize consent during referrals?",
+        "options": [
+          "Family doctors cannot share any information.",
+          "Efficient transfer should preserve explanation and patient choice.",
+          "Patients must select hospital beds for doctors.",
+          "Consent prevents all clinical delay."
+        ],
+        "answer": "B",
+        "explanation": "转诊效率不能牺牲患者对原因、信息共享和替代方案的知情。",
+        "evidence_text": "Efficient routing should not turn patients into objects moving along an administrative conveyor belt."
+      }
+    ],
+    "source_verification": "URL可访问；已核验标题、日期与本文采用的可见事实。"
+  },
+  {
+    "corpus_id": "cet-human-health-l5-25",
+    "title": "When Traditional Medicine Crosses a Border",
+    "topic": "健康",
+    "difficulty": 5,
+    "source_id": "src-健康-25",
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20250807/d4708ac7150d413fa3e27d996f008e09/c.html",
+    "source_title": "Across China: Traditional Chinese medicine bridges cultures, generations",
+    "source_published_at": "2025-08-07",
+    "retrieved_at": "2026-08-29",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "content": "In 2024, more than 600 Russian patients visited a traditional Chinese medicine hospital in Heihe, a Chinese city facing Russia across the Heilongjiang River. The hospital offered acupuncture, cupping, massage and other treatments, supported by a bilingual team and interpreters. Cross-border demand can look like evidence that a tradition has become universal. More precisely, it shows that people are willing to travel for an experience they believe may help.\n\nClinical confidence requires a different question: for which condition, compared with what alternative, and with what benefit or harm? A patient's relief is meaningful to that person, but one story cannot establish an average treatment effect. Conversely, dismissing a practice because it originated in another medical tradition avoids examining the evidence. Translation must therefore occur twice—between languages and between systems of explanation and evaluation.\n\nThe hospital planned to combine treatment with nearby natural attractions, creating a form of wellness tourism. This may support the local economy and make a visit attractive, while blurring the boundary between clinical care and leisure. A traveler who buys a wellness package still needs clear information about practitioner qualifications, expected results, contraindications and routes for follow-up after returning home. Contraindication means a condition that makes a particular treatment inadvisable.\n\nA second audience is younger Chinese consumers. Herbal drinks, portable products and online interest in traditional exercises have made TCM culturally visible in everyday life. Popularity can keep knowledge alive and encourage preventive habits, but product marketing may detach a remedy from dosage, diagnosis or interaction with other medicines. Cultural confidence should not lower safety standards.\n\nInternational cooperation adds further responsibilities. More than 40 countries and organizations had signed TCM cooperation agreements with China, and Chinese practices had reached 196 countries and regions. Scale makes common terminology, practitioner training, adverse-event reporting and research standards more urgent, not less.\n\nThe strongest bridge is therefore neither novelty nor national pride. It is a process in which patients can understand what is offered, professionals can examine outcomes, and cultural exchange leaves room for informed refusal. Tradition travels responsibly when evidence and respect travel with it.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What makes cross-border traditional medicine responsible, according to the passage?",
+        "options": [
+          "Clear communication, evidence, safety standards and informed choice",
+          "The number of tourists using a treatment",
+          "National pride in a long medical history",
+          "Combining every treatment with leisure"
+        ],
+        "answer": "A",
+        "explanation": "全文围绕语言翻译、临床证据、安全边界、标准和知情选择展开。",
+        "evidence_text": "Tradition travels responsibly when evidence and respect travel with it."
+      },
+      {
+        "type": "detail",
+        "question": "Approximately how many Russian patients used the Heihe hospital in 2024?",
+        "options": [
+          "More than 300",
+          "More than 600",
+          "More than 1,300",
+          "More than 40"
+        ],
+        "answer": "B",
+        "explanation": "首句给出超过600人的数据。",
+        "evidence_text": "In 2024, more than 600 Russian patients visited a traditional Chinese medicine hospital in Heihe, a Chinese city facing Russia across the Heilongjiang River."
+      },
+      {
+        "type": "word_guess",
+        "question": "What is a “contraindication”?",
+        "options": [
+          "A reason to promote tourism",
+          "A report of a successful outcome",
+          "A condition making a treatment inadvisable",
+          "A language used by an interpreter"
+        ],
+        "answer": "C",
+        "explanation": "正文直接给出该医学术语定义。",
+        "evidence_text": "Contraindication means a condition that makes a particular treatment inadvisable."
+      },
+      {
+        "type": "inference",
+        "question": "Why does wellness tourism blur a boundary?",
+        "options": [
+          "Tourists are unable to give informed consent.",
+          "A leisure package may make medical claims seem like ordinary consumer promises.",
+          "Travel prevents patients from enjoying local attractions.",
+          "Clinical care cannot occur outside a person's home country."
+        ],
+        "answer": "B",
+        "explanation": "治疗与旅游捆绑可能弱化对资质、风险和疗效证据的关注。",
+        "evidence_text": "This may support the local economy and make a visit attractive, while blurring the boundary between clinical care and leisure."
+      },
+      {
+        "type": "inference",
+        "question": "Why does greater international reach increase the need for standards?",
+        "options": [
+          "More varied systems and patients require comparable training and safety reporting.",
+          "Popular practices no longer need outcome research.",
+          "Every country must use identical cultural explanations.",
+          "Scale guarantees that harms will disappear."
+        ],
+        "answer": "A",
+        "explanation": "跨国规模越大，术语、培训、不良事件和研究可比性越重要。",
+        "evidence_text": "Scale makes common terminology, practitioner training, adverse-event reporting and research standards more urgent, not less."
+      }
+    ],
+    "source_verification": "URL可访问；已核验标题、日期与本文采用的可见事实。"
+  },
+  {
+    "corpus_id": "cet-human-health-l6-26",
+    "title": "Tiered Care Is a Promise About Movement",
+    "topic": "健康",
+    "difficulty": 6,
+    "source_id": "src-健康-26",
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20260414/35130ace75a94bd2af2ea954f5eec19a/c.html",
+    "source_title": "China to improve community healthcare, expand rehabilitation care services: official",
+    "source_published_at": "2026-04-14",
+    "retrieved_at": "2026-08-29",
+    "source_replacement_note": "清单URL内容ID无法打开；同标题核验到新华社正式页面并采用其最终URL。",
+    "adaptation_note": "题材参考核验后的权威来源公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "content": "A tiered health system is often pictured as a pyramid: community clinics at the base, secondary hospitals in the middle and major hospitals at the top. The picture is orderly but static. Patients are not. A person with controlled hypertension may need local monitoring today, emergency specialist treatment tomorrow and rehabilitation near home next month. The quality of the system lies in movement among levels, not merely in the existence of each level.\n\nChina reported more than 1.1 million medical and healthcare facilities in 2026, with over 90 percent of residents able to reach the nearest center within 15 minutes. The network creates physical proximity. Policy measures sought to add functional capacity by developing grassroots departments for common and chronic diseases, improving medicine supply and coordination, and exploring AI-assisted diagnosis and prescription review. Rehabilitation expansion was part of the same effort.\n\nThe allocation principle sounds efficient: frequent and ordinary illness should be managed locally, while severe or complex conditions move upward. Efficiency can become rationing, however, if referral thresholds are designed mainly to protect large hospitals from demand. A genuine tiered system must protect the patient from delay as well. Escalation means transferring care to a level with greater capability when risk or complexity exceeds the current provider.\n\nTechnology may help primary clinicians recognize that moment. An AI tool can flag an image or prescription, yet false reassurance is especially dangerous at the first point of contact. Local staff need authority to question the tool, access to specialist advice and feedback about what happened after referral. Otherwise, the algorithm adds a new layer without creating a learning system.\n\nMovement downward deserves equal attention. Rehabilitation, nursing and chronic follow-up often require repeated visits rather than rare technical procedures. Keeping them in a distant tertiary hospital imposes travel costs and consumes specialist capacity. Returning care locally can be appropriate only if records, medicines, equipment and trained workers arrive before the patient does.\n\nThe most revealing indicator is therefore a handoff under pressure. Was worsening recognized? Did the receiving institution accept responsibility? Did information remain intact? After discharge, did anyone continue the plan? Facility counts and travel-time statistics describe potential access. These transitions show whether potential has become dependable care.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "Why does the author reject a static pyramid as a full picture of tiered care?",
+        "options": [
+          "All patients should remain at major hospitals.",
+          "Community clinics have no distinct role.",
+          "Facility counts determine every handoff.",
+          "Performance depends on safe, informed movement between levels over time."
+        ],
+        "answer": "D",
+        "explanation": "文章把分级体系的核心从机构存在转向患者在不同阶段的可靠流动。",
+        "evidence_text": "The quality of the system lies in movement among levels, not merely in the existence of each level."
+      },
+      {
+        "type": "detail",
+        "question": "What proportion of residents could reach a nearby center within 15 minutes?",
+        "options": [
+          "More than 90 percent",
+          "Exactly 100 percent",
+          "Just over half",
+          "More than 75 percent"
+        ],
+        "answer": "A",
+        "explanation": "第二段明确给出超过90%。",
+        "evidence_text": "China reported more than 1.1 million medical and healthcare facilities in 2026, with over 90 percent of residents able to reach the nearest center within 15 minutes."
+      },
+      {
+        "type": "word_guess",
+        "question": "What is “escalation” in this healthcare context?",
+        "options": [
+          "Replacing specialists with software",
+          "Moving care upward when the current level lacks sufficient capability",
+          "Increasing the number of routine appointments",
+          "Returning a patient home without follow-up"
+        ],
+        "answer": "B",
+        "explanation": "正文直接定义 escalation。",
+        "evidence_text": "Escalation means transferring care to a level with greater capability when risk or complexity exceeds the current provider."
+      },
+      {
+        "type": "inference",
+        "question": "How could referral rules become a form of rationing?",
+        "options": [
+          "They might prioritize reducing hospital demand over timely patient escalation.",
+          "They always send patients upward too quickly.",
+          "They require records to accompany the patient.",
+          "They expand rehabilitation near home."
+        ],
+        "answer": "A",
+        "explanation": "作者警示如果阈值主要服务于给大医院减负，就可能延误必要转诊。",
+        "evidence_text": "Efficiency can become rationing, however, if referral thresholds are designed mainly to protect large hospitals from demand."
+      },
+      {
+        "type": "inference",
+        "question": "Why must resources arrive before a patient is transferred downward?",
+        "options": [
+          "Patients should transport hospital equipment themselves.",
+          "Rehabilitation is less important than acute treatment.",
+          "Records are useful only at tertiary hospitals.",
+          "Local follow-up is unsafe if the receiving service lacks the means to continue the plan."
+        ],
+        "answer": "D",
+        "explanation": "下转的合理性以基层已有记录、药物、设备和人员能力为前提。",
+        "evidence_text": "Returning care locally can be appropriate only if records, medicines, equipment and trained workers arrive before the patient does."
+      }
+    ],
+    "source_verification": "原候选判废并换源；替换URL已核验标题、日期和可见事实。清单URL内容ID无法打开；同标题核验到新华社正式页面并采用其最终URL。"
+  },
+  {
+    "corpus_id": "cet-human-health-l6-27",
+    "title": "Two Million Beds Do Not Describe One Care System",
+    "topic": "健康",
+    "difficulty": 6,
+    "source_id": "src-健康-27",
+    "source_name": "China Daily",
+    "source_url": "https://global.chinadaily.com.cn/a/202405/16/WS6645cf47a31082fc043c7811.html",
+    "source_title": "China boasts 2m beds in integrated medical, elderly care institutions - Chinadaily.com.cn",
+    "source_published_at": "2024-05-16",
+    "retrieved_at": "2026-08-29",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "content": "By the end of 2023, more than 7,800 Chinese institutions capable of combining medical and elderly care had approximately two million beds. The total suggests major capacity, but “integration” can refer to quite different arrangements. A care home may sign a cooperation agreement with a hospital; a hospital may operate long-term beds; an elderly care institution may obtain authority to provide medical services; or clinicians may extend support into communities and homes.\n\nThese models solve different coordination failures. A formal agreement can create access to expertise without duplicating a clinic inside every residence. On-site medical capacity may respond faster when residents have complex conditions. Home extension serves people who prefer not to move. Treating all four models as one category makes a national total easy to report, while obscuring what each bed can actually deliver.\n\nIntegration should mean more than organizational proximity. For a resident with diabetes and limited mobility, it requires shared medication information, agreed responsibility for monitoring, rapid escalation during deterioration and rehabilitation after discharge. A hospital next door does not guarantee any of these if records and staff roles remain separate. Functional integration exists when distinct providers behave as a continuous service from the patient's perspective.\n\nPayment rules can either connect or divide care. Medical insurance may cover treatment while long-term assistance with bathing or eating follows another budget and eligibility test. Providers then have an incentive to classify a need under the system that will pay, even when the person's condition crosses administrative boundaries. Families become informal coordinators, repeating histories and negotiating which institution is responsible.\n\nWorkforce composition is another hidden variable. Two facilities with the same bed count may differ sharply in nurse availability, rehabilitation expertise, night coverage and the ability to manage dementia. Occupancy also matters: an empty registered bed far from demand cannot relieve a household under strain, whereas mobile professionals may support several homes without creating a conventional bed.\n\nEvaluation should therefore disaggregate capacity. Which clinical and daily-care functions are available? How quickly can a resident move between them? Who carries information and accountability? What outcomes follow for falls, hospital admissions, function and family burden?\n\nThe two-million figure is best understood as infrastructure awaiting description. It marks a scale on which integration could occur, not evidence that integration has occurred equally. The unit of success is not the bed. It is the uninterrupted course of care around the person using it.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What does the passage say the two-million-bed figure cannot establish?",
+        "options": [
+          "Whether China has an aging population",
+          "Whether care homes contain physical beds",
+          "Whether diverse providers function as continuous care for each resident",
+          "Whether any institutions combine medical and elderly services"
+        ],
+        "answer": "C",
+        "explanation": "全文说明同一统计类别下模式、支付、人员和功能差异很大。",
+        "evidence_text": "It marks a scale on which integration could occur, not evidence that integration has occurred equally."
+      },
+      {
+        "type": "detail",
+        "question": "Which arrangement is included among the four integration models?",
+        "options": [
+          "Hospitals transferring all patients abroad",
+          "A care institution legally providing medical services",
+          "Every family building a private hospital",
+          "Older residents receiving no community care"
+        ],
+        "answer": "B",
+        "explanation": "首段列出养老机构依法提供医疗服务这一模式。",
+        "evidence_text": "A care home may sign a cooperation agreement with a hospital; a hospital may operate long-term beds; an elderly care institution may obtain authority to provide medical services; or clinicians may extend support into communities and homes."
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “disaggregate” mean in the evaluation proposed?",
+        "options": [
+          "Break a total into meaningful components",
+          "Combine every service into one number",
+          "Remove outcomes from measurement",
+          "Count only occupied hospital beds"
+        ],
+        "answer": "A",
+        "explanation": "结合后续问题可知，作者要求把总容量拆成具体功能、流动和结果。",
+        "evidence_text": "Evaluation should therefore disaggregate capacity."
+      },
+      {
+        "type": "inference",
+        "question": "Why can separate payment systems burden families?",
+        "options": [
+          "Medical and daily care are always unrelated.",
+          "Every provider receives payment twice.",
+          "Eligibility tests eliminate the need for coordination.",
+          "Families may have to bridge administrative divisions that do not match the person's needs."
+        ],
+        "answer": "D",
+        "explanation": "需求跨越医疗和生活照护边界时，家庭被迫重复解释并寻找负责机构。",
+        "evidence_text": "Families become informal coordinators, repeating histories and negotiating which institution is responsible."
+      },
+      {
+        "type": "inference",
+        "question": "Why might mobile professionals represent capacity not visible in bed counts?",
+        "options": [
+          "They serve only empty institutions.",
+          "They prevent any hospital admission.",
+          "They can deliver organized care to several homes without adding institutional beds.",
+          "They make nursing and rehabilitation unnecessary."
+        ],
+        "answer": "C",
+        "explanation": "移动服务能覆盖居家者，说明床位不是全部服务能力。",
+        "evidence_text": "Occupancy also matters: an empty registered bed far from demand cannot relieve a household under strain, whereas mobile professionals may support several homes without creating a conventional bed."
+      }
+    ],
+    "source_verification": "URL可访问；已核验标题、日期与本文采用的可见事实。"
+  },
+  {
+    "corpus_id": "cet-human-health-l6-28",
+    "title": "When the Nurse Arrives Through an App",
+    "topic": "健康",
+    "difficulty": 6,
+    "source_id": "src-健康-28",
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20250410/8e2e95da620048b69bc27c7bf7fb1d51/c.html",
+    "source_title": "Care comes knocking as Chinese seniors turn to nurses on-demand",
+    "source_published_at": "2025-04-10",
+    "retrieved_at": "2026-08-29",
+    "source_replacement_note": "原清单PDF标题为乱码且非可用健康专文，改用新华社可核验的互联网护理报道。",
+    "adaptation_note": "题材参考替换后的权威来源公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "content": "On-demand nursing turns a household into a temporary clinical setting. By mid-2024, more than 3,000 Chinese medical institutions reportedly offered over 60 kinds of home services, including wound care, post-operative support and mental-health assistance. A phone interface can make the booking appear as simple as ordering transport. The clinical reality is less uniform: every home has different lighting, cleanliness, space, family dynamics and emergency backup.\n\nThe model responds to a genuine access problem. Frail older adults and people recovering from surgery may find repeated hospital travel exhausting or dangerous. A qualified nurse can replace a journey with a visit and observe how treatment fits daily life. Yet convenience creates a selection question. Some procedures are suitable for home delivery; others require imaging, sterile facilities or immediate medical escalation. Triage is the process of deciding urgency and the appropriate level of care before resources are assigned.\n\nA digital platform must therefore do more than match supply and demand. It needs verified professional credentials, a clinical review of the request, transparent prices, secure records and protocols for unexpected deterioration. The employing institution should remain accountable after the nurse crosses its door. Treating the worker as an independent courier would transfer clinical and legal risk to a person operating alone.\n\nWorkforce scarcity complicates expansion. The report cited about 500,000 certified elderly-care workers for the country, although nursing and elderly care are not identical occupations. If home services draw experienced staff away from wards without increasing training and retention, access may improve for app users while deteriorating elsewhere. Platforms may also favor dense, profitable neighborhoods, leaving remote communities with the greatest travel barriers underserved.\n\nPayment determines who can use the service repeatedly. A one-time visit may be affordable to a middle-income family but chronic care produces recurring expense. Medical or long-term-care insurance can reduce that burden only if eligible procedures, provider standards and reimbursement are aligned. Otherwise, digital convenience remains a private purchase rather than a broad access reform.\n\nHome nursing should not be judged by bookings alone. Relevant outcomes include avoided travel, complications, emergency transfers, patient confidence, worker safety and continuity with the treating team. The app is the visible doorway; governance is the structure behind it. Without that structure, scaling a convenient service can scale uncertainty at the same time.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What must accompany the expansion of app-based home nursing?",
+        "options": [
+          "Priority for the most profitable neighborhoods",
+          "Clinical triage, institutional accountability, workforce planning and fair payment",
+          "A simple booking interface without hospital involvement",
+          "The transfer of all risk to individual nurses"
+        ],
+        "answer": "B",
+        "explanation": "全文从临床适配、平台治理、人员分配和支付公平提出扩张条件。",
+        "evidence_text": "The app is the visible doorway; governance is the structure behind it."
+      },
+      {
+        "type": "detail",
+        "question": "How many kinds of home services were reportedly available by mid-2024?",
+        "options": [
+          "More than 3,000",
+          "More than 60",
+          "Exactly 500,000",
+          "Fewer than 10"
+        ],
+        "answer": "B",
+        "explanation": "首段说明超过60种。",
+        "evidence_text": "By mid-2024, more than 3,000 Chinese medical institutions reportedly offered over 60 kinds of home services, including wound care, post-operative support and mental-health assistance."
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “triage” determine?",
+        "options": [
+          "The price of a phone",
+          "The nurse's home address",
+          "The popularity of an application",
+          "Urgency and the suitable level of care"
+        ],
+        "answer": "D",
+        "explanation": "正文直接定义 triage。",
+        "evidence_text": "Triage is the process of deciding urgency and the appropriate level of care before resources are assigned."
+      },
+      {
+        "type": "inference",
+        "question": "How might app-based care worsen geographic inequality?",
+        "options": [
+          "Digital platforms cannot store addresses.",
+          "Hospital travel is easiest in isolated areas.",
+          "Providers may concentrate where bookings are dense and profitable.",
+          "Remote residents never need nursing."
+        ],
+        "answer": "C",
+        "explanation": "商业平台可能优先高密度市场，使最需要替代交通的偏远地区继续缺服务。",
+        "evidence_text": "Platforms may also favor dense, profitable neighborhoods, leaving remote communities with the greatest travel barriers underserved."
+      },
+      {
+        "type": "inference",
+        "question": "Why should the institution remain accountable for a home visit?",
+        "options": [
+          "Independent couriers provide medical supervision.",
+          "The service remains clinical even when delivered outside its building.",
+          "Nurses are unable to make any professional judgment.",
+          "Families should never communicate with a nurse."
+        ],
+        "answer": "B",
+        "explanation": "地点改变不应让机构把临床和法律风险推给单独上门的护士。",
+        "evidence_text": "Treating the worker as an independent courier would transfer clinical and legal risk to a person operating alone."
+      }
+    ],
+    "source_verification": "原候选判废并换源；替换URL已核验标题、日期和可见事实。原清单PDF标题为乱码且非可用健康专文，改用新华社可核验的互联网护理报道。"
+  },
+  {
+    "corpus_id": "cet-human-health-l6-29",
+    "title": "Smart Healthcare Must Know When Not to Automate",
+    "topic": "健康",
+    "difficulty": 6,
+    "source_id": "src-健康-29",
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20260413/1b987d983a0f4d94af1583f1872a8326/c.html",
+    "source_title": "China Focus: How technology is rewiring China's health system",
+    "source_published_at": "2026-04-13",
+    "retrieved_at": "2026-08-29",
+    "source_replacement_note": "原清单URL仅为待发表文章简讯，事实不足以支撑L6策展，改用新华社可核验的数字医疗深度报道。",
+    "adaptation_note": "题材参考替换后的权威来源公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "content": "A routine chest scan at a community clinic can contain information beyond the question that brought a patient there. In one reported case, artificial intelligence examining a lung CT also flagged a cardiovascular risk. Such secondary detection illustrates the appeal of AI: once an image exists, software may notice a pattern that a busy workflow was not designed to seek. It also raises the problem of responsibility for an unexpected finding.\n\nA flag is not a diagnosis. Clinicians must decide whether the signal is reliable, relevant and urgent; patients need an explanation that does not turn uncertain probability into panic. Incidental finding refers to a potentially important observation discovered while looking for something else. AI may increase the number of these findings, including false positives that lead to repeat imaging, expense or invasive follow-up. A system optimized for sensitivity can appear successful while shifting large downstream costs onto patients and hospitals.\n\nDigitized surveillance creates a parallel issue at population level. Real-time reports and rapid genetic sequencing can identify an outbreak earlier, enabling a faster response. Yet data gathered for public protection can also expose individuals or communities to stigma if access and communication are poorly governed. Speed must be paired with validation, proportional intervention and correction when an alert proves wrong.\n\nSmart eldercare extends monitoring into the home. Mattress sensors can track breathing and heart rate; wearables may detect a fall and notify relatives. These tools promise safety without continuous institutional supervision. Their value depends on the response chain. An alarm that no one receives, a device abandoned because it is uncomfortable, or a sensor that confuses ordinary movement with crisis produces either false security or alarm fatigue.\n\nAutomation also redistributes labor rather than simply saving it. Someone must review alerts, maintain devices, explain uncertainty and visit when the signal cannot be resolved remotely. If those tasks are invisible in budgets, technology adds obligations to already stretched clinicians and family caregivers.\n\nThe appropriate boundary is not “human versus machine.” It is the decision point at which automation lacks context, legitimacy or capacity to act. Systems should specify who verifies each class of signal, what evidence triggers intervention, how patients contest errors and when monitoring may be declined. Smart healthcare earns trust by automating detection selectively while keeping consequential judgment and accountability visible.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "Where does the passage draw the boundary for health automation?",
+        "options": [
+          "At decisions requiring context, legitimate authority and accountable action",
+          "Before any software examines medical data",
+          "After every alert has automatically triggered treatment",
+          "Only at the entrance to a major hospital"
+        ],
+        "answer": "A",
+        "explanation": "文章不作人机二分，而以语境、合法性、行动能力和责任界定边界。",
+        "evidence_text": "The appropriate boundary is not “human versus machine.” It is the decision point at which automation lacks context, legitimacy or capacity to act."
+      },
+      {
+        "type": "detail",
+        "question": "What additional risk did AI flag in the reported chest-scan case?",
+        "options": [
+          "A hearing problem",
+          "A fall at home",
+          "A medicine shortage",
+          "A cardiovascular risk"
+        ],
+        "answer": "D",
+        "explanation": "首段说明AI在肺部CT中提示心血管风险。",
+        "evidence_text": "In one reported case, artificial intelligence examining a lung CT also flagged a cardiovascular risk."
+      },
+      {
+        "type": "word_guess",
+        "question": "What is an “incidental finding”?",
+        "options": [
+          "A diagnosis made without any image",
+          "A routine alarm from a wearable",
+          "An observation found while investigating another question",
+          "A result intentionally hidden from a patient"
+        ],
+        "answer": "C",
+        "explanation": "正文直接定义偶然发现。",
+        "evidence_text": "Incidental finding refers to a potentially important observation discovered while looking for something else."
+      },
+      {
+        "type": "inference",
+        "question": "How can highly sensitive AI impose downstream costs?",
+        "options": [
+          "Patients automatically receive free follow-up.",
+          "False positives can prompt additional procedures and anxiety.",
+          "Sensitive systems never detect uncertain patterns.",
+          "Clinicians stop reviewing any scan."
+        ],
+        "answer": "B",
+        "explanation": "高敏感度增加假阳性，可能带来复查、侵入性操作、费用与恐慌。",
+        "evidence_text": "AI may increase the number of these findings, including false positives that lead to repeat imaging, expense or invasive follow-up."
+      },
+      {
+        "type": "inference",
+        "question": "Why can a home sensor create false security?",
+        "options": [
+          "Detection has little value if no dependable person responds to the alert.",
+          "Sensors cannot measure breathing or movement.",
+          "Older adults always remove monitoring devices.",
+          "Institutional care is the only safe response."
+        ],
+        "answer": "A",
+        "explanation": "传感器只是响应链起点，报警无人接收或处理就不能构成保护。",
+        "evidence_text": "Their value depends on the response chain."
+      }
+    ],
+    "source_verification": "原候选判废并换源；替换URL已核验标题、日期和可见事实。原清单URL仅为待发表文章简讯，事实不足以支撑L6策展，改用新华社可核验的数字医疗深度报道。"
+  },
+  {
+    "corpus_id": "cet-human-health-l6-30",
+    "title": "Sharing the Cost of Care Without Standardizing the Person",
+    "topic": "健康",
+    "difficulty": 6,
+    "source_id": "src-健康-30",
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20260327/10ff112341de4cac9e3580917b31b772/c.html",
+    "source_title": "China Focus: China's long-term care insurance system redefines disabled care",
+    "source_published_at": "2026-03-27",
+    "retrieved_at": "2026-08-29",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "content": "Long-term care insurance converts a private household burden into a shared social risk. In one Ningbo case, a caregiver's visits replaced repeated journeys for an elderly woman's catheter care. Elsewhere, coverage paid part of nursing-home fees, home rehabilitation or the rental of an electric stair climber. The services differ because functional impairment affects daily life in highly specific ways.\n\nChina began regional pilots in 2016. By 2026, nearly 310 million people had enrolled and more than 3.3 million people with disabilities had benefited. Plans called for nationwide expansion within three years, initially emphasizing severe disability and later extending toward moderate impairment. An assessment determines eligibility, which makes the definition of need a gate to both service and public funding.\n\nStandardization can protect fairness. Two people with comparable limitations should not receive entirely different decisions because one evaluator is more sympathetic. A common service list can also clarify which help—from eating and bathing to rehabilitation—is a covered entitlement. Yet assessment instruments compress complex lives into scores. A person may walk a short distance during an appointment but be unable to cook safely, remember medication or manage at night. Functional means related to the ability to perform necessary activities, not merely the presence of a diagnosis.\n\nLocal variation presents a second tension. Pilots developed services around available workers, institutions and budgets. Rural areas may have fewer trained caregivers or providers capable of renting assistive devices. Equal formal eligibility does not create equal usable benefit when supply is absent. National rules therefore need a floor of protection while allowing local delivery to adapt; otherwise uniformity can freeze the advantages of well-resourced cities into the definition of normal service.\n\nInsurance also shapes the market it pays. Designated institutions gained clients, new professional certificates appeared and investment entered assistive technology and assessment. This can expand capacity, but providers may favor reimbursable tasks over unlisted forms of support. Quality oversight must examine dignity, continuity and outcomes, not only completed service units.\n\nFinancing remains politically consequential. Pooling spreads unpredictable care costs, while an aging population increases expected claims. Sustainable funding cannot mean quietly narrowing eligibility until the system balances. Nor can generosity ignore the contributions or public subsidies required. Transparent projections and periodic public review are necessary to negotiate that trade-off.\n\nThe system succeeds when standard rules make access fair without treating impairment as standard. Its core achievement is neither enrollment nor industry growth alone. It is whether shared finance delivers individually useful assistance and allows families to replace exhausting improvisation with reliable care.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What central design challenge does the passage identify for long-term care insurance?",
+        "options": [
+          "Eliminating all assessment before benefits",
+          "Providing identical tasks to every enrolled person",
+          "Keeping care as a private family responsibility",
+          "Combining fair common rules with services responsive to individual function and local capacity"
+        ],
+        "answer": "D",
+        "explanation": "文章围绕标准公平与个体功能、地方供给差异之间的张力展开。",
+        "evidence_text": "The system succeeds when standard rules make access fair without treating impairment as standard."
+      },
+      {
+        "type": "detail",
+        "question": "How many people with disabilities had benefited by 2026?",
+        "options": [
+          "Exactly 45 million",
+          "Nearly 310 million",
+          "About 310,000",
+          "More than 3.3 million"
+        ],
+        "answer": "D",
+        "explanation": "第二段给出受益者超过330万。",
+        "evidence_text": "By 2026, nearly 310 million people had enrolled and more than 3.3 million people with disabilities had benefited."
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “functional” refer to in the assessment discussion?",
+        "options": [
+          "The age of an insurance scheme",
+          "Ability to carry out necessary activities",
+          "The name of a diagnosed disease",
+          "The profitability of a provider"
+        ],
+        "answer": "B",
+        "explanation": "正文直接定义 functional。",
+        "evidence_text": "Functional means related to the ability to perform necessary activities, not merely the presence of a diagnosis."
+      },
+      {
+        "type": "inference",
+        "question": "Why can equal eligibility fail to produce equal benefit?",
+        "options": [
+          "Some places lack workers or providers able to deliver the covered service.",
+          "National rules prohibit all local adaptation.",
+          "Rural residents have identical service supply.",
+          "Assessment scores never influence funding."
+        ],
+        "answer": "A",
+        "explanation": "形式上的资格若没有本地供给支撑，就无法转化为实际服务。",
+        "evidence_text": "Equal formal eligibility does not create equal usable benefit when supply is absent."
+      },
+      {
+        "type": "inference",
+        "question": "How might insurance distort the care market?",
+        "options": [
+          "Insurance prevents any new provider from entering.",
+          "Every reimbursed task necessarily improves dignity.",
+          "Public funding removes the need for oversight.",
+          "Providers may prioritize billable listed tasks over other useful support."
+        ],
+        "answer": "D",
+        "explanation": "支付目录会塑造供给激励，可能挤压未列入但有价值的照护。",
+        "evidence_text": "This can expand capacity, but providers may favor reimbursable tasks over unlisted forms of support."
+      }
+    ],
+    "source_verification": "URL可访问；已核验标题、日期与本文采用的可见事实。"
+  }
+]

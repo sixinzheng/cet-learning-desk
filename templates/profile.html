@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %}我的设置 · 四六级学习台{% endblock %}
+{% block content %}
+<div class="page-shell settings-page" id="profile-app" data-ai-configured="{{ 'true' if ai_configured else 'false' }}">
+    <header class="page-heading"><div><p class="eyebrow">LOCAL SETTINGS / 我的</p><h1>工具、能力与本地服务</h1><p>在这里管理学习工具、AI 能力和本地数据；完整词书目录收纳在页面底部。</p></div><a class="btn btn-secondary" href="/growth">查看段位档案</a></header>
+    <div data-region-status class="region-state region-state--loading">正在读取本地设置…</div>
+    <div class="settings-layout">
+        <nav class="settings-index" aria-label="设置目录"><a href="#tools">学习工具</a><a href="#skills">AI Skills</a><a href="#services">AI 服务</a><a href="#local-data">本地数据</a><a href="#wordbooks">词库</a></nav>
+        <div class="settings-content">
+            <section id="tools" class="settings-section"><div><p class="eyebrow">TOOLS</p><h2>学习工具</h2><p>笔记用于复盘，导出用于生成可打印练习。</p></div><div class="tool-links"><a href="/notes"><b>学习笔记</b><span>查看、编辑与整理历史笔记</span></a><a href="/export"><b>打印导出</b><span>选择阅读题生成 Word 文件</span></a></div></section>
+            <section id="skills" class="settings-section settings-section--skills">
+                <div><p class="eyebrow">SKILL MANAGER</p><h2>选择 AI 可以使用的能力</h2><p>关闭后，对应的全站 AI 调用会真正停止。内置 Skill 不能删除，但可以补充规则；自定义 Skill 可随时删除。</p><a class="text-link" href="/control">进入完整 AI 工作台</a></div>
+                <div class="skill-settings-panel">
+                    <div id="profile-skills" class="skill-list" aria-live="polite"><p>正在读取 Skill 目录…</p></div>
+                    <details class="skill-create">
+                        <summary>新增自定义 Skill</summary>
+                        <form id="skill-create-form">
+                            <label for="skill-name">名称</label><input id="skill-name" maxlength="60" required placeholder="例如：翻译复盘助手">
+                            <label for="skill-description">用途说明</label><input id="skill-description" maxlength="240" placeholder="它负责什么，不负责什么">
+                            <label for="skill-instructions">使用规则</label><textarea id="skill-instructions" rows="5" maxlength="12000" placeholder="写明输出格式、证据边界和你的偏好"></textarea>
+                            <button class="btn btn-primary" type="submit">创建 Skill</button><span id="skill-create-state" role="status"></span>
+                        </form>
+                    </details>
+                </div>
+            </section>
+            <section id="services" class="settings-section settings-section--ai">
+                <div><p class="eyebrow">DEEPSEEK / AI SERVICE</p><h2>让 AI 在全站开始工作</h2><p>密钥经 DeepSeek 余额接口验证后，优先保存到 Windows 凭据管理器；不可用时使用当前用户 DPAPI 加密兜底。页面和接口都不会返回完整密钥。</p></div>
+                <div class="ai-settings-panel">
+                    <div class="service-status" id="ai-service-status"><span class="status-dot" aria-hidden="true"></span><div><strong id="ai-state">检查中</strong><p id="ai-help">正在读取本机 AI 配置。</p></div></div>
+                    <label for="ai-key-input">DeepSeek API Key</label>
+                    <div class="secret-field"><input id="ai-key-input" type="password" autocomplete="off" spellcheck="false" placeholder="sk-…"><button id="ai-key-toggle" type="button" aria-pressed="false">显示</button></div>
+                    <p class="field-help">保存时先验证 Key；验证失败不会覆盖当前可用配置。</p>
+                    <div class="ai-settings-actions"><button id="ai-key-save" class="btn btn-primary" type="button">验证并保存</button><button id="ai-balance-refresh" class="btn btn-secondary" type="button">刷新余额</button><button id="ai-key-delete" class="btn btn-danger" type="button">删除配置</button></div>
+                    <div class="ai-account-ledger" aria-live="polite"><div><span>当前模型</span><strong id="ai-model">deepseek-v4-flash</strong></div><div><span>账户余额</span><strong id="ai-balance">未读取</strong></div><div><span>近84天本站花费</span><strong id="ai-tracked-cost">¥0.000000</strong></div><div><span>上次验证</span><strong id="ai-verified-at">尚未验证</strong></div></div>
+                    <p id="ai-config-message" class="field-help" role="status"></p>
+                </div>
+            </section>
+            <section id="local-data" class="settings-section"><div><p class="eyebrow">PRIVACY</p><h2>本地数据说明</h2><p>词汇状态、复习进度、学习日志、段位与笔记保存在这台电脑的 SQLite 数据库中。本网站没有新增云同步或多用户功能。</p></div><div class="local-note"><strong>需要备份时</strong><p>先退出正在运行的网站，再复制项目中的数据库文件。不要在网站运行时直接替换数据库。</p></div></section>
+            <details id="wordbooks" class="settings-section settings-section--wordbooks settings-disclosure">
+                <summary><span><span class="eyebrow">WORDBOOKS</span><strong>完整词库目录</strong><small>查看封面、收录量、掌握进度与预览</small></span><span class="settings-disclosure__action"><span>展开管理</span><span>收起目录</span></span></summary>
+                <div id="profile-wordbooks" class="wordbook-list"><p>正在读取词库…</p></div>
+            </details>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block scripts %}<script src="{{ asset('js/profile.js') }}"></script>{% endblock %}

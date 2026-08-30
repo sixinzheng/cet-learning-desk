@@ -1,0 +1,2464 @@
+[
+  {
+    "corpus_id": "cet-curated-society-l1-01",
+    "title": "Retirement as a Local Resource",
+    "topic": "社会",
+    "difficulty": 1,
+    "source_id": "src-社会-01",
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20260807/825278dafecb41679fafa1404ef56deb/c.html",
+    "source_title": "Across China: After retirement, many in China are finding new purpose",
+    "source_published_at": "2026-08-07",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "页面可访问；核验了退休居民参与志愿服务、纸质便民手册、上门提醒及社区互助等事实。",
+    "adaptation_note": "题材参考所列新华社英文网公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "content": "Retirement is often described as the end of paid work. In one neighborhood, however, it has also become a new beginning for public service. Older residents visit neighbors, share useful information and organize activities. Their experience is treated as a resource rather than something left behind.\n\nThe volunteers do not assume that every service should move online. Some residents over 80 find smartphone searches difficult. A face-to-face reminder about a health check can reach them more easily. The community has also printed a handbook with bus routes, service locations and emergency contacts. This modest tool remains useful because readers can open it without a password, signal or unfamiliar screen.\n\nOlder volunteers receive support as well as giving it. Family doctors visit residents with limited mobility, while community workers check on people who live alone. Mutual-aid groups offer company to members facing illness. The arrangement is reciprocal: people may contribute in one situation and need assistance in another.\n\nThe larger lesson is not that retirement must stay busy. It is that communities should leave several doors open for participation. When older people can choose a suitable role, retirement may bring purpose without denying their own need for care.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What reciprocal role can retired residents play locally?",
+        "options": [
+          "All public information should be moved to smartphones",
+          "Older residents can contribute to community life while still receiving support",
+          "Retirement should require unpaid full-time work",
+          "Family doctors can replace every community volunteer"
+        ],
+        "answer": "B",
+        "explanation": "全文说明退休居民既能贡献经验和服务，也可能接受医疗与社区支持。",
+        "evidence_text": "The arrangement is reciprocal: people may contribute in one situation and need assistance in another."
+      },
+      {
+        "type": "detail",
+        "question": "Why did the community print a handbook?",
+        "options": [
+          "To advertise private products",
+          "To provide practical information without requiring digital skills",
+          "To record the volunteers' work hours",
+          "To replace visits by family doctors"
+        ],
+        "answer": "B",
+        "explanation": "第二段说明纸质手册让不熟悉智能手机的老人也能查公交、服务点和紧急联系方式。",
+        "evidence_text": "The community has also printed a handbook with bus routes, service locations and emergency contacts."
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “reciprocal” most nearly mean here?",
+        "options": [
+          "Limited to medical treatment",
+          "Controlled by a mobile application",
+          "Based on exchange in both directions",
+          "Performed for payment"
+        ],
+        "answer": "C",
+        "explanation": "冒号后解释了居民在不同情境下既可能贡献，也可能需要帮助，因此指双向互助。",
+        "evidence_text": "The arrangement is reciprocal: people may contribute in one situation and need assistance in another."
+      },
+      {
+        "type": "inference",
+        "question": "What can be inferred about face-to-face reminders?",
+        "options": [
+          "They are required for every resident",
+          "They make printed information unnecessary",
+          "They work only during health emergencies",
+          "They remain valuable when digital access is difficult"
+        ],
+        "answer": "D",
+        "explanation": "文中用高龄居民难以使用手机搜索来说明面对面提醒仍有不可替代的可及性。",
+        "evidence_text": "A face-to-face reminder about a health check can reach them more easily."
+      },
+      {
+        "type": "attitude",
+        "question": "Why should active retirement remain a choice rather than a duty?",
+        "options": [
+          "As a reason to remove offline services",
+          "As proof that retired people no longer need care",
+          "As one possible source of purpose, not an obligation to remain busy",
+          "As less meaningful than paid employment"
+        ],
+        "answer": "C",
+        "explanation": "结尾明确限制了观点：不是要求退休必须忙碌，而是应提供可选择的参与角色。",
+        "evidence_text": "The larger lesson is not that retirement must stay busy."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-curated-society-l1-02",
+    "title": "Equal Service Is Not Identical Service",
+    "topic": "社会",
+    "difficulty": 1,
+    "source_id": "src-社会-06",
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20250610/6b8c5dcf552743a281df4ac5e7f6a3cd/c.html",
+    "source_title": "China Focus: China ramps up efforts to boost public welfare, address key social needs",
+    "source_published_at": "2025-06-10",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "页面可访问；核验了灵活就业者参保不受户籍限制、城市流入人口的服务需求以及公共服务向脆弱群体倾斜等事实。",
+    "adaptation_note": "题材参考所列新华社英文网公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "content": "A city may promise the same public services to everyone, yet equal treatment does not always mean using one identical rule. A delivery rider, for example, may work for several platforms and change jobs often. If social insurance depends on a traditional long-term employer or a local household record, that worker can fall through the gap.\n\nRecent welfare measures address such mismatches. They seek to let people in flexible employment join local insurance programs without residency restrictions. High-inflow cities are also expected to examine the practical needs of migrant workers, including schooling, housing and medical care. The purpose is not to create a separate system for every group. It is to remove rules that block people whose lives no longer fit an older pattern.\n\nThis approach also changes how fairness is measured. Counting the number of offices or websites tells little if the intended users cannot enter them. Officials must ask who remains absent and why. A service may need longer opening hours, simpler documents or support in another location.\n\nPublic welfare is therefore less like handing out identical coats and more like making sure everyone can reach shelter. The standard is a shared level of protection; the route toward it may reasonably differ.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "How can public services be equally protective without being identical?",
+        "options": [
+          "They should be limited to workers with one employer",
+          "They may require different routes to reach a common level of protection",
+          "They are best measured by the number of government websites",
+          "They must use identical procedures in every city"
+        ],
+        "answer": "B",
+        "explanation": "全文论证公平并不等于程序完全相同，而是应消除不同群体面对的实际障碍，使其达到共同保障水平。",
+        "evidence_text": "The standard is a shared level of protection; the route toward it may reasonably differ."
+      },
+      {
+        "type": "detail",
+        "question": "Which obstacle for flexible workers is mentioned?",
+        "options": [
+          "They cannot change delivery platforms",
+          "They are forbidden to use city medical services",
+          "They may not fit insurance rules built around stable employment or residency",
+          "They must own a home before entering school"
+        ],
+        "answer": "C",
+        "explanation": "首段指出，依赖传统长期雇主或本地户籍的参保规则可能让灵活就业者掉出保障范围。",
+        "evidence_text": "If social insurance depends on a traditional long-term employer or a local household record, that worker can fall through the gap."
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “mismatches” most nearly refer to in the second paragraph?",
+        "options": [
+          "Arguments among several delivery companies",
+          "Differences in the price of public housing",
+          "Errors in counting government offices",
+          "Conflicts between old service rules and present ways of living"
+        ],
+        "answer": "D",
+        "explanation": "前文描述新型灵活就业生活与旧有参保条件不吻合，因此该词指规则和现实之间的错位。",
+        "evidence_text": "Recent welfare measures address such mismatches."
+      },
+      {
+        "type": "inference",
+        "question": "Why does the author question counting offices or websites?",
+        "options": [
+          "Every public office should stay open all night",
+          "Most residents refuse to visit public offices",
+          "Websites always cost more than face-to-face services",
+          "Their number does not show whether intended users can actually obtain the service"
+        ],
+        "answer": "D",
+        "explanation": "由“数量说明不了用户能否进入”可推断，投入或渠道数量不能替代可及性的结果判断。",
+        "evidence_text": "Counting the number of offices or websites tells little if the intended users cannot enter them."
+      },
+      {
+        "type": "attitude",
+        "question": "Why can simpler documents support equal public protection?",
+        "options": [
+          "As unfair rewards for one profession",
+          "As reasonable tools for removing access barriers",
+          "As evidence that common standards should disappear",
+          "As temporary substitutes for all public institutions"
+        ],
+        "answer": "B",
+        "explanation": "作者把简化材料、延长时间等视为帮助不同群体达到共同保障水平的合理路径。",
+        "evidence_text": "A service may need longer opening hours, simpler documents or support in another location."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-curated-society-l1-03",
+    "title": "A Smart Device Still Needs a Human Plan",
+    "topic": "社会",
+    "difficulty": 1,
+    "source_id": "src-社会-07",
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20251108/bf3f87a86e7f46a0890ca39a391e0155/c.html",
+    "source_title": "China Focus: How technology powers China's drive for common prosperity",
+    "source_published_at": "2025-11-08",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "页面可访问；核验了养老机构使用智能药盒和行为、生命体征数据识别风险，以及浙江数字平台连接超过4万家养老服务机构等事实。",
+    "adaptation_note": "题材参考所列新华社英文网公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "content": "A smart pill box can remind an older resident to take medicine. A sensor can notice an unusual change in movement or vital signs. These tools may help caregivers see a risk earlier, but the device does not decide what good care means.\n\nThat decision belongs to people. A nursing home must choose who receives an alert, how quickly staff respond and when a family or doctor should be contacted. If a system produces too many warnings, workers may stop trusting it. If it collects data without clear limits, residents may lose privacy while gaining little protection.\n\nScale creates another challenge. One digital platform in Zhejiang links tens of thousands of senior-service providers. A wide network can spread useful methods and connect residents with nearby help. However, adding more institutions to a screen is not the same as improving every visit. Staff training, reliable equipment and an offline way to ask for help still matter.\n\nTechnology is most valuable when it supports a clear care process. The question should not be whether a home looks modern. It should be whether residents are safer, better understood and still treated as people who can make choices about their own lives.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What is the central message of the passage?",
+        "options": [
+          "Sensors should replace staff in nursing homes",
+          "A large platform automatically improves every care visit",
+          "Care technology works best inside a responsible human process",
+          "Older residents should avoid all digital equipment"
+        ],
+        "answer": "C",
+        "explanation": "文章反复强调设备只能辅助，回应、隐私、培训和居民选择仍需由清晰的人本流程保障。",
+        "evidence_text": "Technology is most valuable when it supports a clear care process."
+      },
+      {
+        "type": "detail",
+        "question": "What problem may follow from too many system warnings?",
+        "options": [
+          "Families will receive free equipment",
+          "Residents will take more medicine",
+          "The platform will add more institutions",
+          "Workers may begin to distrust the alerts"
+        ],
+        "answer": "D",
+        "explanation": "第二段直接说明警报过多可能导致工作人员不再信任系统。",
+        "evidence_text": "If a system produces too many warnings, workers may stop trusting it."
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “Scale” refer to at the start of paragraph three?",
+        "options": [
+          "A device for measuring body weight",
+          "The size and reach of the service network",
+          "The speed of a medical response",
+          "A score given to nursing homes"
+        ],
+        "answer": "B",
+        "explanation": "紧接着介绍连接数万家服务机构的平台，因此指网络覆盖规模。",
+        "evidence_text": "Scale creates another challenge."
+      },
+      {
+        "type": "inference",
+        "question": "What can be inferred about an offline way to seek help?",
+        "options": [
+          "It is needed only when equipment is new",
+          "It protects access when a resident cannot use the digital channel",
+          "It prevents staff from receiving training",
+          "It makes the digital platform unnecessary"
+        ],
+        "answer": "B",
+        "explanation": "作者把线下求助与培训、可靠设备并列为必要条件，说明数字渠道不能覆盖所有人的使用情境。",
+        "evidence_text": "Staff training, reliable equipment and an offline way to ask for help still matter."
+      },
+      {
+        "type": "attitude",
+        "question": "Which test of technology does the author favor?",
+        "options": [
+          "Whether it makes a building appear modern",
+          "Whether it gathers as much data as possible",
+          "Whether it improves safety, understanding and resident choice",
+          "Whether every warning reaches a family member"
+        ],
+        "answer": "C",
+        "explanation": "结尾明确把安全、理解和自主选择作为评价标准，而不是现代化外观。",
+        "evidence_text": "It should be whether residents are safer, better understood and still treated as people who can make choices about their own lives."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-curated-society-l1-04",
+    "title": "A Ramp Is an Invitation to Participate",
+    "topic": "社会",
+    "difficulty": 1,
+    "source_id": "src-社会-08",
+    "source_name": "China Daily",
+    "source_url": "https://global.chinadaily.com.cn/a/202507/23/WS68803228a310ad07b5d91605.html",
+    "source_title": "Nation clears barriers for its disabled",
+    "source_published_at": "2025-07-23",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "页面可访问；核验了无障碍家庭改造、残疾人职业培训和就业，以及无障碍环境建设法支持社会参与等事实。",
+    "adaptation_note": "题材参考所列 China Daily 公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "content": "A step at the entrance of a shop may look small to most customers. To a wheelchair user, it can decide whether the entire building is available. Accessibility therefore concerns more than construction. It determines who can study, work, shop and join public life without asking to be carried.\n\nHome renovation offers a clear example. A handrail, a wider doorway or a safer bathroom can reduce daily risk. Yet improvements outside the home are equally important. Training gives a person useful skills, but an inaccessible bus or workplace may still keep that person from a job. Welfare payments provide support, but they cannot replace the freedom to enter a school or service center independently.\n\nThis is why barrier-free rules matter. They turn access from a kind favor into a normal expectation. A useful inspection should also involve the people who meet the obstacles. A ramp may follow a drawing and still be too steep; a sign may exist and still be impossible to read.\n\nGood access often becomes ordinary and almost invisible. That is a success, not a reason to ignore it. When a building welcomes different bodies without special negotiation, participation begins at the front door.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "How does a ramp change participation beyond physical entry?",
+        "options": [
+          "It is mainly a style of modern building design",
+          "It removes the need for vocational training",
+          "It concerns only private homes",
+          "It enables independent participation in everyday social life"
+        ],
+        "answer": "D",
+        "explanation": "全文把无障碍与学习、工作、出行和公共参与联系起来，强调独立参与而非单纯建筑形式。",
+        "evidence_text": "Accessibility therefore concerns more than construction."
+      },
+      {
+        "type": "detail",
+        "question": "Why might job training fail to lead to employment?",
+        "options": [
+          "Welfare rules forbid trained people to work",
+          "The trainee may dislike the new skill",
+          "Transport or the workplace may remain inaccessible",
+          "Every employer requires a wider home doorway"
+        ],
+        "answer": "C",
+        "explanation": "第二段指出，即使掌握技能，无障碍公交或工作场所的缺失仍可能阻止就业。",
+        "evidence_text": "Training gives a person useful skills, but an inaccessible bus or workplace may still keep that person from a job."
+      },
+      {
+        "type": "word_guess",
+        "question": "In the front-door example, what burden does negotiation describe?",
+        "options": [
+          "Discussing the price of a new building",
+          "Having to request and arrange special help",
+          "Applying for a training course",
+          "Testing the strength of a handrail"
+        ],
+        "answer": "B",
+        "explanation": "语境是建筑本应直接欢迎不同身体条件的人，无需临时请求并协调特殊帮助。",
+        "evidence_text": "When a building welcomes different bodies without special negotiation, participation begins at the front door."
+      },
+      {
+        "type": "inference",
+        "question": "Why should users take part in accessibility inspections?",
+        "options": [
+          "Only wheelchair users understand construction costs",
+          "Inspectors are not allowed to read building plans",
+          "A design can meet a drawing yet remain difficult to use",
+          "Users can replace every safety rule with personal preference"
+        ],
+        "answer": "C",
+        "explanation": "坡道可能图纸合规却过陡，说明真实使用者能发现形式检查遗漏的可用性问题。",
+        "evidence_text": "A ramp may follow a drawing and still be too steep; a sign may exist and still be impossible to read."
+      },
+      {
+        "type": "attitude",
+        "question": "How do barrier-free rules change access from kindness into expectation?",
+        "options": [
+          "They are useful only during home renovation",
+          "They make welfare support unnecessary",
+          "They draw too much attention to ordinary buildings",
+          "They establish access as an expected right rather than a favor"
+        ],
+        "answer": "D",
+        "explanation": "作者肯定规则把无障碍从善意帮助转变为正常社会预期。",
+        "evidence_text": "They turn access from a kind favor into a normal expectation."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-curated-society-l1-05",
+    "title": "The Toolroom That Became a Shared Table",
+    "topic": "社会",
+    "difficulty": 1,
+    "source_id": "src-社会-09",
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20250801/6f82240c076143e98cf20a8e7d50d866/c.html",
+    "source_title": "Across China: Community partners drive innovative grassroots governance",
+    "source_published_at": "2025-08-01",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "页面可访问；核验了废弃工具房改成邻里服务中心、引入商户和居民提供早餐及日用品，以及政府、市场、社会协同治理等事实。",
+    "adaptation_note": "题材参考所列新华社英文网公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "content": "An abandoned toolroom in a crowded neighborhood once served nobody. After a local partnership reopened it, the small space began selling breakfast, vegetables and daily necessities. Older residents could rest outside after exercise, while commuters collected food on their way to work.\n\nThe change did not come from one office planning every detail. Community officials provided a place and invited merchants, residents and social groups to propose services. A local business could earn income while meeting a public need. Residents could also join cleaning, maintenance or cultural activities. The result was neither a fully commercial shop nor a traditional government counter.\n\nSuch partnerships can use forgotten spaces and local knowledge, but they need rules. A popular service should not push out residents who cannot pay much. Partners must explain prices, responsibilities and how complaints will be handled. Officials still have to protect basic access rather than assuming that any busy business equals good community service.\n\nThe toolroom matters because it changed relationships as well as walls. People who once appeared only as service users became workers, organizers and decision-makers. A shared neighborhood grows stronger when residents help shape what happens close to home.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What does the toolroom's transformation illustrate?",
+        "options": [
+          "Older residents prefer shopping to outdoor exercise",
+          "Every community service should become a private shop",
+          "Government offices should stop protecting basic access",
+          "Local partnerships can turn unused space into shared services and participation"
+        ],
+        "answer": "D",
+        "explanation": "文章通过工具房改造说明多方合作既能盘活空间和服务，也能让居民参与社区建设。",
+        "evidence_text": "The toolroom matters because it changed relationships as well as walls."
+      },
+      {
+        "type": "detail",
+        "question": "What role did community officials play?",
+        "options": [
+          "They set every breakfast price",
+          "They offered a place and invited different groups to suggest services",
+          "They required residents to work in maintenance",
+          "They closed all traditional government counters"
+        ],
+        "answer": "B",
+        "explanation": "第二段明确写到社区人员提供场地，并邀请商户、居民和社会团体提出服务方案。",
+        "evidence_text": "Community officials provided a place and invited merchants, residents and social groups to propose services."
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “push out” mean in paragraph three?",
+        "options": [
+          "Employ for cleaning",
+          "Invite to complain",
+          "Exclude or displace",
+          "Move outdoors for exercise"
+        ],
+        "answer": "C",
+        "explanation": "语境担心热门服务排斥支付能力较弱者，因此指排除或挤走。",
+        "evidence_text": "A popular service should not push out residents who cannot pay much."
+      },
+      {
+        "type": "inference",
+        "question": "Why does the author say a busy business may not equal good service?",
+        "options": [
+          "Busy shops never meet a public need",
+          "Residents dislike services that earn income",
+          "Officials must operate every neighborhood shop themselves",
+          "Commercial success does not guarantee fair basic access"
+        ],
+        "answer": "D",
+        "explanation": "前文强调价格、责任和低支付能力居民的进入权，可推断客流或盈利不能证明服务公平。",
+        "evidence_text": "Officials still have to protect basic access rather than assuming that any busy business equals good community service."
+      },
+      {
+        "type": "attitude",
+        "question": "Under what condition do community partners improve the shared toolroom?",
+        "options": [
+          "Positive, provided that access and accountability are protected",
+          "Negative because merchants always control decisions",
+          "Uncertain because unused spaces have no social value",
+          "Positive only when residents remain passive users"
+        ],
+        "answer": "A",
+        "explanation": "作者肯定合作盘活资源和居民参与，同时明确需要价格、责任、投诉和基本可及性规则。",
+        "evidence_text": "Such partnerships can use forgotten spaces and local knowledge, but they need rules."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-curated-society-l2-01",
+    "title": "A Care Center That Extends into the Street",
+    "topic": "社会",
+    "difficulty": 2,
+    "source_id": "src-社会-02",
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20250106/65b4dc818b5240329e682db00a36b3b6/c.html",
+    "source_title": "China Focus: Friendly community built for seniors with cognitive impairments",
+    "source_published_at": "2025-01-06",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "页面可访问；核验了中心活动、服务人数、周边商户参与、早期筛查与连续照护网络等事实。",
+    "adaptation_note": "题材参考所列新华社英文网公开事实；本站重新确定中心问题并原创改写，非媒体原文，非历年真题。",
+    "content": "A service center for older people with cognitive impairments might be imagined as a quiet medical room. A center in Shanghai follows a different model. It includes a cafe, art, virtual reality, music and other activities. During its first year, it organized more than 300 events and served over 2,000 people.\n\nThe design recognizes that care is not limited to diagnosis. Regular stimulation and social contact can help some older adults maintain everyday abilities. Families may also benefit when a relative can take part in a safe activity outside the home. Yet the most important feature may be the center's relationship with the surrounding neighborhood. Nearby cafes, shops and banks participate in making their services easier for affected seniors to use.\n\nThis network changes the meaning of a “friendly” place. If support exists only inside one building, a visitor may lose it as soon as the door closes. When ordinary businesses learn how to respond, more of the street becomes navigable. Navigable here means possible to move through and use with less confusion.\n\nMedical care still matters. Early screening can identify risks, and qualified institutions are needed for treatment. But a clinic cannot organize every hour of daily life. A useful system therefore links hospitals, community organizations, families and familiar public places. The center is valuable not because it hides vulnerable people from the city, but because it helps the city receive them.",
+    "questions": [
+      {
+        "type": "detail",
+        "question": "What made the Shanghai center different from a simple medical room?",
+        "options": [
+          "It admitted only hospital patients",
+          "It offered social and creative activities",
+          "It closed all nearby businesses",
+          "It provided care only through virtual reality"
+        ],
+        "answer": "B",
+        "explanation": "首段列举咖啡、艺术、音乐等活动，说明中心并非只有诊疗功能。",
+        "evidence_text": "It includes a cafe, art, virtual reality, music and other activities."
+      },
+      {
+        "type": "main_idea",
+        "question": "Which statement best captures the author's argument?",
+        "options": [
+          "Medical diagnosis should be removed from cognitive care",
+          "Every shop should become a hospital department",
+          "Cognitive care works better as a connected neighborhood system",
+          "Older adults should remain inside one protected building"
+        ],
+        "answer": "C",
+        "explanation": "全文从中心延伸到商户、医院、家庭和社区，强调连接式照护。",
+        "evidence_text": "A useful system therefore links hospitals, community organizations, families and familiar public places."
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “navigable” mean in paragraph 3?",
+        "options": [
+          "Designed for online shopping",
+          "Reserved for trained nurses",
+          "Hidden from family members",
+          "Easy enough to move through and use"
+        ],
+        "answer": "D",
+        "explanation": "正文紧接着给出语境定义，即更少困惑地移动和使用。",
+        "evidence_text": "Navigable here means possible to move through and use with less confusion."
+      },
+      {
+        "type": "inference",
+        "question": "Why are nearby shops and banks important to the model?",
+        "options": [
+          "They extend support into ordinary daily activities",
+          "They can perform medical screening without training",
+          "They prevent seniors from returning home",
+          "They make family involvement unnecessary"
+        ],
+        "answer": "A",
+        "explanation": "作者指出若支持只在楼内，出门即消失；商户参与让街区日常活动更可达。",
+        "evidence_text": "When ordinary businesses learn how to respond, more of the street becomes navigable."
+      },
+      {
+        "type": "attitude",
+        "question": "What limited but continuing role does medical care have in the street-based system?",
+        "options": [
+          "Unhelpful once art activities are available",
+          "Necessary but unable to cover every part of daily life",
+          "Suitable only for people without families",
+          "Less important than commercial services"
+        ],
+        "answer": "B",
+        "explanation": "末段肯定筛查和治疗，同时指出诊所不能安排全部日常生活。",
+        "evidence_text": "Medical care still matters."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-curated-society-l2-02",
+    "title": "A Longer Life Should Widen Choice",
+    "topic": "社会",
+    "difficulty": 2,
+    "source_id": "src-社会-10",
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20250524/2c849aa8d8f44472af5362476d3fe557/c.html",
+    "source_title": "China steps up support for social participation of seniors amid population aging",
+    "source_published_at": "2025-05-24",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "页面可访问；核验了银龄志愿服务、老年大学与终身学习、为有意愿老年人提供多样就业与技能提升机会等事实。",
+    "adaptation_note": "题材参考所列新华社英文网公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "content": "Policies on active aging often describe older people as a valuable social resource. The phrase can challenge the idea that retirement equals decline. Retired doctors may volunteer, former technicians may train younger workers, and senior students may discover subjects they had no time to study before.\n\nYet a positive message can become pressure if contribution is treated as a duty. Some people want paid part-time work; others prefer music classes, travel, family care or rest. Poor health may limit participation for a period. None of these choices makes a person less worthy of respect. A useful policy should expand possible roles without turning one picture of an energetic retirement into a new social rule.\n\nPractical support makes that distinction real. Volunteer programs need insurance and suitable tasks, not only public praise. Training centers should admit older learners instead of assuming new skills belong to the young. Employers offering flexible positions must avoid using the language of purpose to justify low pay or unsafe conditions.\n\nThe strongest view of active aging is therefore based on agency. Longer lives give society more experience, but that experience belongs first to the people who gained it. Institutions can open doors and remove age barriers. Older adults should decide which door, if any, they wish to enter.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What principle does the passage propose for active-aging policy?",
+        "options": [
+          "It should direct every retiree into paid part-time work",
+          "It should value volunteering but discourage senior education",
+          "It should broaden older adults' choices without making participation compulsory",
+          "It should reserve skills training for younger workers"
+        ],
+        "answer": "C",
+        "explanation": "文章肯定拓展参与机会，但核心强调自主选择，不能把积极老龄化变成新的义务。",
+        "evidence_text": "A useful policy should expand possible roles without turning one picture of an energetic retirement into a new social rule."
+      },
+      {
+        "type": "detail",
+        "question": "What protection does the author say volunteer programs need?",
+        "options": [
+          "Guaranteed full-time jobs",
+          "Free international travel",
+          "The power to set retirement ages",
+          "Insurance and tasks suited to participants"
+        ],
+        "answer": "D",
+        "explanation": "第三段明确提出志愿项目需要保险和合适任务，而不只是口头表扬。",
+        "evidence_text": "Volunteer programs need insurance and suitable tasks, not only public praise."
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “agency” mean in the final paragraph?",
+        "options": [
+          "The ability to make one's own choices",
+          "An office that hires volunteers",
+          "A measure of physical strength",
+          "A payment for professional experience"
+        ],
+        "answer": "A",
+        "explanation": "后文说明机构负责开门，老年人决定是否进入，故agency指自主决定能力。",
+        "evidence_text": "The strongest view of active aging is therefore based on agency."
+      },
+      {
+        "type": "inference",
+        "question": "Why can purposeful jobs never excuse low pay or unsafe conditions?",
+        "options": [
+          "All flexible positions are dangerous",
+          "Meaningful language can hide unfair treatment of older workers",
+          "Older adults care only about salary",
+          "Employers should replace work with music classes"
+        ],
+        "answer": "B",
+        "explanation": "作者警告雇主不能借“人生意义”之名为低薪或不安全开脱，可推断积极话语也需要劳动保障审视。",
+        "evidence_text": "Employers offering flexible positions must avoid using the language of purpose to justify low pay or unsafe conditions."
+      },
+      {
+        "type": "attitude",
+        "question": "Why does choosing rest leave a retired person equally worthy of respect?",
+        "options": [
+          "As a sign of social decline",
+          "As acceptable only during training",
+          "As a legitimate choice",
+          "As less worthy than family care"
+        ],
+        "answer": "C",
+        "explanation": "作者把休息与学习、旅行等并列，并明确不同选择都不降低人的尊严。",
+        "evidence_text": "None of these choices makes a person less worthy of respect."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-curated-society-l2-03",
+    "title": "The Best Upgrade May Be a Familiar Home",
+    "topic": "社会",
+    "difficulty": 2,
+    "source_id": "src-社会-11",
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20251029/a7cc890f5df3458484f685f5cd880966/c.html",
+    "source_title": "China Focus: Chinese elderly embrace \"silver\" lives via age-friendly communities",
+    "source_published_at": "2025-10-29",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "页面可访问；核验了智能门锁、床头呼叫器和感应灯等居家改造，以及社区餐饮、日间照料与“15分钟”居家养老服务圈等事实。",
+    "adaptation_note": "题材参考所列新华社英文网公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "content": "For an older person, moving into a care institution may provide safety but also remove familiar routines. Age-friendly communities try another path: adapt the home and bring support closer. A motion-sensor bathroom light can reduce a night-time fall. An emergency button can call family or community staff. A nearby dining hall makes a hot meal possible without a long journey.\n\nThese changes look modest beside a new hospital, yet they address the repeated moments that shape daily independence. Their value also depends on fit. A smart lock that helps one resident may confuse another. A handrail installed at the wrong height can satisfy a purchase list while failing the person who must use it. Home visits and conversation are therefore part of the design process, not an extra courtesy after equipment arrives.\n\nCommunity services fill gaps that hardware cannot. Day-care rooms offer company and activities, while meal delivery supports residents with limited mobility. Health management can notice a changing need before an emergency. The aim is not to keep every older adult at home at any cost. Some will require specialized or continuous care.\n\nA successful age-friendly neighborhood gives residents a real range of options. It connects housing, meals, health support and social life closely enough that staying home remains a safe choice rather than the result of having nowhere else to go.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What model of eldercare does the passage describe?",
+        "options": [
+          "Replacing all care institutions with smart locks",
+          "Moving every older resident near a hospital",
+          "Using purchase lists as the main measure of care",
+          "Adapting homes and nearby services to preserve safe choices"
+        ],
+        "answer": "D",
+        "explanation": "全文介绍居家改造与社区服务协同，使老年人在安全前提下保留居住选择。",
+        "evidence_text": "Age-friendly communities try another path: adapt the home and bring support closer."
+      },
+      {
+        "type": "detail",
+        "question": "Why are home visits part of the design process?",
+        "options": [
+          "They reveal whether an improvement fits the actual resident",
+          "They allow staff to sell more equipment",
+          "They remove the need for emergency buttons",
+          "They determine who must enter an institution"
+        ],
+        "answer": "A",
+        "explanation": "第二段以智能锁和扶手为例说明设备必须匹配个人，入户交流能发现真实使用需求。",
+        "evidence_text": "Home visits and conversation are therefore part of the design process, not an extra courtesy after equipment arrives."
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “fit” mean in paragraph two?",
+        "options": [
+          "The physical size of a hospital",
+          "Suitability for an individual's needs",
+          "Exercise that prevents aging",
+          "A list of approved purchases"
+        ],
+        "answer": "B",
+        "explanation": "随后说明同一智能锁可能帮助一人却困扰另一人，故fit指针对个人的适合程度。",
+        "evidence_text": "Their value also depends on fit."
+      },
+      {
+        "type": "inference",
+        "question": "What does the handrail example warn against?",
+        "options": [
+          "Using any safety equipment in a private home",
+          "Asking residents about the height of furniture",
+          "Treating installation as success without checking usability",
+          "Combining home care with community meals"
+        ],
+        "answer": "C",
+        "explanation": "扶手可能完成采购清单却无法被本人使用，可推断形式完成不能替代真实可用。",
+        "evidence_text": "A handrail installed at the wrong height can satisfy a purchase list while failing the person who must use it."
+      },
+      {
+        "type": "attitude",
+        "question": "Which residents still need specialized or continuous institutional care?",
+        "options": [
+          "Always harmful to familiar routines",
+          "Useful only for emergency treatment",
+          "Unnecessary once meal delivery exists",
+          "Sometimes necessary within a wider range of options"
+        ],
+        "answer": "D",
+        "explanation": "作者没有否定机构照护，明确部分人需要专业或持续护理，主张真实选择而非单一路径。",
+        "evidence_text": "Some will require specialized or continuous care."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-curated-society-l2-04",
+    "title": "Designing by Memory, Touch and Sound",
+    "topic": "社会",
+    "difficulty": 2,
+    "source_id": "src-社会-12",
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20250329/8f20ca61d7404e6fbd2a1ac7a36f864b/c.html",
+    "source_title": "Across China: Retirement home lights up late life of the visually impaired",
+    "source_published_at": "2025-03-29",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "页面可访问；核验了视障老人养老机构的固定座位、桌面点字姓名牌、带点字的扶手，以及尊重个人饮食与兴趣等事实。",
+    "adaptation_note": "题材参考所列新华社英文网公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "content": "A retirement home for people with visual impairments cannot rely on bright signs and attractive colors. Its residents navigate through memory, touch, sound and repeated routines. That changes what counts as thoughtful design.\n\nIn one specialist home, dining tables carry names in Braille at each corner. Fixed seats help residents know who is nearby, making conversation and movement more predictable. Raised markings on guardrails allow people to recognize locations while walking. Staff also record dietary preferences rather than treating blindness as the only fact that matters about a resident.\n\nThese details show why universal safety rules are only a starting point. A standard handrail can prevent a fall, but a tactile marker can also provide information. A clear corridor may satisfy an inspector, while an unexpected chair can still interrupt a route learned by memory. Good care requires workers to notice how residents actually use a space and to keep important arrangements consistent.\n\nConsistency, however, should not become control. Residents still need opportunities to choose hobbies, companions and daily schedules. Predictable surroundings can support that freedom because less energy is spent discovering avoidable changes.\n\nInclusive design often begins with a different question. Instead of asking how a resident can adapt to an ordinary building, designers ask what the building must communicate through the senses that resident uses. The result can offer both safety and a stronger sense of belonging.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What lesson about inclusive design does the passage draw from the specialist home?",
+        "options": [
+          "Spaces should communicate through the senses their residents use",
+          "Visual signs should be made larger in every room",
+          "Fixed routines should remove all personal choice",
+          "Safety inspections can replace observation of residents"
+        ],
+        "answer": "A",
+        "explanation": "文章以点字、触觉标记和固定环境说明设计应从使用者实际依赖的感官出发。",
+        "evidence_text": "designers ask what the building must communicate through the senses that resident uses."
+      },
+      {
+        "type": "detail",
+        "question": "Why are fixed dining seats helpful?",
+        "options": [
+          "They make meals shorter",
+          "They help residents know who is around them",
+          "They allow staff to change diets",
+          "They keep visitors outside the room"
+        ],
+        "answer": "B",
+        "explanation": "第二段说明固定座位让住户知道附近是谁，使交谈和移动更可预期。",
+        "evidence_text": "Fixed seats help residents know who is nearby, making conversation and movement more predictable."
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “tactile” most nearly mean?",
+        "options": [
+          "Intended to improve hearing",
+          "Changed without warning",
+          "Designed to be understood by touch",
+          "Checked by an inspector"
+        ],
+        "answer": "C",
+        "explanation": "该词修饰扶手上的标记，并与提供信息相连，语境指可通过触摸识别。",
+        "evidence_text": "A standard handrail can prevent a fall, but a tactile marker can also provide information."
+      },
+      {
+        "type": "inference",
+        "question": "Why might an unexpected chair be a serious obstacle?",
+        "options": [
+          "It makes the corridor fail every building law",
+          "It prevents Braille from being read at dinner",
+          "It causes staff to change residents' hobbies",
+          "It can block a route a resident has memorized"
+        ],
+        "answer": "D",
+        "explanation": "文中强调视障住户借助记忆路线行动，因此突然变化的家具会破坏已掌握的空间线索。",
+        "evidence_text": "A clear corridor may satisfy an inspector, while an unexpected chair can still interrupt a route learned by memory."
+      },
+      {
+        "type": "attitude",
+        "question": "Why should a consistent home layout stop short of controlling its resident?",
+        "options": [
+          "As support for freedom, provided it does not become control",
+          "As more important than every resident preference",
+          "As useful only in the dining room",
+          "As a poor substitute for brighter signs"
+        ],
+        "answer": "A",
+        "explanation": "作者认为稳定环境能减少无谓负担、支持选择，同时警告不能演变为控制。",
+        "evidence_text": "Consistency, however, should not become control."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-curated-society-l2-05",
+    "title": "Repairing a City Without Erasing It",
+    "topic": "社会",
+    "difficulty": 2,
+    "source_id": "src-社会-13",
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20250515/f3938f7eb340407492d5ac22f8321c21/c.html",
+    "source_title": "China unveils guidelines on advancing urban renewal campaign",
+    "source_published_at": "2025-05-15",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "页面可访问；核验了旧住宅与厂区改造、停车充电消防和地下管网升级，以及城市历史文化保护和全生命周期房屋安全管理等事实。",
+    "adaptation_note": "题材参考所列新华社英文网公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "content": "Urban renewal is sometimes pictured as a dramatic skyline filled with new towers. Much of the important work, however, happens underground or inside old neighborhoods. Water pipes leak, charging points are missing, fire routes are blocked and aging buildings need careful reinforcement. Solving these problems can improve daily life without replacing an entire district.\n\nThe difficulty is that a city is not an empty construction site. An old factory may hold jobs, memories or a distinctive street pattern. A commercial block may need safer wiring while its small shops need affordable rent. If renewal measures success only by new floor space, they can remove the relationships that made the area useful.\n\nA better process begins with diagnosis. Engineers assess structural and pipeline risks. Residents identify inconvenient routes and missing services. Historians and local groups can explain which features carry shared meaning. These perspectives may disagree, so planners must publish priorities and show why one problem is addressed before another.\n\nRepair also requires maintenance after the opening ceremony. A renovated drain can fail if nobody monitors it, and a public room can become empty if its operating budget disappears. Whole-life-cycle management treats buildings and services as continuing responsibilities rather than finished products.\n\nRenewal succeeds when a neighborhood becomes safer and more useful while remaining recognizable to the people who live there. The goal is not to freeze a city in the past, but to let it change without forgetting what already works.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What must urban renewal preserve while improving neighborhood safety?",
+        "options": [
+          "Replacing old districts with taller buildings",
+          "Improving safety and usefulness while preserving valuable local relationships",
+          "Protecting every old feature from any change",
+          "Focusing investment only on underground pipes"
+        ],
+        "answer": "B",
+        "explanation": "全文主张通过诊断、参与和持续维护改善社区，同时保留已有价值而非大拆大建。",
+        "evidence_text": "Renewal succeeds when a neighborhood becomes safer and more useful while remaining recognizable to the people who live there."
+      },
+      {
+        "type": "detail",
+        "question": "Who can explain which local features carry shared meaning?",
+        "options": [
+          "Only building engineers",
+          "Charging-point manufacturers",
+          "Historians and local groups",
+          "Visitors at an opening ceremony"
+        ],
+        "answer": "C",
+        "explanation": "第三段明确把识别共同意义的角色交给历史研究者和本地群体。",
+        "evidence_text": "Historians and local groups can explain which features carry shared meaning."
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “diagnosis” mean in this planning context?",
+        "options": [
+          "A medical check for construction workers",
+          "A vote to keep every old shop",
+          "A ceremony marking project completion",
+          "A careful identification of problems and needs"
+        ],
+        "answer": "D",
+        "explanation": "后文列举工程风险评估、居民指出不便和历史价值识别，说明指系统发现问题与需求。",
+        "evidence_text": "A better process begins with diagnosis."
+      },
+      {
+        "type": "inference",
+        "question": "What risk follows if success is measured only by new floor space?",
+        "options": [
+          "Useful community ties may be destroyed",
+          "Underground pipes will never be replaced",
+          "Engineers will refuse to assess buildings",
+          "Small shops will automatically receive lower rent"
+        ],
+        "answer": "A",
+        "explanation": "第二段指出这种单一指标可能清除使地区有用的关系，可推断物理增量会掩盖社会损失。",
+        "evidence_text": "If renewal measures success only by new floor space, they can remove the relationships that made the area useful."
+      },
+      {
+        "type": "attitude",
+        "question": "What does the author think of post-renovation maintenance?",
+        "options": [
+          "It is less important than an opening ceremony",
+          "It is an essential continuing responsibility",
+          "It should be left entirely to residents",
+          "It matters only for public rooms"
+        ],
+        "answer": "B",
+        "explanation": "作者用排水和公共空间例子强调改造后仍需监测与运营资金，不能视为完工即结束。",
+        "evidence_text": "Whole-life-cycle management treats buildings and services as continuing responsibilities rather than finished products."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-curated-society-l3-01",
+    "title": "An AI Lesson About More Than Software",
+    "topic": "社会",
+    "difficulty": 3,
+    "source_id": "src-社会-03",
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20260204/3c47af65af0744babbf6d63d24350e2e/c.html",
+    "source_title": "Across China: Retirees embrace AI via night schools",
+    "source_published_at": "2026-02-04",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "清单原URL失效；已核验新华社同题有效页面，确认22人课堂、老照片修复、社区课程与志愿教师网络等事实；正式清单需改用本条有效URL。",
+    "adaptation_note": "题材参考所列新华社英文网公开事实；本站依据有限事实原创改写，非媒体原文，非历年真题。",
+    "content": "In a night class in Shenzhen, 22 older students used an artificial-intelligence tool to repair faded photographs and make still images appear to move. The task looked playful, but it addressed a serious question: what kind of teaching allows people to enter a technological world that was not designed around their previous experience?\n\nThe answer was not a faster lecture. Students followed concrete instructions, compared results with neighbors and asked for help when a command failed. One learner had once struggled simply to find the place where a prompt should be typed. Step by step, she later moved among classes on text, images and video. Her progress illustrates a form of digital confidence built through repeated, meaningful tasks rather than abstract descriptions of AI.\n\nThe subject matter also mattered. Restoring an old photograph connected unfamiliar software with personal memory. That connection gave learners a reason to persist through confusion. It also turned the classroom into a social space: students showed one another their results instead of privately trying to keep pace with a machine.\n\nSuch courses have spread through community programs, some supported by volunteer instructors. Their value should not be measured only by the number of functions taught. A learner may forget a menu but remember how to ask a question, test an output and seek assistance. These are transferable habits, meaning they can be used in another digital task.\n\nAn age-friendly technology policy therefore needs more than larger text and simpler buttons. It needs places where older adults can learn without embarrassment, connect new tools with purposes they value and return for another attempt.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What does the passage mainly argue about AI classes for older adults?",
+        "options": [
+          "They should concentrate on memorizing every software menu",
+          "They work only when students already understand prompt writing",
+          "They build confidence when learning is practical, social and personally meaningful",
+          "They are valuable mainly because moving images are entertaining"
+        ],
+        "answer": "C",
+        "explanation": "文章从具体任务、同伴互动和个人记忆三个维度说明课程如何建立数字信心。",
+        "evidence_text": "Her progress illustrates a form of digital confidence built through repeated, meaningful tasks rather than abstract descriptions of AI."
+      },
+      {
+        "type": "detail",
+        "question": "What did the 22 students do during the reported class?",
+        "options": [
+          "They designed a new community center",
+          "They trained robots to teach video lessons",
+          "They compared different smartphone prices",
+          "They repaired old photographs with an AI tool"
+        ],
+        "answer": "D",
+        "explanation": "首句直接说明课堂使用AI修复褪色照片并让静态图像动起来。",
+        "evidence_text": "In a night class in Shenzhen, 22 older students used an artificial-intelligence tool to repair faded photographs and make still images appear to move."
+      },
+      {
+        "type": "inference",
+        "question": "Why was photograph restoration a useful learning task?",
+        "options": [
+          "It linked unfamiliar software to memories the learners cared about",
+          "It removed the need to understand any instructions",
+          "It guaranteed that every AI output was accurate",
+          "It allowed students to avoid working with classmates"
+        ],
+        "answer": "A",
+        "explanation": "由“个人记忆”带来坚持理由可推断，该任务用熟悉且有意义的目标降低了陌生技术的距离。",
+        "evidence_text": "That connection gave learners a reason to persist through confusion."
+      },
+      {
+        "type": "word_guess",
+        "question": "What are “transferable” habits in paragraph 4?",
+        "options": [
+          "Skills owned by the software company",
+          "Habits useful in other digital situations",
+          "Actions limited to one classroom menu",
+          "Memories copied from an old photograph"
+        ],
+        "answer": "B",
+        "explanation": "同句解释这些习惯可以用于另一项数字任务。",
+        "evidence_text": "These are transferable habits, meaning they can be used in another digital task."
+      },
+      {
+        "type": "attitude",
+        "question": "Why are larger text and simpler buttons insufficient for age-friendly technology?",
+        "options": [
+          "Unnecessary because older adults learn alone",
+          "More important than any human instruction",
+          "Helpful but incomplete without supportive learning spaces",
+          "Harmful when combined with community classes"
+        ],
+        "answer": "C",
+        "explanation": "结尾用“needs more than”明确指出放大文字、简化按钮仍不足够。",
+        "evidence_text": "An age-friendly technology policy therefore needs more than larger text and simpler buttons."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-curated-society-l3-02",
+    "title": "What an Elevator Number Cannot Tell Us",
+    "topic": "社会",
+    "difficulty": 3,
+    "source_id": "src-社会-14",
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20260128/b8e4d38d80a140529d7b58c4d8d07c79/c.html",
+    "source_title": "China spends big on urban renewal in 2025",
+    "source_published_at": "2026-01-28",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "页面可访问；核验了2025年旧小区改造及受益家庭、老楼加装电梯、口袋公园与城市绿道、地下管线建设改造等公开数据。",
+    "adaptation_note": "题材参考所列新华社英文网公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "content": "Urban-renewal reports often feature impressive totals: residential compounds repaired, elevators installed, pocket parks opened and kilometers of pipeline replaced. Such figures are necessary. They show whether promised work happened and allow the public to compare spending with physical output. But a completed object is not identical to an improved life.\n\nConsider an elevator added to an old apartment block. The project count rises by one, yet residents benefit only if the entrance is step-free, the controls are reachable and maintenance is affordable. A pocket park adds green space, but its social value depends on safe crossings, shade, seating and opening hours. Even underground pipes, invisible after construction, need monitoring if fewer leaks and service interruptions are the intended result.\n\nEvaluation should therefore connect three layers. The first records delivery: what was built and at what cost. The second observes use: who enters, how often and what barriers remain. The third examines outcomes over time, such as safer movement, reliable water or reduced heat stress. These layers can reveal an uncomfortable result. A project may meet its engineering target while serving fewer residents than expected.\n\nThis does not make numerical targets useless. Without them, vague promises are difficult to challenge. The problem begins when the easiest quantity becomes the only definition of success. Good reporting should combine counts with residents' experiences and explain why benefits differ across streets or groups.\n\nUrban renewal is public work carried out in lived places. Its final unit is not an elevator, park or pipe. It is a practical change that people can reach, use and continue to rely on.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What improvement in urban-renewal evaluation does the author advocate?",
+        "options": [
+          "Replacing all numerical targets with personal stories",
+          "Counting only projects that remain visible above ground",
+          "Measuring success entirely through engineering completion",
+          "Linking construction totals to use and long-term outcomes"
+        ],
+        "answer": "D",
+        "explanation": "文章主张交付、使用和长期结果三层结合，不能把物理数量直接等同于生活改善。",
+        "evidence_text": "Evaluation should therefore connect three layers."
+      },
+      {
+        "type": "detail",
+        "question": "Which factor can affect the social value of a pocket park?",
+        "options": [
+          "Safe crossings, shade, seating and opening hours",
+          "The number of underground pipes nearby",
+          "Whether an elevator was installed first",
+          "The price of water in another district"
+        ],
+        "answer": "A",
+        "explanation": "第二段直接列出过街安全、遮阴、座椅和开放时间会影响公园的真实社会价值。",
+        "evidence_text": "A pocket park adds green space, but its social value depends on safe crossings, shade, seating and opening hours."
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “delivery” mean in the three-layer framework?",
+        "options": [
+          "Transport of residents to a park",
+          "Completion of promised physical work",
+          "Publication of household interviews",
+          "Long-term reduction of heat stress"
+        ],
+        "answer": "B",
+        "explanation": "冒号后解释为建了什么、成本多少，因此指项目实体交付完成。",
+        "evidence_text": "The first records delivery: what was built and at what cost."
+      },
+      {
+        "type": "inference",
+        "question": "Why might one installed elevator produce limited benefit?",
+        "options": [
+          "Old buildings never need elevators",
+          "Project counts prevent any repair work",
+          "Access, controls or maintenance may still exclude residents",
+          "Residents prefer underground pipelines"
+        ],
+        "answer": "C",
+        "explanation": "文中列出入口台阶、按钮可达性和维护成本，说明设备存在并不保证人人能持续使用。",
+        "evidence_text": "The project count rises by one, yet residents benefit only if the entrance is step-free, the controls are reachable and maintenance is affordable."
+      },
+      {
+        "type": "inference",
+        "question": "What can be inferred about residents' experiences in public reporting?",
+        "options": [
+          "They should be used only when no numbers exist",
+          "They make project costs impossible to compare",
+          "They are relevant only to visible projects",
+          "They help explain why identical outputs can have unequal effects"
+        ],
+        "answer": "D",
+        "explanation": "作者要求把数量与居民经验结合并解释群体差异，可推断经验资料用于揭示同一产出的不同效果。",
+        "evidence_text": "Good reporting should combine counts with residents' experiences and explain why benefits differ across streets or groups."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-curated-society-l3-03",
+    "title": "A Certificate Should Begin, Not End, a Career",
+    "topic": "社会",
+    "difficulty": 3,
+    "source_id": "src-社会-15",
+    "source_name": "中国政府网英文版",
+    "source_url": "https://english.www.gov.cn/english.www.gov.cn/news/202504/14/content_WS67fcb872c6d0868f4e8f1ac0.html",
+    "source_title": "China unveils guidelines to strengthen civil affairs services workforce",
+    "source_published_at": "2025-04-14",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "页面可访问；核验了养老、残疾康复、儿童福利等专业课程，校企合作与学徒制，职业标准及技能认证通道，以及2030年养老护理员持证目标等事实。",
+    "adaptation_note": "题材参考所列中国政府网英文版公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "content": "Eldercare, disability rehabilitation and child welfare are sometimes described as compassionate work that depends mainly on patience. Patience matters, but the description is incomplete. A caregiver may need to recognize a change in mobility, use lifting equipment safely, communicate with a person who has cognitive impairment and record information for other professionals. These are learned skills with consequences.\n\nA stronger certification system can make those skills visible. Clear standards tell trainees what competent practice includes, help employers compare applicants and give workers evidence when seeking promotion. School-enterprise partnerships and apprenticeships can connect classroom knowledge with real cases. Certification may also improve public respect for occupations that have often been treated as low-skilled.\n\nYet a certificate can become a weak symbol if the surrounding job does not support good practice. A newly qualified worker facing impossible workloads may rush a procedure learned correctly in training. An exam passed once cannot cover new equipment or changing needs for an entire career. Employers must provide supervision, continuing education and time to report mistakes without fear. Pay and progression should reward deeper competence; otherwise, experienced staff may leave.\n\nStandards also need feedback from service users. A technically correct routine can still ignore dignity or personal preference. Complaints and observed outcomes should inform future training rather than being classified only as individual failures.\n\nProfessionalization is therefore a system, not a document. Certification establishes a common starting point. Its promise is fulfilled only when workplaces allow people to apply, question and extend what they learned.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What is the author's main claim about professional certification in care work?",
+        "options": [
+          "It is useful only when workplaces sustain and develop certified skills",
+          "It should replace supervision and continuing education",
+          "It matters less than natural patience in every situation",
+          "It can guarantee service quality through a single examination"
+        ],
+        "answer": "A",
+        "explanation": "文章肯定证书建立共同起点，但强调工作负荷、督导、继续教育、薪酬和用户反馈共同决定质量。",
+        "evidence_text": "Professionalization is therefore a system, not a document."
+      },
+      {
+        "type": "detail",
+        "question": "How can apprenticeships contribute to training?",
+        "options": [
+          "By allowing workers to avoid certification",
+          "By connecting classroom learning with actual cases",
+          "By replacing technical standards with personal preference",
+          "By guaranteeing immediate promotion"
+        ],
+        "answer": "B",
+        "explanation": "第二段直接说明校企合作和学徒制能连接课堂知识与真实案例。",
+        "evidence_text": "School-enterprise partnerships and apprenticeships can connect classroom knowledge with real cases."
+      },
+      {
+        "type": "word_guess",
+        "question": "In a care career, what does progression reward after certification?",
+        "options": [
+          "A sequence of care procedures",
+          "A decline in service demand",
+          "Advancement along a career path",
+          "The publication of exam results"
+        ],
+        "answer": "C",
+        "explanation": "该词与薪酬、资深员工流失并列，指职业晋升和发展通道。",
+        "evidence_text": "Pay and progression should reward deeper competence; otherwise, experienced staff may leave."
+      },
+      {
+        "type": "inference",
+        "question": "Why can a technically correct routine still be inadequate?",
+        "options": [
+          "Technical skills are never relevant to care",
+          "Users should design every certification exam",
+          "Correct routines always require new equipment",
+          "It may fail to respect the service user's dignity or preference"
+        ],
+        "answer": "D",
+        "explanation": "作者指出技术正确仍可能忽视尊严或个人偏好，可推断专业质量同时包含人本判断。",
+        "evidence_text": "A technically correct routine can still ignore dignity or personal preference."
+      },
+      {
+        "type": "inference",
+        "question": "What does the example of impossible workloads suggest?",
+        "options": [
+          "Organizational conditions can prevent trained workers from following good practice",
+          "Qualified workers no longer need time to record information",
+          "Training causes staff to rush procedures",
+          "Exams should test speed above all else"
+        ],
+        "answer": "A",
+        "explanation": "即使培训正确，过重负荷也会迫使员工匆忙操作，说明制度环境能削弱技能落实。",
+        "evidence_text": "A newly qualified worker facing impossible workloads may rush a procedure learned correctly in training."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-curated-society-l3-04",
+    "title": "Care Between Breakfast and Evening Pickup",
+    "topic": "社会",
+    "difficulty": 3,
+    "source_id": "src-社会-16",
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20250605/a1ec15e80214470aad807d43c80b044c/c.html",
+    "source_title": "Elderly daycare emerges to meet needs of Chinese families",
+    "source_published_at": "2025-06-05",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "页面可访问；核验了社区日间照料的餐食、活动和康复日程，认知症专项照护与用药管理，以及全日机构与居家照护之间的混合定位等事实。",
+    "adaptation_note": "题材参考所列新华社英文网公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "content": "Between living independently at home and moving into a nursing institution lies a less visible form of support: elderly daycare. A resident arrives in the morning, shares meals and activities, receives therapy or hygiene assistance, and returns home when family members finish work. This timetable makes the center part of a household's daily organization rather than a permanent new address.\n\nIts social function extends beyond supervision. Regular meals can reveal a change in appetite. Group crafts or conversation reduce isolation. For a person with cognitive impairment, a repeated schedule and medication management may lower confusion. Family caregivers gain predictable hours for employment, rest or other responsibilities. The benefits are linked: supporting the older person can also stabilize the people providing unpaid care.\n\nDaycare nevertheless creates a boundary problem. Staff must know when a participant's needs have become too complex for the center's hours or equipment. Families need honest information rather than reassurance that delays a clinical assessment. Transport can determine access, especially for residents with limited mobility, so a nearby building is not automatically a reachable service.\n\nQuality cannot be judged simply by attendance. A crowded activity room may look lively while offering little personal attention. Evaluation should examine safety incidents, changes in function, participant choice and caregiver strain. It should also ask whether people with lower incomes can use the service consistently.\n\nThe center's importance comes from filling a gap without pretending the gap is simple. Good daytime care connects home, family and professional support, while recognizing when another arrangement would better protect the person involved.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "How does the passage characterize elderly daycare?",
+        "options": [
+          "As a complete replacement for nursing institutions",
+          "As an intermediate service linking home, family and professional care",
+          "As a social club whose success is measured by attendance",
+          "As temporary transport for employed caregivers"
+        ],
+        "answer": "B",
+        "explanation": "文章将日间照料定位为居家与机构之间的连接，并分析其对老人、家庭和专业服务的协同作用。",
+        "evidence_text": "Good daytime care connects home, family and professional support, while recognizing when another arrangement would better protect the person involved."
+      },
+      {
+        "type": "detail",
+        "question": "What may regular meals help staff notice?",
+        "options": [
+          "The cost of family transport",
+          "Whether a room appears crowded",
+          "A change in a participant's appetite",
+          "A caregiver's employment contract"
+        ],
+        "answer": "C",
+        "explanation": "第二段明确说规律共同用餐能暴露食欲变化。",
+        "evidence_text": "Regular meals can reveal a change in appetite."
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “stabilize” mean in paragraph two?",
+        "options": [
+          "Move a person into permanent care",
+          "Increase the number of activities",
+          "Prevent all changes in health",
+          "Make daily life more manageable and steady"
+        ],
+        "answer": "D",
+        "explanation": "日间服务为家庭照护者提供可预期的工作和休息时间，因而使其生活安排更稳定可控。",
+        "evidence_text": "supporting the older person can also stabilize the people providing unpaid care."
+      },
+      {
+        "type": "inference",
+        "question": "Why must staff recognize needs beyond the center's capacity?",
+        "options": [
+          "False reassurance could delay more suitable assessment or care",
+          "Daycare workers should make every clinical diagnosis",
+          "Families prefer participants to remain at home alone",
+          "Complex needs always disappear after evening pickup"
+        ],
+        "answer": "A",
+        "explanation": "文中警告不能用安慰拖延临床评估，可推断边界识别关系到及时转介更合适照护。",
+        "evidence_text": "Families need honest information rather than reassurance that delays a clinical assessment."
+      },
+      {
+        "type": "inference",
+        "question": "Why is a nearby center not necessarily accessible?",
+        "options": [
+          "Nearby services cannot offer medication management",
+          "A person with limited mobility may still lack usable transport",
+          "Only distant centers have professional equipment",
+          "Families may mistake attendance for quality"
+        ],
+        "answer": "B",
+        "explanation": "作者指出交通决定可及性，尤其对行动受限者，物理距离近并不足够。",
+        "evidence_text": "Transport can determine access, especially for residents with limited mobility, so a nearby building is not automatically a reachable service."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-curated-society-l3-05",
+    "title": "A Smart Village Still Needs Local Judgment",
+    "topic": "社会",
+    "difficulty": 3,
+    "source_id": "src-社会-17",
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20250223/d0b9cb61000f4cfe97fd56e382e7f036/c.html",
+    "source_title": "Update: China outlines key tasks to deepen rural reforms, advance rural revitalization",
+    "source_published_at": "2025-02-23",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "页面可访问；核验了智慧农业和人工智能应用、冷链物流下沉乡镇、农村住房依法通过租赁或合作盘活，以及农业节水和资源管理等事实。",
+    "adaptation_note": "题材参考所列新华社英文网公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "content": "Artificial intelligence, cold-chain delivery and online retail can help rural producers reach markets and manage fields. Their usefulness, however, depends on conditions that differ sharply from one place to another. A crop model trained in an irrigated plain may offer poor advice on a dry hillside. A refrigerated truck brings little value if small farms cannot gather enough produce at the right time to fill it.\n\nThis is why the phrase “according to local conditions” carries practical weight. Technology choices should begin with the problem residents identify, not with a device seeking a demonstration site. Water-saving irrigation may matter more than automation in one county. Elsewhere, a township distribution point may reduce spoilage and make e-commerce realistic. Benefits also depend on roads, electricity, repair skills and clear responsibility when a system fails.\n\nLocal judgment does not mean rejecting outside expertise. Agronomists can test new crop varieties, engineers can improve equipment and financial institutions can support investment. But farmers hold detailed knowledge about soil, weather, labor and risk. A useful project creates a way for those forms of knowledge to challenge each other before large spending begins.\n\nOwnership deserves equal attention. Data about fields can improve forecasts, yet farmers should know who stores it and whether it may be sold. Cooperative use of rural housing or equipment can release value, but agreements must make rights, income and exit conditions understandable.\n\nModernization is not achieved when a village displays the newest machine. It is achieved when tools strengthen local capacity, produce durable benefits and leave residents able to shape the next decision.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What condition for rural modernization does the author emphasize?",
+        "options": [
+          "Every county should adopt the same agricultural model",
+          "Outside experts should make decisions before meeting farmers",
+          "Technology must fit local problems, knowledge and control",
+          "New machines are the clearest proof of durable benefits"
+        ],
+        "answer": "C",
+        "explanation": "文章从适地性、基础设施、本地知识、数据和权利多方面论证技术必须嵌入地方条件与决策能力。",
+        "evidence_text": "Technology choices should begin with the problem residents identify, not with a device seeking a demonstration site."
+      },
+      {
+        "type": "detail",
+        "question": "When might a refrigerated truck have limited value?",
+        "options": [
+          "When farmers already understand local weather",
+          "When a county uses water-saving irrigation",
+          "When equipment agreements include exit conditions",
+          "When farms cannot assemble enough produce at the needed time"
+        ],
+        "answer": "D",
+        "explanation": "首段直接说明，小农户若无法按时集货装满，冷链车辆本身难以发挥价值。",
+        "evidence_text": "A refrigerated truck brings little value if small farms cannot gather enough produce at the right time to fill it."
+      },
+      {
+        "type": "word_guess",
+        "question": "What makes a smart-village benefit durable rather than temporary?",
+        "options": [
+          "Able to last over time",
+          "Expensive to repair",
+          "Controlled by outside experts",
+          "Suitable only for dry areas"
+        ],
+        "answer": "A",
+        "explanation": "结尾把现代化与展示新机器对照，强调能持续产生的收益，故指长期稳固。",
+        "evidence_text": "It is achieved when tools strengthen local capacity, produce durable benefits and leave residents able to shape the next decision."
+      },
+      {
+        "type": "inference",
+        "question": "Why should farmers know who stores field data?",
+        "options": [
+          "Farmers must personally operate every server",
+          "Data use can affect their rights and control beyond the immediate forecast",
+          "Field data is never useful for crop models",
+          "Storage knowledge guarantees a full truck"
+        ],
+        "answer": "B",
+        "explanation": "作者紧接着询问数据是否会被出售，说明透明存储关系到农民对信息的权利与控制。",
+        "evidence_text": "Data about fields can improve forecasts, yet farmers should know who stores it and whether it may be sold."
+      },
+      {
+        "type": "inference",
+        "question": "What is implied by letting different forms of knowledge challenge each other?",
+        "options": [
+          "Local experience should automatically defeat scientific research",
+          "Large spending should occur before any disagreement",
+          "Projects improve when technical proposals are tested against lived local evidence",
+          "Engineers and farmers must perform identical roles"
+        ],
+        "answer": "C",
+        "explanation": "科学、工程和农民经验各有信息，通过前置互相检验能减少不适配投资。",
+        "evidence_text": "A useful project creates a way for those forms of knowledge to challenge each other before large spending begins."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-curated-society-l4-01",
+    "title": "Accessibility Tested in Motion",
+    "topic": "社会",
+    "difficulty": 4,
+    "source_id": "src-社会-04",
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20251214/629a137c7fcb4e8a98a976579eaabd1d/c.html",
+    "source_title": "Feature: China empowers people with disabilities using new technology",
+    "source_published_at": "2025-12-14",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "页面可访问；核验了远程手语服务、无障碍模块、可调电子飞镖盘、辅助设备及赛事真实场景测试等事实。",
+    "adaptation_note": "题材参考所列新华社英文网公开事实；本站重新组织论证并原创改写，非媒体原文，非历年真题。",
+    "content": "Assistive technology is often introduced through a polished demonstration: a wheelchair crosses rough ground, a translation system recognizes a sign, or a robot guides someone around an obstacle. A sports event provides a harder test. People arrive at the same time, move between unfamiliar spaces and expect a service to work without a technician standing beside every device.\n\nAt national games for athletes with disabilities, several tools were placed inside this demanding environment. Users could request remote sign-language interpretation through video calls. Venues installed emergency buttons, accessible information platforms and translation machines linked to a central system. Electronic dartboards changed height for wheelchair users, while other exhibits included all-terrain wheelchairs and guide-dog robots.\n\nThe variety is important because “accessibility” is not one technical problem. A person may need information, physical movement, emergency assistance or communication. Improving only the entrance does little if instructions remain unavailable later. Conversely, a clever device can disappoint when it cannot connect with the venue's wider operations. Accessibility is systemic when separate parts support one another instead of leaving the user to bridge every gap.\n\nA live event also reveals failures that a laboratory may miss. Crowds create noise; requests arrive unevenly; equipment must fit different bodies and situations. These pressures do not make public deployment an unfair test. They are precisely the conditions in which the technology is supposed to provide independence.\n\nYet successful operation at one event is not the final standard. Equipment requires maintenance, staff need training, and services must remain affordable after public attention moves elsewhere. Users with disabilities should participate in that evaluation, not merely appear as grateful recipients. Their reports can distinguish a feature that photographs well from one that reliably expands choice.\n\nThe strongest innovation, then, may not be a single spectacular machine. It is a network in which useful devices, responsive staff and accessible procedures continue working together when the demonstration is over.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "Which idea organizes the passage?",
+        "options": [
+          "Sports events should avoid testing unfamiliar equipment",
+          "One advanced device can solve every accessibility need",
+          "Laboratory performance is the only fair measure of assistive tools",
+          "Accessibility depends on connected technology, staff and procedures in real use"
+        ],
+        "answer": "D",
+        "explanation": "全文从多类需求、系统连接、真实场景和后续维护论证无障碍必须是协同网络。",
+        "evidence_text": "It is a network in which useful devices, responsive staff and accessible procedures continue working together when the demonstration is over."
+      },
+      {
+        "type": "detail",
+        "question": "How did the electronic dartboards assist wheelchair users?",
+        "options": [
+          "They automatically changed height",
+          "They translated speech into signs",
+          "They guided users between buildings",
+          "They sent every score to a hospital"
+        ],
+        "answer": "A",
+        "explanation": "第二段明确写明飞镖盘可为轮椅使用者调整高度。",
+        "evidence_text": "Electronic dartboards changed height for wheelchair users, while other exhibits included all-terrain wheelchairs and guide-dog robots."
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “systemic” mean in paragraph 3?",
+        "options": [
+          "Designed mainly for media photographs",
+          "Involving connected parts of a whole system",
+          "Useful only for one kind of disability",
+          "Operated without any human staff"
+        ],
+        "answer": "B",
+        "explanation": "后半句解释不同部分相互支持而不是让使用者自行填补缺口，因此指系统性的。",
+        "evidence_text": "Accessibility is systemic when separate parts support one another instead of leaving the user to bridge every gap."
+      },
+      {
+        "type": "inference",
+        "question": "Why does the author consider a live event a fair test?",
+        "options": [
+          "It guarantees that no equipment will ever fail",
+          "It allows developers to ignore maintenance costs",
+          "Its pressures resemble the real conditions in which independence is needed",
+          "Its users have exactly the same physical needs"
+        ],
+        "answer": "C",
+        "explanation": "作者指出人群、噪音和不均匀请求正是技术实际应对的条件。",
+        "evidence_text": "They are precisely the conditions in which the technology is supposed to provide independence."
+      },
+      {
+        "type": "attitude",
+        "question": "What role does the writer assign to users with disabilities?",
+        "options": [
+          "Passive recipients who should simply express thanks",
+          "Temporary performers needed only for demonstrations",
+          "Customers responsible for repairing public equipment",
+          "Active evaluators whose reports should shape judgment"
+        ],
+        "answer": "D",
+        "explanation": "第五段明确反对把残障用户仅当作感恩的接受者，要求其参与评价。",
+        "evidence_text": "Users with disabilities should participate in that evaluation, not merely appear as grateful recipients."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-curated-society-l4-02",
+    "title": "Flexibility Without a Career Penalty",
+    "topic": "社会",
+    "difficulty": 4,
+    "source_id": "src-社会-18",
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20250606/71e8baa864284232ac1e4a57587496e2/c.html",
+    "source_title": "China Focus: In a changing China, parent-friendly jobs help bridge cribs and clocks",
+    "source_published_at": "2025-06-06",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "页面可访问；核验了中山“妈妈岗”扩展至父亲、弹性上下班与政府补贴，上海“生育友好岗”试点，以及岗位多为临时或兼职、长期发展受限等事实。",
+    "adaptation_note": "题材参考所列新华社英文网公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "content": "Parent-friendly positions are usually praised for solving a scheduling conflict. A worker can leave early for kindergarten pickup, exchange hours with a colleague or complete part of a job from home. Employers may retain experienced staff, while parents avoid an unwanted exit from employment. Extending such arrangements to fathers also signals that care is not solely a mother's responsibility.\n\nHowever, flexibility has two very different forms. In one, a regular position is redesigned while pay, training and promotion remain intact. In the other, the worker is moved into irregular, low-paid tasks with little chance to advance. Both may allow an afternoon pickup, but only the first challenges the assumption that serious careers require constant availability. The second merely makes the caregiver absorb the economic cost of society's schedule.\n\nJob labels therefore need substantive standards. Employers should state pay, hours, social-insurance coverage and how performance will be assessed. Workers who use an approved flexible schedule should remain eligible for important assignments and training. Managers need methods for coordinating output rather than rewarding whoever stays visible longest. Public subsidies can encourage experimentation, but continued support should depend on retention and career outcomes, not simply the number of posts announced.\n\nChildcare services remain essential. No work arrangement can cover a sick child, school holiday or very young infant without reliable care networks. Flexibility should complement nurseries and leave policies rather than become an excuse not to fund them.\n\nThe deeper test concerns choice over time. A parent-friendly job succeeds when a caregiver can adjust work during an intensive period and later increase hours or responsibility without carrying a permanent penalty. It should build a bridge back into a career, not a side road from which return is unusually difficult.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What distinction about parent-friendly jobs is central to the passage?",
+        "options": [
+          "Genuine flexibility preserves employment quality and future mobility",
+          "Only fathers benefit from flexible schedules",
+          "Remote work removes the need for childcare services",
+          "Public subsidies should reward the number of labels announced"
+        ],
+        "answer": "A",
+        "explanation": "全文区分保留薪酬培训晋升的实质灵活与把照护者推入低质工作的表面灵活。",
+        "evidence_text": "In one, a regular position is redesigned while pay, training and promotion remain intact."
+      },
+      {
+        "type": "detail",
+        "question": "What should remain available to workers using approved flexible schedules?",
+        "options": [
+          "Unlimited paid leave",
+          "Important assignments and training",
+          "Automatic management positions",
+          "Exemption from performance assessment"
+        ],
+        "answer": "B",
+        "explanation": "第三段明确要求灵活员工仍能获得重要任务和培训。",
+        "evidence_text": "Workers who use an approved flexible schedule should remain eligible for important assignments and training."
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “substantive” mean in the phrase “substantive standards”?",
+        "options": [
+          "Designed only for government subsidies",
+          "Applied briefly during school holidays",
+          "Concerned with real conditions rather than a label",
+          "Based on how long a worker stays visible"
+        ],
+        "answer": "C",
+        "explanation": "后文列出工资、工时、社保和考核等实际条件，说明该词指有真实内容而非名称。",
+        "evidence_text": "Job labels therefore need substantive standards."
+      },
+      {
+        "type": "inference",
+        "question": "Why does the author criticize rewarding whoever stays visible longest?",
+        "options": [
+          "Managers should never observe employee performance",
+          "Caregivers cannot produce measurable output",
+          "All serious careers must be completed from home",
+          "Physical presence can unfairly disadvantage workers on flexible schedules"
+        ],
+        "answer": "D",
+        "explanation": "上下文要求以产出协调而非在场时间评价，可推断可见性偏见会惩罚合理使用灵活安排者。",
+        "evidence_text": "Managers need methods for coordinating output rather than rewarding whoever stays visible longest."
+      },
+      {
+        "type": "inference",
+        "question": "Why are nurseries still necessary under flexible-work policies?",
+        "options": [
+          "Work adjustments cannot cover every care need or interruption",
+          "Nurseries determine workers' promotion eligibility",
+          "Flexible hours are intended only for school staff",
+          "Childcare services replace the need for parental leave"
+        ],
+        "answer": "A",
+        "explanation": "作者列举生病、假期和婴儿期，说明仅调工时无法承担所有照护情境。",
+        "evidence_text": "No work arrangement can cover a sick child, school holiday or very young infant without reliable care networks."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-curated-society-l4-03",
+    "title": "When a City Stops Growing Outward",
+    "topic": "社会",
+    "difficulty": 4,
+    "source_id": "src-社会-19",
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20250717/84731fe8830b45c7af5dc8fdf5187642/c.html",
+    "source_title": "Xi addresses Central Urban Work Conference, listing priorities for urban development",
+    "source_published_at": "2025-07-17",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "页面可访问；核验了城镇化从快速扩张转向存量提质，旧城更新、城市安全生命线与老化管线改造，历史文化保护，以及热线等治理机制等事实。",
+    "adaptation_note": "题材参考所列新华社英文网公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "content": "Rapid urban expansion has a visible logic. New districts, roads and housing units can be counted, photographed and sold. When population growth slows and much of the necessary city already exists, the task changes. Planning must concentrate less on adding territory and more on making inherited systems safer, fairer and more useful. This transition from expansion to stewardship is technically demanding and politically less dramatic.\n\nExisting cities contain interdependent networks. Replacing a water pipe may require digging beneath a commercial street; protecting shops can delay construction, while postponing the pipe increases failure risk. Renovating an unsafe house can displace tenants if temporary accommodation and rent rules are ignored. Preserving a historic block may support cultural identity but also attract investment that raises prices. Each improvement changes conditions around another goal.\n\nCoordination is therefore not a ceremonial meeting among departments. Transport, housing, environmental and social-service teams need shared maps, schedules and definitions of risk. Citizen hotlines can reveal repeated failures that technical data misses, but complaint counts require interpretation: a silent neighborhood may be satisfied, excluded from the channel or tired of receiving no response.\n\nA stewardship model also changes the time horizon. New construction is often judged at completion. Existing infrastructure must be inspected, repaired and financed repeatedly. Budgets should distinguish between cutting a ribbon and sustaining performance for decades. Public evaluation needs indicators for reliability, affordability, safety and cultural continuity, even though these are harder to summarize than square meters built.\n\nA mature city is not one in which physical change ends. It is one that learns to intervene selectively, disclose trade-offs and correct damage before it becomes crisis. Growth then means improved capacity to care for a complex place, not simply a larger mark on the map.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What transition in urban governance does the passage analyze?",
+        "options": [
+          "From public infrastructure to privately owned services",
+          "From outward expansion to long-term stewardship of existing systems",
+          "From historic preservation to unrestricted construction",
+          "From technical planning to decisions based only on hotlines"
+        ],
+        "answer": "B",
+        "explanation": "文章围绕城市从增量扩张进入存量维护后的协调、长期资金和权衡展开。",
+        "evidence_text": "This transition from expansion to stewardship is technically demanding and politically less dramatic."
+      },
+      {
+        "type": "detail",
+        "question": "Why can renovating unsafe housing harm tenants?",
+        "options": [
+          "Historic blocks cannot contain rental homes",
+          "Housing teams never share maps with transport teams",
+          "Temporary accommodation and rent effects may be neglected",
+          "Technical data prevents residents from complaining"
+        ],
+        "answer": "C",
+        "explanation": "第二段明确指出，若忽视临时安置和租金规则，安全改造可能导致租户被迫迁离。",
+        "evidence_text": "Renovating an unsafe house can displace tenants if temporary accommodation and rent rules are ignored."
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “stewardship” most nearly mean in this passage?",
+        "options": [
+          "Fast construction beyond the city boundary",
+          "A ceremony marking infrastructure completion",
+          "The sale of new housing units",
+          "Responsible long-term care of existing urban assets"
+        ],
+        "answer": "D",
+        "explanation": "全文将其与持续检查、维修、资金和既有系统照管相连，指长期负责的管理。",
+        "evidence_text": "Planning must concentrate less on adding territory and more on making inherited systems safer, fairer and more useful."
+      },
+      {
+        "type": "inference",
+        "question": "Why may a low complaint count be misleading?",
+        "options": [
+          "Residents may lack access or confidence rather than lack problems",
+          "Technical failures always produce many complaints",
+          "Hotlines record only cultural-preservation issues",
+          "Satisfied neighborhoods are required to remain silent"
+        ],
+        "answer": "A",
+        "explanation": "作者列出渠道排斥和回应疲劳两种可能，说明沉默不能直接解释为满意。",
+        "evidence_text": "a silent neighborhood may be satisfied, excluded from the channel or tired of receiving no response."
+      },
+      {
+        "type": "inference",
+        "question": "What does the ribbon-cutting contrast imply about budgets?",
+        "options": [
+          "Opening ceremonies are the best reliability indicator",
+          "Funding must cover continuing maintenance, not just visible completion",
+          "Existing infrastructure should be replaced only after failure",
+          "Long-term work costs less than new construction"
+        ],
+        "answer": "B",
+        "explanation": "作者把剪彩与数十年持续绩效对照，可推断预算需包含全周期维护。",
+        "evidence_text": "Budgets should distinguish between cutting a ribbon and sustaining performance for decades."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-curated-society-l4-04",
+    "title": "The Riders Who Read the Street",
+    "topic": "社会",
+    "difficulty": 4,
+    "source_id": "src-社会-20",
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20260724/87dc5acbe93a40b8838903e88e137fda/c.html",
+    "source_title": "Gig workers step up in China's grassroots governance endeavors",
+    "source_published_at": "2026-07-24",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "页面可访问；核验了骑手上报井盖和路灯等安全隐患、快递员与独居老人“笑脸”门牌约定，以及社区回应骑手平价餐食和换电需求等事实。",
+    "adaptation_note": "题材参考所列新华社英文网公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "content": "Delivery riders and couriers possess a form of urban knowledge that rarely appears in official maps. They enter apartment compounds, notice broken lights, pass the same elderly residents and learn where a missing manhole cover creates danger after rain. A community reporting group can turn this repeated movement into early warning. The workers do not become inspectors; they add observations from places and hours formal staff may miss.\n\nThat contribution raises a question of reciprocity. Gig workers often lack affordable rest spaces, meals, battery exchange points or holiday childcare. Asking them to donate local knowledge while ignoring these conditions would treat participation as free data extraction. In one neighborhood model, officials responded to workers' reports and also created channels for their own needs. Restaurants offered lower-priced meals, and requested battery facilities were installed. Mutual response helped temporary or mobile workers see themselves as community members.\n\nInformal observation still requires safeguards. A photograph of a damaged streetlight is different from information about a resident's private life. Volunteers need rules on consent, urgency and whom to contact. A symbol on an older person's door can support a pre-agreed welfare check, but it should not become general surveillance. Reports must be verified, and points or small rewards should not encourage quantity over accuracy.\n\nThe model also exposes an institutional blind spot. Workers whose apps measure every delivery are often described only as service providers or traffic problems. Their routes make them witnesses to how the city functions. Recognizing that knowledge does not erase the responsibility to improve labor protection; it strengthens the case for including workers in decisions that shape their working environment.\n\nGrassroots governance benefits when participation is neither charity nor hidden labor. The community listens to workers because they know the street, and it supports them because they too have a claim on the city they help operate.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What reciprocal model of gig-worker participation does the passage support?",
+        "options": [
+          "Workers replace professional inspectors without oversight",
+          "Communities collect delivery data in exchange for points",
+          "Workers share street knowledge while communities address their needs and rights",
+          "Riders report private information about every resident"
+        ],
+        "answer": "C",
+        "explanation": "文章主张利用骑手街区观察力的同时回应其餐饮、换电和劳动环境需求，并设置隐私边界。",
+        "evidence_text": "The community listens to workers because they know the street, and it supports them because they too have a claim on the city they help operate."
+      },
+      {
+        "type": "detail",
+        "question": "Which requested facility was installed for gig workers?",
+        "options": [
+          "A public inspection office",
+          "A private resident database",
+          "A new delivery platform",
+          "Battery exchange facilities"
+        ],
+        "answer": "D",
+        "explanation": "第二段明确说明社区回应需求安装了换电设施。",
+        "evidence_text": "Restaurants offered lower-priced meals, and requested battery facilities were installed."
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “blind spot” mean in paragraph four?",
+        "options": [
+          "An important aspect institutions tend not to notice",
+          "A dangerous street without lighting",
+          "A place excluded from digital maps",
+          "A rule protecting private photographs"
+        ],
+        "answer": "A",
+        "explanation": "后文指出社会常只把平台工人视作服务者或交通问题，忽略其城市知识，故指制度性忽视。",
+        "evidence_text": "The model also exposes an institutional blind spot."
+      },
+      {
+        "type": "inference",
+        "question": "Why could rewards for report quantity be harmful?",
+        "options": [
+          "They prevent workers from noticing street hazards",
+          "They may encourage many weak reports rather than accurate useful ones",
+          "They make all volunteers professional inspectors",
+          "They automatically reveal residents' private lives"
+        ],
+        "answer": "B",
+        "explanation": "作者要求奖励不得让数量压过准确性，可推断错误激励会制造低质上报。",
+        "evidence_text": "Reports must be verified, and points or small rewards should not encourage quantity over accuracy."
+      },
+      {
+        "type": "inference",
+        "question": "What is implied by calling participation “free data extraction”?",
+        "options": [
+          "Every community report should receive a cash payment",
+          "Street knowledge belongs only to delivery platforms",
+          "Collecting worker knowledge without reciprocal support can be exploitative",
+          "Workers should stop sharing urgent safety information"
+        ],
+        "answer": "C",
+        "explanation": "该表述出现在社区只索取观察却忽视劳动者条件的假设中，批评单向利用。",
+        "evidence_text": "Asking them to donate local knowledge while ignoring these conditions would treat participation as free data extraction."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-curated-society-l4-05",
+    "title": "Fifteen Minutes for Whom?",
+    "topic": "社会",
+    "difficulty": 4,
+    "source_id": "src-社会-21",
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20250919/a6a533e4662a43458dad02137bf186c2/c.html",
+    "source_title": "China moves to upgrade \"15-minute community life circles\" to facilitate urban living",
+    "source_published_at": "2025-09-19",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "页面可访问；核验了步行15分钟范围内配置托育、养老、医疗、文体等服务，早餐、菜市场与维修等基本业态，以及以减租支持微利公益商户等事实。",
+    "adaptation_note": "题材参考所列新华社英文网公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "content": "The “15-minute community” offers an appealing promise: daily essentials should lie within a short walk. Maps can draw circles around homes and count clinics, markets, childcare rooms or repair shops inside them. Yet geometric closeness is only the first condition of access. Fifteen minutes for a healthy adult may become forty for someone using a cane, pushing a stroller or waiting at crossings without enough time.\n\nService categories can also conceal quality. A point marked “eldercare” might offer only occasional activities rather than meals or bathing assistance. A clinic may be nearby but lack appointments outside working hours. A repair shop can disappear when rising rent makes a low-profit business impossible. The circle must therefore be evaluated through actual journeys, opening times, prices and service capacity, not merely addresses.\n\nMaintaining a balanced mix creates a policy dilemma. Markets tend to favor businesses with higher returns, while breakfast stalls, small repair counters and community canteens may have strong public value but narrow margins. Rent reductions or shared premises can preserve them. Such support should use transparent eligibility and performance rules so that “public interest” does not become a permanent shield from basic quality expectations.\n\nResidents should help define what is essential. A neighborhood with many young families may need childcare urgently; an aging block may prioritize meals and accessible health support. Aggregate demographic data provides a starting point, while walking audits and interviews reveal obstacles that averages hide. Plans also need revision as residents and commercial patterns change.\n\nProximity is valuable because time and physical effort shape who can participate in city life. But the number fifteen should remain a question, not a slogan. A useful life circle is one in which different residents can complete necessary journeys reliably, affordably and with dignity.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What limitation of the “15-minute community” metric does the passage emphasize?",
+        "options": [
+          "All essential services should operate inside one building",
+          "Residents should walk exactly fifteen minutes to every service",
+          "Commercial markets cannot provide any neighborhood service",
+          "Distance alone cannot capture usable, affordable and inclusive access"
+        ],
+        "answer": "D",
+        "explanation": "文章从步行能力、开放时间、价格、容量和业态持续性说明几何距离并非真实可及性的充分条件。",
+        "evidence_text": "Yet geometric closeness is only the first condition of access."
+      },
+      {
+        "type": "detail",
+        "question": "Why might a small repair shop disappear?",
+        "options": [
+          "Its narrow profit margin may not cover rising rent",
+          "Residents always prefer distant services",
+          "Walking audits prohibit commercial activity",
+          "Demographic data excludes repair work"
+        ],
+        "answer": "A",
+        "explanation": "第二段直接指出租金上涨可能使微利维修店无法存续。",
+        "evidence_text": "A repair shop can disappear when rising rent makes a low-profit business impossible."
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “Aggregate” mean in the phrase “Aggregate demographic data”?",
+        "options": [
+          "Collected from one resident",
+          "Combined across a population",
+          "Limited to commercial prices",
+          "Measured only during a walk"
+        ],
+        "answer": "B",
+        "explanation": "该词与访谈揭示平均数隐藏障碍相对，指汇总层面的人口数据。",
+        "evidence_text": "Aggregate demographic data provides a starting point, while walking audits and interviews reveal obstacles that averages hide."
+      },
+      {
+        "type": "inference",
+        "question": "Why should public-interest businesses face performance rules?",
+        "options": [
+          "Low-profit shops should be converted into clinics",
+          "Transparent rules always increase commercial rent",
+          "Subsidy should not excuse poor service indefinitely",
+          "Residents cannot judge what services are essential"
+        ],
+        "answer": "C",
+        "explanation": "作者警告公益标签不能永久保护其逃避基本质量要求，可推断扶持也需问责。",
+        "evidence_text": "Such support should use transparent eligibility and performance rules so that “public interest” does not become a permanent shield from basic quality expectations."
+      },
+      {
+        "type": "inference",
+        "question": "What is suggested by keeping fifteen minutes as a question?",
+        "options": [
+          "Every neighborhood should select a different number",
+          "Walking time is too subjective to measure",
+          "The idea should be removed from urban planning",
+          "Planners should test the promise against different residents' real journeys"
+        ],
+        "answer": "D",
+        "explanation": "结尾要求检验不同居民是否可靠、可负担且有尊严地完成出行，说明指标应接受现实验证。",
+        "evidence_text": "But the number fifteen should remain a question, not a slogan."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-curated-society-l5-01",
+    "title": "When a Digital Service Counts as Public",
+    "topic": "社会",
+    "difficulty": 5,
+    "source_id": "src-社会-05",
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20250731/621d3e96c024447bac22bf44de721086/c.html",
+    "source_title": "China improves people's well-being through digital, intelligent services",
+    "source_published_at": "2025-07-31",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "页面可访问；核验了互联网医疗、电子社保卡规模及数字公共服务强调公平、普惠、可及性的事实。",
+    "adaptation_note": "题材参考所列新华社英文网公开事实；本站基于有限事实重建中心问题并原创改写，非媒体原文，非历年真题。",
+    "content": "Large user totals make a digital public service look successful. By the end of 2024, hundreds of millions of people in China were using internet-based medical services, while more than a billion held electronic social-security cards. Such figures demonstrate reach, but they do not by themselves reveal whether every user can complete a necessary task safely, understand the result, or obtain help when the system refuses a request.\n\nThis distinction matters because a public service differs from an ordinary consumer product. A shopper may leave an inconvenient application and choose another. Someone seeking medical advice, employment support or a social-security record may have no equivalent alternative. Efficiency for the provider can therefore become delay for a citizen if identity checks fail, instructions are unclear or a disability is not accommodated. The costs have not disappeared; they have migrated to the person least prepared to carry them.\n\nA better evaluation begins by separating availability from effective access. Availability asks whether a portal exists. Effective access asks whether people with different devices, literacy levels, languages and physical abilities can reach the intended outcome. It also includes a recovery path: a telephone number, staffed desk or human review that can correct an error without forcing the user to begin again. In this context, recovery is institutional, not merely technical, because someone must be responsible for resolving the case.\n\nMaintaining offline assistance does not mean rejecting digitization. Digital records can reduce repeated paperwork, connect agencies and shorten routine transactions. The point is to use those gains to widen service, rather than to treat the disappearance of a queue as evidence that the underlying need has disappeared. A quiet website may simply mean that excluded users stopped trying.\n\nPublic reporting should consequently combine scale with friction. Alongside total registrations, agencies can examine abandoned applications, requests for human help, correction time and differences among user groups. None of these measures is perfect, and greater collection must respect privacy. Together, however, they make invisible obstacles discussable.\n\nA digital system earns the word public when its design recognizes obligation. It must work for ordinary cases, provide a route through exceptional ones and remain answerable to people whose needs do not fit the easiest workflow.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What standard for digital public services does the passage propose?",
+        "options": [
+          "They should combine wide reach with effective access, recovery and accountability",
+          "They should replace every staffed service as quickly as possible",
+          "They should be judged only by registration totals",
+          "They should collect unlimited personal data to prevent errors"
+        ],
+        "answer": "A",
+        "explanation": "全文从规模的局限出发，提出有效可及、纠错路径和公共责任三项标准。",
+        "evidence_text": "A digital system earns the word public when its design recognizes obligation."
+      },
+      {
+        "type": "detail",
+        "question": "What is included in an effective recovery path?",
+        "options": [
+          "A requirement to buy a newer device",
+          "Human help that can correct an error without a full restart",
+          "Automatic rejection of exceptional cases",
+          "Removal of every identity check"
+        ],
+        "answer": "B",
+        "explanation": "第三段直接列出电话、人工柜台或人工复核，并强调无需从头开始。",
+        "evidence_text": "It also includes a recovery path: a telephone number, staffed desk or human review that can correct an error without forcing the user to begin again."
+      },
+      {
+        "type": "word_guess",
+        "question": "What does it mean when costs have “migrated” to the user?",
+        "options": [
+          "The service has moved to another country",
+          "The application has become free",
+          "The burden has shifted rather than vanished",
+          "The provider has solved every delay"
+        ],
+        "answer": "C",
+        "explanation": "前句说明机构效率可能转化为市民延误，因此 migrated 指成本转移。",
+        "evidence_text": "The costs have not disappeared; they have migrated to the person least prepared to carry them."
+      },
+      {
+        "type": "inference",
+        "question": "Why might a quiet website be misleading?",
+        "options": [
+          "Every successful service must receive complaints",
+          "Offline services always create more accurate data",
+          "People prefer queues to digital records",
+          "Low visible demand may reflect users giving up after exclusion"
+        ],
+        "answer": "D",
+        "explanation": "作者警告队列消失不等于需求消失，安静可能是被排除者停止尝试。",
+        "evidence_text": "A quiet website may simply mean that excluded users stopped trying."
+      },
+      {
+        "type": "inference",
+        "question": "Why does case recovery require an accountable institution, not just restored software?",
+        "options": [
+          "A responsible person or body must resolve exceptional cases",
+          "All errors are caused by computer hardware",
+          "Users should repair government software themselves",
+          "Institutions should avoid offering telephone support"
+        ],
+        "answer": "A",
+        "explanation": "原文明确指出纠错需要有人承担解决个案的责任，因此不只是技术按钮。",
+        "evidence_text": "In this context, recovery is institutional, not merely technical, because someone must be responsible for resolving the case."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-curated-society-l5-02",
+    "title": "A Small Park Has a Large Boundary",
+    "topic": "社会",
+    "difficulty": 5,
+    "source_id": "src-社会-22",
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20260724/fad108782e6e4e45addd05ae3783bf66/c.html",
+    "source_title": "Xinhua Headlines: Pocket parks drive urban renewal, eco-improvement efforts in China",
+    "source_published_at": "2026-07-24",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "页面可访问；核验了口袋公园盘活闲置地、遮阴通风与微气候调节，公私协作运营且部分收入用于维护，以及入户访谈和社区协商参与规划等事实。",
+    "adaptation_note": "题材参考所列新华社英文网公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "content": "Pocket parks are praised for achieving much with little land. A vacant lot can become shade during a heat wave, a place for exercise and a setting where neighbors meet. Because the projects are small, they can be inserted into old districts that lack space for a conventional park. Their apparent simplicity, however, can obscure how far their effects extend beyond the fence.\n\nCooling is one example. Trees and planned airflow may reduce heat inside the site, but the benefit depends on surrounding pavement, building shadows and whether residents can walk there safely during the hottest hours. Social use has similar spillovers. Evening activity can support nearby shops and improve passive observation of the street, while noise or tourist traffic may burden adjacent homes. A park is therefore better understood as an intervention in a local system than as a decorated parcel.\n\nThis perspective changes participation. Asking residents to choose equipment from a catalog is too late and too narrow. Consultation should identify who currently uses the vacant land, which routes cross it, when shade is needed and what memories attach to the place. Children, older residents, cleaners, nearby tenants and street businesses may value different outcomes. Their claims cannot all be maximized, so planners should publish trade-offs rather than presenting the final design as unanimous community preference.\n\nOperations create another boundary. Commercial kiosks can finance maintenance and bring activity, but they may gradually occupy public seating or shift the park toward visitors with greater spending power. A contract should specify protected free space, maintenance duties, revenue use and ways to revise an arrangement that changes the public character of the site.\n\nEven environmental success requires patient evidence. Comparing temperature, biodiversity and use before and after construction is more informative than photographing opening day. Evaluation should include nearby streets, not only sensors placed under new trees.\n\nThe value of a pocket park lies precisely in its ability to influence a larger neighborhood. Responsible design follows those influences outward—to heat, movement, commerce, memory and access—and remains accountable for both benefits and costs.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "How does a pocket park intervene beyond its decorated parcel?",
+        "options": [
+          "Its small size prevents residents from using it",
+          "Its environmental and social effects cross the site's physical boundary",
+          "It should be managed entirely by nearby shops",
+          "Its success depends only on the number of new trees"
+        ],
+        "answer": "B",
+        "explanation": "文章分析降温、步行、商业、噪声、记忆和可及性等跨越公园边界的影响。",
+        "evidence_text": "A park is therefore better understood as an intervention in a local system than as a decorated parcel."
+      },
+      {
+        "type": "detail",
+        "question": "What should a kiosk contract protect explicitly?",
+        "options": [
+          "A unanimous design preference among all residents",
+          "The right to replace every seat with commercial use",
+          "Free public space and transparent maintenance responsibilities",
+          "Temperature measurement only beneath new trees"
+        ],
+        "answer": "C",
+        "explanation": "第四段明确要求合同规定免费空间、维护责任、收入使用和修订机制。",
+        "evidence_text": "A contract should specify protected free space, maintenance duties, revenue use and ways to revise an arrangement that changes the public character of the site."
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “spillovers” mean in paragraph two?",
+        "options": [
+          "Rainwater flowing from a damaged pipe",
+          "Money reserved for commercial kiosks",
+          "Disagreements recorded during consultation",
+          "Effects that reach people or places beyond the project itself"
+        ],
+        "answer": "D",
+        "explanation": "该词后列举附近商铺、街道观察、噪声和游客交通，均为项目边界之外的影响。",
+        "evidence_text": "Social use has similar spillovers."
+      },
+      {
+        "type": "inference",
+        "question": "Why should planners publish trade-offs?",
+        "options": [
+          "Different legitimate interests cannot all be fully satisfied",
+          "Residents are unable to understand a finished design",
+          "Public consultation should occur only after construction",
+          "A catalog always contains too many types of equipment"
+        ],
+        "answer": "A",
+        "explanation": "作者指出不同群体重视的结果不一且无法同时最大化，因此需要公开取舍而非假称一致。",
+        "evidence_text": "Their claims cannot all be maximized, so planners should publish trade-offs rather than presenting the final design as unanimous community preference."
+      },
+      {
+        "type": "inference",
+        "question": "Why are opening-day photographs weak evidence of environmental success?",
+        "options": [
+          "They cannot display any newly planted tree",
+          "They do not show change over time or effects in surrounding streets",
+          "They reveal too much about commercial contracts",
+          "They are taken only during heat waves"
+        ],
+        "answer": "B",
+        "explanation": "文中主张前后对比并覆盖邻近街道，可推断开园照片缺少时间基线和外溢范围。",
+        "evidence_text": "Comparing temperature, biodiversity and use before and after construction is more informative than photographing opening day."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-curated-society-l5-03",
+    "title": "A Mailbox Is Not Yet a Conversation",
+    "topic": "社会",
+    "difficulty": 5,
+    "source_id": "src-社会-23",
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20250227/ebb014001682423b96ae4e13d3e430dc/c.html",
+    "source_title": "ChineseToday | Minzhu Village's path to grassroots democracy",
+    "source_published_at": "2025-02-27",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "页面可访问；核验了城市更新中的院坝会、由1953年工厂意见箱演变的“一号邮箱”线上线下渠道，人大代表实地调研，以及社区服务费率协商等事实。",
+    "adaptation_note": "题材参考所列新华社英文网公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "content": "A suggestion box makes participation visible. Its presence tells residents that officials expect to hear from them, and a digital version can lower the cost of submitting an idea. Yet the democratic value of such a channel is not contained in the box. It emerges from the chain of attention, deliberation, decision and explanation that follows a message.\n\nThe first challenge is representation. People confident with writing or mobile tools are more likely to submit detailed proposals. Renters, shift workers, people with disabilities or residents who distrust formal channels may remain quiet. Courtyard meetings and field visits can broaden the evidence, but their timing, accessibility and facilitation still shape who speaks. Officials should treat silence as missing information rather than consent.\n\nThe second challenge is selection. Thousands of suggestions cannot all receive the same response. Some concern urgent safety repairs; others involve fees, shared spaces or conflicting preferences. A fair system needs published categories, response deadlines and reasons for closing or combining proposals. Otherwise, quick solutions to simple issues can produce an impressive completion rate while difficult structural complaints disappear from view.\n\nDeliberation adds more than volume. When residents discuss a service fee with property managers, they hear constraints and alternatives rather than only sending separate demands. This can reveal whether a disagreement concerns facts, distribution or trust. But meetings should not be used to wear down opposition until apparent agreement appears. Records need to show whose interests remain affected.\n\nFeedback completes the loop. A resident whose proposal is rejected may still regard the process as legitimate if the evidence and rule are clear, whereas an accepted idea followed by unexplained delay can deepen distrust. Publishing outcomes also lets the wider community examine whether certain streets or groups receive faster attention.\n\nA mailbox is thus infrastructure for democracy in the same way that a station is infrastructure for transport: it creates an entry point, not a completed journey. The quality of governance depends on whether different people can enter, trace where their concern goes and challenge the route when it repeatedly leads nowhere.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What determines the democratic value of a suggestion channel, according to the passage?",
+        "options": [
+          "The age and historical meaning of the physical mailbox",
+          "The total number of messages received each month",
+          "The transparent and inclusive process that follows submission",
+          "The speed with which simple complaints are closed"
+        ],
+        "answer": "C",
+        "explanation": "全文强调代表性、筛选规则、协商、反馈和可追踪性，而非仅设置渠道。",
+        "evidence_text": "It emerges from the chain of attention, deliberation, decision and explanation that follows a message."
+      },
+      {
+        "type": "detail",
+        "question": "What information should records of community meetings preserve?",
+        "options": [
+          "Only the names of proposals that gained agreement",
+          "The mobile devices used by each speaker",
+          "A ranking of residents by speaking confidence",
+          "Which interests remain affected after discussion"
+        ],
+        "answer": "D",
+        "explanation": "第四段明确说记录需要显示哪些人的利益仍受影响。",
+        "evidence_text": "Records need to show whose interests remain affected."
+      },
+      {
+        "type": "word_guess",
+        "question": "When a proposal is rejected fairly, what makes the process legitimate?",
+        "options": [
+          "Fair and worthy of acceptance even after disagreement",
+          "Guaranteed to approve every resident request",
+          "Fast enough to avoid written explanation",
+          "Limited to legally trained participants"
+        ],
+        "answer": "A",
+        "explanation": "语境说提案即使被拒，若证据和规则清楚，居民仍可能认可过程，故指公平且具有正当性。",
+        "evidence_text": "A resident whose proposal is rejected may still regard the process as legitimate if the evidence and rule are clear"
+      },
+      {
+        "type": "inference",
+        "question": "Why can a high completion rate be misleading?",
+        "options": [
+          "Every completed proposal creates a new complaint",
+          "Officials may close easy cases while leaving difficult structural issues unseen",
+          "Residents submit only simple safety repairs",
+          "Published categories prevent proposals from being combined"
+        ],
+        "answer": "B",
+        "explanation": "作者指出快速解决简单问题能抬高完成率，同时结构性难题可能从视野消失。",
+        "evidence_text": "quick solutions to simple issues can produce an impressive completion rate while difficult structural complaints disappear from view."
+      },
+      {
+        "type": "inference",
+        "question": "What does the station analogy imply?",
+        "options": [
+          "Suggestion boxes should be located beside public transport",
+          "Digital messages move faster than courtyard discussions",
+          "An access channel is necessary but cannot substitute for the whole decision process",
+          "Governance should use the same rules as a railway"
+        ],
+        "answer": "C",
+        "explanation": "车站只是旅程入口，类比说明意见渠道只开启参与，后续处理和问责才构成完整过程。",
+        "evidence_text": "it creates an entry point, not a completed journey."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-curated-society-l5-04",
+    "title": "A Target Needs a Path Between Services",
+    "topic": "社会",
+    "difficulty": 5,
+    "source_id": "src-社会-24",
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20260702/81846f4c5acc4f4da5d13398aca1c5ad/c.html",
+    "source_title": "China unveils five-year plan to improve services, quality of life for people with disabilities",
+    "source_published_at": "2026-07-02",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "页面可访问；核验了残疾人就业、康复服务和医疗参保目标，公共场馆与自助终端无障碍改造，全国残疾人抽样调查数据更新，以及人工智能与辅助技术应用等事实。",
+    "adaptation_note": "题材参考所列新华社英文网公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "content": "A five-year disability plan can specify jobs created, rehabilitation coverage, insurance participation and accessible facilities. Each target directs attention and funding, but people experience the system across categories. A student needs accessible transport to reach an inclusive school. A trained graduate needs recruitment, workplace adjustment and a complaint channel. A rehabilitation device may be clinically suitable yet unusable if repair, payment or digital instructions are missing.\n\nThis interdependence makes handoffs a critical measure of quality. Agencies often report the service they deliver, while the gap between two services belongs to nobody. A person may complete skills training but receive no introduction to employers prepared to make adjustments. A hospital may prescribe an assistive device without confirming that the home or school can accommodate it. Plans should assign responsibility for such transitions and record whether the next step actually occurred.\n\nData can reveal where pathways break, provided that categories are designed carefully. National surveys help update population needs, while service records show participation. Yet a high enrollment rate does not indicate whether education is accessible, and an employment count does not reveal pay, stability or career progression. Measures should be disaggregated by location, gender, age and disability type without publishing information that identifies individuals. People with disabilities should help decide which outcomes matter and how burdensome data collection feels.\n\nTechnology introduces another handoff—from prototype to daily use. Artificial intelligence or robotics may expand independence, but public trials should test safety, repairability and compatibility with ordinary services. Innovation funding should not draw resources away from reliable low-tech supports such as sign-language access, readable forms or human assistance at self-service terminals.\n\nAmbitious targets are valuable when they organize action rather than decorate a report. Their real achievement lies in the routes connecting education, care, work, culture and legal protection. A plan succeeds not when every office completes its own column, but when a person can move through the columns without repeatedly starting again.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What weakness in service planning does the passage seek to correct?",
+        "options": [
+          "National surveys always reveal too much private information",
+          "Low-tech disability support prevents innovation",
+          "Employment targets should replace education measures",
+          "Targets may overlook the handoffs people need between separate services"
+        ],
+        "answer": "D",
+        "explanation": "全文用教育、培训、就业、康复设备和技术落地说明部门指标之间的转接缺口需要明确责任。",
+        "evidence_text": "This interdependence makes handoffs a critical measure of quality."
+      },
+      {
+        "type": "detail",
+        "question": "What should public technology trials examine besides safety?",
+        "options": [
+          "Repairability and compatibility with ordinary services",
+          "Only the number of research patents",
+          "Whether all human assistance can be removed",
+          "The disability category of every individual user"
+        ],
+        "answer": "A",
+        "explanation": "第四段直接要求测试安全、可维修性和与日常服务的兼容性。",
+        "evidence_text": "public trials should test safety, repairability and compatibility with ordinary services."
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “disaggregated” mean in the data discussion?",
+        "options": [
+          "Deleted after national collection",
+          "Broken down into relevant groups",
+          "Combined into one enrollment rate",
+          "Limited to technology users"
+        ],
+        "answer": "B",
+        "explanation": "后文列出地区、性别、年龄和残疾类型，说明应按群体拆分数据。",
+        "evidence_text": "Measures should be disaggregated by location, gender, age and disability type without publishing information that identifies individuals."
+      },
+      {
+        "type": "inference",
+        "question": "Why can an employment count give a distorted picture?",
+        "options": [
+          "It excludes everyone who completed skills training",
+          "It identifies individual workers publicly",
+          "It may hide poor pay, instability or blocked career development",
+          "It measures only jobs using robotics"
+        ],
+        "answer": "C",
+        "explanation": "作者明确指出就业数量不显示薪酬、稳定性和职业发展，可推断单一计数会高估就业质量。",
+        "evidence_text": "an employment count does not reveal pay, stability or career progression."
+      },
+      {
+        "type": "inference",
+        "question": "What does the final “columns” image imply?",
+        "options": [
+          "Reports should avoid organizing targets in tables",
+          "Every service should be delivered by one office",
+          "People should submit the same data repeatedly",
+          "Administrative completion is insufficient if users must restart between departments"
+        ],
+        "answer": "D",
+        "explanation": "结尾把各部门完成自身栏目与个人跨栏目顺畅移动对照，批评碎片化行政成功。",
+        "evidence_text": "A plan succeeds not when every office completes its own column, but when a person can move through the columns without repeatedly starting again."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-curated-society-l5-05",
+    "title": "Rights Become Real at the Service Counter",
+    "topic": "社会",
+    "difficulty": 5,
+    "source_id": "src-社会-25",
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20260727/a83062c6876b48d4bf029743f0430094/c.html",
+    "source_title": "China Focus: China targets stronger livelihood, employment support for people with disabilities",
+    "source_published_at": "2026-07-27",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "页面可访问；核验了残疾人保障法修订和无障碍环境建设法地方落实，司法保护、法律援助与无障碍公共法律服务，以及全生命周期教育就业和康复支持等事实。",
+    "adaptation_note": "题材参考所列新华社英文网公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "content": "A legal right to accessible services is essential, but its practical meaning appears in ordinary encounters. Can a blind applicant read the employment form? Will a court provide sign-language interpretation without treating it as a personal favor? Can a person with an intellectual disability understand a guardianship decision and challenge abuse? The distance between written protection and these moments is the work of implementation.\n\nImplementation begins with duties that can be identified. A public agency should know which accessibility standard applies, who funds an adjustment and how quickly a barrier must be removed. Frontline employees need training, but responsibility cannot be transferred entirely to their goodwill. Accessible formats, interpretation budgets and escalation procedures must be built into normal operations. Otherwise, courteous staff may improvise inconsistent solutions, while an unfriendly employee can make a formal right disappear.\n\nRemedies matter because prevention will sometimes fail. Legal aid needs accessible intake, confidentiality and professionals familiar with disability-related discrimination. Complaint systems should allow assistance without taking control away from the complainant. Deadlines must account for continuing harm: a student excluded for a semester or an applicant who loses a job opportunity cannot be fully repaired by a favorable answer years later.\n\nMonitoring also presents a tension. Authorities need evidence about recurring barriers and case outcomes, but public reporting can expose sensitive health or family information in a small community. Anonymous statistics should be paired with audits and consultation rather than detailed stories published without meaningful consent. Independent review helps distinguish a rare error from a repeated institutional pattern.\n\nLaw reform and local rules can clarify standards, yet enforcement should remain open to learning. Technologies, workplaces and family arrangements change, creating barriers that earlier texts did not name. Courts, service agencies and organizations of people with disabilities need channels for feeding those experiences back into guidance.\n\nRights are not weakened by attention to procedure; they are made usable through it. A strong legal framework reaches the ramp, classroom, workplace and service counter, gives officials a defined obligation, and gives the affected person a timely way to demand correction.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What makes a disability right practically usable, according to the passage?",
+        "options": [
+          "Defined duties, accessible procedures, remedies and feedback into enforcement",
+          "Reliance on the goodwill of individual frontline workers",
+          "Publication of detailed personal cases in every community",
+          "Waiting for technology to name every possible barrier"
+        ],
+        "answer": "A",
+        "explanation": "文章围绕明确义务、常规预算流程、及时救济、隐私监测和经验反馈说明法律如何落地。",
+        "evidence_text": "Rights are not weakened by attention to procedure; they are made usable through it."
+      },
+      {
+        "type": "detail",
+        "question": "Why must complaint deadlines consider continuing harm?",
+        "options": [
+          "Legal aid professionals need more training time",
+          "A late victory may not restore a lost semester or job opportunity",
+          "Anonymous statistics are difficult to publish",
+          "Local rules change faster than national laws"
+        ],
+        "answer": "B",
+        "explanation": "第三段以失学一学期和错失工作为例说明迟来的纠正无法完整补偿持续损害。",
+        "evidence_text": "a student excluded for a semester or an applicant who loses a job opportunity cannot be fully repaired by a favorable answer years later."
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “escalation” refer to in operational procedures?",
+        "options": [
+          "Publishing a person's medical information",
+          "Making a legal complaint less urgent",
+          "Passing an unresolved barrier to someone with greater authority",
+          "Replacing standards with employee goodwill"
+        ],
+        "answer": "C",
+        "explanation": "该词与无障碍格式、预算和正常运作并列，指问题未解决时向更高责任层级转交。",
+        "evidence_text": "Accessible formats, interpretation budgets and escalation procedures must be built into normal operations."
+      },
+      {
+        "type": "inference",
+        "question": "Why does the author oppose relying mainly on courteous staff?",
+        "options": [
+          "Courtesy prevents employees from learning standards",
+          "Friendly workers always disclose private data",
+          "Formal rights are unnecessary when staff improvise",
+          "Individual kindness produces uncertain access without institutional duties"
+        ],
+        "answer": "D",
+        "explanation": "作者指出即兴方案不一致且不友好员工可使权利消失，可推断善意不能替代制度保障。",
+        "evidence_text": "Otherwise, courteous staff may improvise inconsistent solutions, while an unfriendly employee can make a formal right disappear."
+      },
+      {
+        "type": "inference",
+        "question": "What role does independent review play in monitoring?",
+        "options": [
+          "It helps identify whether failures are isolated or systemic",
+          "It replaces the need for anonymous statistics",
+          "It permits publication without consent",
+          "It ensures every complaint receives the same remedy"
+        ],
+        "answer": "A",
+        "explanation": "文中直接把独立审查与区分偶发错误和重复制度模式相连。",
+        "evidence_text": "Independent review helps distinguish a rare error from a repeated institutional pattern."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-curated-society-l6-01",
+    "title": "Accessibility Fails at the Handoff",
+    "topic": "社会",
+    "difficulty": 6,
+    "source_id": "src-社会-26",
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20260702/6de6a4d55ce14cf2b42790f7ed0ac887/c.html",
+    "source_title": "China rolls out new measures to improve air travel for passengers with disabilities",
+    "source_published_at": "2026-07-02",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "页面可访问；核验了民航无障碍服务覆盖下车点、值机、安检、候机、登机、机上服务、离机、行李提取和接机点的全链条一致支持要求。",
+    "adaptation_note": "题材参考所列新华社英文网公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "content": "Air travel is a chain of services that passengers usually experience as one journey. For a traveler who needs wheelchair assistance, sign-language communication or extra time, the chain becomes visible whenever responsibility changes hands. A smooth check-in cannot compensate for an inaccessible shuttle to the aircraft. Careful boarding loses its value if mobility equipment is damaged or no assistant appears at baggage claim.\n\nA full-service standard tries to prevent these breaks by covering the route from terminal drop-off to final pickup. The difficult part is not listing the stages but allocating accountability across airports, airlines, security contractors and ground handlers. Each organization may meet its internal target while the passenger waits between them. Shared case identifiers, confirmed handoffs and a single contact for disruption can make responsibility traceable without forcing the traveler to repeat medical details at every desk.\n\nStandardization also creates tension. A common minimum reduces arbitrary treatment, yet assistance must remain responsive to individual preference. Some wheelchair users can walk a short distance; others cannot transfer safely. A blind traveler may want navigation guidance without being physically led. Staff should ask rather than infer, and the answer should travel with the service request under clear privacy limits. Consistency means a reliable process for honoring choices, not identical handling of different people.\n\nDisruption is the real test. Weather, gate changes and tight connections compress time, encouraging staff to treat accessibility as optional. Contingency plans should state who rebooks an accessible route, where a person can wait safely and how essential equipment will be located. Performance data must include missed assistance, damaged devices and connection failures, not only passengers successfully boarded. Complaints should trigger reconstruction of the whole journey so recurrent failures at one interface are visible.\n\nTraining cannot be a one-time script. Employees need practice with equipment, communication and respectful offers of help, while managers need authority to slow a process that has become unsafe. Travelers and disability organizations should participate in simulations and audits because they recognize risks that departmental checklists normalize.\n\nSeamless service is therefore an institutional property rather than an act of kindness by one employee. Accessibility succeeds when the passenger does not have to manage the organizations that are supposed to manage the journey.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What is the passage's main argument about accessible air travel?",
+        "options": [
+          "It can be guaranteed by careful boarding alone",
+          "Its quality depends on accountable coordination across every service handoff",
+          "Individual preferences should be replaced by one procedure",
+          "Travelers should manage communication among airport contractors"
+        ],
+        "answer": "B",
+        "explanation": "全文围绕跨机构交接、责任追踪、个性选择和中断应急说明全链条协调才是无障碍关键。",
+        "evidence_text": "Seamless service is therefore an institutional property rather than an act of kindness by one employee."
+      },
+      {
+        "type": "detail",
+        "question": "Which failures should performance data record?",
+        "options": [
+          "Only passengers who completed boarding",
+          "Every medical detail repeated at a desk",
+          "Missed assistance, damaged devices and failed connections",
+          "The number of standard training scripts"
+        ],
+        "answer": "C",
+        "explanation": "第四段直接列出未到位协助、设备损坏和衔接失败。",
+        "evidence_text": "Performance data must include missed assistance, damaged devices and connection failures, not only passengers successfully boarded."
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “reconstruction” mean in the complaint process?",
+        "options": [
+          "Rebuilding an airport terminal",
+          "Replacing every mobility device",
+          "Repeating a passenger's medical examination",
+          "Tracing what happened across the entire journey"
+        ],
+        "answer": "D",
+        "explanation": "语境要求投诉揭示接口反复失败，故指还原整个旅程各环节发生了什么。",
+        "evidence_text": "Complaints should trigger reconstruction of the whole journey so recurrent failures at one interface are visible."
+      },
+      {
+        "type": "inference",
+        "question": "Why can internal targets hide a poor passenger experience?",
+        "options": [
+          "Each organization may succeed locally while coordination between them fails",
+          "Internal measures always ignore boarding safety",
+          "Passengers refuse to use shared case identifiers",
+          "Ground handlers control airline weather decisions"
+        ],
+        "answer": "A",
+        "explanation": "作者指出机构可各自达标而旅客仍在交接处等待，说明局部绩效不能代表端到端体验。",
+        "evidence_text": "Each organization may meet its internal target while the passenger waits between them."
+      },
+      {
+        "type": "inference",
+        "question": "How can a handoff remain consistent while honoring different choices?",
+        "options": [
+          "Identical physical assistance for all disabled travelers",
+          "A dependable method for asking and acting on individual needs",
+          "Allowing each employee to improvise privately",
+          "Removing common minimum standards"
+        ],
+        "answer": "B",
+        "explanation": "第三段区分共同最低标准与个体需求，强调一致的是询问和落实选择的流程。",
+        "evidence_text": "Consistency means a reliable process for honoring choices, not identical handling of different people."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-curated-society-l6-02",
+    "title": "The Last Centimeter of a Legal Ramp",
+    "topic": "社会",
+    "difficulty": 6,
+    "source_id": "src-社会-27",
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20260521/7c0437eee0e34bb99d3067367a5a7395/c.html",
+    "source_title": "China Focus: Ramp by ramp, China goes barrier-free",
+    "source_published_at": "2026-05-21",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "页面可访问；核验了入口台阶改坡道的独立出行案例、2023年无障碍环境建设法的普遍受益理念，行人过街延时、低地板公交，以及公益诉讼与残疾人组织参与评估等事实。",
+    "adaptation_note": "题材参考所列新华社英文网公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "content": "Accessibility law changes the status of a ramp. It is no longer a charitable addition that an owner may provide when convenient, but part of the conditions under which people can participate equally. Yet legal recognition does not settle whether a particular ramp works. A slope may be too steep, a landing blocked, or the accessible entrance locked while the main door remains open. The last centimeter between formal compliance and independent use is where enforcement matters.\n\nTraditional inspection often concentrates on construction documents and measurements at completion. Those checks are indispensable, but real use introduces sequences: reaching the curb cut, crossing before the signal changes, entering a low-floor bus, finding a functioning lift and arriving at a service counter. Failure at one point can cancel success elsewhere. Route-based audits conducted at different times reveal obstacles that isolated facility counts miss.\n\nEnforcement also needs multiple pathways. Regulators can refuse approval for noncompliant projects. Public-interest litigation can address barriers affecting many people, while individual complaints identify daily failures. Disability organizations contribute technical experience and help evaluate whether corrections remain usable after publicity fades. These roles should reinforce rather than replace routine maintenance by the responsible operator. A court order that produces a repaired lift but no inspection schedule may solve the visible case only temporarily.\n\nUniversal benefit adds a further policy question. Older people, pregnant women, children and temporarily injured travelers may all use accessible design. This wider value can build political support, but it should not erase the specific rights and expertise of people with disabilities. If officials frame access only as something “everyone may someday need,” current exclusion can become abstract. Direct participation by those facing barriers keeps urgency and accountability visible.\n\nTechnology can extend crossing time or announce an accessible bus in real time. It can also introduce opaque failure: a sensor may misread a slow walker, or an app may be inaccessible to the blind passenger it is meant to assist. Digital systems require fallback procedures, bias testing and public reporting just as physical ramps require slope checks.\n\nThe purpose of enforcement is not to maximize violations recorded. It is to create dependable routes through ordinary life. Law acquires practical force when standards, user evidence, remedies and maintenance repeatedly converge on that outcome.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "Where does the passage locate the main challenge of accessibility law?",
+        "options": [
+          "Convincing owners that ramps are charitable additions",
+          "Replacing physical inspections with mobile applications",
+          "Turning formal standards into dependable routes of actual use",
+          "Restricting accessible facilities to people with permanent disabilities"
+        ],
+        "answer": "C",
+        "explanation": "文章从形式合规与独立使用的差距出发，讨论路线审计、执法、维护和技术兜底。",
+        "evidence_text": "The last centimeter between formal compliance and independent use is where enforcement matters."
+      },
+      {
+        "type": "detail",
+        "question": "What weakness can remain after a court orders a lift repair?",
+        "options": [
+          "The project can no longer be inspected by regulators",
+          "Disability organizations must take over maintenance",
+          "The main entrance is required to close",
+          "The lift may fail again without a continuing inspection schedule"
+        ],
+        "answer": "D",
+        "explanation": "第三段明确说只有修复而无检查计划可能仅暂时解决可见案件。",
+        "evidence_text": "A court order that produces a repaired lift but no inspection schedule may solve the visible case only temporarily."
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “opaque” mean when describing digital failure?",
+        "options": [
+          "Difficult for users to see, understand or challenge",
+          "Caused by a physically blocked entrance",
+          "Guaranteed to affect every slow walker",
+          "Recorded clearly in a public report"
+        ],
+        "answer": "A",
+        "explanation": "后文举传感器误判和应用自身不可访问，说明失败机制对用户不透明、难理解。",
+        "evidence_text": "It can also introduce opaque failure: a sensor may misread a slow walker, or an app may be inaccessible to the blind passenger it is meant to assist."
+      },
+      {
+        "type": "inference",
+        "question": "Why does the author prefer route-based audits to facility counts alone?",
+        "options": [
+          "Facility measurements are never legally relevant",
+          "One broken link can make several compliant facilities useless together",
+          "Routes should be inspected only after complaints",
+          "A route contains fewer technical details than a building"
+        ],
+        "answer": "B",
+        "explanation": "作者强调出行是连续序列，任一点失败会抵消其他环节成功，故需端到端审计。",
+        "evidence_text": "Failure at one point can cancel success elsewhere."
+      },
+      {
+        "type": "inference",
+        "question": "What risk arises from presenting accessibility only as a universal future need?",
+        "options": [
+          "Older people may stop using accessible design",
+          "Public support for maintenance will necessarily disappear",
+          "Present exclusion and disabled people's expertise may lose urgency",
+          "Legal standards will apply only to temporary injuries"
+        ],
+        "answer": "C",
+        "explanation": "第四段警告普遍价值叙事可能抽象化当前排斥，并抹去残疾人的具体权利和经验。",
+        "evidence_text": "If officials frame access only as something “everyone may someday need,” current exclusion can become abstract."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-curated-society-l6-03",
+    "title": "Early Support Without a Narrow Future",
+    "topic": "社会",
+    "difficulty": 6,
+    "source_id": "src-社会-28",
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20260727/40c2b344d1614bceaf0cb84f6bb17a81/c.html",
+    "source_title": "China to expand autism support with early screening, special education programs",
+    "source_published_at": "2026-07-27",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "页面可访问；核验了0至6岁标准化孤独症筛查和干预、地市级康复救助能力、专门特殊教育学校和贫困家庭子女学前至高中免费教育，以及全生命周期支持等事实。",
+    "adaptation_note": "题材参考所列新华社英文网公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "content": "Early autism screening can shorten the period in which families know that development differs but cannot obtain an explanation or support. Standardized services for children aged six and under may connect observations in clinics or kindergartens with assessment and intervention. Because younger brains are highly adaptable, timely help can develop communication, daily-living and learning strategies. The ethical value of early action, however, depends on what follows the screen.\n\nScreening is not diagnosis, and diagnosis is not destiny. A brief tool may flag language delay, sensory difference or social behavior that requires fuller evaluation. False reassurance can postpone help, while careless labeling can narrow adults' expectations before they understand the child. Families need clear information about uncertainty, an appeal or second assessment, and services that begin from functional needs rather than a demand to appear typical.\n\nCapacity must also be distributed. Declaring that every city-level region can offer rehabilitation assistance says little about travel time, waiting lists, professional supervision or affordability. Specialist schools may provide expertise for some children, while inclusive classrooms can support participation for others if teachers receive resources and class environments adapt. The policy question is not which setting is universally superior, but whether placement follows an individual assessment and remains reviewable as the child changes.\n\nLife-cycle language is important because childhood intervention cannot be the endpoint. Adolescents need social, academic and mental-health support; adults may need vocational preparation, supported employment, housing choices or assistance with decision-making. A system that invests heavily before age six and then withdraws at graduation transfers risk back to families. Transitions between health, education and employment agencies should have named coordinators and measurable continuity.\n\nAutistic people and family organizations should participate in program design, but representation requires care. The most confident speaker cannot stand for every communication style or support level. Consultation may need alternative formats, supported communication and separate routes for children, adults and caregivers to express different interests. Outcome measures should include well-being, autonomy and participation rather than only reduction of visible behaviors.\n\nEarly support is most defensible when it expands possible futures. It should give a child and family more tools, timely services and better choices without pretending that one screening result has already written the life ahead.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What ethical condition does the passage attach to early autism screening?",
+        "options": [
+          "It should determine a child's permanent educational placement",
+          "It should focus mainly on eliminating visible behaviors",
+          "It can replace comprehensive assessment when used before age six",
+          "It must lead to uncertain-aware, individualized and continuing support"
+        ],
+        "answer": "D",
+        "explanation": "文章强调筛查非诊断、安置需个别评估、支持需贯穿生命周期且衡量自主与福祉。",
+        "evidence_text": "The ethical value of early action, however, depends on what follows the screen."
+      },
+      {
+        "type": "detail",
+        "question": "What should families receive when an assessment remains uncertain?",
+        "options": [
+          "Clear information, a route to another assessment and needs-based support",
+          "A permanent special-school placement",
+          "A guarantee that no future support will be needed",
+          "Only a score showing visible behaviors"
+        ],
+        "answer": "A",
+        "explanation": "第二段明确要求告知不确定性、申诉或二次评估，并从功能需要出发提供服务。",
+        "evidence_text": "Families need clear information about uncertainty, an appeal or second assessment, and services that begin from functional needs rather than a demand to appear typical."
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “reviewable” mean when discussing school placement?",
+        "options": [
+          "Published as a public ranking",
+          "Able to be reconsidered as needs change",
+          "Decided by one screening result",
+          "Limited to children in specialist schools"
+        ],
+        "answer": "B",
+        "explanation": "语境说儿童会变化，安置应随个别评估重新审视，故指可复核调整。",
+        "evidence_text": "placement follows an individual assessment and remains reviewable as the child changes."
+      },
+      {
+        "type": "inference",
+        "question": "Why does the author question city-level service capacity figures?",
+        "options": [
+          "Every city should use the same intervention method",
+          "Travel time is unrelated to real access",
+          "Nominal availability may conceal distance, queues, cost or weak supervision",
+          "Specialist schools provide rehabilitation in every region"
+        ],
+        "answer": "C",
+        "explanation": "第三段列出时间、等待、督导和费用，说明宣布具备能力不等于家庭可获得高质量服务。",
+        "evidence_text": "Declaring that every city-level region can offer rehabilitation assistance says little about travel time, waiting lists, professional supervision or affordability."
+      },
+      {
+        "type": "inference",
+        "question": "What is the danger of ending intensive support after childhood?",
+        "options": [
+          "Early intervention becomes scientifically invalid",
+          "Adults no longer require any communication support",
+          "Schools must take responsibility for employment indefinitely",
+          "Unmanaged transition risks are shifted back to individuals and families"
+        ],
+        "answer": "D",
+        "explanation": "作者指出毕业后撤回支持会把风险重新转给家庭，并主张跨部门连续衔接。",
+        "evidence_text": "A system that invests heavily before age six and then withdraws at graduation transfers risk back to families."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-curated-society-l6-04",
+    "title": "A Standard Is a Compressed Public Argument",
+    "topic": "社会",
+    "difficulty": 6,
+    "source_id": "src-社会-29",
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20260401/4c5ace738c564891a41e5fb0962f435c/c.html",
+    "source_title": "New batch of national standards takes effect in China",
+    "source_published_at": "2026-04-01",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "页面可访问；核验了光伏电站保护与远程监测、多式联运服务保障和评价指标、旅游船服务质量要求、茶供应链全环节管理，以及2025年国家标准发布数量等事实。",
+    "adaptation_note": "题材参考所列新华社英文网公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "content": "A technical standard can look like neutral detail: a formula for evaluating multimodal transport, a requirement for photovoltaic protection equipment, or a list of service conditions on a tour boat. In fact, each document compresses choices about acceptable risk, measurable quality and who bears the cost of failure. The apparent precision of a number should not conceal the public argument embedded within it.\n\nMeasurement boundaries are one source of judgment. A transport standard may calculate punctuality at transfer points, yet exclude the time a passenger spends finding an inaccessible connection. A tourism rule may count trained staff without asking whether interpretation reaches visitors with hearing loss. What is omitted can guide investment just as strongly as what is included, because organizations optimize the indicators against which they are audited.\n\nStandards must also balance compatibility and innovation. Common terminology and interfaces allow suppliers, inspectors and users to communicate. If requirements freeze one existing technology, however, a safer method may face unnecessary barriers. Performance-based language can leave room for alternatives, but it demands competent testing and may create uncertainty for smaller firms. A revision process should therefore publish evidence, transition periods and reasons for changing thresholds.\n\nImplementation produces distributional effects. Compliance costs may improve safety while raising prices or pushing small operators from a market. That does not prove a requirement is mistaken; it means policymakers should examine assistance, phased deadlines and whether the same public outcome can be achieved less burdensomely. Exemptions need care because the people served by low-cost operators should not receive systematically weaker protection.\n\nParticipation is difficult but necessary. Technical committees need engineers and industry experience, while consumers, workers and affected communities identify consequences that laboratory tests miss. Drafts should be available in understandable summaries, not only specialist language. Complaints and accident data after implementation should feed revision rather than being treated as evidence that users failed to follow instructions.\n\nA standard succeeds when it creates dependable coordination and learning, not merely uniform paperwork. Its authority comes from technical rigor, transparent judgment and willingness to correct the boundary between what society currently accepts and what better evidence shows it should demand.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "Why does the author call a standard a “compressed public argument”?",
+        "options": [
+          "It contains contestable choices about risk, quality, cost and measurement",
+          "It should be written only by elected officials",
+          "It summarizes every consumer complaint in one formula",
+          "It removes judgment by using precise numbers"
+        ],
+        "answer": "A",
+        "explanation": "全文说明指标边界、技术路径、成本分配和参与均包含价值选择，标准并非纯中性细节。",
+        "evidence_text": "In fact, each document compresses choices about acceptable risk, measurable quality and who bears the cost of failure."
+      },
+      {
+        "type": "detail",
+        "question": "What should a revision process disclose?",
+        "options": [
+          "Only the identities of technical committee members",
+          "Evidence, transition periods and reasons for threshold changes",
+          "A permanent exemption for small operators",
+          "Instructions blaming users for every accident"
+        ],
+        "answer": "B",
+        "explanation": "第三段明确列出修订过程应公开证据、过渡期与阈值变化理由。",
+        "evidence_text": "A revision process should therefore publish evidence, transition periods and reasons for changing thresholds."
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “distributional” refer to in paragraph four?",
+        "options": [
+          "How documents are sent to inspectors",
+          "How products move through a supply chain",
+          "How costs and benefits fall differently across groups",
+          "How formulas are divided into smaller steps"
+        ],
+        "answer": "C",
+        "explanation": "后文讨论价格、小经营者和低成本服务用户承受不同影响，故指成本收益在人群间的分布。",
+        "evidence_text": "Implementation produces distributional effects."
+      },
+      {
+        "type": "inference",
+        "question": "Why can omitted indicators influence investment?",
+        "options": [
+          "Unmeasured outcomes are always impossible to improve",
+          "Technical committees prohibit inaccessible connections",
+          "Every organization chooses its own standard",
+          "Organizations may neglect outcomes that audits do not reward"
+        ],
+        "answer": "D",
+        "explanation": "作者指出机构会优化被审计指标，可推断未纳入的结果容易得不到资源。",
+        "evidence_text": "What is omitted can guide investment just as strongly as what is included, because organizations optimize the indicators against which they are audited."
+      },
+      {
+        "type": "inference",
+        "question": "Why are understandable draft summaries important?",
+        "options": [
+          "They enable non-specialists affected by a rule to participate meaningfully",
+          "They allow laboratories to avoid competent testing",
+          "They guarantee that no operator will face compliance costs",
+          "They replace the need for technical language in final standards"
+        ],
+        "answer": "A",
+        "explanation": "参与者包括消费者、工人和社区，通俗摘要使其能理解并反馈标准后果。",
+        "evidence_text": "Drafts should be available in understandable summaries, not only specialist language."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-curated-society-l6-05",
+    "title": "When Public Services Follow the Person",
+    "topic": "社会",
+    "difficulty": 6,
+    "source_id": "src-社会-30",
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20260522/0b01863270924ccaaf34fe5335ad0ee8/c.html",
+    "source_title": "China moves to provide basic public services based on residence",
+    "source_published_at": "2026-05-22",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "页面可访问；核验了基本公共服务从户籍地转向常住地供给，随迁子女教育、公租房、就业地社保、居住证参加居民医保，以及常住人口与财政、设施布局协同等事实。",
+    "adaptation_note": "题材参考所列新华社英文网公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "content": "A worker may spend years in a city where her child attends school, her income is earned and her medical needs arise, yet key public services have traditionally been tied to household registration elsewhere. Providing basic services by habitual residence seeks to align administrative responsibility with lived geography. The principle is simple; the institutional consequences are not.\n\nPopulation inflow changes both demand and finance. A receiving district needs classrooms, clinics, rental housing and social workers before all residents hold local registration. If transfers and land allocations rely on outdated registered-population counts, local authorities face an incentive to restrict access or allow quality to decline. Funding formulas must follow credible resident data while protecting privacy and accounting for seasonal or circular mobility. Origin areas also need adjustment as populations age or shrink rather than assuming their existing facilities remain appropriately sized.\n\nPortability creates another layer. Social insurance joined at the place of work, medical coverage based on a residence permit and cross-region settlement reduce discontinuity only if records can be recognized across systems. Technical interoperability is necessary, but errors require human appeal. A mismatched identity field should not leave a patient financing treatment while databases argue. Residents need a visible authority responsible for correction, deadlines and provisional access during disputes.\n\nEqual basic service does not require every city to offer identical extras, but the boundary between a basic entitlement and a local enhancement must be clear. Gradient provision can manage scarce resources, yet waiting rules should be published and should not quietly recreate registration barriers through impossible residence documents. Children, older people and persons with disabilities face particular harm when proof requirements interrupt continuous care or education.\n\nMobility also complicates democratic accountability. Residents who lack local registration may use services but feel weakly represented in planning them. Consultation, complaint and community participation should follow residence too. Data can show where people live; it cannot by itself reveal inconvenient opening hours, discriminatory treatment or fear of applying.\n\nReform succeeds when a move no longer repeatedly resets a person's relationship with public institutions. That requires money, records, facilities and voice to follow population change in coordinated ways. Residence-based provision is therefore not merely a new eligibility rule. It is a commitment to redesign administrative geography around the continuity of human lives.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What does residence-based service provision require beyond changing eligibility?",
+        "options": [
+          "Immediate identical services in every city",
+          "Coordinated reform of funding, data, facilities, appeals and participation",
+          "Ending all use of population records",
+          "Transferring every origin-area facility to receiving districts"
+        ],
+        "answer": "B",
+        "explanation": "文章从财政、设施、跨系统记录、纠错、基本权利边界和居民参与说明这是系统性行政重构。",
+        "evidence_text": "Residence-based provision is therefore not merely a new eligibility rule."
+      },
+      {
+        "type": "detail",
+        "question": "What protection should exist while a records dispute is unresolved?",
+        "options": [
+          "Automatic cancellation of medical coverage",
+          "A requirement to return to the registration city",
+          "Provisional access plus a responsible correction authority and deadline",
+          "Permanent reliance on database decisions"
+        ],
+        "answer": "C",
+        "explanation": "第三段明确要求可见纠错责任主体、期限以及争议期间的临时服务准入。",
+        "evidence_text": "Residents need a visible authority responsible for correction, deadlines and provisional access during disputes."
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “Portability” mean in paragraph three?",
+        "options": [
+          "The physical movement of a clinic building",
+          "The seasonal size of a registered population",
+          "The freedom of cities to define every service differently",
+          "The ability of rights and records to remain usable across places or systems"
+        ],
+        "answer": "D",
+        "explanation": "该段讨论工作地参保、居住证医保和跨地区结算的连续性，故指权益记录可跨地使用。",
+        "evidence_text": "Portability creates another layer."
+      },
+      {
+        "type": "inference",
+        "question": "Why can outdated population counts weaken service equality?",
+        "options": [
+          "Resources may not reach districts serving the actual resident population",
+          "Origin areas always receive too little funding",
+          "Registered residents use no local facilities",
+          "Privacy rules prevent any funding transfer"
+        ],
+        "answer": "A",
+        "explanation": "作者指出流入地需求先增加，若财政仍按旧户籍人数配置，就会产生限准入或降质量激励。",
+        "evidence_text": "If transfers and land allocations rely on outdated registered-population counts, local authorities face an incentive to restrict access or allow quality to decline."
+      },
+      {
+        "type": "inference",
+        "question": "Why should participation also follow residence?",
+        "options": [
+          "Administrative data already captures every service problem",
+          "People affected by local services need influence over their design even without local registration",
+          "Only registered residents experience discriminatory treatment",
+          "Community planning is unrelated to public-service continuity"
+        ],
+        "answer": "B",
+        "explanation": "末段指出实际使用服务的非本地户籍居民可能在规划中代表不足，因此参与权也应基于居住事实。",
+        "evidence_text": "Residents who lack local registration may use services but feel weakly represented in planning them."
+      }
+    ]
+  }
+]
+
+

@@ -1,0 +1,18 @@
+[package]
+name = "cet-learning-desk"
+version = "0.1.0"
+description = "四六级学习台桌面客户端"
+authors = ["CET Learning Desk"]
+edition = "2021"
+
+[lib]
+name = "cet_learning_desk_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+tauri-plugin-shell = "2"
+tauri-plugin-single-instance = "2"

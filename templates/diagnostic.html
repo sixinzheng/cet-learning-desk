@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block title %}初始能力诊断 · 四六级学习台{% endblock %}
+{% block content %}
+<main class="diagnostic-shell" id="diagnostic-app">
+    <header class="diagnostic-heading">
+        <div>
+            <p class="eyebrow">OPTIONAL DIAGNOSTIC / 可选诊断</p>
+            <h1>给段位一份更可靠的起点</h1>
+            <p>用几分钟完成词汇语境、阅读和听力，给段位一份更可靠的起点。诊断只提供初始低权重证据，之后会逐步让位于长期真实训练。</p>
+        </div>
+        <div class="diagnostic-promise"><strong>约 8–12 分钟</strong><span>可以随时退出；未完成时不会伪造成完整诊断。</span></div>
+    </header>
+
+    <section id="diagnostic-intro" class="diagnostic-intro">
+        <div class="diagnostic-route" aria-label="诊断范围">
+            <div><strong>阅读语境</strong><span>1 篇短文</span></div>
+            <div><strong>听力理解</strong><span>3 段短对话</span></div>
+        </div>
+        <div class="action-row">
+            <button id="diagnostic-start" class="btn btn-primary" type="button">开始诊断</button>
+            <a class="btn btn-secondary" href="/learn">暂时跳过</a>
+        </div>
+        <p class="muted">建议使用安静环境，听力由浏览器语音合成朗读。</p>
+    </section>
+
+    <section id="diagnostic-workspace" class="diagnostic-workspace" hidden>
+        <div class="diagnostic-progress" aria-label="诊断进度">
+            <span id="diagnostic-step-label">准备中</span>
+            <div class="progress-track"><span id="diagnostic-progress-bar"></span></div>
+            <strong id="diagnostic-step-count">0/2</strong>
+        </div>
+        <div data-diagnostic-status class="region-state region-state--loading">正在抽取诊断内容……</div>
+        <article id="diagnostic-task" class="diagnostic-task" hidden></article>
+        <div class="diagnostic-actions">
+            <button id="diagnostic-play" class="btn btn-secondary" type="button" hidden>播放对话</button>
+            <button id="diagnostic-submit" class="btn btn-primary" type="button">提交本部分</button>
+            <a class="btn btn-secondary" href="/learn">退出诊断</a>
+        </div>
+    </section>
+
+    <section id="diagnostic-result" class="diagnostic-result" hidden aria-live="polite"></section>
+</main>
+{% endblock %}
+{% block scripts %}<script src="{{ asset('js/diagnostic.js') }}"></script>{% endblock %}

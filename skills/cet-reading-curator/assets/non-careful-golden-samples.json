@@ -1,0 +1,35 @@
+{
+  "banked_cloze": {
+    "title": "Repair Cafes and the Value of Shared Skills",
+    "difficulty": 3,
+    "content": "In many cities, volunteers meet at repair cafes to help neighbors fix broken household objects. A visitor may bring a lamp, a radio or a jacket and work beside someone who understands how it was made. The aim is not simply to make the item {{1}} again. The meeting also gives practical knowledge a place to be {{2}}. People who once felt unable to open a machine begin to see how separate parts {{3}}. Experienced volunteers do not perform every task in silence; they {{4}} the steps and let visitors try safe parts of the repair. This process can {{5}} waste, but its social effect may be equally important. Skills that appear ordinary to one person can be {{6}} to another. A successful cafe therefore depends on patience as much as technical ability. Organizers must also be {{7}} about safety, since some devices should be handled only by trained workers. When an object cannot be repaired, volunteers can still explain why it failed and how future purchases might be more {{8}}. The result is a small public space where consumption becomes less {{9}} and knowledge becomes more {{10}}.",
+    "candidates": ["active", "available", "careful", "explain", "function", "interact", "passive", "reduce", "reliable", "shared", "valuable", "working", "conceal", "temporary", "separate"],
+    "answers": ["working", "shared", "interact", "explain", "reduce", "valuable", "careful", "reliable", "passive", "available"]
+  },
+  "long_matching": {
+    "title": "How Public Libraries Are Redefining Quiet Space",
+    "difficulty": 4,
+    "sections": {
+      "A": "For a long time, the ideal library was associated with silence. That expectation still matters to readers who need concentrated study, but it no longer describes every activity inside a modern public library.",
+      "B": "Some branches divide the building into sound zones. Enclosed rooms protect quiet study, while open tables support tutoring, group projects and conversation. The point is not to abandon silence but to make it available where it is most useful.",
+      "C": "Libraries increasingly lend more than books. Tools, musical instruments and portable internet devices allow residents to try resources that would be expensive to buy for a single task.",
+      "D": "Staff members have also become guides to complicated information. They help visitors compare sources, complete digital forms and recognize misleading online claims without deciding what the visitor should believe.",
+      "E": "Children's programs use stories, making and movement to develop language. Because these sessions can be lively, successful buildings place them where sound will not travel directly into reading rooms.",
+      "F": "Not every change requires new construction. A branch can test movable furniture, publish a clear schedule and ask users which activities conflict before spending money on permanent walls.",
+      "G": "The strongest measure of success is not the number of events alone. Libraries also examine whether people return, complete a task, discover a useful resource or feel able to ask for help.",
+      "H": "This broader role creates tension when budgets are limited. Every new service needs staff time, maintenance and explanation, so expansion must be matched with choices about what the library can sustain."
+    },
+    "statements": [
+      {"text": "Libraries can preserve quiet by assigning different activities to different areas.", "answer": "B"},
+      {"text": "Some libraries give residents temporary access to costly practical items.", "answer": "C"},
+      {"text": "Information support should strengthen judgment rather than dictate conclusions.", "answer": "D"},
+      {"text": "Active children's sessions work best when building acoustics are considered.", "answer": "E"},
+      {"text": "Small reversible trials can precede expensive physical changes.", "answer": "F"},
+      {"text": "Event totals alone do not show whether a service helped users.", "answer": "G"},
+      {"text": "New programs create continuing costs as well as public benefits.", "answer": "H"},
+      {"text": "Traditional expectations remain relevant even as library activities expand.", "answer": "A"},
+      {"text": "Group work and individual study need not compete for the same acoustic conditions.", "answer": "B"},
+      {"text": "A clear timetable can improve space use without rebuilding the branch.", "answer": "F"}
+    ]
+  }
+}

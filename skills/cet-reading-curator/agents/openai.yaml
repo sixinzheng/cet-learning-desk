@@ -1,0 +1,4 @@
+interface:
+  display_name: "CET Reading Curator"
+  short_description: "搜集权威题材并编写可追溯的四六级阅读题"
+  default_prompt: "Use $cet-reading-curator to source, adapt, generate, or validate CET reading material for the current project."

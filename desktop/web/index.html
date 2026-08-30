@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>四六级学习台</title>
+  <style>
+    :root { color-scheme: light; font-family: system-ui, "Microsoft YaHei", sans-serif; }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #f5f0e7; color: #202439; }
+    main { width: min(520px, calc(100vw - 48px)); border-top: 5px solid #303b67; padding: 34px 4px; }
+    .eyebrow { color: #c4553e; font-weight: 800; letter-spacing: .14em; }
+    h1 { margin: 12px 0; font: 700 clamp(32px, 6vw, 52px)/1.08 Georgia, "Microsoft YaHei", serif; }
+    p { margin: 0; color: #666575; line-height: 1.8; }
+    button { min-height: 44px; margin-top: 24px; padding: 0 22px; border: 1px solid #303b67; background: #303b67; color: #fff; font: inherit; font-weight: 700; cursor: pointer; }
+    button[hidden] { display: none; }
+    .line { height: 3px; margin-top: 28px; background: #e5ded2; overflow: hidden; }
+    .line::before { content: ""; display: block; width: 38%; height: 100%; background: #c4553e; animation: wait 1.2s ease-in-out infinite alternate; }
+    @keyframes wait { to { transform: translateX(165%); } }
+    @media (prefers-reduced-motion: reduce) { .line::before { animation: none; width: 60%; } }
+  </style>
+</head>
+<body>
+  <main role="status" aria-live="polite">
+    <div class="eyebrow">CET LEARNING DESK</div>
+    <h1>正在准备你的学习台</h1>
+    <p id="status-copy">正在启动本地题库与学习记录。首次安装可能需要几秒钟，请稍候。</p>
+    <button id="close-button" type="button" hidden onclick="window.close()">关闭窗口后重试</button>
+    <div class="line" aria-hidden="true"></div>
+  </main>
+  <script>
+    window.showBackendError = function (message) {
+      document.querySelector('h1').textContent = '学习台暂时无法启动';
+      document.getElementById('status-copy').textContent = message;
+      document.getElementById('close-button').hidden = false;
+      document.querySelector('.line').hidden = true;
+    };
+  </script>
+</body>
+</html>

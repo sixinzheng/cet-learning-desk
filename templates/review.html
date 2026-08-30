@@ -1,0 +1,268 @@
+{% extends "base.html" %}
+{% block title %}复习 - 四六级单词助手{% endblock %}
+{% block content %}
+<div class="dashboard" x-data="reviewApp()" x-init="init()">
+
+    <!-- 顶部栏 -->
+    <header class="topbar">
+        <div class="topbar-left">
+            <h1 class="topbar-greet">复习</h1>
+            <div class="topbar-quote">闪卡 · 选择 · 听力 · 看义打词 — 任意两模式各连对 3 次即完成</div>
+        </div>
+        <div class="topbar-right">
+            <div class="topbar-progress" x-show="words.length>0">
+                <div class="progress-ring" :title="'已完成 ' + doneCount + ' / ' + totalCount">
+                    <svg class="ring-svg" viewBox="0 0 64 64" aria-hidden="true">
+                        <circle class="ring-track" cx="32" cy="32" r="27"></circle>
+                        <circle class="ring-fill" cx="32" cy="32" r="27" :style="ringStyle"></circle>
+                    </svg>
+                    <span class="ring-label" x-text="ringPct"></span>
+                </div>
+                <span class="btn-act btn-act-secondary" style="cursor:default">
+                    已完成 <b x-text="doneCount" style="color:var(--primary)"></b> / <span x-text="totalCount"></span>
+                </span>
+            </div>
+            <a href="/" class="btn-act btn-act-secondary">返回首页</a>
+        </div>
+    </header>
+
+    <div class="main-grid">
+        <!-- 左栏：模式 / 进度 / 队列 -->
+        <aside class="panel" style="grid-column:1">
+            <div class="panel-head">复习模式</div>
+            <div class="review-tabs" role="tablist" aria-label="复习模式">
+                <button type="button" role="tab" class="review-tab" :aria-selected="mode==='flashcard'" :class="mode==='flashcard'?'active':''" @click="mode='flashcard'">
+                    <span class="tab-icon">F</span><span>闪卡</span>
+                </button>
+                <button type="button" role="tab" class="review-tab" :aria-selected="mode==='choice'" :class="mode==='choice'?'active':''" @click="mode='choice'">
+                    <span class="tab-icon">C</span><span>选择</span>
+                </button>
+                <button type="button" role="tab" class="review-tab" :aria-selected="mode==='listening'" :class="mode==='listening'?'active':''" @click="mode='listening'">
+                    <span class="tab-icon">L</span><span>听力</span>
+                </button>
+                <button type="button" role="tab" class="review-tab" :aria-selected="mode==='spelling'" :class="mode==='spelling'?'active':''" @click="mode='spelling'">
+                    <span class="tab-icon">S</span><span>打词</span>
+                </button>
+            </div>
+            <div class="review-mode-summary"><strong>已满足 <span x-text="completedModes"></span>/2 个模式</strong><span>推荐：<b x-text="recommendedModeLabel"></b></span></div>
+            <details class="rule-details"><summary>查看完成规则</summary><p>同一个词在任意两种模式中分别连续答对 3 次，即完成今日复习；答错会清零该模式连续次数。</p></details>
+
+            <div class="panel-head" style="margin-top:14px">模式进度</div>
+            <div class="mode-badges" x-show="currentId">
+                <div class="mode-badge" :class="modeState.flashcard>=3?'passed':mode==='flashcard'?'active':''">
+                    闪卡 <b x-text="modeState.flashcard || 0"></b>/3
+                </div>
+                <div class="mode-badge" :class="modeState.choice>=3?'passed':mode==='choice'?'active':''">
+                    选择 <b x-text="modeState.choice || 0"></b>/3
+                </div>
+                <div class="mode-badge" :class="modeState.listening>=3?'passed':mode==='listening'?'active':''">
+                    听力 <b x-text="modeState.listening || 0"></b>/3
+                </div>
+                <div class="mode-badge" :class="modeState.spelling>=3?'passed':mode==='spelling'?'active':''">
+                    打词 <b x-text="modeState.spelling || 0"></b>/3
+                </div>
+            </div>
+
+            <div class="panel-head" style="margin-top:14px">复习队列 <span class="panel-sub" x-text="'剩 ' + words.length + ' 词'"></span></div>
+            <div class="word-queue" style="max-height:300px; overflow-y:auto">
+                <template x-for="w in words" :key="w.word_id">
+                    <button type="button" class="queue-word" :class="w.word_id === currentId ? 'current' : ''"
+                         :aria-current="w.word_id === currentId ? 'true' : 'false'" @click="jumpTo(w)">
+                        <span class="queue-word-text" x-text="w.word"></span>
+                        <span class="queue-word-mode-dots">
+                            <span class="mode-dot" :class="wordMode[w.word_id]?.flashcard>=3?'passed':''">F</span>
+                            <span class="mode-dot" :class="wordMode[w.word_id]?.choice>=3?'passed':''">C</span>
+                            <span class="mode-dot" :class="wordMode[w.word_id]?.listening>=3?'passed':''">L</span>
+                            <span class="mode-dot" :class="wordMode[w.word_id]?.spelling>=3?'passed':''">S</span>
+                        </span>
+                    </button>
+                </template>
+            </div>
+        </aside>
+
+        <!-- 主区 -->
+        <main class="panel" style="grid-column:span 2">
+
+            <!-- 闪卡模式 -->
+            <div x-show="mode==='flashcard' && words.length>0" class="fade-in">
+                <div class="mode-header">
+                    <div class="panel-head" style="margin:0">闪卡 — 认识它吗？</div>
+                    <div style="display:flex;gap:8px;align-items:center">
+                        <button class="btn-fav-toggle" :class="isFavorite ? 'btn-fav-on' : ''" @click="toggleFavorite()">
+                            <svg class="fav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg>
+                            <span x-text="isFavorite ? '已收藏' : '收藏'"></span>
+                        </button>
+                        <div class="kbd-hints"><span class="kbd">空格</span> 翻面</div>
+                    </div>
+                </div>
+                <div class="review-card-word" :class="flipped ? 'is-flipped' : ''" @click="flipFlashcard"
+                     role="button" :aria-pressed="flipped ? 'true' : 'false'" tabindex="0">
+                    <template x-if="!flipped">
+                        <div>
+                            <div class="word-pronounce-row word-pronounce-row--center"><div class="review-card-word-main" x-text="current.word"></div><button class="pronounce-button" type="button" @click.stop="playAudio()" :aria-label="'播放 ' + current.word + ' 的发音'">发音</button></div>
+                            <div class="review-card-phonetic" x-text="current.phonetic || '点击翻面'"></div>
+                            <div class="review-card-sentence" x-text="flashSentence" x-show="flashSentence"></div>
+                            <div class="review-card-hint">点击卡片或按空格翻面查看释义</div>
+                        </div>
+                    </template>
+                    <template x-if="flipped">
+                        <div>
+                            <div class="review-card-meaning" x-text="currentMeanings"></div>
+                            <div class="review-card-frequency" x-text="currentStars"></div>
+                            <div class="review-card-sentence-zh" x-text="flashSentenceZh" x-show="flashSentenceZh"></div>
+                            <div class="review-card-hint">如何回忆它？选一个评级，或按 <span class="kbd">1</span><span class="kbd">2</span><span class="kbd">3</span><span class="kbd">4</span></div>
+                        </div>
+                    </template>
+                </div>
+                <div class="rating-keys" x-show="flipped">
+                    <button class="rating-key rating-key--recognize" @click="answerFlashcard('recognize')" :disabled="ratingLocked">
+                        <span class="kbd">1</span><span class="rk-name">认识</span>
+                        <span class="interval-preview" x-text="preview.recognize ? preview.recognize.label : '推进一格'"></span>
+                    </button>
+                    <button class="rating-key rating-key--vague" @click="answerFlashcard('vague')" :disabled="ratingLocked">
+                        <span class="kbd">2</span><span class="rk-name">模糊</span>
+                        <span class="interval-preview" x-text="preview.vague ? preview.vague.label : '原地巩固'"></span>
+                    </button>
+                    <button class="rating-key rating-key--forget" @click="answerFlashcard('forget')" :disabled="ratingLocked">
+                        <span class="kbd">3</span><span class="rk-name">忘记</span>
+                        <span class="interval-preview">今日复现</span>
+                    </button>
+                    <button class="rating-key rating-key--mastered" @click="answerFlashcard('mastered')" :disabled="ratingLocked">
+                        <span class="kbd">4</span><span class="rk-name">熟记</span>
+                        <span class="interval-preview">毕业</span>
+                    </button>
+                </div>
+                <div class="flashcard-tip" x-show="!flipped">翻面后再评级：认识 / 模糊（软过关）/ 忘记 / 熟记（毕业）</div>
+            </div>
+
+            <!-- 选择模式 -->
+            <div x-show="mode==='choice' && words.length>0" class="fade-in">
+                <div class="mode-header">
+                    <div class="panel-head" style="margin:0">选择 — 单词在句中的意思</div>
+                    <div style="display:flex;gap:8px;align-items:center">
+                        <button class="btn-fav-toggle" :class="isFavorite ? 'btn-fav-on' : ''" @click="toggleFavorite()">
+                            <svg class="fav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg>
+                            <span x-text="isFavorite ? '已收藏' : '收藏'"></span>
+                        </button>
+                        <div class="kbd-hints"><span class="kbd">A-D</span> 选答案</div>
+                    </div>
+                </div>
+                <div class="word-pronounce-row word-pronounce-row--center"><div class="quiz-word-big" x-text="current.word"></div><button class="pronounce-button" type="button" @click="playAudio()" :aria-label="'播放 ' + current.word + ' 的发音'">发音</button></div>
+                <div class="quiz-word-meta"><span class="quiz-stars" x-text="currentStars"></span></div>
+                <div class="quiz-sentence" x-text="choiceSentence"></div>
+                <div class="quiz-sentence-zh" x-text="choiceSentenceZh" x-show="choiceMade && choiceSentenceZh" style="color:var(--ink-3); border-top:0; padding-top:4px; font-size:13px"></div>
+                <div class="quiz-options">
+                    <template x-for="(opt,i) in currentOptions" :key="i">
+                        <button class="quiz-opt-btn" :class="choiceMade ? (i===correctIdx ? 'correct':(i===choiceSelected ? 'wrong':'')) : ''"
+                                @click="answerChoice(i)" :disabled="choiceMade">
+                            <span class="opt-letter" x-text="String.fromCharCode(65+i)"></span><span class="opt-text"><template x-for="(sense,senseIndex) in splitMeanings(opt)" :key="senseIndex"><span class="opt-sense" x-text="sense"></span></template></span>
+                        </button>
+                    </template>
+                </div>
+                <button x-show="choiceMade" class="btn-act btn-act-primary" style="margin-top:14px; width:100%; justify-content:center"
+                        @click="advanceWord()">继续 <span class="kbd">空格</span></button>
+            </div>
+
+            <!-- 听力模式 -->
+            <div x-show="mode==='listening' && words.length>0" class="fade-in">
+                <div class="mode-header">
+                    <div class="panel-head" style="margin:0">听力 — 听发音识别单词</div>
+                    <div style="display:flex;gap:8px;align-items:center">
+                        <button class="btn-fav-toggle" :class="isFavorite ? 'btn-fav-on' : ''" @click="toggleFavorite()">
+                            <svg class="fav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg>
+                            <span x-text="isFavorite ? '已收藏' : '收藏'"></span>
+                        </button>
+                        <div class="kbd-hints"><span class="kbd">A-D</span> 选答案</div>
+                    </div>
+                </div>
+                <div style="text-align:center; margin:16px 0">
+                    <button class="btn-act btn-act-primary" style="font-size:16px;padding:14px 36px" @click="playAudio()">
+                        播放发音
+                    </button>
+                    <div style="font-size:12px;color:var(--ink-3);margin-top:6px" x-show="audioPlayed">听到的是哪个单词？</div>
+                </div>
+                <div class="quiz-sentence" x-text="listenSentence" x-show="audioPlayed && listenSentence"></div>
+                <div class="quiz-sentence-zh" x-text="listenSentenceZh" x-show="listenMade && listenSentenceZh" style="color:var(--ink-3); border-top:0; padding-top:4px; font-size:13px"></div>
+                <div class="quiz-options" x-show="audioPlayed">
+                    <template x-for="(opt,i) in listenOptions" :key="i">
+                        <button class="quiz-opt-btn" :class="listenMade ? (i===listenAnswer ? 'correct':(i===listenSelected ? 'wrong':'')) : ''"
+                                @click="answerListening(i)" :disabled="listenMade">
+                            <span class="opt-letter" x-text="String.fromCharCode(65+i)"></span><span class="opt-text" x-text="opt"></span>
+                        </button>
+                    </template>
+                </div>
+                <button x-show="listenMade" class="btn-act btn-act-primary" style="margin-top:14px; width:100%; justify-content:center"
+                        @click="advanceWord()">继续 <span class="kbd">空格</span></button>
+            </div>
+
+            <!-- 看义打词模式 -->
+            <div x-show="mode==='spelling' && words.length>0" class="fade-in">
+                <div class="mode-header">
+                    <div class="panel-head" style="margin:0">看义打词 — 据释义与例句拼写</div>
+                    <div style="display:flex;gap:8px;align-items:center">
+                        <button class="btn-fav-toggle" :class="isFavorite ? 'btn-fav-on' : ''" @click="toggleFavorite()">
+                            <svg class="fav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg>
+                            <span x-text="isFavorite ? '已收藏' : '收藏'"></span>
+                        </button>
+                        <div class="kbd-hints"><span class="kbd">回车</span> 校验</div>
+                    </div>
+                </div>
+                <div style="font-size:15px; color:var(--ink-2); margin:8px 0; text-align:center" x-text="currentMeanings"></div>
+                <div class="quiz-sentence" x-show="spellPrompt" x-text="spellPrompt"></div>
+                <div class="quiz-sentence-zh" x-show="spellingResult !== null && spellZh" x-text="spellZh" style="color:var(--ink-3); border-top:0; padding-top:4px; font-size:13px"></div>
+                <label class="sr-only" for="spell-input">输入当前复习单词拼写</label>
+                <input id="spell-input" type="text" class="spelling-input" placeholder="输入单词拼写..."
+                       x-model="spellingInput" @keyup.enter="checkSpelling()">
+                <button class="btn-act btn-act-primary" style="margin-top:12px; width:100%; justify-content:center" @click="checkSpelling()">
+                    校验拼写
+                </button>
+                <div x-show="spellingResult !== null" class="spell-result">
+                    <div x-show="spellingResult" class="spell-correct">正确!</div>
+                    <div x-show="!spellingResult" class="spell-wrong">
+                        拼写有误，正确答案：<b x-text="spellingAnswer"></b>
+                    </div>
+                    <button class="btn-act btn-act-primary" style="margin-top:12px; width:100%; justify-content:center" @click="advanceWord()">
+                        继续 <span class="kbd">空格</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 完成 -->
+            <div x-show="loaded && words.length===0">
+                <!-- 批次反馈页（完成一轮） -->
+                <div x-show="batchVisible" class="fade-in batch-feedback">
+                    <div class="panel-head">今日复习完成</div>
+                    <div class="batch-stats">
+                        <span>完成 <b x-text="doneCount"></b> 词</span>
+                        <span>本轮遗忘 <b x-text="forgotCount"></b> 词</span>
+                    </div>
+                    <div class="batch-list">
+                        <template x-for="rec in sessionLog" :key="rec.word_id">
+                            <div class="batch-item" :class="rec.forgot ? 'batch-item--wrong' : ''">
+                                <div class="batch-word-row">
+                                    <span class="batch-word" x-text="rec.word"></span>
+                                    <span class="batch-wrongs" x-show="rec.forgot">本轮遗忘</span>
+                                </div>
+                                <div class="batch-meaning" x-text="rec.meanings"></div>
+                            </div>
+                        </template>
+                    </div>
+                    <div style="display:flex; gap:10px; margin-top:16px; justify-content:center">
+                        <a href="/" class="btn-act btn-act-secondary">返回首页</a>
+                        <button class="btn-act btn-act-primary" @click="init()">再来一轮</button>
+                    </div>
+                </div>
+                <!-- 空状态 -->
+                <div x-show="!batchVisible" class="text-center" style="padding:50px 0">
+                    <div style="font-size:20px;font-weight:700;color:var(--ink)">今日没有到期复习</div>
+                    <div style="font-size:14px;color:var(--ink-3);margin-top:4px">艾宾浩斯记忆计划会在节点到期时提醒你</div>
+                    <a href="/study" class="btn-act btn-act-secondary" style="margin-top:16px; display:inline-flex">去学新词</a>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+{% endblock %}
+{% block scripts %}
+<script src="{{ asset('js/review.js') }}"></script>
+{% endblock %}

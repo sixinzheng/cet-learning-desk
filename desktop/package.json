@@ -1,0 +1,14 @@
+{
+  "name": "cet-learning-desk",
+  "private": true,
+  "version": "0.1.0",
+  "description": "四六级学习台桌面客户端",
+  "scripts": {
+    "tauri": "tauri",
+    "desktop:dev": "tauri dev",
+    "desktop:build": "tauri build --bundles nsis"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.8.0"
+  }
+}

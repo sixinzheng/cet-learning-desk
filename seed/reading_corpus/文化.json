@@ -1,0 +1,2462 @@
+[
+  {
+    "corpus_id": "cet-curated-culture-l1-01",
+    "title": "What a Heritage Day Can Begin",
+    "topic": "文化",
+    "difficulty": 1,
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20240608/54ae6df1b8f848dca80f36a4a9cf59ca/c.html",
+    "source_title": "Nationwide intangible cultural heritage promotion initiative launched in Beijing",
+    "source_published_at": "2024-06-08",
+    "retrieved_at": "2026-08-29",
+    "adaptation_note": "题材参考所列新华社英文网公开信息；本站依据有限事实重新确定中心问题、重组结构并原创改写，非媒体原文，非历年真题。",
+    "content": "A special day can bring traditional skills into public view, but one day is only a beginning. Around China's Cultural and Natural Heritage Day in 2024, a nationwide program planned more than 12,000 activities. At the China Intangible Cultural Heritage Museum in Beijing, five inheritors gave works to the museum. A year-long exhibition also opened there.\n\nThe exhibition presented more than 100 heritage projects, from local opera materials to embroidery and wood carving. More than 600 pieces or sets were shown through displays that included multimedia. These numbers describe a wide doorway into living culture. They do not, however, tell us whether a visitor will later learn a craft, attend an opera, or understand why a practice matters to its community.\n\nPromotion therefore has two jobs. First, it must make traditions visible and approachable. Second, it should create a path from looking to continued interest. A short label may identify an object, while a demonstration can reveal the decisions and practice behind it. A museum program can also direct visitors toward local groups and future events.\n\nThe useful question after Heritage Day is not simply how many people came. It is whether the encounter gave them a reason and a way to return.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "How should Heritage Day lead visitors beyond a single encounter?",
+        "options": [
+          "Why multimedia should be removed from exhibitions",
+          "Why museums should replace all local festivals",
+          "How to count every traditional object in China",
+          "Why heritage promotion should connect public attention with later engagement"
+        ],
+        "answer": "D",
+        "explanation": "文章先介绍推广活动，再强调真正的问题是能否把一次参观转化为持续参与。",
+        "evidence_text": "Promotion therefore has two jobs. First, it must make traditions visible and approachable. Second, it should create a path from looking to continued interest."
+      },
+      {
+        "type": "detail",
+        "question": "What happened at the museum in Beijing?",
+        "options": [
+          "It closed its year-long exhibition",
+          "Five inheritors donated works",
+          "It trained 12,000 new performers",
+          "It displayed only wood carving"
+        ],
+        "answer": "B",
+        "explanation": "首段明确说五位传承人向博物馆捐赠了作品。",
+        "evidence_text": "At the China Intangible Cultural Heritage Museum in Beijing, five inheritors gave works to the museum."
+      },
+      {
+        "type": "word_guess",
+        "question": "For first-time heritage visitors, what does approachable suggest?",
+        "options": [
+          "Unchanged for hundreds of years",
+          "Too valuable to be displayed",
+          "Easy for the public to enter and understand",
+          "Known only to trained artists"
+        ],
+        "answer": "C",
+        "explanation": "该词与 visible 并列，并与让公众从观看走向兴趣的语境相连，指容易接近和理解。",
+        "evidence_text": "First, it must make traditions visible and approachable."
+      },
+      {
+        "type": "inference",
+        "question": "What can a live craft demonstration reveal that a label cannot?",
+        "options": [
+          "To show that objects should never be labeled",
+          "To suggest that seeing a process can deepen understanding",
+          "To prove that opera is easier than embroidery",
+          "To argue that every visitor must become an inheritor"
+        ],
+        "answer": "B",
+        "explanation": "由“展示技艺背后的选择与练习”可推断，过程展示比只看物件更有助于深入理解。",
+        "evidence_text": "A short label may identify an object, while a demonstration can reveal the decisions and practice behind it."
+      },
+      {
+        "type": "attitude",
+        "question": "Why is a large heritage event only a starting point?",
+        "options": [
+          "Unnecessary once objects enter a museum",
+          "Harmful because they attract too many visitors",
+          "Successful only when attendance is free",
+          "Useful as a starting point but insufficient by themselves"
+        ],
+        "answer": "D",
+        "explanation": "开头明确肯定活动带来关注，同时限定“一天只是开始”。",
+        "evidence_text": "A special day can bring traditional skills into public view, but one day is only a beginning."
+      }
+    ],
+    "source_id": "src-文化-01",
+    "source_verification": "页面可访问并核验标题、2024-06-08日期。采用事实：全国计划超过12000场非遗活动；北京相关博物馆推出一年展；展览覆盖100余个项目、600余件或套展品；5位传承人捐赠作品。"
+  },
+  {
+    "corpus_id": "cet-curated-culture-l2-01",
+    "title": "A Tradition Large Enough to Need Coordination",
+    "topic": "文化",
+    "difficulty": 2,
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20250406/50d96fb553d942eaa43bbf58f980fd24/c.html",
+    "source_title": "Qintong Boat Festival held in Taizhou, E China",
+    "source_published_at": "2025-04-06",
+    "retrieved_at": "2026-08-29",
+    "adaptation_note": "题材参考所列新华社英文网图片报道的标题与图注事实；本站原创改写，不补造图注之外的历史细节，非媒体原文，非历年真题。",
+    "content": "From the air, the 2025 Qintong Boat Festival looked like a great gathering on water. More than 500 boats and over 10,000 boat-team members met at Qinhu National Wetland Park in Taizhou. Performers moved across the water while crowds watched from nearby. The event belongs to a centuries-old tradition and entered China's national intangible cultural heritage list in 2008.\n\nScale gives the festival energy, yet it also changes the work required to keep the tradition alive. A small local practice can depend on personal knowledge and informal arrangements. A gathering of thousands needs routes, timing, safety rules, and cooperation between teams. These practical systems are not separate from culture. They allow participants to perform together without turning the event into disorder.\n\nLarge public attention creates another challenge. Spectators may remember the impressive number of boats but miss the skills, relationships, and preparation that make the gathering possible. Organizers can address this by explaining how teams prepare and why the water setting matters. Such information does not reduce the excitement; it gives the scene a human scale.\n\nThe festival therefore shows two forms of continuity. One is official recognition, which records the tradition's importance. The other is renewed coordination among living participants. A heritage label can protect a name, but only people can organize the next meeting on the water.",
+    "questions": [
+      {
+        "type": "detail",
+        "question": "How large was the gathering described in the passage?",
+        "options": [
+          "About 50 boats and 1,000 members",
+          "More than 500 boats and over 10,000 members",
+          "Exactly 200 boats and 8,000 members",
+          "Fewer than 100 boats and 500 members"
+        ],
+        "answer": "B",
+        "explanation": "首段直接给出船只和队员数量。",
+        "evidence_text": "More than 500 boats and over 10,000 boat-team members met at Qinhu National Wetland Park in Taizhou."
+      },
+      {
+        "type": "main_idea",
+        "question": "What central point does the author make about the festival?",
+        "options": [
+          "It should return to being a private event",
+          "Its value comes entirely from its size",
+          "Its survival depends on both recognition and active organization",
+          "Its water setting is no longer important"
+        ],
+        "answer": "C",
+        "explanation": "全文对比官方认定与参与者持续组织，指出两者共同维持传统。",
+        "evidence_text": "The festival therefore shows two forms of continuity."
+      },
+      {
+        "type": "word_guess",
+        "question": "What makes the smaller festival arrangements informal?",
+        "options": [
+          "Recorded by a national museum",
+          "Open only to tourists",
+          "Dangerous for performers",
+          "Not based on official procedures"
+        ],
+        "answer": "D",
+        "explanation": "该词与 personal knowledge 并列，并与大活动需要正式路线和规则形成对照。",
+        "evidence_text": "A small local practice can depend on personal knowledge and informal arrangements."
+      },
+      {
+        "type": "inference",
+        "question": "Why should organizers explain how teams prepare?",
+        "options": [
+          "To persuade teams to use fewer boats",
+          "To help spectators see more than a striking visual scene",
+          "To replace performances with lectures",
+          "To prove that official recognition is unnecessary"
+        ],
+        "answer": "B",
+        "explanation": "前文说观众可能只记住船多，解释准备过程能让他们理解背后的技能与关系。",
+        "evidence_text": "Spectators may remember the impressive number of boats but miss the skills, relationships, and preparation that make the gathering possible."
+      },
+      {
+        "type": "attitude",
+        "question": "Why are routes, timing and safety part of sustaining the boat festival?",
+        "options": [
+          "It weakens cultural meaning",
+          "It is a necessary part of sustaining the event",
+          "It matters only to government officials",
+          "It should remain invisible and unexplained"
+        ],
+        "answer": "B",
+        "explanation": "作者认为路线、安全和协作不是文化之外的负担，而是共同表演得以实现的条件。",
+        "evidence_text": "These practical systems are not separate from culture."
+      }
+    ],
+    "source_id": "src-文化-02",
+    "source_verification": "页面可访问，属于图片报道，仅采用图注事实：2025年活动在秦湖国家湿地公园举行；500余艘船、1万余名队员参加；该传统延续数百年；2008年列入国家级非遗。"
+  },
+  {
+    "corpus_id": "cet-curated-culture-l3-01",
+    "title": "When Technology Performs Tradition",
+    "topic": "文化",
+    "difficulty": 3,
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20250522/6e194d8d5580455a8f05b2eef1f0e7df/c.html",
+    "source_title": "21st China (Shenzhen) Int'l Cultural Industries Fair kicks off",
+    "source_published_at": "2025-05-22",
+    "retrieved_at": "2026-08-29",
+    "adaptation_note": "题材参考所列新华社英文网图片报道的标题与图注事实；本站围绕技术展示与文化理解的张力原创改写，非媒体原文，非历年真题。",
+    "content": "At a cultural industries fair in Shenzhen, visitors could encounter tradition through several kinds of technology. Robots performed the energetic Yingge dance, another robot played the guzheng, and a virtual-reality experience offered a tour of Dunhuang. Elsewhere, live performers presented intangible heritage, while models, archives, and creative products filled exhibition areas. The fair ran from May 22 to 26, 2025.\n\nThese scenes raise a question that a busy exhibition may leave unanswered: when technology performs culture, what exactly is being communicated? A robot can repeat a movement with striking precision, and virtual reality can place distant images around a visitor. Both may attract someone who would otherwise walk past. Attention is valuable because learning cannot begin without it.\n\nYet a technically impressive display can also flatten differences. Yingge is not simply a set of rapid actions, just as the guzheng is more than the notes produced by its strings. Human practices contain decisions about occasion, training, interpretation, and relationships among performers. If a machine presents only the visible surface, viewers may mistake accurate imitation for complete understanding.\n\nThe answer is not to keep new tools away from old culture. Curators can use a robot performance as an opening question, then connect it with human accounts, historical context, and live practice. A VR tour can clarify distance and space while still directing attention to the people who study and protect a site.\n\nTechnology is most useful here as a bridge rather than a substitute. Its success should be measured not only by the crowd it gathers, but by whether visitors leave curious about the living knowledge behind the spectacle.",
+    "questions": [
+      {
+        "type": "detail",
+        "question": "Which experience at the fair was linked to Dunhuang?",
+        "options": [
+          "A boat performance",
+          "A virtual-reality tour",
+          "An embroidery contest",
+          "A wetland walk"
+        ],
+        "answer": "B",
+        "explanation": "首段说明虚拟现实体验提供了敦煌之旅。",
+        "evidence_text": "a virtual-reality experience offered a tour of Dunhuang."
+      },
+      {
+        "type": "main_idea",
+        "question": "What role does the passage assign to technology when it presents a living tradition?",
+        "options": [
+          "Technology should replace live cultural practice",
+          "Cultural fairs should display only machines",
+          "Technology can attract interest but needs context to support understanding",
+          "Precise movement is the main purpose of all traditions"
+        ],
+        "answer": "C",
+        "explanation": "文章既肯定技术吸引注意，也强调需要人的讲述和历史语境来避免表层模仿。",
+        "evidence_text": "Technology is most useful here as a bridge rather than a substitute."
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “flatten” mean in paragraph 3?",
+        "options": [
+          "Translate a performance into another language",
+          "Increase the physical height of a display",
+          "Make important differences seem unimportant",
+          "Prevent visitors from entering an exhibition"
+        ],
+        "answer": "C",
+        "explanation": "下文说明机器可能只呈现可见表面，因此 flatten 指抹平或忽略文化实践中的差异。",
+        "evidence_text": "Yet a technically impressive display can also flatten differences."
+      },
+      {
+        "type": "inference",
+        "question": "Why is initial attention useful when technology presents tradition?",
+        "options": [
+          "It guarantees complete cultural knowledge",
+          "It creates an opportunity for further learning",
+          "It makes historical context unnecessary",
+          "It proves machines perform better than people"
+        ],
+        "answer": "B",
+        "explanation": "作者明确说没有注意就无法开始学习，因此注意力是进一步理解的入口而非终点。",
+        "evidence_text": "Attention is valuable because learning cannot begin without it."
+      },
+      {
+        "type": "attitude",
+        "question": "Which curatorial approach would the author most likely support?",
+        "options": [
+          "Showing a robot without any explanation",
+          "Removing every digital display",
+          "Linking a technical demonstration to human practice and history",
+          "Judging exhibits only by crowd size"
+        ],
+        "answer": "C",
+        "explanation": "第四段直接建议以机器表演为开端，再连接人的讲述、历史背景和现场实践。",
+        "evidence_text": "Curators can use a robot performance as an opening question, then connect it with human accounts, historical context, and live practice."
+      }
+    ],
+    "source_id": "src-文化-03",
+    "source_verification": "页面可访问，属于图片报道，仅采用图注事实：深圳文博会于2025-05-22至26日举行；现场有英歌舞机器人、古筝机器人、敦煌VR体验和非遗表演。"
+  },
+  {
+    "corpus_id": "cet-curated-culture-l4-01",
+    "title": "How Three Hundred Objects Become One Exhibition",
+    "topic": "文化",
+    "difficulty": 4,
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20250625/a7cb7a02ba624e6b844018fa72b88aef/c.html",
+    "source_title": "Shanghai Museum East to hold exhibition on Hongshan culture",
+    "source_published_at": "2025-06-25",
+    "retrieved_at": "2026-08-29",
+    "adaptation_note": "题材参考所列新华社英文网图片报道的标题与图注事实；本站围绕跨机构展览叙事原创改写，未扩写来源未载的具体文物结论，非媒体原文，非历年真题。",
+    "content": "An exhibition on Hongshan culture at Shanghai Museum East brought together more than 300 cultural objects from twenty museums and archaeological institutions. Due to open on June 26, 2025, it used dragon imagery to introduce an ancient civilization. The culture represented by the exhibition dates to roughly 5,000–6,000 years ago.\n\nSuch figures signal breadth, but they also reveal a curatorial problem. Objects gathered from many collections do not automatically form an explanation. Each institution may have classified, stored, or displayed its material within a different local history. Once the pieces enter a shared gallery, visitors need to understand why these particular objects have been placed together and what claims the arrangement can reasonably support.\n\nOne solution is to treat sequence as an argument. An opening group might introduce the environment and time period; later sections could compare forms, uses, or places of discovery. Labels should identify uncertainty as carefully as they identify accepted knowledge. When archaeologists disagree about an object's function, hiding that disagreement may make the exhibition sound confident, but it removes an important part of how knowledge is built.\n\nCollaboration among twenty institutions can strengthen this approach. No single collection needs to stand for the whole culture, and objects separated by modern ownership can be compared in one space. At the same time, institutional scale is not proof of a single interpretation. More lenders can expand the evidence without eliminating debate.\n\nThe exhibition's real achievement, then, cannot be counted only in objects. A successful gallery makes a large collection legible: visitors should see both the patterns that connect the material and the gaps that keep interpretation open. Curating prehistory is not the act of filling every silence. It is the disciplined work of showing how much the surviving evidence permits us to say.",
+    "questions": [
+      {
+        "type": "detail",
+        "question": "What did the exhibition bring together?",
+        "options": [
+          "Over 300 objects from twenty institutions",
+          "Twenty objects from 300 private owners",
+          "Only digital copies from one museum",
+          "Objects made during the year 2025"
+        ],
+        "answer": "A",
+        "explanation": "首段直接说明展品数量与参与机构数量。",
+        "evidence_text": "An exhibition on Hongshan culture at Shanghai Museum East brought together more than 300 cultural objects from twenty museums and archaeological institutions."
+      },
+      {
+        "type": "inference",
+        "question": "Why might hiding scholarly disagreement be harmful?",
+        "options": [
+          "It makes objects physically harder to protect",
+          "It prevents visitors from seeing how interpretations are formed",
+          "It forces institutions to return their loans",
+          "It reduces the total number of labels"
+        ],
+        "answer": "B",
+        "explanation": "作者认为分歧本身体现知识如何建立，隐藏分歧会制造虚假的确定性。",
+        "evidence_text": "hiding that disagreement may make the exhibition sound confident, but it removes an important part of how knowledge is built."
+      },
+      {
+        "type": "word_guess",
+        "question": "When three hundred objects form an argument, what does legible imply?",
+        "options": [
+          "Easy to understand as an organized account",
+          "Written in several ancient languages",
+          "Protected from all disagreement",
+          "Owned by a single institution"
+        ],
+        "answer": "A",
+        "explanation": "冒号后的解释要求观众看见材料间的联系与空白，因此 legible 指组织清楚、可理解。",
+        "evidence_text": "A successful gallery makes a large collection legible"
+      },
+      {
+        "type": "main_idea",
+        "question": "Which statement best expresses the author's main argument?",
+        "options": [
+          "A large archaeological exhibition needs a transparent argument, not merely many objects",
+          "Every prehistoric object has one certain meaning",
+          "Museums should avoid borrowing from other institutions",
+          "Visitor numbers are the best measure of scholarship"
+        ],
+        "answer": "A",
+        "explanation": "全文围绕如何把多机构、多展品组织成有边界且承认不确定性的解释。",
+        "evidence_text": "Objects gathered from many collections do not automatically form an explanation."
+      },
+      {
+        "type": "attitude",
+        "question": "What can twenty lending institutions add without ending scholarly debate?",
+        "options": [
+          "Valuable for widening evidence, though it cannot settle every debate",
+          "Useful only for lowering ticket prices",
+          "Likely to destroy local histories",
+          "Unnecessary when an exhibition has a strong title"
+        ],
+        "answer": "A",
+        "explanation": "作者肯定合作扩大证据，又明确说机构规模并不能证明只有一种解释。",
+        "evidence_text": "More lenders can expand the evidence without eliminating debate."
+      }
+    ],
+    "source_id": "src-文化-04",
+    "source_verification": "页面可访问，属于图片报道，仅采用图注事实：上海博物馆东馆展览于2025-06-26开放；20家博物馆和考古机构共同组织；展出300余件文物；红山文化距今约5000至6000年。"
+  },
+  {
+    "corpus_id": "cet-curated-culture-l5-01",
+    "title": "Who Carries a Festival Forward?",
+    "topic": "文化",
+    "difficulty": 5,
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20240421/66b7b2b5d987405797d8ac07f24181e4/c.html",
+    "source_title": "Miao Sisters Festival kicks off in Taijiang, SW China",
+    "source_published_at": "2024-04-21",
+    "retrieved_at": "2026-08-29",
+    "adaptation_note": "题材参考所列新华社英文网图片报道的标题与图注事实；本站围绕节庆参与和公共呈现原创改写，不把图像中的单次活动泛化为完整传统史，非媒体原文，非历年真题。",
+    "content": "Photographs from Taijiang County in Guizhou show the Miao Sisters Festival as a public event with many kinds of participation. In April 2024, adults and children joined a parade; women prepared silver jewelry, an embroidery competition took place, and one participant carried “sisters' rice” with an egg. A dragon dance also formed part of the celebration. The festival, recognized as national intangible cultural heritage, was scheduled to continue until May 5 that year.\n\nA photographic record is powerful because it captures detail: the weight and shine of jewelry, the concentration before a competition, or different generations moving through the same street. Yet a photograph also selects. It preserves one instant and one viewpoint, while the preparation before the shutter and the meanings understood by participants remain outside the frame. Public images should therefore be treated as invitations to inquiry, not as complete definitions of a tradition.\n\nThis matters when festivals attract audiences beyond their home community. Visibility can support recognition and create opportunities for local makers and performers. However, if publicity repeatedly favors the most colorful scene, quieter forms of knowledge may become harder to notice. The person who teaches embroidery, organizes a family's clothing, or explains when an object should be used may contribute as much to continuity as the performer at the center of a photograph.\n\nDocumentation can respond to this imbalance without trying to record everything. Organizers might pair event images with short accounts from participants of different ages and roles. They can distinguish what a photograph directly shows from what an interviewee explains. That practice preserves the value of visual evidence while preventing the image from claiming more than it knows.\n\nThe question “Who carries a festival forward?” therefore has no single dramatic answer. Continuity is distributed across visible performance, routine teaching, material preparation, and the choices a community makes about public presentation. Recognition is meaningful, but heritage remains living only when people can shape how it is practiced and represented.",
+    "questions": [
+      {
+        "type": "detail",
+        "question": "Which activity is directly reported in the passage?",
+        "options": [
+          "A national boat race",
+          "An embroidery competition",
+          "A virtual tour of Dunhuang",
+          "A museum donation ceremony"
+        ],
+        "answer": "B",
+        "explanation": "首段列举了刺绣比赛这一现场活动。",
+        "evidence_text": "an embroidery competition took place"
+      },
+      {
+        "type": "inference",
+        "question": "What remains outside the festival photograph and invites further inquiry?",
+        "options": [
+          "Because it offers useful detail but leaves context outside the frame",
+          "Because photographs contain no reliable information",
+          "Because only written records can show clothing",
+          "Because viewers should identify the photographer's equipment"
+        ],
+        "answer": "A",
+        "explanation": "第二段先肯定图像细节，再指出准备过程与参与者理解不在画面内，因此图像应引出进一步追问。",
+        "evidence_text": "It preserves one instant and one viewpoint, while the preparation before the shutter and the meanings understood by participants remain outside the frame."
+      },
+      {
+        "type": "main_idea",
+        "question": "What central issue does the passage examine?",
+        "options": [
+          "How public images can represent a festival without defining it completely",
+          "Why festivals should no longer be photographed",
+          "How to select a winner in an embroidery competition",
+          "Why national recognition ends the need for participation"
+        ],
+        "answer": "A",
+        "explanation": "全文讨论照片带来的可见性及其选择性，并提出补充参与者讲述的做法。",
+        "evidence_text": "Public images should therefore be treated as invitations to inquiry, not as complete definitions of a tradition."
+      },
+      {
+        "type": "inference",
+        "question": "What may happen if publicity focuses mainly on colorful scenes?",
+        "options": [
+          "Less visible work that sustains the festival may be overlooked",
+          "Every local maker will receive more attention",
+          "Participants will stop wearing silver jewelry",
+          "The festival will lose its heritage status immediately"
+        ],
+        "answer": "A",
+        "explanation": "作者把高可见场景与较安静的传承劳动对照，可推断后者可能被忽视。",
+        "evidence_text": "if publicity repeatedly favors the most colorful scene, quieter forms of knowledge may become harder to notice."
+      },
+      {
+        "type": "attitude",
+        "question": "Which documentation practice does the author support?",
+        "options": [
+          "Presenting one striking photograph as the whole tradition",
+          "Pairing images with accounts from people in different roles",
+          "Recording only professional performers",
+          "Removing all interpretation from public displays"
+        ],
+        "answer": "B",
+        "explanation": "第四段明确建议将活动图像与不同年龄、角色参与者的简短讲述配对。",
+        "evidence_text": "Organizers might pair event images with short accounts from participants of different ages and roles."
+      }
+    ],
+    "source_id": "src-文化-05",
+    "source_verification": "页面可访问，属于图片报道，仅采用图注事实：2024年台江苗族姊妹节持续至5月5日；现场有游行、刺绣比赛、龙舞、银饰准备和姊妹饭；该节庆为国家级非遗。"
+  },
+  {
+    "corpus_id": "cet-curated-culture-l1-02",
+    "source_id": "src-文化-06",
+    "title": "A Craft Market Is Also a Classroom",
+    "topic": "文化",
+    "difficulty": 1,
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20250208/6f531a374f0d4358bb910074203e1bf9/c.html",
+    "source_title": "Across China: Intangible heritages add ethnic culture charm to holiday atmosphere",
+    "source_published_at": "2025-02-08",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "页面可访问并核验正文。采用事实：凯里非遗集市2023年开放、设数百摊位；蜡染含画蜡、染色、脱蜡、清洗和晾干步骤；受访匠人从母亲处学习并从业20余年。",
+    "adaptation_note": "题材参考所列新华社英文网公开信息；本站围绕独立中心问题重组事实并原创改写，非媒体原文，非历年真题。",
+    "content": "At a market in Kaili, batik cloth does not arrive as a finished mystery. Visitors can watch a craftsperson draw with melted wax before the fabric is dyed, washed, and dried. One maker learned by observing his mother and later spent more than twenty years working in batik. His stall now sells clothing, bags, and tea mats.\n\nThe market opened in 2023 and gives hundreds of local makers a place to meet customers. That commercial role matters. Income can make it possible for skilled people to spend more time on a craft instead of leaving it for unrelated work. Yet a sale alone does not explain why a butterfly pattern was chosen or how a difficult step was mastered.\n\nSome makers therefore talk with visitors while they work. Their explanation turns a product into evidence of practice. The word transmission here refers to knowledge passing from one person to another. It may happen inside a family, but a public demonstration can widen the circle.\n\nA healthy craft market must support both exchange and learning. Buyers may leave with an attractive object; they should also have the chance to understand whose judgment and labor gave it form. When that happens, shopping becomes an entry point into culture rather than its final purpose.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "Which idea links the examples in the passage?",
+        "options": [
+          "International design exchange depends on local context and dialogue, not object display alone.",
+          "Immersive tourism can renew opera audiences if participation does not erase artistic depth.",
+          "A craft market can sustain skills by linking income with public learning.",
+          "A successful arts district depends on relationships and career pathways, not merely concentrated venues."
+        ],
+        "answer": "C",
+        "explanation": "正确项与证据中的核心判断一致，其他说法不符合本文讨论范围。",
+        "evidence_text": "A healthy craft market must support both exchange and learning."
+      },
+      {
+        "type": "detail",
+        "question": "What can visitors observe before batik fabric is finished?",
+        "options": [
+          "Chinese and Malay influences.",
+          "Thirty-five.",
+          "Mural-inspired performance, a restoration display, and virtual reality.",
+          "Wax drawing followed by dyeing, washing, and drying."
+        ],
+        "answer": "D",
+        "explanation": "证据句直接支撑正确项；干扰项虽属文化议题，但与本篇论证关系不符。",
+        "evidence_text": "Visitors can watch a craftsperson draw with melted wax before the fabric is dyed, washed, and dried."
+      },
+      {
+        "type": "word_guess",
+        "question": "At the craft market, what passes between people through transmission?",
+        "options": [
+          "the passing of knowledge between people",
+          "closeness to the form being recorded",
+          "a feature suggesting how an object or interface may be used",
+          "continued sound or meaning strengthened by association"
+        ],
+        "answer": "A",
+        "explanation": "应依据文中限定作答，正确项没有扩大因果或把局部事实当成全文结论。",
+        "evidence_text": "The word transmission here refers to knowledge passing from one person to another."
+      },
+      {
+        "type": "inference",
+        "question": "Why is income important to the makers?",
+        "options": [
+          "Visual appeal does not guarantee measurement accuracy.",
+          "It can give skilled workers more time to continue their craft.",
+          "Their disagreement may show where the interpretation needs more investigation.",
+          "They may represent varied programs or merely additional access to the same one."
+        ],
+        "answer": "B",
+        "explanation": "原文证据可唯一定位正确答案，其他选项混入了不同来源中的概念。",
+        "evidence_text": "Income can make it possible for skilled people to spend more time on a craft instead of leaving it for unrelated work."
+      },
+      {
+        "type": "attitude",
+        "question": "Which view of buying does the writer support?",
+        "options": [
+          "Explain why retaining damage or uncertainty can protect evidence.",
+          "Artifacts require value choices rather than biological healing.",
+          "It should offer a route toward understanding the maker and the practice.",
+          "Helpful for presentation, though less important than a careful comparative idea."
+        ],
+        "answer": "C",
+        "explanation": "正确项概括全文中心，证据句给出作者归纳；其余选项来自其他文章，不能解释本文材料。",
+        "evidence_text": "shopping becomes an entry point into culture rather than its final purpose."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-curated-culture-l1-03",
+    "source_id": "src-文化-07",
+    "title": "The Sun as a Curatorial Bridge",
+    "topic": "文化",
+    "difficulty": 1,
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20250610/511d9201e071421cb613a2b9b8cdd487/c.html",
+    "source_title": "Ancient Shu civilization makes debut at UN in landmark cultural exhibition",
+    "source_published_at": "2025-06-10",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "页面可访问并核验正文。采用事实：古蜀展首次进入联合国总部；材料来自三星堆和金沙遗址、年代约3600至2800年前；展览以太阳主题比较多种古代文明，并使用复制品和数字体验。",
+    "adaptation_note": "题材参考所列新华社英文网公开信息；本站围绕独立中心问题重组事实并原创改写，非媒体原文，非历年真题。",
+    "content": "An exhibition at the United Nations introduced ancient Shu culture through objects and images related to the sun. Material from the Sanxingdui and Jinsha sites dates from about 3,600 to 2,800 years ago. The display included replicas, information panels, installations, and digital experiences.\n\nInstead of presenting Shu culture alone, one section placed it beside sun traditions from ancient Egypt, Mesopotamia, India, and Greece. This comparison offered visitors a familiar doorway: many societies looked to the sun when thinking about power, renewal, or the sacred. A shared subject, however, does not make the cultures identical.\n\nThat distinction is the exhibition's real lesson. Comparison can help an unfamiliar civilization become accessible, provided that similarities do not erase local forms and meanings. The word motif means a repeated image or idea in a work. A solar motif may appear across cultures, while its design and use still belong to a particular history.\n\nDigital projection and virtual reality added movement and scale, but the strongest bridge was intellectual. Visitors were invited to notice a human concern that crossed borders and then examine how ancient Shu people expressed it in their own way. Cultural dialogue begins with connection; understanding grows through attention to difference.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "How is the subject mainly framed by the author?",
+        "options": [
+          "Cultural mixture can create a durable tradition with meanings of its own.",
+          "A sustainable restoration workforce must combine formal education with supervised transfer of practical judgment.",
+          "Cross-cultural presentation of Dunhuang should disclose interpretation while connecting performance, conservation, and dialogue.",
+          "Cross-cultural comparison works when it reveals both common concerns and distinct meanings."
+        ],
+        "answer": "D",
+        "explanation": "证据句直接支撑正确项；干扰项虽属文化议题，但与本篇论证关系不符。",
+        "evidence_text": "Cultural dialogue begins with connection; understanding grows through attention to difference."
+      },
+      {
+        "type": "detail",
+        "question": "Which archaeological sites supplied the exhibition material?",
+        "options": [
+          "Sanxingdui and Jinsha.",
+          "Work that once took nearly two weeks could be done in three days.",
+          "Movement, sound, or an image that changes with the visitor.",
+          "Three Kunqu shows and three guqin concerts."
+        ],
+        "answer": "A",
+        "explanation": "应依据文中限定作答，正确项没有扩大因果或把局部事实当成全文结论。",
+        "evidence_text": "Material from the Sanxingdui and Jinsha sites dates from about 3,600 to 2,800 years ago."
+      },
+      {
+        "type": "word_guess",
+        "question": "Within the sun-image discussion, which sense of motif is intended?",
+        "options": [
+          "a substitute used for a limited task",
+          "a recurring image or idea",
+          "to support a claim with separate evidence",
+          "selected to illustrate a field without being complete"
+        ],
+        "answer": "B",
+        "explanation": "原文证据可唯一定位正确答案，其他选项混入了不同来源中的概念。",
+        "evidence_text": "The word motif means a repeated image or idea in a work."
+      },
+      {
+        "type": "inference",
+        "question": "Why was the sun useful as an exhibition theme?",
+        "options": [
+          "It may provide evidence about an object's later history.",
+          "It may preserve historical information without actively harming the object.",
+          "It gave visitors a shared subject from which to explore cultural differences.",
+          "It can give skilled workers more time to continue their craft."
+        ],
+        "answer": "C",
+        "explanation": "正确项概括全文中心，证据句给出作者归纳；其余选项来自其他文章，不能解释本文材料。",
+        "evidence_text": "This comparison offered visitors a familiar doorway: many societies looked to the sun when thinking about power, renewal, or the sacred."
+      },
+      {
+        "type": "attitude",
+        "question": "How does the author judge digital effects?",
+        "options": [
+          "Moving from emergency repair toward early detection and prevention.",
+          "Physical work raises material, legal, and risk questions that an image does not.",
+          "It can broaden participation if interpretation preserves cultural depth.",
+          "Helpful for presentation, though less important than a careful comparative idea."
+        ],
+        "answer": "D",
+        "explanation": "正确项与证据中的核心判断一致，其他说法不符合本文讨论范围。",
+        "evidence_text": "Digital projection and virtual reality added movement and scale, but the strongest bridge was intellectual."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-curated-culture-l1-04",
+    "source_id": "src-文化-08",
+    "title": "When a Festival Becomes a Shared Stage",
+    "topic": "文化",
+    "difficulty": 1,
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20240412/507793dd026c42719803a356216747ac/c.html",
+    "source_title": "China Focus: Vibrant festival highlights cultural charm of various Chinese ethnic groups",
+    "source_published_at": "2024-04-12",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "页面可访问并核验正文。采用事实：三月三由多个民族在农历三月初三庆祝；广西14市安排活动；内容包括民歌、非遗展示和民族体育；2014年成为广西法定假日并列入国家级非遗。",
+    "adaptation_note": "题材参考所列新华社英文网公开信息；本站围绕独立中心问题重组事实并原创改写，非媒体原文，非历年真题。",
+    "content": "The calendar places Sanyuesan in the third lunar month, on day three. Several ethnic groups in China observe it. In Guangxi, celebrations include folk songs, heritage displays, and traditional sports. All fourteen cities in the region planned events in 2024, giving residents and visitors many ways to join.\n\nGrowth changes the meaning of participation. A local custom may be known through family memory, while a regional program welcomes people who lack that background. Clothing, games, and performances can provide an easy first contact. They are visible and enjoyable, but they need explanation if newcomers are to understand more than color and excitement.\n\nThe sparkler-grabbing game, for example, attracts spectators because its movement resembles rugby. That resemblance helps an audience follow the action. It should be a starting comparison, not a replacement for the game's own history. In this passage, access means a practical way to enter an unfamiliar experience.\n\nA shared festival does not have to become a uniform one. Its strength lies in allowing different groups to present their practices while meeting one another in the same public space. Tourism can enlarge the audience; thoughtful interpretation helps the celebration keep its cultural depth.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "Which claim best captures the passage?",
+        "options": [
+          "A growing festival needs accessible entry points without losing the distinct meaning of its practices.",
+          "Digital heritage records serve conservation, research, and access differently, so their purpose must be explicit.",
+          "Immersive cultural tourism should guide visitors from sensory engagement back to evidence and further inquiry.",
+          "Historic venues can deepen performance when their artistic and conservation relationships are made explicit."
+        ],
+        "answer": "A",
+        "explanation": "应依据文中限定作答，正确项没有扩大因果或把局部事实当成全文结论。",
+        "evidence_text": "A shared festival does not have to become a uniform one."
+      },
+      {
+        "type": "detail",
+        "question": "How many Guangxi cities planned festival activities in 2024?",
+        "options": [
+          "Rotate it and enlarge its details.",
+          "Fourteen.",
+          "It tests what physical feature produced a visible pattern.",
+          "Six events in total."
+        ],
+        "answer": "B",
+        "explanation": "原文证据可唯一定位正确答案，其他选项混入了不同来源中的概念。",
+        "evidence_text": "All fourteen cities in the region planned events in 2024, giving residents and visitors many ways to join."
+      },
+      {
+        "type": "word_guess",
+        "question": "How should readers understand `\"access`\" here?",
+        "options": [
+          "deliberate control over the desire to act",
+          "an informed expectation about future development of a condition",
+          "a practical route into an experience",
+          "the passing of knowledge between people"
+        ],
+        "answer": "C",
+        "explanation": "正确项概括全文中心，证据句给出作者归纳；其余选项来自其他文章，不能解释本文材料。",
+        "evidence_text": "In this passage, access means a practical way to enter an unfamiliar experience."
+      },
+      {
+        "type": "inference",
+        "question": "How does the rugby comparison help newcomers follow the traditional game?",
+        "options": [
+          "It may reveal differences that simpler methods had hidden.",
+          "Geology, climate, and stable conditions vary by location.",
+          "It gave visitors a shared subject from which to explore cultural differences.",
+          "The comparison helps unfamiliar spectators follow its movement."
+        ],
+        "answer": "D",
+        "explanation": "正确项与证据中的核心判断一致，其他说法不符合本文讨论范围。",
+        "evidence_text": "That resemblance helps an audience follow the action."
+      },
+      {
+        "type": "attitude",
+        "question": "What attitude does the writer take toward tourism?",
+        "options": [
+          "It can broaden participation if interpretation preserves cultural depth.",
+          "By durable research use and transparent differences, not launch size alone.",
+          "It may erase legitimate differences in local cataloguing and interpretation.",
+          "Combining geographic origin with reasons for claimed connections."
+        ],
+        "answer": "A",
+        "explanation": "证据句直接支撑正确项；干扰项虽属文化议题，但与本篇论证关系不符。",
+        "evidence_text": "Tourism can enlarge the audience; thoughtful interpretation helps the celebration keep its cultural depth."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-curated-culture-l1-05",
+    "source_id": "src-文化-09",
+    "title": "Two Hundred Objects, Many Routes",
+    "topic": "文化",
+    "difficulty": 1,
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20250827/c6f15b47c866430cb258467f53aac418/c.html",
+    "source_title": "Collaborative exhibition on SCO countries' cultural heritage kicks off in Beijing",
+    "source_published_at": "2025-08-27",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "页面可访问并核验正文。采用事实：北京合作展汇集上合组织国家10家博物馆的220组文物；展览在国家博物馆举办；部分文物用于呈现古代丝路交流互动。",
+    "adaptation_note": "题材参考所列新华社英文网公开信息；本站围绕独立中心问题重组事实并原创改写，非媒体原文，非历年真题。",
+    "content": "A Beijing exhibition assembled 220 groups of objects from ten museums in member countries of the Shanghai Cooperation Organization. Some objects represented the origins or development of ancient civilizations. Others showed contact among societies along old trade routes.\n\nPutting material from several countries in one hall creates an opportunity that separate displays cannot. A visitor can compare shapes, uses, and symbols without travelling between distant collections. The arrangement can reveal that cultures developed their own traditions while also borrowing, adapting, and responding to neighbors.\n\nThe word interaction describes people or groups affecting one another. An imported object is one kind of evidence, but influence may also appear in a local object made with a new technique. Curators must show the link clearly. Physical closeness inside a case does not prove historical contact.\n\nThe exhibition therefore needs two maps. One is geographical, showing where objects came from. The other is a map of evidence, explaining why scholars think a connection existed. Together they turn variety into a historical question. Cultural exchange becomes more meaningful when visitors can see not only that different traditions met, but how we know they did.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What is the central argument of this reading?",
+        "options": [
+          "A digital twin is valuable when its limited function and relationship to the original remain visible.",
+          "A collaborative exhibition should explain the evidence behind cultural connections.",
+          "Layered archaeological technology is powerful because different forms of evidence test and correct one another.",
+          "A short heritage season should disclose its selective lens and build routes for learning beyond attendance."
+        ],
+        "answer": "B",
+        "explanation": "原文证据可唯一定位正确答案，其他选项混入了不同来源中的概念。",
+        "evidence_text": "Cultural exchange becomes more meaningful when visitors can see not only that different traditions met, but how we know they did."
+      },
+      {
+        "type": "detail",
+        "question": "How many museums contributed to the exhibition?",
+        "options": [
+          "A faint inscription found during a survey.",
+          "The elements in its material.",
+          "Ten museums.",
+          "Wax drawing followed by dyeing, washing, and drying."
+        ],
+        "answer": "C",
+        "explanation": "正确项概括全文中心，证据句给出作者归纳；其余选项来自其他文章，不能解释本文材料。",
+        "evidence_text": "A Beijing exhibition assembled 220 groups of objects from ten museums in member countries of the Shanghai Cooperation Organization."
+      },
+      {
+        "type": "word_guess",
+        "question": "Which definition fits `\"interaction`\" in the stated context?",
+        "options": [
+          "examining material without cutting into or damaging it",
+          "intended to act before a problem becomes severe",
+          "a recurring image or idea",
+          "a process in which groups affect one another"
+        ],
+        "answer": "D",
+        "explanation": "正确项与证据中的核心判断一致，其他说法不符合本文讨论范围。",
+        "evidence_text": "The word interaction describes people or groups affecting one another."
+      },
+      {
+        "type": "inference",
+        "question": "Why must an evidence map separate display proximity from historical contact?",
+        "options": [
+          "Objects placed together do not by themselves prove historical contact.",
+          "Related objects may remain hard to find or disagreements may be concealed.",
+          "The ranking depends on selected features and comparison data, so alternatives still matter.",
+          "The comparison helps unfamiliar spectators follow its movement."
+        ],
+        "answer": "A",
+        "explanation": "证据句直接支撑正确项；干扰项虽属文化议题，但与本篇论证关系不符。",
+        "evidence_text": "Physical closeness inside a case does not prove historical contact."
+      },
+      {
+        "type": "attitude",
+        "question": "Which curatorial method does the passage favor?",
+        "options": [
+          "Use participation selectively while preserving space for uninterrupted technique.",
+          "Combining geographic origin with reasons for claimed connections.",
+          "They do not show whether opportunities and audiences circulate to smaller or emerging groups.",
+          "Connect an attractive digital encounter with a realistic next learning step."
+        ],
+        "answer": "B",
+        "explanation": "应依据文中限定作答，正确项没有扩大因果或把局部事实当成全文结论。",
+        "evidence_text": "One is geographical, showing where objects came from. The other is a map of evidence, explaining why scholars think a connection existed."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-curated-culture-l2-02",
+    "source_id": "src-文化-10",
+    "title": "From Watching Tradition to Trying It",
+    "topic": "文化",
+    "difficulty": 2,
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20250114/655aea37ea734be391c51c3079803d35/c.html",
+    "source_title": "Feature: \"Ancestry awakening\" sees Chinese youth reconnect with traditional culture",
+    "source_published_at": "2025-01-14",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "页面可访问并核验正文。采用事实：青年创作者模仿古代彩塑并学习绒花技艺；2024年千人调查记录节目、博物馆、文创购买和文化活动等接触路径；相关视频获得大量观看。",
+    "adaptation_note": "题材参考所列新华社英文网公开信息；本站围绕独立中心问题重组事实并原创改写，非媒体原文，非历年真题。",
+    "content": "Many young people first meet traditional culture through a screen. One creator studied the costumes of painted temple figures, learned to make velvet flowers, and shared her transformations online. Her videos drew large audiences. A 2024 survey also found that young respondents used television programs, museums, cultural products, and hands-on activities to learn about heritage.\n\nThese routes demand different levels of effort. Watching a short performance is easy and may awaken curiosity. Visiting a museum asks for more time. Learning a dance movement or craft technique adds frustration, repetition, and correction. That deeper participation can reveal why a polished result should not be confused with an effortless one.\n\nOnline popularity is therefore best treated as a doorway. It can direct attention toward sites, instruments, clothing, or poetry that previously felt remote. But platforms reward quick recognition, so creators may favor a dramatic image over a complicated explanation. The word engagement refers to sustained attention and active involvement, not a single click.\n\nInstitutions can build a ladder between exposure and practice. A video might link to a museum collection; an exhibition could advertise a beginner workshop; a cultural club may welcome observers before asking them to perform. Each step allows curiosity to grow without demanding instant expertise.\n\nThe important change is not that tradition has suddenly become fashionable. It is that young learners can move among several forms of contact and choose a path from appreciation to competence. Popular culture opens the door; well-designed opportunities make continued learning possible.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "Which statement expresses the author's main point?",
+        "options": [
+          "Minimum intervention protects historical evidence by limiting unnecessary restoration.",
+          "Scientific instruments improve restoration when diagnosis informs, rather than replaces, ethical judgment.",
+          "Young interest becomes culturally valuable when easy exposure leads toward deeper participation.",
+          "A craft market can sustain skills by linking income with public learning."
+        ],
+        "answer": "C",
+        "explanation": "正确项概括全文中心，证据句给出作者归纳；其余选项来自其他文章，不能解释本文材料。",
+        "evidence_text": "Popular culture opens the door; well-designed opportunities make continued learning possible."
+      },
+      {
+        "type": "detail",
+        "question": "What did the online creator learn to make?",
+        "options": [
+          "Salts or corrosion on an artifact.",
+          "5,986.",
+          "Sanxingdui and Jinsha.",
+          "Velvet flowers."
+        ],
+        "answer": "D",
+        "explanation": "正确项与证据中的核心判断一致，其他说法不符合本文讨论范围。",
+        "evidence_text": "One creator studied the costumes of painted temple figures, learned to make velvet flowers, and shared her transformations online."
+      },
+      {
+        "type": "word_guess",
+        "question": "What separates sustained cultural engagement from one online click?",
+        "options": [
+          "continued attention combined with active involvement",
+          "structured descriptive information about an item",
+          "responsible long-term care on behalf of others",
+          "a practical route into an experience"
+        ],
+        "answer": "A",
+        "explanation": "证据句直接支撑正确项；干扰项虽属文化议题，但与本篇论证关系不符。",
+        "evidence_text": "The word engagement refers to sustained attention and active involvement, not a single click."
+      },
+      {
+        "type": "inference",
+        "question": "Why can hands-on practice deepen understanding?",
+        "options": [
+          "Complex or slow elements may be cut to maintain quick participation.",
+          "It exposes the repetition and correction hidden by a finished performance.",
+          "It may narrow programming and reduce heritage to decoration.",
+          "Objects placed together do not by themselves prove historical contact."
+        ],
+        "answer": "B",
+        "explanation": "应依据文中限定作答，正确项没有扩大因果或把局部事实当成全文结论。",
+        "evidence_text": "Learning a dance movement or craft technique adds frustration, repetition, and correction."
+      },
+      {
+        "type": "attitude",
+        "question": "What would the author most likely recommend to a museum?",
+        "options": [
+          "Documented reasoning and restraint as well as visible results.",
+          "Giving host-community artists and scholars meaningful opportunities to respond.",
+          "Connect an attractive digital encounter with a realistic next learning step.",
+          "As legitimate interpretations when they avoid claiming universal meaning."
+        ],
+        "answer": "C",
+        "explanation": "原文证据可唯一定位正确答案，其他选项混入了不同来源中的概念。",
+        "evidence_text": "A video might link to a museum collection; an exhibition could advertise a beginner workshop; a cultural club may welcome observers before asking them to perform."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-curated-culture-l2-03",
+    "source_id": "src-文化-11",
+    "title": "A Zodiac Animal Changes with Its Setting",
+    "topic": "文化",
+    "difficulty": 2,
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20250130/832058e3d11a4aafb7a928b160722b12/c.html",
+    "source_title": "Xinhua Headlines: Slithering into celebration: Chinese people embrace snakes as new zodiac symbol",
+    "source_published_at": "2025-01-30",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "页面可访问并核验正文。采用事实：蛇为十二生肖第六位；2025年春节是申遗成功后的首个春节；报道梳理蛇在更新、长寿、健康、危险与医疗等不同语境中的象征。",
+    "adaptation_note": "题材参考所列新华社英文网公开信息；本站围绕独立中心问题重组事实并原创改写，非媒体原文，非历年真题。",
+    "content": "The snake occupies the sixth place in the twelve-animal Chinese zodiac. During the 2025 Spring Festival, designers presented it in friendly and festive forms, often linking the animal with renewal, health, and long life. The year was also the first Spring Festival after the celebration entered UNESCO's intangible heritage list.\n\nSymbols are not fixed dictionaries. In some Western traditions, snakes may suggest danger or temptation; the same animal also appears in medical emblems connected with healing. Chinese myths have associated snake-like forms with divine figures, while the shedding of skin supports ideas of rebirth. None of these meanings belongs automatically to every picture.\n\nContext performs the selecting. A snake wrapped around a medicine symbol activates one history; a soft holiday toy beside a gold ingot activates another. The word connotation means an idea or feeling suggested beyond a word's basic meaning. Designers work with connotations when they change color, expression, material, and surrounding objects.\n\nThis flexibility explains why old symbols continue to attract new products. Adaptation does not necessarily erase tradition, because every generation has interpreted inherited images. Yet a design should not claim that one cheerful version captures the symbol everywhere.\n\nReading cultural imagery therefore requires two questions: what has the snake meant in a particular tradition, and what does this object ask it to mean now? Meaning grows from the relationship between inherited associations and present use.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "How does a present setting reshape an inherited zodiac symbol?",
+        "options": [
+          "Heritage technology is most reliable when measurement remains tied to cautious interpretation and responsibility.",
+          "Cave-temple protection requires site-specific environmental monitoring joined to cautious governance.",
+          "Cross-cultural comparison works when it reveals both common concerns and distinct meanings.",
+          "The meaning of a cultural symbol depends on inherited associations and its present setting."
+        ],
+        "answer": "D",
+        "explanation": "正确项与证据中的核心判断一致，其他说法不符合本文讨论范围。",
+        "evidence_text": "Meaning grows from the relationship between inherited associations and present use."
+      },
+      {
+        "type": "detail",
+        "question": "Where does the snake stand in the Chinese zodiac sequence?",
+        "options": [
+          "It is the sixth animal.",
+          "74,651 records.",
+          "More than 1.95 million items.",
+          "Fourteen."
+        ],
+        "answer": "A",
+        "explanation": "证据句直接支撑正确项；干扰项虽属文化议题，但与本篇论证关系不符。",
+        "evidence_text": "The snake occupies the sixth place in the twelve-animal Chinese zodiac."
+      },
+      {
+        "type": "word_guess",
+        "question": "What sense of `\"connotation`\" is intended in the passage?",
+        "options": [
+          "creating in response to the moment within a performance",
+          "an associated idea or feeling beyond literal meaning",
+          "a network whose parts depend on one another",
+          "a process in which groups affect one another"
+        ],
+        "answer": "B",
+        "explanation": "应依据文中限定作答，正确项没有扩大因果或把局部事实当成全文结论。",
+        "evidence_text": "The word connotation means an idea or feeling suggested beyond a word's basic meaning."
+      },
+      {
+        "type": "inference",
+        "question": "What contrast emerges between a medical emblem and a holiday snake toy?",
+        "options": [
+          "Some material judgments develop only through guided practical experience.",
+          "A still image leaves music and movement transitions unspecified.",
+          "To show that surrounding context selects different meanings of the same animal.",
+          "It exposes the repetition and correction hidden by a finished performance."
+        ],
+        "answer": "C",
+        "explanation": "原文证据可唯一定位正确答案，其他选项混入了不同来源中的概念。",
+        "evidence_text": "A snake wrapped around a medicine symbol activates one history; a soft holiday toy beside a gold ingot activates another."
+      },
+      {
+        "type": "attitude",
+        "question": "How does the writer view modern adaptations of zodiac imagery?",
+        "options": [
+          "Clear learning can matter more than the quantity of dramatic reactions.",
+          "A recording cannot transmit every spatial quality of the live venue.",
+          "Measures tailored to the risks and knowledge of each tradition.",
+          "As legitimate interpretations when they avoid claiming universal meaning."
+        ],
+        "answer": "D",
+        "explanation": "正确项概括全文中心，证据句给出作者归纳；其余选项来自其他文章，不能解释本文材料。",
+        "evidence_text": "Adaptation does not necessarily erase tradition, because every generation has interpreted inherited images."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-curated-culture-l2-04",
+    "source_id": "src-文化-12",
+    "title": "Recognition Is Not the Same Task for Every Tradition",
+    "topic": "文化",
+    "difficulty": 2,
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20241206/cc47ec31503941b3912e4de649bb7fd3/c.html",
+    "source_title": "A glimpse of three Chinese cultural elements newly added to intangible cultural heritage list",
+    "source_published_at": "2024-12-06",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "页面可访问，主要采用图注事实：黎族纺染织绣、羌年和木拱桥营造技艺在2024年同次会议列入联合国教科文组织名录；图注呈现木桥修复、织锦与节庆活动。",
+    "adaptation_note": "题材参考所列新华社英文网公开信息；本站围绕独立中心问题重组事实并原创改写，非媒体原文，非历年真题。",
+    "content": "Three Chinese cultural elements were placed on UNESCO's representative heritage list in 2024: Li textile techniques, the Qiang New Year festival, and the knowledge used to build wooden arch bridges. Their inclusion under one decision might make them look like similar cases. In practice, each depends on a different network of people, materials, and occasions.\n\nTextile knowledge moves through spinning, dyeing, weaving, and embroidery. A festival depends on collective timing and participation. A wooden bridge requires design skill, suitable material, construction teams, and later maintenance. The risks are therefore different. A craft may lose learners, a celebration may lose community control, and a bridge tradition may weaken if repair knowledge disappears.\n\nThe word safeguarding is broader than storing an object. It means supporting the conditions that allow a cultural practice to continue. For a textile tradition, that might include apprentices and access to fibers. For bridge building, it could mean supervised restoration in which skilled workers transmit structural judgment.\n\nInternational recognition can focus attention and resources, but it does not choose the right intervention automatically. A single funding rule based only on visitor numbers might favor festivals while overlooking slow technical training. Good policy begins by asking what exactly must remain possible in each tradition.\n\nThe list creates a shared promise, not a shared repair manual. Protection becomes credible when that promise is translated into measures fitted to the people and knowledge involved.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "Which conclusion organizes the discussion?",
+        "options": [
+          "Heritage recognition must lead to protection designed for the distinct needs of each practice.",
+          "Digital reunification improves comparison but must preserve differences in material, custody, and interpretation.",
+          "Digital heritage projects need accountable stewardship of data, uncertainty, access, and maintenance.",
+          "A growing festival needs accessible entry points without losing the distinct meaning of its practices."
+        ],
+        "answer": "A",
+        "explanation": "证据句直接支撑正确项；干扰项虽属文化议题，但与本篇论证关系不符。",
+        "evidence_text": "The list creates a shared promise, not a shared repair manual."
+      },
+      {
+        "type": "detail",
+        "question": "Which practice in the passage requires structural construction knowledge?",
+        "options": [
+          "They could wear costumes and sometimes affect a scene.",
+          "Building wooden arch bridges.",
+          "A major arts center, smaller theaters, incubators, and studios.",
+          "Ten museums."
+        ],
+        "answer": "B",
+        "explanation": "应依据文中限定作答，正确项没有扩大因果或把局部事实当成全文结论。",
+        "evidence_text": "A wooden bridge requires design skill, suitable material, construction teams, and later maintenance."
+      },
+      {
+        "type": "word_guess",
+        "question": "Why does safeguarding extend beyond placing an object in storage?",
+        "options": [
+          "understood through practice but hard to express fully as rules",
+          "the movement of meaning between media, contexts, or languages",
+          "supporting the conditions that let a practice continue",
+          "continued attention combined with active involvement"
+        ],
+        "answer": "C",
+        "explanation": "原文证据可唯一定位正确答案，其他选项混入了不同来源中的概念。",
+        "evidence_text": "The word safeguarding is broader than storing an object."
+      },
+      {
+        "type": "inference",
+        "question": "Why might a visitor-based funding rule be unfair?",
+        "options": [
+          "It may hide the line between documented history and invented completion.",
+          "The original social conditions of performance are not recreated by architecture alone.",
+          "To show that surrounding context selects different meanings of the same animal.",
+          "It can favor public events over slow forms of technical training."
+        ],
+        "answer": "D",
+        "explanation": "正确项概括全文中心，证据句给出作者归纳；其余选项来自其他文章，不能解释本文材料。",
+        "evidence_text": "A single funding rule based only on visitor numbers might favor festivals while overlooking slow technical training."
+      },
+      {
+        "type": "attitude",
+        "question": "What approach to heritage policy does the author support?",
+        "options": [
+          "Measures tailored to the risks and knowledge of each tradition.",
+          "Important but less measurable threats may receive too little attention.",
+          "Attendance does not show learning quality, performer conditions, or continued engagement.",
+          "Simplifying cultural references until the work becomes generic."
+        ],
+        "answer": "A",
+        "explanation": "正确项与证据中的核心判断一致，其他说法不符合本文讨论范围。",
+        "evidence_text": "Good policy begins by asking what exactly must remain possible in each tradition."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-curated-culture-l2-05",
+    "source_id": "src-文化-13",
+    "title": "Design Travels Better When It Learns the Street",
+    "topic": "文化",
+    "difficulty": 2,
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20250415/39bd85bee9f74b86b3abb4840ae3082e/c.html",
+    "source_title": "China Week in Milan demonstrates global design vision",
+    "source_published_at": "2025-04-14",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "原PDF题名不可用，已换用可访问新华社正文并核验2025-04-14日期。采用事实：米兰设计周中国主题活动位于Paolo Sarpi街区；展示竹编、生肖吉祥物、三星堆灵感铜器和美猴王形象；活动包含展览、街区布置与专业对话。",
+    "adaptation_note": "题材参考所列新华社英文网公开信息；本站围绕独立中心问题重组事实并原创改写，非媒体原文，非历年真题。",
+    "content": "During Milan Design Week in 2025, a China-focused program placed exhibitions and activities in the Paolo Sarpi district. Displays included bamboo weaving, a zodiac mascot, a bronze vessel inspired by Sanxingdui, and a Monkey King figure. Streets nearby also used festival decorations, turning the neighborhood rather than a single hall into part of the event.\n\nAn overseas design show faces a translation problem. An object may be familiar at home because viewers already recognize its story. Abroad, the same shape can be attractive yet unreadable. Adding a long label is one response, but design can also build context through location, sequence, and opportunities for conversation.\n\nPaolo Sarpi offered such context because it is an everyday urban area connected with Chinese life in Milan. Visitors encountered design among shops and streets, not as a sealed national display. The word localization means adapting an idea so that it can function meaningfully in a particular place.\n\nLocalization is not the same as removing cultural difference. If every reference is simplified until no explanation is needed, the work may become generic. The stronger approach keeps a distinctive source while giving local audiences several ways to enter it.\n\nThe event therefore suggests that cultural design travels through relationships as much as through objects. Exhibitions, neighborhood activity, professional dialogue, and industrial cooperation form a larger setting in which a foreign audience can ask questions. A successful international show does more than export products; it creates conditions for interpretation.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What does the article chiefly seek to show?",
+        "options": [
+          "Immersive tourism can renew opera audiences if participation does not erase artistic depth.",
+          "International design exchange depends on local context and dialogue, not object display alone.",
+          "A successful arts district depends on relationships and career pathways, not merely concentrated venues.",
+          "A collaborative exhibition should explain the evidence behind cultural connections."
+        ],
+        "answer": "B",
+        "explanation": "应依据文中限定作答，正确项没有扩大因果或把局部事实当成全文结论。",
+        "evidence_text": "A successful international show does more than export products; it creates conditions for interpretation."
+      },
+      {
+        "type": "detail",
+        "question": "Where did the China-focused activities take place?",
+        "options": [
+          "Thirty-five.",
+          "Mural-inspired performance, a restoration display, and virtual reality.",
+          "In Milan's Paolo Sarpi district.",
+          "Velvet flowers."
+        ],
+        "answer": "C",
+        "explanation": "原文证据可唯一定位正确答案，其他选项混入了不同来源中的概念。",
+        "evidence_text": "During Milan Design Week in 2025, a China-focused program placed exhibitions and activities in the Paolo Sarpi district."
+      },
+      {
+        "type": "word_guess",
+        "question": "When a design enters a new street, what does localization require?",
+        "options": [
+          "a feature suggesting how an object or interface may be used",
+          "continued sound or meaning strengthened by association",
+          "an associated idea or feeling beyond literal meaning",
+          "adapting an idea to work meaningfully in a specific place"
+        ],
+        "answer": "D",
+        "explanation": "正确项概括全文中心，证据句给出作者归纳；其余选项来自其他文章，不能解释本文材料。",
+        "evidence_text": "The word localization means adapting an idea so that it can function meaningfully in a particular place."
+      },
+      {
+        "type": "inference",
+        "question": "Why does the author value the neighborhood setting?",
+        "options": [
+          "It connected the exhibits with ordinary urban life instead of isolating them.",
+          "Their disagreement may show where the interpretation needs more investigation.",
+          "They may represent varied programs or merely additional access to the same one.",
+          "It can favor public events over slow forms of technical training."
+        ],
+        "answer": "A",
+        "explanation": "正确项与证据中的核心判断一致，其他说法不符合本文讨论范围。",
+        "evidence_text": "Visitors encountered design among shops and streets, not as a sealed national display."
+      },
+      {
+        "type": "attitude",
+        "question": "Which form of localization does the writer reject?",
+        "options": [
+          "Artifacts require value choices rather than biological healing.",
+          "Simplifying cultural references until the work becomes generic.",
+          "It should offer a route toward understanding the maker and the practice.",
+          "An account of how practices changed and became locally meaningful."
+        ],
+        "answer": "B",
+        "explanation": "证据句直接支撑正确项；干扰项虽属文化议题，但与本篇论证关系不符。",
+        "evidence_text": "If every reference is simplified until no explanation is needed, the work may become generic."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-curated-culture-l3-02",
+    "source_id": "src-文化-14",
+    "title": "A Mixed Culture Cannot Be Read as Two Halves",
+    "topic": "文化",
+    "difficulty": 3,
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20250415/8552f2b1f49249be86b47033af5df888/c.html",
+    "source_title": "GLOBALink | Malacca's Baba-Nyonya heritage: where Chinese roots meet Malay rhythms",
+    "source_published_at": "2025-04-15",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "原PDF题名不可用，已换用可访问新华社正文并核验2025-04-15日期。采用事实：马六甲鸡场街呈现中华与马来文化影响；马六甲被报道为峇峇娘惹文化发源地之一；相关内容吸引寻找共同文化记忆的中国游客。",
+    "adaptation_note": "题材参考所列新华社英文网公开信息；本站围绕独立中心问题重组事实并原创改写，非媒体原文，非历年真题。",
+    "content": "Jonker Street in Malacca presents a visible mixture of Chinese and Malay influences and is associated with Baba-Nyonya culture. Chinese visitors may recognize family-like elements while encountering food, language, architecture, and customs shaped by a long local history. That combination is often described with a simple formula: roots from one place meeting rhythms from another.\n\nThe formula is useful as an introduction, but it can also mislead. A mixed culture is not produced by placing two complete traditions side by side. Generations of families make choices under local conditions, and the results become practices with their own rules. Asking which part is “Chinese” and which is “Malay” may hide the fact that the combination itself has acquired historical depth.\n\nThe word hybrid is sometimes used for something formed from different sources. It should not imply that the result is temporary, impure, or less authentic. Authenticity can rest in continuity of community use rather than in separation from outside influence.\n\nTourism adds another layer. Visitors searching for a shared past can support shops and heritage activity, yet their expectations may encourage businesses to present only the most recognizable symbols. Interpretation should therefore explain change as well as origin. A dish, garment, or house can be connected to several histories without being reduced to a checklist of borrowed parts.\n\nBaba-Nyonya heritage offers a wider lesson about cultural identity. Contact does not merely decorate stable traditions; it can generate new ones. To understand such a culture, we must study who maintained the practices, how meanings changed, and why the community still claims them today.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What does the passage argue can emerge when cultures remain in sustained contact?",
+        "options": [
+          "A sustainable restoration workforce must combine formal education with supervised transfer of practical judgment.",
+          "Cross-cultural presentation of Dunhuang should disclose interpretation while connecting performance, conservation, and dialogue.",
+          "Cultural mixture can create a durable tradition with meanings of its own.",
+          "Young interest becomes culturally valuable when easy exposure leads toward deeper participation."
+        ],
+        "answer": "C",
+        "explanation": "原文证据可唯一定位正确答案，其他选项混入了不同来源中的概念。",
+        "evidence_text": "Contact does not merely decorate stable traditions; it can generate new ones."
+      },
+      {
+        "type": "detail",
+        "question": "Which two broad influences are visible on Jonker Street?",
+        "options": [
+          "Movement, sound, or an image that changes with the visitor.",
+          "Three Kunqu shows and three guqin concerts.",
+          "It is the sixth animal.",
+          "Chinese and Malay influences."
+        ],
+        "answer": "D",
+        "explanation": "正确项概括全文中心，证据句给出作者归纳；其余选项来自其他文章，不能解释本文材料。",
+        "evidence_text": "Jonker Street in Malacca presents a visible mixture of Chinese and Malay influences and is associated with Baba-Nyonya culture."
+      },
+      {
+        "type": "word_guess",
+        "question": "When cultures combine rather than divide neatly, what does hybrid denote?",
+        "options": [
+          "formed from different sources",
+          "to support a claim with separate evidence",
+          "selected to illustrate a field without being complete",
+          "supporting the conditions that let a practice continue"
+        ],
+        "answer": "A",
+        "explanation": "正确项与证据中的核心判断一致，其他说法不符合本文讨论范围。",
+        "evidence_text": "The word hybrid is sometimes used for something formed from different sources."
+      },
+      {
+        "type": "inference",
+        "question": "Why can dividing every element into Chinese or Malay be misleading?",
+        "options": [
+          "It may preserve historical information without actively harming the object.",
+          "It overlooks the history and rules created by the combination itself.",
+          "It can give skilled workers more time to continue their craft.",
+          "It connected the exhibits with ordinary urban life instead of isolating them."
+        ],
+        "answer": "B",
+        "explanation": "证据句直接支撑正确项；干扰项虽属文化议题，但与本篇论证关系不符。",
+        "evidence_text": "the combination itself has acquired historical depth."
+      },
+      {
+        "type": "attitude",
+        "question": "What should tourism interpretation add beyond origins?",
+        "options": [
+          "Physical work raises material, legal, and risk questions that an image does not.",
+          "Helpful for presentation, though less important than a careful comparative idea.",
+          "An account of how practices changed and became locally meaningful.",
+          "Evaluate each digital product according to its stated purpose."
+        ],
+        "answer": "C",
+        "explanation": "应依据文中限定作答，正确项没有扩大因果或把局部事实当成全文结论。",
+        "evidence_text": "Interpretation should therefore explain change as well as origin."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-curated-culture-l3-03",
+    "source_id": "src-文化-15",
+    "title": "A Digital Copy Has Several Jobs",
+    "topic": "文化",
+    "difficulty": 3,
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20260127/f4e2f81002154c18aaf97a3b5567cc76/c.html",
+    "source_title": "Digital preservation safeguards, promotes timeless beauty of China's ancient relics",
+    "source_published_at": "2026-01-27",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "页面可访问并核验正文。采用事实：山西使用激光扫描、无人机测绘和近景摄影记录古建、雕塑与壁画；一项原需两人近两周的记录工作可缩短至3天；数字资料用于修复参考与公共展示。",
+    "adaptation_note": "题材参考所列新华社英文网公开信息；本站围绕独立中心问题重组事实并原创改写，非媒体原文，非历年真题。",
+    "content": "Digital preservation is often described as making a copy before an old object changes. The work is more demanding. In Shanxi, laser scanning, drone mapping, and close-range photography have been used to record buildings, sculpture, and murals. One scanning team reported that a survey which once required two people for almost two weeks could now be completed in three days.\n\nSpeed matters because heritage workers face large collections and limited access. A detailed three-dimensional record can guide restoration without repeated physical contact. It can also document cracks or surfaces so that later measurements reveal change. In this role, the digital file is not a replacement object but a reference against which the material original can be studied.\n\nThe same data may support public display. Printed replicas and projected environments allow people far from a site to examine forms that cannot travel safely. Games can use scans of historic structures to create convincing settings. These uses broaden access, but they answer different questions from conservation.\n\nThe word fidelity refers to closeness to the recorded form. High visual fidelity is useful, yet a model can still omit uncertainty about color, lost parts, or original use. A lively screen may also encourage viewers to think the monument has been fully preserved simply because its image survives.\n\nManagers should therefore state the purpose and limits of each digital product. A research archive needs measurement detail and stable formats; an exhibition needs intelligible selection; a game prioritizes experience. One dataset may contribute to all three, but success cannot be judged by a single standard. Digital preservation protects evidence best when the copy's job remains clear.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "Why must the intended job of a digital heritage copy be stated clearly?",
+        "options": [
+          "Immersive cultural tourism should guide visitors from sensory engagement back to evidence and further inquiry.",
+          "Historic venues can deepen performance when their artistic and conservation relationships are made explicit.",
+          "The meaning of a cultural symbol depends on inherited associations and its present setting.",
+          "Digital heritage records serve conservation, research, and access differently, so their purpose must be explicit."
+        ],
+        "answer": "D",
+        "explanation": "正确项概括全文中心，证据句给出作者归纳；其余选项来自其他文章，不能解释本文材料。",
+        "evidence_text": "Digital preservation protects evidence best when the copy's job remains clear."
+      },
+      {
+        "type": "detail",
+        "question": "What change in survey time was reported?",
+        "options": [
+          "Work that once took nearly two weeks could be done in three days.",
+          "It tests what physical feature produced a visible pattern.",
+          "Six events in total.",
+          "Building wooden arch bridges."
+        ],
+        "answer": "A",
+        "explanation": "正确项与证据中的核心判断一致，其他说法不符合本文讨论范围。",
+        "evidence_text": "One scanning team reported that a survey which once required two people for almost two weeks could now be completed in three days."
+      },
+      {
+        "type": "word_guess",
+        "question": "How should readers understand `\"fidelity`\" here?",
+        "options": [
+          "an informed expectation about future development of a condition",
+          "closeness to the form being recorded",
+          "the passing of knowledge between people",
+          "adapting an idea to work meaningfully in a specific place"
+        ],
+        "answer": "B",
+        "explanation": "证据句直接支撑正确项；干扰项虽属文化议题，但与本篇论证关系不符。",
+        "evidence_text": "The word fidelity refers to closeness to the recorded form."
+      },
+      {
+        "type": "inference",
+        "question": "Why is a digital model not automatically proof that a monument is preserved?",
+        "options": [
+          "Geology, climate, and stable conditions vary by location.",
+          "It gave visitors a shared subject from which to explore cultural differences.",
+          "The image may survive while the physical site still changes or remains at risk.",
+          "It overlooks the history and rules created by the combination itself."
+        ],
+        "answer": "C",
+        "explanation": "应依据文中限定作答，正确项没有扩大因果或把局部事实当成全文结论。",
+        "evidence_text": "A lively screen may also encourage viewers to think the monument has been fully preserved simply because its image survives."
+      },
+      {
+        "type": "attitude",
+        "question": "Which management principle does the author favor?",
+        "options": [
+          "It may erase legitimate differences in local cataloguing and interpretation.",
+          "It can broaden participation if interpretation preserves cultural depth.",
+          "What was recorded directly and what remains uncertain.",
+          "Evaluate each digital product according to its stated purpose."
+        ],
+        "answer": "D",
+        "explanation": "原文证据可唯一定位正确答案，其他选项混入了不同来源中的概念。",
+        "evidence_text": "Managers should therefore state the purpose and limits of each digital product."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-curated-culture-l3-04",
+    "source_id": "src-文化-16",
+    "title": "The Digital Twin Should Return Us to the Object",
+    "topic": "文化",
+    "difficulty": 3,
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20250518/9acd89566680485d8dcfb7e0081396e0/c.html",
+    "source_title": "Across China: Digital innovation reshapes heritage frontier for Chinese museums",
+    "source_published_at": "2025-05-18",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "页面可访问并核验正文。采用事实：西夏陵博物馆数字展柜支持旋转、放大虚拟文物；三星堆修复使用三维模型和AI分析碎片匹配、对齐概率与稳定性；数字技术同时用于展示和研究。",
+    "adaptation_note": "题材参考所列新华社英文网公开信息；本站围绕独立中心问题重组事实并原创改写，非媒体原文，非历年真题。",
+    "content": "At a museum near the Xixia imperial mausoleums, a display allows visitors to rotate and enlarge a digital version of a green-glazed statue. Details hidden by a physical case become easier to inspect. Elsewhere, digital models and artificial intelligence have helped researchers test whether separated bronze fragments may fit together.\n\nThese examples reveal two meanings of a digital twin. For a visitor, it is an interface that changes viewing distance and angle. For a conservator, it is a measurable representation on which possible connections can be tested before fragile material is handled. Confusing those functions can create unrealistic expectations. A beautiful visitor model is not necessarily accurate enough for restoration.\n\nThe word proxy means something that acts in place of another for a limited purpose. A screen can serve as a proxy when an object cannot be touched or turned, but the physical artifact still carries material evidence that a model may not include. Surface wear, weight, chemical change, and the history of repair remain important.\n\nDigital access also changes museum authority. Visitors can choose their own angle rather than accept a fixed view selected by the case designer. That freedom is valuable, although it requires guidance: magnification may make a tiny mark look central when it is actually incidental.\n\nThe best digital twin does not compete with the original. It prepares a better question for the visitor or reduces risk for the researcher. Design should keep the path back to the material object visible, explaining what was scanned, what was reconstructed, and which features remain uncertain.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "Under what condition does the passage consider a digital twin valuable?",
+        "options": [
+          "A digital twin is valuable when its limited function and relationship to the original remain visible.",
+          "Layered archaeological technology is powerful because different forms of evidence test and correct one another.",
+          "A short heritage season should disclose its selective lens and build routes for learning beyond attendance.",
+          "Heritage recognition must lead to protection designed for the distinct needs of each practice."
+        ],
+        "answer": "A",
+        "explanation": "正确项与证据中的核心判断一致，其他说法不符合本文讨论范围。",
+        "evidence_text": "The best digital twin does not compete with the original."
+      },
+      {
+        "type": "detail",
+        "question": "What can visitors do with the digital statue?",
+        "options": [
+          "The elements in its material.",
+          "Rotate it and enlarge its details.",
+          "Wax drawing followed by dyeing, washing, and drying.",
+          "In Milan's Paolo Sarpi district."
+        ],
+        "answer": "B",
+        "explanation": "证据句直接支撑正确项；干扰项虽属文化议题，但与本篇论证关系不符。",
+        "evidence_text": "a display allows visitors to rotate and enlarge a digital version of a green-glazed statue."
+      },
+      {
+        "type": "word_guess",
+        "question": "Which definition fits `\"proxy`\" in the stated context?",
+        "options": [
+          "intended to act before a problem becomes severe",
+          "a recurring image or idea",
+          "a substitute used for a limited task",
+          "formed from different sources"
+        ],
+        "answer": "C",
+        "explanation": "应依据文中限定作答，正确项没有扩大因果或把局部事实当成全文结论。",
+        "evidence_text": "The word proxy means something that acts in place of another for a limited purpose."
+      },
+      {
+        "type": "inference",
+        "question": "Why might a visitor model be unsuitable for conservation decisions?",
+        "options": [
+          "The ranking depends on selected features and comparison data, so alternatives still matter.",
+          "The comparison helps unfamiliar spectators follow its movement.",
+          "The image may survive while the physical site still changes or remains at risk.",
+          "Visual appeal does not guarantee measurement accuracy."
+        ],
+        "answer": "D",
+        "explanation": "原文证据可唯一定位正确答案，其他选项混入了不同来源中的概念。",
+        "evidence_text": "A beautiful visitor model is not necessarily accurate enough for restoration."
+      },
+      {
+        "type": "attitude",
+        "question": "What information should a museum disclose about a reconstruction?",
+        "options": [
+          "What was recorded directly and what remains uncertain.",
+          "They do not show whether opportunities and audiences circulate to smaller or emerging groups.",
+          "Combining geographic origin with reasons for claimed connections.",
+          "Explain why retaining damage or uncertainty can protect evidence."
+        ],
+        "answer": "A",
+        "explanation": "正确项概括全文中心，证据句给出作者归纳；其余选项来自其他文章，不能解释本文材料。",
+        "evidence_text": "explaining what was scanned, what was reconstructed, and which features remain uncertain."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-curated-culture-l3-05",
+    "source_id": "src-文化-17",
+    "title": "Why Careful Repair Sometimes Means Doing Less",
+    "topic": "文化",
+    "difficulty": 3,
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20250527/a4d1a64272084de3a07f69e2a8f626df/c.html",
+    "source_title": "China Focus: Experts urge legal safeguards, tech-led revival of relics at heritage forum",
+    "source_published_at": "2025-05-27",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "页面可访问并核验正文。采用事实：深圳论坛有200余名专家参加；万荣稷王庙因调查发现淡墨题记而重新确认年代；新版文物保护法强调最小干预并加强法律保障。",
+    "adaptation_note": "题材参考所列新华社英文网公开信息；本站围绕独立中心问题重组事实并原创改写，非媒体原文，非历年真题。",
+    "content": "A heritage forum in Shenzhen brought together more than 200 specialists to discuss law, technology, and restoration. One case concerned an eleventh-century temple whose true date was confirmed after workers noticed a faint inscription. The discovery was possible because original material had been retained rather than aggressively cleaned or replaced.\n\nRestoration is often imagined as returning an object to a perfect earlier appearance. That goal can conflict with evidence. A darkened surface, an old repair, or a damaged board may contain information about manufacture and later use. Removing it for visual neatness can answer one aesthetic desire while closing future research questions.\n\nThe principle of minimum intervention responds to this risk. It asks conservators to do only what is necessary for stability and understanding, using changes that can be documented and, where possible, reversed. The word restraint here means deliberate control over the urge to act.\n\nDoing less is not the same as neglect. Careful teams survey materials, monitor conditions, and test treatments before touching a relic. Digital scanning may provide a record; law can define duties and penalties; trained judgment determines the smallest suitable action. These forms of activity are substantial even when the final repair is visually modest.\n\nPublic expectations make restraint harder. Visitors may equate bright color and complete shape with successful care. Museums should explain why a crack can remain visible or why missing decoration was not invented. Conservation earns trust when it shows that uncertainty and age are parts of the object's history, not defects that must always disappear.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "Why does the passage defend minimum intervention in conservation?",
+        "options": [
+          "Scientific instruments improve restoration when diagnosis informs, rather than replaces, ethical judgment.",
+          "Minimum intervention protects historical evidence by limiting unnecessary restoration.",
+          "A craft market can sustain skills by linking income with public learning.",
+          "International design exchange depends on local context and dialogue, not object display alone."
+        ],
+        "answer": "B",
+        "explanation": "证据句直接支撑正确项；干扰项虽属文化议题，但与本篇论证关系不符。",
+        "evidence_text": "The principle of minimum intervention responds to this risk."
+      },
+      {
+        "type": "detail",
+        "question": "What led researchers to revise the temple's date?",
+        "options": [
+          "5,986.",
+          "Sanxingdui and Jinsha.",
+          "A faint inscription found during a survey.",
+          "Chinese and Malay influences."
+        ],
+        "answer": "C",
+        "explanation": "应依据文中限定作答，正确项没有扩大因果或把局部事实当成全文结论。",
+        "evidence_text": "One case concerned an eleventh-century temple whose true date was confirmed after workers noticed a faint inscription."
+      },
+      {
+        "type": "word_guess",
+        "question": "During careful restoration, what action does restraint limit?",
+        "options": [
+          "responsible long-term care on behalf of others",
+          "a practical route into an experience",
+          "closeness to the form being recorded",
+          "deliberate control over the desire to act"
+        ],
+        "answer": "D",
+        "explanation": "原文证据可唯一定位正确答案，其他选项混入了不同来源中的概念。",
+        "evidence_text": "The word restraint here means deliberate control over the urge to act."
+      },
+      {
+        "type": "inference",
+        "question": "Why can an old repair be worth preserving?",
+        "options": [
+          "It may provide evidence about an object's later history.",
+          "It may narrow programming and reduce heritage to decoration.",
+          "Objects placed together do not by themselves prove historical contact.",
+          "Visual appeal does not guarantee measurement accuracy."
+        ],
+        "answer": "A",
+        "explanation": "正确项概括全文中心，证据句给出作者归纳；其余选项来自其他文章，不能解释本文材料。",
+        "evidence_text": "A darkened surface, an old repair, or a damaged board may contain information about manufacture and later use."
+      },
+      {
+        "type": "attitude",
+        "question": "How should museums address visually incomplete repairs?",
+        "options": [
+          "Giving host-community artists and scholars meaningful opportunities to respond.",
+          "Explain why retaining damage or uncertainty can protect evidence.",
+          "Connect an attractive digital encounter with a realistic next learning step.",
+          "Moving from emergency repair toward early detection and prevention."
+        ],
+        "answer": "B",
+        "explanation": "正确项与证据中的核心判断一致，其他说法不符合本文讨论范围。",
+        "evidence_text": "Museums should explain why a crack can remain visible or why missing decoration was not invented."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-curated-culture-l4-02",
+    "source_id": "src-文化-18",
+    "title": "Technology Before the Display Case",
+    "topic": "文化",
+    "difficulty": 4,
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20250426/798a9095a153422e91731e12089757a3/c.html",
+    "source_title": "Across China: Tech meets culture -- China's digital renaissance of ancient heritage",
+    "source_published_at": "2025-04-26",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "页面可访问并核验正文。采用事实：文保应用精密测年、遗传分析、光谱和X射线等技术；水下脆弱文物可在提取前加固；传感与扫描支持由抢救性保护转向预防性保护。",
+    "adaptation_note": "题材参考所列新华社英文网公开信息；本站围绕独立中心问题重组事实并原创改写，非媒体原文，非历年真题。",
+    "content": "Digital heritage is most visible when visitors put on a headset, but much of its value appears before an exhibition opens. Archaeologists can use precise dating, genetic analysis, and remote sensing to investigate sites. Conservators may use spectroscopy to identify salts or corrosion, while X-ray methods reveal structures hidden beneath a surface. Fragile underwater objects can be reinforced before removal.\n\nThese tools do not replace interpretation. A machine produces measurements under chosen conditions; specialists decide which question to ask, whether the sample is representative, and how competing explanations should be tested. Better resolution can even increase uncertainty by revealing variation that an older method had concealed.\n\nThe word non-invasive describes an examination that does not cut into or damage the material. Such techniques are especially valuable when sampling would destroy unique evidence. Yet “non-invasive” should not be confused with “without consequences.” Moving equipment, exposing an object to radiation, or publishing a detailed model may still create physical or security risks that require management.\n\nTechnology also alters the order of conservation. Earlier practice often reacted after visible deterioration. Sensors and repeated scans can identify small changes before a crisis, allowing preventive action. This shift is less dramatic than restoring a broken statue, but it may preserve more original material.\n\nPublic displays should make this hidden work legible. An animation can show how a scan answered a specific question rather than simply celebrating an impressive machine. When audiences see the chain from observation to cautious decision, technology becomes part of a method, not a magical solution.\n\nThe strongest innovation is therefore procedural. New instruments expand what can be observed, while good conservation limits what may be concluded and done. Heritage benefits when technical power is joined to explicit questions, documented choices, and responsibility for unintended effects.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What makes new measurement technology dependable in heritage conservation?",
+        "options": [
+          "Cave-temple protection requires site-specific environmental monitoring joined to cautious governance.",
+          "Cross-cultural comparison works when it reveals both common concerns and distinct meanings.",
+          "Heritage technology is most reliable when measurement remains tied to cautious interpretation and responsibility.",
+          "Cultural mixture can create a durable tradition with meanings of its own."
+        ],
+        "answer": "C",
+        "explanation": "应依据文中限定作答，正确项没有扩大因果或把局部事实当成全文结论。",
+        "evidence_text": "New instruments expand what can be observed, while good conservation limits what may be concluded and done."
+      },
+      {
+        "type": "detail",
+        "question": "What can spectroscopy help conservators identify?",
+        "options": [
+          "More than 1.95 million items.",
+          "Fourteen.",
+          "Work that once took nearly two weeks could be done in three days.",
+          "Salts or corrosion on an artifact."
+        ],
+        "answer": "D",
+        "explanation": "原文证据可唯一定位正确答案，其他选项混入了不同来源中的概念。",
+        "evidence_text": "Conservators may use spectroscopy to identify salts or corrosion"
+      },
+      {
+        "type": "word_guess",
+        "question": "What sense of `\"non-invasive`\" is intended in the passage?",
+        "options": [
+          "examining material without cutting into or damaging it",
+          "a network whose parts depend on one another",
+          "a process in which groups affect one another",
+          "a substitute used for a limited task"
+        ],
+        "answer": "A",
+        "explanation": "正确项概括全文中心，证据句给出作者归纳；其余选项来自其他文章，不能解释本文材料。",
+        "evidence_text": "The word non-invasive describes an examination that does not cut into or damage the material."
+      },
+      {
+        "type": "inference",
+        "question": "Why can higher-resolution data increase uncertainty?",
+        "options": [
+          "A still image leaves music and movement transitions unspecified.",
+          "It may reveal differences that simpler methods had hidden.",
+          "It exposes the repetition and correction hidden by a finished performance.",
+          "It may provide evidence about an object's later history."
+        ],
+        "answer": "B",
+        "explanation": "正确项与证据中的核心判断一致，其他说法不符合本文讨论范围。",
+        "evidence_text": "Better resolution can even increase uncertainty by revealing variation that an older method had concealed."
+      },
+      {
+        "type": "attitude",
+        "question": "Which change does the author value in conservation practice?",
+        "options": [
+          "A recording cannot transmit every spatial quality of the live venue.",
+          "As legitimate interpretations when they avoid claiming universal meaning.",
+          "Moving from emergency repair toward early detection and prevention.",
+          "By durable research use and transparent differences, not launch size alone."
+        ],
+        "answer": "C",
+        "explanation": "证据句直接支撑正确项；干扰项虽属文化议题，但与本篇论证关系不符。",
+        "evidence_text": "Sensors and repeated scans can identify small changes before a crisis, allowing preventive action."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-curated-culture-l4-03",
+    "source_id": "src-文化-19",
+    "title": "A Digital Reunion Is Not a Physical Return",
+    "topic": "文化",
+    "difficulty": 4,
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20250531/5d2ef05ce4fc4ac0898e3177196fb22b/c.html",
+    "source_title": "Digital platform reunites Dunhuang artifacts as cave discovery marks 125 years",
+    "source_published_at": "2025-05-31",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "页面可访问并核验正文。采用事实：数字藏经洞平台整合74651条文物记录；公开9900余份手稿、60700余幅图像和840万字符；中外机构以数字副本连接分散收藏。",
+    "adaptation_note": "题材参考所列新华社英文网公开信息；本站围绕独立中心问题重组事实并原创改写，非媒体原文，非历年真题。",
+    "content": "The Library Cave at Dunhuang once held manuscripts and art that later became scattered among institutions. A digital platform launched in 2025 assembled 74,651 records and provided thousands of manuscripts, tens of thousands of images, and millions of written characters. International and Chinese partners contributed data so that material held far apart could be searched together.\n\nCalling this a “reunion” captures a genuine research advantage. A scholar can compare handwriting, images, and related records without arranging travel to every collection. Connections that were difficult to see when catalogues used separate terms may become discoverable through shared descriptions and image tools.\n\nThe phrase also needs qualification. Digital presence does not change legal ownership, physical location, conservation conditions, or the experience of scale and material. A high-resolution image can reveal ink strokes but not fully reproduce paper thickness, binding, or the restrictions imposed by a fragile original.\n\nThe word metadata means structured information describing an item, such as date, origin, dimensions, and catalogue history. Its quality determines whether a search truly reconnects related objects. If partner institutions use incompatible names or uncertain dates without explanation, a large database can hide disagreement behind a clean interface.\n\nLong-term access presents another challenge. Files require stable formats, backups, permissions, and continuing support. A launch count says little about whether records will remain usable or be corrected when scholarship changes. Users also need to know which images are direct records and which elements have been digitally reconstructed.\n\nDigital reunification should therefore be judged as infrastructure for inquiry, not as a symbolic finish. It succeeds when dispersed evidence becomes comparable while differences in custody, material condition, and interpretation remain visible. The platform can narrow distance; it should not pretend that every form of separation has disappeared.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What balanced judgment does the passage reach about digital reunification?",
+        "options": [
+          "Digital heritage projects need accountable stewardship of data, uncertainty, access, and maintenance.",
+          "A growing festival needs accessible entry points without losing the distinct meaning of its practices.",
+          "Digital heritage records serve conservation, research, and access differently, so their purpose must be explicit.",
+          "Digital reunification improves comparison but must preserve differences in material, custody, and interpretation."
+        ],
+        "answer": "D",
+        "explanation": "原文证据可唯一定位正确答案，其他选项混入了不同来源中的概念。",
+        "evidence_text": "The platform can narrow distance; it should not pretend that every form of separation has disappeared."
+      },
+      {
+        "type": "detail",
+        "question": "How many artifact records did the platform assemble?",
+        "options": [
+          "74,651 records.",
+          "A major arts center, smaller theaters, incubators, and studios.",
+          "Ten museums.",
+          "Rotate it and enlarge its details."
+        ],
+        "answer": "A",
+        "explanation": "正确项概括全文中心，证据句给出作者归纳；其余选项来自其他文章，不能解释本文材料。",
+        "evidence_text": "A digital platform launched in 2025 assembled 74,651 records"
+      },
+      {
+        "type": "word_guess",
+        "question": "Which information about an artifact counts as metadata here?",
+        "options": [
+          "the movement of meaning between media, contexts, or languages",
+          "structured descriptive information about an item",
+          "continued attention combined with active involvement",
+          "deliberate control over the desire to act"
+        ],
+        "answer": "B",
+        "explanation": "正确项与证据中的核心判断一致，其他说法不符合本文讨论范围。",
+        "evidence_text": "The word metadata means structured information describing an item, such as date, origin, dimensions, and catalogue history."
+      },
+      {
+        "type": "inference",
+        "question": "Why can incompatible naming weaken a shared database?",
+        "options": [
+          "The original social conditions of performance are not recreated by architecture alone.",
+          "To show that surrounding context selects different meanings of the same animal.",
+          "Related objects may remain hard to find or disagreements may be concealed.",
+          "It may reveal differences that simpler methods had hidden."
+        ],
+        "answer": "C",
+        "explanation": "证据句直接支撑正确项；干扰项虽属文化议题，但与本篇论证关系不符。",
+        "evidence_text": "a large database can hide disagreement behind a clean interface."
+      },
+      {
+        "type": "attitude",
+        "question": "How should the platform's success be evaluated?",
+        "options": [
+          "Attendance does not show learning quality, performer conditions, or continued engagement.",
+          "Measures tailored to the risks and knowledge of each tradition.",
+          "Use participation selectively while preserving space for uninterrupted technique.",
+          "By durable research use and transparent differences, not launch size alone."
+        ],
+        "answer": "D",
+        "explanation": "应依据文中限定作答，正确项没有扩大因果或把局部事实当成全文结论。",
+        "evidence_text": "Digital reunification should therefore be judged as infrastructure for inquiry, not as a symbolic finish."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-curated-culture-l4-04",
+    "source_id": "src-文化-20",
+    "title": "When the Audience Enters the Plot",
+    "topic": "文化",
+    "difficulty": 4,
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20250504/3b9af89f1ce04884a1865494e0ae3c74/c.html",
+    "source_title": "Traditional art troupes embrace scenic spots, energize cultural-tourism fusion",
+    "source_published_at": "2025-05-04",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "页面可访问并核验正文。采用事实：甘肃地方剧团过去一年演出不足50场；文旅场景加入地方戏、皮影和历史剧；游客可近距离观看、换装并参与即兴剧情。",
+    "adaptation_note": "题材参考所列新华社英文网公开信息；本站围绕独立中心问题重组事实并原创改写，非媒体原文，非历年真题。",
+    "content": "A local opera troupe in Gansu once gave fewer than fifty performances a year. A cultural-tourism site later created new work by staging opera, shadow puppetry, and historical drama inside a restored architectural setting. Visitors can stand close to actors, wear costumes, answer questions, and sometimes influence how a scene develops.\n\nParticipation changes the contract of performance. In a conventional theater, the audience agrees to watch from outside the fictional world. An immersive show asks people to cross that boundary, which can lower the distance between an unfamiliar art and a first-time spectator. Laughter or a simple role may make traditional opera feel less formal.\n\nThe same method carries artistic risks. If every scene must allow quick tourist participation, difficult music, slow storytelling, or specialized technique may be shortened until the form becomes a themed game. Performers can also face exhausting schedules and uncertain standards when entertainment, education, and commercial service are mixed.\n\nThe word improvisation means creating part of a performance in response to the moment rather than following every detail of a fixed script. Skilled improvisation requires deep knowledge: actors must protect the story's structure while responding to unpredictable visitors. It is not simply the absence of preparation.\n\nProgram design should therefore distinguish levels of participation. Some scenes can invite direct action; others should let audiences observe demanding technique without interruption. Short interpretation before or after a show can explain what was adapted for the site and what belongs to the underlying opera tradition.\n\nCultural tourism gives performers income and contact with new publics, but increased frequency is not the only measure of revival. A form remains alive when artists can develop their skills, audiences can recognize more than costumes, and adaptation does not destroy the possibility of a fuller performance elsewhere.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "When can immersive tourism strengthen rather than flatten traditional opera?",
+        "options": [
+          "Immersive tourism can renew opera audiences if participation does not erase artistic depth.",
+          "A successful arts district depends on relationships and career pathways, not merely concentrated venues.",
+          "A collaborative exhibition should explain the evidence behind cultural connections.",
+          "A digital twin is valuable when its limited function and relationship to the original remain visible."
+        ],
+        "answer": "A",
+        "explanation": "正确项概括全文中心，证据句给出作者归纳；其余选项来自其他文章，不能解释本文材料。",
+        "evidence_text": "A form remains alive when artists can develop their skills, audiences can recognize more than costumes, and adaptation does not destroy the possibility of a fuller performance elsewhere."
+      },
+      {
+        "type": "detail",
+        "question": "How could visitors participate in the staged performances?",
+        "options": [
+          "Mural-inspired performance, a restoration display, and virtual reality.",
+          "They could wear costumes and sometimes affect a scene.",
+          "Velvet flowers.",
+          "A faint inscription found during a survey."
+        ],
+        "answer": "B",
+        "explanation": "正确项与证据中的核心判断一致，其他说法不符合本文讨论范围。",
+        "evidence_text": "Visitors can stand close to actors, wear costumes, answer questions, and sometimes influence how a scene develops."
+      },
+      {
+        "type": "word_guess",
+        "question": "During audience participation, what makes an action improvisation?",
+        "options": [
+          "continued sound or meaning strengthened by association",
+          "an associated idea or feeling beyond literal meaning",
+          "creating in response to the moment within a performance",
+          "examining material without cutting into or damaging it"
+        ],
+        "answer": "C",
+        "explanation": "证据句直接支撑正确项；干扰项虽属文化议题，但与本篇论证关系不符。",
+        "evidence_text": "The word improvisation means creating part of a performance in response to the moment rather than following every detail of a fixed script."
+      },
+      {
+        "type": "inference",
+        "question": "Why might repeated tourist interaction weaken an art form?",
+        "options": [
+          "They may represent varied programs or merely additional access to the same one.",
+          "It can favor public events over slow forms of technical training.",
+          "Related objects may remain hard to find or disagreements may be concealed.",
+          "Complex or slow elements may be cut to maintain quick participation."
+        ],
+        "answer": "D",
+        "explanation": "应依据文中限定作答，正确项没有扩大因果或把局部事实当成全文结论。",
+        "evidence_text": "difficult music, slow storytelling, or specialized technique may be shortened until the form becomes a themed game."
+      },
+      {
+        "type": "attitude",
+        "question": "What balance does the writer recommend?",
+        "options": [
+          "Use participation selectively while preserving space for uninterrupted technique.",
+          "It should offer a route toward understanding the maker and the practice.",
+          "Simplifying cultural references until the work becomes generic.",
+          "Documented reasoning and restraint as well as visible results."
+        ],
+        "answer": "A",
+        "explanation": "原文证据可唯一定位正确答案，其他选项混入了不同来源中的概念。",
+        "evidence_text": "Some scenes can invite direct action; others should let audiences observe demanding technique without interruption."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-curated-culture-l4-05",
+    "source_id": "src-文化-21",
+    "title": "Restoration Needs a Career Ladder",
+    "topic": "文化",
+    "difficulty": 4,
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20250518/e84706aabd734e5da6765c7c4a87d6a0/c.html",
+    "source_title": "China Focus: Young Chinese take up cultural relic restoration",
+    "source_published_at": "2025-05-18",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "页面可访问并核验正文。采用事实：三星堆一支修复团队平均年龄35岁；年轻从业者增加；人才培养由单一师徒制扩展到高校专业与技能竞赛。",
+    "adaptation_note": "题材参考所列新华社英文网公开信息；本站围绕独立中心问题重组事实并原创改写，非媒体原文，非历年真题。",
+    "content": "Interest in cultural relic restoration is growing among young Chinese workers. At one museum, the average age of a restoration team was reported as thirty-five, and universities now offer programs in fields once learned mainly through master-apprentice relationships. Skills competitions also bring together participants from several generations.\n\nAttracting applicants solves only the first stage of a workforce problem. A beginner may learn laboratory methods at university yet still need years of guided contact with bronze, paper, textile, or painted surfaces. Senior conservators hold tacit knowledge: they notice how a tool feels, when a material is behaving unexpectedly, and when treatment should stop.\n\nThe word tacit refers to knowledge that is difficult to state fully in rules. Formal education can make chemistry, documentation, and ethics more consistent, while apprenticeship exposes learners to decisions that textbooks cannot reproduce. Treating the two systems as competitors would waste their strengths.\n\nInstitutions need a career ladder connecting them. Paid junior roles should include supervision rather than merely repetitive tasks. Experienced staff need time and recognition for teaching. Assessment should reward documentation, restraint, and the ability to explain a decision, not only the visual completeness of a repaired object.\n\nMedia attention and competitions can raise the profession's status. They may also create the impression that restoration consists of dramatic before-and-after moments. Daily work includes condition reports, testing, environmental control, and long periods in which no treatment is chosen. Honest career information must show this quieter labor.\n\nThe sector will be sustainable when a new generation can enter without severing knowledge from the previous one. Expansion is not simply a larger class of graduates; it is a protected chain of responsibility in which learners gradually earn the authority to act on irreplaceable material.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What foundation does the passage propose for a sustainable restoration workforce?",
+        "options": [
+          "Cross-cultural presentation of Dunhuang should disclose interpretation while connecting performance, conservation, and dialogue.",
+          "A sustainable restoration workforce must combine formal education with supervised transfer of practical judgment.",
+          "Young interest becomes culturally valuable when easy exposure leads toward deeper participation.",
+          "Minimum intervention protects historical evidence by limiting unnecessary restoration."
+        ],
+        "answer": "B",
+        "explanation": "正确项与证据中的核心判断一致，其他说法不符合本文讨论范围。",
+        "evidence_text": "The sector will be sustainable when a new generation can enter without severing knowledge from the previous one."
+      },
+      {
+        "type": "detail",
+        "question": "What was the reported average age of one restoration team?",
+        "options": [
+          "Three Kunqu shows and three guqin concerts.",
+          "It is the sixth animal.",
+          "Thirty-five.",
+          "Salts or corrosion on an artifact."
+        ],
+        "answer": "C",
+        "explanation": "证据句直接支撑正确项；干扰项虽属文化议题，但与本篇论证关系不符。",
+        "evidence_text": "At one museum, the average age of a restoration team was reported as thirty-five"
+      },
+      {
+        "type": "word_guess",
+        "question": "Which kind of conservation knowledge is described as tacit?",
+        "options": [
+          "selected to illustrate a field without being complete",
+          "supporting the conditions that let a practice continue",
+          "structured descriptive information about an item",
+          "understood through practice but hard to express fully as rules"
+        ],
+        "answer": "D",
+        "explanation": "应依据文中限定作答，正确项没有扩大因果或把局部事实当成全文结论。",
+        "evidence_text": "The word tacit refers to knowledge that is difficult to state fully in rules."
+      },
+      {
+        "type": "inference",
+        "question": "Why are university courses alone insufficient for restorers?",
+        "options": [
+          "Some material judgments develop only through guided practical experience.",
+          "It can give skilled workers more time to continue their craft.",
+          "It connected the exhibits with ordinary urban life instead of isolating them.",
+          "Complex or slow elements may be cut to maintain quick participation."
+        ],
+        "answer": "A",
+        "explanation": "原文证据可唯一定位正确答案，其他选项混入了不同来源中的概念。",
+        "evidence_text": "Senior conservators hold tacit knowledge: they notice how a tool feels, when a material is behaving unexpectedly, and when treatment should stop."
+      },
+      {
+        "type": "attitude",
+        "question": "What should professional assessment value?",
+        "options": [
+          "Helpful for presentation, though less important than a careful comparative idea.",
+          "Documented reasoning and restraint as well as visible results.",
+          "An account of how practices changed and became locally meaningful.",
+          "Clear learning can matter more than the quantity of dramatic reactions."
+        ],
+        "answer": "B",
+        "explanation": "正确项概括全文中心，证据句给出作者归纳；其余选项来自其他文章，不能解释本文材料。",
+        "evidence_text": "Assessment should reward documentation, restraint, and the ability to explain a decision, not only the visual completeness of a repaired object."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-curated-culture-l5-02",
+    "source_id": "src-文化-22",
+    "title": "An Immersive Tourist Route Still Needs an Exit",
+    "topic": "文化",
+    "difficulty": 5,
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20250625/0190ef238f8f4a6d9e4e1640678fbe11/c.html",
+    "source_title": "Digital technologies help better entertain tourists in China's Chongqing",
+    "source_published_at": "2025-06-25",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "页面可访问并核验题名与日期；首轮出现SSL失败后重试成功。采用事实：重庆文旅项目使用投影、交互与数字场景；技术通过动作和图像反馈组织游客体验；正文据此讨论互动设计与无障碍边界。",
+    "adaptation_note": "题材参考所列新华社英文网公开信息；本站围绕独立中心问题重组事实并原创改写，非媒体原文，非历年真题。",
+    "content": "Digital attractions in Chongqing let visitors enter recreated scenes, interact with projections, and experience cultural stories through responsive technology. Such installations can turn waiting or walking into active exploration, especially for travelers who have little time or prior knowledge. The immediate response—movement, sound, or a changed image—makes an abstract history feel personally addressed.\n\nImmersion, however, can become a closed loop. A visitor follows prompts, collects visual rewards, and leaves with vivid memories but no reliable sense of what was historical evidence and what was invented for entertainment. The problem is not fiction itself. Museums and tourism sites have always used staging. The difficulty arises when reconstruction is presented with the authority of documentation.\n\nThe word affordance refers to a feature that suggests how something can be used. A glowing floor may invite a step; a movable image may invite a gesture. Good affordances reduce confusion, yet they also guide attention. What the interface does not permit—pausing, comparing sources, reading uncertainty—may become invisible.\n\nDesigners should therefore provide an intellectual exit from the experience. A final screen can distinguish recorded fact from artistic completion. A route can point toward original objects, local sites, or fuller accounts. Accessibility also matters: the story should remain available to visitors who cannot stand for long, hear every sound, or use rapid gestures.\n\nEvaluation must look beyond total interactions. Researchers can ask what visitors remember, whether they can identify the source of a claim, and whether the attraction motivates further exploration. An installation that produces fewer dramatic reactions but clearer understanding may serve culture better.\n\nImmersion is strongest when it knows where to stop. It can create attention and emotional proximity, but it should return visitors to evidence, choice, and the world outside the screen.\n\nA quiet reflective pause can be as valuable as another animated response.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "Where should an immersive cultural route ultimately lead its visitors?",
+        "options": [
+          "Historic venues can deepen performance when their artistic and conservation relationships are made explicit.",
+          "The meaning of a cultural symbol depends on inherited associations and its present setting.",
+          "Immersive cultural tourism should guide visitors from sensory engagement back to evidence and further inquiry.",
+          "Heritage technology is most reliable when measurement remains tied to cautious interpretation and responsibility."
+        ],
+        "answer": "C",
+        "explanation": "证据句直接支撑正确项；干扰项虽属文化议题，但与本篇论证关系不符。",
+        "evidence_text": "Immersion is strongest when it knows where to stop."
+      },
+      {
+        "type": "detail",
+        "question": "What kind of response makes digital scenes feel personal?",
+        "options": [
+          "Six events in total.",
+          "Building wooden arch bridges.",
+          "74,651 records.",
+          "Movement, sound, or an image that changes with the visitor."
+        ],
+        "answer": "D",
+        "explanation": "应依据文中限定作答，正确项没有扩大因果或把局部事实当成全文结论。",
+        "evidence_text": "The immediate response—movement, sound, or a changed image—makes an abstract history feel personally addressed."
+      },
+      {
+        "type": "word_guess",
+        "question": "How should readers understand `\"affordance`\" here?",
+        "options": [
+          "a feature suggesting how an object or interface may be used",
+          "the passing of knowledge between people",
+          "adapting an idea to work meaningfully in a specific place",
+          "creating in response to the moment within a performance"
+        ],
+        "answer": "A",
+        "explanation": "原文证据可唯一定位正确答案，其他选项混入了不同来源中的概念。",
+        "evidence_text": "The word affordance refers to a feature that suggests how something can be used."
+      },
+      {
+        "type": "inference",
+        "question": "Why can a highly interactive route still produce weak understanding?",
+        "options": [
+          "It gave visitors a shared subject from which to explore cultural differences.",
+          "It may hide the line between documented history and invented completion.",
+          "It overlooks the history and rules created by the combination itself.",
+          "Some material judgments develop only through guided practical experience."
+        ],
+        "answer": "B",
+        "explanation": "正确项概括全文中心，证据句给出作者归纳；其余选项来自其他文章，不能解释本文材料。",
+        "evidence_text": "A visitor follows prompts, collects visual rewards, and leaves with vivid memories but no reliable sense of what was historical evidence and what was invented for entertainment."
+      },
+      {
+        "type": "inference",
+        "question": "Why might fewer interactions indicate a better installation?",
+        "options": [
+          "It can broaden participation if interpretation preserves cultural depth.",
+          "Evaluate each digital product according to its stated purpose.",
+          "Clear learning can matter more than the quantity of dramatic reactions.",
+          "Important but less measurable threats may receive too little attention."
+        ],
+        "answer": "C",
+        "explanation": "正确项与证据中的核心判断一致，其他说法不符合本文讨论范围。",
+        "evidence_text": "An installation that produces fewer dramatic reactions but clearer understanding may serve culture better."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-curated-culture-l5-03",
+    "source_id": "src-文化-23",
+    "title": "A Site Seen from Air, Space, Ground, and Data",
+    "topic": "文化",
+    "difficulty": 5,
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20251106/bf4b6ebd35414221bb49c222d0a96e17/c.html",
+    "source_title": "Across China: Modern technology empowers archaeology, preservation at Liangzhu site in east China",
+    "source_published_at": "2025-11-06",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "页面可访问并核验正文。采用事实：良渚使用无人机、卫星影像、田野调查和GIS的综合方法；技术帮助发现城址、水坝和泄洪设施；传感器持续监测湿度、温度和水位并触发预警。",
+    "adaptation_note": "题材参考所列新华社英文网公开信息；本站围绕独立中心问题重组事实并原创改写，非媒体原文，非历年真题。",
+    "content": "At Liangzhu, archaeologists combine drones, satellite images, fieldwork, and geographic information systems in an “air-sky-land-digital” approach. Different layers have helped identify city structures, dams, spillways, and other features across a large landscape. The method matters because buried remains rarely announce their full shape at ground level.\n\nEach layer corrects the limitations of another. A satellite image can reveal broad patterns but may not explain what produced them. A drone provides greater detail over selected areas. Field investigation tests whether a line in an image corresponds to soil, stone, water control, or a modern disturbance. A geographic system then relates observations made at different times.\n\nThe word corroborate means to strengthen a claim with independent evidence. When several methods point toward the same structure, the interpretation becomes more credible; when they disagree, the disagreement identifies where more work is needed. Combining tools should not mean averaging away conflict.\n\nTechnology at Liangzhu also supports preservation. Sensors watch humidity, temperature, and water around a five-thousand-year-old hydraulic structure, while cameras and buried cables monitor a much wider ruins zone. Automated alerts can speed response, but a threshold is still a human decision: teams must decide which change matters and what intervention is safe.\n\nScale creates governance questions. Continuous observation can generate more data than specialists can review, and an efficient dashboard may favor measurable conditions over slower social threats such as nearby development. Records need priorities, maintenance, and accountable people who can respond.\n\nThe achievement is not simply that technology sees more. It is that evidence from different distances can be compared without pretending they are interchangeable. A layered survey improves archaeology when every observation retains its method, uncertainty, and place in the argument.\n\nHuman review also records carefully why one layer was trusted when evidence remained incomplete.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "Why does the passage value combining aerial, satellite, ground, and digital evidence?",
+        "options": [
+          "A short heritage season should disclose its selective lens and build routes for learning beyond attendance.",
+          "Heritage recognition must lead to protection designed for the distinct needs of each practice.",
+          "Digital reunification improves comparison but must preserve differences in material, custody, and interpretation.",
+          "Layered archaeological technology is powerful because different forms of evidence test and correct one another."
+        ],
+        "answer": "D",
+        "explanation": "应依据文中限定作答，正确项没有扩大因果或把局部事实当成全文结论。",
+        "evidence_text": "A layered survey improves archaeology when every observation retains its method, uncertainty, and place in the argument."
+      },
+      {
+        "type": "detail",
+        "question": "What does field investigation contribute after remote imaging?",
+        "options": [
+          "It tests what physical feature produced a visible pattern.",
+          "Wax drawing followed by dyeing, washing, and drying.",
+          "In Milan's Paolo Sarpi district.",
+          "They could wear costumes and sometimes affect a scene."
+        ],
+        "answer": "A",
+        "explanation": "原文证据可唯一定位正确答案，其他选项混入了不同来源中的概念。",
+        "evidence_text": "Field investigation tests whether a line in an image corresponds to soil, stone, water control, or a modern disturbance."
+      },
+      {
+        "type": "word_guess",
+        "question": "Which definition fits `\"corroborate`\" in the stated context?",
+        "options": [
+          "a recurring image or idea",
+          "to support a claim with separate evidence",
+          "formed from different sources",
+          "understood through practice but hard to express fully as rules"
+        ],
+        "answer": "B",
+        "explanation": "正确项概括全文中心，证据句给出作者归纳；其余选项来自其他文章，不能解释本文材料。",
+        "evidence_text": "The word corroborate means to strengthen a claim with independent evidence."
+      },
+      {
+        "type": "inference",
+        "question": "Why should conflicting methods not simply be averaged?",
+        "options": [
+          "The comparison helps unfamiliar spectators follow its movement.",
+          "The image may survive while the physical site still changes or remains at risk.",
+          "Their disagreement may show where the interpretation needs more investigation.",
+          "It may hide the line between documented history and invented completion."
+        ],
+        "answer": "C",
+        "explanation": "正确项与证据中的核心判断一致，其他说法不符合本文讨论范围。",
+        "evidence_text": "when they disagree, the disagreement identifies where more work is needed."
+      },
+      {
+        "type": "inference",
+        "question": "What risk accompanies a large monitoring system?",
+        "options": [
+          "Combining geographic origin with reasons for claimed connections.",
+          "What was recorded directly and what remains uncertain.",
+          "Artifacts require value choices rather than biological healing.",
+          "Important but less measurable threats may receive too little attention."
+        ],
+        "answer": "D",
+        "explanation": "证据句直接支撑正确项；干扰项虽属文化议题，但与本篇论证关系不符。",
+        "evidence_text": "an efficient dashboard may favor measurable conditions over slower social threats such as nearby development."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-curated-culture-l5-04",
+    "source_id": "src-文化-24",
+    "title": "The Museum Laboratory Begins with Diagnosis",
+    "topic": "文化",
+    "difficulty": 5,
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20260402/9501bc677ed54e378de550ee19568eb1/c.html",
+    "source_title": "Giving relics a new breath of life",
+    "source_published_at": "2026-04-02",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "页面可访问并核验正文。采用事实：内蒙古博物馆以X射线荧光识别金属元素；显微和光谱方法分析制作工艺、颜料及有机残留；2025年文物医院修复近300件文物。",
+    "adaptation_note": "题材参考所列新华社英文网公开信息；本站围绕独立中心问题重组事实并原创改写，非媒体原文，非历年真题。",
+    "content": "At the Inner Mongolia Museum, conservators use instruments before deciding how to treat an artifact. X-ray fluorescence can identify the elements in a metal object within a short time. Microscopes reveal structures associated with casting or forging, while other techniques examine pigments, binding substances, and organic remains. The museum restored nearly three hundred objects in 2025.\n\nThe medical language of a “relic hospital” is useful because it places diagnosis before treatment. Two patches of green corrosion may look alike but behave differently. Stable patina can carry historical information, whereas harmful rust may continue damaging bronze. Removing both would make the surface visually consistent while destroying evidence and perhaps failing to stop decay.\n\nThe word prognosis means an informed expectation about how a condition may develop. Conservation needs prognosis because a treatment appropriate for an active chemical process may be unnecessary for stable aging. Instrument readings contribute evidence, but comparison with earlier records and knowledge of the storage environment are equally important.\n\nThe hospital metaphor also has limits. An artifact does not heal or return to a biologically healthy state. Conservators choose which values to protect: structural stability, original material, traces of use, or readability. These goals can conflict, and no machine calculates the ethical balance automatically.\n\nPublic access to the laboratory can improve understanding if it shows decisions rather than only equipment. A visitor should see why a sample was taken, what the graph permits a conservator to infer, and why the team may decide against visible repair. Numbers without reasoning merely replace one mystery with another.\n\nScientific conservation is therefore not technology defeating decay. It is a disciplined conversation among material evidence, predicted risk, historical value, and minimal action. Diagnosis narrows uncertainty; professional judgment remains responsible for the treatment chosen.\n\nA treatment record should preserve rejected options so later conservators can reassess the choice.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What proper role should scientific diagnosis play in museum restoration?",
+        "options": [
+          "Scientific instruments improve restoration when diagnosis informs, rather than replaces, ethical judgment.",
+          "A craft market can sustain skills by linking income with public learning.",
+          "International design exchange depends on local context and dialogue, not object display alone.",
+          "Immersive tourism can renew opera audiences if participation does not erase artistic depth."
+        ],
+        "answer": "A",
+        "explanation": "原文证据可唯一定位正确答案，其他选项混入了不同来源中的概念。",
+        "evidence_text": "Diagnosis narrows uncertainty; professional judgment remains responsible for the treatment chosen."
+      },
+      {
+        "type": "detail",
+        "question": "What can X-ray fluorescence reveal about a metal artifact?",
+        "options": [
+          "Sanxingdui and Jinsha.",
+          "The elements in its material.",
+          "Chinese and Malay influences.",
+          "Thirty-five."
+        ],
+        "answer": "B",
+        "explanation": "正确项概括全文中心，证据句给出作者归纳；其余选项来自其他文章，不能解释本文材料。",
+        "evidence_text": "X-ray fluorescence can identify the elements in a metal object within a short time."
+      },
+      {
+        "type": "word_guess",
+        "question": "What future-oriented judgment does a museum prognosis provide?",
+        "options": [
+          "a practical route into an experience",
+          "closeness to the form being recorded",
+          "an informed expectation about future development of a condition",
+          "a feature suggesting how an object or interface may be used"
+        ],
+        "answer": "C",
+        "explanation": "正确项与证据中的核心判断一致，其他说法不符合本文讨论范围。",
+        "evidence_text": "The word prognosis means an informed expectation about how a condition may develop."
+      },
+      {
+        "type": "inference",
+        "question": "Why should stable patina sometimes remain?",
+        "options": [
+          "Objects placed together do not by themselves prove historical contact.",
+          "Visual appeal does not guarantee measurement accuracy.",
+          "Their disagreement may show where the interpretation needs more investigation.",
+          "It may preserve historical information without actively harming the object."
+        ],
+        "answer": "D",
+        "explanation": "证据句直接支撑正确项；干扰项虽属文化议题，但与本篇论证关系不符。",
+        "evidence_text": "Stable patina can carry historical information, whereas harmful rust may continue damaging bronze."
+      },
+      {
+        "type": "inference",
+        "question": "Why is the hospital metaphor incomplete?",
+        "options": [
+          "Artifacts require value choices rather than biological healing.",
+          "Connect an attractive digital encounter with a realistic next learning step.",
+          "Explain why retaining damage or uncertainty can protect evidence.",
+          "Physical work raises material, legal, and risk questions that an image does not."
+        ],
+        "answer": "A",
+        "explanation": "应依据文中限定作答，正确项没有扩大因果或把局部事实当成全文结论。",
+        "evidence_text": "Conservators choose which values to protect: structural stability, original material, traces of use, or readability."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-curated-culture-l5-05",
+    "source_id": "src-文化-25",
+    "title": "Cave Conservation Is an Environmental Problem",
+    "topic": "文化",
+    "difficulty": 5,
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20250822/bcd665e66d1a43cf91122a71f909956a/c.html",
+    "source_title": "China enhances global cave temple preservation with cutting-edge technology, int'l cooperation",
+    "source_published_at": "2025-08-22",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "页面可访问并核验正文。采用事实：2021年调查记录5986处石窟寺及摩崖造像；论坛汇集10余国专家；保护框架涵盖监测预警、环境控制、灾害管理和修复；数字技术用于分散遗产虚拟复原。",
+    "adaptation_note": "题材参考所列新华社英文网公开信息；本站围绕独立中心问题重组事实并原创改写，非媒体原文，非历年真题。",
+    "content": "Cave temples are carved into landscapes rather than placed inside controlled museum rooms. Water, salt, temperature, living organisms, unstable rock, and visitor activity interact with painted or sculpted surfaces. A 2021 survey recorded 5,986 cave temples and cliff statues in China, showing why conservation cannot depend on occasional repair teams moving from crisis to crisis.\n\nAn integrated strategy links interpretation, monitoring, environmental control, disaster planning, and treatment. Digital platforms can compare change across several sites; laboratories can study mechanics, biology, and materials; three-dimensional records can reconnect fragments virtually. These capacities are most useful when they lead to earlier and more precise decisions.\n\nThe word preemptive describes action taken before an expected problem becomes severe. A moisture trend may justify drainage or ventilation before paint detaches. Yet an early-warning system can produce false alarms, and an intervention made too soon may disturb a stable balance. Thresholds therefore need local evidence rather than one national setting copied everywhere.\n\nInternational cooperation expands the comparison. Specialists working with sandstone, humid caves, or earthquake risk can exchange methods, but a technique successful at one temple may fail where geology and climate differ. Collaboration should transfer questions and testing procedures, not just equipment.\n\nVirtual reconstruction raises a further distinction. Digitally joining dispersed pieces supports research and public access, while physical restoration must consider ownership, material compatibility, and risk. The ability to display a complete image does not grant permission to complete the object itself.\n\nCave protection becomes systematic when teams treat the monument and its surroundings as one changing system. Technology supplies observations; governance ensures maintenance; conservators decide how little action can safely address the risk. The goal is not to freeze stone in time, but to slow loss without erasing the evidence of age and place.\n\nSeasonal baselines matter because one moisture reading can signal different risks over time.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What approach does the author recommend for conserving cave temples?",
+        "options": [
+          "Cross-cultural comparison works when it reveals both common concerns and distinct meanings.",
+          "Cave-temple protection requires site-specific environmental monitoring joined to cautious governance.",
+          "Cultural mixture can create a durable tradition with meanings of its own.",
+          "A sustainable restoration workforce must combine formal education with supervised transfer of practical judgment."
+        ],
+        "answer": "B",
+        "explanation": "正确项概括全文中心，证据句给出作者归纳；其余选项来自其他文章，不能解释本文材料。",
+        "evidence_text": "Cave protection becomes systematic when teams treat the monument and its surroundings as one changing system."
+      },
+      {
+        "type": "detail",
+        "question": "How many cave temples and cliff statues were recorded in the 2021 survey?",
+        "options": [
+          "Fourteen.",
+          "Work that once took nearly two weeks could be done in three days.",
+          "5,986.",
+          "Movement, sound, or an image that changes with the visitor."
+        ],
+        "answer": "C",
+        "explanation": "正确项与证据中的核心判断一致，其他说法不符合本文讨论范围。",
+        "evidence_text": "A 2021 survey recorded 5,986 cave temples and cliff statues in China"
+      },
+      {
+        "type": "word_guess",
+        "question": "What sense of `\"preemptive`\" is intended in the passage?",
+        "options": [
+          "a process in which groups affect one another",
+          "a substitute used for a limited task",
+          "to support a claim with separate evidence",
+          "intended to act before a problem becomes severe"
+        ],
+        "answer": "D",
+        "explanation": "证据句直接支撑正确项；干扰项虽属文化议题，但与本篇论证关系不符。",
+        "evidence_text": "The word preemptive describes action taken before an expected problem becomes severe."
+      },
+      {
+        "type": "inference",
+        "question": "Why should warning thresholds differ among sites?",
+        "options": [
+          "Geology, climate, and stable conditions vary by location.",
+          "It exposes the repetition and correction hidden by a finished performance.",
+          "It may provide evidence about an object's later history.",
+          "It may preserve historical information without actively harming the object."
+        ],
+        "answer": "A",
+        "explanation": "应依据文中限定作答，正确项没有扩大因果或把局部事实当成全文结论。",
+        "evidence_text": "Thresholds therefore need local evidence rather than one national setting copied everywhere."
+      },
+      {
+        "type": "inference",
+        "question": "Why does digital completion not justify physical completion?",
+        "options": [
+          "As legitimate interpretations when they avoid claiming universal meaning.",
+          "Physical work raises material, legal, and risk questions that an image does not.",
+          "Moving from emergency repair toward early detection and prevention.",
+          "It may erase legitimate differences in local cataloguing and interpretation."
+        ],
+        "answer": "B",
+        "explanation": "原文证据可唯一定位正确答案，其他选项混入了不同来源中的概念。",
+        "evidence_text": "The ability to display a complete image does not grant permission to complete the object itself."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-curated-culture-l6-01",
+    "source_id": "src-文化-26",
+    "title": "Who Governs a Digital Heritage Record?",
+    "topic": "文化",
+    "difficulty": 6,
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20250927/f8238b63ab924c6896f2a98ca6097765/c.html",
+    "source_title": "China Focus: Digital technology reshaping cultural heritage protection, sharing",
+    "source_published_at": "2025-09-27",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "页面可访问并核验正文。采用事实：AI用于三星堆碎片和甲骨片匹配；故宫藏品超过195万件并规划长期数据采集；传感平台用于风险预警；数字档案将逐步向公众分享。",
+    "adaptation_note": "题材参考所列新华社英文网公开信息；本站围绕独立中心问题重组事实并原创改写，非媒体原文，非历年真题。",
+    "content": "Artificial intelligence can match broken oracle-bone fragments, digital models can test possible joins among excavated objects, and sensors can warn managers about changing conditions. These applications are often grouped under “heritage digitization,” although they produce very different records. A national museum planning to document a collection of more than 1.95 million items faces not only a technical workload but a long-term governance problem.\n\nFirst, a record needs provenance: information about how, when, and for what purpose it was created. A scan made for structural measurement may not support color research; an image cleaned for public display may conceal marks present in the raw file. If later users cannot distinguish source data from enhancement, apparent precision can weaken rather than strengthen scholarship.\n\nSecond, access has several levels. Public search encourages learning and independent research, while exact locations, security details, or fragile-site measurements may require limits. The word stewardship refers to responsible care on behalf of others and over time. Digital stewardship includes permissions, documentation, migration to new formats, and decisions about who can correct a disputed record.\n\nArtificial intelligence adds another layer of accountability. A proposed match between fragments is a ranked hypothesis, not a restored fact. Researchers need to know which features influenced the result, what comparison set was used, and how rejected possibilities are retained. Otherwise, efficiency can turn uncertainty into an invisible machine decision.\n\nSharing also changes relationships among institutions. A common platform can connect dispersed knowledge, but contributors may use different cataloguing systems or hold different rights. Requiring one vocabulary may improve search while erasing meaningful local distinctions. Interoperability should allow records to communicate without pretending that every institution describes an object in the same way.\n\nFinally, digital archives consume money, energy, and skilled labor after launch. A ten- or twenty-year collection plan must include maintenance beyond the first grant and a method for judging which level of detail is justified. More data is not automatically better care.\n\nDigitization protects heritage when institutions govern the record as carefully as the object. The essential achievement is not a vast image count, but an archive whose origins, changes, uncertainty, permissions, and future responsibilities remain inspectable.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What kind of stewardship does a lasting digital heritage project require?",
+        "options": [
+          "A growing festival needs accessible entry points without losing the distinct meaning of its practices.",
+          "Digital heritage records serve conservation, research, and access differently, so their purpose must be explicit.",
+          "Digital heritage projects need accountable stewardship of data, uncertainty, access, and maintenance.",
+          "Immersive cultural tourism should guide visitors from sensory engagement back to evidence and further inquiry."
+        ],
+        "answer": "C",
+        "explanation": "正确项与证据中的核心判断一致，其他说法不符合本文讨论范围。",
+        "evidence_text": "Digitization protects heritage when institutions govern the record as carefully as the object."
+      },
+      {
+        "type": "detail",
+        "question": "How large is the museum collection mentioned in the passage?",
+        "options": [
+          "Ten museums.",
+          "Rotate it and enlarge its details.",
+          "It tests what physical feature produced a visible pattern.",
+          "More than 1.95 million items."
+        ],
+        "answer": "D",
+        "explanation": "证据句直接支撑正确项；干扰项虽属文化议题，但与本篇论证关系不符。",
+        "evidence_text": "a collection of more than 1.95 million items"
+      },
+      {
+        "type": "word_guess",
+        "question": "What long-term duty is captured by stewardship of heritage records?",
+        "options": [
+          "responsible long-term care on behalf of others",
+          "continued attention combined with active involvement",
+          "deliberate control over the desire to act",
+          "an informed expectation about future development of a condition"
+        ],
+        "answer": "A",
+        "explanation": "应依据文中限定作答，正确项没有扩大因果或把局部事实当成全文结论。",
+        "evidence_text": "The word stewardship refers to responsible care on behalf of others and over time."
+      },
+      {
+        "type": "inference",
+        "question": "Why should AI fragment matches remain hypotheses?",
+        "options": [
+          "To show that surrounding context selects different meanings of the same animal.",
+          "The ranking depends on selected features and comparison data, so alternatives still matter.",
+          "It may reveal differences that simpler methods had hidden.",
+          "Geology, climate, and stable conditions vary by location."
+        ],
+        "answer": "B",
+        "explanation": "原文证据可唯一定位正确答案，其他选项混入了不同来源中的概念。",
+        "evidence_text": "A proposed match between fragments is a ranked hypothesis, not a restored fact."
+      },
+      {
+        "type": "inference",
+        "question": "Why can a single required vocabulary be harmful?",
+        "options": [
+          "Measures tailored to the risks and knowledge of each tradition.",
+          "By durable research use and transparent differences, not launch size alone.",
+          "It may erase legitimate differences in local cataloguing and interpretation.",
+          "They do not show whether opportunities and audiences circulate to smaller or emerging groups."
+        ],
+        "answer": "C",
+        "explanation": "正确项概括全文中心，证据句给出作者归纳；其余选项来自其他文章，不能解释本文材料。",
+        "evidence_text": "Requiring one vocabulary may improve search while erasing meaningful local distinctions."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-curated-culture-l6-02",
+    "source_id": "src-文化-27",
+    "title": "Can a Performing-Arts District Be Planned?",
+    "topic": "文化",
+    "difficulty": 6,
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20260730/3ee0696c956c4da1848db222f449079a/c.html",
+    "source_title": "Feature: Tianqiao revives tradition, builds global stage for performing arts",
+    "source_published_at": "2026-07-30",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "页面可访问并核验正文。采用事实：天桥演艺区约2.07平方公里；2015年演艺中心开放后形成剧场、孵化器和胡同工作室；同时举办国内外音乐剧、杂技和非遗沉浸演出，并开放民俗文献。",
+    "adaptation_note": "题材参考所列新华社英文网公开信息；本站围绕独立中心问题重组事实并原创改写，非媒体原文，非历年真题。",
+    "content": "Tianqiao in Beijing was historically associated with folk performance. A later urban renewal created a performing-arts center, smaller theaters, creative incubators, and studios within a 2.07-square-kilometer area. The district now hosts international musicals, Chinese productions, acrobatics, and heritage-based immersive work, while an archive of folk literature is available to the public.\n\nThe apparent lesson is that cultural concentration creates vitality. A visitor who comes for one musical may discover another stage; writers and performers can meet; venues share an audience and supporting businesses. Yet a cluster is not simply a collection of buildings. If programming, rehearsal space, affordable work rooms, and routes for new artists are absent, proximity produces real-estate value rather than an artistic ecology.\n\nThe word ecosystem is useful because it emphasizes relationships and dependence. Large commercial productions can attract attention and revenue, but experimental companies develop new forms and train future collaborators. Archives and museums preserve memory that creators may reinterpret. Restaurants and transport affect whether audiences remain in the area. No element alone explains the district's success.\n\nPlanning creates an additional tension. A clear brand such as musical theater helps audiences know what to expect, whereas excessive uniformity can narrow the range of work. Heritage performances may be valued as decoration for tourism rather than as arts requiring rehearsal, criticism, and development. International shows can encourage exchange, but local creators need bargaining power and opportunities to become co-producers rather than permanent supporting acts.\n\nEvaluation should therefore follow movement through the system. Do small groups gain audiences after appearing near a major venue? Can young writers progress from a studio reading to a full production? Are folk archives used in new work, and can residents attend without being priced out? Ticket totals cannot answer these distributional questions.\n\nThe physical district also carries historical responsibility. Renewal should make earlier performance communities legible without turning hardship into a nostalgic stage set. Oral histories, surviving street patterns, and access for long-term residents can complicate a polished redevelopment narrative in productive ways.\n\nA performing-arts district can be supported by planning, but not fully manufactured by it. Public investment can create spaces and connections; artistic life depends on repeated risk, criticism, collaboration, and room for projects whose value is not immediately commercial.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What is the real foundation of a successful performing-arts district?",
+        "options": [
+          "A collaborative exhibition should explain the evidence behind cultural connections.",
+          "A digital twin is valuable when its limited function and relationship to the original remain visible.",
+          "Layered archaeological technology is powerful because different forms of evidence test and correct one another.",
+          "A successful arts district depends on relationships and career pathways, not merely concentrated venues."
+        ],
+        "answer": "D",
+        "explanation": "证据句直接支撑正确项；干扰项虽属文化议题，但与本篇论证关系不符。",
+        "evidence_text": "A performing-arts district can be supported by planning, but not fully manufactured by it."
+      },
+      {
+        "type": "detail",
+        "question": "What facilities developed within the Tianqiao cluster?",
+        "options": [
+          "A major arts center, smaller theaters, incubators, and studios.",
+          "Velvet flowers.",
+          "A faint inscription found during a survey.",
+          "The elements in its material."
+        ],
+        "answer": "A",
+        "explanation": "应依据文中限定作答，正确项没有扩大因果或把局部事实当成全文结论。",
+        "evidence_text": "A later urban renewal created a performing-arts center, smaller theaters, creative incubators, and studios within a 2.07-square-kilometer area."
+      },
+      {
+        "type": "word_guess",
+        "question": "Why is ecosystem an apt description of a performing-arts district?",
+        "options": [
+          "an associated idea or feeling beyond literal meaning",
+          "a network whose parts depend on one another",
+          "examining material without cutting into or damaging it",
+          "intended to act before a problem becomes severe"
+        ],
+        "answer": "B",
+        "explanation": "原文证据可唯一定位正确答案，其他选项混入了不同来源中的概念。",
+        "evidence_text": "The word ecosystem is useful because it emphasizes relationships and dependence."
+      },
+      {
+        "type": "inference",
+        "question": "Why can strong cultural branding become restrictive?",
+        "options": [
+          "It can favor public events over slow forms of technical training.",
+          "Related objects may remain hard to find or disagreements may be concealed.",
+          "It may narrow programming and reduce heritage to decoration.",
+          "The ranking depends on selected features and comparison data, so alternatives still matter."
+        ],
+        "answer": "C",
+        "explanation": "正确项概括全文中心，证据句给出作者归纳；其余选项来自其他文章，不能解释本文材料。",
+        "evidence_text": "A clear brand such as musical theater helps audiences know what to expect, whereas excessive uniformity can narrow the range of work."
+      },
+      {
+        "type": "inference",
+        "question": "Why are ticket totals an incomplete measure?",
+        "options": [
+          "Simplifying cultural references until the work becomes generic.",
+          "Use participation selectively while preserving space for uninterrupted technique.",
+          "Giving host-community artists and scholars meaningful opportunities to respond.",
+          "They do not show whether opportunities and audiences circulate to smaller or emerging groups."
+        ],
+        "answer": "D",
+        "explanation": "正确项与证据中的核心判断一致，其他说法不符合本文讨论范围。",
+        "evidence_text": "Ticket totals cannot answer these distributional questions."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-curated-culture-l6-03",
+    "source_id": "src-文化-28",
+    "title": "Translating Dunhuang Without Freezing It",
+    "topic": "文化",
+    "difficulty": 6,
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20260629/776403ed763a44ffa5eb328ba1dcc5d3/c.html",
+    "source_title": "Cultural exchange event on Dunhuang heritage held in Ottawa",
+    "source_published_at": "2026-06-29",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "页面可访问并核验正文。采用事实：渥太华活动以敦煌文化为主题；甘肃艺术团表演取材敦煌壁画的音乐舞蹈；现场另有石窟修复展示和VR沉浸展。",
+    "adaptation_note": "题材参考所列新华社英文网公开信息；本站围绕独立中心问题重组事实并原创改写，非媒体原文，非历年真题。",
+    "content": "At a cultural exchange event in Ottawa, artists presented music and dance inspired by Dunhuang murals. The program also included a display about cave restoration and an immersive virtual-reality experience. Together, these forms offered performance, conservation, and digital reconstruction as different routes into a heritage shaped by exchanges along the ancient Silk Road.\n\nMoving Dunhuang culture across languages and media involves more than transporting content. A painted musician does not supply a complete score, and a still dancing figure cannot specify every transition between poses. Contemporary artists must interpret missing information. Their work can be historically informed without pretending to reproduce an ancient performance exactly.\n\nThe word translation therefore applies beyond language. It describes the movement of meaning between mural and body, cave and screen, specialist research and public event, or Chinese history and a Canadian audience. Every translation highlights certain features and leaves others quieter. Transparency about those choices makes interpretation more credible.\n\nThe restoration display introduces a useful counterweight to spectacle. Murals are not simply images available for endless reuse; they are material surfaces affected by humidity, salt, light, and time. A performance can evoke movement vividly, while conservation explains why the source cannot be treated as an unlimited visual resource. Putting the two together encourages admiration joined to responsibility.\n\nVirtual reality poses a different challenge. It can restore spatial relationships that a flat photograph loses and offer access to people unable to visit the caves. Yet seamless digital completion may remove damaged areas, uncertain color, or evidence of earlier repair. Designers should mark reconstruction and allow users to compare the model with the surviving record.\n\nInternational exchange also requires reciprocity. Success is not demonstrated only by a foreign audience receiving a Chinese presentation. Organizers can invite local artists and scholars to respond, compare conservation problems, and identify misunderstandings. Dialogue begins when the visiting culture is not merely displayed but becomes part of a question shared with the host community.\n\nThe event's most productive claim is thus modest: Dunhuang offers material for present connection because it already bears evidence of historical contact. Honoring that history means neither fixing the heritage in an untouched past nor using it as decoration detached from evidence. Responsible translation keeps invention, source, and uncertainty in view at the same time.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "How should Dunhuang be presented across cultures without being frozen into one meaning?",
+        "options": [
+          "Cross-cultural presentation of Dunhuang should disclose interpretation while connecting performance, conservation, and dialogue.",
+          "Young interest becomes culturally valuable when easy exposure leads toward deeper participation.",
+          "Minimum intervention protects historical evidence by limiting unnecessary restoration.",
+          "Scientific instruments improve restoration when diagnosis informs, rather than replaces, ethical judgment."
+        ],
+        "answer": "A",
+        "explanation": "应依据文中限定作答，正确项没有扩大因果或把局部事实当成全文结论。",
+        "evidence_text": "Responsible translation keeps invention, source, and uncertainty in view at the same time."
+      },
+      {
+        "type": "detail",
+        "question": "Which three forms appeared in the Ottawa program?",
+        "options": [
+          "It is the sixth animal.",
+          "Mural-inspired performance, a restoration display, and virtual reality.",
+          "Salts or corrosion on an artifact.",
+          "5,986."
+        ],
+        "answer": "B",
+        "explanation": "原文证据可唯一定位正确答案，其他选项混入了不同来源中的概念。",
+        "evidence_text": "The program also included a display about cave restoration and an immersive virtual-reality experience."
+      },
+      {
+        "type": "word_guess",
+        "question": "Between murals, bodies and screens, what does translation involve?",
+        "options": [
+          "supporting the conditions that let a practice continue",
+          "structured descriptive information about an item",
+          "the movement of meaning between media, contexts, or languages",
+          "responsible long-term care on behalf of others"
+        ],
+        "answer": "C",
+        "explanation": "正确项概括全文中心，证据句给出作者归纳；其余选项来自其他文章，不能解释本文材料。",
+        "evidence_text": "It describes the movement of meaning between mural and body, cave and screen, specialist research and public event, or Chinese history and a Canadian audience."
+      },
+      {
+        "type": "inference",
+        "question": "Why can mural-inspired dance not be called an exact ancient reconstruction?",
+        "options": [
+          "It connected the exhibits with ordinary urban life instead of isolating them.",
+          "Complex or slow elements may be cut to maintain quick participation.",
+          "It may narrow programming and reduce heritage to decoration.",
+          "A still image leaves music and movement transitions unspecified."
+        ],
+        "answer": "D",
+        "explanation": "正确项与证据中的核心判断一致，其他说法不符合本文讨论范围。",
+        "evidence_text": "A painted musician does not supply a complete score, and a still dancing figure cannot specify every transition between poses."
+      },
+      {
+        "type": "inference",
+        "question": "What would make the exchange more reciprocal?",
+        "options": [
+          "Giving host-community artists and scholars meaningful opportunities to respond.",
+          "An account of how practices changed and became locally meaningful.",
+          "Documented reasoning and restraint as well as visible results.",
+          "A recording cannot transmit every spatial quality of the live venue."
+        ],
+        "answer": "A",
+        "explanation": "证据句直接支撑正确项；干扰项虽属文化议题，但与本篇论证关系不符。",
+        "evidence_text": "Organizers can invite local artists and scholars to respond, compare conservation problems, and identify misunderstandings."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-curated-culture-l6-04",
+    "source_id": "src-文化-29",
+    "title": "The Venue Is Part of the Performance",
+    "topic": "文化",
+    "difficulty": 6,
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20260610/933f5569e42d47eeaca10cf48dbe30fb/c.html",
+    "source_title": "Prince Kung's Palace Museum launches intangible cultural heritage performance season",
+    "source_published_at": "2026-06-10",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "页面可访问，属于图片报道，仅采用图注事实：2026年恭王府第19届非遗演出季在大戏楼举行；安排3场昆曲和3场古琴音乐会；活动持续至6月14日。",
+    "adaptation_note": "题材参考所列新华社英文网公开信息；本站围绕独立中心问题重组事实并原创改写，非媒体原文，非历年真题。",
+    "content": "Prince Kung's Palace Museum presented a short heritage season in June 2026. Three Kunqu productions were paired with three guqin recitals. The works were staged in the museum's Grand Theatre within an old architectural setting. This arrangement places performance inside a site that already carries historical atmosphere, rather than inside a neutral modern hall.\n\nSite and art can reinforce one another. Courtyards, materials, distance, and the audience's route into a theater shape attention before the first sound. A guqin concert may invite listeners to notice quiet resonance differently in an intimate historic space. Kunqu costume and movement can enter a visual conversation with surrounding architecture.\n\nThe word resonance has both an acoustic and a cultural sense: sound continuing in a space, and an idea gaining meaning through association. Curators may welcome both, but they should not confuse atmosphere with authenticity. A historic building does not automatically recreate the social conditions in which a work was once performed.\n\nThe site also imposes obligations. Heritage buildings may restrict lighting, equipment, audience size, or physical movement. Sound amplification and stage construction must respond to conservation limits. These constraints can inspire careful artistic choices, although publicity often presents them only as charming background.\n\nInterpretation should explain the relationship rather than merely photograph it. Was the repertory chosen for documented links to the palace, for compatibility with the room, or for a broader conversation about classical arts? If the connection is contemporary curatorial design, saying so is more honest than suggesting an unbroken local tradition.\n\nAccess complicates the intimacy. A small venue may offer exceptional listening but few seats. Recording or streaming could broaden reach, yet microphones and cameras create another version of the event. The digital audience should know what spatial qualities cannot be carried through a screen.\n\nA heritage venue succeeds when it changes how a work is heard without claiming to settle its history. Architecture, repertory, performers, and audience form a temporary encounter. The value lies in a carefully explained relationship, not in the assumption that old art becomes more authentic whenever it is placed in an old room.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "When can a historic venue deepen, rather than merely decorate, a performance?",
+        "options": [
+          "The meaning of a cultural symbol depends on inherited associations and its present setting.",
+          "Historic venues can deepen performance when their artistic and conservation relationships are made explicit.",
+          "Heritage technology is most reliable when measurement remains tied to cautious interpretation and responsibility.",
+          "Cave-temple protection requires site-specific environmental monitoring joined to cautious governance."
+        ],
+        "answer": "B",
+        "explanation": "原文证据可唯一定位正确答案，其他选项混入了不同来源中的概念。",
+        "evidence_text": "The value lies in a carefully explained relationship, not in the assumption that old art becomes more authentic whenever it is placed in an old room."
+      },
+      {
+        "type": "detail",
+        "question": "What was the balance of the short performance season?",
+        "options": [
+          "Building wooden arch bridges.",
+          "74,651 records.",
+          "Three Kunqu shows and three guqin concerts.",
+          "More than 1.95 million items."
+        ],
+        "answer": "C",
+        "explanation": "正确项概括全文中心，证据句给出作者归纳；其余选项来自其他文章，不能解释本文材料。",
+        "evidence_text": "Three Kunqu productions were paired with three guqin recitals."
+      },
+      {
+        "type": "word_guess",
+        "question": "How should readers understand `\"resonance`\" here?",
+        "options": [
+          "adapting an idea to work meaningfully in a specific place",
+          "creating in response to the moment within a performance",
+          "a network whose parts depend on one another",
+          "continued sound or meaning strengthened by association"
+        ],
+        "answer": "D",
+        "explanation": "正确项与证据中的核心判断一致，其他说法不符合本文讨论范围。",
+        "evidence_text": "The word resonance has both an acoustic and a cultural sense"
+      },
+      {
+        "type": "inference",
+        "question": "Why does a historic room not guarantee authenticity?",
+        "options": [
+          "The original social conditions of performance are not recreated by architecture alone.",
+          "It overlooks the history and rules created by the combination itself.",
+          "Some material judgments develop only through guided practical experience.",
+          "A still image leaves music and movement transitions unspecified."
+        ],
+        "answer": "A",
+        "explanation": "证据句直接支撑正确项；干扰项虽属文化议题，但与本篇论证关系不符。",
+        "evidence_text": "A historic building does not automatically recreate the social conditions in which a work was once performed."
+      },
+      {
+        "type": "inference",
+        "question": "Why should streamed audiences receive an explanation?",
+        "options": [
+          "Evaluate each digital product according to its stated purpose.",
+          "A recording cannot transmit every spatial quality of the live venue.",
+          "Clear learning can matter more than the quantity of dramatic reactions.",
+          "Attendance does not show learning quality, performer conditions, or continued engagement."
+        ],
+        "answer": "B",
+        "explanation": "应依据文中限定作答，正确项没有扩大因果或把局部事实当成全文结论。",
+        "evidence_text": "The digital audience should know what spatial qualities cannot be carried through a screen."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-curated-culture-l6-05",
+    "source_id": "src-文化-30",
+    "title": "Six Performances and the Problem of a Season",
+    "topic": "文化",
+    "difficulty": 6,
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20260610/9d2274ca26ca4deb930c0f1be983cefd/c.html",
+    "source_title": "Prince Kung's Palace Museum Intangible Cultural Heritage Performance Season kicks off in Beijing",
+    "source_published_at": "2026-06-10",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "页面可访问并核验短正文。采用事实：同一演出季于2026-06-10报道；节目为3场昆曲、3场古琴；场地为恭王府大戏楼；正文确认活动截至6月14日。",
+    "adaptation_note": "题材参考所列新华社英文网公开信息；本站围绕独立中心问题重组事实并原创改写，非媒体原文，非历年真题。",
+    "content": "A heritage performance season at Prince Kung's Palace Museum ran for only several days. The schedule contained six appearances, evenly split between Kunqu and guqin. A concise program can create a strong identity. It can also reveal a difficult curatorial question—what does a “season” promise when time, seats, and art forms are sharply limited?\n\nSelection is unavoidable. Kunqu and guqin provide contrasting relations between text, voice, movement, and instrumental sound, allowing audiences to encounter more than one kind of classical practice. Yet the pairing should not stand as a summary of intangible heritage as a whole. Many traditions, regions, and modes of participation remain outside the program.\n\nThe word representative can mean chosen to illustrate a wider field, but it does not mean statistically complete. Publicity often slides between these meanings. A program becomes more trustworthy when it states its curatorial lens—for example, attention to performance suited to an intimate theater—rather than implying that six events display national diversity.\n\nScheduling influences interpretation as well. Repetition across three performances can let different casts, pieces, or audiences produce meaningful variation. If every event is identical, the extra dates mainly expand capacity. Program notes should tell audiences whether they are seeing a series, alternatives, or repeated access to one production.\n\nThe short duration creates a legacy problem. A temporary season may generate excellent performances yet leave little for learners who cannot attend. Workshops, annotated recordings, interviews with performers, or links to future venues can extend educational value. Documentation must still respect artists' rights and the difference between a live event and an archive.\n\nEvaluation should examine more than sold seats. Did first-time listeners gain enough orientation to recognize artistic choices? Were experienced audiences offered depth? Did performers receive rehearsal conditions appropriate to heritage work? Did the museum create a route for interest to continue after June 14?\n\nA small season need not apologize for being selective. Its responsibility is to make selection legible, provide sufficient context, and avoid turning scarcity into a claim of completeness. Curating well means showing why these performances belong together and where audiences can look next.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What responsibility belongs to a short, selective heritage season?",
+        "options": [
+          "Heritage recognition must lead to protection designed for the distinct needs of each practice.",
+          "Digital reunification improves comparison but must preserve differences in material, custody, and interpretation.",
+          "A short heritage season should disclose its selective lens and build routes for learning beyond attendance.",
+          "Digital heritage projects need accountable stewardship of data, uncertainty, access, and maintenance."
+        ],
+        "answer": "C",
+        "explanation": "正确项概括全文中心，证据句给出作者归纳；其余选项来自其他文章，不能解释本文材料。",
+        "evidence_text": "Its responsibility is to make selection legible, provide sufficient context, and avoid turning scarcity into a claim of completeness."
+      },
+      {
+        "type": "detail",
+        "question": "How many events did the season offer?",
+        "options": [
+          "In Milan's Paolo Sarpi district.",
+          "They could wear costumes and sometimes affect a scene.",
+          "A major arts center, smaller theaters, incubators, and studios.",
+          "Six events in total."
+        ],
+        "answer": "D",
+        "explanation": "正确项与证据中的核心判断一致，其他说法不符合本文讨论范围。",
+        "evidence_text": "The schedule contained six appearances, evenly split between Kunqu and guqin."
+      },
+      {
+        "type": "word_guess",
+        "question": "Which definition fits `\"representative`\" in the stated context?",
+        "options": [
+          "selected to illustrate a field without being complete",
+          "formed from different sources",
+          "understood through practice but hard to express fully as rules",
+          "the movement of meaning between media, contexts, or languages"
+        ],
+        "answer": "A",
+        "explanation": "证据句直接支撑正确项；干扰项虽属文化议题，但与本篇论证关系不符。",
+        "evidence_text": "The word representative can mean chosen to illustrate a wider field, but it does not mean statistically complete."
+      },
+      {
+        "type": "inference",
+        "question": "Why should repeated dates be explained?",
+        "options": [
+          "The image may survive while the physical site still changes or remains at risk.",
+          "They may represent varied programs or merely additional access to the same one.",
+          "It may hide the line between documented history and invented completion.",
+          "The original social conditions of performance are not recreated by architecture alone."
+        ],
+        "answer": "B",
+        "explanation": "应依据文中限定作答，正确项没有扩大因果或把局部事实当成全文结论。",
+        "evidence_text": "Program notes should tell audiences whether they are seeing a series, alternatives, or repeated access to one production."
+      },
+      {
+        "type": "inference",
+        "question": "Why are sold seats an insufficient success measure?",
+        "options": [
+          "What was recorded directly and what remains uncertain.",
+          "Important but less measurable threats may receive too little attention.",
+          "Attendance does not show learning quality, performer conditions, or continued engagement.",
+          "It should offer a route toward understanding the maker and the practice."
+        ],
+        "answer": "C",
+        "explanation": "原文证据可唯一定位正确答案，其他选项混入了不同来源中的概念。",
+        "evidence_text": "Evaluation should examine more than sold seats."
+      }
+    ]
+  }
+]

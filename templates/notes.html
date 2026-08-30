@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}学习笔记与 AI 对话 · 四六级学习台{% endblock %}
+{% block content %}
+<div class="page-shell notes-page" id="notes-app">
+    <header class="page-heading"><div><p class="eyebrow">NOTES & COMPANION / 笔记</p><h1>把问题聊清楚，再把结论留下来</h1><p>笔记原文始终由你掌控。AI 可以检索、解释并生成追加草稿，但确认之前不会修改任何内容。</p></div><a class="btn btn-secondary" href="/learn">返回学习总览</a></header>
+    <button id="note-manager-open" class="note-manager-drawer-trigger" type="button" aria-controls="note-manager-drawer" aria-expanded="false"><span>笔记管理</span><strong id="note-drawer-count">-- 篇</strong></button>
+    <div class="notes-studio">
+        <aside class="notes-index" aria-label="笔记与对话索引">
+            <section><div class="section-heading"><div><p class="eyebrow">84 DAYS</p><h2>笔记日历</h2></div></div><div id="note-calendar" class="chart chart--compact" role="img" aria-label="近84天笔记记录"></div></section>
+            <section><div class="section-heading"><div><p class="eyebrow">CONVERSATIONS</p><h2>最近对话</h2></div></div><div id="notes-conversations" class="conversation-index"><p class="muted">还没有 AI 对话。</p></div></section>
+        </aside>
+        <main class="notes-main">
+            <section class="note-editor"><div class="section-heading"><div><p class="eyebrow">YOUR NOTE</p><h2 id="note-date-title">今日笔记</h2></div><button class="btn btn-secondary" type="button" onclick="generateAISummary()">生成今日总结</button></div><label class="sr-only" for="note-content">笔记内容</label><textarea id="note-content" class="work-textarea work-textarea--large" placeholder="记录今天的学习收获、易错点和下一步…"></textarea><div class="editor-actions"><button class="btn btn-primary" type="button" onclick="saveNote()">保存笔记</button><span id="note-save-state" class="field-help" role="status">内容保存在本机。</span></div></section>
+            <section class="notes-ai-chat" id="assistant" aria-labelledby="notes-ai-title"><div class="section-heading"><div><p class="eyebrow">DEEP CONVERSATION</p><h2 id="notes-ai-title">和学习助理深入聊一聊</h2></div><button id="notes-new-chat" class="btn btn-secondary" type="button">开始新对话</button></div><div class="notes-search-row"><label class="sr-only" for="notes-ai-search">搜索历史笔记</label><input id="notes-ai-search" type="search" placeholder="搜索笔记，例如：定语从句、作文开头…"><button id="notes-search-send" class="btn btn-secondary" type="button">让 AI 查找</button></div><div id="notes-ai-chat" class="assistant-thread" aria-live="polite"><div class="assistant-empty"><strong>AI 会引用笔记日期和原文片段</strong><p>你可以追问知识点，也可以说“把上面的结论记进笔记”。</p></div></div><form id="notes-chat-form" class="assistant-composer"><label class="sr-only" for="notes-chat-input">向学习助理提问</label><textarea id="notes-chat-input" rows="3" maxlength="1600" placeholder="输入英语学习问题…"></textarea><button class="btn btn-primary" type="submit">发送</button></form></section>
+        </main>
+        <aside class="notes-insight">
+            <section class="note-manager" id="note-manager-drawer" aria-labelledby="note-manager-title" tabindex="-1">
+                <div id="note-manager-handle" class="note-manager-drawer__handle" aria-hidden="true"><span></span></div>
+                <div class="section-heading"><div><p class="eyebrow">NOTE ARCHIVE</p><h2 id="note-manager-title">笔记管理</h2></div><div class="note-manager-heading-actions"><span id="note-history-count" class="note-history-count">-- 篇</span><button id="note-manager-close" class="icon-button note-manager-drawer__close" type="button" aria-label="关闭笔记管理">×</button></div></div>
+                <label class="sr-only" for="note-history-search">搜索历史笔记</label><input id="note-history-search" class="note-history-search" type="search" placeholder="搜索日期或笔记内容…"><div id="note-history-list" class="note-history-list" aria-live="polite"><p class="muted">正在读取历史笔记…</p></div>
+            </section>
+            <section><p class="eyebrow">TODAY'S REVIEW</p><h2>今日 AI 总结</h2><div id="ai-summary" class="ai-summary" aria-live="polite"><p class="muted">生成后会按概览、关联、延伸和薄弱提醒呈现。</p></div></section>
+            <section id="notes-ai-memories"><div class="section-heading"><div><p class="eyebrow">AI MEMORY</p><h2>AI 记住的重要信息</h2></div><button id="memory-clear" class="text-button" type="button">清空</button></div><p class="memory-rule">学习事实来自本站记录；对话信息只有经过你确认才会保存。内容不可编辑，但可以删除。</p><div id="memory-list" class="memory-list"><p class="muted">正在读取记忆…</p></div></section>
+        </aside>
+    </div>
+    <button id="note-manager-backdrop" class="note-manager-backdrop" type="button" aria-label="关闭笔记管理" hidden></button>
+    <div id="note-manager-modal" class="modal-overlay note-manager-modal" hidden>
+        <div class="modal-card note-modal-card" role="dialog" aria-modal="true" aria-labelledby="note-modal-title">
+            <div class="modal-header"><div><p class="eyebrow">NOTE PREVIEW</p><h2 id="note-modal-title">笔记预览</h2></div><button id="note-modal-close" type="button" class="icon-button" aria-label="关闭笔记预览">×</button></div>
+            <div id="note-modal-state" class="note-modal-state" role="status"></div>
+            <article id="note-modal-preview" class="note-modal-preview"></article>
+            <label class="sr-only" for="note-modal-editor">编辑笔记正文</label><textarea id="note-modal-editor" class="work-textarea note-modal-editor" hidden></textarea>
+            <section id="note-modal-summary-wrap" class="note-modal-summary" hidden><h3>当日 AI 总结</h3><pre id="note-modal-summary"></pre></section>
+            <div class="note-modal-actions"><button id="note-modal-delete" class="btn btn-danger" type="button">删除笔记</button><div><button id="note-modal-edit" class="btn btn-secondary" type="button">编辑正文</button><button id="note-modal-save" class="btn btn-primary" type="button" hidden>保存修改</button></div></div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block scripts %}<script src="{{ asset('js/notes.js') }}"></script>{% endblock %}

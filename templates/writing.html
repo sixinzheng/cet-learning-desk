@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %}写作批改 · 四六级学习台{% endblock %}
+{% block content %}
+<div class="focus-shell writing-workbench" id="writing-app">
+    <aside class="focus-context writing-editor">
+        <div class="practice-context-bar practice-context-bar--stacked">
+            <div><p class="eyebrow">WRITING / 写作</p><h1>作文批改</h1><p>先完成一篇完整作文，再查看内容、结构、词汇、语法和连贯性反馈。</p></div>
+            <span class="difficulty-chip" data-difficulty-chip>当前难度：…</span>
+        </div>
+        <div class="writing-standard-row"><div><label class="field-label" for="writing-level">训练标准</label><select id="writing-level"><option value="cet4">四级写作</option><option value="cet6">六级写作</option></select></div><div class="writing-word-target"><span>建议字数</span><strong id="writing-target">120–180 词</strong></div></div>
+        <section class="writing-ocr" aria-labelledby="writing-ocr-title">
+            <div class="writing-ocr__heading">
+                <div><p class="task-kicker">IMAGE TO TEXT / 图片识别</p><h2 id="writing-ocr-title">把纸面作文转成可核对文字</h2></div>
+                <span>一次 1 张 · 最大 6MB</span>
+            </div>
+            <div class="writing-ocr__actions">
+                <label class="btn btn-secondary" for="essay-camera">拍照识别</label>
+                <input id="essay-camera" class="visually-hidden" type="file" accept="image/jpeg,image/png,image/webp" capture="environment">
+                <label class="btn btn-secondary" for="essay-image">从相册上传</label>
+                <input id="essay-image" class="visually-hidden" type="file" accept="image/jpeg,image/png,image/webp">
+            </div>
+            <p class="field-help">图片会临时发送给 DeepSeek 视觉模型，本站不保存原图。识别后必须由你核对，确认文字无误再提交批改。</p>
+            <div id="writing-ocr-state" class="writing-ocr__state" role="status" hidden></div>
+        </section>
+        <label class="field-label" for="essay-input">作文正文</label>
+        <textarea id="essay-input" class="work-textarea writing-textarea" placeholder="在此输入完整英语作文…" aria-describedby="writing-count writing-save-state"></textarea>
+        <div class="writing-editor-state"><span id="writing-count">0 词</span><span id="writing-save-state" role="status">尚未输入</span></div>
+        <p class="field-help">作文评分只接收你已经核对的文字；图片识别成功本身不会计入一次写作训练。</p>
+        <div class="writing-submit-bar"><button id="writing-submit" class="btn btn-primary btn-block" type="button">提交批改并计入段位</button></div>
+        <a class="text-link" href="/learn">返回学习总览</a>
+    </aside>
+    <main class="focus-stage writing-result-stage">
+        <div id="essay-result" class="empty-state" aria-live="polite"><h2>等待作文</h2><p>提交后，这里会呈现总分、五项分数、错误纠正、表达亮点与总体建议。只有成功批改的成绩才会计入段位。</p></div>
+    </main>
+    <aside class="focus-insight">
+        <h2>提交前检查</h2>
+        <ol class="method-list"><li>是否完整回应题目要求。</li><li>段落是否有明确主题句。</li><li>主谓一致、时态和拼写是否检查。</li></ol>
+        <div class="privacy-note"><strong>失败不会计分</strong><p>AI 未配置或服务不可用时，作文不会生成虚假成绩，也不会进入段位。</p></div>
+        <a class="text-link" href="/notes">记录写作模板</a>
+    </aside>
+</div>
+{% endblock %}
+{% block scripts %}<script src="{{ asset('js/writing.js') }}"></script>{% endblock %}

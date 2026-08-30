@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% block title %}段位档案 · 四六级学习台{% endblock %}
+{% block content %}
+<div class="page-shell" id="growth-app">
+    <header class="page-heading"><div><p class="eyebrow">RANK ARCHIVE / 段位</p><h1>把每一次练习，连成一条上升曲线</h1><p>这里记录段位、能力结构、复习健康与学习节奏。数据不足时只显示事实，不制造虚假趋势。</p></div><button id="growth-refresh" class="btn btn-secondary" type="button">重新计算段位</button></header>
+    <div data-region-status class="region-state region-state--loading">正在整理本地学习记录…</div>
+
+    <section id="rank" class="rank-ledger rank-archive section-block" aria-labelledby="rank-title">
+        <div class="rank-ledger__identity">
+            <span class="rank-seal" id="g-rank">Lv.--</span><p class="eyebrow">CURRENT RANK</p>
+            <h2 id="rank-title"><span id="g-name">读取中</span></h2>
+            <figure class="rank-legacy-figure" id="rank-legacy-figure"><img id="g-rank-portrait" class="rank-portrait-image rank-portrait-image--growth" src="{{ asset('images/ranks/rank-01-tongsheng.png') }}" alt="童生段位人物形象" width="1122" height="1402" decoding="async"></figure>
+            <div class="rank-identity-metrics"><span>综合分 <strong id="g-score">--</strong></span><span>可信度 <strong id="g-confidence">--</strong>%</span></div>
+            <a id="g-diagnostic" class="rank-diagnostic" href="/diagnostic" hidden>证据还少，用 12–15 分钟完成可选诊断</a>
+        </div>
+        <div class="rank-ledger__progress rank-scroll">
+            <div class="section-heading"><div><p class="eyebrow">TEN-RANK ARCHIVE / 十级长卷</p><h3>从童生到状元，每一级都有证据</h3></div><strong id="g-gap">-- 分</strong></div>
+            <div class="rank-next-progress"><span>距离 <b id="g-next">下一段位</b></span><div class="progress-track" aria-label="段位进度"><span id="g-progress"></span></div></div>
+            <div id="g-ladder" class="rank-ladder" role="listbox" aria-label="科举段位晋升路线">正在读取段位路线…</div>
+            <div id="g-rank-tooltip" class="rank-tooltip" role="tooltip" hidden></div>
+            <article id="g-rank-dossier" class="rank-dossier" aria-live="polite" aria-labelledby="g-selected-name">
+                <button id="g-rank-dossier-close" class="rank-dossier__close" type="button" aria-label="关闭段位档案">关闭</button>
+                <figure><img id="g-selected-portrait" src="{{ asset('images/ranks/rank-01-tongsheng.png') }}" alt="" width="1122" height="1402" decoding="async"></figure>
+                <div class="rank-dossier__copy">
+                    <div class="rank-dossier__heading"><div><p id="g-selected-kicker" class="eyebrow">RANK DOSSIER</p><h4 id="g-selected-name">段位档案</h4></div><span id="g-selected-state" class="rank-state-badge">读取中</span></div>
+                    <strong id="g-selected-positioning" class="rank-positioning">正在整理段位定位…</strong>
+                    <p id="g-selected-summary"></p>
+                    <p id="g-selected-capability" class="rank-capability"></p>
+                    <dl class="rank-dossier__facts"><div><dt>进入分数</dt><dd id="g-selected-score">--</dd></div><div><dt>当前差距</dt><dd id="g-selected-gap">--</dd></div></dl>
+                    <div id="g-thresholds" class="threshold-list" aria-label="所选段位词频门槛"></div>
+                </div>
+            </article>
+        </div>
+        <div class="rank-ledger__advice">
+            <p class="eyebrow">EVIDENCE GAP / 证据差距</p><h3 id="g-selected-advice-title">达成下一级</h3>
+            <div id="g-selected-conditions" class="rank-condition-list"><p>正在核对段位门槛…</p></div>
+            <div class="rank-advice-divider"><span>当前优先行动</span></div>
+            <div id="g-suggestions" class="advice-list"><p>正在分析最值得投入的练习…</p></div>
+        </div>
+    </section>
+
+    <section class="capability-verdict section-block" aria-labelledby="capability-title">
+        <div><p class="eyebrow">WHAT YOU CAN DO / 现实能力结论</p><h2 id="capability-title">目前的英语，已经能帮你做什么</h2></div>
+        <blockquote id="g-capability">正在寻找最有证据支持的现实使用场景……</blockquote>
+        <p id="g-capability-evidence" class="muted">结论只使用本站可核验记录，不等同于任何官方语言等级。</p>
+    </section>
+
+    <section id="summary" class="metric-ledger metric-ledger--five section-block" aria-label="累计成果">
+        <article><span>历史最高段位</span><strong id="g-historical-rank">--</strong><small>永久保留</small></article><article><span>专项证据</span><strong id="g-practice">--</strong><small>已核验整轮记录</small></article><article><span>累计学习时长</span><strong id="g-hours">--</strong><small>旧记录继续保留</small></article><article><span>近28天有效投入</span><strong id="g-recent-minutes">--</strong><small>每日最多计 120 分钟</small></article><article><span>连续学习</span><strong id="g-streak">--</strong><small>当前连续天数</small></article>
+    </section>
+
+    <section class="growth-grid section-block">
+        <article class="data-panel data-panel--full radar-ledger"><div class="section-heading"><div><p class="eyebrow">THREE VIEWS / 能力结构</p><h2>三种视角，看清你的能力结构</h2></div><small>表现分、专项练习与词库掌握，三个角度看同一个人</small></div><div class="radar-triptych"><figure><figcaption><strong>能力表现</strong><span>六维 V3 综合账本</span></figcaption><div id="g-radar-performance" class="chart radar-chart" role="img" aria-label="六维能力表现雷达图"></div><p id="g-radar-performance-text" class="chart-summary"></p></figure><figure><figcaption><strong>专项练习表现</strong><span>各专项整轮平均分</span></figcaption><div id="g-radar-practice" class="chart radar-chart" role="img" aria-label="专项练习表现雷达图"></div><p id="g-radar-practice-text" class="chart-summary"></p></figure><figure><figcaption><strong>词库掌握</strong><span>各词频层级的掌握率</span></figcaption><div id="g-radar-mastery" class="chart radar-chart" role="img" aria-label="词库掌握雷达图"></div><p id="g-radar-mastery-text" class="chart-summary"></p></figure></div><div id="g-ability-text" class="sr-only"></div></article>
+        <article class="data-panel data-panel--full achievements-ledger">
+            <div class="section-heading"><div><p class="eyebrow">ALL-TIME TOTALS / 累计成果</p><h2>在这台学习台，你一共完成了什么</h2></div><small>不同单位分开计算，不用一把尺子比较</small></div>
+            <section class="achievement-chart-block"><h3>词汇成果</h3><div id="g-achievements" class="chart chart--achievements" role="img" aria-label="本站累计词量成果条形图"></div><div id="g-achievements-text" class="chart-summary"></div></section>
+            <section class="achievement-chart-block"><h3>专项训练</h3><div id="g-achievements-freq" class="chart chart--achievements" role="img" aria-label="阅读、听力、写作、语法和笔记累计成果条形图"></div><div id="g-achievements-freq-text" class="chart-summary"></div></section>
+            <section class="achievement-rhythm"><div><p class="eyebrow">LEARNING RHYTHM</p><h3>学习节奏</h3></div><p>活跃天数与复习次数分别使用自己的刻度，条形长度不能跨图比较。</p><div class="achievement-rhythm__grid"><figure><figcaption><strong>活跃天数</strong><span id="g-active-days-value">-- 天</span></figcaption><div id="g-achievements-active" class="chart chart--rhythm" role="img" aria-label="累计活跃天数独立刻度条形图"></div></figure><figure><figcaption><strong>复习次数</strong><span id="g-review-count-value">-- 次</span></figcaption><div id="g-achievements-review" class="chart chart--rhythm" role="img" aria-label="累计复习次数独立刻度条形图"></div></figure></div><div id="g-achievements-rhythm-text" class="chart-summary"></div></section>
+        </article>
+        <article class="data-panel data-panel--full"><div class="section-heading"><div><p class="eyebrow">CONTRIBUTION</p><h2>综合分从哪里来</h2></div><small>表现 × 可靠度 × 权重</small></div><div id="g-contribution" class="chart chart--contribution" role="img" aria-label="六维综合分贡献条形图"></div><div id="g-contribution-text" class="chart-summary"></div></article>
+        <details class="data-panel data-panel--full score-ledger-panel" id="score-ledger"><summary class="section-heading"><div><p class="eyebrow">SCORE LEDGER</p><h2>六维证据账单</h2></div><small>展开查看可反算明细</small></summary><div id="g-score-ledger" class="score-ledger" aria-label="六维证据与计分明细"></div><p class="ledger-formula">计分维度贡献 = 表现分 × 证据可靠度 × 权重。V3 只使用词汇、阅读、听力、写作、记忆保持与有效投入；参考锚点不是对真实 CET 成绩的直接预测。</p></details>
+        <article class="data-panel data-panel--full ai-usage-ledger ai-usage-ledger--focused" id="g-ai-usage"><div class="section-heading"><div><p class="eyebrow">84 DAYS WITH AI</p><h2>过去84天，AI替你做了什么</h2></div><a href="/profile#services" class="text-link">管理 AI 与余额</a></div><div class="ai-usage-metrics"><div><span>AI 调用</span><strong id="g-ai-calls">--</strong><small>包含成功与失败</small></div><div><span>完成辅助</span><strong id="g-ai-success">--</strong><small>仅统计成功结果</small></div><div><span>处理 Token</span><strong id="g-ai-tokens">--</strong><small>DeepSeek 返回的真实用量</small></div><div><span>本站追踪花费</span><strong id="g-ai-cost">--</strong><small>不等同供应商完整账单</small></div><div><span>当前账户余额</span><strong id="g-ai-balance">--</strong><small>来自 DeepSeek</small></div></div><section class="ai-outcome-ledger" aria-labelledby="g-ai-outcome-title"><div><p class="eyebrow">VERIFIABLE OUTCOMES</p><h3 id="g-ai-outcome-title">这些结果已经真正留在网站里</h3><p id="g-ai-outcome-summary">正在核对文章、题目、批改和笔记记录…</p></div><div id="g-ai-outcomes" class="ai-outcome-list"></div></section><section class="ai-usage-heatmap"><div class="section-heading"><div><h3>每天调用了多少次</h3><p>颜色越深，当天调用次数越多；点击格子查看当日明细。</p></div><strong id="g-ai-day-detail">选择一天查看</strong></div><div id="g-ai-heatmap" class="chart chart--heatmap" role="img" aria-label="近84天每日AI调用热力图"></div><p id="g-ai-history-note" class="chart-summary"></p></section></article>
+        <article class="data-panel"><p class="eyebrow">REVIEW HEALTH</p><h2>复习健康</h2><div id="g-review" class="chart"></div><div id="g-review-text" class="chart-summary"></div></article>
+        <article class="data-panel"><p class="eyebrow">VOCABULARY</p><h2>词汇层级掌握</h2><div id="g-vocab-chart" class="chart"></div><div id="g-vocab-text" class="chart-summary"></div></article>
+        <article class="data-panel"><p class="eyebrow">WEEKLY RHYTHM</p><h2>一周学习节奏</h2><div id="g-weekly" class="chart"></div><div id="g-weekly-text" class="chart-summary"></div></article>
+        <article class="data-panel data-panel--wide"><div class="section-heading"><div><p class="eyebrow">84 DAYS</p><h2>学习热力图</h2></div><small>颜色越深，投入时间越多</small></div><div id="g-heatmap" class="chart chart--heatmap"></div><div id="g-heatmap-text" class="chart-summary"></div></article>
+        <article class="data-panel data-panel--timeline"><p class="eyebrow">HISTORY</p><h2>段位时间线</h2><ol id="g-timeline" class="timeline-list"><li>暂无晋升记录</li></ol></article>
+    </section>
+</div>
+{% endblock %}
+{% block scripts %}<script src="{{ asset('js/growth.js') }}"></script>{% endblock %}

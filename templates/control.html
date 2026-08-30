@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block title %}控制台 · 四六级学习台{% endblock %}
+{% block content %}
+<div class="page-shell control-page" id="control-app">
+    <header class="page-heading"><div><p class="eyebrow">COMMAND CENTER / 控制</p><h1>笔记与 AI，在一张台上协同</h1><p>分类整理笔记，随时与 AI 展开围绕文章与数据的深度对话。</p></div><a class="btn btn-secondary" href="/review">现在复习</a></header>
+    <div data-region-status class="region-state region-state--loading">正在加载控制台…</div>
+    <section id="skill-workbench" class="skill-workbench" hidden aria-labelledby="skill-workbench-title">
+        <div class="skill-workbench__heading"><div><p class="eyebrow">ACTIVE SKILL / 当前能力</p><h2 id="skill-workbench-title">正在读取 Skill…</h2><p id="skill-workbench-description"></p></div><a class="text-link" href="/profile#skills">返回 Skill 管理</a></div>
+        <div class="skill-workbench__editor"><label for="skill-workbench-rules">用户补充规则</label><textarea id="skill-workbench-rules" rows="6" maxlength="12000" placeholder="补充输出格式、证据边界和你的偏好"></textarea><div><button id="skill-workbench-save" class="btn btn-primary" type="button">保存补充规则</button><span id="skill-workbench-state" role="status">先在中间对话，让 AI 帮你推敲；确认后再手动保存。</span></div></div>
+    </section>
+    <div class="control-workbench">
+        <aside class="control-sidebar" id="control-sidebar">
+            <div class="control-panel-head"><span class="section-heading"><h2>分类</h2></span><button id="category-add" class="btn btn-secondary btn-sm" type="button">＋ 新建</button></div>
+            <form id="category-form" class="control-inline-form" hidden><label for="category-name">分类名称</label><input id="category-name" type="text" maxlength="30" autocomplete="off"><label for="category-parent">上级分类</label><select id="category-parent"><option value="0">顶级分类</option></select><div><button class="btn btn-primary btn-sm" type="submit">保存分类</button><button id="category-cancel" class="btn btn-secondary btn-sm" type="button">取消</button></div><p id="category-form-state" role="status"></p></form>
+            <div id="control-categories" class="control-categories" aria-live="polite"></div>
+            <div class="control-panel-head"><span class="section-heading"><h2>笔记</h2></span><button id="note-add" class="btn btn-secondary btn-sm" type="button">＋ 新建笔记</button></div>
+            <div id="control-notes" class="control-notes" aria-live="polite"></div>
+        </aside>
+        <div class="control-resizer" id="control-resizer-1" aria-hidden="true"></div>
+        <main class="control-chat">
+            <div class="control-chat__head"><span class="section-heading"><h2>和 AI 聊一聊</h2></span><span class="control-chat__context" id="control-chat-context">可直接对话，也可从阅读页带入文章</span><div class="control-mobile-actions"><button id="control-notes-toggle" class="btn btn-secondary btn-sm" type="button" aria-controls="control-sidebar" aria-expanded="false">笔记</button><button id="control-note-toggle" class="btn btn-secondary btn-sm" type="button" aria-controls="control-preview" aria-expanded="false">当前笔记</button></div></div>
+            <div id="control-messages" class="control-messages" aria-live="polite"><div class="assistant-empty"><strong>从当前学习任务开始</strong><p>可以让 AI 解释当前文章、整理易错点，或把结论生成待确认的笔记草稿。</p></div></div>
+            <form id="control-chat-form" class="control-composer">
+                <div class="control-attachments" id="control-attachments"></div>
+                <label class="sr-only" for="control-chat-input">向学习助理提问</label>
+                <textarea id="control-chat-input" rows="2" placeholder="向 AI 提问…（可上传文本或图片，或让它整理进笔记）"></textarea>
+                <div class="control-composer__row">
+                    <button id="control-attach" class="btn btn-secondary" type="button">上传附件</button>
+                    <button class="btn btn-primary" type="submit">发送</button>
+                </div>
+                <input id="control-file" type="file" accept=".txt,.md,.json,.csv,image/jpeg,image/png,image/gif,image/webp" hidden>
+                <p class="control-vision-note">图片由 DeepSeek 实验视觉模型分析，本站不保存原图；一次最多 3 张、每张不超过 6 MB。</p>
+            </form>
+        </main>
+        <div class="control-resizer" id="control-resizer" aria-hidden="true"></div>
+        <aside class="control-preview" id="control-preview">
+            <div class="control-note-editor" id="control-note-editor">
+                <div class="control-panel-head"><span class="section-heading"><h2>当前笔记</h2></span><span class="note-date-field" id="note-date-label">--</span></div>
+                <label class="sr-only" for="note-title">笔记标题</label><input id="note-title" class="note-input" placeholder="笔记标题" />
+                <div class="note-color-row">
+                    <button class="color-dot color-dot--black" data-color="black" title="黑色" type="button"></button>
+                    <button class="color-dot color-dot--blue" data-color="blue" title="蓝色" type="button"></button>
+                    <button class="color-dot color-dot--red" data-color="red" title="红色" type="button"></button>
+                </div>
+                <label class="sr-only" for="note-content">笔记正文</label><textarea id="note-content" class="note-textarea" placeholder="写点什么，或让 AI 帮你整理…"></textarea>
+                <div class="note-actions"><button id="note-save" class="btn btn-primary" type="button">保存笔记</button><button id="note-delete" class="btn btn-secondary" type="button">删除</button><span id="control-note-state" role="status">请选择或新建笔记</span></div>
+            </div>
+        </aside>
+    </div>
+    <button id="control-drawer-backdrop" class="control-drawer-backdrop" type="button" aria-label="关闭侧栏" hidden></button>
+</div>
+{% endblock %}
+{% block scripts %}<script src="{{ asset('js/control.js') }}"></script>{% endblock %}

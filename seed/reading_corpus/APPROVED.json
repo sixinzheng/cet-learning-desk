@@ -1,0 +1,13 @@
+{
+  "corpus_version": "cet-reading-curator/static-180-v1",
+  "approved_articles": 180,
+  "approved_at": "2026-08-29",
+  "corpus_sha256": "f846d3e7e0aaa7977457a0fe94366d830fbd08f82e7f9efa64984d9007aca751",
+  "audit": {
+    "matrix": "6 topics x 6 difficulty levels x 5 articles",
+    "unique_source_urls": 180,
+    "unique_source_titles": 180,
+    "five_gram_threshold": 0.12,
+    "five_gram_pairs_over_threshold": 0
+  }
+}

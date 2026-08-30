@@ -1,0 +1,2 @@
+-keep class com.chaquo.python.** { *; }
+-keep class cn.cet.learningdesk.** { *; }

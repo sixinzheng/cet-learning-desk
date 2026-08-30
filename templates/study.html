@@ -1,0 +1,310 @@
+{% extends "base.html" %}
+{% block title %}学习 - 四六级单词助手{% endblock %}
+{% block content %}
+<div class="dashboard study-page" x-data="studyApp()" x-init="init()">
+
+    <!-- 顶部栏 -->
+    <header class="topbar">
+        <div class="topbar-left">
+            <h1 class="topbar-greet">学习新词</h1>
+            <div class="topbar-quote">语境选释义 · 学习卡片 · 拼写验证 — 每词连对 3 次即过关</div>
+        </div>
+        <div class="topbar-right">
+            <div class="topbar-progress" x-show="total>0 && phase!=='empty'">
+                <div class="progress-ring" :title="'已过 ' + done + ' / ' + total">
+                    <svg class="ring-svg" viewBox="0 0 64 64" aria-hidden="true">
+                        <circle class="ring-track" cx="32" cy="32" r="27"></circle>
+                        <circle class="ring-fill" cx="32" cy="32" r="27" :style="ringStyle"></circle>
+                    </svg>
+                    <span class="ring-label" x-text="ringPct"></span>
+                </div>
+                <span class="btn-act btn-act-secondary" style="cursor:default">
+                    <span x-show="phase!=='spelling'">已过 <b x-text="done" style="color:var(--primary)"></b> / <span x-text="total"></span></span>
+                    <span x-show="phase==='spelling'">拼写 <b x-text="spellingIdx+1"></b> / <span x-text="spellingQueue.length"></span></span>
+                </span>
+            </div>
+            <a href="/" class="btn-act btn-act-secondary">返回首页</a>
+        </div>
+    </header>
+
+    <!-- 学习主区域 -->
+    <div class="main-grid">
+        <!-- 左：词库进度 + 学习队列 -->
+        <aside class="panel" style="grid-column:1">
+            <div class="panel-head">词库进度</div>
+            <div class="wb-progress-bar" style="margin-bottom:8px"><div class="wb-progress-fill" :style="'width:' + (total>0 ? done/total*100 : 0) + '%'"></div></div>
+            <div class="wb-progress-stats">
+                <span>已过 <b x-text="done"></b></span>
+                <span>剩余 <b x-text="total - done"></b></span>
+            </div>
+
+            <div class="panel-head" style="margin-top:14px">学习队列</div>
+            <div class="word-queue" style="max-height:400px; overflow-y:auto">
+                <template x-for="w in words" :key="w.id">
+                    <button type="button" class="queue-word" :class="wordState[w.id] && wordState[w.id].passed ? 'passed' : (w.id === currentWordId ? 'current' : '')"
+                         :aria-current="w.id === currentWordId ? 'true' : 'false'" @click="showWordPopup(w.id)">
+                        <span class="queue-word-text" x-text="w.word"></span>
+                        <span class="queue-word-status">
+                            <template x-if="wordState[w.id] && wordState[w.id].passed">&#10003;</template>
+                            <template x-if="wordState[w.id] && !wordState[w.id].passed">
+                                <span x-text="(wordState[w.id].consecutive||0) + '/3'"></span>
+                            </template>
+                        </span>
+                    </button>
+                </template>
+            </div>
+        </aside>
+
+        <!-- 中：核心交互区 -->
+        <main class="panel" style="grid-column:span 2">
+
+            <!-- 加载中 -->
+            <div x-show="phase === 'loading'" class="text-center" style="padding:60px 0">
+                <div style="font-size:14px;color:var(--ink-3)">加载单词中...</div>
+            </div>
+
+            <!-- 语境选择题 -->
+            <div x-show="phase === 'quiz'" class="fade-in">
+                <div class="mode-header">
+                    <div class="panel-head" style="margin:0">语境选释义</div>
+                    <div class="kbd-hints"><span class="kbd">A-D</span> 选答案</div>
+                </div>
+                <div class="word-pronounce-row word-pronounce-row--center"><div class="quiz-word-big" x-text="currentWord"></div><button class="pronounce-button" type="button" @click="playPronunciation(currentWord)" :aria-label="'播放 ' + currentWord + ' 的发音'">发音</button></div>
+                <div class="quiz-word-meta">
+                    <span class="quiz-stars" x-text="currentStars"></span>
+                    <span class="quiz-tag" x-text="currentTag" :class="currentTagClass"></span>
+                </div>
+                <div class="quiz-sentence" x-text="quizSentence"></div>
+                <div class="quiz-options">
+                    <template x-for="(opt, i) in quizOptions" :key="i">
+                        <button class="quiz-opt-btn"
+                                :class="quizAnswered ? (i === quizAnswer ? 'correct' : (i === selectedIdx ? 'wrong' : '')) : ''"
+                                @click="answerQuiz(i)"
+                                :disabled="quizAnswered">
+                            <span class="opt-letter" x-text="String.fromCharCode(65 + i)"></span>
+                            <span class="opt-text">
+                                <template x-for="(sense, senseIndex) in splitMeanings(opt)" :key="senseIndex">
+                                    <span class="opt-sense" x-text="sense"></span>
+                                </template>
+                            </span>
+                        </button>
+                    </template>
+                </div>
+            </div>
+
+            <!-- 学习卡片 -->
+            <div x-show="phase === 'card'" class="fade-in study-card-phase">
+                <div class="mode-header">
+                    <div class="panel-head" style="margin:0">学习卡片</div>
+                    <div class="kbd-hints"><span class="kbd">空格</span> 继续</div>
+                </div>
+                <div class="study-card-word">
+                    <div class="study-card-word-main" x-text="currentWord"></div>
+                    <div class="study-card-phonetic" x-text="currentPhonetic"></div>
+                    <button class="pronounce-button" type="button" @click="playPronunciation(currentWord)" :aria-label="'播放 ' + currentWord + ' 的发音'">发音</button>
+                    <div class="study-card-meaning" x-text="currentMeanings"></div>
+                    <div class="quiz-word-meta" style="justify-content:center;margin-top:8px">
+                        <span class="quiz-stars" x-text="currentStars"></span>
+                        <span class="quiz-tag" x-text="currentTag" :class="currentTagClass"></span>
+                    </div>
+                </div>
+                <section class="answer-followup" aria-labelledby="study-followup-title">
+                    <div><p class="task-kicker">ANSWER REVIEW / 答后调整</p><h2 id="study-followup-title">这次记忆有多稳</h2></div>
+                    <div class="status-pills" role="group" aria-label="调整单词熟悉度">
+                        <button type="button" class="status-pill" :class="currentStatus==='陌生'?'active':''" :aria-pressed="currentStatus==='陌生'" @click="setStatus('陌生')">陌生</button>
+                        <button type="button" class="status-pill" :class="currentStatus==='模糊'?'active':''" :aria-pressed="currentStatus==='模糊'" @click="setStatus('模糊')">模糊</button>
+                        <button type="button" class="status-pill" :class="currentStatus==='巩固'?'active':''" :aria-pressed="currentStatus==='巩固'" @click="setStatus('巩固')">巩固</button>
+                        <button type="button" class="status-pill" :class="currentStatus==='掌握'?'active':''" :aria-pressed="currentStatus==='掌握'" @click="setStatus('掌握')">掌握</button>
+                    </div>
+                    <div class="answer-followup__actions"><button type="button" class="btn btn-secondary" @click="slayWord()">移入熟记</button><button type="button" class="text-button" :aria-pressed="isFavorite" @click="toggleFavorite()" x-text="isFavorite ? '已收藏' : '收藏本词'"></button></div>
+                </section>
+                <!-- 刚才的题目例句 -->
+                <div class="panel-head study-card-example-heading" style="margin-top:12px">题目例句</div>
+                <div class="sentence-block study-card-example">
+                    <div class="sentence-en" x-text="quizSentenceFull || quizSentence"></div>
+                    <div class="sentence-zh" x-text="quizSentenceZh || ''"></div>
+                </div>
+                <!-- 更多例句 -->
+                <details class="study-card-sentences" x-show="sentences.length > 0">
+                    <summary>查看更多例句（<span x-text="sentences.length"></span>）</summary>
+                    <template x-for="s in sentences" :key="s.id">
+                        <div class="sentence-block">
+                            <div class="sentence-en" x-text="s.content"></div>
+                            <div class="sentence-zh" x-text="s.translation"></div>
+                        </div>
+                    </template>
+                </details>
+                <div id="study-card-actions" class="study-card-primary-actions" :class="{'has-retry': !lastAnswerCorrect}" aria-label="本词下一步操作">
+                    <button class="btn-act btn-act-secondary"
+                            x-show="!lastAnswerCorrect"
+                            @click="retryQuiz()">再试试</button>
+                    <button id="study-card-favorite" class="btn-act"
+                            :class="isFavorite ? 'btn-fav-on' : 'btn-act-secondary'"
+                            @click="toggleFavorite()">
+                        <svg class="fav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg>
+                        <span x-text="isFavorite ? '已收藏' : '收藏'"></span>
+                    </button>
+                    <button id="study-card-continue" class="btn-act btn-act-primary" @click="nextAfterCard()">继续</button>
+                </div>
+            </div>
+
+            <!-- 拼写验证 -->
+            <div x-show="phase === 'spelling'" class="fade-in">
+                <div class="mode-header">
+                    <div class="panel-head" style="margin:0">拼写验证 — 据释义与例句拼写</div>
+                    <div class="kbd-hints"><span class="kbd">回车</span> 校验 · 结果后 <span class="kbd">空格</span> 继续</div>
+                </div>
+                <div style="font-size:15px; color:var(--ink-2); margin:8px 0; text-align:center" x-text="currentMeanings"></div>
+                <div class="quiz-sentence" x-text="spellingSentence" x-show="spellingSentence"></div>
+                <div class="quiz-sentence-zh" x-text="spellingZh" x-show="spellingZh" style="color:var(--ink-3); border-top:0; padding-top:4px; font-size:13px"></div>
+                <label class="sr-only" for="spell-input">输入当前单词拼写</label>
+                <input id="spell-input" type="text" class="spelling-input" placeholder="输入单词拼写..."
+                       x-model="spellingInput" @keyup.enter="checkSpelling()"
+                       :disabled="spellingLocked">
+                <button class="btn-act btn-act-primary" style="margin-top:12px; width:100%; justify-content:center"
+                        @click="checkSpelling()" :disabled="spellingLocked">
+                    确认拼写
+                </button>
+                <div x-show="spellingResult !== null" class="spell-result">
+                    <div x-show="spellingResult" class="spell-correct">正确!</div>
+                    <div x-show="!spellingResult" class="spell-wrong spell-wrong--big">
+                        拼写有误，正确答案：<b x-text="spellingAnswer"></b>
+                        <span class="spell-retry-hint">请重新输入（已记错 <b x-text="spellingWrongs"></b> 次）</span>
+                    </div>
+                    <button x-show="spellingResult" class="btn-act btn-act-primary" style="margin-top:10px; width:100%; justify-content:center" @click="nextWord()">
+                        学下一个
+                    </button>
+                    <button x-show="!spellingResult" class="btn-act btn-act-secondary" style="margin-top:10px; width:100%; justify-content:center"
+                            @click="retrySpelling()">
+                        重新输入
+                    </button>
+                </div>
+            </div>
+
+            <!-- 批次反馈（完成） -->
+            <div x-show="phase === 'done'" class="fade-in batch-feedback">
+                <div class="panel-head">本批学习完成</div>
+                <div class="batch-stats">
+                    <span>过关 <b x-text="done"></b> 词</span>
+                    <span>本批答错 <b x-text="wrongBatchCount"></b> 词</span>
+                </div>
+                <div class="batch-list">
+                    <template x-for="item in batchItems" :key="item.id">
+                        <div class="batch-item" :class="item.wrongs > 0 ? 'batch-item--wrong' : ''">
+                            <div class="batch-word-row">
+                                <span class="batch-word" x-text="item.word"></span>
+                                <span class="batch-wrongs" x-show="item.wrongs > 0">本批答错 <b x-text="item.wrongs"></b> 次</span>
+                            </div>
+                            <div class="batch-meaning" x-text="item.meaning"></div>
+                            <div class="batch-sentence" x-text="item.sentence" x-show="item.sentence"></div>
+                        </div>
+                    </template>
+                </div>
+                <div style="display:flex; gap:10px; margin-top:16px; justify-content:center">
+                    <a href="/" class="btn-act btn-act-secondary">返回首页</a>
+                    <a href="/review" class="btn-act btn-act-primary">去复习</a>
+                </div>
+            </div>
+
+            <!-- 空状态 -->
+            <div x-show="phase === 'empty'" class="text-center" style="padding:40px 0">
+                <div style="font-size:14px; color:var(--ink-3)">暂无可学新词，去添加词库或复习吧</div>
+                <a href="/review" class="btn-act btn-act-secondary" style="margin-top:12px; display:inline-flex">去复习</a>
+            </div>
+        </main>
+    </div>
+
+    <!-- 单词弹窗 -->
+    <div class="modal-overlay" x-show="popupVisible" @click.self="popupVisible=false" @keydown.escape.window="popupVisible=false">
+        <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="study-popup-title" tabindex="-1">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+                <div id="study-popup-title" class="panel-head" style="margin:0" x-text="popupWord"></div>
+                <div style="display:flex;gap:8px;align-items:center">
+                    <button class="btn-act btn-fav-toggle" :class="popupFavorite ? 'btn-fav-on' : ''"
+                            @click="togglePopupFavorite()">
+                        <svg class="fav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg>
+                        <span x-text="popupFavorite ? '已收藏' : '收藏'"></span>
+                    </button>
+                    <button class="icon-button" type="button" aria-label="关闭单词预览" @click="popupVisible=false">&times;</button>
+                </div>
+            </div>
+            <div class="study-card-word" style="margin-top:0">
+                <div class="study-card-word-main" x-text="popupWord"></div>
+                <div class="study-card-phonetic" x-text="popupPhonetic"></div>
+                <button class="pronounce-button" type="button" @click="playPronunciation(popupWord)" :aria-label="'播放 ' + popupWord + ' 的发音'">发音</button>
+                <div class="study-card-meaning" x-text="popupMeanings"></div>
+            </div>
+            <div x-show="popupSentences.length > 0" style="margin-top:12px">
+                <div class="panel-head">例句</div>
+                <template x-for="s in popupSentences" :key="s.id">
+                    <div class="sentence-block">
+                        <div class="sentence-en" x-text="s.content"></div>
+                        <div class="sentence-zh" x-text="s.translation"></div>
+                    </div>
+                </template>
+            </div>
+
+            <!-- 相关单词标签：展示 + 创建交互（2026-08-16 完善） -->
+            <div style="margin-top:14px">
+                <div class="panel-head" style="display:flex;align-items:center;justify-content:space-between">
+                    <span>相关单词标签</span>
+                    <button class="btn-act btn-act-secondary" style="padding:3px 10px;font-size:12px"
+                            @click="openLinkPanel()">创建关联</button>
+                </div>
+                <template x-if="popupLinks.length > 0">
+                    <div style="margin-top:8px">
+                        <template x-for="link in popupLinks" :key="link.tag_id">
+                            <div class="sentence-block" style="margin-bottom:8px">
+                                <div style="font-size:13px;font-weight:700;color:var(--indigo);margin-bottom:4px"
+                                     x-text="'标签：' + link.tag_name"></div>
+                                <div style="font-size:13px;color:var(--ink-2)">
+                                    <span x-show="link.words.length === 0">（暂未关联其他单词）</span>
+                                    <template x-for="tw in link.words" :key="tw.id">
+                                        <span class="link-chip" x-text="tw.word"></span>
+                                    </template>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </template>
+                <div x-show="popupLinks.length === 0 && !linkPanelOpen" style="font-size:13px;color:var(--ink-3);margin-top:6px">
+                    暂无标签，可把意思相近、易混淆的词关联在一起。
+                </div>
+
+                <!-- 创建关联标签表单 -->
+                <div x-show="linkPanelOpen" class="sentence-block" style="margin-top:8px">
+                    <label style="font-size:13px;color:var(--ink-2);display:block;margin-bottom:6px">
+                        标签名（如：易混词 / 同义词）
+                    </label>
+                    <input type="text" class="spelling-input" placeholder="输入标签名..."
+                           x-model="linkTagName">
+                    <label style="font-size:13px;color:var(--ink-2);display:block;margin:10px 0 6px">
+                        搜索并勾选关联单词
+                    </label>
+                    <input type="text" class="spelling-input" placeholder="输入单词搜索..." x-model="linkSearchQ"
+                           @input.debounce.300ms="searchLinkWords()">
+                    <div x-show="linkSearchResults.length > 0" style="margin-top:8px">
+                        <template x-for="sw in linkSearchResults" :key="sw.id">
+                            <button class="link-chip link-chip--btn"
+                                    :class="linkSelected[sw.id] ? 'link-chip--on' : ''"
+                                    @click="toggleLinkSel(sw.id)" x-text="sw.word"></button>
+                        </template>
+                    </div>
+                    <div style="margin-top:8px;font-size:13px;color:var(--ink-2)">
+                        已选：
+                        <span x-text="Object.keys(linkSelected).length + ' 个'"></span>
+                        <span style="color:var(--ink-3)">（含当前词）</span>
+                    </div>
+                    <div style="display:flex;gap:8px;margin-top:10px">
+                        <button class="btn-act btn-act-primary" style="flex:1;justify-content:center" @click="saveLink()">保存标签</button>
+                        <button class="btn-act btn-act-secondary" style="flex:1;justify-content:center" @click="linkPanelOpen=false">取消</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block scripts %}
+<script src="{{ asset('js/study.js') }}"></script>
+{% endblock %}

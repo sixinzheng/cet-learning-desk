@@ -1,0 +1,2462 @@
+[
+  {
+    "corpus_id": "cet-manual-technology-l1-01",
+    "source_id": "src-科技-01",
+    "title": "The Useful AI Test Happens on Tuesday Morning",
+    "topic": "科技",
+    "difficulty": 1,
+    "source_name": "China Daily",
+    "source_url": "https://global.chinadaily.com.cn/a/202607/17/WS6a5961dea310986e2b465b02.html",
+    "source_title": "Sector shifts focus to applying, exporting strengths",
+    "source_published_at": "2026-07-17",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "来源清单所列China Daily页面记录了AI行业由能力展示转向应用与可衡量产出的主线；样稿已核验同日有效正文，本文仅采用这一事实方向。",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站围绕独立中心问题重新组织信息并原创改写，非媒体原文，非历年真题。",
+    "content": "An AI program may produce an exciting answer during a public show. A manager, however, meets a different question on an ordinary Tuesday: does the tool help people finish real work?\n\nThe answer depends on the setting. In a factory, useful software might notice a repeated fault before products leave the line. In an office, it might organize routine records so that staff can spend more time on difficult cases. A fast response is valuable only when workers can understand it and correct it when necessary.\n\nThis practical view changes the way success is measured. The size of a model or the amount of computing power does not directly tell a company how much time it saved. Teams should compare the old process with the new one. They should record errors, time, cost and the moments when a person had to step in.\n\nResearch still matters because better models make new uses possible. Yet research is a foundation, not the finished building. A system becomes valuable after it fits a task, earns users' trust and continues to work outside a prepared demonstration.\n\nThe strongest sign of progress may therefore look quite ordinary: a worker completes a useful job more safely or clearly than before.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What practical test for AI guides the passage?",
+        "options": [
+          "Whether it surprises an audience during one show",
+          "Whether it uses more power than an older system",
+          "Whether it improves real work under normal conditions",
+          "Whether it removes every worker from a process"
+        ],
+        "answer": "C",
+        "explanation": "全文把AI评价标准从展示效果转向日常工作中的真实改进。",
+        "evidence_text": "does the tool help people finish real work?"
+      },
+      {
+        "type": "detail",
+        "question": "Which results should teams record when comparing processes?",
+        "options": [
+          "Only the model size and public reaction",
+          "The color of the software interface",
+          "The number of offices in the company",
+          "Errors, time, cost and human intervention"
+        ],
+        "answer": "D",
+        "explanation": "第三段直接列出了错误、时间、成本和人工介入。",
+        "evidence_text": "They should record errors, time, cost and the moments when a person had to step in."
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “foundation” suggest about AI research here?",
+        "options": [
+          "It is the only part users ever see.",
+          "It is support on which useful applications are built.",
+          "It is a reason to avoid workplace testing.",
+          "It is a short public performance."
+        ],
+        "answer": "B",
+        "explanation": "下文把真正价值放在任务适配、信任和现场稳定性上，因此foundation指基础支撑。",
+        "evidence_text": "Yet research is a foundation, not the finished building."
+      },
+      {
+        "type": "inference",
+        "question": "Why is a fast answer not enough in the factory example?",
+        "options": [
+          "Factory workers dislike all quick tools.",
+          "The output must also be understandable and correctable.",
+          "Every fault must remain hidden.",
+          "Office records are more important than products."
+        ],
+        "answer": "B",
+        "explanation": "速度只有在员工能理解并在必要时纠正结果时才有价值。",
+        "evidence_text": "A fast response is valuable only when workers can understand it and correct it when necessary."
+      },
+      {
+        "type": "attitude",
+        "question": "How does the writer regard technical advances in models?",
+        "options": [
+          "As harmful to every established process",
+          "As more important than user trust",
+          "As useful groundwork rather than final proof of value",
+          "As unnecessary once one task works"
+        ],
+        "answer": "C",
+        "explanation": "作者肯定研究会带来新用途，同时明确它不是完成态。",
+        "evidence_text": "Research still matters because better models make new uses possible."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-manual-technology-l1-06",
+    "source_id": "src-科技-06",
+    "title": "An Expo Ends When the Questions Begin",
+    "topic": "科技",
+    "difficulty": 1,
+    "source_name": "China Daily",
+    "source_url": "https://global.chinadaily.com.cn/a/202511/03/WS6907f063a310f215074b887c.html",
+    "source_title": "China showcases AI innovation at key expo - Chinadaily.com.cn",
+    "source_published_at": "2025-11-03",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "来源清单记录China Daily关于重要博览会展示AI创新的页面；本文只采用“集中展示AI创新”这一可由标题确认的事实，不引入未列明数字。",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站围绕独立中心问题重新组织信息并原创改写，非媒体原文，非历年真题。",
+    "content": "A technology expo can place many AI products in one hall. Visitors may watch a robot sort objects, hear software answer questions or see a machine create an image. Such demonstrations make new ideas easy to notice, but they do not settle whether a product is ready for daily use.\n\nA short show usually controls the light, objects and instructions. Real users bring noisier conditions. They may speak in different ways, make unexpected requests or need help when the system fails. For this reason, a useful visitor asks what happened before the successful moment. How many trials were needed? What mistakes occurred? Who checked the result?\n\nExpos still serve an important purpose. They allow engineers, buyers and researchers to compare approaches in a shared place. A hospital manager, for example, may discover a tool worth testing, while its maker learns which safety questions matter to medical staff. The meeting can begin cooperation.\n\nThe key word is begin. A promising exhibit should move next into a limited trial with real users and clear measures. If the trial reveals a weakness, that is information, not embarrassment. An expo shows what might be possible; careful follow-up shows what is dependable.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What distinction does the author make about an AI expo?",
+        "options": [
+          "It should admit engineers but exclude users.",
+          "It makes later testing unnecessary.",
+          "It is valuable only when no mistakes are discussed.",
+          "It can introduce possibilities but cannot prove daily reliability."
+        ],
+        "answer": "D",
+        "explanation": "文章反复区分展会中的可能性展示与真实场景中的可靠性验证。",
+        "evidence_text": "An expo shows what might be possible; careful follow-up shows what is dependable."
+      },
+      {
+        "type": "detail",
+        "question": "What can a hospital manager gain at the event?",
+        "options": [
+          "Permission to ignore medical staff",
+          "A guarantee that every device is safe",
+          "A tool that may deserve a limited test",
+          "A complete replacement for hospital procedures"
+        ],
+        "answer": "C",
+        "explanation": "第三段说医院管理者可能发现值得进一步测试的工具。",
+        "evidence_text": "A hospital manager, for example, may discover a tool worth testing"
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “controlled” mean in the description of a short show?",
+        "options": [
+          "Open to every possible request",
+          "Held under arranged and predictable conditions",
+          "Repeated for many years",
+          "Managed only by a hospital"
+        ],
+        "answer": "B",
+        "explanation": "后文用真实用户带来的嘈杂和意外情况作对比，说明controlled是条件被预先安排。",
+        "evidence_text": "A short show usually controls the light, objects and instructions."
+      },
+      {
+        "type": "inference",
+        "question": "Why does the passage call a failed trial informative?",
+        "options": [
+          "It proves that innovation should stop.",
+          "It makes safety questions unimportant.",
+          "It reveals a weakness that can be examined.",
+          "It turns a buyer into an engineer."
+        ],
+        "answer": "C",
+        "explanation": "有限试验的价值包括暴露薄弱点，从而支持改进和判断。",
+        "evidence_text": "If the trial reveals a weakness, that is information, not embarrassment."
+      },
+      {
+        "type": "purpose",
+        "question": "Why are three visitor questions listed in paragraph 2?",
+        "options": [
+          "To teach visitors how to control lighting",
+          "To advertise one question-answering product",
+          "To discourage communication with makers",
+          "To show how to look beyond a polished success"
+        ],
+        "answer": "D",
+        "explanation": "三个问题都追问成功展示背后的试验、错误与核查，作用是引导审慎评价。",
+        "evidence_text": "For this reason, a useful visitor asks what happened before the successful moment."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-manual-technology-l1-07",
+    "source_id": "src-科技-07",
+    "title": "A Robot Tour Should Leave Students with a Method",
+    "topic": "科技",
+    "difficulty": 1,
+    "source_name": "China Daily",
+    "source_url": "https://global.chinadaily.com.cn/a/202505/09/WS681d55bca310a04af22be478.html",
+    "source_title": "AI, robotics study tours surge in popularity - Chinadaily.com.cn",
+    "source_published_at": "2025-05-09",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "来源清单记录China Daily关于AI与机器人研学活动受欢迎的页面；本文仅采用研学活动增长这一事实方向。",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站围绕独立中心问题重新组织信息并原创改写，非媒体原文，非历年真题。",
+    "content": "AI and robotics study tours have become popular with families. A child may enter a laboratory, guide a small robot or watch a machine respond to a voice command. The excitement is real, but a good tour should offer more than a collection of photographs.\n\nThe learning begins when students predict what a machine will do. After a trial, they can compare the result with their prediction. If the robot turns the wrong way, the guide should not quickly hide the failure. Students can check the sensor, the instruction and the surrounding space. In this way, an error becomes evidence.\n\nAge also matters. Younger visitors may learn through a simple challenge with visible steps. Older students can discuss training data, privacy or why the same command produces different results. Giving every group the same technical lecture may sound efficient, but it can leave everyone confused.\n\nParents should receive clear information too. They need to know whether images or voices are recorded and how long any data is kept. A fun activity does not cancel the need for consent.\n\nThe best study tour does not try to prove that every child will become an engineer. It gives students a repeatable method: predict, test, observe and improve. That method can travel home even when the robot stays in the laboratory.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What should students carry away from a robotics tour?",
+        "options": [
+          "One lecture designed for every age group",
+          "A promise that every visitor will become an engineer",
+          "A set of photographs without any questions",
+          "A repeatable way to investigate how a machine behaves"
+        ],
+        "answer": "D",
+        "explanation": "结尾把研学价值概括为可重复使用的探究方法。",
+        "evidence_text": "It gives students a repeatable method: predict, test, observe and improve."
+      },
+      {
+        "type": "detail",
+        "question": "What can learners inspect after a robot turns incorrectly?",
+        "options": [
+          "Only the child who gave the command",
+          "The sensor, instruction and nearby space",
+          "The price of the laboratory building",
+          "The parents photographs"
+        ],
+        "answer": "B",
+        "explanation": "第二段直接列出传感器、指令和周围空间三个检查对象。",
+        "evidence_text": "Students can check the sensor, the instruction and the surrounding space."
+      },
+      {
+        "type": "word_guess",
+        "question": "In paragraph 2, what does “evidence” mean?",
+        "options": [
+          "A prize for the fastest student",
+          "A picture used only for advertising",
+          "Information that helps explain what happened",
+          "A rule that prevents another test"
+        ],
+        "answer": "C",
+        "explanation": "错误被保留并用于检查原因，因此evidence指帮助解释现象的信息。",
+        "evidence_text": "In this way, an error becomes evidence."
+      },
+      {
+        "type": "inference",
+        "question": "Why should tour activities differ by age?",
+        "options": [
+          "Older students are not allowed near robots.",
+          "Young children can already discuss every privacy issue.",
+          "Technical lectures always work best for mixed groups.",
+          "Suitable tasks help each group understand rather than merely listen."
+        ],
+        "answer": "D",
+        "explanation": "文章对比不同年龄的学习方式，并指出统一技术讲座会让所有人困惑。",
+        "evidence_text": "Giving every group the same technical lecture may sound efficient, but it can leave everyone confused."
+      },
+      {
+        "type": "attitude",
+        "question": "Which privacy responsibility applies during the fun robotics activity?",
+        "options": [
+          "Recording is harmless whenever a robot is present.",
+          "Parents should be told about collection and retention.",
+          "Consent is needed only for older students.",
+          "All voices should be kept permanently."
+        ],
+        "answer": "B",
+        "explanation": "作者明确要求家长了解数据是否记录及保存多久，并强调同意仍然必要。",
+        "evidence_text": "A fun activity does not cancel the need for consent."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-manual-technology-l1-08",
+    "source_id": "src-科技-08",
+    "title": "A Robotics Boom Needs Repair Benches",
+    "topic": "科技",
+    "difficulty": 1,
+    "source_name": "China Daily",
+    "source_url": "https://global.chinadaily.com.cn/a/202508/12/WS689a9720a310724b60021111.html",
+    "source_title": "Efforts propel robotics innovation heyday - Chinadaily.com.cn",
+    "source_published_at": "2025-08-12",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "来源清单记录China Daily关于机器人创新进入活跃期的页面；本文只采用产业创新活跃这一事实方向。",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站围绕独立中心问题重新组织信息并原创改写，非媒体原文，非历年真题。",
+    "content": "New robots often receive attention when they walk, dance or lift an object. A period of strong robotics innovation, however, also creates demand for less visible work. Machines need testing rooms, spare parts, software updates and people who can repair them.\n\nThis support system affects whether an invention becomes useful. A company may sell a capable robot to a factory far from its research team. If a sensor fails and no local technician can replace it, the machine may stand idle for weeks. The problem is not intelligence alone; it is service.\n\nTraining should therefore include maintenance workers as well as designers. Clear manuals can show which parts users may change safely. Digital records can help a technician see when a fault began. Standard connections may also make parts easier to obtain from more than one supplier.\n\nThese measures do not attract the same crowds as a lively demonstration. They matter after the cameras leave. Buyers should ask about repair time, update support and the future supply of parts before counting a robot as productive equipment.\n\nAn innovation boom is stronger when machines have a working life, not just a launch day. The quiet repair bench is part of the technology story because it keeps a promising device available for the people who depend on it.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "Which overlooked need during a robotics boom is emphasized?",
+        "options": [
+          "More dancing routines for public shows",
+          "Long-term maintenance and service for deployed machines",
+          "Fewer records about equipment faults",
+          "A ban on standard connections"
+        ],
+        "answer": "B",
+        "explanation": "全文说明维修、零件、更新和技术人员决定机器人能否长期发挥作用。",
+        "evidence_text": "Machines need testing rooms, spare parts, software updates and people who can repair them."
+      },
+      {
+        "type": "detail",
+        "question": "What may happen when no local technician can replace a failed sensor?",
+        "options": [
+          "The robot becomes easier to sell.",
+          "The factory immediately designs a new sensor.",
+          "The machine may remain unused for weeks.",
+          "The research team no longer needs manuals."
+        ],
+        "answer": "C",
+        "explanation": "第二段直接说明缺少本地维修会导致机器闲置数周。",
+        "evidence_text": "the machine may stand idle for weeks."
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “idle” mean in the factory situation?",
+        "options": [
+          "Operating at maximum speed",
+          "Connected to many suppliers",
+          "Ready for a public dance",
+          "Not being used or working"
+        ],
+        "answer": "D",
+        "explanation": "传感器无法更换导致机器人不能工作，idle在此意为闲置。",
+        "evidence_text": "the machine may stand idle for weeks."
+      },
+      {
+        "type": "inference",
+        "question": "Why can standard connections improve repair?",
+        "options": [
+          "They prevent technicians from reading records.",
+          "They make every robot perform the same task.",
+          "They may allow compatible parts from several sources.",
+          "They remove the need for safety instructions."
+        ],
+        "answer": "C",
+        "explanation": "标准接口使替换件不必依赖单一来源，从而提高可维修性。",
+        "evidence_text": "Standard connections may also make parts easier to obtain from more than one supplier."
+      },
+      {
+        "type": "attitude",
+        "question": "What limitation of impressive launch events is highlighted?",
+        "options": [
+          "They matter more than a machines useful life.",
+          "They attract attention but leave important service questions unanswered.",
+          "They are sufficient evidence for buyers.",
+          "They should replace repair training."
+        ],
+        "answer": "B",
+        "explanation": "作者承认展示吸引目光，但强调镜头离开后的维护保障更重要。",
+        "evidence_text": "They matter after the cameras leave."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-manual-technology-l1-09",
+    "source_id": "src-科技-09",
+    "title": "Growth Is Easy to Count; Readiness Is Not",
+    "topic": "科技",
+    "difficulty": 1,
+    "source_name": "China Daily",
+    "source_url": "https://global.chinadaily.com.cn/a/202607/07/WS6a4c5484a310986e2b463d81.html",
+    "source_title": "Embodied AI sector posts robust growth - Chinadaily.com.cn",
+    "source_published_at": "2026-07-07",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "来源清单记录China Daily关于具身智能行业稳健增长的页面；本文仅采用行业增长这一事实方向。",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站围绕独立中心问题重新组织信息并原创改写，非媒体原文，非历年真题。",
+    "content": "When an embodied-AI industry grows, reports can count companies, products or investment. Embodied AI refers to systems that learn and act through a physical machine, such as a robot. These totals describe activity, but they do not show whether a machine is ready to share space with people.\n\nReadiness appears in smaller details. Can the robot stop when a child runs across its path? Does it recognize an object it has never held before? Can a worker understand why it refused a command? Answers require tests in varied settings, not one successful movement.\n\nGrowth also creates a need for common language. One company may call a task complete when a robot reaches the correct shelf. Another may require the machine to place an object safely and record the result. Without shared definitions, two success rates cannot be compared fairly.\n\nThis does not mean that industry numbers are useless. They can show where interest and resources are moving. They become more meaningful when paired with information about safety, repeated performance and the conditions of each test.\n\nA young field should celebrate progress without confusing motion with maturity. The important question is not only how many machines exist, but how clearly their abilities and limits are understood.",
+    "questions": [
+      {
+        "type": "word_guess",
+        "question": "What does “embodied” indicate in embodied AI?",
+        "options": [
+          "Existing only as written text",
+          "Working without any environment",
+          "Acting through a physical machine",
+          "Belonging to a financial report"
+        ],
+        "answer": "C",
+        "explanation": "首段直接说明这类系统通过机器人等实体机器学习和行动。",
+        "evidence_text": "Embodied AI refers to systems that learn and act through a physical machine, such as a robot."
+      },
+      {
+        "type": "main_idea",
+        "question": "What warning accompanies the reported industry growth?",
+        "options": [
+          "Physical machines cannot use artificial intelligence.",
+          "Common definitions always slow innovation.",
+          "Safety tests should use one fixed setting.",
+          "Product counts alone do not establish real-world readiness."
+        ],
+        "answer": "D",
+        "explanation": "全文强调增长指标必须与安全、重复表现和测试条件结合。",
+        "evidence_text": "These totals describe activity, but they do not show whether a machine is ready to share space with people."
+      },
+      {
+        "type": "detail",
+        "question": "Which unexpected event is proposed as a readiness test?",
+        "options": [
+          "Two firms use the same name.",
+          "A company publishes an investment total.",
+          "A robot reaches a familiar shelf.",
+          "A child suddenly crosses the robots path."
+        ],
+        "answer": "D",
+        "explanation": "第二段用儿童突然进入路径检验机器人能否安全停止。",
+        "evidence_text": "Can the robot stop when a child runs across its path?"
+      },
+      {
+        "type": "inference",
+        "question": "Why could two reported success rates be misleading?",
+        "options": [
+          "Every company tests exactly the same action.",
+          "The machines may have been judged by different definitions of completion.",
+          "A higher rate always means a safer machine.",
+          "Success cannot be measured more than once."
+        ],
+        "answer": "B",
+        "explanation": "公司对任务完成的定义不同，数字便不具备公平可比性。",
+        "evidence_text": "Without shared definitions, two success rates cannot be compared fairly."
+      },
+      {
+        "type": "attitude",
+        "question": "What balance does the final paragraph recommend?",
+        "options": [
+          "Ignore growth and discuss only failure.",
+          "Wait for complete maturity before any testing.",
+          "Celebrate progress while examining abilities and limits.",
+          "Replace clear definitions with larger totals."
+        ],
+        "answer": "C",
+        "explanation": "结尾既允许庆祝进步，也要求不把活跃误当成熟。",
+        "evidence_text": "A young field should celebrate progress without confusing motion with maturity."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-manual-technology-l2-02",
+    "source_id": "src-科技-02",
+    "title": "Useful Data Needs an Address",
+    "topic": "科技",
+    "difficulty": 2,
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20260429/6b6d7f4fa5f34ddd8dafc5049b1e5c1d/c.html",
+    "source_title": "China's 2025 data production hits 52.26 zettabytes",
+    "source_published_at": "2026-04-29",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "来源清单页面已记录2025年中国产生52.26泽字节数据，以及AI推理数据超过训练数据等事实；样稿对该页面事实完成核验。",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站围绕独立中心问题重新组织信息并原创改写，非媒体原文，非历年真题。",
+    "content": "China produced 52.26 zettabytes of data in 2025, more than one quarter above the previous year. The figure shows enormous digital activity. Yet production is only the first step in making information useful.\n\nOrganizations must decide where records belong. Some data supports an immediate service and can soon be removed. Other material may be needed for research, legal records or future training. Keeping everything together is not a neutral choice: storage consumes energy and money, while a crowded system can make an important file harder to locate.\n\nArtificial intelligence adds a useful distinction. Training data helps a model learn patterns. Inference data is created when the trained model responds to requests. China's inference volume moved above its training volume in 2025, suggesting that more systems were being used after development. Still, frequent use says nothing by itself about whether the answers were accurate.\n\nA sound data plan therefore begins with purpose. Owners should mark sensitive material, set a retention period and record who may use it. They also need tests for deletion, because a rule on paper is weak if copies remain in forgotten systems.\n\nThe challenge is not to build an endless digital warehouse. It is to give valuable information an address, a period of use and a responsible exit. Data becomes an asset only when people can find, protect and judge it.",
+    "questions": [
+      {
+        "type": "detail",
+        "question": "What national data total is reported for 2025?",
+        "options": [
+          "52.26 zettabytes",
+          "25.52 gigabytes",
+          "One quarter of a zettabyte",
+          "2025 zettabytes"
+        ],
+        "answer": "A",
+        "explanation": "首句直接给出2025年的数据产量。",
+        "evidence_text": "China produced 52.26 zettabytes of data in 2025"
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “retention” mean in the data plan?",
+        "options": [
+          "The speed of a model response",
+          "The time for which information is kept",
+          "The price of a storage building",
+          "The number of public requests"
+        ],
+        "answer": "B",
+        "explanation": "该词与保存期限和删除测试并列，指数据保留时长。",
+        "evidence_text": "set a retention period and record who may use it."
+      },
+      {
+        "type": "inference",
+        "question": "What does inference volume exceeding training volume suggest?",
+        "options": [
+          "Training data has disappeared completely.",
+          "Every AI answer has become accurate.",
+          "More trained systems are producing responses in use.",
+          "Storage no longer consumes energy."
+        ],
+        "answer": "C",
+        "explanation": "推理数据来自模型响应请求，因此其增长说明部署使用增加，但不保证质量。",
+        "evidence_text": "suggesting that more systems were being used after development."
+      },
+      {
+        "type": "main_idea",
+        "question": "Which principle organizes the discussion of rapid data growth?",
+        "options": [
+          "All records deserve permanent storage.",
+          "Large totals remove the need for management.",
+          "AI training is the only worthwhile data use.",
+          "Information needs a defined purpose, protection and exit."
+        ],
+        "answer": "D",
+        "explanation": "文章从增长转向分类、权限、保留和删除，中心是有目的的数据治理。",
+        "evidence_text": "It is to give valuable information an address, a period of use and a responsible exit."
+      },
+      {
+        "type": "attitude",
+        "question": "Which judgment is made about the 52.26-zettabyte total?",
+        "options": [
+          "As evidence of activity that still requires careful management",
+          "As proof that all stored information is valuable",
+          "As a reason to stop AI development",
+          "As an exact measure of answer quality"
+        ],
+        "answer": "A",
+        "explanation": "作者承认数字显示活动规模，但明确指出它只是让信息有用的第一步。",
+        "evidence_text": "The figure shows enormous digital activity. Yet production is only the first step in making information useful."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-manual-technology-l2-10",
+    "source_id": "src-科技-10",
+    "title": "A Smarter Robot Knows When to Pause",
+    "topic": "科技",
+    "difficulty": 2,
+    "source_name": "China Daily",
+    "source_url": "https://global.chinadaily.com.cn/a/202508/15/WS689e94e1a310b236346f1cc5_2.html",
+    "source_title": "Robot manufacturers shift focus to greater intelligence - Chinadaily.com.cn",
+    "source_published_at": "2025-08-15",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "来源清单记录China Daily关于机器人制造商把重点转向更高智能水平的页面；本文仅采用这一产业方向。",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站围绕独立中心问题重新组织信息并原创改写，非媒体原文，非历年真题。",
+    "content": "Robot makers are shifting attention from movement alone toward greater intelligence. The phrase sounds like a simple upgrade, but intelligence in a physical machine is not just the ability to complete a longer list of commands.\n\nA useful robot must connect perception with action. It may see a box, estimate whether the object is stable and choose how firmly to hold it. If part of the view is blocked, the machine should not behave as though nothing changed. It may slow down, look again or ask a worker for help.\n\nThat pause is sometimes treated as failure because it lowers the number of tasks completed per hour. In a shared workplace, however, uncertainty is information. A system that recognizes the edge of its knowledge can prevent a small doubt from becoming a damaged product or an injury.\n\nManufacturers therefore need more than successful examples in training data. They should include unusual objects, poor lighting and attempts that go wrong. Tests should record not only whether the final task was completed, but also how the robot responded when its first plan failed.\n\nGreater intelligence does not mean hiding every decision inside a more complex model. Workers need clear signals about what the robot sees, why it stopped and what kind of help it requires. The smarter machine is not always the one that acts fastest. Sometimes it is the one that pauses for a good reason and makes that reason visible.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "Which behavior marks intelligence in the workplace robot described?",
+        "options": [
+          "Managing uncertainty and communicating its limits",
+          "Acting quickly without reporting uncertainty",
+          "Following a longer fixed command list",
+          "Never asking a worker for assistance"
+        ],
+        "answer": "A",
+        "explanation": "全文把更高智能解释为识别不确定性、调整行动并清楚沟通限制。",
+        "evidence_text": "Sometimes it is the one that pauses for a good reason and makes that reason visible."
+      },
+      {
+        "type": "detail",
+        "question": "What responses are suggested when a robots view is blocked?",
+        "options": [
+          "Speed up and hold the object harder",
+          "Slow down, observe again or request help",
+          "End all work for the day",
+          "Pretend that the scene has not changed"
+        ],
+        "answer": "B",
+        "explanation": "第二段直接给出减速、重新观察和求助三种反应。",
+        "evidence_text": "It may slow down, look again or ask a worker for help."
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “edge” mean in “the edge of its knowledge”?",
+        "options": [
+          "The physical side of a box",
+          "A faster method of training",
+          "The limit beyond which the system is uncertain",
+          "The boundary of a factory building"
+        ],
+        "answer": "C",
+        "explanation": "语境讨论机器人识别自身不确定性，因此edge指知识能力的边界。",
+        "evidence_text": "A system that recognizes the edge of its knowledge"
+      },
+      {
+        "type": "inference",
+        "question": "Why should failed attempts appear in training and tests?",
+        "options": [
+          "They guarantee that poor lighting will disappear.",
+          "They allow manufacturers to hide completed tasks.",
+          "They make worker communication unnecessary.",
+          "They show whether the robot can recover safely from a broken plan."
+        ],
+        "answer": "D",
+        "explanation": "作者要求记录首次计划失败后的反应，用于判断恢复行为。",
+        "evidence_text": "Tests should record not only whether the final task was completed, but also how the robot responded when its first plan failed."
+      },
+      {
+        "type": "attitude",
+        "question": "How does the writer view a robot stopping because of doubt?",
+        "options": [
+          "As potentially responsible behavior in a shared workplace",
+          "Always as a loss of intelligence",
+          "As evidence that sensors should be removed",
+          "As useful only in public demonstrations"
+        ],
+        "answer": "A",
+        "explanation": "作者认为在共享工作场所，不确定性是一种信息，合理暂停可避免损害。",
+        "evidence_text": "In a shared workplace, however, uncertainty is information."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-manual-technology-l2-11",
+    "source_id": "src-科技-11",
+    "title": "A Leap Forward Needs a Longer Tape Measure",
+    "topic": "科技",
+    "difficulty": 2,
+    "source_name": "China Daily",
+    "source_url": "https://global.chinadaily.com.cn/a/202601/05/WS695b1063a310d6866eb31ed3.html",
+    "source_title": "Embodied intelligence industry shows big leap forward in 2025 - Chinadaily.com.cn",
+    "source_published_at": "2026-01-05",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "来源清单记录China Daily回顾2025年具身智能行业显著进展的页面；本文只采用年度显著进展这一事实方向。",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站围绕独立中心问题重新组织信息并原创改写，非媒体原文，非历年真题。",
+    "content": "A year of rapid progress in embodied intelligence may bring new robots, stronger components and more factory trials. Calling the change a leap forward captures its speed. It does not tell us which advances will remain useful after the year ends.\n\nDifferent measures answer different questions. The number of prototypes shows how many ideas reached a physical form. Hours of operation reveal whether machines can continue working. Records of human intervention show where autonomy still breaks down. Repair time indicates whether a device can return to service without waiting for its original engineers.\n\nThese measures should follow the same robot over time. A machine may perform well during its first week because every part is new and operators are especially careful. After months of dust, updates and changing tasks, weaknesses that were invisible at launch can appear. Long-term records make this decline visible.\n\nComparison also needs context. A warehouse robot and a care robot face different risks, so one success score cannot describe both fairly. The first may be judged partly by speed and handling accuracy. The second must also protect privacy, use gentle contact and give people clear control.\n\nProgress deserves recognition, but recognition should open a longer examination rather than close it. An industry has moved forward when its machines remain safe, repairable and useful as conditions change. The strongest annual story may be a system that keeps earning trust after its first impressive week.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "Why does rapid annual progress need a longer measurement period?",
+        "options": [
+          "New robots should never be recognized.",
+          "Early success may not show lasting safety and usefulness.",
+          "Every machine becomes stronger with dust.",
+          "Annual reports must discuss only repair costs."
+        ],
+        "answer": "B",
+        "explanation": "文章主张用持续表现、维修和场景变化检验年度进展是否真实持久。",
+        "evidence_text": "It does not tell us which advances will remain useful after the year ends."
+      },
+      {
+        "type": "detail",
+        "question": "What does repair time reveal about a robot?",
+        "options": [
+          "How many photographs were taken at launch",
+          "Whether it belongs in a care setting",
+          "Whether it can return to work without its original engineering team",
+          "How quickly a prototype receives a name"
+        ],
+        "answer": "C",
+        "explanation": "第二段直接说明维修时间反映设备能否摆脱原研发团队而恢复服务。",
+        "evidence_text": "Repair time indicates whether a device can return to service without waiting for its original engineers."
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “context” refer to in comparing robot scores?",
+        "options": [
+          "The year printed on a report",
+          "The physical color of a component",
+          "The size of the original engineering team",
+          "The setting, tasks and risks surrounding the machine"
+        ],
+        "answer": "D",
+        "explanation": "下文以仓库和照护场景的不同风险解释context。",
+        "evidence_text": "A warehouse robot and a care robot face different risks, so one success score cannot describe both fairly."
+      },
+      {
+        "type": "inference",
+        "question": "Why might weaknesses emerge only after several months?",
+        "options": [
+          "Use introduces dust, updates and changing tasks absent from launch conditions.",
+          "Operators stop recording all results after one week.",
+          "Old machines are never repaired.",
+          "Care robots always move faster than warehouse robots."
+        ],
+        "answer": "A",
+        "explanation": "第三段说明长期运行条件会暴露首周看不到的问题。",
+        "evidence_text": "After months of dust, updates and changing tasks, weaknesses that were invisible at launch can appear."
+      },
+      {
+        "type": "attitude",
+        "question": "Why should annual recognition begin rather than end examination?",
+        "options": [
+          "A successful year ends the need for evidence.",
+          "Praise should be followed by continued evaluation.",
+          "Only failed machines deserve long records.",
+          "Annual progress should be kept private."
+        ],
+        "answer": "B",
+        "explanation": "作者有条件地肯定进步，同时要求继续观察长期结果。",
+        "evidence_text": "Progress deserves recognition, but recognition should open a longer examination rather than close it."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-manual-technology-l2-12",
+    "source_id": "src-科技-12",
+    "title": "A Robotics Powerhouse Is Also a Network",
+    "topic": "科技",
+    "difficulty": 2,
+    "source_name": "China Daily",
+    "source_url": "https://global.chinadaily.com.cn/a/202507/31/WS688aafd1a310c26fd717ca47.html",
+    "source_title": "China rises as robotics powerhouse - Chinadaily.com.cn",
+    "source_published_at": "2025-07-31",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "来源清单记录China Daily关于中国成为机器人产业重要力量的页面；本文仅采用产业能力扩展这一事实方向。",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站围绕独立中心问题重新组织信息并原创改写，非媒体原文，非历年真题。",
+    "content": "A country may be called a robotics powerhouse because it designs many machines and supports large-scale manufacturing. Production matters, yet robots reach users through a wider network that includes component suppliers, software teams, testing sites, repair services and trained operators.\n\nWeakness in one link can limit the whole system. A factory may receive a new robot but lack staff who understand its safety settings. A small developer may build useful software but be unable to test it on several kinds of hardware. A repair center may wait for a specialized part from a single supplier.\n\nCommon interfaces can reduce some of these problems. If components and software exchange information in agreed ways, companies can compare alternatives and replace parts more easily. Standards should not force every robot to look or act alike. Their job is to make important connections predictable while leaving room for better designs.\n\nSkills are another part of capacity. Operators need to recognize unusual behavior, and technicians need access to accurate manuals and diagnostic tools. Training should continue after installation because software updates can change what a machine does.\n\nThe network also needs honest feedback. Users should be able to report recurring faults, and manufacturers should explain which machines may be affected. A large industry becomes dependable when information travels back from use to design.\n\nPower, in this sense, is not only the ability to produce more robots. It is the ability to keep varied machines safe, useful and repairable across many real workplaces.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What broader meaning of a robotics powerhouse is proposed?",
+        "options": [
+          "A nation that requires every robot to look alike",
+          "A factory that imports all specialized parts",
+          "A system able to support machines throughout real use",
+          "A market measured only by production totals"
+        ],
+        "answer": "C",
+        "explanation": "文章把产业力量扩展为供应、标准、技能、维修和反馈构成的全周期网络。",
+        "evidence_text": "It is the ability to keep varied machines safe, useful and repairable across many real workplaces."
+      },
+      {
+        "type": "detail",
+        "question": "What should happen after a robot is installed?",
+        "options": [
+          "All training should immediately end.",
+          "Software should never receive an update.",
+          "Safety settings should be hidden from staff.",
+          "Operator training should continue as behavior may change."
+        ],
+        "answer": "D",
+        "explanation": "第四段明确指出安装后仍需培训，因为软件更新可能改变机器行为。",
+        "evidence_text": "Training should continue after installation because software updates can change what a machine does."
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “interfaces” mean in paragraph 3?",
+        "options": [
+          "Shared ways for components and software to connect",
+          "Public faces used in advertisements",
+          "Buildings where robots are displayed",
+          "Rules that make every design identical"
+        ],
+        "answer": "A",
+        "explanation": "后句解释接口使部件和软件按约定方式交换信息。",
+        "evidence_text": "If components and software exchange information in agreed ways"
+      },
+      {
+        "type": "inference",
+        "question": "How can user fault reports strengthen the network?",
+        "options": [
+          "They prevent manufacturers from identifying affected machines.",
+          "They allow problems found in use to improve design and warn others.",
+          "They make diagnostic tools less accurate.",
+          "They replace the need for component suppliers."
+        ],
+        "answer": "B",
+        "explanation": "用户反馈可让现场信息返回设计端，并帮助说明受影响范围。",
+        "evidence_text": "A large industry becomes dependable when information travels back from use to design."
+      },
+      {
+        "type": "purpose",
+        "question": "Why are three weak-link examples given in paragraph 2?",
+        "options": [
+          "To argue that factories should avoid robots",
+          "To rank software above physical components",
+          "To show that output scale can be limited by missing support",
+          "To prove that one supplier is always enough"
+        ],
+        "answer": "C",
+        "explanation": "三个例子分别涉及操作、测试和零件，说明网络任一环节薄弱都会限制总体能力。",
+        "evidence_text": "Weakness in one link can limit the whole system."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-manual-technology-l2-13",
+    "source_id": "src-科技-13",
+    "title": "A Solar Wing Must Unfold into Evidence",
+    "topic": "科技",
+    "difficulty": 2,
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20250725/299000f2fbff43a08808c163a8729fe3/c.html",
+    "source_title": "China Focus: Chinese space firm unveils rollable solar wing as compact as water bottle",
+    "source_published_at": "2025-07-25",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "来源清单记录新华社英文网关于可卷展太阳翼体积可小至水瓶、用于空间场景的页面；本文仅采用紧凑卷收和在轨展开这一标题事实。",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站围绕独立中心问题重新组织信息并原创改写，非媒体原文，非历年真题。",
+    "content": "A Chinese space company presented a rollable solar wing that can be packed into a space about the size of a water bottle. Compact storage solves an important launch problem: rockets offer limited room, while a satellite needs a much larger surface to collect sunlight after reaching orbit.\n\nThe idea depends on a reliable change of shape. During launch, the wing must remain tightly protected. In space, it has to unroll to the planned position without twisting or stopping halfway. Once open, it must keep producing power through temperature changes and repeated movement of the satellite.\n\nEngineers therefore test more than whether the wing opens once. They may repeat folding and deployment, measure electrical output and examine how materials age. A test also needs realistic limits. A wing proven under one temperature range cannot automatically be trusted under every condition.\n\nCompact design creates trade-offs. Thinner materials can save mass, but they may be easier to damage. A stronger support may improve stability while taking more launch space. The best design is not simply the smallest package; it balances volume, weight, power and reliability for a particular mission.\n\nThe water-bottle comparison helps the public imagine the folded size. Mission evidence must do the harder work. The solar wing succeeds only when a small object during launch becomes a dependable source of energy after deployment.",
+    "questions": [
+      {
+        "type": "detail",
+        "question": "What launch problem does the rolled form address?",
+        "options": [
+          "Satellites receive too much sunlight.",
+          "Solar wings are too cold on Earth.",
+          "Electrical tests require large bottles.",
+          "Rockets have limited interior space."
+        ],
+        "answer": "D",
+        "explanation": "首段直接说明火箭空间有限，而太阳翼展开后需要更大面积。",
+        "evidence_text": "rockets offer limited room, while a satellite needs a much larger surface to collect sunlight after reaching orbit."
+      },
+      {
+        "type": "main_idea",
+        "question": "Which requirement matters beyond the wings compact size?",
+        "options": [
+          "It must unfold and supply power reliably in mission conditions.",
+          "It should remain inside a bottle in orbit.",
+          "It must be the thinnest design available.",
+          "It should avoid repeated deployment tests."
+        ],
+        "answer": "A",
+        "explanation": "文章中心是紧凑卷收只有与可靠展开、发电和耐久结合才有意义。",
+        "evidence_text": "The solar wing succeeds only when a small object during launch becomes a dependable source of energy after deployment."
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “trade-offs” mean in the design discussion?",
+        "options": [
+          "Instructions for painting a satellite",
+          "Benefits in one area that may bring costs in another",
+          "Failures caused only by temperature",
+          "Measurements that never affect a mission"
+        ],
+        "answer": "B",
+        "explanation": "下文以减重与易损、稳定与占空间的对立说明trade-offs指取舍。",
+        "evidence_text": "Thinner materials can save mass, but they may be easier to damage."
+      },
+      {
+        "type": "inference",
+        "question": "Why is one successful opening test insufficient?",
+        "options": [
+          "The folded package should become larger each time.",
+          "Satellites use solar wings only during launch.",
+          "The wing must also survive repetition and changing orbital conditions.",
+          "Electrical output cannot be measured after deployment."
+        ],
+        "answer": "C",
+        "explanation": "真实任务还要求反复可靠、材料耐久和不同温度下的发电表现。",
+        "evidence_text": "They may repeat folding and deployment, measure electrical output and examine how materials age."
+      },
+      {
+        "type": "attitude",
+        "question": "Why is the water-bottle image included?",
+        "options": [
+          "As complete proof that the wing is reliable",
+          "As evidence that the wing stores drinking water",
+          "As a reason to ignore mission requirements",
+          "As a clear image of size, not a substitute for testing"
+        ],
+        "answer": "D",
+        "explanation": "结尾明确区分便于想象尺寸的比喻与真正证明可靠性的任务证据。",
+        "evidence_text": "The water-bottle comparison helps the public imagine the folded size. Mission evidence must do the harder work."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-manual-technology-l3-03",
+    "source_id": "src-科技-03",
+    "title": "A Robot Learns from the Almost-Dropped Box",
+    "topic": "科技",
+    "difficulty": 3,
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20260316/9a6dffb3472c4ea8a02b58af155d8d00/c.html",
+    "source_title": "China Focus: Inside China's robot boot camp: The race to feed hungry AI",
+    "source_published_at": "2026-03-16",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "来源清单页面已记录机器人训练中心通过遥操作收集视觉、触觉与动作轨迹，以及现实动作数据稀缺等事实；样稿对该页面完成核验。",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站围绕独立中心问题重新组织信息并原创改写，非媒体原文，非历年真题。",
+    "content": "For a person, lifting a box is one action. For a humanoid robot, it is a sequence of judgments about distance, grip, balance and movement. This explains why a robot training center may repeat an ordinary task thousands of times.\n\nA human trainer can guide a machine while sensors record images, pressure, joint force and motion. The resulting trajectory shows how the robot moved from its first observation to the final position. Collections of such paths help a learning system connect what it senses with what it should do next.\n\nPhysical data is harder to gather than online text. There is no enormous public library showing many robot hands touching unfamiliar objects under every kind of light. Each new trial needs equipment, space and time. Touch is especially difficult because machines use different sensors, making records harder to combine.\n\nRepetition alone does not solve the problem. If trainers keep only smooth, successful lifts, a model may learn little about danger. The almost-dropped box can be more valuable because it shows slipping, correction and a safe decision to stop. A useful dataset includes variation as well as recovery from error.\n\nThis choice affects later deployment. A robot trained only with perfect boxes may fail when packaging is bent, wet or partly hidden. Trainers are therefore not merely collecting more examples; they are deciding which parts of the physical world the machine will be prepared to recognize.\n\nThe quality of robot learning depends on the ordinary difficulties preserved in its experience. Removing every messy attempt may create clean data, but it can also produce a machine that is surprised by normal life.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "Why can an almost-dropped box improve robot training?",
+        "options": [
+          "It removes the need for physical sensors.",
+          "It proves that online text teaches every movement.",
+          "It records error and recovery that clean success may omit.",
+          "It allows trainers to avoid repeated trials."
+        ],
+        "answer": "C",
+        "explanation": "文章用险些掉落的箱子说明错误轨迹能教会机器人识别打滑、纠正和安全停止。",
+        "evidence_text": "The almost-dropped box can be more valuable because it shows slipping, correction and a safe decision to stop."
+      },
+      {
+        "type": "detail",
+        "question": "Which signals are captured while the trainer guides the machine?",
+        "options": [
+          "Only the final shelf number",
+          "Public text and private messages",
+          "Weather reports from many cities",
+          "Images, pressure, joint force and motion"
+        ],
+        "answer": "D",
+        "explanation": "第二段直接列出图像、压力、关节力和运动信号。",
+        "evidence_text": "sensors record images, pressure, joint force and motion."
+      },
+      {
+        "type": "inference",
+        "question": "Why are touch records difficult to combine across robots?",
+        "options": [
+          "Different machines may measure touch with unlike sensors.",
+          "Touch can be copied from any online book.",
+          "Every robot uses one international hand.",
+          "Pressure never changes during a lift."
+        ],
+        "answer": "A",
+        "explanation": "各机器传感器不同，数据表示便难以直接合并。",
+        "evidence_text": "Touch is especially difficult because machines use different sensors, making records harder to combine."
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “trajectory” describe in this passage?",
+        "options": [
+          "A list of robot prices",
+          "The recorded path from sensing to final movement",
+          "A room used to store boxes",
+          "A rule for deleting failed trials"
+        ],
+        "answer": "B",
+        "explanation": "正文随后解释它记录从最初观察到最终位置的运动过程。",
+        "evidence_text": "The resulting trajectory shows how the robot moved from its first observation to the final position."
+      },
+      {
+        "type": "attitude",
+        "question": "What is the writers view of perfectly clean training data?",
+        "options": [
+          "It is always the safest possible choice.",
+          "It is useful only for learning from text.",
+          "It may hide normal difficulties the robot must handle.",
+          "It makes variation unnecessary."
+        ],
+        "answer": "C",
+        "explanation": "作者警告删除混乱尝试会让机器人对正常现实情况缺乏准备。",
+        "evidence_text": "Removing every messy attempt may create clean data, but it can also produce a machine that is surprised by normal life."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-manual-technology-l3-14",
+    "source_id": "src-科技-14",
+    "title": "An Industrial Park Cannot Manufacture Cooperation",
+    "topic": "科技",
+    "difficulty": 3,
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20250213/985012766fce48b38a035eb8cbd98489/c.html",
+    "source_title": "Beijing launches satellite internet industrial park, key laboratories",
+    "source_published_at": "2025-02-13",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "来源清单记录新华社英文网关于北京启动卫星互联网产业园和重点实验室的页面；本文仅采用产业园与实验室共同设立这一事实。",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站围绕独立中心问题重新组织信息并原创改写，非媒体原文，非历年真题。",
+    "content": "Beijing launched an industrial park and key laboratories for satellite internet. Placing companies and researchers near one another can shorten travel, make equipment easier to share and create more chances for technical discussion. Yet a common address does not automatically produce a common system.\n\nSatellite internet joins spacecraft, launch services, ground stations, user terminals and network software. Each part may be developed by a different organization. A change in one interface can force several partners to redesign their work. Teams therefore need shared technical descriptions, testing schedules and a clear way to report changes.\n\nLaboratories and companies also follow different clocks. Researchers may explore a risky idea whose value is uncertain, while a manufacturer needs a stable design for delivery. Cooperation works when these roles are visible. A test platform can protect experimental freedom without allowing an unfinished component to enter an operational network unnoticed.\n\nPhysical closeness may even hide weak communication. People can attend the same meeting yet use different definitions for reliability, delay or successful connection. Joint tests reveal such gaps because every team must explain what it expected and what actually occurred.\n\nThe park should also leave doors open to outside expertise. Universities, smaller suppliers and users in remote places may identify problems that the main members overlook. Access rules must protect sensitive designs without turning shared facilities into a private club.\n\nAn industrial cluster is therefore an opportunity for coordination, not proof of it. Its achievement should be measured by compatible systems, faster problem-solving and knowledge that crosses organizational boundaries with clear responsibility.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What must a satellite-internet cluster achieve beyond physical closeness?",
+        "options": [
+          "One building for every user terminal",
+          "Visible coordination across technical and organizational boundaries",
+          "Identical research and manufacturing schedules",
+          "Complete secrecy from outside specialists"
+        ],
+        "answer": "B",
+        "explanation": "全文说明共址只有转化为接口、测试、责任和知识协作才有价值。",
+        "evidence_text": "An industrial cluster is therefore an opportunity for coordination, not proof of it."
+      },
+      {
+        "type": "detail",
+        "question": "Which parts of satellite internet are named as connected?",
+        "options": [
+          "Aircraft cabins, roads and ocean ports",
+          "Only laboratories and meeting rooms",
+          "Spacecraft, launch services, ground stations, terminals and software",
+          "Factories, hospitals and farm machines"
+        ],
+        "answer": "C",
+        "explanation": "第二段直接列出卫星互联网的多个组成部分。",
+        "evidence_text": "Satellite internet joins spacecraft, launch services, ground stations, user terminals and network software."
+      },
+      {
+        "type": "word_guess",
+        "question": "What do different “clocks” represent for labs and companies?",
+        "options": [
+          "Separate time zones in Beijing",
+          "A failure to attend the same meeting",
+          "The speed of a satellite signal",
+          "Different working horizons and needs for certainty"
+        ],
+        "answer": "D",
+        "explanation": "后文对比科研探索不确定想法与制造商需要稳定交付设计，clocks比喻不同节奏。",
+        "evidence_text": "Researchers may explore a risky idea whose value is uncertain, while a manufacturer needs a stable design for delivery."
+      },
+      {
+        "type": "inference",
+        "question": "Why can joint tests expose communication gaps?",
+        "options": [
+          "They require teams to compare expected and actual behavior.",
+          "They prevent any interface from changing.",
+          "They make all technical terms unnecessary.",
+          "They replace operational networks with meetings."
+        ],
+        "answer": "A",
+        "explanation": "联合测试迫使各团队说明预期和实际结果，因而能发现术语和接口理解差异。",
+        "evidence_text": "Joint tests reveal such gaps because every team must explain what it expected and what actually occurred."
+      },
+      {
+        "type": "purpose",
+        "question": "What role do universities and remote users play in the argument?",
+        "options": [
+          "They prove that sensitive designs should be public",
+          "They show why valuable criticism should also enter from outside the cluster",
+          "They limit the park to large manufacturers",
+          "They show that remote places need no terminals"
+        ],
+        "answer": "B",
+        "explanation": "这些外部参与者可能发现核心成员忽略的问题，用于说明开放边界的重要性。",
+        "evidence_text": "Universities, smaller suppliers and users in remote places may identify problems that the main members overlook."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-manual-technology-l3-15",
+    "source_id": "src-科技-15",
+    "title": "Commercial Space Cooperation Needs Shared Verbs",
+    "topic": "科技",
+    "difficulty": 3,
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20251126/b143f3bf394a4001802658b30c4f9739/c.html",
+    "source_title": "China's space agency unveils plan to boost commercial growth, international cooperation",
+    "source_published_at": "2025-11-26",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "来源清单记录新华社英文网关于航天机构推动商业增长与国际合作计划的页面；本文仅采用增长和国际合作并列这一事实方向。",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站围绕独立中心问题重新组织信息并原创改写，非媒体原文，非历年真题。",
+    "content": "A space agency can encourage commercial growth and international cooperation in the same plan. The two goals may support each other: companies can provide specialized services, while partners across borders contribute knowledge, markets and observation sites. The difficulty begins when broad promises meet operational details.\n\nPartners first need shared verbs. “Test” may mean a laboratory check to one team and a flight demonstration to another. “Deliver” may describe arrival at a launch site or a service that has worked for several months. Contracts and technical plans should define these actions, the evidence required and the person responsible for accepting a result.\n\nCommercial schedules can move faster than government agreements. Speed may encourage experimentation, but it can also leave questions about export rules, spectrum use, safety review or data access until late in a project. Early legal and technical review is not simply delay; it can prevent a completed component from becoming unusable.\n\nInternational cooperation also needs a plan for failure. If a launch is postponed or an instrument stops working, teams must know who communicates with users, who investigates and which data can be shared. A fair agreement distributes both opportunity and repair duties.\n\nGrowth should not be measured only by the number of signed projects. A smaller partnership that produces compatible equipment, trustworthy data and repeated service may create more value than a long list of uncertain intentions. Public reports can help by separating agreements, tests, launches and operating services.\n\nThe plan succeeds when different actors can do more than announce the same goal. They must use shared meanings, meet visible responsibilities and learn together when space refuses to follow the schedule.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What turns commercial and international space plans into workable cooperation?",
+        "options": [
+          "A longer list of unsigned intentions",
+          "One schedule that never changes",
+          "Shared definitions, evidence and responsibility",
+          "Avoiding discussion of failure"
+        ],
+        "answer": "C",
+        "explanation": "全文从术语、证据、法规和故障责任说明合作需要可操作的共同规则。",
+        "evidence_text": "They must use shared meanings, meet visible responsibilities and learn together when space refuses to follow the schedule."
+      },
+      {
+        "type": "word_guess",
+        "question": "What are the “shared verbs” in paragraph 2?",
+        "options": [
+          "Foreign-language words used by astronauts",
+          "Commands for moving a satellite by hand",
+          "Names of commercial companies",
+          "Clearly defined actions such as testing and delivery"
+        ],
+        "answer": "D",
+        "explanation": "段落用test和deliver说明合作方必须对关键行动含义达成一致。",
+        "evidence_text": "Contracts and technical plans should define these actions, the evidence required and the person responsible for accepting a result."
+      },
+      {
+        "type": "detail",
+        "question": "Which possible obstacles should receive early review?",
+        "options": [
+          "Export rules, spectrum, safety and data access",
+          "Office furniture and public photographs",
+          "Only the final project title",
+          "The number of verbs in a contract"
+        ],
+        "answer": "A",
+        "explanation": "第三段直接列出出口规则、频谱、安全审查和数据访问。",
+        "evidence_text": "questions about export rules, spectrum use, safety review or data access"
+      },
+      {
+        "type": "inference",
+        "question": "Why can a smaller partnership create greater value?",
+        "options": [
+          "Small projects never experience launch delays.",
+          "It may deliver compatible equipment and reliable service instead of uncertain promises.",
+          "International partners do not need contracts.",
+          "Signed project totals always measure operating quality."
+        ],
+        "answer": "B",
+        "explanation": "作者对比可持续交付成果的小型合作与只有意向数量的长清单。",
+        "evidence_text": "A smaller partnership that produces compatible equipment, trustworthy data and repeated service may create more value than a long list of uncertain intentions."
+      },
+      {
+        "type": "attitude",
+        "question": "Which role does early legal and technical review play here?",
+        "options": [
+          "A needless obstacle to all experimentation",
+          "A task that belongs only after launch",
+          "Useful prevention against later unusable work",
+          "Proof that commercial schedules must stop"
+        ],
+        "answer": "C",
+        "explanation": "作者认为早期审查不是单纯拖延，而能避免完成的部件因规则问题无法使用。",
+        "evidence_text": "Early legal and technical review is not simply delay; it can prevent a completed component from becoming unusable."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-manual-technology-l3-16",
+    "source_id": "src-科技-16",
+    "title": "A Top-Ten List Is a Doorway, Not a Map",
+    "topic": "科技",
+    "difficulty": 3,
+    "source_name": "China Daily",
+    "source_url": "https://global.chinadaily.com.cn/a/202501/22/WS6790b6aaa310a2ab06ea8a4e.html",
+    "source_title": "China unveils country's top 10 sci-tech achievements in 2024 - Chinadaily.com.cn",
+    "source_published_at": "2025-01-22",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "来源清单记录China Daily发布中国2024年度十大科技成果的页面；本文仅采用“年度十大成果清单”这一事实。",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站围绕独立中心问题重新组织信息并原创改写，非媒体原文，非历年真题。",
+    "content": "A list of ten major science and technology achievements can help a wide audience notice work that would otherwise remain inside laboratories. The short format is memorable. It also creates a risk: readers may treat unlike achievements as if they had won the same race.\n\nScientific results mature in different ways. One may explain a basic process without an immediate product. Another may improve a machine already used in industry. A third may be a demonstration that still requires years of testing. Placing them together communicates importance, not identical readiness.\n\nSelection also reflects a purpose. A list designed for researchers might emphasize new knowledge, while one for the public may favor results that can be explained clearly. Neither choice is automatically wrong, but the criteria should be visible. Otherwise, omission may be mistaken for failure and inclusion for a promise of quick use.\n\nGood science communication can use the list as a doorway. Each item should lead readers to questions about evidence, uncertainty, contributors and next steps. Follow-up reports can explain whether a result was repeated, whether other teams examined it and what barriers remain before wider application.\n\nThe order deserves care as well. A numbered presentation is easy to read, yet it may suggest a ranking even when no direct comparison was made. Categories or short explanations can reduce that false message.\n\nAnnual recognition is valuable because attention can support learning and future work. Its purpose is not to close discussion with ten winners. It should open ten clearer conversations about how knowledge develops and how society can judge progress without demanding that every discovery become a product tomorrow.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "How should readers use an annual top-ten science list?",
+        "options": [
+          "As proof that all ten results are equally ready for market",
+          "As a final ranking that ends scientific discussion",
+          "As evidence that omitted work has failed",
+          "As a starting point for deeper questions about different achievements"
+        ],
+        "answer": "D",
+        "explanation": "文章主张把清单当作深入了解证据、成熟度和下一步的入口。",
+        "evidence_text": "Good science communication can use the list as a doorway."
+      },
+      {
+        "type": "detail",
+        "question": "What differences among achievements does paragraph 2 identify?",
+        "options": [
+          "They may be basic knowledge, an industrial improvement or an early demonstration.",
+          "They must all be finished consumer products.",
+          "They use identical evidence and schedules.",
+          "They are selected only by product price."
+        ],
+        "answer": "A",
+        "explanation": "第二段列出基础解释、产业改进和仍需测试的示范三种不同成熟路径。",
+        "evidence_text": "One may explain a basic process without an immediate product. Another may improve a machine already used in industry. A third may be a demonstration that still requires years of testing."
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “criteria” mean in the selection discussion?",
+        "options": [
+          "Dates on which products are sold",
+          "Standards used to decide what enters the list",
+          "Names of all laboratory workers",
+          "Reasons to avoid public explanation"
+        ],
+        "answer": "B",
+        "explanation": "criteria指清单选择所依据的标准，作者要求这些标准公开。",
+        "evidence_text": "the criteria should be visible."
+      },
+      {
+        "type": "inference",
+        "question": "Why might categories be better than simple numbering?",
+        "options": [
+          "They guarantee every discovery becomes a product.",
+          "They remove the need to explain evidence.",
+          "They can avoid implying an unsupported direct ranking.",
+          "They make the list harder to remember."
+        ],
+        "answer": "C",
+        "explanation": "编号容易被理解为名次，而类别和说明可减少这种错误信息。",
+        "evidence_text": "A numbered presentation is easy to read, yet it may suggest a ranking even when no direct comparison was made."
+      },
+      {
+        "type": "purpose",
+        "question": "Why does the passage contrast lists for researchers and the public?",
+        "options": [
+          "To prove that public readers dislike clear explanations",
+          "To require two identical lists every year",
+          "To argue that researchers need no communication",
+          "To show that selection depends on audience and declared purpose"
+        ],
+        "answer": "D",
+        "explanation": "对比说明不同受众会影响选取重点，因此必须公开目的与标准。",
+        "evidence_text": "A list designed for researchers might emphasize new knowledge, while one for the public may favor results that can be explained clearly."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-manual-technology-l3-17",
+    "source_id": "src-科技-17",
+    "title": "Commercial Space Begins After the Launch Applause",
+    "topic": "科技",
+    "difficulty": 3,
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20260126/642727770354460b8ccefe9c1f55a33a/c.html",
+    "source_title": "Economic Watch: China's commercial space industry hits high gear, expanding beyond launches",
+    "source_published_at": "2026-01-26",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "来源清单记录新华社英文网关于中国商业航天加速并拓展到发射之外的页面；本文仅采用产业链向发射后服务扩展这一事实方向。",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站围绕独立中心问题重新组织信息并原创改写，非媒体原文，非历年真题。",
+    "content": "A rocket launch is easy to recognize as a commercial-space event. Fire, sound and a rising vehicle create a clear moment of success. Yet an industry that expands beyond launches must also perform quieter work before and after that moment.\n\nSatellite makers need reliable components and tests before departure. Once a spacecraft reaches orbit, ground stations must receive data, software teams must operate the service and customers need terminals or useful information. Insurance, maintenance planning and end-of-life disposal connect the mission to responsibilities that may last for years.\n\nThis longer chain changes the meaning of delay. A late launch does not affect only the launch company. It may leave a satellite producer waiting, keep a data service from earning income and force users to continue with an older system. Transparent schedules and compatible interfaces can help partners find alternatives.\n\nBusiness growth also depends on repeat customers. A dramatic first mission can attract attention, but organizations pay again when a service is available, accurate and supported. Contracts should therefore distinguish a successful launch from the later delivery of communication, images or other promised results.\n\nFailure must produce knowledge rather than only blame. Companies have legitimate secrets, but shared safety findings can prevent another operator from repeating a dangerous mistake. Clear investigation rules can protect necessary information while still warning the wider sector.\n\nCommercial space reaches maturity when value can be traced across the whole service. Launches remain essential, but they are one link between design, operation, customer use and responsible disposal. The applause marks a beginning; dependable work over time completes the business case.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What does moving “beyond launches” require from commercial space?",
+        "options": [
+          "A dependable service chain before and after flight",
+          "More public applause for every rocket",
+          "Contracts that end when a vehicle rises",
+          "Less attention to customer results"
+        ],
+        "answer": "A",
+        "explanation": "全文把商业航天扩展为制造、地面运营、用户服务、调查和处置构成的链条。",
+        "evidence_text": "Commercial space reaches maturity when value can be traced across the whole service."
+      },
+      {
+        "type": "detail",
+        "question": "Which activities continue after a satellite enters orbit?",
+        "options": [
+          "Rocket painting and launch rehearsal only",
+          "Ground reception, software operation and customer service",
+          "Factory construction inside the satellite",
+          "Removal of every user terminal"
+        ],
+        "answer": "B",
+        "explanation": "第二段直接描述入轨后的地面站接收、软件运营及客户使用。",
+        "evidence_text": "Once a spacecraft reaches orbit, ground stations must receive data, software teams must operate the service and customers need terminals or useful information."
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “compatible” mean for partner interfaces?",
+        "options": [
+          "Kept secret from every partner",
+          "Used only during public launches",
+          "Able to work together or allow substitution",
+          "Designed to create longer delays"
+        ],
+        "answer": "C",
+        "explanation": "语境说透明日程和兼容接口帮助伙伴寻找替代路线，因此compatible指能够协同。",
+        "evidence_text": "Transparent schedules and compatible interfaces can help partners find alternatives."
+      },
+      {
+        "type": "inference",
+        "question": "Why can one delayed launch harm several businesses?",
+        "options": [
+          "Every satellite is built by the launch company.",
+          "Users always prefer an older system.",
+          "Insurance forbids schedule changes.",
+          "Several services and producers depend on the same flight schedule."
+        ],
+        "answer": "D",
+        "explanation": "第三段列出卫星制造商、数据服务和用户都会受到同一延误影响。",
+        "evidence_text": "It may leave a satellite producer waiting, keep a data service from earning income and force users to continue with an older system."
+      },
+      {
+        "type": "attitude",
+        "question": "What position does the writer take on sharing failure information?",
+        "options": [
+          "Safety lessons should be shared under clear protective rules.",
+          "All commercial secrets should be published.",
+          "Only blame should be announced publicly.",
+          "Other operators cannot learn from an accident."
+        ],
+        "answer": "A",
+        "explanation": "作者兼顾商业秘密与公共安全，主张在调查规则下共享必要安全发现。",
+        "evidence_text": "Clear investigation rules can protect necessary information while still warning the wider sector."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-manual-technology-l4-04",
+    "source_id": "src-科技-04",
+    "title": "The Greenhouse Refuses a Perfect Demonstration",
+    "topic": "科技",
+    "difficulty": 4,
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20250413/9730d7f5e31647f1b7360087b4cf307e/c.html",
+    "source_title": "China develops AI robot capable of human farming tasks",
+    "source_published_at": "2025-04-13",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "页面可访问；核验番茄授粉、三维视觉、自主导航、四代原型、跨学科团队和多地农场调研等事实。",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站围绕独立中心问题重组结构并原创改写，非媒体原文，非历年真题。",
+    "content": "An agricultural robot can be programmed to find tomato flowers and assist pollination, but a greenhouse is not a factory floor. Leaves hide targets, sunlight changes during the day, and a plant bends after contact. A machine that succeeds in a prepared row may fail when varieties, spacing or humidity change.\n\nChinese researchers developed four generations of a farming robot after visiting farms in several regions. The machine combines three-dimensional vision with autonomous navigation. Those technical abilities matter because pollination is a sequence: reach the correct plant, identify a suitable flower, approach without damage, act, and then continue safely through a crowded aisle.\n\nThe farm therefore belongs inside the laboratory. Design teams need growers to explain what counts as acceptable contact, which failures are costly and when human work is already efficient. A slower robot may be useful at night or during labor shortages, while a fast machine that bruises plants creates hidden losses.\n\nEvaluation should follow an entire growing cycle rather than a short demonstration. Relevant measures include successful pollination, fruit quality, plant damage, energy use, maintenance and the time workers spend rescuing the robot. Results should also be separated by crop variety and greenhouse layout.\n\nAutomation does not remove agricultural judgment. Independent seasonal trials should compare the robot with current work under the same crop conditions, including days when weather or disease changes plant behavior. It redistributes human judgment into training data, operating rules and decisions about when a person should intervene. The strongest field robot is not the one that imitates a human gesture most dramatically. It is the one whose behavior remains understandable and useful amid biological variation.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "Which design lesson organizes the greenhouse discussion?",
+        "options": [
+          "Field robots must be evaluated within variable farming conditions, not controlled demonstrations.",
+          "A headline number is sufficient without context or comparison.",
+          "The system can be judged without observing its actual users.",
+          "The case proves that scale alone guarantees reliable results."
+        ],
+        "answer": "A",
+        "explanation": "文章把农场变化视为研发条件，正确项概括全文。",
+        "evidence_text": "The farm therefore belongs inside the laboratory."
+      },
+      {
+        "type": "detail",
+        "question": "What two capabilities were combined in the reported machine?",
+        "options": [
+          "The system can be judged without observing its actual users.",
+          "Three-dimensional vision and autonomous navigation.",
+          "The case proves that scale alone guarantees reliable results.",
+          "Human review becomes unnecessary once new equipment appears."
+        ],
+        "answer": "B",
+        "explanation": "第二段直接列出视觉与导航能力。",
+        "evidence_text": "The machine combines three-dimensional vision with autonomous navigation."
+      },
+      {
+        "type": "word_guess",
+        "question": "In this argument, what does redistributes mean?",
+        "options": [
+          "The case proves that scale alone guarantees reliable results.",
+          "Human review becomes unnecessary once new equipment appears.",
+          "Moves human judgment into data, rules and intervention choices.",
+          "One successful trial settles every question about later use."
+        ],
+        "answer": "C",
+        "explanation": "语境说明判断没有消失，而是转移到系统设计环节。",
+        "evidence_text": "It redistributes human judgment into training data, operating rules and decisions about when a person should intervene."
+      },
+      {
+        "type": "inference",
+        "question": "Why might a slower farm robot still create value?",
+        "options": [
+          "Human review becomes unnecessary once new equipment appears.",
+          "One successful trial settles every question about later use.",
+          "The reported technology removes all cost and safety trade-offs.",
+          "It can work at useful times without causing the damage associated with speed."
+        ],
+        "answer": "D",
+        "explanation": "证据对比了可用时段与快速作业的潜在损失。",
+        "evidence_text": "A slower robot may be useful at night or during labor shortages, while a fast machine that bruises plants creates hidden losses."
+      },
+      {
+        "type": "attitude",
+        "question": "Which standard would the writer apply after harvest?",
+        "options": [
+          "Judge performance across a whole cycle using crop, damage, energy and labor evidence.",
+          "One successful trial settles every question about later use.",
+          "The reported technology removes all cost and safety trade-offs.",
+          "A headline number is sufficient without context or comparison."
+        ],
+        "answer": "A",
+        "explanation": "作者明确反对只看短时展示。",
+        "evidence_text": "Evaluation should follow an entire growing cycle rather than a short demonstration."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-manual-technology-l4-18",
+    "source_id": "src-科技-18",
+    "title": "A Satellite Line Must Manufacture Memory",
+    "topic": "科技",
+    "difficulty": 4,
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20260721/f0cfb204c3774459bbdcd9c994074b51/c.html",
+    "source_title": "Across China: \"Space factory\" mass produces satellites in east China",
+    "source_published_at": "2026-07-21",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "页面可访问；核验东部地区卫星智能制造工厂、批量生产、数字化工位和卫星规模化交付等报道事实。",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站围绕独立中心问题重组结构并原创改写，非媒体原文，非历年真题。",
+    "content": "A satellite factory in eastern China applies assembly-line ideas to spacecraft that were once treated mainly as individual projects. Standard workstations, digital records and repeated tests can shorten production time while a growing constellation demands many similar units. Yet mass production in space technology is not ordinary repetition.\n\nEach satellite will face vibration during launch, radiation, temperature swings and long periods without physical repair. A small assembly error can therefore remain hidden until replacement is extremely expensive. Standardization is valuable because it makes expected interfaces and procedures visible; it must not become permission to ignore unusual signals.\n\nProduction data can connect design with later operation. If engineers record component batches, test results and deviations, an anomaly in orbit can be traced back to other units that may share the risk. This is a digital thread: a continuous record linking requirements, manufacture, testing and service. Its usefulness depends on accurate entries and authority to stop the line.\n\nScale changes supply-chain responsibility as well. A faster final assembly cannot compensate for inconsistent sensors or delayed electronic parts. Suppliers need common quality definitions, while designers should avoid unnecessary uniqueness that makes replacement difficult. At the same time, excessive uniformity can create common-mode failure, in which one weakness affects many satellites together.\n\nOperators also need a quarantine process when one component batch produces unusual results. The correct goal is repeatable learning. A factory should lower cost and time while allowing evidence from every test and mission to improve the next unit. The achievement is not simply that satellites leave the building more quickly, but that speed remains compatible with traceability, independent checks and controlled variation.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What tension defines the space-factory model?",
+        "options": [
+          "The case proves that scale alone guarantees reliable results.",
+          "Human review becomes unnecessary once new equipment appears.",
+          "It must combine production speed with traceable reliability and controlled variation.",
+          "One successful trial settles every question about later use."
+        ],
+        "answer": "C",
+        "explanation": "全文围绕规模化与航天可靠性之间的张力展开。",
+        "evidence_text": "Operators also need a quarantine process when one component batch produces unusual results. The correct goal is repeatable learning."
+      },
+      {
+        "type": "detail",
+        "question": "Which operating hazards await a satellite after production?",
+        "options": [
+          "Human review becomes unnecessary once new equipment appears.",
+          "One successful trial settles every question about later use.",
+          "The reported technology removes all cost and safety trade-offs.",
+          "Launch vibration, radiation, temperature swings and limited repair access."
+        ],
+        "answer": "D",
+        "explanation": "第二段列出在轨与发射环境。",
+        "evidence_text": "Each satellite will face vibration during launch, radiation, temperature swings and long periods without physical repair."
+      },
+      {
+        "type": "word_guess",
+        "question": "How is a “digital thread” used here?",
+        "options": [
+          "As a continuous record joining design, manufacture, tests and service.",
+          "One successful trial settles every question about later use.",
+          "The reported technology removes all cost and safety trade-offs.",
+          "A headline number is sufficient without context or comparison."
+        ],
+        "answer": "A",
+        "explanation": "冒号后提供了精确定义。",
+        "evidence_text": "This is a digital thread: a continuous record linking requirements, manufacture, testing and service."
+      },
+      {
+        "type": "inference",
+        "question": "Why can extreme uniformity create fleet-wide risk?",
+        "options": [
+          "The reported technology removes all cost and safety trade-offs.",
+          "The same hidden weakness may appear across many satellites.",
+          "A headline number is sufficient without context or comparison.",
+          "The system can be judged without observing its actual users."
+        ],
+        "answer": "B",
+        "explanation": "共同模式故障会把单点弱项扩散到批量产品。",
+        "evidence_text": "excessive uniformity can create common-mode failure, in which one weakness affects many satellites together."
+      },
+      {
+        "type": "attitude",
+        "question": "What would count as responsible acceleration?",
+        "options": [
+          "A headline number is sufficient without context or comparison.",
+          "The system can be judged without observing its actual users.",
+          "Faster output that preserves stopping authority and independent quality checks.",
+          "The case proves that scale alone guarantees reliable results."
+        ],
+        "answer": "C",
+        "explanation": "作者有条件支持提速。",
+        "evidence_text": "speed remains compatible with traceability, independent checks and controlled variation."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-manual-technology-l4-19",
+    "source_id": "src-科技-19",
+    "title": "Connectivity from Space Has a Ground Problem",
+    "topic": "科技",
+    "difficulty": 4,
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20250528/f929fb6d7fd448188f5d3a4ae7455421/c.html",
+    "source_title": "China Focus: China builds satellite constellations to enable smart connectivity from space",
+    "source_published_at": "2025-05-28",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "页面可访问；核验中国建设卫星星座以支持空天地连接、通信应用和商业航天发展的报道主线。",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站围绕独立中心问题重组结构并原创改写，非媒体原文，非历年真题。",
+    "content": "Satellite constellations promise connectivity across wide areas because many spacecraft can share coverage and hand signals from one unit to another. The attraction is obvious for remote transport, emergency communication and places where ground networks are costly. The architecture, however, turns connection into a coordination problem.\n\nA single satellite follows a predictable path, while a large constellation continuously changes which unit can serve a user. Software must schedule links, avoid interference and move traffic between space and ground stations. Capacity is not simply the number of satellites; it depends on spectrum, gateways, terminal design and how demand is distributed across time and place.\n\nResilience also has two meanings. Many units can provide alternatives when one fails, reducing dependence on a single spacecraft. Yet shared software, components or control systems may create correlated failure. Diversity in orbital planes and backup routes helps only if operators test scenarios in which several layers fail together.\n\nExpansion imposes responsibilities beyond service quality. Collision avoidance requires reliable tracking and communication among operators. Satellites need plans for safe disposal at the end of useful life. Brightness and radio emissions can affect astronomy, while replacement launches add material and environmental costs. These effects should enter design before the sky becomes crowded.\n\nAccess must be evaluated at the user end. A signal over a region is not useful if terminals are unaffordable, power is unreliable or local services cannot use the connection. Demonstrations should measure completed tasks during difficult weather and peak demand, not merely theoretical coverage.\n\nA smart constellation is therefore governed infrastructure rather than a collection of moving antennas. Its intelligence lies in allocating scarce resources, recovering from failures and limiting harm while delivering a service people can actually reach.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "Which claim best unites orbit management and user access?",
+        "options": [
+          "Human review becomes unnecessary once new equipment appears.",
+          "One successful trial settles every question about later use.",
+          "The reported technology removes all cost and safety trade-offs.",
+          "A constellation succeeds as governed infrastructure, not by spacecraft count alone."
+        ],
+        "answer": "D",
+        "explanation": "末段概括了全篇。",
+        "evidence_text": "A smart constellation is therefore governed infrastructure rather than a collection of moving antennas."
+      },
+      {
+        "type": "detail",
+        "question": "What resources besides satellites shape network capacity?",
+        "options": [
+          "Spectrum, gateways, terminals and the distribution of demand.",
+          "One successful trial settles every question about later use.",
+          "The reported technology removes all cost and safety trade-offs.",
+          "A headline number is sufficient without context or comparison."
+        ],
+        "answer": "A",
+        "explanation": "第二段给出容量的多项约束。",
+        "evidence_text": "it depends on spectrum, gateways, terminal design and how demand is distributed across time and place."
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “correlated failure” describe?",
+        "options": [
+          "The reported technology removes all cost and safety trade-offs.",
+          "Several units failing together because they share a weakness.",
+          "A headline number is sufficient without context or comparison.",
+          "The system can be judged without observing its actual users."
+        ],
+        "answer": "B",
+        "explanation": "共同依赖会造成同时故障。",
+        "evidence_text": "shared software, components or control systems may create correlated failure."
+      },
+      {
+        "type": "inference",
+        "question": "Why is theoretical coverage an inadequate service test?",
+        "options": [
+          "A headline number is sufficient without context or comparison.",
+          "The system can be judged without observing its actual users.",
+          "Users may still lack affordable terminals, power or reliable task completion.",
+          "The case proves that scale alone guarantees reliable results."
+        ],
+        "answer": "C",
+        "explanation": "覆盖不等于可用服务。",
+        "evidence_text": "A signal over a region is not useful if terminals are unaffordable, power is unreliable or local services cannot use the connection."
+      },
+      {
+        "type": "attitude",
+        "question": "How does the writer view rapid constellation expansion?",
+        "options": [
+          "The system can be judged without observing its actual users.",
+          "The case proves that scale alone guarantees reliable results.",
+          "Human review becomes unnecessary once new equipment appears.",
+          "As useful only with collision, disposal and public-impact governance."
+        ],
+        "answer": "D",
+        "explanation": "作者设置了明确治理条件。",
+        "evidence_text": "These effects should enter design before the sky becomes crowded."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-manual-technology-l4-20",
+    "source_id": "src-科技-20",
+    "title": "A Thousand Experiments Compete for One Orbit",
+    "topic": "科技",
+    "difficulty": 4,
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20250113/d65dd1aaf8b046b995da726131f8264c/c.html",
+    "source_title": "China Focus: China's space station to conduct over 1,000 research projects",
+    "source_published_at": "2025-01-13",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "页面可访问；核验空间站计划开展1000余项研究及生命、材料、医学等研究方向。",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站围绕独立中心问题重组结构并原创改写，非媒体原文，非历年真题。",
+    "content": "China's space station was expected to conduct more than 1,000 research projects, covering life science, materials, medicine and other fields. The number signals opportunity, yet an orbital laboratory faces an unusual scarcity: crew time, power, volume, data links and return capacity must be shared among experiments.\n\nSelection therefore shapes knowledge. A project may be scientifically interesting but poorly suited to microgravity, or it may require equipment that prevents several smaller studies from flying. Review should ask what the space environment uniquely contributes and whether the result can be compared with a strong ground control.\n\nLarge inventories also create a reproducibility challenge. Hardware may differ between missions, astronauts cannot repeat every manual step exactly, and launch schedules delay correction. Protocols should record temperature, vibration, timing and deviations in enough detail for later teams to interpret a result. Negative findings deserve preservation because repeating an unreported failure wastes rare capacity.\n\nResearch portfolios need balance. Some experiments seek immediate applications, such as better materials or medical insight; others investigate basic processes whose value may emerge much later. Requiring quick commercial return from every project would distort the station's role. Conversely, a famous scientific label should not protect work from review.\n\nPublic communication should distinguish an experiment launched, completed and independently interpreted. Counting a planned project as an achievement confuses access with knowledge. Open metadata and carefully timed data release can allow researchers outside the original team to test conclusions while respecting legitimate safety constraints.\n\nThe station's scientific importance is thus not proportional to its project total. It depends on a transparent system that allocates scarce orbital conditions, records failures and converts physical access into evidence that other scientists can question and build upon.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What makes a thousand orbital projects scientifically meaningful?",
+        "options": [
+          "Transparent selection, reproducible records and evidence open to later scrutiny.",
+          "One successful trial settles every question about later use.",
+          "The reported technology removes all cost and safety trade-offs.",
+          "A headline number is sufficient without context or comparison."
+        ],
+        "answer": "A",
+        "explanation": "结尾直接给出评价框架。",
+        "evidence_text": "It depends on a transparent system that allocates scarce orbital conditions, records failures and converts physical access into evidence that other scientists can question and build upon."
+      },
+      {
+        "type": "detail",
+        "question": "Which constraints must experiments share aboard the station?",
+        "options": [
+          "The reported technology removes all cost and safety trade-offs.",
+          "Crew time, power, physical space, data links and return capacity.",
+          "A headline number is sufficient without context or comparison.",
+          "The system can be judged without observing its actual users."
+        ],
+        "answer": "B",
+        "explanation": "首段列出稀缺资源。",
+        "evidence_text": "crew time, power, volume, data links and return capacity must be shared among experiments."
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “portfolio” mean in the research discussion?",
+        "options": [
+          "A headline number is sufficient without context or comparison.",
+          "The system can be judged without observing its actual users.",
+          "A managed collection of projects with different aims and time horizons.",
+          "The case proves that scale alone guarantees reliable results."
+        ],
+        "answer": "C",
+        "explanation": "上下文随后对基础与应用项目进行组合配置。",
+        "evidence_text": "Research portfolios need balance."
+      },
+      {
+        "type": "inference",
+        "question": "Why should negative results remain accessible?",
+        "options": [
+          "The system can be judged without observing its actual users.",
+          "The case proves that scale alone guarantees reliable results.",
+          "Human review becomes unnecessary once new equipment appears.",
+          "They can prevent later teams from spending rare orbital resources on the same failure."
+        ],
+        "answer": "D",
+        "explanation": "证据句说明隐藏失败会导致重复浪费。",
+        "evidence_text": "repeating an unreported failure wastes rare capacity."
+      },
+      {
+        "type": "attitude",
+        "question": "Which project-count claim would the author reject?",
+        "options": [
+          "Treating every planned experiment as completed scientific knowledge.",
+          "The case proves that scale alone guarantees reliable results.",
+          "Human review becomes unnecessary once new equipment appears.",
+          "One successful trial settles every question about later use."
+        ],
+        "answer": "A",
+        "explanation": "作者区分计划、完成和解释。",
+        "evidence_text": "Counting a planned project as an achievement confuses access with knowledge."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-manual-technology-l4-21",
+    "source_id": "src-科技-21",
+    "title": "The Inflatable Factory Must Survive Its Own Success",
+    "topic": "科技",
+    "difficulty": 4,
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20251103/9c6d25a7a04b46c18adf835ea542ba63/c.html",
+    "source_title": "China tests inflatable space factory, eyes in-orbit manufacturing",
+    "source_published_at": "2025-11-03",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "页面可访问；核验充气式空间工厂试验、在轨展开和空间制造设想等报道事实。",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站围绕独立中心问题重组结构并原创改写，非媒体原文，非历年真题。",
+    "content": "An inflatable structure tested for use in an orbital factory offers a different answer to a basic space problem: launch vehicles have narrow interiors, while manufacturing may need large working volume. A folded module can travel compactly and expand after reaching orbit. Deployment, however, is only the first requirement.\n\nThe structure must retain shape through repeated heating and cooling, resist small debris and provide barriers against radiation and leakage. Flexible materials behave differently from rigid metal when equipment vibrates or when a tool pushes against a wall. Engineers therefore need tests that combine pressure, loads and long duration rather than celebrating maximum volume alone.\n\nManufacturing in orbit also needs a clear reason. Microgravity and vacuum may enable crystals, alloys or biological products that are difficult to make on Earth. But the benefit must exceed launch, energy, crew, quality-control and return costs. A product whose special property cannot be measured consistently has no reliable market merely because it was made in space.\n\nAutomation becomes central when human access is limited. Robots may move materials and inspect products, but remote control faces communication delay and incomplete sensory information. Systems should fail safely, isolate a damaged process and preserve diagnostic records. Repair plans must identify which parts can be replaced and which failure would end the mission.\n\nAn inflatable factory also raises governance questions. Experiments, commercial production and crew safety may compete for power or attention. Ownership of data, responsibility for debris and verification of product claims need rules before production expands.\n\nThe useful innovation is not simply a larger room created from a smaller package. It is a test of whether expandable architecture can become dependable industrial infrastructure under conditions where maintenance, rescue and waste disposal are unusually difficult.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What question does the inflatable-factory test ultimately raise?",
+        "options": [
+          "The reported technology removes all cost and safety trade-offs.",
+          "Whether expandable volume can become reliable infrastructure under orbital constraints.",
+          "A headline number is sufficient without context or comparison.",
+          "The system can be judged without observing its actual users."
+        ],
+        "answer": "B",
+        "explanation": "末句统领全文。",
+        "evidence_text": "It is a test of whether expandable architecture can become dependable industrial infrastructure under conditions where maintenance, rescue and waste disposal are unusually difficult."
+      },
+      {
+        "type": "detail",
+        "question": "Why is folding the module useful at launch?",
+        "options": [
+          "A headline number is sufficient without context or comparison.",
+          "The system can be judged without observing its actual users.",
+          "It fits a large future workspace into a narrow launch interior.",
+          "The case proves that scale alone guarantees reliable results."
+        ],
+        "answer": "C",
+        "explanation": "首段说明折叠与展开的关系。",
+        "evidence_text": "A folded module can travel compactly and expand after reaching orbit."
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “isolate” mean in the failure plan?",
+        "options": [
+          "The system can be judged without observing its actual users.",
+          "The case proves that scale alone guarantees reliable results.",
+          "Human review becomes unnecessary once new equipment appears.",
+          "Contain a damaged process so it does not spread harm."
+        ],
+        "answer": "D",
+        "explanation": "与安全失效和诊断记录并列，可知指隔离故障。",
+        "evidence_text": "Systems should fail safely, isolate a damaged process and preserve diagnostic records."
+      },
+      {
+        "type": "inference",
+        "question": "Why is a unique orbital product not automatically commercial?",
+        "options": [
+          "Its special property must be measurable and justify full production and return costs.",
+          "The case proves that scale alone guarantees reliable results.",
+          "Human review becomes unnecessary once new equipment appears.",
+          "One successful trial settles every question about later use."
+        ],
+        "answer": "A",
+        "explanation": "稀缺性不能替代质量与成本证据。",
+        "evidence_text": "A product whose special property cannot be measured consistently has no reliable market merely because it was made in space."
+      },
+      {
+        "type": "attitude",
+        "question": "What is the authors view of the successful deployment itself?",
+        "options": [
+          "Human review becomes unnecessary once new equipment appears.",
+          "Necessary but far from sufficient evidence of an orbital factory.",
+          "One successful trial settles every question about later use.",
+          "The reported technology removes all cost and safety trade-offs."
+        ],
+        "answer": "B",
+        "explanation": "作者明确限定展开只是首步。",
+        "evidence_text": "Deployment, however, is only the first requirement."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-manual-technology-l5-05",
+    "source_id": "src-科技-05",
+    "title": "A Robot Learns a Workplace, Not a Generic World",
+    "topic": "科技",
+    "difficulty": 5,
+    "source_name": "China Daily",
+    "source_url": "https://global.chinadaily.com.cn/a/202507/26/WS6884c4c9a310ad07b5d92322.html",
+    "source_title": "Shanghai robotics innovation center signs training agreements with tech companies - Chinadaily.com.cn",
+    "source_published_at": "2025-07-26",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "China Daily页面可访问；核验上海机器人创新中心签署训练场合作、从行走向工作能力转变、多场景训练及开放协作等事实。",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站围绕独立中心问题重组结构并原创改写，非媒体原文，非历年真题。",
+    "content": "A robotics innovation center in Shanghai signed training agreements with technology companies, creating access to more settings in which machines can learn. The shift sounds simple—from making a robot walk to making it work—but “work” is defined by particular environments, people and consequences.\n\nA warehouse values predictable handling and safe movement around workers. A care setting requires gentler contact, privacy and clear human authority. A factory may prioritize repeatable precision, while a public venue confronts children, crowds and unexpected objects. Training across scenes can broaden a robot's experience, yet combining data without labels may blur distinctions that safety depends on.\n\nPartnerships should specify more than the number of collected demonstrations. Who chooses tasks? Which failures are retained? Can workers refuse recording? How are trade secrets and personal information separated from motion data? An open training ecosystem is credible only when access rules and later use are visible to contributors.\n\nBenchmarking also changes as robots leave controlled floors. Average task success can hide rare high-cost events. Evaluators need distributions, near misses, recovery behavior and performance after maintenance. A model that completes ninety-nine easy lifts but mishandles one dangerous object may be less useful than a slower system that asks for help.\n\nAgreements can accelerate learning because no single laboratory contains every realistic condition. They can also concentrate power if a shared center becomes the only route to data or certification. Common interfaces, portable records and opportunities for independent testing keep collaboration from becoming dependence.\n\nLongitudinal review should ask whether performance survives software updates and staff turnover, rather than ending when a partnership announces its first dataset. The strongest ecosystem does not merely feed more experiences into machines. It preserves the meaning and ownership of those experiences, then uses them to decide where autonomy is justified and where human control should remain immediate.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "Which responsibility accompanies a multi-scene robot training network?",
+        "options": [
+          "The system can be judged without observing its actual users.",
+          "It must preserve context, rights and safety meaning while sharing experience.",
+          "The case proves that scale alone guarantees reliable results.",
+          "Human review becomes unnecessary once new equipment appears."
+        ],
+        "answer": "B",
+        "explanation": "结尾概括了生态合作的责任。",
+        "evidence_text": "It preserves the meaning and ownership of those experiences, then uses them to decide where autonomy is justified and where human control should remain immediate."
+      },
+      {
+        "type": "detail",
+        "question": "Why can warehouse and care data not be treated as identical?",
+        "options": [
+          "The case proves that scale alone guarantees reliable results.",
+          "Human review becomes unnecessary once new equipment appears.",
+          "Their contact, privacy, authority and risk requirements differ.",
+          "One successful trial settles every question about later use."
+        ],
+        "answer": "C",
+        "explanation": "场景差异决定数据含义。",
+        "evidence_text": "A care setting requires gentler contact, privacy and clear human authority."
+      },
+      {
+        "type": "word_guess",
+        "question": "In this passage, what is a “near miss”?",
+        "options": [
+          "Human review becomes unnecessary once new equipment appears.",
+          "One successful trial settles every question about later use.",
+          "The reported technology removes all cost and safety trade-offs.",
+          "A dangerous event narrowly avoided rather than a completed failure."
+        ],
+        "answer": "D",
+        "explanation": "该词与故障和恢复并列，指险些发生的事故。",
+        "evidence_text": "Evaluators need distributions, near misses, recovery behavior and performance after maintenance."
+      },
+      {
+        "type": "inference",
+        "question": "Why might a robot that requests help outperform a faster one?",
+        "options": [
+          "Safe escalation can matter more than average speed on easy cases.",
+          "One successful trial settles every question about later use.",
+          "The reported technology removes all cost and safety trade-offs.",
+          "A headline number is sufficient without context or comparison."
+        ],
+        "answer": "A",
+        "explanation": "作者强调低频高损害风险。",
+        "evidence_text": "A model that completes ninety-nine easy lifts but mishandles one dangerous object may be less useful than a slower system that asks for help."
+      },
+      {
+        "type": "inference",
+        "question": "How could one shared center create unhealthy dependence?",
+        "options": [
+          "The reported technology removes all cost and safety trade-offs.",
+          "It might control the only route to important data or certification.",
+          "A headline number is sufficient without context or comparison.",
+          "The system can be judged without observing its actual users."
+        ],
+        "answer": "B",
+        "explanation": "证据直接支撑该推断。",
+        "evidence_text": "They can also concentrate power if a shared center becomes the only route to data or certification."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-manual-technology-l5-22",
+    "source_id": "src-科技-22",
+    "title": "Commercial Space Needs a Way to Fail Well",
+    "topic": "科技",
+    "difficulty": 5,
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20250619/979732e036494eb0926c3b95efac5992/c.html",
+    "source_title": "Economic Watch: China's commercial space sector strives to reach new heights",
+    "source_published_at": "2025-06-19",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "页面可访问；核验商业航天产业链、发射与卫星制造、应用服务和投融资发展等报道主线。",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站围绕独立中心问题重组结构并原创改写，非媒体原文，非历年真题。",
+    "content": "China's commercial space sector connects launch providers, satellite makers, ground services, data companies and specialized investors. Its expansion is often summarized by launch counts or financing rounds. Those measures reveal activity, but an industrial system becomes durable only when customers receive dependable services and failures produce shared learning.\n\nCommercial incentives can shorten schedules and encourage component reuse. They can also reward optimistic claims before long-term reliability is known. Procurement should therefore separate demonstration contracts from operational service. A buyer testing a new system can accept uncertainty; an emergency user needs explicit availability, backup and compensation rules.\n\nLaunch capacity is a bottleneck with unusual consequences. Delays at one vehicle can strand satellites, staff and capital across several firms. More launchers may reduce queues, yet standard interfaces and transparent schedules can sometimes create greater resilience than another proprietary system. Infrastructure should be judged by how well participants can switch when one route fails.\n\nInsurance and investigation determine whether risk becomes knowledge. If accident data remains hidden behind commercial secrecy, other operators may repeat the same design error. Public reporting need not expose every trade secret, but it should describe causes, affected components and corrective action well enough to protect the wider sector.\n\nEnvironmental responsibility extends beyond the launch site. Manufacturing uses materials and energy; rocket stages and satellites create disposal duties; constellations affect orbital congestion. Firms need lifecycle plans whose costs are not transferred to future operators or the public.\n\nGovernment still shapes the market through spectrum, safety, procurement and research. The challenge is to support experimentation without guaranteeing individual business models. Neutral standards and competitive access allow unsuccessful firms to exit without taking essential services with them.\n\nCommercial space reaches new heights when competition strengthens a common technical foundation. A busy market is a beginning; reliable service, open failure learning and accountable end-of-life design show whether the sector has become infrastructure.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What distinguishes a busy commercial-space market from mature infrastructure?",
+        "options": [
+          "A headline number is sufficient without context or comparison.",
+          "The system can be judged without observing its actual users.",
+          "Reliable service, shared failure learning and accountable lifecycle duties.",
+          "The case proves that scale alone guarantees reliable results."
+        ],
+        "answer": "C",
+        "explanation": "结尾给出成熟标准。",
+        "evidence_text": "A busy market is a beginning; reliable service, open failure learning and accountable end-of-life design show whether the sector has become infrastructure."
+      },
+      {
+        "type": "detail",
+        "question": "Which actors form the sector described at the start?",
+        "options": [
+          "The system can be judged without observing its actual users.",
+          "The case proves that scale alone guarantees reliable results.",
+          "Human review becomes unnecessary once new equipment appears.",
+          "Launch, satellite, ground-service, data and investment organizations."
+        ],
+        "answer": "D",
+        "explanation": "首句列举产业链参与者。",
+        "evidence_text": "China's commercial space sector connects launch providers, satellite makers, ground services, data companies and specialized investors."
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “bottleneck” mean in the launch discussion?",
+        "options": [
+          "A constrained stage that delays many connected activities.",
+          "The case proves that scale alone guarantees reliable results.",
+          "Human review becomes unnecessary once new equipment appears.",
+          "One successful trial settles every question about later use."
+        ],
+        "answer": "A",
+        "explanation": "后文说明一个环节延误会牵连多家公司。",
+        "evidence_text": "Launch capacity is a bottleneck with unusual consequences."
+      },
+      {
+        "type": "inference",
+        "question": "Why should accident findings cross company boundaries?",
+        "options": [
+          "Human review becomes unnecessary once new equipment appears.",
+          "Otherwise similar hidden errors may be repeated by other operators.",
+          "One successful trial settles every question about later use.",
+          "The reported technology removes all cost and safety trade-offs."
+        ],
+        "answer": "B",
+        "explanation": "证据说明公开失败信息的公共价值。",
+        "evidence_text": "If accident data remains hidden behind commercial secrecy, other operators may repeat the same design error."
+      },
+      {
+        "type": "inference",
+        "question": "Why favor neutral standards over protection of one firm?",
+        "options": [
+          "One successful trial settles every question about later use.",
+          "The reported technology removes all cost and safety trade-offs.",
+          "Essential services can continue even when an individual business model fails.",
+          "A headline number is sufficient without context or comparison."
+        ],
+        "answer": "C",
+        "explanation": "标准可降低单家公司退出的系统冲击。",
+        "evidence_text": "Neutral standards and competitive access allow unsuccessful firms to exit without taking essential services with them."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-manual-technology-l5-23",
+    "source_id": "src-科技-23",
+    "title": "When Two Smart Industries Share One Failure",
+    "topic": "科技",
+    "difficulty": 5,
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20260826/79e5f1a05fdf471b8379a5812de0f560/c.html",
+    "source_title": "China Focus: China unveils roadmap for AI, NEV industrial upgrading",
+    "source_published_at": "2026-08-26",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "页面可访问；核验2026年AI与新能源汽车产业升级路线图、技术融合和产业链协同等报道事实。",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站围绕独立中心问题重组结构并原创改写，非媒体原文，非历年真题。",
+    "content": "A roadmap for upgrading artificial intelligence and new-energy vehicles links two industries that increasingly depend on one another. Vehicles generate data and need chips, models, sensors and software; AI systems gain a demanding physical environment in which errors affect motion and safety. Integration can create value, but it also connects risks that were once easier to separate.\n\nIndustrial roadmaps are useful when they coordinate standards, infrastructure and research horizons. They become misleading when targets are treated as forecasts guaranteed by policy. Battery chemistry, computing cost, consumer demand and international supply conditions can change before factories built today reach full output.\n\nSoftware updates complicate product responsibility. A car can acquire new behavior after sale, so safety assessment cannot end at the factory gate. Version records, staged release, rollback and monitoring of rare events should form part of certification. Drivers need intelligible explanations of what changed rather than a general notice that the system became smarter.\n\nData creates another boundary problem. Fleet information can improve maps, energy use and hazard detection, but location and cabin records may expose individuals. Collection should be proportional to a stated function, with retention limits and realistic deletion routes. Training value is not permission for indefinite storage.\n\nUpgrading also affects repair networks and workers. Independent workshops may lose access if diagnostics are locked behind proprietary software. Technicians need training for high-voltage systems and algorithmic fault reports. A technologically advanced vehicle that cannot be safely maintained outside a few cities creates unequal reliability.\n\nThe roadmap should therefore be evaluated through capability, not labels. Are systems safer after updates? Can suppliers replace constrained components? Do repairers receive usable information? Are efficiency gains measured across the battery and electricity lifecycle?\n\nAI and vehicle manufacturing advance together when coordination preserves modularity and accountability. Deep integration should make failures easier to locate and correct, not turn every component into part of an opaque promise.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What condition makes AI–vehicle integration responsible?",
+        "options": [
+          "The system can be judged without observing its actual users.",
+          "The case proves that scale alone guarantees reliable results.",
+          "Human review becomes unnecessary once new equipment appears.",
+          "Coordination must preserve traceability, repairability and accountable system boundaries."
+        ],
+        "answer": "D",
+        "explanation": "末句表达中心判断。",
+        "evidence_text": "Deep integration should make failures easier to locate and correct, not turn every component into part of an opaque promise."
+      },
+      {
+        "type": "detail",
+        "question": "Which controls should accompany vehicle software updates?",
+        "options": [
+          "Version records, staged release, rollback and rare-event monitoring.",
+          "The case proves that scale alone guarantees reliable results.",
+          "Human review becomes unnecessary once new equipment appears.",
+          "One successful trial settles every question about later use."
+        ],
+        "answer": "A",
+        "explanation": "第三段直接列出控制措施。",
+        "evidence_text": "Version records, staged release, rollback and monitoring of rare events should form part of certification."
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “proportional” mean for vehicle data collection?",
+        "options": [
+          "Human review becomes unnecessary once new equipment appears.",
+          "Limited to what a declared function reasonably requires.",
+          "One successful trial settles every question about later use.",
+          "The reported technology removes all cost and safety trade-offs."
+        ],
+        "answer": "B",
+        "explanation": "语境强调目的限定与最小收集。",
+        "evidence_text": "Collection should be proportional to a stated function, with retention limits and realistic deletion routes."
+      },
+      {
+        "type": "inference",
+        "question": "Why could locked diagnostics produce unequal reliability?",
+        "options": [
+          "One successful trial settles every question about later use.",
+          "The reported technology removes all cost and safety trade-offs.",
+          "Independent repairers and users outside major centers may lack safe maintenance.",
+          "A headline number is sufficient without context or comparison."
+        ],
+        "answer": "C",
+        "explanation": "维修可达性决定技术能否普遍可靠。",
+        "evidence_text": "A technologically advanced vehicle that cannot be safely maintained outside a few cities creates unequal reliability."
+      },
+      {
+        "type": "inference",
+        "question": "Why are roadmap targets not guaranteed forecasts?",
+        "options": [
+          "The reported technology removes all cost and safety trade-offs.",
+          "A headline number is sufficient without context or comparison.",
+          "The system can be judged without observing its actual users.",
+          "Technology costs, demand and supply conditions can change before investments mature."
+        ],
+        "answer": "D",
+        "explanation": "多个变量会改变既定路径。",
+        "evidence_text": "Battery chemistry, computing cost, consumer demand and international supply conditions can change before factories built today reach full output."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-manual-technology-l5-24",
+    "source_id": "src-科技-24",
+    "title": "Aviation Resilience Begins Below the Final Aircraft",
+    "topic": "科技",
+    "difficulty": 5,
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20260624/cce910c1abd74830b90f62ff80b2ece7/c.html",
+    "source_title": "China Focus: China's supply chain expo where aviation meets innovation",
+    "source_published_at": "2026-06-24",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "页面可访问；核验供应链博览会航空链展区、整机与零部件、材料和数字创新协同展示等事实。",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站围绕独立中心问题重组结构并原创改写，非媒体原文，非历年真题。",
+    "content": "At a supply-chain expo, aviation meets innovation through aircraft, components, digital systems, materials and services displayed by organizations that rarely appear in one public room. The encounter can reveal dependency: a new airframe may rely on specialized alloys, certification software, maintenance data and suppliers several tiers away from the final producer.\n\nVisibility is not the same as resilience. A colorful map of partners shows who participates under normal conditions, while resilience asks what happens after disruption. Firms need to know which components lack substitutes, how long inventories last and whether an alternative supplier can meet certification requirements without restarting years of testing.\n\nAviation makes substitution difficult because safety evidence belongs partly to a specific design and process. A chemically similar material is not automatically equivalent if manufacturing changes fatigue behavior. Digital twins and shared standards can accelerate comparison, but they cannot replace physical validation where consequences are severe.\n\nExpos can support early coordination. Suppliers can understand future demand, smaller firms can demonstrate specialized capability, and manufacturers can identify hidden concentration. Yet public announcements may encourage companies to exaggerate readiness. Procurement should use staged qualification rather than assume that a signed intention equals deliverable capacity.\n\nData sharing requires boundaries. Maintenance records can reveal common defects, but they may contain commercial and operationally sensitive information. Sector-wide learning needs agreed formats, anonymization where possible and clear authority to issue safety notices.\n\nResilience also includes workforce and tools. Periodic drills can expose documentation that looks complete but cannot guide a real repair. A substitute part is useless if technicians lack procedures or inspection equipment. Training, documentation and calibration capacity should travel with the component.\n\nThe expo is most valuable as a place to ask dependency questions before a crisis. Innovation enters aviation responsibly when novelty is connected to certification evidence, maintainable skills and multiple credible routes through the chain.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What does the aviation expo reveal beyond new products?",
+        "options": [
+          "Hidden dependencies must be tested for substitution, certification and maintenance.",
+          "The case proves that scale alone guarantees reliable results.",
+          "Human review becomes unnecessary once new equipment appears.",
+          "One successful trial settles every question about later use."
+        ],
+        "answer": "A",
+        "explanation": "全文从展示转向供应链韧性。",
+        "evidence_text": "The expo is most valuable as a place to ask dependency questions before a crisis."
+      },
+      {
+        "type": "detail",
+        "question": "Why is a chemically similar material not automatically replaceable?",
+        "options": [
+          "Human review becomes unnecessary once new equipment appears.",
+          "Its manufacturing process may change fatigue and safety behavior.",
+          "One successful trial settles every question about later use.",
+          "The reported technology removes all cost and safety trade-offs."
+        ],
+        "answer": "B",
+        "explanation": "第三段说明航空替代需重新验证。",
+        "evidence_text": "A chemically similar material is not automatically equivalent if manufacturing changes fatigue behavior."
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “qualification” mean in procurement?",
+        "options": [
+          "One successful trial settles every question about later use.",
+          "The reported technology removes all cost and safety trade-offs.",
+          "A staged process proving that a supplier or part meets requirements.",
+          "A headline number is sufficient without context or comparison."
+        ],
+        "answer": "C",
+        "explanation": "该词与交付能力核验相连。",
+        "evidence_text": "Procurement should use staged qualification rather than assume that a signed intention equals deliverable capacity."
+      },
+      {
+        "type": "inference",
+        "question": "Why must training accompany an alternative component?",
+        "options": [
+          "The reported technology removes all cost and safety trade-offs.",
+          "A headline number is sufficient without context or comparison.",
+          "The system can be judged without observing its actual users.",
+          "Technicians need procedures and calibrated tools to use it safely."
+        ],
+        "answer": "D",
+        "explanation": "零件可得不等于可安全维护。",
+        "evidence_text": "A substitute part is useless if technicians lack procedures or inspection equipment."
+      },
+      {
+        "type": "inference",
+        "question": "Why can a partner map overstate resilience?",
+        "options": [
+          "It describes normal participation without showing behavior during disruption.",
+          "A headline number is sufficient without context or comparison.",
+          "The system can be judged without observing its actual users.",
+          "The case proves that scale alone guarantees reliable results."
+        ],
+        "answer": "A",
+        "explanation": "作者区分可见关系与压力下表现。",
+        "evidence_text": "A colorful map of partners shows who participates under normal conditions, while resilience asks what happens after disruption."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-manual-technology-l5-25",
+    "source_id": "src-科技-25",
+    "title": "An Intelligent Battery Still Needs Declared Priorities",
+    "topic": "科技",
+    "difficulty": 5,
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20260720/0ffbe025da8f4a11a22212a798f4fca7/c.html",
+    "source_title": "Economic Watch: China's energy storage sector benefits from synergy between AI, electricity",
+    "source_published_at": "2026-07-20",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "页面可访问；核验AI与电力系统协同推动储能预测、调度、运维和产业发展的报道主线。",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站围绕独立中心问题重组结构并原创改写，非媒体原文，非历年真题。",
+    "content": "Artificial intelligence can help an energy-storage operator forecast demand, predict renewable output, schedule charging and identify abnormal battery behavior. These tasks connect data with electricity, but the word “optimize” hides a choice: the system must decide which objective matters when cost, carbon, battery life and grid stability point in different directions.\n\nA controller trained to minimize short-term price may cycle batteries aggressively, accelerating degradation. One designed to protect battery life may hold energy during a grid emergency. Objectives need explicit priorities and constraints set by accountable operators, not silently inferred from historical data.\n\nForecast uncertainty should travel into decisions. A single predicted curve encourages false confidence; probability ranges allow the system to reserve capacity for plausible errors. Operators should test extreme heat, communication loss and unusual demand, because average accuracy does not describe performance during the hours storage is most valuable.\n\nBattery data requires interpretation. Temperature or voltage patterns may indicate danger, normal aging or a faulty sensor. An AI alert should support inspection rather than automatically assign cause. Records of false alarms and missed events are necessary to calibrate trust and decide when human confirmation is required.\n\nMarket design shapes the algorithm. Payments for fast response, capacity or energy can reward different behavior. If rules encourage several services at once, software may promise the same stored unit to incompatible commitments. Verification should reconcile market schedules with the physical state of charge.\n\nCybersecurity joins physical safety because remote commands can move large amounts of power. Access control, signed updates, offline fallback and manual isolation must be tested as operating functions, not policy documents.\n\nThe synergy between AI and storage is real when prediction improves disciplined control. Intelligence does not remove trade-offs; it makes them executable at speed. That increases the need to state objectives, preserve override and audit how each high-impact decision was made.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What is the central governance problem in AI-controlled storage?",
+        "options": [
+          "Human review becomes unnecessary once new equipment appears.",
+          "Fast optimization must expose objectives, uncertainty, overrides and auditability.",
+          "One successful trial settles every question about later use.",
+          "The reported technology removes all cost and safety trade-offs."
+        ],
+        "answer": "B",
+        "explanation": "末句概括核心责任。",
+        "evidence_text": "That increases the need to state objectives, preserve override and audit how each high-impact decision was made."
+      },
+      {
+        "type": "detail",
+        "question": "Which operating tasks can AI assist in the storage system?",
+        "options": [
+          "One successful trial settles every question about later use.",
+          "The reported technology removes all cost and safety trade-offs.",
+          "Forecasting, charge scheduling and abnormal-behavior detection.",
+          "A headline number is sufficient without context or comparison."
+        ],
+        "answer": "C",
+        "explanation": "首句列出主要任务。",
+        "evidence_text": "Artificial intelligence can help an energy-storage operator forecast demand, predict renewable output, schedule charging and identify abnormal battery behavior."
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “calibrate trust” mean in the alert context?",
+        "options": [
+          "The reported technology removes all cost and safety trade-offs.",
+          "A headline number is sufficient without context or comparison.",
+          "The system can be judged without observing its actual users.",
+          "Adjust reliance using evidence about false and missed warnings."
+        ],
+        "answer": "D",
+        "explanation": "通过错误记录调整信任程度。",
+        "evidence_text": "Records of false alarms and missed events are necessary to calibrate trust and decide when human confirmation is required."
+      },
+      {
+        "type": "inference",
+        "question": "Why are probability ranges safer than one forecast curve?",
+        "options": [
+          "They let operators reserve capacity for plausible prediction errors.",
+          "A headline number is sufficient without context or comparison.",
+          "The system can be judged without observing its actual users.",
+          "The case proves that scale alone guarantees reliable results."
+        ],
+        "answer": "A",
+        "explanation": "不确定性范围支持预留。",
+        "evidence_text": "probability ranges allow the system to reserve capacity for plausible errors."
+      },
+      {
+        "type": "inference",
+        "question": "How could market software promise physically impossible service?",
+        "options": [
+          "The system can be judged without observing its actual users.",
+          "It may commit the same stored energy to incompatible products.",
+          "The case proves that scale alone guarantees reliable results.",
+          "Human review becomes unnecessary once new equipment appears."
+        ],
+        "answer": "B",
+        "explanation": "市场承诺必须与实际荷电状态对账。",
+        "evidence_text": "software may promise the same stored unit to incompatible commitments."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-manual-technology-l6-26",
+    "source_id": "src-科技-26",
+    "title": "Five Hundred Firms Can Still Share One Weak Link",
+    "topic": "科技",
+    "difficulty": 6,
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20260228/56fae120e33d4266bb8e57042f0fd76e/c.html",
+    "source_title": "Over 500 firms sign up for 2026 China International Supply Chain Expo",
+    "source_published_at": "2026-02-28",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "页面可访问；核验500余家企业报名2026链博会及其国际供应链合作背景。",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站围绕独立中心问题重组结构并原创改写，非媒体原文，非历年真题。",
+    "content": "More than 500 firms registered for the 2026 China International Supply Chain Expo, indicating that supply-chain cooperation remains attractive despite uncertainty in trade and technology. Participation is easy to count; the harder question is what exhibitors can learn about dependencies that ordinary purchasing records do not reveal.\n\nA final manufacturer often knows its direct suppliers but has limited visibility several tiers upstream. A small producer of a specialized chemical, chip tool or connector may serve many apparently unrelated products. If that node fails, diversification at the first tier offers little protection. Mapping should therefore follow critical functions and materials rather than company names alone.\n\nVisibility can create new risk. Detailed maps contain commercial secrets and may expose vulnerable facilities. A trusted system needs graduated access: firms share enough data for safety and continuity without publishing every price or design. Public authorities may require broader information for emergencies, accompanied by controls on later use.\n\nResilience metrics must resist theatrical redundancy. Two suppliers located in the same flood zone or dependent on the same electricity substation are not truly independent. Alternative routes should be tested for capacity, certification and time to activate. Inventory helps only within its shelf life and financing limits.\n\nAn expo can make coordination cheaper by bringing unfamiliar firms together, but signed agreements remain options rather than operational capability. Scenario exercises after the event can reveal whether contacts, data formats and decision rights work under pressure. Results should identify delays and conflicts, not merely confirm that every participant attended.\n\nEfficiency and resilience need not be enemies. Standard components and shared logistics can lower cost while enabling substitution. Yet extreme concentration may produce scale today and fragility tomorrow. The acceptable balance depends on the social cost of interruption, which is higher for medicine or power equipment than for optional consumer products.\n\nThe value of 500 registrations lies in the network they could help examine. A supply-chain gathering becomes infrastructure only when it turns introductions into verified alternatives, bounded information sharing and collective preparation for failures that no company can manage alone.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What would transform expo participation into genuine resilience?",
+        "options": [
+          "One successful trial settles every question about later use.",
+          "The reported technology removes all cost and safety trade-offs.",
+          "Verified alternatives, bounded information sharing and joint preparation for disruption.",
+          "A headline number is sufficient without context or comparison."
+        ],
+        "answer": "C",
+        "explanation": "末句给出转化条件。",
+        "evidence_text": "A supply-chain gathering becomes infrastructure only when it turns introductions into verified alternatives, bounded information sharing and collective preparation for failures that no company can manage alone."
+      },
+      {
+        "type": "detail",
+        "question": "What participation figure anchors the discussion?",
+        "options": [
+          "The reported technology removes all cost and safety trade-offs.",
+          "A headline number is sufficient without context or comparison.",
+          "The system can be judged without observing its actual users.",
+          "More than 500 registered firms."
+        ],
+        "answer": "D",
+        "explanation": "首句提供数量事实。",
+        "evidence_text": "More than 500 firms registered for the 2026 China International Supply Chain Expo"
+      },
+      {
+        "type": "word_guess",
+        "question": "What is “theatrical redundancy” in this context?",
+        "options": [
+          "Alternatives that look separate but share the same hidden failure.",
+          "A headline number is sufficient without context or comparison.",
+          "The system can be judged without observing its actual users.",
+          "The case proves that scale alone guarantees reliable results."
+        ],
+        "answer": "A",
+        "explanation": "语境批评表面上的备份。",
+        "evidence_text": "Two suppliers located in the same flood zone or dependent on the same electricity substation are not truly independent."
+      },
+      {
+        "type": "inference",
+        "question": "Why should critical-function maps extend beyond direct suppliers?",
+        "options": [
+          "The system can be judged without observing its actual users.",
+          "A small upstream node may support many products and defeat first-tier diversification.",
+          "The case proves that scale alone guarantees reliable results.",
+          "Human review becomes unnecessary once new equipment appears."
+        ],
+        "answer": "B",
+        "explanation": "上游共用节点可能造成系统性中断。",
+        "evidence_text": "If that node fails, diversification at the first tier offers little protection."
+      },
+      {
+        "type": "inference",
+        "question": "Why should resilience standards vary by product?",
+        "options": [
+          "The case proves that scale alone guarantees reliable results.",
+          "Human review becomes unnecessary once new equipment appears.",
+          "The social cost of interrupted medicine or power equipment is unusually high.",
+          "One successful trial settles every question about later use."
+        ],
+        "answer": "C",
+        "explanation": "关键产品中断后果不同。",
+        "evidence_text": "The acceptable balance depends on the social cost of interruption, which is higher for medicine or power equipment than for optional consumer products."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-manual-technology-l6-27",
+    "source_id": "src-科技-27",
+    "title": "The AI Chip Is Only the Visible Bottleneck",
+    "topic": "科技",
+    "difficulty": 6,
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20260805/d3ab20a655ee43569ccc5d1f3a3656b0/c.html",
+    "source_title": "Economic Watch: AI computing power boom rippling up industrial chain",
+    "source_published_at": "2026-08-05",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "页面可访问；核验AI算力增长带动芯片、服务器、光互联、液冷和电力等上游产业链的报道主线。",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站围绕独立中心问题重组结构并原创改写，非媒体原文，非历年真题。",
+    "content": "The boom in artificial-intelligence computing power travels upstream through chips, servers, optical links, cooling systems, electricity networks and construction. Demand at one layer can create bottlenecks several layers away, so a record for installed computing capacity does not describe the cost or usefulness of the full system.\n\nAccelerator chips receive attention, yet utilization determines whether scarce equipment produces value. A cluster may be technically large while jobs wait because software, memory or network communication cannot keep processors busy. Reporting useful work per unit of energy can reveal more than peak theoretical performance, although useful work must be defined for different applications.\n\nThe physical chain has geographic consequences. Data centers may locate near affordable electricity or cool climates, while users value low delay and access to skilled operators. Moving computation can reduce one cost and increase transmission, network or water pressure elsewhere. Regional planning should treat computing loads as industrial infrastructure rather than invisible internet activity.\n\nRapid purchasing creates a cycle risk. Firms may order equipment based on projected demand, encouraging suppliers to expand capacity just as algorithms become more efficient or customers consolidate. Long-lived power and cooling assets can then outlast the chips that justified them. Modular construction and staged investment preserve options under uncertain growth.\n\nConcentration affects both innovation and security. A narrow set of component providers can improve compatibility but magnify disruption. Substitution requires software support, testing and developer skills, not merely another chip with similar specifications. Open interfaces reduce switching cost only when implementations remain interoperable in practice.\n\nEnvironmental accounting must include embodied materials, electricity source, water use and retired equipment. Public comparisons should state system boundaries. Efficiency gains can be consumed by larger models or more frequent requests, an effect that makes absolute resource totals necessary beside per-task measures.\n\nComputing power is productive capacity, not a product outcome. The industrial chain creates lasting value when hardware is well utilized, applications justify resource use and investment can adapt without leaving communities with stranded infrastructure or hidden environmental liabilities.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "How should an AI computing boom be judged across its chain?",
+        "options": [
+          "The reported technology removes all cost and safety trade-offs.",
+          "A headline number is sufficient without context or comparison.",
+          "The system can be judged without observing its actual users.",
+          "By useful, adaptable capacity and total resource consequences, not installed hardware alone."
+        ],
+        "answer": "D",
+        "explanation": "结尾建立综合标准。",
+        "evidence_text": "The industrial chain creates lasting value when hardware is well utilized, applications justify resource use and investment can adapt without leaving communities with stranded infrastructure or hidden environmental liabilities."
+      },
+      {
+        "type": "detail",
+        "question": "Which upstream systems are named besides processors?",
+        "options": [
+          "Servers, optical links, cooling, electricity and construction.",
+          "A headline number is sufficient without context or comparison.",
+          "The system can be judged without observing its actual users.",
+          "The case proves that scale alone guarantees reliable results."
+        ],
+        "answer": "A",
+        "explanation": "首段列出产业链。",
+        "evidence_text": "The boom in artificial-intelligence computing power travels upstream through chips, servers, optical links, cooling systems, electricity networks and construction."
+      },
+      {
+        "type": "word_guess",
+        "question": "What are “stranded” assets in the final paragraph?",
+        "options": [
+          "The system can be judged without observing its actual users.",
+          "Infrastructure left underused after the demand or technology changes.",
+          "The case proves that scale alone guarantees reliable results.",
+          "Human review becomes unnecessary once new equipment appears."
+        ],
+        "answer": "B",
+        "explanation": "前文解释长期设施可能失去原用途。",
+        "evidence_text": "Long-lived power and cooling assets can then outlast the chips that justified them."
+      },
+      {
+        "type": "inference",
+        "question": "Why may a large cluster still leave AI jobs waiting?",
+        "options": [
+          "The case proves that scale alone guarantees reliable results.",
+          "Human review becomes unnecessary once new equipment appears.",
+          "Memory, software or network limits can keep processors idle.",
+          "One successful trial settles every question about later use."
+        ],
+        "answer": "C",
+        "explanation": "算力规模受其他环节制约。",
+        "evidence_text": "A cluster may be technically large while jobs wait because software, memory or network communication cannot keep processors busy."
+      },
+      {
+        "type": "inference",
+        "question": "Why are per-task efficiency numbers insufficient?",
+        "options": [
+          "Human review becomes unnecessary once new equipment appears.",
+          "One successful trial settles every question about later use.",
+          "The reported technology removes all cost and safety trade-offs.",
+          "Greater model size and usage can raise absolute resource consumption."
+        ],
+        "answer": "D",
+        "explanation": "反弹效应会抵消单位效率。",
+        "evidence_text": "Efficiency gains can be consumed by larger models or more frequent requests"
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-manual-technology-l6-28",
+    "source_id": "src-科技-28",
+    "title": "Mega-Projects Need Different Clocks",
+    "topic": "科技",
+    "difficulty": 6,
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20260306/16725abcb34b4ec29fea2270e82f3dc2/c.html",
+    "source_title": "Jets, fusion, moon shots: China unveils ambitious mega-projects in five-year blueprint",
+    "source_published_at": "2026-03-06",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "页面可访问；核验五年规划提出先进航空发动机、聚变和探月等重大科技工程的报道事实。",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站围绕独立中心问题重组结构并原创改写，非媒体原文，非历年真题。",
+    "content": "A five-year blueprint can place advanced aircraft engines, fusion research and lunar exploration under one national account of future capability. These projects differ radically in maturity and uncertainty, so the common label “mega-project” should describe governance scale rather than imply that each follows the same path to success.\n\nAircraft engines develop through repeated design, materials testing, manufacturing control and long operational validation. Fusion experiments may produce scientific knowledge even when commercial power remains distant. Lunar missions combine launch reliability, navigation, surface operations and scientific priorities under narrow windows. A milestone appropriate to one field can be meaningless in another.\n\nPortfolio governance must therefore separate mission goals, learning goals and industrial goals. A demonstrator may test one risky component without promising a complete product. A research facility can build measurement capacity that later programs use. Procurement can develop suppliers, but premature production targets may freeze an immature design.\n\nLarge projects create coordination advantages and political hazards. Stable funding supports long experiments and specialized teams. The same visibility can make managers reluctant to report delay or negative results. Independent technical review, documented decision gates and protected routes for dissent help distinguish persistence from escalation of commitment.\n\nSpillovers should be demonstrated rather than assumed. Advanced materials or control systems may benefit other industries, but only if knowledge, standards and trained people can move. Security restrictions can be necessary while still allowing non-sensitive methods and safety findings to circulate.\n\nOpportunity cost belongs in the evaluation. Money, facilities and expert attention committed to one project cannot serve every alternative. This does not reduce strategic science to a short-term financial return; it requires leaders to state why a project deserves scarce resources and what evidence would justify redesign or termination.\n\nAmbition is credible when uncertainty is organized instead of hidden. The blueprint should allow aircraft, fusion and lunar work to be compared on governance quality—clear purposes, honest milestones, learning from failure and revisable commitment—without forcing their scientific outcomes onto one artificial timetable.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What common standard can govern very different mega-projects?",
+        "options": [
+          "Clear purposes, field-appropriate milestones, failure learning and revisable commitment.",
+          "A headline number is sufficient without context or comparison.",
+          "The system can be judged without observing its actual users.",
+          "The case proves that scale alone guarantees reliable results."
+        ],
+        "answer": "A",
+        "explanation": "末段给出跨领域共同标准。",
+        "evidence_text": "The blueprint should allow aircraft, fusion and lunar work to be compared on governance quality—clear purposes, honest milestones, learning from failure and revisable commitment—without forcing their scientific outcomes onto one artificial timetable."
+      },
+      {
+        "type": "detail",
+        "question": "Why are identical milestones unsuitable for the three fields?",
+        "options": [
+          "The system can be judged without observing its actual users.",
+          "They differ in maturity, experiment type and route to usable outcomes.",
+          "The case proves that scale alone guarantees reliable results.",
+          "Human review becomes unnecessary once new equipment appears."
+        ],
+        "answer": "B",
+        "explanation": "开头即说明差异。",
+        "evidence_text": "These projects differ radically in maturity and uncertainty"
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “escalation of commitment” imply?",
+        "options": [
+          "The case proves that scale alone guarantees reliable results.",
+          "Human review becomes unnecessary once new equipment appears.",
+          "Continuing a failing course mainly because much has already been invested.",
+          "One successful trial settles every question about later use."
+        ],
+        "answer": "C",
+        "explanation": "该短语与理性坚持形成对照。",
+        "evidence_text": "help distinguish persistence from escalation of commitment."
+      },
+      {
+        "type": "inference",
+        "question": "Why can early production targets damage innovation?",
+        "options": [
+          "Human review becomes unnecessary once new equipment appears.",
+          "One successful trial settles every question about later use.",
+          "The reported technology removes all cost and safety trade-offs.",
+          "They may lock suppliers and engineers into an immature design."
+        ],
+        "answer": "D",
+        "explanation": "证据直接支持。",
+        "evidence_text": "premature production targets may freeze an immature design."
+      },
+      {
+        "type": "inference",
+        "question": "Why must spillovers be traced instead of announced?",
+        "options": [
+          "Benefits require knowledge, standards and skilled people to move into other uses.",
+          "One successful trial settles every question about later use.",
+          "The reported technology removes all cost and safety trade-offs.",
+          "A headline number is sufficient without context or comparison."
+        ],
+        "answer": "A",
+        "explanation": "外溢需实际传递机制。",
+        "evidence_text": "only if knowledge, standards and trained people can move."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-manual-technology-l6-29",
+    "source_id": "src-科技-29",
+    "title": "A Beautiful Dashboard Can Still Hide a Blind Spot",
+    "topic": "科技",
+    "difficulty": 6,
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20260720/f66660ad37d9451a9a9fd03d01235461/c.html",
+    "source_title": "China Focus: Building on green gains, roadmap charts next five years for a Beautiful China",
+    "source_published_at": "2026-07-20",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "页面可访问；核验美丽中国未来五年路线图及数字监测、绿色转型和环境治理技术应用的报道主线。",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站围绕独立中心问题重组结构并原创改写，非媒体原文，非历年真题。",
+    "content": "A roadmap for a Beautiful China can include technological systems for monitoring pollution, modeling ecosystems, managing energy and supporting enforcement. Technology makes conditions visible at greater speed and scale, but a sensor-rich administration is not automatically a more accountable one.\n\nMonitoring networks embed choices about location, frequency and variables. A dense urban network may detect street-level exposure while rural soil or biodiversity remains poorly observed. Algorithms trained on abundant data can then reinforce the imbalance by appearing more confident where investment was already highest. Data gaps should be represented as uncertainty, not silently filled with convenient averages.\n\nRemote sensing and automated alerts can direct inspectors toward unusual events. They can also create false precision. A satellite signal may indicate vegetation stress without identifying its cause; an emissions anomaly can reflect equipment failure rather than illegal activity. Enforcement requires corroboration, procedural fairness and a record of how automated evidence influenced a decision.\n\nInteroperability matters because air, water, land and energy systems cross agencies. Shared identifiers and standards can connect evidence, yet centralization raises security and mission-creep concerns. Access should follow role and purpose, with logs that allow later audit. Public dashboards need explanations of revision and uncertainty rather than decorative real-time numbers.\n\nTechnology procurement should include maintenance and exit. Sensors drift, models become outdated and vendors may disappear. Agencies need calibration plans, portable data and the ability to replace a system without losing historical comparability. A cheap pilot can become expensive dependence if these conditions are omitted.\n\nCitizen reports and local knowledge remain valuable because formal networks cannot observe every pathway. Their evidence needs verification, but excluding it may hide problems that standard stations were never designed to see. Participation also gives affected communities a way to question priorities.\n\nDigital tools contribute to environmental beauty when they strengthen contestable evidence: claims can be checked, uncertainty located and decisions appealed. The roadmap should treat computation as part of public measurement infrastructure, governed with the same care as the environmental actions it informs.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What makes environmental technology publicly accountable?",
+        "options": [
+          "The system can be judged without observing its actual users.",
+          "It must produce contestable evidence with visible uncertainty, audit and appeal.",
+          "The case proves that scale alone guarantees reliable results.",
+          "Human review becomes unnecessary once new equipment appears."
+        ],
+        "answer": "B",
+        "explanation": "末段明确提出公共问责标准。",
+        "evidence_text": "Digital tools contribute to environmental beauty when they strengthen contestable evidence: claims can be checked, uncertainty located and decisions appealed."
+      },
+      {
+        "type": "detail",
+        "question": "Which maintenance risks can weaken a monitoring system?",
+        "options": [
+          "The case proves that scale alone guarantees reliable results.",
+          "Human review becomes unnecessary once new equipment appears.",
+          "Sensor drift, outdated models and disappearing vendors.",
+          "One successful trial settles every question about later use."
+        ],
+        "answer": "C",
+        "explanation": "第五段列举运行风险。",
+        "evidence_text": "Sensors drift, models become outdated and vendors may disappear."
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “mission creep” mean for shared environmental data?",
+        "options": [
+          "Human review becomes unnecessary once new equipment appears.",
+          "One successful trial settles every question about later use.",
+          "The reported technology removes all cost and safety trade-offs.",
+          "Data gradually being used beyond its original authorized purpose."
+        ],
+        "answer": "D",
+        "explanation": "与目的和角色限制相对，指用途扩张。",
+        "evidence_text": "centralization raises security and mission-creep concerns."
+      },
+      {
+        "type": "inference",
+        "question": "Why can more urban data deepen geographic imbalance?",
+        "options": [
+          "Algorithms become confident where observation is dense while rural gaps remain hidden.",
+          "One successful trial settles every question about later use.",
+          "The reported technology removes all cost and safety trade-offs.",
+          "A headline number is sufficient without context or comparison."
+        ],
+        "answer": "A",
+        "explanation": "数据密度影响模型置信度。",
+        "evidence_text": "Algorithms trained on abundant data can then reinforce the imbalance by appearing more confident where investment was already highest."
+      },
+      {
+        "type": "inference",
+        "question": "Why should automated alerts not directly trigger punishment?",
+        "options": [
+          "The reported technology removes all cost and safety trade-offs.",
+          "Signals may have alternative causes and require corroboration and fair procedure.",
+          "A headline number is sufficient without context or comparison.",
+          "The system can be judged without observing its actual users."
+        ],
+        "answer": "B",
+        "explanation": "自动信号不是充分法律事实。",
+        "evidence_text": "Enforcement requires corroboration, procedural fairness and a record of how automated evidence influenced a decision."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-manual-technology-l6-30",
+    "source_id": "src-科技-30",
+    "title": "Battery Cargo Safety Is a Chain of Honest Signals",
+    "topic": "科技",
+    "difficulty": 6,
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20251125/9dc503b96dbb471caab03278f7d38c36/c.html",
+    "source_title": "China successfully debuts safety tech for lithium battery air cargo",
+    "source_published_at": "2025-11-25",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "页面可访问；核验2025年锂电池航空货运安全技术成功首秀及其面向运输安全的报道事实。",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站围绕独立中心问题重组结构并原创改写，非媒体原文，非历年真题。",
+    "content": "Lithium batteries are difficult air cargo because a damaged or defective cell can enter thermal runaway, releasing heat that triggers neighboring cells. China reported a successful debut of safety technology for such cargo in 2025. A successful trial is important, but aviation safety depends on layers that remain effective when assumptions fail.\n\nPrevention begins before loading. Manufacturers and shippers need accurate classification, state-of-charge rules, packaging and records that identify recalls or damage. Detection during transport must distinguish a dangerous trend from normal temperature variation quickly enough for action. Containment then aims to slow propagation, limit smoke or heat and protect aircraft systems.\n\nNo single test can cover every battery chemistry, size, packaging arrangement and hidden defect. Certification should define the tested envelope: the conditions under which evidence supports a claim. Operations outside that envelope require new analysis rather than confidence borrowed from a related product.\n\nHuman factors remain decisive. Ground staff must recognize damaged packages and resist schedule pressure to accept uncertain declarations. Flight crews need alerts that indicate both severity and available response, not a stream of raw sensor values. Training should include ambiguous cases and coordination with airports after diversion.\n\nData sharing confronts commercial and safety interests. Incident reports may reveal supplier defects or shipping routes, yet delayed warning can expose other carriers. A protected reporting system can separate blame from urgent hazard communication while preserving investigation rights.\n\nSecurity must also be considered if monitoring devices communicate wirelessly or feed automated cargo decisions. Authentication, software updates and offline procedures prevent a cyber fault from creating a physical blind spot. Equipment should fail visibly rather than report reassuring but stale data.\n\nThe debut technology deserves confidence proportional to its evidence. Regulators should also track whether packaging and declaration practices change after deployment. Long-term success requires independent tests, diverse cargo scenarios, maintenance records and proof that crews can use the system under time pressure. Safety innovation is mature when it joins prevention, detection, containment and learning without allowing any layer to become an excuse for weakening the others.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "How should new lithium-cargo safety technology earn lasting confidence?",
+        "options": [
+          "The case proves that scale alone guarantees reliable results.",
+          "Human review becomes unnecessary once new equipment appears.",
+          "Through layered prevention, detection, containment, human use and incident learning.",
+          "One successful trial settles every question about later use."
+        ],
+        "answer": "C",
+        "explanation": "末句总结分层安全。",
+        "evidence_text": "Safety innovation is mature when it joins prevention, detection, containment and learning without allowing any layer to become an excuse for weakening the others."
+      },
+      {
+        "type": "detail",
+        "question": "What is thermal runaway in the described cargo risk?",
+        "options": [
+          "Human review becomes unnecessary once new equipment appears.",
+          "One successful trial settles every question about later use.",
+          "The reported technology removes all cost and safety trade-offs.",
+          "Self-amplifying heat from a cell that can spread to neighboring batteries."
+        ],
+        "answer": "D",
+        "explanation": "首段解释该现象。",
+        "evidence_text": "a damaged or defective cell can enter thermal runaway, releasing heat that triggers neighboring cells."
+      },
+      {
+        "type": "word_guess",
+        "question": "What is the tested “envelope”?",
+        "options": [
+          "The range of conditions for which a safety claim has supporting evidence.",
+          "One successful trial settles every question about later use.",
+          "The reported technology removes all cost and safety trade-offs.",
+          "A headline number is sufficient without context or comparison."
+        ],
+        "answer": "A",
+        "explanation": "冒号后给出定义。",
+        "evidence_text": "the conditions under which evidence supports a claim."
+      },
+      {
+        "type": "inference",
+        "question": "Why should monitoring equipment fail visibly?",
+        "options": [
+          "The reported technology removes all cost and safety trade-offs.",
+          "Silent stale data could falsely reassure crews during a hazard.",
+          "A headline number is sufficient without context or comparison.",
+          "The system can be judged without observing its actual users."
+        ],
+        "answer": "B",
+        "explanation": "隐蔽故障会制造错误安全感。",
+        "evidence_text": "Equipment should fail visibly rather than report reassuring but stale data."
+      },
+      {
+        "type": "inference",
+        "question": "Why are raw sensor streams inadequate for crews?",
+        "options": [
+          "A headline number is sufficient without context or comparison.",
+          "The system can be judged without observing its actual users.",
+          "Time-critical decisions require interpreted severity and available responses.",
+          "The case proves that scale alone guarantees reliable results."
+        ],
+        "answer": "C",
+        "explanation": "信息必须转化为行动提示。",
+        "evidence_text": "Flight crews need alerts that indicate both severity and available response, not a stream of raw sensor values."
+      }
+    ]
+  }
+]

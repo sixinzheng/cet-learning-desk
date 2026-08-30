@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block title %}听力训练 · 四六级学习台{% endblock %}
+{% block content %}
+<div class="focus-shell listening-workbench" id="listening-app">
+    <aside class="focus-context">
+        <p class="eyebrow">LISTENING / 听力</p>
+        <h1>三层听力训练</h1>
+        <p>从辨认薄弱词逐步走向短对话理解，三层递进，考察听懂与信息判断。</p>
+        <span class="difficulty-chip" data-difficulty-chip>当前难度：…</span>
+        <nav class="listening-layer-nav" aria-label="训练层级">
+            <button type="button" data-layer="word" aria-pressed="true"><strong>单词听辨</strong><span>优先复习到期词</span></button>
+            <button type="button" data-layer="sentence" aria-pressed="false"><strong>句子理解</strong><span>抓住关键词义</span></button>
+            <button type="button" data-layer="dialogue" aria-pressed="false"><strong>短对话理解</strong><span>四六级情景问答</span></button>
+        </nav>
+        <dl class="compact-facts">
+            <div><dt>训练进度</dt><dd><span id="listen-index">0</span>/<span id="listen-total">0</span></dd></div>
+            <div><dt>本轮答对</dt><dd id="listen-correct">0</dd></div>
+            <div><dt>证据状态</dt><dd id="listen-evidence">尚未结算</dd></div>
+        </dl>
+        <a class="text-link" href="/learn">返回学习总览</a>
+    </aside>
+
+    <section class="focus-stage listening-stage" aria-live="polite">
+        <div data-region-status class="region-state region-state--loading">正在准备训练内容……</div>
+        <div id="listen-empty" class="empty-state" hidden></div>
+        <div id="listen-card" class="listening-card" hidden>
+            <div class="listening-task-heading">
+                <p id="listen-layer-label" class="task-kicker">第一层 · 单词听辨</p>
+                <span id="listen-difficulty" class="difficulty-badge">难度 1</span>
+            </div>
+            <p id="listen-selection-basis" class="task-state">正在根据复习优先级准备本轮词汇</p>
+            <h2 id="listen-prompt">只听声音，选出你听到的单词</h2>
+            <button id="listen-play" class="sound-trigger" type="button" aria-label="播放训练音频">
+                <span aria-hidden="true">▶</span><small>播放声音</small>
+            </button>
+            <p id="listen-playback-state" class="task-state" role="status">等待播放</p>
+            <div id="listen-options" class="choice-grid"></div>
+
+            <div id="listen-answer" class="answer-panel" hidden>
+                <strong id="listen-word" class="english-word"></strong>
+                <span id="listen-phonetic"></span>
+                <p id="listen-meaning"></p>
+            </div>
+            <div class="mobile-action-bar listening-action-bar">
+                <button id="listen-next" class="btn btn-primary btn-block" type="button" disabled>下一题</button>
+            </div>
+        </div>
+    </section>
+
+    <aside class="focus-insight">
+        <h2>本轮如何计分</h2>
+        <ol class="method-list">
+            <li><strong>整轮结算：</strong>完成一组后才写入一次真实表现，刷新和重复提交不会重复计分。</li>
+            <li><strong>难度修正：</strong>正确率会结合内容难度和有效用时形成听力表现分。</li>
+        </ol>
+        <div class="privacy-note">
+            <strong>隐私说明</strong>
+            <p>听力内容由浏览器语音合成朗读；本站只在本地保存答题与得分，不采集录音。</p>
+        </div>
+    </aside>
+</div>
+{% endblock %}
+{% block scripts %}<script src="{{ asset('js/listening.js') }}"></script>{% endblock %}

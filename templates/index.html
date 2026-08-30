@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% block title %}今日学习 · 四六级学习台{% endblock %}
+{% block content %}
+<!--
+THESIS: 首页只做三件事，并让背词任务成为不可误认的主角；拒绝把累计数据重新堆成仪表盘。
+OWN-WORLD: 暖纸底、墨靛蓝任务面、朱砂红行动强调，直线分栏与书封构成学习台语言。
+STORY: 用户先确认词库与目标，看见今日完成量，立即开始学习或复习，再按需询问 AI 和查看段位。
+FIRST VIEWPORT: 桌面左侧三分之二为背词任务台，右侧依次为 AI 与段位；手机依次纵排三者。
+FORM: 既有纸墨编辑式界面的任务台重组，不新增视觉世界或装饰性板块。
+-->
+<div class="home-shell home-shell--focused" id="dashboard-app">
+    <header class="home-intro home-intro--compact">
+        <div><p class="eyebrow">TODAY / 今日学习</p><h1 id="greeting-text">今天，从一个单词开始</h1></div>
+        <p class="home-intro__promise">先完成最重要的词汇任务，再决定今天还要走多远。</p>
+    </header>
+    <div data-region-status class="region-state region-state--loading">正在读取今日学习数据…</div>
+
+    <div class="home-triad">
+        <main class="vocab-command" aria-labelledby="vocab-command-title">
+            <div class="vocab-command__heading">
+                <div><p class="eyebrow">PRIMARY TASK / 背单词</p><h2 id="vocab-command-title">今天的词汇任务</h2></div>
+                <time class="task-date" id="today-date"></time>
+            </div>
+
+            <div class="vocab-command__workspace">
+                <div class="task-book-cover" id="task-book-cover" aria-label="当前词库封面">
+                    <span>CET</span><strong id="task-book-title">当前词库</strong><small>VOCABULARY · DAILY STUDY</small><i aria-hidden="true"></i>
+                </div>
+                <div class="vocab-command__controls">
+                    <div class="field-group"><label for="wb-select">当前词库</label><select id="wb-select" aria-label="快速切换当前词库"><option>加载中…</option></select></div>
+                    <div class="field-group"><label for="daily-count">每日目标</label><div class="inline-setting"><select id="daily-count"><option value="5">5 个</option><option value="10">10 个</option><option value="15">15 个</option><option value="20">20 个</option><option value="25">25 个</option><option value="30">30 个</option><option value="40">40 个</option><option value="50">50 个</option><option value="60">60 个</option></select><button id="save-daily" class="btn btn-secondary" type="button">保存</button></div></div>
+                </div>
+
+                <div class="primary-actions"><a id="primary-study-action" class="btn btn-primary btn-large" href="/study"><b>开始今日学习</b><span>进入新词训练</span></a><a class="btn btn-review btn-large" href="/review"><b>开始今日复习</b><span>清理到期任务</span></a></div>
+
+                <div class="vocab-command__book-summary">
+                    <div class="wordbook-progress" aria-label="当前词库总进度"><span id="wb-fill"></span></div>
+                    <div class="wordbook-status"><span>熟记 <b id="wb-mastered">--</b></span><span>掌握 <b id="wb-known">--</b></span><span>学习中 <b id="wb-learning">--</b></span><span>总进度 <b id="wb-pct">--%</b></span></div>
+                    <p id="wordbook-description" class="helper-text">正在读取词库信息…</p>
+                </div>
+
+                <div class="daily-progress-pair" aria-label="今日词汇完成进度">
+                    <article><span>已新学</span><div><strong id="learned-today">--</strong><small>/ <b id="learn-goal">--</b></small></div><p id="learn-progress-note">按每日目标安排</p></article>
+                    <article><span>已复习</span><div><strong id="reviewed-today">--</strong><small>/ <b id="review-goal">--</b></small></div><p id="review-progress-note">读取到期任务中…</p></article>
+                </div>
+            </div>
+
+            <div class="vocab-command__brief">
+                <div id="task-explanation" class="task-explanation task-advice"><strong id="task-advice-title">正在生成今日建议</strong><span id="task-advice-counts">根据每日目标与到期复习量安排任务。</span></div>
+                <dl class="vocab-command__facts"><div><dt>待学新词</dt><dd id="remaining-new">--</dd></div><div><dt>到期复习</dt><dd id="remaining-review">--</dd></div><div><dt>预计用时</dt><dd><span id="core-minutes">--</span> 分钟</dd></div><div><dt>词库剩余</dt><dd id="setting-remaining">--</dd></div></dl>
+            </div>
+        </main>
+
+        <section class="ai-quick-chat" id="ai-quick-chat" aria-labelledby="ai-chat-title">
+            <div class="ai-chat-heading"><div><p class="eyebrow">STUDY COMPANION / AI 助理</p><h2 id="ai-chat-title">带着你的数据，回答今天的问题</h2></div><a href="/notes#assistant" class="text-link">完整对话</a></div>
+            <div class="ai-greeting" id="ai-greeting" aria-live="polite"><img id="ai-avatar" class="chat-avatar chat-avatar--ai avatar--greeting" src="{{ asset('images/ai-avatar.png') }}" alt="学习助理头像"><p>正在结合你最近的学习记录准备今天的第一句话…</p></div>
+            <div class="ai-chat-messages" id="ai-chat-messages" aria-live="polite" aria-label="最近对话"></div>
+            <form class="ai-chat-form" id="ai-chat-form"><label class="sr-only" for="ai-chat-input">向学习助理提问</label><textarea id="ai-chat-input" rows="2" maxlength="1200" placeholder="例如：我前几天的笔记里是不是记过定语从句？"></textarea><button class="btn btn-primary" type="submit">发送问题</button></form>
+            <div class="ai-chat-prompts" aria-label="快捷提问"><button type="button" data-ai-prompt="根据我最近的数据，今天先学什么？">今天先学什么</button><button type="button" data-ai-prompt="帮我找找笔记里和从句有关的内容。">查找从句笔记</button><button type="button" data-ai-prompt="请解释一个我最近最需要巩固的英语知识点。">解释薄弱点</button></div>
+            <p class="ai-chat-privacy">AI 只读取本站学习摘要与已保存笔记；任何笔记写入都需要再次确认。</p>
+        </section>
+
+        <section class="rank-card rank-card--summary" aria-labelledby="home-rank-title">
+            <div class="rank-card__heading"><div><p class="eyebrow">CURRENT RANK / 当前段位</p><h2 id="home-rank-title">你的科举进度</h2></div><span id="plate-rank" class="rank-stamp">Lv.--</span></div>
+            <div class="rank-summary__identity">
+                <div class="rank-figure" id="rank-figure">
+                    <svg class="rank-ring" viewBox="0 0 132 132" aria-hidden="true"><circle cx="66" cy="66" r="56"></circle><circle id="rank-ring-progress" class="rank-ring__progress" cx="66" cy="66" r="56"></circle></svg>
+                    <img id="rank-portrait-home" class="rank-portrait-image rank-portrait-image--home" src="{{ asset('images/ranks/rank-01-tongsheng.png') }}" alt="童生段位人物形象" width="1122" height="1402" decoding="async">
+                </div>
+                <div><strong id="plate-name">读取中</strong><span>第 <b id="plate-stage">--</b>/10 阶段</span><p id="rank-capability">正在综合本站训练证据…</p></div>
+            </div>
+            <div class="rank-card__progress" aria-label="当前段位阶段进度"><span id="level-progress-fill"></span></div>
+            <dl class="rank-summary__facts"><div><dt>距离 <span id="plate-next-name">下一段位</span></dt><dd id="level-gap-display">-- 分</dd></div><div><dt>评估可信度</dt><dd id="level-confidence-display">--%</dd></div></dl>
+            <div class="home-rank-advice"><span>第一优先升段建议</span><p id="home-rank-advice">正在分析最值得投入的一项训练……</p></div>
+            <a class="text-link" href="/growth#score-ledger">查看完整段位账单</a>
+        </section>
+    </div>
+</div>
+{% endblock %}
+{% block scripts %}<script src="{{ asset('js/dashboard.js') }}"></script>{% endblock %}

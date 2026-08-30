@@ -1,0 +1,48 @@
+{
+  "version": "1.0.0",
+  "official_references": [
+    "https://cet.neea.edu.cn/res/Home/1704/55b02330ac17274664f06d9d3db8249d.pdf",
+    "https://cet.neea.edu.cn/html1/report/16123/196-1.htm"
+  ],
+  "topics": ["健康", "教育", "文化", "环境", "社会", "科技"],
+  "question_types": {
+    "careful_reading": {
+      "questions": 5,
+      "formats": ["main_idea", "detail", "inference", "word_guess", "attitude"]
+    },
+    "banked_cloze": {
+      "blanks": 10,
+      "candidates": 15
+    },
+    "long_matching": {
+      "statements": 10,
+      "require_unique_best_match": true
+    }
+  },
+  "difficulty_levels": {
+    "1": {"label": "四级及格过渡", "target_words": [180, 230], "syntax": "短句为主，少量并列和原因句", "inference_questions": [0, 1]},
+    "2": {"label": "四级普通过渡", "target_words": [210, 260], "syntax": "常见复合句与明确指代", "inference_questions": [1, 1]},
+    "3": {"label": "四级优秀基准", "target_words": [240, 300], "syntax": "四级常见长句、让步与同义改写", "inference_questions": [1, 2]},
+    "4": {"label": "六级及格入门", "target_words": [270, 330], "syntax": "多层复合句，跨句指代与隐含转折", "inference_questions": [1, 2]},
+    "5": {"label": "六级普通基准", "target_words": [300, 370], "syntax": "论证性长句，抽象名词与多段整合", "inference_questions": [2, 2]},
+    "6": {"label": "六级优秀高阶", "target_words": [330, 420], "syntax": "高信息密度，限定、评价与反直觉论证", "inference_questions": [2, 3]}
+  },
+  "source_policy": {
+    "allowed_hosts": [
+      "english.news.cn", "www.news.cn", "news.cn",
+      "english.www.gov.cn", "www.gov.cn",
+      "global.chinadaily.com.cn", "www.chinadaily.com.cn", "chinadaily.com.cn",
+      "news.cgtn.com", "www.cgtn.com", "cgtn.com"
+    ],
+    "storage": "只保存来源元数据、有限事实与原创改写结果，不保存媒体全文",
+    "attribution_label": "题材参考"
+  },
+  "validation": {
+    "exactly_four_options": true,
+    "allowed_answers": ["A", "B", "C", "D"],
+    "require_chinese_explanation": true,
+    "require_evidence_text": true,
+    "reject_long_source_overlap_words": 8,
+    "reject_duplicate_content_hash": true
+  }
+}

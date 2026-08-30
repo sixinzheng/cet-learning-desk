@@ -1,0 +1,65 @@
+# Local user data and credentials
+/data/
+.env
+.env.*
+*.clixml
+*.jks
+*.keystore
+*.p12
+*.pem
+*.key
+
+# Python caches and locally installed dependencies
+__pycache__/
+*.py[cod]
+/.deps/
+/.runtime_deps/
+/.venv/
+/venv/
+
+# JavaScript, Rust and desktop build output
+node_modules/
+/desktop/.python-build-deps/
+/desktop/node_modules/
+/desktop/pyinstaller-build/
+/desktop/pyinstaller-dist/
+/desktop/tauri-temp/
+/desktop/src-tauri/target/
+/desktop/src-tauri/binaries/*.exe
+
+# Android-generated sources, tools and build output
+/android/.gradle/
+/android/.tools/
+/android/local.properties
+/android/app/build*/
+/android/app/src/main/python/
+/android/app/src/main/assets/app_resources/
+*.apk
+*.aab
+*.idsig
+
+# Local backups, browser profiles and QA artifacts
+/.backup-*/
+/_edge_*/
+/browser-artifacts/
+/templates/.impeccable/
+/home-refinement-artifacts/
+/.impeccable/
+
+# Logs and transient files
+*.log
+*.tmp
+*.bak
+*.db-wal
+*.db-shm
+.coverage
+.pytest_cache/
+
+# Private or unrelated local documents
+/周旋论文_组合式月球着陆气囊_中文复述报告.md
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

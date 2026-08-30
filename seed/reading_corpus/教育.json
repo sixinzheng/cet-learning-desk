@@ -1,0 +1,2462 @@
+[
+  {
+    "corpus_id": "cet-human-education-l1-01",
+    "title": "Training the Teacher Who Understands Both Sides",
+    "topic": "教育",
+    "difficulty": 1,
+    "source_id": "src-教育-01",
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20250709/42493384d37b4738822ecd1c24e12cb8/c.html",
+    "source_title": "China's first bachelor's program in AI education to address teacher shortage",
+    "source_published_at": "2025-07-09",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "URL可访问；核验了项目定位、技术与教育双模块、伦理和数据安全课程及协作实践模式。",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "content": "A school can buy an AI tool in a day, but preparing a teacher to use it well takes much longer. Beijing Normal University launched an undergraduate program in AI education because schools need people who understand both the technology and the classroom.\n\nThe course design joins two kinds of knowledge. Students study machine learning, natural language processing and educational data. They also learn psychology, learning theory, lesson design and assessment. This combination matters because a technically impressive tool may still be unsuitable for a child's age or a lesson's purpose. Meanwhile, a skilled classroom teacher cannot examine an AI system's limits without some technical understanding.\n\nThe program includes AI ethics and data security as required subjects. It also plans practical courses and cooperation among the university, companies and schools. Such cooperation is interdisciplinary: it brings knowledge from different fields together around one problem. Students can therefore test ideas in real teaching settings instead of treating education as a simple market for new software.\n\nGraduates may become AI teachers, develop learning platforms, conduct research or help shape policy. These paths differ, but they share one principle: technology should serve education. The program's real answer to the teacher shortage is not merely to produce more AI specialists. It is to prepare specialists who can ask what learning needs before deciding what a machine should do.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What is the main purpose of the new program?",
+        "options": [
+          "To teach machine learning without any school practice",
+          "To replace all classroom teachers with software",
+          "To train people who combine AI knowledge with educational judgment",
+          "To limit graduates to one kind of job"
+        ],
+        "answer": "C",
+        "explanation": "全文强调技术知识与教育判断的结合，而不只是增加纯技术人才。",
+        "evidence_text": "The program's real answer to the teacher shortage is not merely to produce more AI specialists."
+      },
+      {
+        "type": "detail",
+        "question": "Which subjects are required in the program?",
+        "options": [
+          "Only programming contests",
+          "Painting and music history",
+          "Hospital management and nutrition",
+          "AI ethics and data security"
+        ],
+        "answer": "D",
+        "explanation": "第三段直接说明人工智能伦理和数据安全是必修内容。",
+        "evidence_text": "The program includes AI ethics and data security as required subjects."
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “interdisciplinary” mean here?",
+        "options": [
+          "Keeping companies away from schools",
+          "Using only one academic subject",
+          "Bringing different fields together",
+          "Studying without practical experience"
+        ],
+        "answer": "C",
+        "explanation": "冒号后的内容直接解释该词含义。",
+        "evidence_text": "Such cooperation is interdisciplinary: it brings knowledge from different fields together around one problem."
+      },
+      {
+        "type": "inference",
+        "question": "Why does the passage mention a tool that is unsuitable for a child's age?",
+        "options": [
+          "To argue that lesson purposes never matter",
+          "To prove that young people cannot use any technology",
+          "To show that technical quality alone does not ensure educational value",
+          "To suggest that teachers need no AI knowledge"
+        ],
+        "answer": "C",
+        "explanation": "该例说明技术上出色并不等于教育上合适，因此教师需要双重知识。",
+        "evidence_text": "This combination matters because a technically impressive tool may still be unsuitable for a child's age or a lesson's purpose."
+      },
+      {
+        "type": "attitude",
+        "question": "What principle should guide technology decisions in an AI-education program?",
+        "options": [
+          "It makes teacher preparation unnecessary.",
+          "It should determine every lesson goal.",
+          "It has value only in private companies.",
+          "It should be guided by learning needs."
+        ],
+        "answer": "D",
+        "explanation": "结尾把学习需要置于机器功能之前，表明技术应服务教育目标。",
+        "evidence_text": "It is to prepare specialists who can ask what learning needs before deciding what a machine should do."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-human-education-l2-02",
+    "title": "An AI School as a Campus Experiment",
+    "topic": "教育",
+    "difficulty": 2,
+    "source_id": "src-教育-02",
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20250303/fdb200e84aec41ee83a9b2ba198d02c0/c.html",
+    "source_title": "Tsinghua University to launch new school for AI talent development",
+    "source_published_at": "2025-03-03",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "清单URL本轮直接打开失败；经同标题检索核验到新华社可见页面（不同内容ID），确认标题、日期、约150人计划及117门试点课程、147个课堂等事实。",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "content": "When a university opens a school devoted to artificial intelligence, the obvious question is how many AI experts it will produce. Tsinghua University's plan offers another question: can AI also change the way those experts are educated?\n\nThe new undergraduate school planned to enroll about 150 students in its first year. Its goal was not limited to technical training. It would combine AI with several disciplines and develop students' literacy, expertise and capacity for innovation. That design reflects a basic fact: many important uses of AI occur in medicine, engineering, science or the humanities rather than inside a single computer laboratory.\n\nThe wider university had already started testing AI in teaching. It reported 117 pilot courses and 147 classes using AI-supported methods, along with teaching assistants, lesson-planning aids and automated grading systems. These trials make the campus a kind of laboratory for the new school. Faculty members can observe where a tool saves time, where it confuses students, and where human review remains necessary. A pilot is a limited test conducted before a larger decision.\n\nThe numbers, however, should not be mistaken for proof of better learning. Counting tools or classes is easier than measuring whether students ask deeper questions or transfer knowledge across fields. The school will be most valuable if it studies its own educational experiments as carefully as it studies AI itself.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What main question does the passage raise about the new school?",
+        "options": [
+          "Whether 150 students can build a computer laboratory",
+          "Whether it can eliminate every nontechnical subject",
+          "Whether it can improve both AI talent training and educational practice",
+          "Whether automated grading should become the only assessment"
+        ],
+        "answer": "C",
+        "explanation": "文章不只关注培养多少专家，还关注人工智能如何改变培养方式及其效果评价。",
+        "evidence_text": "Tsinghua University's plan offers another question: can AI also change the way those experts are educated?"
+      },
+      {
+        "type": "detail",
+        "question": "About how many students did the school plan to enroll in its first year?",
+        "options": [
+          "50",
+          "117",
+          "150",
+          "147"
+        ],
+        "answer": "C",
+        "explanation": "第二段首句明确给出约150人的首年招生计划。",
+        "evidence_text": "The new undergraduate school planned to enroll about 150 students in its first year."
+      },
+      {
+        "type": "word_guess",
+        "question": "What is a “pilot” in the passage?",
+        "options": [
+          "A person who flies an aircraft",
+          "A final national examination",
+          "A limited test before a larger decision",
+          "A course without any teacher"
+        ],
+        "answer": "C",
+        "explanation": "正文紧接该词给出定义。",
+        "evidence_text": "A pilot is a limited test conducted before a larger decision."
+      },
+      {
+        "type": "inference",
+        "question": "What makes the new campus function as an educational laboratory?",
+        "options": [
+          "AI tools have already proved that human review is unnecessary.",
+          "All university buildings are being replaced by laboratories.",
+          "Students will study only chemistry and medicine.",
+          "Existing classroom trials can provide evidence for improving the new model."
+        ],
+        "answer": "D",
+        "explanation": "“实验室”是比喻，指已有试点能让教师观察工具的效果、问题和人工审核需求。",
+        "evidence_text": "Faculty members can observe where a tool saves time, where it confuses students, and where human review remains necessary."
+      },
+      {
+        "type": "attitude",
+        "question": "Why are the reported counts of AI-supported classes treated cautiously?",
+        "options": [
+          "As evidence that no further study is needed",
+          "As final proof that every student learns better",
+          "As useful activity measures, but not proof of learning quality",
+          "As irrelevant because tools cannot support teachers"
+        ],
+        "answer": "C",
+        "explanation": "最后一段明确区分活动数量与学习质量证据。",
+        "evidence_text": "The numbers, however, should not be mistaken for proof of better learning."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-human-education-l3-03",
+    "title": "Opening an AI Academy Without Closing the Door",
+    "topic": "教育",
+    "difficulty": 3,
+    "source_id": "src-教育-03",
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20250422/15bf5270274e45319a17a0b66fcdb871/c.html",
+    "source_title": "Across China: Teen AI academies pave way for China's next-gen innovators",
+    "source_published_at": "2025-04-22",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "URL直接打开偶发内部错误；同URL搜索结果可见全文，核验了北京与上海项目、31所高校资源、科研参与及海淀项目招生数据。",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "content": "Teen AI academies in Beijing and Shanghai are designed as bridges. They connect secondary schools with universities, research projects and industry practice. In Beijing, one academy planned to draw on faculty from 31 universities and let students participate in national-level research. A related Haidian program teaches computational thinking, mathematics, programming and AI fundamentals on weekends and holidays.\n\nSuch programs can offer an experience that an ordinary timetable rarely provides. A teenager may encounter an unsolved problem, work with a researcher and see how mathematics becomes a model. Early depth can be valuable, especially in a field advancing too quickly for textbooks alone.\n\nThe bridge, however, has an entrance. In 2024, the Haidian experimental class accepted 180 students after receiving more than 1,500 applications; the reported admission rate was 11.76 percent. Selectivity may help a demanding course operate, but it also raises a design question. If the public purpose is to build a broad talent pipeline, what should happen to interested students who are not selected? A pipeline is a continuing route through which learners can develop, not merely a contest that identifies a few winners.\n\nOne answer is a layered system. Intensive academies can provide research opportunities to a smaller group, while regular schools offer basic AI literacy, open projects and routes to later entry. Selection should also look for curiosity and persistence, not only prior programming experience, because earlier access to devices and tutoring is uneven.\n\nThe success of a teen academy should therefore be measured in two directions. It should help advanced learners move farther, but its methods and resources should also strengthen the wider educational path from which future applicants emerge.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "Which access tension is explored through the selective teen AI academy?",
+        "options": [
+          "How selective AI academies can support excellence without weakening broad access",
+          "Why teenagers should avoid university research",
+          "How weekend classes can replace regular schools",
+          "Why every applicant must enter the same intensive course"
+        ],
+        "answer": "A",
+        "explanation": "文章既认可高强度项目，又追问未入选者的成长路径，中心是卓越培养与广泛机会的平衡。",
+        "evidence_text": "The bridge, however, has an entrance."
+      },
+      {
+        "type": "detail",
+        "question": "What opportunities did the Beijing academy plan to offer?",
+        "options": [
+          "Faculty resources from 31 universities and participation in research",
+          "Guaranteed admission for more than 1,500 applicants",
+          "Only recorded lessons with no projects",
+          "A curriculum limited to textbook reading"
+        ],
+        "answer": "A",
+        "explanation": "第一段直接说明31所高校师资与国家级科研参与机会。",
+        "evidence_text": "In Beijing, one academy planned to draw on faculty from 31 universities and let students participate in national-level research."
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “pipeline” mean in the passage?",
+        "options": [
+          "A machine used in an AI laboratory",
+          "A continuing route for learner development",
+          "A single entrance examination",
+          "A list of university buildings"
+        ],
+        "answer": "B",
+        "explanation": "正文明确把 pipeline 解释为学习者持续发展的路径。",
+        "evidence_text": "A pipeline is a continuing route through which learners can develop, not merely a contest that identifies a few winners."
+      },
+      {
+        "type": "inference",
+        "question": "Why might prior programming experience be an unfair main selection standard?",
+        "options": [
+          "Access to devices and tutoring differs among students.",
+          "Programming has no connection with AI.",
+          "Curiosity can be measured perfectly by one test.",
+          "All applicants have already joined research projects."
+        ],
+        "answer": "A",
+        "explanation": "文章指出先前资源获取不均，因此以既有编程经验为主会把机会差异误作能力差异。",
+        "evidence_text": "Selection should also look for curiosity and persistence, not only prior programming experience, because earlier access to devices and tutoring is uneven."
+      },
+      {
+        "type": "attitude",
+        "question": "Under what condition does the writer support intensive AI academies for teenagers?",
+        "options": [
+          "Positive, provided they contribute to a broader learning system",
+          "Opposed, because advanced learning is always harmful",
+          "Uncritical, because selectivity needs no explanation",
+          "Indifferent, because their resources cannot be shared"
+        ],
+        "answer": "A",
+        "explanation": "作者认可其深度价值，但把资源外溢和更广路径作为成功条件。",
+        "evidence_text": "It should help advanced learners move farther, but its methods and resources should also strengthen the wider educational path from which future applicants emerge."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-human-education-l4-04",
+    "title": "The Smart Playground Still Needs a Teacher",
+    "topic": "教育",
+    "difficulty": 4,
+    "source_id": "src-教育-04",
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20240902/004153c0670847009a647dc16e3b086c/c.html",
+    "source_title": "Chinese schools start new semester with more AI-empowered facilities",
+    "source_published_at": "2024-09-02",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "URL可访问；核验了智能体育场、可穿戴心率数据、英语口语反馈、184个试点基地及大班教学背景。",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "content": "On a smart playground, a three-minute rope-skipping test can produce an immediate score and ranking. In another class, a wrist device reports heart rate while students exercise. Elsewhere, a small terminal comments on a learner's English pronunciation and grammar. These systems promise something teachers in large classes have always lacked: a quick view of each student's performance.\n\nSpeed, however, changes the teacher's problem rather than solving it. A heart-rate alert may signal that an exercise should be adjusted, but it does not know whether a child is ill, frightened or simply unfamiliar with the task. A pronunciation score can locate a repeated sound error, yet the teacher must decide whether correction, encouragement or more listening will help. Data become educational only after someone interprets them in context.\n\nThe scale of new facilities makes that judgment especially important. One smart playground described in the source covered 16,000 square meters and was intended to serve more than 7,000 students and 700 teachers. Nationally, 184 primary and secondary schools had been named AI education pilot bases in early 2024. A pilot base is expected to explore methods, not merely display equipment.\n\nThere are also questions that convenience can hide. Facial recognition may reduce the time needed to record performance, while creating duties concerning consent, storage and access. Instant rankings may motivate some students but embarrass others. Personalized assistance can narrow a learning gap only if devices work reliably and teachers have time to respond. Otherwise, the system produces finer descriptions of unequal outcomes without changing them.\n\nThe useful contrast is not between technology and teachers. It is between automatic measurement and informed action. Smart facilities earn their place when they give teachers better evidence, protect students and lead to decisions that a score cannot make by itself.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "Which trade-off defines the discussion of smart school facilities?",
+        "options": [
+          "Smart school data have value only when teachers interpret and act on them responsibly.",
+          "Automatic rankings should replace teacher assessment.",
+          "Large classes make personalized help impossible under all conditions.",
+          "Schools should use AI only in physical education."
+        ],
+        "answer": "A",
+        "explanation": "全文以多种设备为例，区分自动测量与教师基于情境的判断和行动。",
+        "evidence_text": "Data become educational only after someone interprets them in context."
+      },
+      {
+        "type": "detail",
+        "question": "How large was the smart playground mentioned?",
+        "options": [
+          "1,600 square meters",
+          "7,000 square meters",
+          "16,000 square meters",
+          "184 square meters"
+        ],
+        "answer": "C",
+        "explanation": "第三段明确给出16,000平方米。",
+        "evidence_text": "One smart playground described in the source covered 16,000 square meters and was intended to serve more than 7,000 students and 700 teachers."
+      },
+      {
+        "type": "word_guess",
+        "question": "What is a “pilot base” expected to do?",
+        "options": [
+          "Test and develop methods",
+          "Display equipment only",
+          "Store every student's private data forever",
+          "Remove teachers from decision-making"
+        ],
+        "answer": "A",
+        "explanation": "正文用“explore methods”界定试点基地的职责。",
+        "evidence_text": "A pilot base is expected to explore methods, not merely display equipment."
+      },
+      {
+        "type": "inference",
+        "question": "What lesson follows from comparing a heart-rate alert with a child's actual condition?",
+        "options": [
+          "To show that the same number can require different responses in context",
+          "To show that wrist devices always report false information",
+          "To prove that children should not exercise at school",
+          "To argue that teachers can diagnose every illness"
+        ],
+        "answer": "A",
+        "explanation": "数据只能提示异常，疾病、恐惧或不熟悉任务等不同情境需要教师作不同判断。",
+        "evidence_text": "A heart-rate alert may signal that an exercise should be adjusted, but it does not know whether a child is ill, frightened or simply unfamiliar with the task."
+      },
+      {
+        "type": "attitude",
+        "question": "Which responsibility accompanies the efficiency of facial recognition in school sports?",
+        "options": [
+          "As efficient but accompanied by privacy responsibilities",
+          "As harmless because it saves teachers time",
+          "As useless for recording performance",
+          "As acceptable only when rankings are public"
+        ],
+        "answer": "A",
+        "explanation": "作者同时指出记录效率和同意、存储、访问方面的责任，态度审慎。",
+        "evidence_text": "Facial recognition may reduce the time needed to record performance, while creating duties concerning consent, storage and access."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-human-education-l5-05",
+    "title": "AI Literacy Is More Than Learning to Prompt",
+    "topic": "教育",
+    "difficulty": 5,
+    "source_id": "src-教育-05",
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20251224/55f17a6865cb40c58e0c48c81e8cd597/c.html",
+    "source_title": "Yearender-China Focus: AI takes root in basic education, nurturing future innovators",
+    "source_published_at": "2025-12-24",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "URL直接打开偶发内部错误；同URL搜索结果可见全文，核验了天津分层课程、北京课时、教师培训、人机边界、作业禁令与伦理风险。",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "content": "Basic AI education teaches students to obtain a polished answer. A harder version asks when that answer deserves trust, what was lost in producing it, and whether using it serves the learning goal. China's school programs increasingly describe their aim as AI literacy rather than technical specialization, a distinction with consequences for curriculum, assessment and teacher preparation.\n\nA tiered curriculum illustrates the idea. In Tianjin, fourth- and eighth-grade students were assigned one compulsory AI class each week, while other grades could use school-designed courses or integrate AI into existing subjects. Beijing required a minimum of eight AI classes per academic year, moving from experience in primary school toward application and then project work. Progression here is developmental rather than merely cumulative: older learners are expected to make more independent judgments, not simply collect more commands.\n\nThat judgment is difficult to assess. A successful program might enable a student to model a physical process, question biased output, protect personal data and explain why a tool should be refused for a particular task. None of these achievements is captured well by counting logins. Nor can schools assume that installing software creates capacity. Teachers across subjects need training, usable lesson materials and time to redesign activities; families also need enough understanding to recognize unhealthy dependence.\n\nBoundaries make the educational purpose visible. National guidance reported in 2025 prohibited submitting AI-generated material directly as homework or exam answers and called for safeguards in creative assignments. The restriction is not anti-technology. It protects the intellectual work that an assignment is meant to reveal. Human-AI collaboration is valuable only if the human remains cognitively present—forming questions, checking claims and taking responsibility for the result.\n\nThere is nevertheless a policy tension. Broad access can reduce gaps in exposure, yet uneven devices, connectivity and teacher confidence may turn a common curriculum into unequal experiences. Moreover, privacy protection, algorithmic bias and data security are not optional advanced topics; they determine whether routine participation is safe. AI literacy should therefore be evaluated as a public capability: the capacity to use, question and sometimes decline an automated system. Teaching students to prompt is one component. Teaching them to remain authors of their decisions is the larger task.",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "Which abilities make AI literacy a public capability rather than prompt practice?",
+        "options": [
+          "As the capacity to use, question and sometimes reject AI while retaining responsibility",
+          "As the ability to obtain polished answers as quickly as possible",
+          "As early specialization in software engineering for every child",
+          "As the number of AI systems installed by a school"
+        ],
+        "answer": "A",
+        "explanation": "全文把AI素养界定为使用、质疑、拒绝和承担责任的综合公共能力。",
+        "evidence_text": "AI literacy should therefore be evaluated as a public capability: the capacity to use, question and sometimes decline an automated system."
+      },
+      {
+        "type": "detail",
+        "question": "What did the reported national guidance prohibit?",
+        "options": [
+          "Using simulations in physics lessons",
+          "Submitting AI-generated material directly as homework or exam answers",
+          "Teaching data security in primary schools",
+          "Providing teachers with digital lesson materials"
+        ],
+        "answer": "B",
+        "explanation": "第四段直接说明不得将AI生成内容直接作为作业或考试答案提交。",
+        "evidence_text": "National guidance reported in 2025 prohibited submitting AI-generated material directly as homework or exam answers and called for safeguards in creative assignments."
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “developmental rather than merely cumulative” imply?",
+        "options": [
+          "Students should exercise greater judgment as they mature, not just learn more commands.",
+          "Older students should repeat the same introductory lesson.",
+          "Course quality can be measured by total logins.",
+          "Technical commands should replace project work."
+        ],
+        "answer": "A",
+        "explanation": "冒号后直接说明年级递进强调独立判断，而不是命令数量累加。",
+        "evidence_text": "Progression here is developmental rather than merely cumulative: older learners are expected to make more independent judgments, not simply collect more commands."
+      },
+      {
+        "type": "inference",
+        "question": "Why can restricting AI during homework protect rather than oppose technology learning?",
+        "options": [
+          "Because it preserves the thinking that the assignment is designed to assess",
+          "Because AI-generated answers are always factually correct",
+          "Because schools intend to ban all creative assignments",
+          "Because human review makes privacy irrelevant"
+        ],
+        "answer": "A",
+        "explanation": "禁令针对替代学习过程的用法，而非技术本身，目的是保留作业所要呈现的思考。",
+        "evidence_text": "It protects the intellectual work that an assignment is meant to reveal."
+      },
+      {
+        "type": "inference",
+        "question": "How could a common AI curriculum still produce unequal experiences?",
+        "options": [
+          "Schools differ in devices, connectivity and teacher readiness.",
+          "Every student receives identical support at home.",
+          "AI literacy excludes questions of access.",
+          "Counting logins removes all resource gaps."
+        ],
+        "answer": "A",
+        "explanation": "共同课程不等于实施条件相同，设备、网络和教师信心差异会改变学生的真实体验。",
+        "evidence_text": "Broad access can reduce gaps in exposure, yet uneven devices, connectivity and teacher confidence may turn a common curriculum into unequal experiences."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-human-education-l1-06",
+    "title": "A Major Is More Than Its Name",
+    "content": "A university can announce a fashionable major in one afternoon. Building a useful course takes much longer. In 2025, China's education authorities added 29 undergraduate majors in fields including artificial intelligence, carbon neutrality and the low-altitude economy. More than 500 universities had already established AI majors or schools.\n\nThe numbers show strong interest, but a new name is not enough. Students need teachers who understand the field, equipment for practice and links with real workplaces. Otherwise, a department may simply add words such as \"smart\" or \"digital\" to an old program while leaving its lessons almost unchanged.\n\nVocational undergraduate institutions offer one useful test: practical training is expected to occupy about half of class time. Practice here means applying knowledge to a real or realistic task, not only remembering definitions.\n\nNew majors can help prepare a future workforce. Their value, however, should be judged by what students can actually learn and do. Employers and graduates can later reveal whether promised abilities survived outside an examination or brochure. A modern label may attract applicants; a coherent curriculum is what turns that promise into education.",
+    "topic": "教育",
+    "difficulty": 1,
+    "source_id": "src-教育-06",
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20250610/e341d33cef7e4d7987d707611b8f5c81/c.html",
+    "source_title": "China set to build future workforce with new tech-centric college majors",
+    "source_published_at": "2025-06-10",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "同标题新华社页面可见；核验了29个新增本科专业、500余所高校设置AI专业或学院、部分专业改名风险及职教本科实践课时约占一半等事实。",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "Why can a fashionable program title be misleading?",
+        "options": [
+          "Every university should offer exactly 29 majors.",
+          "Old subjects can never respond to new technology.",
+          "A new major needs substantive teaching and practice, not only a modern name.",
+          "Applicants should choose programs by title alone."
+        ],
+        "answer": "C",
+        "explanation": "全文以新增专业为起点，强调课程、师资与实践才决定真实价值。",
+        "evidence_text": "A modern label may attract applicants; a coherent curriculum is what turns that promise into education."
+      },
+      {
+        "type": "detail",
+        "question": "How many new undergraduate majors were added in 2025?",
+        "options": [
+          "More than five hundred.",
+          "Exactly fifty.",
+          "Two hundred and nine.",
+          "Twenty-nine."
+        ],
+        "answer": "D",
+        "explanation": "首段明确给出新增专业数量为29。",
+        "evidence_text": "In 2025, China's education authorities added 29 undergraduate majors in fields including artificial intelligence, carbon neutrality and the low-altitude economy."
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “practice” mean here?",
+        "options": [
+          "Using knowledge in an authentic or simulated task.",
+          "Changing the name of a department.",
+          "Learning definitions without application.",
+          "Advertising a course to applicants."
+        ],
+        "answer": "A",
+        "explanation": "第三段直接解释 practice 的语境义。",
+        "evidence_text": "Practice here means applying knowledge to a real or realistic task, not only remembering definitions."
+      },
+      {
+        "type": "inference",
+        "question": "What role does the half-of-class-time figure play in the argument?",
+        "options": [
+          "It proves theory should disappear from all courses.",
+          "It provides a way to test whether a program develops usable ability.",
+          "It shows every graduate already has a job.",
+          "It explains why universities need fewer teachers."
+        ],
+        "answer": "B",
+        "explanation": "作者把实践课时作为判断专业是否实质更新的可观察指标。",
+        "evidence_text": "Vocational undergraduate institutions offer one useful test: practical training is expected to occupy about half of class time."
+      },
+      {
+        "type": "attitude",
+        "question": "How does the writer view the creation of new majors?",
+        "options": [
+          "Entirely opposed because technology changes too quickly.",
+          "Uncritical because program titles guarantee quality.",
+          "Cautiously supportive, provided that the curriculum matches the promise.",
+          "Indifferent to what students learn."
+        ],
+        "answer": "C",
+        "explanation": "结尾既肯定需求，也提出课程质量条件。",
+        "evidence_text": "New majors can help prepare a future workforce. Their value, however, should be judged by what students can actually learn and do."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-human-education-l1-07",
+    "title": "Eight Hours, Three Stages of Learning",
+    "content": "Eight hours may sound small, but a clear starting point can change how a subject enters school. Beijing announced that primary and secondary students would receive at least eight class hours of artificial intelligence education each academic year from autumn 2025.\n\nThe content is not identical for every age. Primary pupils begin with experience and curiosity. Junior high students move toward understanding and application, while senior high students are asked to explore practice and innovation. Schools may teach a separate AI course or connect the topic with other subjects.\n\nThis progression matters. A seven-year-old and a seventeen-year-old should not face the same technical task. Progression means arranging learning so that later work builds on earlier understanding.\n\nThe annual minimum also creates a common promise: AI learning should not depend entirely on whether one school happens to have an enthusiastic club. It also gives families a visible expectation against which they can ask questions. Yet hours alone cannot guarantee quality. Teachers need suitable materials and training. The schedule opens the door; age-appropriate teaching determines what students gain after they enter.",
+    "topic": "教育",
+    "difficulty": 1,
+    "source_id": "src-教育-07",
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20250312/b0bfbfc6801c41cfba0a56bd77d136d8/c.html",
+    "source_title": "Beijing to introduce AI courses across primary, secondary schools",
+    "source_published_at": "2025-03-12",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "清单URL失效；已改用同标题、同日期的新华社正式页面，核验每学年至少8课时、三学段递进目标及独立设课或跨学科融入方式。",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What central point does the passage make about Beijingʼs AI courses?",
+        "options": [
+          "All pupils should complete the same programming project.",
+          "AI clubs should replace regular school subjects.",
+          "Eight hours automatically produce expert users.",
+          "A common time requirement needs age-appropriate content and capable teaching."
+        ],
+        "answer": "D",
+        "explanation": "文章说明最低课时只是起点，课程递进和教师能力决定效果。",
+        "evidence_text": "The schedule opens the door; age-appropriate teaching determines what students gain after they enter."
+      },
+      {
+        "type": "detail",
+        "question": "What is the announced yearly minimum for each student?",
+        "options": [
+          "At least eight class hours.",
+          "One hour every school day.",
+          "Eight weeks of full-time study.",
+          "Seventeen class hours."
+        ],
+        "answer": "A",
+        "explanation": "首段直接说明每学年至少8课时。",
+        "evidence_text": "Beijing announced that primary and secondary students would receive at least eight class hours of artificial intelligence education each academic year from autumn 2025."
+      },
+      {
+        "type": "word_guess",
+        "question": "In the eight-hour curriculum, what does “progression” mean?",
+        "options": [
+          "A competition between different schools.",
+          "A sequence in which later learning builds on earlier learning.",
+          "A single lesson repeated at every age.",
+          "A decision to remove other subjects."
+        ],
+        "answer": "B",
+        "explanation": "第三段给出 progression 的明确释义。",
+        "evidence_text": "Progression means arranging learning so that later work builds on earlier understanding."
+      },
+      {
+        "type": "inference",
+        "question": "Why does the minimum reduce dependence on school clubs?",
+        "options": [
+          "It requires all clubs to close in autumn.",
+          "It gives every school identical equipment.",
+          "It establishes some AI learning for every student, not only voluntary participants.",
+          "It prevents teachers from adapting lessons."
+        ],
+        "answer": "C",
+        "explanation": "共同最低要求使AI教育不再只由偶然存在的兴趣社团提供。",
+        "evidence_text": "The annual minimum also creates a common promise: AI learning should not depend entirely on whether one school happens to have an enthusiastic club."
+      },
+      {
+        "type": "attitude",
+        "question": "Which description best captures the authorʼs view of the policy?",
+        "options": [
+          "A complete solution requiring no teacher preparation.",
+          "An unnecessary limit on student curiosity.",
+          "A plan valuable only to senior high schools.",
+          "A useful foundation whose success depends on implementation."
+        ],
+        "answer": "D",
+        "explanation": "作者肯定共同起点，同时强调课时不等于质量。",
+        "evidence_text": "Yet hours alone cannot guarantee quality. Teachers need suitable materials and training."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-human-education-l1-08",
+    "title": "Keep the Student in the Thinking Loop",
+    "content": "At a youth technology event, two eighth graders built a sign that used sensors and a small AI system to guide shoppers in a mall. They were among roughly 170,000 students who registered for the event; nearly 8,000 reached the final stage.\n\nThe project illustrates a shift from asking AI for answers to designing something with it. Some schools now ask students in grades four to nine to complete an inquiry project each semester, with at least four class periods devoted to the work. An inquiry begins with a question, tests ideas and improves a result.\n\nThat process is important because easy answers can hide weak thinking. If a learner copies a generated paragraph, the machine has completed the difficult part. If the learner compares suggestions, checks facts and explains a design choice, AI becomes a tool inside human reasoning.\n\nSchools therefore face a simple rule: the student must remain the thinker. A successful AI project is not the one with the smoothest output. It is the one whose learner can describe the problem, the evidence and the decisions that produced it.",
+    "topic": "教育",
+    "difficulty": 1,
+    "source_id": "src-教育-08",
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20260819/807eef9a2ba14327a772a1e2ba022e81/c.html",
+    "source_title": "Chinese youth learning to think with AI",
+    "source_published_at": "2026-08-19",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "新华社页面可访问；核验了学生智能商场标识案例、约17万人报名和近8000人晋级，以及四至九年级每学期探究项目和至少4课时等可见事实。",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "How are two ways of working with AI contrasted?",
+        "options": [
+          "Using AI to support inquiry differs from letting it replace thought.",
+          "Mall signs are the only useful student AI projects.",
+          "Competitions matter more than classroom learning.",
+          "Generated writing should never be checked."
+        ],
+        "answer": "A",
+        "explanation": "全文对比“借助AI探究”与“让AI代替思考”。",
+        "evidence_text": "Schools therefore face a simple rule: the student must remain the thinker."
+      },
+      {
+        "type": "detail",
+        "question": "How many students reached the final stage of the event?",
+        "options": [
+          "About 170,000.",
+          "Nearly 8,000.",
+          "Exactly four.",
+          "Fewer than eighty."
+        ],
+        "answer": "B",
+        "explanation": "第一段给出近8000人进入决赛阶段。",
+        "evidence_text": "They were among roughly 170,000 students who registered for the event; nearly 8,000 reached the final stage."
+      },
+      {
+        "type": "word_guess",
+        "question": "What is an “inquiry” as defined in the passage?",
+        "options": [
+          "A polished answer copied from a machine.",
+          "A sensor installed in a shopping mall.",
+          "A process of asking a question, testing ideas and revising a result.",
+          "A list of competition winners."
+        ],
+        "answer": "C",
+        "explanation": "第二段直接解释 inquiry。",
+        "evidence_text": "An inquiry begins with a question, tests ideas and improves a result."
+      },
+      {
+        "type": "inference",
+        "question": "Which student is using AI in the way the author favors?",
+        "options": [
+          "One who submits the first generated answer unchanged.",
+          "One who hides the role of the tool.",
+          "One who judges work only by smooth language.",
+          "One who checks suggestions and can justify design decisions."
+        ],
+        "answer": "D",
+        "explanation": "文章支持把AI置于可核查、可解释的人类推理之内。",
+        "evidence_text": "If the learner compares suggestions, checks facts and explains a design choice, AI becomes a tool inside human reasoning."
+      },
+      {
+        "type": "purpose",
+        "question": "Why does the passage begin with the mall-sign project?",
+        "options": [
+          "To give a concrete example of students building and reasoning with AI.",
+          "To recommend that every school open a mall.",
+          "To prove sensors require no human decisions.",
+          "To explain the rules of retail advertising."
+        ],
+        "answer": "A",
+        "explanation": "开头案例把抽象的“用AI思考”具体化。",
+        "evidence_text": "The project illustrates a shift from asking AI for answers to designing something with it."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-human-education-l1-09",
+    "title": "Why One Score Cannot Describe a School System",
+    "content": "Basic education is easy to describe with one score, but much harder to improve with one measure. China has about 430,000 schools and kindergartens serving around 220 million students. A system of that size must consider learning, health, character and fairness together.\n\nRecent policy discussion has placed health and virtue beside academic development. It has also emphasized balanced compulsory education across regions. All 2,895 county-level areas had passed a national assessment of basic educational balance, and internet access had reached every school.\n\nAccess, however, is not only a cable or a school gate. Children with disabilities may need support that allows them to participate meaningfully. Their enrollment rate in compulsory education had reached 97 percent. Equity means responding to different barriers so that opportunity is genuinely usable.\n\nThese facts point to a broad definition of quality. A good school system does not merely produce high test results in a few places. It also asks whether children feel safe enough to participate and curious enough to continue. It helps many kinds of learners grow in body, judgment and knowledge. Scale makes common standards necessary; human difference makes flexible support equally necessary.",
+    "topic": "教育",
+    "difficulty": 1,
+    "source_id": "src-教育-09",
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20260723/2bfed6f152c64248ad4e38e1ce912b7e/c.html",
+    "source_title": "Xi Focus: China aims to elevate basic education with focus on virtue, health and equity",
+    "source_published_at": "2026-07-23",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "清单URL失效；改用同标题、同日期新华社正式页，核验约43万所学校幼儿园、2.2亿学生、2895个县域通过均衡评估、学校联网及残障儿童义务教育入学率97%。",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "Which dimensions form educational quality beyond a single school score?",
+        "options": [
+          "It is measured only by examination scores.",
+          "It combines learning, health, character and usable opportunity.",
+          "It requires every school to use identical support.",
+          "It concerns internet access and nothing else."
+        ],
+        "answer": "B",
+        "explanation": "全文反对单一指标，提出多维质量观。",
+        "evidence_text": "It helps many kinds of learners grow in body, judgment and knowledge."
+      },
+      {
+        "type": "detail",
+        "question": "How many county-level areas had passed the balance assessment?",
+        "options": [
+          "About 220 areas.",
+          "Exactly 430,000 areas.",
+          "All 2,895 county-level areas.",
+          "Ninety-seven areas."
+        ],
+        "answer": "C",
+        "explanation": "第二段直接给出2895个县级地区。",
+        "evidence_text": "All 2,895 county-level areas had passed a national assessment of basic educational balance, and internet access had reached every school."
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “equity” mean in this context?",
+        "options": [
+          "Giving every learner the same obstacle.",
+          "Connecting a cable to a school.",
+          "Selecting only the highest-scoring students.",
+          "Addressing different barriers so opportunity can actually be used."
+        ],
+        "answer": "D",
+        "explanation": "第三段直接界定 equity。",
+        "evidence_text": "Equity means responding to different barriers so that opportunity is genuinely usable."
+      },
+      {
+        "type": "inference",
+        "question": "Why must a large school system combine common standards with flexible support?",
+        "options": [
+          "A large system needs consistency, while learners face different barriers.",
+          "Flexible support makes standards impossible.",
+          "All students require exactly the same service.",
+          "Only small systems can value fairness."
+        ],
+        "answer": "A",
+        "explanation": "结尾从规模与差异推导两种需求必须并存。",
+        "evidence_text": "Scale makes common standards necessary; human difference makes flexible support equally necessary."
+      },
+      {
+        "type": "structure",
+        "question": "How is the passage developed?",
+        "options": [
+          "It lists schools in chronological order.",
+          "It moves from system scale to several dimensions of educational quality.",
+          "It compares two private tutoring companies.",
+          "It explains how to take one national exam."
+        ],
+        "answer": "B",
+        "explanation": "文章先展示规模，再逐层讨论均衡、健康、残障支持与质量定义。",
+        "evidence_text": "These facts point to a broad definition of quality."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-human-education-l2-10",
+    "title": "A Riderʼs Experience Can Lead Somewhere New",
+    "content": "Delivery riders already know traffic, time pressure and customer service. A new vocational academy in Guangdong treats that experience as a starting point rather than a dead end. Its courses include safety and workers' rights, but also AI dispatch, autonomous delivery, cold-chain operations and fleet management.\n\nThe program was created by local authorities and an online retailer. Training is voluntary, organized in levels and offered with basic tuition support from the platform. This arrangement matters because working adults cannot always leave their jobs for a long full-time course.\n\nOther cities are testing similar connections between training and new work. Yichang ran 30 drone sessions for 606 trainees, while Baiyin offered free drone courses and job referrals. A referral is an introduction that helps a qualified learner reach an employer; it is not a guarantee of employment.\n\nThese programs broaden the meaning of vocational education. They do not ask whether a job is old or new. They ask which abilities are changing and how workers can move toward the next role. Follow-up matters as well: providers should learn whether participants completed training, used the skill and found work related to it. Without that evidence, enrollment can be mistaken for opportunity. The strongest course links familiar experience, emerging technology and a realistic path into work.",
+    "topic": "教育",
+    "difficulty": 2,
+    "source_id": "src-教育-10",
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20260122/b90c67b1e3c54642842a5d2198d9645f/c.html",
+    "source_title": "Across China: China reinvents vocational education for tech-driven future",
+    "source_published_at": "2026-01-22",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "新华社页面可访问；核验广东骑手学院的政企合作、分级自愿培训和课程内容，以及宜昌30期无人机培训覆盖606人、白银免费课程与就业推荐等事实。",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "How should vocational courses connect experience with changing work?",
+        "options": [
+          "It requires every adult to leave work for full-time study.",
+          "It teaches only traffic rules to delivery riders.",
+          "It connects workersʼ existing experience with changing skills and employment routes.",
+          "It guarantees a job after any short course."
+        ],
+        "answer": "C",
+        "explanation": "全文通过骑手和无人机培训说明职教应衔接既有经验、新技能与就业路径。",
+        "evidence_text": "The strongest course links familiar experience, emerging technology and a realistic path into work."
+      },
+      {
+        "type": "detail",
+        "question": "How many trainees joined the 30 drone sessions in Yichang?",
+        "options": [
+          "Thirty trainees.",
+          "Six thousand trainees.",
+          "Exactly 808 trainees.",
+          "606 trainees."
+        ],
+        "answer": "D",
+        "explanation": "第三段明确给出606名学员。",
+        "evidence_text": "Yichang ran 30 drone sessions for 606 trainees, while Baiyin offered free drone courses and job referrals."
+      },
+      {
+        "type": "word_guess",
+        "question": "What is a “referral” in the passage?",
+        "options": [
+          "An introduction connecting a qualified learner with an employer.",
+          "A promise of permanent employment.",
+          "A fee charged for drone equipment.",
+          "A certificate replacing all training."
+        ],
+        "answer": "A",
+        "explanation": "正文直接解释 referral。",
+        "evidence_text": "A referral is an introduction that helps a qualified learner reach an employer; it is not a guarantee of employment."
+      },
+      {
+        "type": "inference",
+        "question": "Why are voluntary levels and tuition support useful for riders?",
+        "options": [
+          "They make previous work experience irrelevant.",
+          "They lower practical barriers for adults who must keep working.",
+          "They remove the need to learn new technology.",
+          "They allow employers to avoid all training."
+        ],
+        "answer": "B",
+        "explanation": "第二段指出在职成年人难以长期脱产，灵活与资助因此降低参与门槛。",
+        "evidence_text": "This arrangement matters because working adults cannot always leave their jobs for a long full-time course."
+      },
+      {
+        "type": "attitude",
+        "question": "Under what condition does the author support short vocational courses?",
+        "options": [
+          "As valuable only when they promise immediate jobs.",
+          "As inferior to every university course.",
+          "Positively when they lead from real experience toward credible opportunities.",
+          "As unnecessary once workers know basic safety."
+        ],
+        "answer": "C",
+        "explanation": "结尾提出有条件的肯定标准。",
+        "evidence_text": "They ask which abilities are changing and how workers can move toward the next role."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-human-education-l2-11",
+    "title": "When a Robotics Club Outgrows the Club Room",
+    "content": "In 2017, a Tianjin middle school formed a small robotics club. Students and teachers learned largely through self-study, travelled to competitions and gradually won awards. By 2022, the activity had become an after-school program open to every student, accompanied by technology innovation courses.\n\nThat history matters more than a photograph of a robot. It shows how a school can move from an enthusiastic group to wider participation. In 2024, the school was among 184 primary and secondary AI education bases named by the Ministry of Education.\n\nAI later appeared beyond robotics. A classroom assistant reviewed earlier lesson points and assessed English reading. Physical education teachers used machines to give feedback on middle-distance running. Integration here means placing a tool inside an existing subject for a clear learning purpose.\n\nExpansion nevertheless creates a teacher problem. A club can depend on one specialist; a school-wide program cannot. More teachers must understand when the technology helps, how to interpret its feedback and when to ignore it. The journey from club to curriculum therefore requires institutional learning as well as student learning.\n\nThe lesson is not that every classroom needs a robot. It is that educational innovation becomes durable only when access widens, purposes become clearer and staff capacity grows with the technology too.",
+    "topic": "教育",
+    "difficulty": 2,
+    "source_id": "src-教育-11",
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20240416/d788b80f95f2402d92655bec58d41bd4/c.html",
+    "source_title": "Across China: AI redefining classroom learning in China",
+    "source_published_at": "2024-04-16",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "新华社页面可访问；核验2017年机器人社团、2022年转为全员可参加课后项目、入选184个AI教育基地，以及AI用于英语阅读和中长跑反馈等事实。",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What lesson does the schoolʼs history illustrate?",
+        "options": [
+          "A robotics club should remain limited to competition winners.",
+          "Every subject must be taught by a machine.",
+          "Awards are the only measure of educational change.",
+          "Innovation becomes sustainable when participation, purpose and teacher capacity grow together."
+        ],
+        "answer": "D",
+        "explanation": "文章以社团到课程的过程论证创新的制度化条件。",
+        "evidence_text": "It is that educational innovation becomes durable only when access widens, purposes become clearer and staff capacity grows with the technology too."
+      },
+      {
+        "type": "detail",
+        "question": "What happened to the robotics activity in 2022?",
+        "options": [
+          "It became an after-school program available to every student.",
+          "It was closed after one competition.",
+          "It replaced the schoolʼs English department.",
+          "It became one of 184 universities."
+        ],
+        "answer": "A",
+        "explanation": "第一段明确说明2022年的转变。",
+        "evidence_text": "By 2022, the activity had become an after-school program open to every student, accompanied by technology innovation courses."
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “integration” mean in the passage?",
+        "options": [
+          "Buying robots without changing any lesson.",
+          "Using a tool within an existing subject for a defined learning goal.",
+          "Removing teachers from physical education.",
+          "Restricting AI to an after-school club."
+        ],
+        "answer": "B",
+        "explanation": "第三段直接给出语境定义。",
+        "evidence_text": "Integration here means placing a tool inside an existing subject for a clear learning purpose."
+      },
+      {
+        "type": "inference",
+        "question": "Why does school-wide AI require more teacher development than a club?",
+        "options": [
+          "It involves fewer students and simpler decisions.",
+          "Teachers no longer need to interpret feedback.",
+          "It cannot rely on a single specialist and reaches varied subjects.",
+          "Competitions provide all necessary training."
+        ],
+        "answer": "C",
+        "explanation": "由覆盖范围扩大可推知教师能力必须从个人扩展到组织。",
+        "evidence_text": "A club can depend on one specialist; a school-wide program cannot."
+      },
+      {
+        "type": "structure",
+        "question": "Why does the author trace events from 2017 to 2022 and beyond?",
+        "options": [
+          "To rank three schools by examination results.",
+          "To prove technology changes at a fixed speed.",
+          "To describe the history of one robot model.",
+          "To show a gradual change from a niche activity to institutional practice."
+        ],
+        "answer": "D",
+        "explanation": "时间线服务于“从社团到制度化课程”的核心论证。",
+        "evidence_text": "It shows how a school can move from an enthusiastic group to wider participation."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-human-education-l2-12",
+    "title": "The 2030 Goal Is an Ecosystem",
+    "content": "A national “AI Plus Education” plan proposes a broad change: by 2030, AI education should extend across all stages of schooling and to the wider public. Primary and secondary schools may offer dedicated lessons, connect AI with other subjects and add hands-on activities after class.\n\nUniversities face a different task. The plan calls for basic AI learning for all students and interdisciplinary courses that combine computing with other fields. It also asks institutions to adjust majors as industries change. The goal is not to turn every learner into the same specialist, but to make technical understanding useful inside varied forms of expertise.\n\nAI is also expected to support teachers through homework management, grading, question answering and analysis of classroom interaction. Such assistance can release time, yet it shifts rather than removes professional judgment. A pattern detected by software still needs a teacher to decide what it means for a particular class.\n\nThis is why the plan also reaches teacher qualification and certification. System-wide use requires educators who can question outputs, protect learners and choose an appropriate task. Scaling means extending a practice widely while preserving the conditions that make it responsible.\n\nThe 2030 goal should therefore be read as an ecosystem, not a shopping list of tools. Courses, disciplines, teacher preparation and classroom safeguards must develop together if wider adoption is to improve learning rather than merely increase usage.",
+    "topic": "教育",
+    "difficulty": 2,
+    "source_id": "src-教育-12",
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20260410/0bc08aa9a78645be8c870ac58dfefef4/c.html",
+    "source_title": "China Focus: China moves to bring AI into classrooms as it accelerates digital push",
+    "source_published_at": "2026-04-10",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "同标题新华社页面可访问；核验2030年覆盖各级教育和社会公众、基础教育专门与跨学科课程、高校公共基础课、教师作业与评价辅助及教师资格衔接等事实。",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "Which dependencies shape whether the 2030 goal succeeds?",
+        "options": [
+          "As a connected system of curriculum, teacher capacity and safeguards.",
+          "As a plan to buy the same software for every classroom.",
+          "As an attempt to train every learner for one occupation.",
+          "As a reason to end teacher qualification."
+        ],
+        "answer": "A",
+        "explanation": "全文强调系统协同而非工具清单。",
+        "evidence_text": "The 2030 goal should therefore be read as an ecosystem, not a shopping list of tools."
+      },
+      {
+        "type": "detail",
+        "question": "Which university-level change does the plan call for?",
+        "options": [
+          "The removal of every traditional discipline.",
+          "Basic AI learning for all students and interdisciplinary courses.",
+          "AI courses only for computer science majors.",
+          "An end to adjustments as industries change."
+        ],
+        "answer": "B",
+        "explanation": "第二段直接列出高校层面的要求。",
+        "evidence_text": "The plan calls for basic AI learning for all students and interdisciplinary courses that combine computing with other fields."
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “scaling” mean here?",
+        "options": [
+          "Reducing a course to one short lesson.",
+          "Measuring the weight of classroom devices.",
+          "Extending a practice widely without losing responsible conditions.",
+          "Allowing software to make every decision."
+        ],
+        "answer": "C",
+        "explanation": "第四段直接界定 scaling。",
+        "evidence_text": "Scaling means extending a practice widely while preserving the conditions that make it responsible."
+      },
+      {
+        "type": "inference",
+        "question": "Why does teacher judgment remain necessary when AI analyzes a class?",
+        "options": [
+          "The plan forbids all automated analysis.",
+          "Teachers are expected to rewrite the software.",
+          "Every detected pattern has the same educational meaning.",
+          "Software patterns must be interpreted in relation to specific learners and aims."
+        ],
+        "answer": "D",
+        "explanation": "作者指出技术发现模式，但情境解释仍属教师专业判断。",
+        "evidence_text": "A pattern detected by software still needs a teacher to decide what it means for a particular class."
+      },
+      {
+        "type": "purpose",
+        "question": "What does the ecosystem metaphor reveal about the 2030 goal?",
+        "options": [
+          "To stress that several dependent parts must develop together.",
+          "To compare classrooms with natural forests.",
+          "To argue that only environmental science needs AI.",
+          "To suggest tools grow without human design."
+        ],
+        "answer": "A",
+        "explanation": "ecosystem 比喻突出课程、教师与规范之间的依存关系。",
+        "evidence_text": "Courses, disciplines, teacher preparation and classroom safeguards must develop together if wider adoption is to improve learning rather than merely increase usage."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-human-education-l2-13",
+    "title": "The Skill That Survives a Change of Machine",
+    "content": "At a vocational workshop in Lahore, students do not learn automation from diagrams alone. They operate modern equipment and digital platforms, working with production lines, robotics and electrical systems. The program was jointly established by a Chinese college and Punjabʼs vocational training authority in 2018.\n\nBy 2025, the workshop had trained more than 1,000 students. Some graduates found work in major industries in Pakistan and abroad. Those outcomes matter, but the most useful feature is the connection between equipment, instruction and an industrial task.\n\nHands-on training is sometimes mistaken for repeating a fixed procedure. Genuine practice asks a learner to diagnose an error, explain a system and adjust it safely. Transfer means applying an underlying principle when the machine or workplace changes.\n\nInternational cooperation adds another layer. Imported equipment can expose learners to current standards, while local teachers and employers understand the jobs, language and constraints around them. Neither side supplies a complete course alone.\n\nA workshop should therefore be judged by more than its machines. It needs instructors who can connect theory with operation, maintenance plans that keep laboratories usable and evidence that graduates can adapt. Employers can test that adaptability over time. Modern equipment opens a door; transferable understanding allows a learner to keep walking after the first job changes.",
+    "topic": "教育",
+    "difficulty": 2,
+    "source_id": "src-教育-13",
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20250811/d5cc01e7df9b46dcb121f9fd741db09e/c.html",
+    "source_title": "Feature: Pakistan-China educational program imparts advanced vocational skills, cultivates local talents",
+    "source_published_at": "2025-08-11",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "清单候选为宽泛报告PDF且题名截断，不适合正式入库；改用新华社可访问HTML，核验拉合尔鲁班工坊2018年共建、现代实验设备和数字平台、自动化与机器人训练及累计培训1000余人等事实。",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What makes a vocational workshop valuable after its machines change?",
+        "options": [
+          "The number of machines displayed at an opening.",
+          "Transferable understanding developed through equipment, teaching and real tasks.",
+          "A fixed procedure tied to one model.",
+          "Foreign equipment without local instruction."
+        ],
+        "answer": "B",
+        "explanation": "全文强调设备只有与教学、任务和迁移能力结合才产生持久价值。",
+        "evidence_text": "Modern equipment opens a door; transferable understanding allows a learner to keep walking after the first job changes."
+      },
+      {
+        "type": "detail",
+        "question": "When was the Lahore workshop jointly established?",
+        "options": [
+          "In 2025.",
+          "In 2008.",
+          "In 2018.",
+          "In 2022."
+        ],
+        "answer": "C",
+        "explanation": "首段直接说明创办年份。",
+        "evidence_text": "The program was jointly established by a Chinese college and Punjabʼs vocational training authority in 2018."
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “transfer” mean in the passage?",
+        "options": [
+          "Moving a machine between two rooms.",
+          "Repeating one procedure without explanation.",
+          "Replacing all local teachers.",
+          "Applying a principle when equipment or context changes."
+        ],
+        "answer": "D",
+        "explanation": "第三段直接解释 transfer。",
+        "evidence_text": "Transfer means applying an underlying principle when the machine or workplace changes."
+      },
+      {
+        "type": "inference",
+        "question": "Why are both international and local partners useful?",
+        "options": [
+          "They contribute different knowledge about technology and the surrounding work context.",
+          "Only foreign partners understand employment.",
+          "Local partners make current equipment unnecessary.",
+          "A complete course needs no adaptation."
+        ],
+        "answer": "A",
+        "explanation": "第四段对两方互补贡献作出说明。",
+        "evidence_text": "Imported equipment can expose learners to current standards, while local teachers and employers understand the jobs, language and constraints around them."
+      },
+      {
+        "type": "attitude",
+        "question": "What limitation of modern training equipment does the writer stress?",
+        "options": [
+          "Unnecessary for industrial education.",
+          "Valuable as part of a supported learning system, not sufficient by itself.",
+          "A guarantee that every graduate adapts.",
+          "More important than instructors and maintenance."
+        ],
+        "answer": "B",
+        "explanation": "结尾肯定设备作用，同时限定其必须嵌入师资、维护和评价体系。",
+        "evidence_text": "A workshop should therefore be judged by more than its machines."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-human-education-l3-14",
+    "title": "A Million Books Still Need a Guide",
+    "content": "In a mountain school in Zhejiang, a reading corner used to offer only a few hundred books, many outdated or unsuitable. A pilot launched in November 2025 supplied smart terminals to small rural schools with fewer than 100 pupils. Students in grades four to six could then reach stories, poems and pronunciation support through an AI assistant.\n\nThe change addresses scarcity, but it does not make selection automatic. An endless digital shelf can overwhelm a beginner as easily as an empty shelf can restrict one. Teachers at the school shifted attention toward curating suitable materials, giving personal guidance and encouraging pupils to finish whole books. About half the students developed a daily reading habit.\n\nElsewhere, digital access takes different forms. On Zhejiang islands, a shared library system delivers borrowed books within two or three days. A Guizhou platform provides more than one million e-books alongside journals, lectures and audiobooks. These examples distinguish access to a catalogue from access to a reading practice.\n\nThe distinction matters because a resource becomes educational only when a learner can choose it, understand it and return to it. Curation means selecting and organizing material for a particular audience; it is not censorship of every difficult text.\n\nDigital tools can narrow a geographical gap, yet they do not remove the need for adults who know their pupils. The best rural reading program joins abundant material with patient guidance, turning connection into a habit rather than a brief encounter with a screen.",
+    "topic": "教育",
+    "difficulty": 3,
+    "source_id": "src-教育-14",
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20260426/834d7d88cc7f497fadb22d6eebeca790/c.html",
+    "source_title": "Across China: Digital tools help bridge reading gap for rural Chinese children",
+    "source_published_at": "2026-04-26",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "新华社页面可访问；核验浙江少于100名学生的小规模农村学校试点、四至六年级使用终端、约半数学生形成每日阅读习惯、海岛图书配送及贵州数字资源规模等事实。",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What combination can turn a million digital books into sustained rural reading?",
+        "options": [
+          "Replacing every printed book with a tablet.",
+          "Giving pupils the largest possible catalogue without guidance.",
+          "Combining wider digital access with teacher curation and sustained reading habits.",
+          "Limiting reading to pronunciation exercises."
+        ],
+        "answer": "C",
+        "explanation": "全文强调资源供给必须与筛选、指导和习惯培养结合。",
+        "evidence_text": "The best rural reading program joins abundant material with patient guidance, turning connection into a habit rather than a brief encounter with a screen."
+      },
+      {
+        "type": "detail",
+        "question": "Which schools received smart terminals under the Zhejiang pilot?",
+        "options": [
+          "Only city schools with large libraries.",
+          "Every university in the province.",
+          "Schools serving only senior learners.",
+          "Small rural schools with fewer than 100 pupils."
+        ],
+        "answer": "D",
+        "explanation": "第一段明确给出项目覆盖标准。",
+        "evidence_text": "A pilot launched in November 2025 supplied smart terminals to small rural schools with fewer than 100 pupils."
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “curation” mean in this passage?",
+        "options": [
+          "Selecting and arranging material for the needs of an audience.",
+          "Preventing pupils from reading any hard book.",
+          "Delivering every printed book within one day.",
+          "Counting how many devices a school owns."
+        ],
+        "answer": "A",
+        "explanation": "第四段直接定义 curation。",
+        "evidence_text": "Curation means selecting and organizing material for a particular audience; it is not censorship of every difficult text."
+      },
+      {
+        "type": "inference",
+        "question": "Why can an enormous digital collection still fail a beginner?",
+        "options": [
+          "Digital books always contain outdated information.",
+          "Choice without guidance may be difficult to navigate or sustain.",
+          "Teachers cannot see anything on a screen.",
+          "A large collection removes all reading options."
+        ],
+        "answer": "B",
+        "explanation": "第二段以“无尽书架也会使初学者不知所措”推导指导的重要性。",
+        "evidence_text": "An endless digital shelf can overwhelm a beginner as easily as an empty shelf can restrict one."
+      },
+      {
+        "type": "structure",
+        "question": "How does the author develop the argument?",
+        "options": [
+          "By listing book titles in alphabetical order.",
+          "By comparing examination scores across countries.",
+          "By moving from one school to contrasting access models and then defining effective use.",
+          "By arguing that physical libraries have no value."
+        ],
+        "answer": "C",
+        "explanation": "结构从个案扩展到多地模式，再抽象出“目录可达”和“阅读实践可达”的区别。",
+        "evidence_text": "These examples distinguish access to a catalogue from access to a reading practice."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-human-education-l3-15",
+    "title": "The Smart Classroom After Launch Day",
+    "content": "A rural school in Shiqian, Guizhou, received an AI-powered smart classroom system in 2025. The visible report is brief: it confirms the delivery and says the system offers new learning pathways. Those modest facts are enough to raise a larger educational question. What turns installed equipment into learning?\n\nDelivery is the easiest stage to photograph. Teachers must still decide which lesson benefits from the system, what students should do rather than merely watch, and how they will know whether understanding improved. If a device supplies an answer before a learner has formed a question, novelty may shorten rather than deepen attention.\n\nInfrastructure is therefore an enabling condition, not an outcome. An enabling condition makes an activity possible but does not ensure its success. Electricity, connectivity and working hardware matter; so do lesson design, maintenance and local technical support. A broken system waiting months for repair creates a different classroom from the one shown on launch day.\n\nRural schools also need freedom to adapt. A tool designed around an urban textbook sequence may not fit local schedules, languages or examples. Teachers should be able to choose a smaller use that solves a genuine problem instead of demonstrating every available feature.\n\nEvaluation should follow the same logic. Counting devices reveals distribution, while student work reveals use. Observations, questions and later performance can show whether the technology expands participation or simply changes the surface of a lesson.\n\nThe fair test of a smart classroom comes after the visitors leave: can teachers keep using it purposefully, and can learners explain something they could not explain before?",
+    "topic": "教育",
+    "difficulty": 3,
+    "source_id": "src-教育-15",
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20250330/d441a5459f9b424691d3662cf1493044/c.html",
+    "source_title": "AI-powered classroom enhances rural education in China's Shiqian",
+    "source_published_at": "2025-03-30",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "新华社视频页可访问；可见信息仅核验到贵州石阡农村学校获交付AI智慧课堂系统及其提供新学习路径。正文明确限定此边界，其余为基于该教育问题的原创分析，未虚构成效数据。",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "Which question is at the center of the passage?",
+        "options": [
+          "Why rural schools should reject all classroom equipment.",
+          "How launch ceremonies should be photographed.",
+          "Why device counts are the only valid outcome.",
+          "How delivered technology can become durable, purposeful learning."
+        ],
+        "answer": "D",
+        "explanation": "文章从设备交付事实出发，追问持续、合目的的教学使用。",
+        "evidence_text": "What turns installed equipment into learning?"
+      },
+      {
+        "type": "detail",
+        "question": "What does the source report directly about Shiqian?",
+        "options": [
+          "A rural school received an AI-powered classroom system offering new pathways.",
+          "Every rural school replaced its teachers with AI.",
+          "The system raised all test scores immediately.",
+          "Students designed the hardware themselves."
+        ],
+        "answer": "A",
+        "explanation": "首段谨慎限定了来源直接可见事实。",
+        "evidence_text": "A rural school in Shiqian, Guizhou, received an AI-powered smart classroom system in 2025."
+      },
+      {
+        "type": "word_guess",
+        "question": "What is an “enabling condition”?",
+        "options": [
+          "A final measurement of learning.",
+          "Something that permits an activity without guaranteeing success.",
+          "A compulsory urban textbook sequence.",
+          "A device that never needs maintenance."
+        ],
+        "answer": "B",
+        "explanation": "第三段直接定义该短语。",
+        "evidence_text": "An enabling condition makes an activity possible but does not ensure its success."
+      },
+      {
+        "type": "inference",
+        "question": "Why does the author prefer student work to device counts for evaluation?",
+        "options": [
+          "Student work shows how many machines were purchased.",
+          "Device counts explain every classroom decision.",
+          "Student work provides evidence about how the equipment affected learning.",
+          "Distribution data make observation unnecessary."
+        ],
+        "answer": "C",
+        "explanation": "设备数只能表明分配，学习作品才能反映实际使用与理解。",
+        "evidence_text": "Counting devices reveals distribution, while student work reveals use."
+      },
+      {
+        "type": "inference",
+        "question": "Why might a locally limited use be better than demonstrating every feature?",
+        "options": [
+          "It prevents teachers from making any choice.",
+          "It proves all urban examples are incorrect.",
+          "It guarantees the hardware will never fail.",
+          "It can address a real teaching problem and fit the schoolʼs context."
+        ],
+        "answer": "D",
+        "explanation": "第四段强调本地适配与真实问题优先于功能展示。",
+        "evidence_text": "Teachers should be able to choose a smaller use that solves a genuine problem instead of demonstrating every available feature."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-human-education-l3-16",
+    "title": "Open All Day Is Not the Same as Accessible",
+    "content": "Four hundred Chinese colleges and universities launched about 700 lifelong-learning projects in 2025. The courses, offered online and offline, covered areas such as digital technology, AI applications and rural revitalization. Intended learners included migrant workers, rural teachers and older adults.\n\nThe variety is a strength only if it survives contact with adult life. A worker with changing shifts may need a short mobile lesson; an older learner may value a nearby classroom and technical help; a rural teacher may need a course timed outside the busiest school weeks. Accessibility is not simply the existence of a course. It is the practical ability to enter, continue and benefit from it.\n\nAn online public platform launched in late 2024 with 1,000 courses in six categories, including workplace skills, hobbies, continuing education and education for older people. A broad catalogue helps learners find relevant goals, but categories alone cannot reveal whether a course is understandable, affordable or recognized by employers.\n\nUniversities can contribute more than recorded lectures. They can connect research with local problems, lend trusted assessment to short programs and provide spaces where different generations learn together. Yet their prestige should not silence feedback from participants whose schedules and barriers differ from those of full-time students.\n\nThe promise of learning “around the clock” and across all regions is therefore a design obligation. Providers must examine when people leave a course, what support they lacked and whether a new skill changed their options.\n\nLifelong learning succeeds not when education is technically always open, but when adults with complicated lives can repeatedly return and make progress.",
+    "topic": "教育",
+    "difficulty": 3,
+    "source_id": "src-教育-16",
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20250508/85e2180d647f41e4a6d07c4f5ede0031/c.html",
+    "source_title": "China increases lifelong learning options via new university-led courses",
+    "source_published_at": "2025-05-08",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "清单URL失效；改用同标题同日期新华社页面，核验400所高校、约700个线上线下项目、目标学习群体及2024年底上线平台首批1000门课程和六类目录。",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What standard does the passage use to judge lifelong learning?",
+        "options": [
+          "Whether diverse adults can realistically enter, persist and gain useful options.",
+          "Whether every course is delivered only online.",
+          "Whether universities admit only full-time students.",
+          "Whether a catalogue has exactly six headings."
+        ],
+        "answer": "A",
+        "explanation": "全文把“存在课程”与“成人能持续受益”区分开。",
+        "evidence_text": "Lifelong learning succeeds not when education is technically always open, but when adults with complicated lives can repeatedly return and make progress."
+      },
+      {
+        "type": "detail",
+        "question": "How many lifelong-learning projects were launched by the universities?",
+        "options": [
+          "Exactly 400 courses.",
+          "About 700 projects.",
+          "Only six projects.",
+          "More than 10,000 projects."
+        ],
+        "answer": "B",
+        "explanation": "首段直接说明约700个项目。",
+        "evidence_text": "Four hundred Chinese colleges and universities launched about 700 lifelong-learning projects in 2025."
+      },
+      {
+        "type": "word_guess",
+        "question": "How is “accessibility” defined in the passage?",
+        "options": [
+          "The number of titles in a catalogue.",
+          "The reputation of the university provider.",
+          "The practical ability to begin, continue and benefit.",
+          "A requirement that all learning be free."
+        ],
+        "answer": "C",
+        "explanation": "第二段直接给出操作性定义。",
+        "evidence_text": "Accessibility is not simply the existence of a course. It is the practical ability to enter, continue and benefit from it."
+      },
+      {
+        "type": "inference",
+        "question": "Why should universities listen closely to adult participants?",
+        "options": [
+          "Participants should replace all academic staff.",
+          "Prestige makes course design automatically accurate.",
+          "Feedback matters only for hobby courses.",
+          "Adult schedules and barriers may differ from assumptions built around full-time students."
+        ],
+        "answer": "D",
+        "explanation": "由学习者生活条件差异可推得反馈是课程适配的必要证据。",
+        "evidence_text": "Yet their prestige should not silence feedback from participants whose schedules and barriers differ from those of full-time students."
+      },
+      {
+        "type": "purpose",
+        "question": "Why does the author describe several learner groups?",
+        "options": [
+          "To show that a single delivery model cannot make learning accessible to everyone.",
+          "To rank older adults below migrant workers.",
+          "To argue that rural teachers do not need courses.",
+          "To suggest each group studies the same subject."
+        ],
+        "answer": "A",
+        "explanation": "不同人群案例支撑“可及性需要差异化设计”的论点。",
+        "evidence_text": "A worker with changing shifts may need a short mobile lesson; an older learner may value a nearby classroom and technical help; a rural teacher may need a course timed outside the busiest school weeks."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-human-education-l3-17",
+    "title": "A Future Classroom Needs a Present Tense Test",
+    "content": "At a Wuhan primary school, pupils wore virtual-reality headsets, designed Mars rescue vehicles with AI tools and made customized logos through 3D printing. The scene attracted visitors to the 2025 World Digital Education Conference because it made a “future classroom” visible.\n\nAnother room told a less dramatic story. Learners in their sixties practiced flying drones in a simulation at an open university. Elsewhere, a national platform offered more than 110,000 resources for basic education, while synchronized lessons had connected strong teachers with rural schools in Fujian.\n\nThese examples should not be collapsed into one claim that technology automatically modernizes education. The Mars project may cultivate design and teamwork; a senior course can build confidence; a shared platform can reduce distance. Each has a different learner, problem and measure of success.\n\nThe conference also heard a warning: AI creates opportunities while making academic honesty and oversight harder. Integrity means that learning evidence truthfully represents a studentʼs own understanding and effort. It requires task design, disclosure rules and teachers capable of questioning polished output.\n\nDigital education is often presented as a ladder: more devices, more users, more intelligence. In practice it resembles a map with several destinations. Equity, creativity, efficiency and lifelong participation do not always follow the same route, and one tool may advance one goal while weakening another.\n\nThe useful question is therefore not whether a classroom looks futuristic. It is which educational purpose has been named, what evidence would show progress, and what new risk must be managed along the way.",
+    "topic": "教育",
+    "difficulty": 3,
+    "source_id": "src-教育-17",
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20250517/624813ed3ab74e8194af84e934ecb680/c.html",
+    "source_title": "China Focus: World Digital Education Conference spotlights AI-empowered classrooms",
+    "source_published_at": "2025-05-17",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "新华社页面可访问；核验武汉小学生AI与VR火星救援车项目、老年学习者无人机模拟、国家平台11万余基础教育资源、福建城乡同步课堂及会议关于学术诚信的讨论。",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What framework does the author propose for judging digital education?",
+        "options": [
+          "Judge every program by how futuristic it appears.",
+          "Match each technology to a stated purpose, evidence of progress and relevant risk.",
+          "Use one measure for children, adults and rural schools.",
+          "Assume more devices always improve every goal."
+        ],
+        "answer": "B",
+        "explanation": "结尾明确提出目的、证据和风险三项判断框架。",
+        "evidence_text": "It is which educational purpose has been named, what evidence would show progress, and what new risk must be managed along the way."
+      },
+      {
+        "type": "detail",
+        "question": "What did pupils design in the Wuhan class?",
+        "options": [
+          "A national examination.",
+          "A rural library building.",
+          "Mars rescue vehicles.",
+          "A university admissions system."
+        ],
+        "answer": "C",
+        "explanation": "首段直接说明设计对象。",
+        "evidence_text": "At a Wuhan primary school, pupils wore virtual-reality headsets, designed Mars rescue vehicles with AI tools and made customized logos through 3D printing."
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “integrity” mean in the passage?",
+        "options": [
+          "A platform has the largest number of users.",
+          "Every assignment is completed by software.",
+          "A simulation looks identical to reality.",
+          "Learning evidence honestly reflects the studentʼs own understanding and effort."
+        ],
+        "answer": "D",
+        "explanation": "第四段直接界定 integrity。",
+        "evidence_text": "Integrity means that learning evidence truthfully represents a studentʼs own understanding and effort."
+      },
+      {
+        "type": "inference",
+        "question": "Why does the author call digital education a map rather than a ladder?",
+        "options": [
+          "Different goals require different routes and may involve trade-offs.",
+          "Every school is located in a different city.",
+          "Progress can be measured only geographically.",
+          "All technologies lead to one higher position."
+        ],
+        "answer": "A",
+        "explanation": "地图比喻强调多目标、多路径及潜在冲突。",
+        "evidence_text": "Equity, creativity, efficiency and lifelong participation do not always follow the same route, and one tool may advance one goal while weakening another."
+      },
+      {
+        "type": "inference",
+        "question": "What can be inferred about a visually impressive classroom?",
+        "options": [
+          "It necessarily produces honest student work.",
+          "Its appearance alone cannot demonstrate educational value.",
+          "It serves older adults better than children.",
+          "It eliminates the need for evaluation."
+        ],
+        "answer": "B",
+        "explanation": "文章反复区分未来感展示与可证实的教育目的。",
+        "evidence_text": "The useful question is therefore not whether a classroom looks futuristic."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-human-education-l4-18",
+    "title": "A Blueprint Needs Places to Change Course",
+    "content": "Chinaʼs 2024–2035 education blueprint sets two horizons. By 2027, it expects an initial high-quality system and stronger independent talent development. By 2035, it aims for a fully developed system, broad lifelong learning and educational modernization.\n\nLong horizons can coordinate investment, but they also create a measurement problem. A distant vision is too easy to praise if no one specifies what should be different in classrooms, teacher preparation or regional access along the way. The 2027 milestone matters because it makes the larger promise interruptible: evidence can lead to correction before 2035.\n\nThe blueprint covers basic education, higher education, vocational skill and international exchange. It calls for research universities and urgently needed interdisciplinary fields, while also stressing balanced compulsory education and demographic change. These goals may compete for staff and money. Strategic alignment means directing programs toward public needs without reducing education to short-term labor forecasts.\n\nOne example is discipline adjustment. In 2024, authorities reported adding 1,673 undergraduate programs considered important to national strategies and removing 1,670 less aligned ones. Such responsiveness can prevent permanent mismatch. Yet new fields need time for faculty and knowledge to mature, and unpopular foundational subjects may have value that current job statistics miss.\n\nEvaluation must therefore distinguish motion from improvement. Opening a major, signing an exchange agreement or purchasing equipment records activity. Stronger teaching, fairer opportunity and better-supported inquiry are outcomes.\n\nA blueprint earns credibility through the decisions it changes and the evidence it invites. Public reporting also lets teachers, families and institutions contest an indicator that measures the wrong outcome. Milestones should not merely celebrate distance travelled; they should reveal whether the route still leads toward the stated public purposes.",
+    "topic": "教育",
+    "difficulty": 4,
+    "source_id": "src-教育-18",
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20250120/2d2dbb6c5a6c490babc6bdf361d95775/c.html",
+    "source_title": "China unveils blueprint for building strong education system by 2035",
+    "source_published_at": "2025-01-20",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "新华社页面可访问；核验2027与2035两阶段目标、基础教育与高校改革范围、2024年新增1673个和撤销1670个本科专业点等事实。",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "Why does the writer insist on interim evidence for a long plan?",
+        "options": [
+          "Why long-term planning should contain no milestones.",
+          "Why program counts are complete evidence of quality.",
+          "How a long-term education blueprint can remain measurable and correctable.",
+          "How to forecast every job until 2035."
+        ],
+        "answer": "C",
+        "explanation": "全文讨论长期蓝图如何通过中期节点、结果证据和纠偏保持可信。",
+        "evidence_text": "A blueprint earns credibility through the decisions it changes and the evidence it invites."
+      },
+      {
+        "type": "detail",
+        "question": "What is expected by 2027?",
+        "options": [
+          "The final completion of every 2035 goal.",
+          "The removal of all interdisciplinary fields.",
+          "A stop to lifelong learning programs.",
+          "An initially established high-quality system and stronger talent development."
+        ],
+        "answer": "D",
+        "explanation": "首段直接给出2027阶段目标。",
+        "evidence_text": "By 2027, it expects an initial high-quality system and stronger independent talent development."
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “strategic alignment” mean here?",
+        "options": [
+          "Connecting programs with public needs without chasing only immediate jobs.",
+          "Making all universities offer identical subjects.",
+          "Closing every unpopular foundational field.",
+          "Measuring strategy by equipment purchases."
+        ],
+        "answer": "A",
+        "explanation": "第三段在定义中同时保留公共需求与教育长期价值。",
+        "evidence_text": "Strategic alignment means directing programs toward public needs without reducing education to short-term labor forecasts."
+      },
+      {
+        "type": "inference",
+        "question": "Why does the 2027 milestone make the plan “interruptible”?",
+        "options": [
+          "It cancels every goal planned for 2035.",
+          "It creates an earlier point where evidence can trigger correction.",
+          "It prevents any investment after 2027.",
+          "It guarantees that all outcomes will be achieved early."
+        ],
+        "answer": "B",
+        "explanation": "第二段明确把中期节点与提前纠偏联系起来。",
+        "evidence_text": "The 2027 milestone matters because it makes the larger promise interruptible: evidence can lead to correction before 2035."
+      },
+      {
+        "type": "inference",
+        "question": "Why might removing an unpopular field be a mistake?",
+        "options": [
+          "All unpopular programs necessarily become profitable.",
+          "Faculty can be trained instantly in any new field.",
+          "Current demand may fail to capture its long-term foundational value.",
+          "Job statistics always underestimate enrollment."
+        ],
+        "answer": "C",
+        "explanation": "第四段指出短期就业数据可能遗漏基础学科价值。",
+        "evidence_text": "Yet new fields need time for faculty and knowledge to mature, and unpopular foundational subjects may have value that current job statistics miss."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-human-education-l4-19",
+    "title": "Beyond Sixty-One Billion Page Views",
+    "content": "By April 2025, Smart Education of China had more than 164 million registered users and 61.3 billion page views. Visitors came from over 220 countries and regions. The platform contained more than 110,000 basic-education resources, 11,300 vocational courses, 31,000 higher-education courses and 2,000 lifelong-learning offerings.\n\nThese figures establish scale, not learning. Registration shows that a person created access; a page view records contact with a page. Neither reveals whether a teacher changed a lesson, a student understood a difficult idea or an adult completed a useful course. A metric is a defined measure, and its value depends on the question it is meant to answer.\n\nScale still matters. A national platform can distribute scarce material cheaply, connect remote schools with strong resources and offer continuity when local courses are unavailable. Its 51 services, organized in eight categories, also extend beyond lessons to areas such as employment and examinations.\n\nYet abundance can shift inequality rather than remove it. Learners with weak connectivity, limited digital skills or inaccessible interfaces may receive a formal invitation but little practical benefit. Recommendation systems can help navigation, though they may also narrow what users encounter. Public platforms need accessible design, transparent selection and alternatives for low-bandwidth use.\n\nEvaluation should therefore follow a chain. First ask who can reach the service. Then examine meaningful use: completion, return, teacher adaptation and the quality of learner work. Finally, compare outcomes across regions and groups. Large totals can coexist with systematic exclusion hidden inside averages.\n\nThe platformʼs achievement is real infrastructure. Its educational achievement must be demonstrated at a much finer resolution, where numbers are linked to what different people were able to do.",
+    "topic": "教育",
+    "difficulty": 4,
+    "source_id": "src-教育-19",
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20250517/2378e1a374114416a6672dfc6139457d/c.html",
+    "source_title": "Chinese smart education online platform surpasses 164 mln registered users",
+    "source_published_at": "2025-05-17",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "清单URL失效；改用同标题同日期新华社页面，核验1.64亿注册用户、613亿浏览量、覆盖220余国家和地区、四类资源数量及51项服务等事实。",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What distinction is central to the passage?",
+        "options": [
+          "Page views directly measure every learnerʼs understanding.",
+          "A small platform always has better teaching.",
+          "Course abundance removes all forms of inequality.",
+          "Platform scale is infrastructure, while educational value requires evidence of meaningful and equitable use."
+        ],
+        "answer": "D",
+        "explanation": "全文区分规模指标与实际、均衡学习成效。",
+        "evidence_text": "Its educational achievement must be demonstrated at a much finer resolution, where numbers are linked to what different people were able to do."
+      },
+      {
+        "type": "detail",
+        "question": "How many registered users did the platform have by April 2025?",
+        "options": [
+          "More than 164 million.",
+          "Exactly 61.3 billion.",
+          "About 11,300.",
+          "Fewer than 220."
+        ],
+        "answer": "A",
+        "explanation": "首段直接给出注册用户数。",
+        "evidence_text": "By April 2025, Smart Education of China had more than 164 million registered users and 61.3 billion page views."
+      },
+      {
+        "type": "word_guess",
+        "question": "What is a “metric” according to the passage?",
+        "options": [
+          "A guarantee that learning occurred.",
+          "A defined measure whose usefulness depends on the question.",
+          "A list of vocational courses.",
+          "A tool that replaces evaluation."
+        ],
+        "answer": "B",
+        "explanation": "第二段直接定义 metric。",
+        "evidence_text": "A metric is a defined measure, and its value depends on the question it is meant to answer."
+      },
+      {
+        "type": "inference",
+        "question": "How could recommendation systems increase inequality?",
+        "options": [
+          "They always make low-bandwidth access easier.",
+          "They reveal every excluded group automatically.",
+          "They may repeatedly narrow the material certain users encounter.",
+          "They prevent users from registering."
+        ],
+        "answer": "C",
+        "explanation": "第四段指出推荐便利与视野收窄并存的风险。",
+        "evidence_text": "Recommendation systems can help navigation, though they may also narrow what users encounter."
+      },
+      {
+        "type": "structure",
+        "question": "What is the purpose of the three-stage evaluation chain?",
+        "options": [
+          "To replace all qualitative evidence with totals.",
+          "To rank course categories by size.",
+          "To count the same page view three times.",
+          "To move assessment from reach to use and then to distribution of outcomes."
+        ],
+        "answer": "D",
+        "explanation": "第五段按可达、有效使用、群体结果逐层推进评价。",
+        "evidence_text": "First ask who can reach the service."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-human-education-l4-20",
+    "title": "The Cloud Still Needs a Road to the Classroom",
+    "content": "In Zambia, a cloud-supported AI service was presented as a way to bring smart education to areas that remain underserved. Its proposed uses included personalized learning, language translation, curriculum support and real-time educational content. Government representatives placed the technology within a longer partnership on digital education.\n\nThe appeal is clear: cloud services can concentrate computing and material that one rural school could not maintain alone. A learner may receive updated content without a large local server, and translation may help a lesson cross language boundaries. Seamless, however, is an aspiration, not a description of every userʼs experience.\n\nCloud dependence introduces a chain of failure. A national service may operate perfectly while a village lacks stable electricity, an affordable device or reliable connectivity. Even when the connection works, a translation model may mishandle a local expression or a personalized path may be based on incomplete data. Reliability means consistent performance under the conditions in which people actually use a service.\n\nOwnership also matters. Schools need to know where learner data travel, who can correct an error and whether local educators can adapt content. A system that is technically available but professionally opaque can weaken rather than strengthen teacher agency.\n\nThis does not cancel the promise of shared infrastructure. It clarifies the investment required around it: power, networks, device repair, teacher preparation, accessible interfaces and accountable agreements with providers. The least visible components may decide whether the most advanced feature reaches a child.\n\nBridging a digital divide is not the act of placing a service on one side and announcing that everyone may enter. It is the sustained work of making the entire route usable, trustworthy and educationally relevant.",
+    "topic": "教育",
+    "difficulty": 4,
+    "source_id": "src-教育-20",
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20250509/902f8328cd0a482eb25d00e6f360f2c6/c.html",
+    "source_title": "Huawei introduces cloud-boosted AI to deliver seamless education in Zambia",
+    "source_published_at": "2025-05-09",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "新华社页面可访问；核验华为在赞比亚提出云增强AI教育服务、面向未充分服务地区，以及个性化、翻译、课程优化和实时内容等可见用途。",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What must connect the cloud to an underserved classroom for the service to matter?",
+        "options": [
+          "Its promise depends on the whole chain of infrastructure, trust and local educational control.",
+          "A central cloud removes every local barrier.",
+          "Translation tools never require checking.",
+          "Provider agreements are unrelated to learning."
+        ],
+        "answer": "A",
+        "explanation": "全文从云服务承诺转向电力、网络、数据、教师等完整条件链。",
+        "evidence_text": "It is the sustained work of making the entire route usable, trustworthy and educationally relevant."
+      },
+      {
+        "type": "detail",
+        "question": "Which use was mentioned for the Zambia service?",
+        "options": [
+          "Construction of school buildings.",
+          "Language translation.",
+          "Automatic university admission.",
+          "Replacement of all local curricula."
+        ],
+        "answer": "B",
+        "explanation": "首段列出语言翻译等应用。",
+        "evidence_text": "Its proposed uses included personalized learning, language translation, curriculum support and real-time educational content."
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “reliability” mean in this context?",
+        "options": [
+          "The largest possible collection of features.",
+          "A promise made at a technology summit.",
+          "Consistent performance under real conditions of use.",
+          "A system controlled only from abroad."
+        ],
+        "answer": "C",
+        "explanation": "第三段直接定义 reliability。",
+        "evidence_text": "Reliability means consistent performance under the conditions in which people actually use a service."
+      },
+      {
+        "type": "inference",
+        "question": "Why can a perfectly functioning national service still fail a rural learner?",
+        "options": [
+          "National servers prevent all content updates.",
+          "Rural learners never need translated material.",
+          "A cloud must be installed in each classroom.",
+          "The local link may lack power, devices or stable connectivity."
+        ],
+        "answer": "D",
+        "explanation": "从“故障链”可推知中央端正常不等于最后一公里可用。",
+        "evidence_text": "A national service may operate perfectly while a village lacks stable electricity, an affordable device or reliable connectivity."
+      },
+      {
+        "type": "inference",
+        "question": "How might an opaque system reduce teacher agency?",
+        "options": [
+          "Teachers may be unable to understand errors or adapt content responsibly.",
+          "It gives teachers too many local repair tools.",
+          "It makes all data processing visible.",
+          "It guarantees local expressions are translated correctly."
+        ],
+        "answer": "A",
+        "explanation": "第四段把透明度、纠错和内容适配与教师能动性联系起来。",
+        "evidence_text": "A system that is technically available but professionally opaque can weaken rather than strengthen teacher agency."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-human-education-l4-21",
+    "title": "The Five Thresholds After a Signal Arrives",
+    "content": "China reported more than 1.12 billion internet users by June 2025, with national penetration at 79.7 percent. Among people aged sixty and above, 161 million were online and penetration reached 52 percent. Rural users numbered 322 million, with a penetration rate of 69.2 percent. Fifth-generation mobile service covered more than 90 percent of administrative villages.\n\nThese numbers matter to education because connectivity is now an entrance to courses, libraries and generative AI. They also demonstrate why a national average can mislead. If 79.7 percent is treated as the normal learner, the design may overlook older adults, low-income households or places where coverage exists but service is unstable.\n\nCoverage and capability are separate layers. A signal permits connection; it does not supply a suitable device, affordable data, accessible interface or confidence in evaluating online information. Capability includes the practical knowledge and resources required to turn connection into purposeful action.\n\nGenerative AI makes this distinction sharper. By March 2025, 346 services had been registered, and AI applications were entering education as well as work and design. A learner who can open a chatbot may still struggle to frame a useful question, detect an unsupported claim or protect personal information.\n\nEducational inclusion therefore requires more than extending a network. Schools, libraries and community centers can provide devices, guided practice and places to ask for help. Offline materials and low-bandwidth options remain important because infrastructure fails unevenly.\n\nThe digital divide is not one gap that closes when a cable arrives. It is a sequence of thresholds—connection, affordability, accessibility, skill and critical judgment. Policy succeeds when people can cross the whole sequence, not when the first threshold produces an impressive national percentage.",
+    "topic": "教育",
+    "difficulty": 4,
+    "source_id": "src-教育-21",
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20250721/6f2529da719e48549ed0069de5c5001c.html",
+    "source_title": "China has over 1.12 billion internet users, boosting prowess in culture, AI",
+    "source_published_at": "2025-07-21",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "清单URL失效；改用同标题同日期新华社页面，核验11.2亿网民、79.7%总普及率、老年与农村网民规模和普及率、行政村5G覆盖及346项生成式AI服务等事实。",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "How does the passage redefine the digital divide?",
+        "options": [
+          "As a problem solved entirely by village 5G coverage.",
+          "As several thresholds between connection and capable, critical use.",
+          "As the difference between two national averages only.",
+          "As a shortage of registered AI services."
+        ],
+        "answer": "B",
+        "explanation": "全文将数字鸿沟拆分为连接、负担、可访问、技能和判断等层次。",
+        "evidence_text": "It is a sequence of thresholds—connection, affordability, accessibility, skill and critical judgment."
+      },
+      {
+        "type": "detail",
+        "question": "What was the internet penetration rate among rural users?",
+        "options": [
+          "79.7 percent.",
+          "52 percent.",
+          "69.2 percent.",
+          "More than 90 percent."
+        ],
+        "answer": "C",
+        "explanation": "首段直接给出农村互联网普及率69.2%。",
+        "evidence_text": "Rural users numbered 322 million, with a penetration rate of 69.2 percent."
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “capability” include here?",
+        "options": [
+          "The existence of a mobile signal alone.",
+          "The number of registered online services.",
+          "A national average for internet use.",
+          "Knowledge and resources needed to use a connection purposefully."
+        ],
+        "answer": "D",
+        "explanation": "第三段直接解释 capability。",
+        "evidence_text": "Capability includes the practical knowledge and resources required to turn connection into purposeful action."
+      },
+      {
+        "type": "inference",
+        "question": "Why may the national penetration average be a poor design guide?",
+        "options": [
+          "It can hide groups whose access or conditions differ substantially.",
+          "It is always lower than every group rate.",
+          "It measures critical judgment directly.",
+          "It includes no rural users."
+        ],
+        "answer": "A",
+        "explanation": "第二段说明平均值会遮蔽老年人、低收入家庭和不稳定覆盖地区。",
+        "evidence_text": "If 79.7 percent is treated as the normal learner, the design may overlook older adults, low-income households or places where coverage exists but service is unstable."
+      },
+      {
+        "type": "inference",
+        "question": "Why does chatbot access not prove AI literacy?",
+        "options": [
+          "All chatbots are unavailable on mobile networks.",
+          "Useful questioning, verification and privacy judgment are additional skills.",
+          "Registration automatically teaches critical thinking.",
+          "AI literacy means knowing only how to open a page."
+        ],
+        "answer": "B",
+        "explanation": "第四段列出能打开工具后仍缺失的三种能力。",
+        "evidence_text": "A learner who can open a chatbot may still struggle to frame a useful question, detect an unsupported claim or protect personal information."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-human-education-l5-22",
+    "title": "The Language Degree After Machine Translation",
+    "content": "Several Chinese universities have reduced or suspended admissions to foreign-language programs. Between 2018 and 2022, 109 institutions discontinued 28 language-related disciplines, with Japanese, English and Korean among the most affected. Employment data and changing institutional priorities contributed to the decisions, while machine translation and artificial intelligence altered the work graduates might perform.\n\nIt would be easy to read the adjustment as evidence that languages have lost value. The stronger interpretation is that language competence alone no longer defines a complete professional identity. Programs centered almost entirely on literature or translation technique may struggle when employers need people who can also understand law, finance, engineering or data.\n\nUniversities have responded with interdisciplinary combinations, including languages with law, journalism, computer science and AI. Interdisciplinary does not mean placing two course lists side by side. It means designing problems that require students to use knowledge from both fields—for example, evaluating the legal risk and cultural nuance of an automated translation used in an international contract.\n\nSuch reform carries two opposite dangers. If departments protect every old course, they may ignore real changes in work. If they chase each new technology, they may weaken the deep linguistic and cultural study that makes graduates more than operators of software. The correct balance is not fifty-fifty by credit count; it depends on the capabilities a program promises.\n\nProgram closure is also a blunt signal. Low enrollment may show weak demand, but it can reflect poor course design, regional need or inadequate career information. Before closing a small language, a university should ask whether its strategic value can be sustained through shared teaching or a combined degree.\n\nForeign-language education is therefore not disappearing so much as renegotiating its purpose. Its future lies in graduates who can interpret words, institutions and technologies together—and who understand what an automated system misses when it produces a fluent sentence.",
+    "topic": "教育",
+    "difficulty": 5,
+    "source_id": "src-教育-22",
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20240824/c3b7b5abb922481d896efcf2cb49fcd5/c.html",
+    "source_title": "Universities realign foreign-language programs to meet evolving demand",
+    "source_published_at": "2024-08-24",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "清单URL失效；改用同标题同日期新华社页面，核验2018至2022年109所高校停撤28个外语相关专业、受影响语种、就业与AI背景，以及语言同法律、金融、新闻、计算机和AI融合趋势。",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What future does the passage propose for foreign-language programs?",
+        "options": [
+          "The complete replacement of language learning by machine translation.",
+          "Protection of every existing course without review.",
+          "Deep language study integrated with another field around genuine professional problems.",
+          "A fixed division of credits between any two subjects."
+        ],
+        "answer": "C",
+        "explanation": "全文支持跨学科重构，同时保留语言文化深度。",
+        "evidence_text": "Its future lies in graduates who can interpret words, institutions and technologies together—and who understand what an automated system misses when it produces a fluent sentence."
+      },
+      {
+        "type": "detail",
+        "question": "How many institutions discontinued language-related disciplines from 2018 to 2022?",
+        "options": [
+          "Twenty-eight institutions.",
+          "Exactly 2022 institutions.",
+          "Only three institutions.",
+          "109 institutions."
+        ],
+        "answer": "D",
+        "explanation": "首段直接给出109所高校。",
+        "evidence_text": "Between 2018 and 2022, 109 institutions discontinued 28 language-related disciplines, with Japanese, English and Korean among the most affected."
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “interdisciplinary” require in this passage?",
+        "options": [
+          "Problems that genuinely require knowledge from both fields.",
+          "Two unrelated course lists placed together.",
+          "Replacing cultural study with software operation.",
+          "Giving every combined degree the same credit ratio."
+        ],
+        "answer": "A",
+        "explanation": "第三段直接说明跨学科不是拼盘，而是共同解决问题。",
+        "evidence_text": "It means designing problems that require students to use knowledge from both fields—for example, evaluating the legal risk and cultural nuance of an automated translation used in an international contract."
+      },
+      {
+        "type": "inference",
+        "question": "Why might closing every low-enrollment language be shortsighted?",
+        "options": [
+          "Small programs never require public resources.",
+          "Enrollment can hide strategic value or problems that could be addressed by redesign.",
+          "Employment data are always false.",
+          "Shared teaching necessarily costs more than closure."
+        ],
+        "answer": "B",
+        "explanation": "第五段列出低招生的多种解释并提出合办替代。",
+        "evidence_text": "Low enrollment may show weak demand, but it can reflect poor course design, regional need or inadequate career information."
+      },
+      {
+        "type": "inference",
+        "question": "What unique contribution of language education does the final sentence emphasize?",
+        "options": [
+          "Producing sentences faster than every machine.",
+          "Avoiding all contact with technology.",
+          "Recognizing cultural and institutional meaning that fluent automation may miss.",
+          "Teaching only vocabulary used in contracts."
+        ],
+        "answer": "C",
+        "explanation": "结尾强调自动生成流畅不等于理解制度与文化。",
+        "evidence_text": "Its future lies in graduates who can interpret words, institutions and technologies together—and who understand what an automated system misses when it produces a fluent sentence."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-human-education-l5-23",
+    "title": "AI Literacy Includes the Right to Say No",
+    "content": "An “AI Plus Education” action plan proposes a general AI-literacy system stretching from primary school through higher and vocational education to lifelong learning. Primary and secondary schools are asked to integrate AI into local curricula and activities. Universities should offer basic public courses and build interdisciplinary programs; vocational institutions should connect AI with traditional industries.\n\nThe word literacy matters. It should not be reduced to operating a popular application. AI literacy includes understanding what a system can do, recognizing uncertainty, testing claims, protecting data and deciding when automation is inappropriate. Functional use is one layer; critical and civic judgment are others.\n\nThe plan also extends to teachers. It calls for a national literacy standard, tiered training and assessment, and AI knowledge in qualification and certification processes. These measures can create a common floor. They cannot, by themselves, ensure that a teacher can redesign a history discussion, diagnose a misleading output or protect a vulnerable pupil in a real classroom.\n\nEvidence from schools illustrates both reach and ambition. Beijing students receive at least eight hours of AI learning each academic year. One Shenzhen primary school reported monthly lessons for all 1,508 pupils. At Fudan University, more than 13,000 students had taken over 100 AI-related courses, and interdisciplinary dual-degree programs linked AI with other areas.\n\nNumbers invite two mistaken conclusions. The first is that exposure equals competence. The second is that one standard must produce one identical curriculum. A national framework should specify transferable outcomes while allowing examples, tools and pacing to reflect age, discipline and local capacity.\n\nAssessment must likewise move beyond button-pressing. Learners could be asked to compare two outputs, identify missing evidence, disclose assistance and explain why they accepted or rejected a recommendation. Such tasks make judgment visible.\n\nA literacy system becomes inclusive not simply when a course exists at every stage, but when people can use, question and sometimes refuse AI with reasons they understand and can communicate.",
+    "topic": "教育",
+    "difficulty": 5,
+    "source_id": "src-教育-23",
+    "source_name": "新华社英文网",
+    "source_url": "https://global.chinadaily.com.cn/a/202604/15/WS69dee205a310d6866eb436ea.html",
+    "source_title": "China aims to build an AI literacy system - Chinadaily.com.cn",
+    "source_published_at": "2026-04-15",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "China Daily页面可访问；核验五部门行动计划覆盖各学段和终身学习、城乡支持、教师素养标准与资格认证，以及复旦100余门课程/1.3万余学生、北京8课时和深圳学校覆盖案例。",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "How does the passage define a meaningful national AI-literacy system?",
+        "options": [
+          "A single application taught identically at every age.",
+          "A count of how many people have opened an AI tool.",
+          "A technical course reserved for university specialists.",
+          "A staged framework that develops use, critical judgment and responsible choice in context."
+        ],
+        "answer": "D",
+        "explanation": "全文扩展 literacy 内涵，并主张共同结果与情境化实施结合。",
+        "evidence_text": "A literacy system becomes inclusive not simply when a course exists at every stage, but when people can use, question and sometimes refuse AI with reasons they understand and can communicate."
+      },
+      {
+        "type": "detail",
+        "question": "How many Fudan students had taken its AI-related courses?",
+        "options": [
+          "More than 13,000 students.",
+          "Exactly 1,508 students.",
+          "At least eight students.",
+          "Over 100,000 students."
+        ],
+        "answer": "A",
+        "explanation": "第四段直接给出复旦参与学生数。",
+        "evidence_text": "At Fudan University, more than 13,000 students had taken over 100 AI-related courses, and interdisciplinary dual-degree programs linked AI with other areas."
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “literacy” include beyond operating a tool?",
+        "options": [
+          "Memorizing the name of one application.",
+          "Understanding limits, checking claims, protecting data and judging appropriate use.",
+          "Accepting every generated recommendation.",
+          "Avoiding all automated systems."
+        ],
+        "answer": "B",
+        "explanation": "第二段明确列出更广的素养组成。",
+        "evidence_text": "AI literacy includes understanding what a system can do, recognizing uncertainty, testing claims, protecting data and deciding when automation is inappropriate."
+      },
+      {
+        "type": "inference",
+        "question": "Why can a common teacher standard not guarantee classroom competence?",
+        "options": [
+          "Standards prevent teachers from receiving training.",
+          "Qualification processes contain no AI knowledge.",
+          "Real teaching requires contextual decisions that a written standard cannot enact.",
+          "Every subject presents the same classroom problem."
+        ],
+        "answer": "C",
+        "explanation": "第三段区分共同底线与真实课堂中的设计、诊断和保护能力。",
+        "evidence_text": "They cannot, by themselves, ensure that a teacher can redesign a history discussion, diagnose a misleading output or protect a vulnerable pupil in a real classroom."
+      },
+      {
+        "type": "inference",
+        "question": "Why does the author favor comparison-and-explanation assessment tasks?",
+        "options": [
+          "They allow learners to hide AI assistance.",
+          "They test only typing speed.",
+          "They produce one correct curriculum for all ages.",
+          "They reveal reasoning rather than mere access or button operation."
+        ],
+        "answer": "D",
+        "explanation": "第六段说明这些任务让判断过程可见。",
+        "evidence_text": "Such tasks make judgment visible."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-human-education-l5-24",
+    "title": "Teaching the Chef Who Can Question the Robot",
+    "content": "A vocational program for future chefs introduced AI and stir-frying robots into two partner schools. More than 100 students studied technology trends, robot principles, practical operation and AI recipe development. Those who passed an assessment received an intelligent-chef certificate. The training responded to difficult kitchen conditions and an industry hiring gap reported at 10 million positions in 2023.\n\nAutomation in this setting is neither a simple enemy of craft nor a magical replacement for labor. A machine may repeat a temperature and motion consistently, reduce exposure to heat and handle routine production. A chef still judges ingredients, taste, timing, menu context and the expectations of diners. The educational problem is how to divide work without dividing knowledge.\n\nIf trainees learn only to press preset buttons, they become dependent on one model of equipment. If they study only traditional technique, they may enter workplaces already organized around sensors, data and standardized production. Hybrid competence means being able to perform, interpret and improve work across human and automated parts of a process.\n\nIndustry participation can keep courses current. The robotics company supplied training and certification, while a food company linked the program with culinary culture and employment needs. Yet partnership creates possible bias: a certificate designed by one provider may emphasize its product, and impressive efficiency claims may not capture maintenance costs, energy use or changes in food quality.\n\nSchools therefore need independent learning outcomes. Students should be able to compare manual and automated methods, diagnose failure, adjust a recipe and explain safety decisions. They also need to understand how technology changes job roles, responsibility and the distribution of savings.\n\nThe reported robot was used by about 1,500 catering businesses, and one company claimed an 84 percent efficiency increase. Those figures justify attention, not surrender of judgment. Vocational education should prepare learners for the technology they will meet while giving them enough underlying knowledge to question, repair and improve it.",
+    "topic": "教育",
+    "difficulty": 5,
+    "source_id": "src-教育-24",
+    "source_name": "新华社英文网",
+    "source_url": "https://global.chinadaily.com.cn/a/202401/31/WS65b9f650a3104efcbdae8ef8.html",
+    "source_title": "China's first AI-aid training base helps meet growing demand for chefs - Chinadaily.com.cn",
+    "source_published_at": "2024-01-31",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "China Daily页面可访问；核验两所合作职校、100余名学生、课程与认证、2023年餐饮用工缺口1000万、约1500家商户采用设备及企业所称84%效率提升等事实。",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What approach to automation training does the passage support?",
+        "options": [
+          "Hybrid competence grounded in both craft knowledge and critical use of machines.",
+          "Teaching students only to operate one companyʼs preset buttons.",
+          "Keeping all technology outside vocational schools.",
+          "Accepting efficiency claims as complete educational evidence."
+        ],
+        "answer": "A",
+        "explanation": "全文反对“只按按钮”或“完全排斥技术”，主张可操作、解释、改进的混合能力。",
+        "evidence_text": "Vocational education should prepare learners for the technology they will meet while giving them enough underlying knowledge to question, repair and improve it."
+      },
+      {
+        "type": "detail",
+        "question": "What did successful trainees receive?",
+        "options": [
+          "Ownership of a catering business.",
+          "An intelligent-chef certificate.",
+          "A guaranteed permanent job.",
+          "A university research degree."
+        ],
+        "answer": "B",
+        "explanation": "首段直接说明通过考核者获得智能厨师证书。",
+        "evidence_text": "Those who passed an assessment received an intelligent-chef certificate."
+      },
+      {
+        "type": "word_guess",
+        "question": "What is “hybrid competence” in the passage?",
+        "options": [
+          "Skill in using only traditional hand methods.",
+          "Dependence on one robot model.",
+          "The ability to work across, understand and improve human and automated stages.",
+          "A combination of two company logos."
+        ],
+        "answer": "C",
+        "explanation": "第三段直接定义 hybrid competence。",
+        "evidence_text": "Hybrid competence means being able to perform, interpret and improve work across human and automated parts of a process."
+      },
+      {
+        "type": "inference",
+        "question": "Why should schools set outcomes independent of a technology provider?",
+        "options": [
+          "Companies have no relevant technical knowledge.",
+          "Independent outcomes forbid workplace partnerships.",
+          "All certificates have identical content.",
+          "Provider-designed training may privilege one product and its commercial claims."
+        ],
+        "answer": "D",
+        "explanation": "第四、五段指出产教合作的产品偏向风险，故需学校独立界定能力。",
+        "evidence_text": "Yet partnership creates possible bias: a certificate designed by one provider may emphasize its product, and impressive efficiency claims may not capture maintenance costs, energy use or changes in food quality."
+      },
+      {
+        "type": "inference",
+        "question": "Why are the reported efficiency figures insufficient for curriculum design?",
+        "options": [
+          "They omit costs, quality, responsibility and the knowledge needed when systems fail.",
+          "Efficiency has no relevance to vocational work.",
+          "The figures prove manual methods are always superior.",
+          "Curricula should never use workplace evidence."
+        ],
+        "answer": "A",
+        "explanation": "文章把效率视为关注理由而非放弃判断的充分证据。",
+        "evidence_text": "Those figures justify attention, not surrender of judgment."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-human-education-l5-25",
+    "title": "Four Questions Before a School Approves an AI Tool",
+    "content": "A 2025 guideline on generative AI in primary and secondary schools begins with age, not software popularity. Primary pupils should not independently use open-ended content generators. Middle school students may examine the logic of generated material, while high school students can undertake inquiry that includes technical principles. The progression is intended to protect cognitive development while allowing deeper responsibility over time.\n\nThe guideline also prohibits submitting generated content as original work, using AI to cheat and depending on it for creative tasks without critical thought. Teachers may use AI to assist planning or tutoring, but it should supplement rather than replace human-led teaching. Direct automated evaluation of students and processing sensitive personal data are restricted.\n\nThese rules illustrate why “permission” is too simple a policy category. A tool can be appropriate for one age, task and level of supervision but inappropriate for another. Age-appropriate use means matching both capability and risk to learnersʼ developing judgment; it is not a belief that every child of the same age is identical.\n\nSchools are asked to establish data protection, ethical review and dynamic whitelists of approved tools. A whitelist can narrow obvious risk, yet approval must be revisable. Models change, terms of service shift and a safe general application may behave differently when connected to student records.\n\nAcademic integrity also requires better assessment design. If an assignment rewards a polished summary that software can produce instantly, surveillance alone will not restore learning. Teachers can ask students to show sources, compare versions, explain rejected suggestions or complete part of the reasoning in class. Such tasks make authorship and judgment visible.\n\nParental supervision is useful, especially for younger pupils, but responsibility should not be transferred entirely to families. Parents possess unequal technical knowledge and time. Schools and authorities still owe clear rules, approved alternatives and support when a learner or family chooses not to use a tool.\n\nHuman-centered does not mean keeping education unchanged. It means efficiency remains subordinate to development, privacy, fairness and meaningful teacher-student relationships. The strongest rule is not simply “use” or “do not use,” but a transparent answer to who may use what, for which learning purpose, under whose supervision and with what route to challenge harm.",
+    "topic": "教育",
+    "difficulty": 5,
+    "source_id": "src-教育-25",
+    "source_name": "China Daily",
+    "source_url": "https://global.chinadaily.com.cn/a/202505/16/WS6826951fa310a04af22bfc2e.html",
+    "source_title": "Guideline to regulate use of artificial intelligence in schools",
+    "source_published_at": "2025-05-16",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "清单候选为共同富裕报告PDF且题名截断，与教育主题不匹配；改用China Daily可访问HTML，核验2025年中小学生成式AI指南的年龄分层、禁止作弊与冒充原创、教师辅助边界、敏感数据限制、伦理审查和动态白名单等事实。",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What model of AI governance does the passage support for schools?",
+        "options": [
+          "One permanent permission rule for every learner and tool.",
+          "Rules differentiated by age, task, supervision and revisable risk.",
+          "Complete transfer of responsibility to parents.",
+          "Automated evaluation as the default for all students."
+        ],
+        "answer": "B",
+        "explanation": "全文以年龄递进、任务边界、监督和动态审查构成细致治理框架。",
+        "evidence_text": "The strongest rule is not simply “use” or “do not use,” but a transparent answer to who may use what, for which learning purpose, under whose supervision and with what route to challenge harm."
+      },
+      {
+        "type": "detail",
+        "question": "What are primary pupils prohibited from doing independently?",
+        "options": [
+          "Reading any digital material.",
+          "Discussing how generated content is organized.",
+          "Using open-ended AI content generators.",
+          "Receiving all teacher feedback."
+        ],
+        "answer": "C",
+        "explanation": "首段直接说明小学阶段的独立使用限制。",
+        "evidence_text": "Primary pupils should not independently use open-ended content generators."
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “age-appropriate use” mean in the passage?",
+        "options": [
+          "Treating all same-age children as identical.",
+          "Allowing every tool after one birthday.",
+          "Teaching only software controls.",
+          "Matching capability and risk to developing learner judgment."
+        ],
+        "answer": "D",
+        "explanation": "第三段直接给出该概念的语境定义。",
+        "evidence_text": "Age-appropriate use means matching both capability and risk to learnersʼ developing judgment; it is not a belief that every child of the same age is identical."
+      },
+      {
+        "type": "inference",
+        "question": "Why must an approved-tool whitelist remain dynamic?",
+        "options": [
+          "Models, service terms and data connections can alter a toolʼs risk.",
+          "Approval guarantees a tool never changes.",
+          "Whitelists remove the need for ethical review.",
+          "Student records cannot affect system behavior."
+        ],
+        "answer": "A",
+        "explanation": "第四段列出模型、条款和数据连接的变化，故批准需要复核。",
+        "evidence_text": "Models change, terms of service shift and a safe general application may behave differently when connected to student records."
+      },
+      {
+        "type": "inference",
+        "question": "Why does the author recommend process-visible assignments?",
+        "options": [
+          "They allow generated summaries to count as original work.",
+          "They reveal student reasoning and reduce reliance on policing finished output.",
+          "They make sources and revisions unnecessary.",
+          "They prevent students from rejecting AI suggestions."
+        ],
+        "answer": "B",
+        "explanation": "第五段说明展示来源、版本和取舍能让作者身份与判断可见。",
+        "evidence_text": "Such tasks make authorship and judgment visible."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-human-education-l6-26",
+    "title": "Twenty-Three Tasks Need One Direction",
+    "content": "An education plan for 2026–2030 sets a broad objective: by the end of the period, China aims to have essentially completed a high-quality system and strengthened lifelong learning. Its 23 key tasks fall into five areas, including virtue, support for science and talent, public-service quality, teacher development and international opening.\n\nThe breadth is intentional, but it complicates accountability. When a policy links moral education, research capacity, demographic change, digital transformation and global influence, almost any activity can be described as relevant. A portfolio needs a theory of change: an explicit account of how particular actions are expected to produce stated outcomes and under what conditions.\n\nConsider the planʼs call to align services with shifts in the school-age population. Fewer children in one district may justify consolidating facilities, while population inflow elsewhere requires new classrooms. A simple national pupil-teacher ratio could improve even as some families travel farther and fast-growing schools become crowded. Distributional evidence must accompany national totals.\n\nThe same issue appears in support for science, technology and human resources. Funding a new laboratory is observable immediately; the quality of inquiry it enables emerges later and depends on faculty, research culture and tolerance for uncertain results. If evaluation rewards quick outputs, institutions may select safe projects that contradict the planʼs ambition.\n\nTeacher quality is another cross-cutting dependency. New curricula, inclusive public services and intelligent systems all ask teachers to learn additional roles. Training hours are an input. Whether teachers can diagnose misconceptions, adapt materials and collaborate across disciplines is a capability that needs observation and support.\n\nOpening education internationally adds further tensions. Exchange can widen knowledge and networks, yet imported models require local interpretation. Global competitiveness should not turn cooperation into a narrow ranking contest.\n\nA five-year plan becomes manageable when each task has a small number of credible indicators, a named responsible institution and scheduled review. Indicators should combine reach, quality and distribution, while qualitative evidence explains unexpected results.\n\nCoherence is the final test. The five areas should reinforce rather than silently cancel one another. An education system is strong not because every objective appears in a document, but because decisions across funding, staffing and evaluation point toward the same public purposes.",
+    "topic": "教育",
+    "difficulty": 6,
+    "source_id": "src-教育-26",
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20260629/7a0d518d6d8e46aaba8be4de85d93ebd/c.html",
+    "source_title": "China pledges to build strong educational system in 15th Five-Year Plan period",
+    "source_published_at": "2026-06-29",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "新华社页面可访问；核验2026—2030教育发展规划、2030总体目标、23项重点任务和五个方面，以及人口结构适配、评价改革与数字智能发展等事实。",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What governance problem does the passage identify in a broad education plan?",
+        "options": [
+          "Reducing all education goals to one national ratio.",
+          "Avoiding any review until the five-year period ends.",
+          "Turning many connected ambitions into coherent, testable and accountable decisions.",
+          "Treating international rankings as the only public purpose."
+        ],
+        "answer": "C",
+        "explanation": "全文讨论宽泛目标如何通过变革理论、分布证据、责任和复核转化为可问责实施。",
+        "evidence_text": "An education system is strong not because every objective appears in a document, but because decisions across funding, staffing and evaluation point toward the same public purposes."
+      },
+      {
+        "type": "detail",
+        "question": "How are the planʼs 23 key tasks organized?",
+        "options": [
+          "Into twenty-three separate ministries.",
+          "Into two examination subjects.",
+          "Into thirty provincial rankings.",
+          "Into five broad areas."
+        ],
+        "answer": "D",
+        "explanation": "首段明确说明23项任务分为五方面。",
+        "evidence_text": "Its 23 key tasks fall into five areas, including virtue, support for science and talent, public-service quality, teacher development and international opening."
+      },
+      {
+        "type": "word_guess",
+        "question": "What is a “theory of change”?",
+        "options": [
+          "An account linking actions to expected outcomes and necessary conditions.",
+          "A list of all activities that sound relevant.",
+          "A national pupil-teacher ratio.",
+          "A rule rewarding only quick research output."
+        ],
+        "answer": "A",
+        "explanation": "第二段直接定义 theory of change。",
+        "evidence_text": "A portfolio needs a theory of change: an explicit account of how particular actions are expected to produce stated outcomes and under what conditions."
+      },
+      {
+        "type": "inference",
+        "question": "Why can a better national pupil-teacher ratio hide local problems?",
+        "options": [
+          "Every district has the same enrollment trend.",
+          "Population changes and service burdens are unevenly distributed.",
+          "National ratios measure family travel directly.",
+          "School consolidation always creates more classrooms."
+        ],
+        "answer": "B",
+        "explanation": "第三段用流出区与流入区说明平均改善可能掩盖拥挤或路途增加。",
+        "evidence_text": "A simple national pupil-teacher ratio could improve even as some families travel farther and fast-growing schools become crowded."
+      },
+      {
+        "type": "inference",
+        "question": "How might quick-output evaluation undermine research ambition?",
+        "options": [
+          "It gives researchers more tolerance for failure.",
+          "It makes laboratory funding impossible to observe.",
+          "Institutions may avoid uncertain but potentially important inquiry.",
+          "It guarantees every project has long-term value."
+        ],
+        "answer": "C",
+        "explanation": "第四段指出奖励短期产出会诱导选择安全项目。",
+        "evidence_text": "If evaluation rewards quick outputs, institutions may select safe projects that contradict the planʼs ambition."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-human-education-l6-27",
+    "title": "A Global Platform Should Behave Like a Network",
+    "content": "A global AI education service platform was launched at the 2026 World Digital Education Conference in Hangzhou. It forms part of an upgrade to Smart Education of China, which was accessible in around 220 countries and regions. New international services included a lifelong-learning hub and a Chinese-language learning community.\n\nCross-border reach can reduce duplication. A country or institution may adapt high-quality material rather than build every resource from the beginning. Shared platforms can also connect teachers who face similar problems and make less widely taught subjects visible. Reach, however, is not the same as transfer.\n\nEducational material carries assumptions about curriculum sequence, examples, language, bandwidth and the role of a teacher. A lesson that works in one system may arrive too early, rely on inaccessible cultural references or require devices unavailable elsewhere. Localization is not decorative translation; it is the redesign needed for a resource to function in another learning environment.\n\nGovernance becomes more difficult across borders. Learner data may pass through several legal jurisdictions. A recommendation model trained on one group may rank material poorly for another. Institutions need clarity about hosting, licensing, data retention, appeal and the ability to remove or correct content.\n\nThe launch initiative called for sharing high-quality resources and digital tools to bridge the global divide while supporting well-rounded, sustainable human development. These aims can conflict. Rapid expansion may favor dominant languages and easily measured subjects, while inclusive development requires investment in accessibility, local educators and small communities.\n\nA global platform should therefore be evaluated as a network, not a warehouse. A warehouse counts items and visitors. A network examines relationships: who contributes, who adapts, whose feedback changes the system and whether less-resourced participants gain decision-making power.\n\nReciprocity is crucial. If knowledge travels mainly from a central provider outward, the service may reproduce hierarchy under the name of sharing. Regional institutions should be able to publish, revise and govern material, not merely consume it.\n\nThe achievement of a launch is connection. The educational achievement comes later, when resources cross borders without losing relevance, learners retain rights and participants on every side can shape what the platform becomes.",
+    "topic": "教育",
+    "difficulty": 6,
+    "source_id": "src-教育-27",
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20260512/4cbe04435f52421ebba2c0c0bc53cc92/c.html",
+    "source_title": "China opens global AI education service platform",
+    "source_published_at": "2026-05-12",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "清单URL失效；改用同标题同日期新华社页面，核验2026世界数字教育大会发布全球AI教育服务平台、覆盖约220个国家和地区、终身学习中心、中文学习社区及缩小数字鸿沟倡议。",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What condition does the passage place on global educational sharing?",
+        "options": [
+          "A large warehouse of content is sufficient.",
+          "One curriculum should be copied without adaptation.",
+          "Only the central provider should revise materials.",
+          "Cross-border reach must be joined by localization, rights and reciprocal governance."
+        ],
+        "answer": "D",
+        "explanation": "全文强调连接之后仍需本地化、权利与互惠治理。",
+        "evidence_text": "The educational achievement comes later, when resources cross borders without losing relevance, learners retain rights and participants on every side can shape what the platform becomes."
+      },
+      {
+        "type": "detail",
+        "question": "Which new service was included in the platform upgrade?",
+        "options": [
+          "A lifelong-learning hub.",
+          "A compulsory global examination.",
+          "A single commercial textbook store.",
+          "A ban on Chinese-language learning."
+        ],
+        "answer": "A",
+        "explanation": "首段列出终身学习中心和中文学习社区。",
+        "evidence_text": "New international services included a lifelong-learning hub and a Chinese-language learning community."
+      },
+      {
+        "type": "word_guess",
+        "question": "How is “localization” defined in the passage?",
+        "options": [
+          "Word-for-word translation with no other change.",
+          "Redesign that lets a resource work in another learning context.",
+          "Removal of all cultural references.",
+          "A count of international visitors."
+        ],
+        "answer": "B",
+        "explanation": "第三段明确说明本地化不是装饰性翻译。",
+        "evidence_text": "Localization is not decorative translation; it is the redesign needed for a resource to function in another learning environment."
+      },
+      {
+        "type": "inference",
+        "question": "Why does the author prefer a network metaphor to a warehouse metaphor?",
+        "options": [
+          "Warehouses cannot store digital material.",
+          "Networks eliminate all licensing issues.",
+          "A network reveals participation, adaptation and power, not only volume.",
+          "Visitor counts directly measure reciprocity."
+        ],
+        "answer": "C",
+        "explanation": "第六段直接对比两种评价视角。",
+        "evidence_text": "A network examines relationships: who contributes, who adapts, whose feedback changes the system and whether less-resourced participants gain decision-making power."
+      },
+      {
+        "type": "inference",
+        "question": "What risk arises if knowledge mostly moves outward from one provider?",
+        "options": [
+          "Local institutions gain too much governing authority.",
+          "Dominant languages become less visible.",
+          "Every resource becomes locally relevant.",
+          "Sharing may reproduce dependency and hierarchy."
+        ],
+        "answer": "D",
+        "explanation": "第七段把单向流动与等级再生产联系起来。",
+        "evidence_text": "If knowledge travels mainly from a central provider outward, the service may reproduce hierarchy under the name of sharing."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-human-education-l6-28",
+    "title": "Equal Opportunity Is Not a Software Feature",
+    "content": "At the 2026 Global Smart Education Conference, experts argued that artificial intelligence should expand equal learning opportunities. The meetingʼs theme joined equity, quality and sustainability, while speakers called for cooperation, stronger teacher digital literacy and multilingual, accessible systems.\n\nThe three terms are easy to repeat and difficult to hold together. Equity asks who benefits and who bears risk. Quality asks whether learning becomes deeper or more reliable. Sustainability asks whether a service can be financed, maintained and governed over time without exhausting people or resources. A project can improve one dimension while damaging another.\n\nFor example, automated tutoring may offer additional practice to a remote learner. If it works only in a dominant language, it widens access for some while excluding others. Translating the interface is insufficient when examples, speech recognition or feedback still misunderstand local use. Multilingual design must enter data collection, evaluation and human support.\n\nTeacher capacity is similarly structural. Training cannot consist only of learning where buttons are located. Educators need to identify bias, redesign tasks, verify claims and recognize when a learner requires human attention. If new systems increase monitoring and correction work without time or support, apparent efficiency transfers hidden labor to teachers.\n\nInternational cooperation can share technical knowledge and reduce repeated mistakes, but borrowed solutions need national and local ownership. Countries differ in curriculum, infrastructure and law. Co-creation means that participants help define the problem and evaluate the result, not simply test a finished product designed elsewhere.\n\nSustainability also requires an exit question. What happens when a grant ends, a vendor changes terms or a model is withdrawn? Data portability, open standards, local technical skill and procurement safeguards can reduce dependence. They rarely appear in a classroom demonstration, yet they determine continuity.\n\nAn equity claim should therefore include disaggregated evidence. Average improvement may hide that rural learners, disabled students or speakers of minority languages gained less. The people most likely to be missed should be involved before deployment, not consulted only after harm appears.\n\nAI can contribute to equal opportunity, but equality is not a property of the tool. It is an institutional achievement produced by inclusive design, capable teachers, durable governance and evidence that makes uneven outcomes visible.",
+    "topic": "教育",
+    "difficulty": 6,
+    "source_id": "src-教育-28",
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20260820/d7de97053a1f4395b7d5eb630b860d4a/c.html",
+    "source_title": "AI should help ensure equal learning opportunities: experts",
+    "source_published_at": "2026-08-20",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "新华社页面可访问；核验2026全球智慧教育大会主题、关于公共性与各国差异的讨论、教师数字素养、全球合作及多语无障碍AI教育呼吁。",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "What is the passageʼs main claim about equitable AI education?",
+        "options": [
+          "Equity results from institutional design and governance rather than from the tool alone.",
+          "Any remote tutoring system is equitable by definition.",
+          "Average improvement proves every group benefited.",
+          "Teacher training should focus only on software controls."
+        ],
+        "answer": "A",
+        "explanation": "全文把公平界定为设计、教师、治理与分组证据共同产生的制度成就。",
+        "evidence_text": "AI can contribute to equal opportunity, but equality is not a property of the tool."
+      },
+      {
+        "type": "detail",
+        "question": "What kind of AI system did conference speakers explicitly call for?",
+        "options": [
+          "Systems limited to one dominant language.",
+          "Multilingual and accessible systems.",
+          "Tools that require no teacher involvement.",
+          "Temporary services without maintenance plans."
+        ],
+        "answer": "B",
+        "explanation": "首段直接列出多语与无障碍诉求。",
+        "evidence_text": "The meetingʼs theme joined equity, quality and sustainability, while speakers called for cooperation, stronger teacher digital literacy and multilingual, accessible systems."
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “co-creation” mean here?",
+        "options": [
+          "A provider translates an interface after launch.",
+          "Countries adopt the same system without change.",
+          "Participants help define problems and judge results, not merely test a finished product.",
+          "Teachers receive a list of software buttons."
+        ],
+        "answer": "C",
+        "explanation": "第五段直接给出 co-creation 的判据。",
+        "evidence_text": "Co-creation means that participants help define the problem and evaluate the result, not simply test a finished product designed elsewhere."
+      },
+      {
+        "type": "inference",
+        "question": "How can an efficiency tool create hidden teacher labor?",
+        "options": [
+          "It automatically reduces every professional task.",
+          "It prevents teachers from noticing bias.",
+          "It makes human attention unnecessary.",
+          "It may add monitoring, verification and correction without providing time or support."
+        ],
+        "answer": "D",
+        "explanation": "第四段揭示效率叙事可能转移而非消除工作。",
+        "evidence_text": "If new systems increase monitoring and correction work without time or support, apparent efficiency transfers hidden labor to teachers."
+      },
+      {
+        "type": "inference",
+        "question": "Why does the author demand disaggregated evidence?",
+        "options": [
+          "Overall averages can conceal weaker results for marginalized groups.",
+          "Group-level results are always higher than averages.",
+          "Disaggregation removes the need for consultation.",
+          "It guarantees that no harm will occur."
+        ],
+        "answer": "A",
+        "explanation": "第七段明确说明平均改善会遮蔽群体差异。",
+        "evidence_text": "Average improvement may hide that rural learners, disabled students or speakers of minority languages gained less."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-human-education-l6-29",
+    "title": "What Eighteen Pupils Can Teach a System",
+    "content": "Laos began a research study on inclusive education for students with disabilities in the 2026–2027 school year. The work involved 18 pupils at a primary school in Xieng Khuang province and aimed to test a new classroom tool, strengthen teachersʼ methods and identify conditions for sustainable use.\n\nThe small scale is not a weakness if the purpose is learning before expansion. A pilot can reveal how a tool interacts with lesson routines, family involvement and district support. It becomes weak when participants are treated as a miniature version of the whole country and local findings are generalized without explanation.\n\nThe study uses several forms of evidence: classroom observation, teacher-completed forms, individual learning plans, monitoring data, interviews and focus groups. This mixture supports triangulation—the comparison of different evidence sources to see whether they point toward the same conclusion. A teacher report of increased participation, for instance, can be checked against observation and pupil work.\n\nInclusive education also complicates the definition of success. Reading and writing growth matter, but so do communication, confidence, attendance, social participation and a learnerʼs ability to ask for support. One standardized score may miss progress that changes a childʼs daily life. At the same time, warm stories cannot replace systematic evidence about who benefited and who did not.\n\nParental involvement is included because classroom change travels beyond school. Families may explain a childʼs communication, reinforce strategies or identify burdens created by a new routine. Yet involvement should not shift professional responsibility onto parents or disadvantage children whose caregivers have less time.\n\nImplementation research must document context. Class size, teacher workload, accessible materials, specialist support and transport can determine whether a method is feasible. When the study is later used elsewhere, those conditions should travel with the reported result.\n\nEthics is especially important in a small group. Participants may be recognizable even when names are removed, and families may feel pressure to join a government-supported project. Clear consent, protected records and a route to decline without losing services are part of educational quality.\n\nThe most valuable result of the pilot may not be a verdict that the tool “works.” It may be a precise account of for whom it helped, through which teaching practices and with what support—knowledge that makes later expansion more careful and more genuinely inclusive.",
+    "topic": "教育",
+    "difficulty": 6,
+    "source_id": "src-教育-29",
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/asiapacific/20260818/0c2e87f1e82249238d725eaa17b40b92/c.html",
+    "source_title": "Laos pushes for better inclusive education",
+    "source_published_at": "2026-08-18",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "新华社页面可访问；核验老挝2026—2027学年单校18名残障学生研究、混合学习与案例方法、课堂观察/学习计划/访谈/焦点小组，以及家长和区级支持等考察要素。",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "Which finding would make the small Laos pilot most useful for expansion?",
+        "options": [
+          "A single claim that the tool works everywhere.",
+          "A contextual explanation of who benefited, how and under which support conditions.",
+          "A collection of positive stories without systematic evidence.",
+          "Immediate national expansion based on eighteen pupils."
+        ],
+        "answer": "B",
+        "explanation": "全文主张小规模研究应产出带条件、分人群和机制的可迁移知识。",
+        "evidence_text": "The most valuable result of the pilot may not be a verdict that the tool “works.” It may be a precise account of for whom it helped, through which teaching practices and with what support—knowledge that makes later expansion more careful and more genuinely inclusive."
+      },
+      {
+        "type": "detail",
+        "question": "How many pupils were involved in the study?",
+        "options": [
+          "Eighty pupils.",
+          "Exactly 2027 pupils.",
+          "Eighteen pupils.",
+          "One hundred and eight pupils."
+        ],
+        "answer": "C",
+        "explanation": "首段直接给出18名学生。",
+        "evidence_text": "The work involved 18 pupils at a primary school in Xieng Khuang province and aimed to test a new classroom tool, strengthen teachersʼ methods and identify conditions for sustainable use."
+      },
+      {
+        "type": "word_guess",
+        "question": "What is “triangulation”?",
+        "options": [
+          "Using only one standardized score.",
+          "Removing all names from a report.",
+          "Expanding a pilot to three provinces.",
+          "Comparing several evidence sources for convergence or disagreement."
+        ],
+        "answer": "D",
+        "explanation": "第三段直接定义 triangulation。",
+        "evidence_text": "This mixture supports triangulation—the comparison of different evidence sources to see whether they point toward the same conclusion."
+      },
+      {
+        "type": "inference",
+        "question": "Why should implementation conditions be reported with results?",
+        "options": [
+          "They help others judge whether the method can transfer to a different setting.",
+          "They prove class size never affects a method.",
+          "They allow researchers to ignore teacher workload.",
+          "They make every school context identical."
+        ],
+        "answer": "A",
+        "explanation": "第六段指出可行性依赖情境，结果脱离条件会误导推广。",
+        "evidence_text": "When the study is later used elsewhere, those conditions should travel with the reported result."
+      },
+      {
+        "type": "inference",
+        "question": "Why might ordinary anonymization be insufficient in this pilot?",
+        "options": [
+          "The study contains no personal information.",
+          "A group of eighteen pupils in one school can remain indirectly identifiable.",
+          "Families are prohibited from declining.",
+          "Large national datasets are always easier to identify."
+        ],
+        "answer": "B",
+        "explanation": "小样本、单校情境使去名后仍可能被识别。",
+        "evidence_text": "Participants may be recognizable even when names are removed, and families may feel pressure to join a government-supported project."
+      }
+    ]
+  },
+  {
+    "corpus_id": "cet-human-education-l6-30",
+    "title": "Inclusion Begins Before a Child Enters the Room",
+    "content": "An inclusive kindergarten project in China allows children with intellectual and developmental disabilities to learn alongside peers without disabilities, with support and accommodation. Begun through cooperation between education authorities and UNICEF at the end of 2022, it had reached about 1.1 million children in 1,682 schools and kindergartens across seven provincial-level regions.\n\nIndividual stories show why placement can matter. Children who initially struggled to communicate, dress themselves or join routines learned by watching peers and through repeated teacher support. Their classmates also became more patient and willing to help. Inclusion, in these accounts, changes the social environment for everyone rather than moving one child into an unchanged room.\n\nThat distinction is essential. Physical presence is integration only in the narrowest sense. Educational inclusion requires accommodation: deliberate changes in communication, materials, routines or environment that enable participation without lowering the learnerʼs dignity. It also requires teachers who can notice different forms of progress.\n\nThe program exposes a resource tension. One reported class had sixteen children, three with special needs. A teacher can encourage peer support, but classmates must not become unpaid aides, and one childʼs access should not depend on another childʼs kindness. Specialist advice, planning time and manageable staffing turn goodwill into a reliable entitlement.\n\nBenefits for peers should be described carefully. Greater empathy is valuable, yet children with disabilities are not placed in a classroom to provide moral lessons to others. Their own right to education remains primary. Likewise, a success story should not hide pupils whose needs require additional or different settings.\n\nTransition is a critical test. Some children from the participating kindergartens entered public primary schools, but a supportive preschool year does not guarantee that accommodations continue. Records, family knowledge and specialist plans need to move with the child, while the receiving school must prepare before arrival.\n\nNational figures show progress: compulsory-education enrollment among children and adolescents with disabilities had reached 97 percent, and more than 30,000 students with disabilities entered universities each year. Enrollment, however, is the first link in a longer chain that includes attendance, participation, learning, belonging and progression.\n\nSustainable inclusion therefore depends on coordination among schools, families, health services, disability organizations and local authorities. It is not a favor offered by an unusually caring teacher. It is a systemʼs promise that difference will be anticipated, support will be organized and every learnerʼs development will remain visible.",
+    "topic": "教育",
+    "difficulty": 6,
+    "source_id": "src-教育-30",
+    "source_name": "新华社英文网",
+    "source_url": "https://english.news.cn/20251202/183183c4ec0f43a89d2bec1d62505a34/c.html",
+    "source_title": "China Focus: Inclusive education empowering children with and without disabilities in China",
+    "source_published_at": "2025-12-02",
+    "retrieved_at": "2026-08-29",
+    "source_verification": "新华社页面可访问；核验UNICEF合作项目始于2022年底、覆盖七省级地区1682所学校幼儿园约110万儿童、课堂案例、教师培训、残障学生97%义务教育入学率及每年3万余人进入大学等事实。",
+    "adaptation_note": "题材参考所列权威来源的公开事实；本站原创改写，非媒体原文，非历年真题。",
+    "questions": [
+      {
+        "type": "main_idea",
+        "question": "How does the passage distinguish genuine inclusion from simple placement?",
+        "options": [
+          "Inclusion means putting a child in a room without changing anything.",
+          "Peer kindness can replace specialist and institutional support.",
+          "Inclusion organizes accommodations, professional support and continuity around participation.",
+          "Enrollment is the final measure of educational success."
+        ],
+        "answer": "C",
+        "explanation": "全文从安置走向调整、资源、转衔和系统协调。",
+        "evidence_text": "It is a systemʼs promise that difference will be anticipated, support will be organized and every learnerʼs development will remain visible."
+      },
+      {
+        "type": "detail",
+        "question": "How many institutions had the joint program reached?",
+        "options": [
+          "About 1.1 million institutions.",
+          "Exactly seven schools.",
+          "More than 30,000 kindergartens.",
+          "1,682 schools and kindergartens."
+        ],
+        "answer": "D",
+        "explanation": "首段直接给出1682所学校和幼儿园。",
+        "evidence_text": "Begun through cooperation between education authorities and UNICEF at the end of 2022, it had reached about 1.1 million children in 1,682 schools and kindergartens across seven provincial-level regions."
+      },
+      {
+        "type": "word_guess",
+        "question": "What does “accommodation” mean in this context?",
+        "options": [
+          "A deliberate adjustment that enables dignified participation.",
+          "A lower expectation applied to every learner.",
+          "A classroom building where no support is offered.",
+          "A moral lesson for pupils without disabilities."
+        ],
+        "answer": "A",
+        "explanation": "第三段直接定义 accommodation。",
+        "evidence_text": "Educational inclusion requires accommodation: deliberate changes in communication, materials, routines or environment that enable participation without lowering the learnerʼs dignity."
+      },
+      {
+        "type": "inference",
+        "question": "Why does the author warn against relying on classmates as aides?",
+        "options": [
+          "Peers can never learn patience through inclusion.",
+          "A right to support should not depend on another childʼs unpaid goodwill.",
+          "Teachers should prohibit all pupil interaction.",
+          "Specialist advice makes friendship impossible."
+        ],
+        "answer": "B",
+        "explanation": "第四段把同伴帮助与制度性权利清楚区分。",
+        "evidence_text": "A teacher can encourage peer support, but classmates must not become unpaid aides, and one childʼs access should not depend on another childʼs kindness."
+      },
+      {
+        "type": "inference",
+        "question": "Why is transition to primary school a critical test?",
+        "options": [
+          "Preschool inclusion guarantees every later placement.",
+          "Primary schools require no advance planning.",
+          "Support may disappear unless knowledge and preparation move with the child.",
+          "Family knowledge becomes irrelevant after kindergarten."
+        ],
+        "answer": "C",
+        "explanation": "第六段说明支持连续性在跨学段时容易断裂。",
+        "evidence_text": "Some children from the participating kindergartens entered public primary schools, but a supportive preschool year does not guarantee that accommodations continue."
+      }
+    ]
+  }
+]
