@@ -19,6 +19,7 @@ if (-not (Test-Path -LiteralPath (Join-Path $buildDeps "PyInstaller")) -or
     if ($LASTEXITCODE -ne 0) { throw "Failed to install desktop build dependencies" }
 }
 
+$env:PYTHONUTF8 = "1"
 $env:PYTHONPATH = "$projectRoot;$buildDeps;$(Join-Path $projectRoot '.runtime_deps');$(Join-Path $projectRoot '.deps')"
 $privateSource = Join-Path $projectRoot "data\vocab.db"
 $distributionSource = Join-Path $projectRoot "resources\distribution\vocab.seed.db"
