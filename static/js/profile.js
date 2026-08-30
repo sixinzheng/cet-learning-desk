@@ -7,6 +7,7 @@
     let previewWords = [];
     let previewLastFocus = null;
     let skills = [];
+    let supportLastFocus = null;
 
     function escapeHtml(value) {
         return String(value ?? '').replace(/[&<>'"]/g, char => ({
@@ -47,6 +48,37 @@
         });
         wordbookPreview = overlay;
         return overlay;
+    }
+
+    function initSupportModal() {
+        const overlay = $('support-modal');
+        const trigger = $('support-author-button');
+        if (!overlay || !trigger) return;
+        const dialog = overlay.querySelector('[role="dialog"]');
+        const close = () => {
+            overlay.hidden = true;
+            document.body.classList.remove('has-modal-open');
+            if (supportLastFocus && document.contains(supportLastFocus)) supportLastFocus.focus();
+        };
+        const open = () => {
+            supportLastFocus = document.activeElement;
+            overlay.hidden = false;
+            document.body.classList.add('has-modal-open');
+            requestAnimationFrame(() => dialog.focus());
+        };
+        trigger.addEventListener('click', open);
+        overlay.querySelectorAll('[data-support-close]').forEach(button => button.addEventListener('click', close));
+        overlay.addEventListener('click', event => { if (event.target === overlay) close(); });
+        overlay.addEventListener('keydown', event => {
+            if (event.key === 'Escape') { event.preventDefault(); close(); return; }
+            if (event.key !== 'Tab') return;
+            const focusable = [...dialog.querySelectorAll('button:not([disabled]),a[href],[tabindex]:not([tabindex="-1"])')]
+                .filter(element => element.offsetParent !== null);
+            if (!focusable.length) return;
+            const first = focusable[0], last = focusable.at(-1);
+            if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+            else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+        });
     }
 
     function renderPreviewRows(list) {
@@ -226,6 +258,8 @@
         if (withBalance && status.configured) renderBalance(await api('/api/ai/balance'));
         return status;
     }
+
+    initSupportModal();
 
     try {
         const [books] = await Promise.all([

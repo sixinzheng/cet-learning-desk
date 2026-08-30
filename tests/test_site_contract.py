@@ -183,6 +183,29 @@ class StaticDesignContractTests(unittest.TestCase):
         self.assertIn('class="skip-link"', base)
         self.assertEqual(base.count('class="mobile-nav__item"'), 5)
 
+    def test_first_run_onboarding_is_optional_replayable_and_covers_core_concepts(self):
+        base = (ROOT / "templates" / "base.html").read_text(encoding="utf-8")
+        script = (ROOT / "static" / "js" / "onboarding.js").read_text(encoding="utf-8")
+        self.assertIn('id="onboarding-overlay"', base)
+        self.assertEqual(base.count("data-onboarding-panel="), 4)
+        for copy in ("从今天的词汇任务开始", "连接 DeepSeek", "六维成绩", "AI 负责提效"):
+            self.assertIn(copy, base)
+        self.assertIn("跳过引导", base)
+        self.assertIn("cet-onboarding-v1", script)
+        self.assertIn("window.location.pathname === '/'", script)
+        self.assertIn("cet:open-onboarding", script)
+        self.assertIn("/api/ai/config/verify-save", script)
+
+    def test_profile_supports_onboarding_replay_and_author_support_codes(self):
+        profile = (ROOT / "templates" / "profile.html").read_text(encoding="utf-8")
+        for element_id in ("open-onboarding", "support-author-button", "support-modal"):
+            self.assertIn(f'id="{element_id}"', profile)
+        self.assertIn("images/support/wechat-pay.png", profile)
+        self.assertIn("images/support/alipay.jpg", profile)
+        self.assertTrue((ROOT / "static" / "images" / "support" / "wechat-pay.png").is_file())
+        self.assertTrue((ROOT / "static" / "images" / "support" / "alipay.jpg").is_file())
+        self.assertIn("量力而行", profile)
+
     def test_design_tokens_and_breakpoints_are_declared(self):
         css = (ROOT / "static" / "css" / "style.css").read_text(encoding="utf-8")
         self.assertIn("--indigo: #303b67", css.lower())

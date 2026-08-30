@@ -46,8 +46,103 @@
         <a href="/profile" class="mobile-nav__item" data-nav="profile"><span aria-hidden="true">我</span><b>我的</b></a>
     </nav>
 
+    <div class="modal-overlay onboarding-overlay" id="onboarding-overlay" hidden>
+        <section class="onboarding-dialog" role="dialog" aria-modal="true" aria-labelledby="onboarding-title" tabindex="-1">
+            <aside class="onboarding-rail" aria-label="引导进度">
+                <a class="onboarding-brand" href="/" aria-label="四六级学习台首页">
+                    <span aria-hidden="true">CET</span>
+                    <strong>四六级学习台</strong>
+                </a>
+                <p>用真实训练证据安排今天的任务，也看见长期能力如何形成。</p>
+                <ol class="onboarding-steps">
+                    <li data-onboarding-marker="0"><span>1</span><b>开始使用</b></li>
+                    <li data-onboarding-marker="1"><span>2</span><b>连接 AI</b></li>
+                    <li data-onboarding-marker="2"><span>3</span><b>理解段位</b></li>
+                    <li data-onboarding-marker="3"><span>4</span><b>认识助理</b></li>
+                </ol>
+                <p class="onboarding-privacy">学习记录保存在本机；只有调用 AI 时，相关内容才会发送给 DeepSeek。</p>
+            </aside>
+
+            <div class="onboarding-stage">
+                <header class="onboarding-stage__header">
+                    <span id="onboarding-step-label">第 1 步，共 4 步</span>
+                    <button class="text-button onboarding-skip" id="onboarding-skip" type="button">跳过引导</button>
+                </header>
+
+                <div class="onboarding-panel is-active" data-onboarding-panel="0">
+                    <p class="onboarding-lead">每天先完成一个真正有用的动作</p>
+                    <h2 id="onboarding-title">从今天的词汇任务开始</h2>
+                    <p class="onboarding-intro">首页会直接告诉你该学多少新词、有哪些到期复习，以及今天更适合先学还是先复习。</p>
+                    <div class="onboarding-feature-list">
+                        <article><span>今日</span><div><strong>背词与复习</strong><p>五态艾宾浩斯安排进度，完成结果自动进入成长记录。</p></div></article>
+                        <article><span>助理</span><div><strong>AI 学习助理</strong><p>快速问答、检索笔记、作文识别与批改都从真实学习上下文出发。</p></div></article>
+                        <article><span>成长</span><div><strong>科举十级段位</strong><p>童生到状元不是打卡称号，而是由六维训练证据共同支撑。</p></div></article>
+                    </div>
+                    <p class="onboarding-note">完成引导约需 1 分钟，所有设置以后都能在“我的”中修改。</p>
+                </div>
+
+                <div class="onboarding-panel" data-onboarding-panel="1" hidden>
+                    <p class="onboarding-lead">可选联网能力</p>
+                    <h2>连接 DeepSeek，让 AI 在全站开始工作</h2>
+                    <p class="onboarding-intro">API Key 会先通过余额接口验证；验证成功后立即启用，不会在页面或接口中返回完整密钥。</p>
+                    <div class="onboarding-ai-state" id="onboarding-ai-state" role="status">
+                        <span class="status-dot" aria-hidden="true"></span>
+                        <div><strong>正在检查 AI 配置</strong><p>基础背词、复习和题库不依赖 AI。</p></div>
+                    </div>
+                    <label for="onboarding-api-key">DeepSeek API Key</label>
+                    <div class="secret-field onboarding-secret-field">
+                        <input id="onboarding-api-key" type="password" autocomplete="off" spellcheck="false" placeholder="sk-…">
+                        <button id="onboarding-key-toggle" type="button" aria-pressed="false">显示</button>
+                    </div>
+                    <div class="onboarding-key-actions">
+                        <button class="btn btn-primary" id="onboarding-key-save" type="button">验证并保存</button>
+                        <span id="onboarding-key-message" role="status">没有 Key 也可以稍后配置。</span>
+                    </div>
+                    <details class="onboarding-key-help">
+                        <summary>为什么需要用户自己的 API Key？</summary>
+                        <p>AI 请求由你的 DeepSeek 账户结算，本站只记录本机可见的用量和费用；密钥使用操作系统安全存储，不会进入学习数据库。</p>
+                    </details>
+                </div>
+
+                <div class="onboarding-panel" data-onboarding-panel="2" hidden>
+                    <p class="onboarding-lead">不是打卡等级，而是能力证据</p>
+                    <h2>六维成绩共同决定科举段位</h2>
+                    <p class="onboarding-intro">本站用四六级能力作为参考锚点，同时考虑样本数量与近期性。证据不足时只给保守判断，不用少量高分制造虚假水平。</p>
+                    <div class="onboarding-rank-ledger" aria-label="段位六维权重">
+                        <div><b>词汇运用</b><span><i style="--weight:26%"></i></span><strong>26%</strong></div>
+                        <div><b>阅读理解</b><span><i style="--weight:24%"></i></span><strong>24%</strong></div>
+                        <div><b>听力理解</b><span><i style="--weight:21%"></i></span><strong>21%</strong></div>
+                        <div><b>写作表达</b><span><i style="--weight:18%"></i></span><strong>18%</strong></div>
+                        <div><b>记忆保持</b><span><i style="--weight:5%"></i></span><strong>5%</strong></div>
+                        <div><b>有效投入</b><span><i style="--weight:6%"></i></span><strong>6%</strong></div>
+                    </div>
+                    <div class="onboarding-rank-note"><strong>段位告诉你两件事</strong><p>当前哪些能力已有证据，以及下一次训练做什么最能推动升段。它是本站学习参考，不等同于真实 CET 成绩预测。</p></div>
+                </div>
+
+                <div class="onboarding-panel" data-onboarding-panel="3" hidden>
+                    <p class="onboarding-lead">AI 负责提效，决定权留给你</p>
+                    <h2>让助理理解进度，也尊重你的边界</h2>
+                    <p class="onboarding-intro">助理会读取本站学习摘要和已保存笔记，为回答提供上下文；写入笔记、保存对话记忆等操作仍需要你确认。</p>
+                    <ul class="onboarding-ai-capabilities">
+                        <li><strong>按数据问候与建议</strong><span>结合待复习量、近期节奏和强弱项，给出当天优先动作。</span></li>
+                        <li><strong>学习问答与笔记检索</strong><span>解释英语问题，查找历史笔记并返回日期和原文证据。</span></li>
+                        <li><strong>作文识别与批改</strong><span>可识别上传的英文作文图片，先让你确认文字，再进入正式批改。</span></li>
+                        <li><strong>阅读与题库辅助</strong><span>按本站规则生成练习；调用次数、Token 与本站追踪费用会进入成长账单。</span></li>
+                    </ul>
+                    <div class="onboarding-ready"><strong>准备好了</strong><p>完成后回到当前页面。建议先从首页的今日词汇任务开始。</p></div>
+                </div>
+
+                <footer class="onboarding-actions">
+                    <button class="btn btn-secondary" id="onboarding-back" type="button" disabled>上一步</button>
+                    <button class="btn btn-primary" id="onboarding-next" type="button">下一步</button>
+                </footer>
+            </div>
+        </section>
+    </div>
+
     <div id="toast-container" class="toast-stack" aria-live="polite" aria-atomic="true"></div>
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/onboarding.js') }}"></script>
     {% block scripts %}{% endblock %}
 </body>
 </html>
