@@ -66,7 +66,10 @@ function studyApp() {
         },
         get wrongBatchCount() { return this.batchItems.filter(i => i.wrongs > 0).length; },
 
-        playPronunciation(word) { speakEnglish(word); },
+        playPronunciation(word) {
+            const item = this.words.find(candidate => candidate.word === word) || {};
+            speakEnglish(word, {wordId: item.id, audioUrl: item.audio_url});
+        },
 
         async init() {
             if (!this._keyBound) {

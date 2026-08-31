@@ -32,6 +32,22 @@ PYTHON_DIRECTORIES = ('routes', 'services', 'models')
 ASSET_DIRECTORIES = ('templates', 'static', 'resources', 'skills', 'seed')
 
 
+def _verify_pronunciation_pack() -> None:
+    command = [
+        sys.executable,
+        str(ROOT / 'scripts' / 'verify_pronunciation_pack.py'),
+        '--database', str(ROOT / 'data' / 'vocab.db'),
+    ]
+    result = subprocess.run(command, cwd=ROOT, capture_output=True, text=True, encoding='utf-8')
+    if result.returncode != 0:
+        raise RuntimeError(
+            'Android 构建需要完整的离线发音包。请先运行 '
+            '`python scripts/fetch_pronunciation_pack.py`。\n'
+            + (result.stdout or '') + (result.stderr or '')
+        )
+    print(result.stdout.strip())
+
+
 def _reset_generated(path: Path) -> None:
     resolved = path.resolve()
     android_resolved = ANDROID_ROOT.resolve()
@@ -87,6 +103,7 @@ def _validate_runtime_imports() -> None:
 
 
 def main() -> None:
+    _verify_pronunciation_pack()
     _reset_generated(PYTHON_TARGET)
     _reset_generated(ASSET_TARGET)
 

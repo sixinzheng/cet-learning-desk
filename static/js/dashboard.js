@@ -27,7 +27,7 @@
         const learned = Number(data.learned_today || 0);
         const reviewed = Number(data.reviewed_today || 0);
         const due = Number(data.review_due_remaining ?? data.today_review ?? 0);
-        const newRemaining = Number(data.today_new || 0);
+        const newRemaining = Number(data.new_task_remaining ?? data.today_new ?? 0);
         $('learned-today').textContent = learned;
         $('learn-goal').textContent = target;
         $('reviewed-today').textContent = reviewed;
@@ -35,6 +35,9 @@
         $('remaining-new').textContent = `${newRemaining} 个`;
         $('remaining-review').textContent = `${due} 个`;
         $('core-minutes').textContent = Math.max(0, Math.ceil(newRemaining + due * 0.5));
+        if ($('setting-remaining') && data.wordbook_unmastered_remaining != null) {
+            $('setting-remaining').textContent = `${Number(data.wordbook_unmastered_remaining) || 0} 个`;
+        }
         $('learn-progress-note').textContent = learned >= target ? `今日目标已完成${learned > target ? `，超额 ${learned - target} 个` : ''}` : `还差 ${Math.max(0, target - learned)} 个完成目标`;
         if (!due) {
             $('review-progress-note').textContent = reviewed >= target ? `今日目标已完成${reviewed > target ? `，超额 ${reviewed - target} 个` : ''}` : '今日到期已清空';
@@ -77,13 +80,11 @@
             const done = mastered + known;
             const total = Number(currentBook?.total_words || currentWords.length);
             const pct = total ? Math.round(done / total * 100) : 0;
-            const remaining = Math.max(0, total - done);
             $('wb-mastered').textContent = mastered;
             $('wb-known').textContent = known;
             $('wb-learning').textContent = learning;
             $('wb-pct').textContent = `${pct}%`;
             $('wb-fill').style.width = `${pct}%`;
-            $('setting-remaining').textContent = `${remaining} 个`;
             $('task-book-title').textContent = currentBook?.name || '当前词库';
             $('wordbook-description').textContent = currentBook?.description || `本词库共 ${total} 个词，已稳定掌握 ${done} 个。`;
         } catch (_) {
@@ -347,8 +348,13 @@
         sendAssistant('', false, {start_scene: true, scenario_key: $('home-scene-select').value, language: 'en'});
     });
     $('wb-select').addEventListener('change', async event => {
-        await loadBook(event.target.value);
-        try { await api('/api/words/current-wordbook', {method: 'PUT', body: JSON.stringify({book_id: Number(event.target.value)})}); showToast('当前词库已切换。', 'success'); }
+        try {
+            await api('/api/words/current-wordbook', {method: 'PUT', body: JSON.stringify({book_id: Number(event.target.value)})});
+            const [dashboard] = await Promise.all([api('/api/study/dashboard'), loadBook(event.target.value)]);
+            dashboardState = dashboard;
+            renderDailyProgress(dashboardState);
+            showToast('当前词库已切换。', 'success');
+        }
         catch (_) { showToast('词库切换失败，请重试。', 'error'); }
     });
     $('save-daily').addEventListener('click', async () => {

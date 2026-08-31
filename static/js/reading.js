@@ -7,6 +7,15 @@ function readingApp() {
         async init() {
             const disclosure = document.getElementById('reading-settings-disclosure');
             const toggle = document.getElementById('reading-settings-toggle');
+            const mobileLayout = window.matchMedia('(max-width: 767px)');
+            if (disclosure && !mobileLayout.matches) disclosure.open = true;
+            try {
+                const savedFontValue = window.localStorage.getItem('reading-font-size');
+                const savedFontSize = savedFontValue === null ? NaN : Number(savedFontValue);
+                if (Number.isFinite(savedFontSize)) this.fontSize = Math.min(24, Math.max(14, savedFontSize));
+            } catch (_) {
+                // Local storage can be unavailable in privacy-restricted WebViews; the in-memory default still works.
+            }
             const syncDisclosure = () => {
                 const open = Boolean(disclosure?.open);
                 toggle?.setAttribute('aria-expanded', String(open));
@@ -16,7 +25,12 @@ function readingApp() {
                     requestAnimationFrame(() => toggle.scrollIntoView({block:'nearest', behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'}));
                 }
             };
+            const syncDisclosureForViewport = event => {
+                if (disclosure && !event.matches) disclosure.open = true;
+                syncDisclosure();
+            };
             disclosure?.addEventListener('toggle', syncDisclosure);
+            mobileLayout.addEventListener?.('change', syncDisclosureForViewport);
             syncDisclosure();
             document.getElementById('answer-card-close')?.addEventListener('click', () => this.closeDialog('answer-card-modal'));
             document.getElementById('reading-answer-card-fab')?.addEventListener('click', () => this.openAnswerCard());
@@ -335,8 +349,11 @@ function readingApp() {
 
         changeFont(delta) {
             this.fontSize = Math.min(24, Math.max(14, this.fontSize + delta));
-            document.getElementById('article-text').style.fontSize = `${this.fontSize}px`;
-            document.getElementById('reading-font-size').textContent = `${this.fontSize}px`;
+            const article = document.getElementById('article-text');
+            const output = document.getElementById('reading-font-size');
+            if (article) article.style.fontSize = `${this.fontSize}px`;
+            if (output) output.textContent = `${this.fontSize}px`;
+            try { window.localStorage.setItem('reading-font-size', String(this.fontSize)); } catch (_) {}
         },
 
         async lookupWordClick(word) {
@@ -348,7 +365,8 @@ function readingApp() {
             this.openDialog('word-modal');
             try {
                 const data = await api(`/api/reading/lookup-word?word=${encodeURIComponent(word)}`);
-                detail.innerHTML = data.found ? `<div class="lookup-result"><p>${this.escapeHtml(data.phonetic || '')}</p><strong>${this.escapeHtml((data.meanings || []).join('；'))}</strong><small>考频：${Number(data.frequency) || 0} / 5</small></div>` : '<div class="region-state region-state--empty"><strong>当前词库没有收录</strong><span>仍可使用浏览器英文语音听发音，并把它记进笔记稍后整理。</span></div>';
+                if (pronounce && data.found) pronounce.onclick = () => speakEnglish(word, {wordId: data.id, audioUrl: data.audio_url});
+            detail.innerHTML = data.found ? `<div class="lookup-result"><p>${this.escapeHtml(data.phonetic || '')}</p><strong>${this.escapeHtml((data.meanings || []).join('；'))}</strong><small>考频：${Number(data.frequency) || 0} / 5</small></div>` : '<div class="region-state region-state--empty"><strong>当前词库没有收录</strong><span>仍可使用设备英文语音听发音，并把它记进笔记稍后整理。</span></div>';
             } catch (error) { detail.innerHTML = `<div class="region-state region-state--error"><strong>查词失败</strong><span>${this.escapeHtml(error.message || '请稍后重试。')}</span></div>`; }
         },
 

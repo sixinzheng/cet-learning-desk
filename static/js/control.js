@@ -2,9 +2,52 @@
     const root = document.getElementById('control-app');
     if (!root) return;
     const $ = id => document.getElementById(id);
-    const state = { categories: [], notes: [], currentCategoryId: null, currentNoteId: null, aiCsrf: '', conversationId: null, aiAbort: null, color: '', attachments: [], skillSlug: '', currentSkill: null, rankIdentity: getRankChatIdentity(1, '童生'), rankPromise: null, noteOriginal: {title:'', content:'', color:''} };
+    const state = { categories: [], notes: [], currentCategoryId: null, currentNoteId: null, aiCsrf: '', conversationId: null, aiAbort: null, assistantLanguage: 'zh', scenarioKey: 'casual', scenes: [], color: '', attachments: [], skillSlug: '', currentSkill: null, rankIdentity: getRankChatIdentity(1, '童生'), rankPromise: null, noteOriginal: {title:'', content:'', color:''} };
 
     function escapeHtml(v) { return String(v == null ? '' : v).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+
+    function renderAssistantMode() {
+        root.querySelectorAll('[data-control-language]').forEach(button => {
+            button.setAttribute('aria-pressed', String(button.dataset.controlLanguage === state.assistantLanguage));
+        });
+        const english = state.assistantLanguage === 'en';
+        $('control-english-scenes').hidden = !english;
+        $('control-chat-input').placeholder = english
+            ? 'Ask anything, or start a scene…'
+            : '向 AI 提问…（可上传文本或图片，或让它整理进笔记）';
+        const select = $('control-scene-select');
+        if (select && state.scenes.length) {
+            select.innerHTML = state.scenes.map(scene => `<option value="${escapeHtml(scene.key)}">${escapeHtml(scene.label_zh)} · ${escapeHtml(scene.label_en)}</option>`).join('');
+            select.value = state.scenarioKey;
+        }
+    }
+
+    async function loadAssistantPreferences() {
+        try {
+            const preferences = await api('/api/ai/preferences');
+            state.aiCsrf = preferences.csrf_token || state.aiCsrf;
+            state.assistantLanguage = preferences.language === 'en' ? 'en' : 'zh';
+            state.scenes = preferences.scenes || [];
+            renderAssistantMode();
+        } catch (_) { renderAssistantMode(); }
+    }
+
+    async function switchAssistantLanguage(language) {
+        const next = language === 'en' ? 'en' : 'zh';
+        if (next === state.assistantLanguage) return;
+        if (state.aiAbort) state.aiAbort.abort();
+        root.querySelectorAll('[data-control-language]').forEach(button => { button.disabled = true; });
+        try {
+            if (!state.aiCsrf) await loadAssistantPreferences();
+            await api('/api/ai/preferences', {method:'PUT', headers:{'X-CSRF-Token':state.aiCsrf}, body:JSON.stringify({language:next})});
+            state.assistantLanguage = next;
+            state.scenarioKey = 'casual';
+            state.conversationId = null;
+            $('control-messages').innerHTML = `<div class="assistant-empty"><strong>${next === 'en' ? 'New English conversation' : '开始一段新对话'}</strong><p>${next === 'en' ? 'Pick a scene below, or just say hi—awkward small talk is optional. 🙂' : '语言已切换，旧对话保持原样。'}</p></div>`;
+            renderAssistantMode();
+        } catch (error) { showToast(error.message || '语言设置保存失败。', 'error'); }
+        finally { root.querySelectorAll('[data-control-language]').forEach(button => { button.disabled = false; }); }
+    }
 
     async function loadCategories() {
         try {
@@ -207,22 +250,23 @@
         let attachments = options.attachments ? options.attachments.slice() : [];
         if (!options.attachments && state.articleContext) attachments.push({ name: '文章《' + state.articleContext.title + '》', text: state.articleContext.content });
         if (!options.attachments) attachments = attachments.concat(state.attachments.slice());
-        if (!message && !attachments.length) return;
+        if (!message && !attachments.length && !options.start_scene) return;
         const input = $('control-chat-input'), button = $('control-chat-form').querySelector('button[type="submit"]');
         const visibleAttachmentNames = attachments.map(item => item.name).filter(Boolean).join('、');
-        if (options.showUser !== false) appendMessage('user', message || (visibleAttachmentNames ? `请分析：${visibleAttachmentNames}` : '(附件)'));
+        if (options.showUser !== false && !options.start_scene) appendMessage('user', message || (visibleAttachmentNames ? `请分析：${visibleAttachmentNames}` : '(附件)'));
         input.value = '';
         const node = appendMessage('assistant', '');
         state.aiAbort = new AbortController();
-        button.disabled = false; button.textContent = '停止生成';
+        button.disabled = false; button.textContent = state.assistantLanguage === 'en' ? 'Stop' : '停止生成';
         const writer = createAITypewriter(node.copy, {onUpdate: () => { node.article.parentElement.scrollTop = node.article.parentElement.scrollHeight; }});
         try {
             const status = await api('/api/ai/config/status');
             state.aiCsrf = status.csrf_token;
-            const resp = await fetch('/api/ai/chat', { method: 'POST', headers: { 'Content-Type': 'application/json', 'X-CSRF-Token': state.aiCsrf }, body: JSON.stringify({ message, attachments, conversation_id: state.conversationId, skill_slug: state.skillSlug }), signal: state.aiAbort.signal });
+            const resp = await fetch('/api/ai/chat', { method: 'POST', headers: { 'Content-Type': 'application/json', 'X-CSRF-Token': state.aiCsrf }, body: JSON.stringify({ message, attachments, conversation_id: state.conversationId, skill_slug: state.skillSlug, language: state.assistantLanguage, scenario_key: options.scenario_key || state.scenarioKey, start_scene: Boolean(options.start_scene) }), signal: state.aiAbort.signal });
             if (!resp.ok) { const e = await resp.json().catch(() => ({})); throw new Error(e.error || 'AI 请求失败。'); }
             const result = await consumeAIStream(resp, {onDelta: text => writer.append(text), onDone: data => writer.finish(data.message)});
             state.conversationId = result.conversation_id;
+            state.scenarioKey = result.scenario_key || state.scenarioKey;
             state.attachments = []; renderAttachments();
             await writer.finish(result.message); renderSafeMarkdown(node.copy, result.message); decorateStreamedAssistant(node, result);
         } catch (e) {
@@ -232,7 +276,7 @@
                 if (!node.copy.textContent) node.copy.textContent = e.message || '这次没有连接上 AI。';
                 addChatRetry(node, message, attachments);
             }
-        } finally { state.aiAbort = null; button.disabled = false; button.textContent = '发送'; input.focus(); }
+        } finally { state.aiAbort = null; button.disabled = false; button.textContent = state.assistantLanguage === 'en' ? 'Send' : '发送'; input.focus(); }
     }
 
     function isNoteDirty() {
@@ -247,6 +291,13 @@
     $('note-save').addEventListener('click', saveNote);
     $('note-delete').addEventListener('click', deleteNote);
     $('control-chat-form').addEventListener('submit', e => { e.preventDefault(); if (state.aiAbort) { state.aiAbort.abort(); return; } sendChat($('control-chat-input').value.trim()); });
+    root.querySelectorAll('[data-control-language]').forEach(button => button.addEventListener('click', () => switchAssistantLanguage(button.dataset.controlLanguage)));
+    $('control-scene-start').addEventListener('click', () => {
+        state.scenarioKey = $('control-scene-select').value || 'casual';
+        state.conversationId = null;
+        $('control-messages').innerHTML = '';
+        sendChat('', {showUser:false, start_scene:true, scenario_key:state.scenarioKey});
+    });
     $('control-attach').addEventListener('click', () => $('control-file').click());
     $('control-file').addEventListener('change', e => { handleFile(e.target.files[0]); e.target.value = ''; });
     $('note-title').addEventListener('input', updateNoteState); $('note-content').addEventListener('input', updateNoteState);
@@ -363,6 +414,6 @@
     });
 
     state.rankPromise = loadRankIdentity();
-    loadCategories(); loadNotes(); loadArticleContext(); loadSkillContext();
+    loadCategories(); loadNotes(); loadArticleContext(); loadSkillContext(); loadAssistantPreferences();
     setRegionState(root, 'ready');
 })();

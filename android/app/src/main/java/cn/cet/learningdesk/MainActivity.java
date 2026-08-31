@@ -13,9 +13,11 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.speech.tts.TextToSpeech;
 import android.util.Log;
 import android.view.View;
 import android.webkit.CookieManager;
+import android.webkit.JavascriptInterface;
 import android.webkit.PermissionRequest;
 import android.webkit.ValueCallback;
 import android.webkit.WebChromeClient;
@@ -51,7 +53,7 @@ import java.util.concurrent.Executors;
 
 public class MainActivity extends Activity {
     private static final String TAG = "CETLearningDesk";
-    private static final String RESOURCE_VERSION = BuildConfig.VERSION_NAME;
+    private static final String RESOURCE_VERSION = BuildConfig.VERSION_NAME + "-resources-2";
     private static final String UPDATE_MANIFEST_URL = "https://github.com/sixinzheng/cet-learning-desk/releases/latest/download/android-latest.json";
     private static final long MAX_APK_BYTES = 250L * 1024L * 1024L;
     private static final int UPDATE_PERMISSION_REQUEST = 4103;
@@ -64,6 +66,8 @@ public class MainActivity extends Activity {
     private PermissionRequest pendingAudioPermission;
     private String backendBaseUrl;
     private File pendingUpdateApk;
+    private TextToSpeech nativeSpeech;
+    private volatile boolean nativeSpeechReady = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,6 +76,7 @@ public class MainActivity extends Activity {
         getWindow().setNavigationBarColor(Color.rgb(245, 240, 231));
         SecureStore.init(this);
         configureWebView();
+        configureNativeSpeech();
         showLoading();
         backendExecutor.execute(this::startBackend);
     }
@@ -90,6 +95,7 @@ public class MainActivity extends Activity {
         settings.setMediaPlaybackRequiresUserGesture(true);
         settings.setMixedContentMode(WebSettings.MIXED_CONTENT_NEVER_ALLOW);
         settings.setUserAgentString(settings.getUserAgentString() + " CETLearningDeskAndroid/" + BuildConfig.VERSION_NAME);
+        webView.addJavascriptInterface(new NativeSpeechBridge(), "CETNativeSpeech");
         CookieManager.getInstance().setAcceptCookie(true);
 
         webView.setWebViewClient(new WebViewClient() {
@@ -166,6 +172,40 @@ public class MainActivity extends Activity {
                 }
             }
         });
+    }
+
+    private void configureNativeSpeech() {
+        nativeSpeech = new TextToSpeech(this, status -> {
+            nativeSpeechReady = status == TextToSpeech.SUCCESS;
+            if (nativeSpeechReady) {
+                int languageResult = nativeSpeech.setLanguage(Locale.US);
+                nativeSpeechReady = languageResult != TextToSpeech.LANG_MISSING_DATA
+                        && languageResult != TextToSpeech.LANG_NOT_SUPPORTED;
+            }
+        });
+    }
+
+    private final class NativeSpeechBridge {
+        @JavascriptInterface
+        public boolean speak(String text, double rate) {
+            if (!nativeSpeechReady || nativeSpeech == null || text == null || text.trim().isEmpty()) {
+                return false;
+            }
+            final String safeText = text.length() > 6000 ? text.substring(0, 6000) : text;
+            final float safeRate = (float) Math.max(0.5, Math.min(1.5, rate));
+            runOnUiThread(() -> {
+                nativeSpeech.stop();
+                nativeSpeech.setLanguage(Locale.US);
+                nativeSpeech.setSpeechRate(safeRate);
+                nativeSpeech.speak(safeText, TextToSpeech.QUEUE_FLUSH, null, "cet-native-speech");
+            });
+            return true;
+        }
+
+        @JavascriptInterface
+        public void stop() {
+            if (nativeSpeech != null) runOnUiThread(() -> nativeSpeech.stop());
+        }
     }
 
     private void showLoading() {
@@ -589,11 +629,21 @@ public class MainActivity extends Activity {
 
     @Override
     public void onBackPressed() {
-        if (webView != null && webView.canGoBack()) {
-            webView.goBack();
-        } else {
+        if (webView == null) {
             super.onBackPressed();
+            return;
         }
+        webView.evaluateJavascript(
+                "window.CETHandleNativeBack&&window.CETHandleNativeBack()?'handled':'unhandled'",
+                value -> {
+                    if ("\"handled\"".equals(value)) return;
+                    performDefaultBack();
+                });
+    }
+
+    private void performDefaultBack() {
+        if (webView != null && webView.canGoBack()) webView.goBack();
+        else super.onBackPressed();
     }
 
     @Override
@@ -601,6 +651,11 @@ public class MainActivity extends Activity {
         if (webView != null) {
             webView.stopLoading();
             webView.destroy();
+        }
+        if (nativeSpeech != null) {
+            nativeSpeech.stop();
+            nativeSpeech.shutdown();
+            nativeSpeech = null;
         }
         backendExecutor.shutdownNow();
         super.onDestroy();

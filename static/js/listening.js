@@ -37,18 +37,15 @@
     function shuffled(items) { return [...items].sort(() => Math.random() - .5); }
     function speak(text) {
         if (!text) return;
-        if (!('speechSynthesis' in window)) {
-            showToast('当前浏览器不支持语音朗读，请更换 Chrome 或 Edge。', 'warning');
-            return;
-        }
-        speechSynthesis.cancel();
-        const utterance = new SpeechSynthesisUtterance(text.replace(/^[A-Z]:\s*/gm, ''));
-        utterance.lang = 'en-US';
-        utterance.rate = state.layer === 'word' ? .78 : .9;
-        utterance.onstart = () => { $('listen-playback-state').textContent = '正在播放'; };
-        utterance.onend = () => { $('listen-playback-state').textContent = '播放结束，可以作答或重新播放'; };
-        utterance.onerror = () => { $('listen-playback-state').textContent = '播放失败，请重新播放'; };
-        speechSynthesis.speak(utterance);
+        const item = state.items[state.index] || {};
+        speakEnglish(text.replace(/^[A-Z]:\s*/gm, ''), {
+            wordId: state.layer === 'word' ? item.id : null,
+            audioUrl: item.audio_url,
+            rate: state.layer === 'word' ? .78 : .9,
+            onStart: () => { $('listen-playback-state').textContent = '正在播放'; },
+            onEnd: () => { $('listen-playback-state').textContent = '播放结束，可以作答或重新播放'; },
+            onError: () => { $('listen-playback-state').textContent = '播放失败，请重新播放'; },
+        });
     }
     function currentAudioText() {
         const item = state.items[state.index] || {};

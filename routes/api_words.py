@@ -1,6 +1,8 @@
-from flask import Blueprint, jsonify, request
+from flask import Blueprint, jsonify, request, send_file
+import io
 from models.word import Word
 from database import get_db
+from services.pronunciation_service import audio_url, read_word_audio, PronunciationUnavailable
 import json
 
 bp = Blueprint('words', __name__)
@@ -20,6 +22,7 @@ def search():
             'part_of_speech': w['part_of_speech'], 'meanings': w['meanings'],
             'frequency': w['frequency'],
             'status': uw['status'] if uw else '陌生',
+            'audio_url': audio_url(w['id']),
         })
     return jsonify({'words': words})
 
@@ -29,7 +32,33 @@ def word_detail(word_id):
     detail = Word.get_detail(word_id)
     if not detail:
         return jsonify({'error': '单词不存在'}), 404
+    detail = dict(detail)
+    detail['audio_url'] = audio_url(word_id)
     return jsonify(detail)
+
+
+@bp.route('/<int:word_id>/audio')
+def word_audio(word_id):
+    """Return a packaged MP3 by internal word id; never expose archive paths."""
+    db = get_db()
+    exists = db.execute("SELECT 1 FROM words WHERE id=?", (word_id,)).fetchone()
+    db.close()
+    if not exists:
+        return jsonify({'error': '单词不存在'}), 404
+    try:
+        data, etag = read_word_audio(word_id)
+    except PronunciationUnavailable as exc:
+        return jsonify({'error': str(exc), 'fallback': True}), 404
+    response = send_file(
+        io.BytesIO(data),
+        mimetype='audio/mpeg',
+        conditional=True,
+        etag=etag,
+        max_age=31536000,
+        download_name=f'word-{word_id}.mp3',
+    )
+    response.headers['Cache-Control'] = 'public, max-age=31536000, immutable'
+    return response
 
 
 @bp.route('/word/<int:word_id>/status', methods=['PUT'])
@@ -130,6 +159,7 @@ def favorite():
             'id': w['id'], 'word': w['word'], 'phonetic': w['phonetic'],
             'part_of_speech': w['part_of_speech'], 'meanings': w['meanings'],
             'frequency': w['frequency'], 'status': w['status'] or '陌生',
+            'audio_url': audio_url(w['id']),
         } for w in words]
         db.close()
         return jsonify({'favorite_book_id': fav, 'favorite_count': len(result), 'words': result})
@@ -240,5 +270,6 @@ def wordbook_words(book_id):
             'status': w['status'] or '陌生',
             'review_count': w['review_count'] or 0,
             'next_review': w['next_review'],
+            'audio_url': audio_url(w['id']),
         })
     return jsonify({'words': words})

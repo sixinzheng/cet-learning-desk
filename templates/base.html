@@ -46,6 +46,22 @@
         <a href="/profile" class="mobile-nav__item" data-nav="profile"><span aria-hidden="true">我</span><b>我的</b></a>
     </nav>
 
+    <div class="modal-overlay welcome-overlay" id="welcome-overlay" hidden>
+        <section class="welcome-dialog" role="dialog" aria-modal="true" aria-labelledby="welcome-title" tabindex="-1">
+            <p class="eyebrow">WELCOME / 初次见面</p>
+            <h2 id="welcome-title">欢迎来到四六级学习台</h2>
+            <p>从今天的词汇任务开始，把背词、专项训练、科举段位和 AI 助理连接成一条看得见的成长路径。</p>
+            <div class="welcome-route" aria-label="首次使用建议">
+                <span>约 1 分钟</span><strong>认识三个核心入口</strong><small>今日词汇任务 · AI 学习助理 · 六维科举段位</small>
+            </div>
+            <div class="welcome-actions">
+                <button class="btn btn-primary" id="welcome-start-guide" type="button">查看新手指引</button>
+                <button class="btn btn-secondary" id="welcome-skip-guide" type="button">先开始使用</button>
+            </div>
+            <small>跳过不会关闭任何功能；以后可在“我的 → 新手指引”再次查看。</small>
+        </section>
+    </div>
+
     <div class="modal-overlay onboarding-overlay" id="onboarding-overlay" hidden>
         <section class="onboarding-dialog" role="dialog" aria-modal="true" aria-labelledby="onboarding-title" tabindex="-1">
             <aside class="onboarding-rail" aria-label="引导进度">
@@ -78,7 +94,7 @@
                         <article><span>助理</span><div><strong>AI 学习助理</strong><p>快速问答、检索笔记、作文识别与批改都从真实学习上下文出发。</p></div></article>
                         <article><span>成长</span><div><strong>科举十级段位</strong><p>童生到状元不是打卡称号，而是由六维训练证据共同支撑。</p></div></article>
                     </div>
-                    <p class="onboarding-note">完成引导约需 1 分钟，所有设置以后都能在“我的”中修改。</p>
+                    <p class="onboarding-note">完成引导约需 1 分钟；以后可在“我的 → 新手指引”再次查看。</p>
                 </div>
 
                 <div class="onboarding-panel" data-onboarding-panel="1" hidden>
@@ -133,7 +149,7 @@
                         <li><strong>作文识别与批改</strong><span>可识别上传的英文作文图片，先让你确认文字，再进入正式批改。</span></li>
                         <li><strong>阅读与题库辅助</strong><span>按本站规则生成练习；调用次数、Token 与本站追踪费用会进入成长账单。</span></li>
                     </ul>
-                    <div class="onboarding-ready"><strong>准备好了</strong><p>完成后回到当前页面。建议先从首页的今日词汇任务开始。</p></div>
+                    <div class="onboarding-ready"><strong>准备好了</strong><p>完成后回到当前页面。建议先从首页的今日词汇任务开始；以后可在“我的 → 新手指引”再次查看本教程。</p></div>
                 </div>
 
                 <footer class="onboarding-actions">

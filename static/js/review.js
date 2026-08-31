@@ -204,11 +204,7 @@ function reviewApp() {
             if (this.listenAnswer < 0) this.listenAnswer = 0;
         },
         playAudio() {
-            if (!window.speechSynthesis) { showToast('浏览器不支持语音合成', 'error'); return; }
-            window.speechSynthesis.cancel();
-            const utter = new SpeechSynthesisUtterance(this.current.word);
-            utter.lang = 'en-US'; utter.rate = 0.85;
-            window.speechSynthesis.speak(utter);
+            speakEnglish(this.current.word, {wordId: this.current.word_id, audioUrl: this.current.audio_url, rate: .85});
             this.audioPlayed = true;
         },
         answerListening(idx) {

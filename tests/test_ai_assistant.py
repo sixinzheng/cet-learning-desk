@@ -179,6 +179,23 @@ class AIAssistantContractTests(unittest.TestCase):
         self.assertEqual(conversation['scenario_key'], 'travel')
         self.assertEqual(roles, ['assistant'])
 
+    def test_control_skill_chat_can_follow_global_english_mode(self):
+        config.save_api_key('test-english-skill')
+        stream_result = iter([
+            {'type': 'done', 'content': 'Let’s sharpen that rule. ✍️', 'usage': {}, 'model': 'deepseek-v4-flash'},
+        ])
+        with mock.patch('routes.api_ai.stream_deepseek', return_value=stream_result) as model:
+            response = self.client.post(
+                '/api/ai/chat',
+                json={'message': 'Help me refine this.', 'language': 'en', 'skill_slug': 'reading-curator'},
+                headers={'X-CSRF-Token': self.csrf()},
+            )
+        self.assertEqual(response.status_code, 200)
+        self.assertIn('"language": "en"', response.get_data(as_text=True))
+        system_prompt = model.call_args.args[0][0]['content']
+        self.assertIn('English Conversation Companion', system_prompt)
+        self.assertIn('Skill', system_prompt)
+
     def test_chat_sends_only_the_latest_six_rounds_of_context(self):
         config.save_api_key('test-context-window')
         db = database.get_db()

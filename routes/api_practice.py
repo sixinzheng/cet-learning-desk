@@ -1,9 +1,10 @@
 """专项整轮结算与听说内容接口。"""
 
+import io
 import json
 import uuid
 
-from flask import Blueprint, jsonify, request
+from flask import Blueprint, jsonify, request, send_file
 
 from database import get_db
 from services.difficulty_service import get_training_difficulty
@@ -12,6 +13,7 @@ from services.practice_service import (
     record_practice_session,
 )
 from services.review_service import get_listening_review_candidates
+from services.pronunciation_service import PronunciationUnavailable, read_listening_audio
 
 bp = Blueprint('practice', __name__)
 
@@ -102,6 +104,7 @@ def listening_content():
         for row in rows:
             item = dict(row)
             item['options'] = json.loads(item.pop('options_json') or '[]')
+            item['audio_url'] = f'/api/practice/listening/scenarios/{int(item["id"])}/audio'
             result.append(item)
     elif layer == 'sentence':
         candidates = get_listening_review_candidates(60)
@@ -119,6 +122,7 @@ def listening_content():
             item['meaning'] = item.pop('translation')
             item['difficulty'] = max(1, min(6, 6 - int(item.get('frequency') or 3)))
             item['priority_reason'] = candidate.get('priority_reason')
+            item['audio_url'] = f'/api/practice/listening/sentences/{int(item["id"])}/audio'
             result.append(item)
             if len(result) >= 20:
                 break
@@ -129,11 +133,34 @@ def listening_content():
         for row in rows:
             item = dict(row)
             item['id'] = item.get('word_id') or item.get('id')
+            item['audio_url'] = f'/api/words/{int(item["id"])}/audio'
             item['difficulty'] = max(1, min(6, 6 - int(item.get('frequency') or 3)))
             result.append(item)
         selection_basis = '本轮优先复习到期词，其次补充近期答错和长期未复习词'
     db.close()
     return jsonify({'layer': layer, 'items': result, 'selection_basis': selection_basis})
+
+
+@bp.get('/listening/<category>/<int:item_id>/audio')
+def listening_audio(category, item_id):
+    table = 'sentences' if category == 'sentences' else 'listening_scenarios' if category == 'scenarios' else ''
+    if not table:
+        return jsonify({'error': '听力发音分类无效'}), 404
+    db = get_db()
+    exists = db.execute(f'SELECT 1 FROM {table} WHERE id=?', (item_id,)).fetchone()
+    db.close()
+    if not exists:
+        return jsonify({'error': '听力材料不存在'}), 404
+    try:
+        data, etag = read_listening_audio(category, item_id)
+    except PronunciationUnavailable as exc:
+        return jsonify({'error': str(exc), 'fallback': True}), 404
+    response = send_file(
+        io.BytesIO(data), mimetype='audio/mpeg', conditional=True,
+        etag=etag, max_age=31536000, download_name=f'{category}-{item_id}.mp3',
+    )
+    response.headers['Cache-Control'] = 'public, max-age=31536000, immutable'
+    return response
 
 
 @bp.post('/listening/complete')

@@ -26,25 +26,69 @@ function showToast(message, type = 'info') {
     }, 2800);
 }
 
+let activeEnglishAudio = null;
+
 function speakEnglish(text, options = {}) {
     const value = String(text || '').trim();
     if (!value) return false;
-    if (!('speechSynthesis' in window) || !('SpeechSynthesisUtterance' in window)) {
-        showToast('当前浏览器不支持英文发音，请使用最新版 Chrome 或 Edge。', 'warning');
-        return false;
+    let fallbackStarted = false;
+    const fallback = () => {
+        if (fallbackStarted) return false;
+        fallbackStarted = true;
+        if (window.CETNativeSpeech && typeof window.CETNativeSpeech.speak === 'function') {
+            try {
+                const accepted = window.CETNativeSpeech.speak(value, Number(options.rate) || 0.88);
+                if (accepted !== false) {
+                    options.onStart?.();
+                    return true;
+                }
+            } catch (_) {}
+        }
+        if (!('speechSynthesis' in window) || !('SpeechSynthesisUtterance' in window)) {
+            showToast('本站离线发音暂不可用，请检查资源包或更新应用。', 'warning');
+            options.onError?.();
+            return false;
+        }
+        window.speechSynthesis.cancel();
+        const utterance = new SpeechSynthesisUtterance(value);
+        utterance.lang = options.lang || 'en-US';
+        utterance.rate = Number(options.rate) || 0.88;
+        utterance.pitch = Number(options.pitch) || 1;
+        const voices = window.speechSynthesis.getVoices();
+        const voice = voices.find(item => item.lang === utterance.lang)
+            || voices.find(item => /^en[-_]/i.test(item.lang || ''));
+        if (voice) utterance.voice = voice;
+        utterance.onstart = () => options.onStart?.();
+        utterance.onend = () => options.onEnd?.();
+        utterance.onerror = () => {
+            options.onError?.();
+            showToast('发音播放失败，请检查设备的语音服务。', 'error');
+        };
+        window.speechSynthesis.speak(utterance);
+        return true;
+    };
+
+    const audioUrl = options.audioUrl || (options.wordId ? `/api/words/${Number(options.wordId)}/audio` : '');
+    if (audioUrl) {
+        try {
+            if (activeEnglishAudio) {
+                activeEnglishAudio.pause();
+                activeEnglishAudio.src = '';
+            }
+            const audio = new Audio(audioUrl);
+            activeEnglishAudio = audio;
+            audio.preload = 'auto';
+            audio.onplay = () => options.onStart?.();
+            audio.onended = () => { if (activeEnglishAudio === audio) activeEnglishAudio = null; options.onEnd?.(); };
+            audio.onerror = () => { if (activeEnglishAudio === audio) activeEnglishAudio = null; fallback(); };
+            const started = audio.play();
+            if (started && typeof started.catch === 'function') started.catch(() => fallback());
+            return true;
+        } catch (_) {
+            return fallback();
+        }
     }
-    window.speechSynthesis.cancel();
-    const utterance = new SpeechSynthesisUtterance(value);
-    utterance.lang = options.lang || 'en-US';
-    utterance.rate = Number(options.rate) || 0.88;
-    utterance.pitch = Number(options.pitch) || 1;
-    const voices = window.speechSynthesis.getVoices();
-    const voice = voices.find(item => item.lang === utterance.lang)
-        || voices.find(item => /^en[-_]/i.test(item.lang || ''));
-    if (voice) utterance.voice = voice;
-    utterance.onerror = () => showToast('发音播放失败，请检查浏览器语音服务。', 'error');
-    window.speechSynthesis.speak(utterance);
-    return true;
+    return fallback();
 }
 
 function setRegionState(element, state, message = '') {

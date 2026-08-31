@@ -443,8 +443,6 @@ def chat():
         if not selected_skill['enabled']:
             return jsonify({'error': f'“{selected_skill["display_name"]}”Skill 已关闭。'}), 409
     requested_language = str(payload.get('language', 'zh')).strip().lower()
-    if skill_slug:
-        requested_language = 'zh'  # Skill 控制台保留原有中文工作流，不跟随陪聊偏好。
     if requested_language not in ASSISTANT_LANGUAGES:
         requested_language = 'zh'
     requested_scene = _scene(str(payload.get('scenario_key', 'casual')))['key']
@@ -547,6 +545,7 @@ def chat():
                     'use it only to tune text difficulty and never to infer speaking ability or change rank. '
                     'If note matches are supplied, preserve their dates and original excerpts. Never claim to have modified data.\n\n'
                     + companion_prompt
+                    + skill_context
                     + '\n\nVerified site context:\n' + json.dumps(context, ensure_ascii=False)
                 )
                 chinese_rescue = bool(re.search(r'(中文解释|用中文|in chinese|chinese explanation)', lowered))

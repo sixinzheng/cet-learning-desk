@@ -15,6 +15,10 @@ fs.mkdirSync(artifactDir, { recursive: true });
 async function inspect(page, name, url, viewport, selector) {
   await page.setViewportSize(viewport);
   await page.goto(`${baseUrl}${url}`, { waitUntil: 'networkidle' });
+  if (await page.locator('#welcome-overlay').isVisible()) {
+    await page.locator('#welcome-skip-guide').click();
+    await page.locator('#welcome-overlay').waitFor({state: 'hidden'});
+  }
   await page.waitForSelector(selector, { state: 'visible' });
   await page.waitForFunction((target) => {
     const image = document.querySelector(target);
@@ -32,6 +36,9 @@ async function inspect(page, name, url, viewport, selector) {
       naturalHeight: image.naturalHeight,
       renderedWidth: Math.round(rect.width),
       renderedHeight: Math.round(rect.height),
+      className: image.className,
+      opacity: getComputedStyle(image).opacity,
+      transform: getComputedStyle(image).transform,
       overflowX: root.scrollWidth - root.clientWidth,
     };
   }, selector);
@@ -46,6 +53,9 @@ async function inspect(page, name, url, viewport, selector) {
   await page.screenshot({
     path: path.join(artifactDir, `${name}.png`),
     fullPage: true,
+  });
+  await page.locator(selector).locator('xpath=..').screenshot({
+    path: path.join(artifactDir, `${name}-portrait.png`),
   });
   return result;
 }
@@ -64,6 +74,25 @@ async function inspect(page, name, url, viewport, selector) {
   results.homeMobile = await inspect(page, 'home-mobile', '/', { width: 390, height: 844 }, '#rank-portrait-home');
   results.growthDesktop = await inspect(page, 'growth-desktop', '/growth', { width: 1440, height: 900 }, '#g-rank-portrait');
   results.growthMobile = await inspect(page, 'growth-mobile', '/growth', { width: 390, height: 844 }, '#g-rank-portrait');
+
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto(`${baseUrl}/`, { waitUntil: 'networkidle' });
+  if (await page.locator('#welcome-overlay').isVisible()) await page.locator('#welcome-skip-guide').click();
+  results.allHomeRanks = [];
+  for (let rank = 1; rank <= 10; rank += 1) {
+    const state = await page.evaluate(async (nextRank) => {
+      const image = document.getElementById('rank-portrait-home');
+      setRankPortrait(image, nextRank);
+      if (!image.complete) await new Promise(resolve => image.addEventListener('load', resolve, {once:true}));
+      await new Promise(resolve => setTimeout(resolve, 360));
+      return {rank: nextRank, src: image.getAttribute('src'), naturalWidth: image.naturalWidth, opacity: getComputedStyle(image).opacity};
+    }, rank);
+    if (!state.src.includes(`rank-${String(rank).padStart(2, '0')}-`) || state.naturalWidth < 100 || state.opacity !== '1') {
+      throw new Error(`home rank ${rank} portrait failed`);
+    }
+    await page.locator('#rank-figure').screenshot({path:path.join(artifactDir, `home-mobile-rank-${rank}.png`)});
+    results.allHomeRanks.push(state);
+  }
 
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(`${baseUrl}/growth`, { waitUntil: 'networkidle' });

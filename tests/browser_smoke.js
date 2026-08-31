@@ -1,4 +1,6 @@
-const { chromium } = require('playwright');
+let chromium;
+try { ({ chromium } = require('playwright')); }
+catch (_) { ({ chromium } = require('C:\\Users\\Lenovo\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\node_modules\\playwright')); }
 const fs = require('fs');
 const path = require('path');
 
@@ -8,7 +10,7 @@ const path = require('path');
   fs.mkdirSync(output, { recursive: true });
   const browser = await chromium.launch({ channel: 'msedge', headless: true, args: ['--disable-gpu'] });
   const routeFilter = (process.env.ROUTES || '').split(',').map(value => value.trim()).filter(Boolean);
-  const pages = ['/', '/learn', '/growth', '/profile', '/study', '/review', '/reading', '/listening', '/grammar', '/writing', '/notes', '/export']
+  const pages = ['/', '/learn', '/growth', '/profile', '/control', '/study', '/review', '/reading', '/listening', '/cloze', '/writing', '/notes', '/export']
     .filter(route => !routeFilter.length || routeFilter.includes(route));
   const viewportFilter = (process.env.VIEWPORTS || '').split(',').map(value => value.trim()).filter(Boolean);
   const viewports = [
@@ -65,7 +67,7 @@ const path = require('path');
         };
       });
       const slug = route === '/' ? 'home' : route.slice(1);
-      if (['home', 'growth', 'profile', 'study', 'grammar', 'notes'].includes(slug)) {
+      if (['home', 'growth', 'profile', 'control', 'study', 'cloze', 'notes'].includes(slug)) {
         await page.screenshot({ path: path.join(output, `${slug}-${viewport.name}.png`), fullPage: true });
       }
       results.push({ route, viewport: viewport.name, status: response?.status(), ...metrics, errors });

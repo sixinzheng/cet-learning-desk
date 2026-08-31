@@ -5,9 +5,9 @@
     <header class="page-heading"><div><p class="eyebrow">LOCAL SETTINGS / 我的</p><h1>工具、能力与本地服务</h1><p>在这里管理学习工具、AI 能力、本地数据与完整词书目录。</p></div><a class="btn btn-secondary" href="/growth">查看段位档案</a></header>
     <div data-region-status class="region-state region-state--loading">正在读取本地设置…</div>
     <div class="settings-layout">
-        <nav class="settings-index" aria-label="设置目录"><a href="#tools">学习工具</a><a href="#skills">AI Skills</a><a href="#services">AI 服务</a><a href="#local-data">本地数据</a><a href="#wordbooks">词库</a><a href="#updates">安全更新</a><a href="#support">支持作者</a></nav>
+        <nav class="settings-index" aria-label="设置目录"><a href="#tools">学习工具</a><a href="#skills">AI Skills</a><a href="#services">AI 服务</a><a href="#local-data">本地数据</a><a href="#wordbooks">词库</a><a href="#updates">安全更新</a><a href="#onboarding-help">新手指引</a><a href="#support">支持作者</a></nav>
         <div class="settings-content">
-            <section id="tools" class="settings-section"><div><p class="eyebrow">TOOLS</p><h2>学习工具</h2><p>笔记用于复盘，导出用于生成可打印练习。</p></div><div class="tool-links"><a href="/notes"><b>学习笔记</b><span>查看、编辑与整理历史笔记</span></a><a href="/export"><b>打印导出</b><span>选择阅读题生成 Word 文件</span></a><button id="open-onboarding" class="tool-link-button" type="button"><b>重新查看新手指引</b><span>了解基本功能、AI 配置和六维段位</span></button></div></section>
+            <section id="tools" class="settings-section"><div><p class="eyebrow">TOOLS</p><h2>学习工具</h2><p>笔记用于复盘，导出用于生成可打印练习。</p></div><div class="tool-links"><a href="/notes"><b>学习笔记</b><span>查看、编辑与整理历史笔记</span></a><a href="/export"><b>打印导出</b><span>选择阅读题生成 Word 文件</span></a></div></section>
             <details id="skills" class="settings-section settings-section--skills settings-disclosure">
                 <summary aria-expanded="false"><span><span class="eyebrow">SKILL MANAGER</span><strong>AI Skills</strong><small id="skill-summary-count">正在读取能力目录…</small></span><span class="settings-disclosure__action"><span>展开管理</span><span>收起目录</span></span></summary>
                 <div class="settings-disclosure__body settings-disclosure__body--skills">
@@ -52,6 +52,10 @@
                     <div class="update-actions"><button id="update-check" class="btn btn-primary" type="button">检查安全更新</button><a id="update-release-link" class="btn btn-secondary" href="https://github.com/sixinzheng/cet-learning-desk/releases" target="_blank" rel="noopener noreferrer" hidden>打开 GitHub Release</a></div>
                     <p class="field-help">更新前备份保存在本机数据目录，校验通过后才会进入系统安装；最多保留最近 3 份。</p>
                 </div>
+            </section>
+            <section id="onboarding-help" class="settings-section settings-section--onboarding">
+                <div><p class="eyebrow">GETTING STARTED</p><h2>新手指引</h2><p>重新查看首页任务、DeepSeek 配置、六维段位和学习助理的基本用法。</p></div>
+                <div class="onboarding-help-panel"><p>第一次打开时可以跳过；需要时随时回到这里，不会重置学习数据或再次要求配置。</p><button id="open-onboarding" class="btn btn-secondary" type="button">重新查看新手指引</button></div>
             </section>
             <section id="support" class="settings-section settings-section--support">
                 <div><p class="eyebrow">SUPPORT</p><h2>支持一下作者</h2><p>如果这个学习台让你的备考更清楚、更有动力，可以自愿支持后续维护。</p></div>

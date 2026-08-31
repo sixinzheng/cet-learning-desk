@@ -102,10 +102,10 @@
         body.innerHTML = '<div class="wb-word-list">' + list.map(word => (
             '<div class="wb-word-row"><div class="wb-word-main"><span class="wb-word-en">' + escapeHtml(word.word) + '</span>' +
             (word.phonetic ? '<span class="wb-word-phonetic">' + escapeHtml(word.phonetic) + '</span>' : '') +
-            '<button class="pronounce-button wb-pronounce" type="button" data-pronounce="' + escapeHtml(word.word) + '" aria-label="播放 ' + escapeHtml(word.word) + ' 的发音">发音</button>' +
+            '<button class="pronounce-button wb-pronounce" type="button" data-pronounce="' + escapeHtml(word.word) + '" data-word-id="' + Number(word.id) + '" data-audio-url="' + escapeHtml(word.audio_url || '') + '" aria-label="播放 ' + escapeHtml(word.word) + ' 的发音">发音</button>' +
             '</div><div class="wb-word-detail"><p class="wb-word-meaning">' + escapeHtml(meaningOf(word)) + '</p></div>' + statusTag(word) + '</div>'
         )).join('') + '</div><p class="muted wb-count-note">共 ' + list.length + ' 词</p>';
-        body.querySelectorAll('[data-pronounce]').forEach(button => button.addEventListener('click', () => speakEnglish(button.dataset.pronounce)));
+        body.querySelectorAll('[data-pronounce]').forEach(button => button.addEventListener('click', () => speakEnglish(button.dataset.pronounce, {wordId: button.dataset.wordId, audioUrl: button.dataset.audioUrl})));
     }
 
     function renderStatus(status) {

@@ -54,6 +54,8 @@ jobs:
       - uses: dtolnay/rust-toolchain@stable
       - name: Install Python dependencies
         run: pip install -r requirements.txt
+      - name: Fetch verified offline pronunciation pack
+        run: python scripts/fetch_pronunciation_pack.py
       - name: Build signed Windows updater
         shell: pwsh
         run: |
@@ -104,6 +106,8 @@ jobs:
         shell: pwsh
         run: |
           & "$env:ANDROID_HOME\cmdline-tools\latest\bin\sdkmanager.bat" "platforms;android-36" "build-tools;36.0.0"
+      - name: Fetch verified offline pronunciation pack
+        run: python scripts/fetch_pronunciation_pack.py
       - name: Prepare Android resources
         shell: pwsh
         run: |

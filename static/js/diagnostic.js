@@ -73,11 +73,11 @@
         } finally { $('diagnostic-submit').disabled = false; }
     }
     function speakDialogue(item) {
-        if (!('speechSynthesis' in window)) return showToast('当前浏览器不支持语音朗读。', 'warning');
-        speechSynthesis.cancel(); const utterance = new SpeechSynthesisUtterance(item.script + '. ' + item.question); utterance.lang = 'en-US'; utterance.rate = .9;
-        utterance.onstart = () => showToast('正在播放第 ' + (state.content.dialogue.indexOf(item) + 1) + ' 段对话。', 'info');
-        utterance.onerror = () => showToast('播放失败，请重新播放。', 'error');
-        speechSynthesis.speak(utterance);
+        speakEnglish(item.script + '. ' + item.question, {
+            audioUrl: item.audio_url,
+            rate: .9,
+            onStart: () => showToast('正在播放第 ' + (state.content.dialogue.indexOf(item) + 1) + ' 段对话。', 'info'),
+        });
     }
     async function finish() {
         $('diagnostic-workspace').hidden = true;

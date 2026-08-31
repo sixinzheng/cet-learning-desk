@@ -13,13 +13,13 @@ const scenes = [
   ['travel','旅行出行','Travel'], ['campus','校园学习','Campus'],
   ['workplace','职场沟通','Workplace'], ['culture','兴趣文化','Culture & interests'],
   ['opinions','观点讨论','Opinions'],
-].map(([key,label,label_en]) => ({key,label,label_en}));
+].map(([key,label_zh,label_en]) => ({key,label_zh,label_en}));
 
 async function mockAssistant(page) {
   let language = 'zh';
   await page.addInitScript(() => {
     localStorage.removeItem('cet-ai-conversation');
-    localStorage.setItem('cet-onboarding-v1', JSON.stringify({version:1,status:'completed'}));
+    localStorage.setItem('cet-onboarding-v1', JSON.stringify({version:2,welcome_seen:true,status:'completed'}));
   });
   await page.route('**/api/ai/config/status', route => route.fulfill({json:{configured:false,csrf_token:'browser-test'}}));
   await page.route('**/api/ai/preferences', async route => {
@@ -77,6 +77,18 @@ async function checkDesktop(browser) {
   await page.locator('#home-english-scenes').waitFor({state:'hidden'});
   assert.equal((await page.locator('#ai-chat-title').innerText()).trim(), '带着你的数据，回答今天的问题');
 
+  await page.goto(`${baseUrl}/control`, {waitUntil:'domcontentloaded'});
+  await page.locator('#control-language-switch').waitFor();
+  await page.locator('[data-control-language="en"]').click();
+  await page.locator('#control-english-scenes').waitFor({state:'visible'});
+  assert.equal(await page.locator('#control-scene-select option').count(), 7);
+  await page.locator('#control-scene-select').selectOption('travel');
+  await page.locator('#control-scene-start').click();
+  await page.waitForFunction(() => [...document.querySelectorAll('.control-msg--assistant')].some(node => node.textContent.includes('explore nearby')));
+  assert.equal(await page.locator('.control-msg--user').count(), 0);
+  assert(!(await page.evaluate(() => document.documentElement.scrollWidth > document.documentElement.clientWidth)));
+  await page.screenshot({path:path.join(artifacts,'control-english-desktop.png')});
+
   await page.goto(`${baseUrl}/notes#assistant`, {waitUntil:'domcontentloaded'});
   await page.locator('#assistant').waitFor();
   await page.getByRole('button',{name:'English'}).click();
@@ -112,6 +124,17 @@ async function checkMobile(browser, width, height) {
   await page.locator('#notes-english-scenes').scrollIntoViewIfNeeded();
   await page.screenshot({path:path.join(artifacts,`notes-english-${width}.png`)});
   assert.deepEqual(errors, []);
+
+  if (width === 390) {
+    await page.goto(`${baseUrl}/control`, {waitUntil:'domcontentloaded'});
+    await page.locator('[data-control-language="en"]').tap();
+    await page.locator('#control-english-scenes').waitFor({state:'visible'});
+    assert.equal(await page.locator('#control-scene-select option').count(), 7);
+    const languageTarget = await page.locator('[data-control-language="en"]').boundingBox();
+    assert(languageTarget && languageTarget.height >= 44);
+    assert(!(await page.evaluate(() => document.documentElement.scrollWidth > document.documentElement.clientWidth)));
+    await page.screenshot({path:path.join(artifacts,'control-english-mobile.png')});
+  }
   await context.close();
 }
 

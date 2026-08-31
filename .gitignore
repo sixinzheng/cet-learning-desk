@@ -66,3 +66,6 @@ node_modules/
 Thumbs.db
 .idea/
 .vscode/
+# Build-only pronunciation artifacts
+.pronunciation-cache/
+resources/pronunciation/pronunciation-pack-v1.zip

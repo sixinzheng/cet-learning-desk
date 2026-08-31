@@ -178,12 +178,15 @@ class SafeUpdateTests(unittest.TestCase):
         self.assertEqual(caught.exception.code, "source_mode")
 
     def test_native_ticket_is_one_time_and_platform_scoped(self):
-        backup_path = Path(self.temp_dir.name) / "vocab-before-0.3.1-to-0.3.2.db"
+        # Keep the fixture ahead of APP_VERSION so a release version bump does not
+        # turn this native-ticket test into an "already current" status test.
+        future_version = "99.0.0"
+        backup_path = Path(self.temp_dir.name) / f"vocab-before-current-to-{future_version}.db"
         with mock.patch.object(update_service, "current_platform", return_value="windows"), mock.patch.object(
             update_service, "create_verified_backup", return_value=backup_path
         ):
             prepared = update_service.prepare_update(
-                http_get=lambda *args, **kwargs: FakeResponse(stable_release("0.3.2"))
+                http_get=lambda *args, **kwargs: FakeResponse(stable_release(future_version))
             )
         ticket = prepared["ticket"]
         self.assertFalse(update_service.validate_native_ticket(ticket, "android"))
@@ -193,7 +196,7 @@ class SafeUpdateTests(unittest.TestCase):
             update_service, "create_verified_backup", return_value=backup_path
         ):
             prepared = update_service.prepare_update(
-                http_get=lambda *args, **kwargs: FakeResponse(stable_release("0.3.2"))
+                http_get=lambda *args, **kwargs: FakeResponse(stable_release(future_version))
             )
         ticket = prepared["ticket"]
         self.assertTrue(update_service.validate_native_ticket(ticket, "windows"))

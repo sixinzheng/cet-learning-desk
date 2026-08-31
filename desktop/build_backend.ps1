@@ -27,6 +27,8 @@ $seedSource = if (Test-Path -LiteralPath $privateSource) { $privateSource } else
 if (-not (Test-Path -LiteralPath $seedSource)) {
     throw "No database source is available for the distribution seed"
 }
+& $Python (Join-Path $projectRoot "scripts\verify_pronunciation_pack.py") --database $seedSource
+if ($LASTEXITCODE -ne 0) { throw "Offline pronunciation pack is missing, incomplete, or too large" }
 & $Python (Join-Path $projectRoot "scripts\build_distribution_seed.py") --source $seedSource --output $distributionSource
 if ($LASTEXITCODE -ne 0) { throw "Failed to build distribution seed database" }
 

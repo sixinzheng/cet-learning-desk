@@ -14,6 +14,10 @@
     const keySave = document.getElementById('onboarding-key-save');
     const keyMessage = document.getElementById('onboarding-key-message');
     const aiState = document.getElementById('onboarding-ai-state');
+    const welcomeOverlay = document.getElementById('welcome-overlay');
+    const welcomeDialog = welcomeOverlay?.querySelector('.welcome-dialog');
+    const welcomeStart = document.getElementById('welcome-start-guide');
+    const welcomeSkip = document.getElementById('welcome-skip-guide');
     const guideOverlay = document.getElementById('deepseek-guide-overlay');
     const guideDialog = guideOverlay?.querySelector('.deepseek-guide-dialog');
     const guideOpen = document.getElementById('open-deepseek-guide');
@@ -34,6 +38,8 @@
     let opened = false;
     let guideStep = 0;
     let guideLastFocus = null;
+    let welcomeOpened = false;
+    let welcomeLastFocus = null;
     const guideSteps = [
         {
             title: '进入 DeepSeek 开放平台',
@@ -62,14 +68,41 @@
     ];
 
     function readState() {
-        try { return localStorage.getItem(storageKey); }
-        catch (_) { return window.__cetOnboardingSeen ? 'session' : ''; }
+        try {
+            const raw = localStorage.getItem(storageKey);
+            if (!raw) return null;
+            try { return JSON.parse(raw); }
+            catch (_) { return {version: 1, status: 'completed', migrated: true}; }
+        } catch (_) { return window.__cetOnboardingSeen ? {status: 'session'} : null; }
     }
 
     function saveState(status) {
-        const value = JSON.stringify({version: 1, status, saved_at: new Date().toISOString()});
+        const value = JSON.stringify({version: 2, welcome_seen: true, status, saved_at: new Date().toISOString()});
         try { localStorage.setItem(storageKey, value); }
         catch (_) { window.__cetOnboardingSeen = true; }
+    }
+
+    function welcomeFocusableElements() {
+        if (!welcomeDialog) return [];
+        return [...welcomeDialog.querySelectorAll('button:not([disabled]),a[href],[tabindex]:not([tabindex="-1"])')]
+            .filter(element => element.offsetParent !== null);
+    }
+
+    function openWelcome() {
+        if (!welcomeOverlay || !welcomeDialog || welcomeOpened) return;
+        welcomeOpened = true;
+        welcomeLastFocus = document.activeElement;
+        welcomeOverlay.hidden = false;
+        document.body.classList.add('has-modal-open');
+        requestAnimationFrame(() => welcomeDialog.focus({preventScroll: true}));
+    }
+
+    function closeWelcome(options = {}) {
+        if (!welcomeOpened || !welcomeOverlay) return;
+        welcomeOverlay.hidden = true;
+        welcomeOpened = false;
+        if (!options.keepBody) document.body.classList.remove('has-modal-open');
+        if (!options.keepFocus && welcomeLastFocus && document.contains(welcomeLastFocus)) welcomeLastFocus.focus();
     }
 
     function focusableElements() {
@@ -208,6 +241,29 @@
         showToast('已跳过，可随时在“我的”中重新查看。', 'info');
     });
 
+    welcomeStart?.addEventListener('click', () => {
+        saveState('started');
+        closeWelcome({keepBody: true, keepFocus: true});
+        open({step: 0});
+    });
+    welcomeSkip?.addEventListener('click', () => {
+        saveState('skipped');
+        closeWelcome();
+        showToast('已跳过；以后可在“我的 → 新手指引”重新查看。', 'info');
+    });
+    welcomeOverlay?.addEventListener('click', event => {
+        if (event.target === welcomeOverlay) welcomeSkip?.click();
+    });
+    welcomeOverlay?.addEventListener('keydown', event => {
+        if (event.key === 'Escape') { event.preventDefault(); welcomeSkip?.click(); return; }
+        if (event.key !== 'Tab') return;
+        const focusable = welcomeFocusableElements();
+        if (!focusable.length) return;
+        const first = focusable[0], last = focusable.at(-1);
+        if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+        else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+    });
+
     keyToggle.addEventListener('click', () => {
         const willShow = keyInput.type === 'password';
         keyInput.type = willShow ? 'text' : 'password';
@@ -287,12 +343,19 @@
         }
     });
 
-    window.CETOnboarding = {open, close};
+    window.CETOnboarding = {open, close, openWelcome};
+    window.CETHandleNativeBack = () => {
+        if (guideOverlay && !guideOverlay.hidden) { closeGuide(); return true; }
+        if (opened) { close('skipped'); return true; }
+        if (welcomeOpened) { welcomeSkip?.click(); return true; }
+        return false;
+    };
     document.addEventListener('cet:open-onboarding', () => open({step: 0}));
     document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('open-onboarding')?.addEventListener('click', () => open({step: 0}));
         const manual = new URLSearchParams(window.location.search).get('onboarding') === '1';
         const isHome = window.location.pathname === '/';
-        if (manual || (isHome && !readState())) window.setTimeout(() => open({step: 0}), manual ? 0 : 260);
+        if (manual) window.setTimeout(() => open({step: 0}), 0);
+        else if (isHome && !readState()) window.setTimeout(openWelcome, 260);
     });
 })();

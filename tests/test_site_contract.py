@@ -126,7 +126,10 @@ class RouteContractTests(unittest.TestCase):
         response = self.client.get("/api/study/dashboard")
         self.assertEqual(response.status_code, 200)
         data = response.get_json()
-        for key in ("daily_target", "learned_today", "reviewed_today", "review_goal", "review_due_remaining"):
+        for key in (
+            "daily_target", "learned_today", "reviewed_today", "review_goal", "review_due_remaining",
+            "new_goal_remaining", "new_task_remaining", "new_available_count", "wordbook_unmastered_remaining",
+        ):
             with self.subTest(key=key):
                 self.assertIn(key, data)
         self.assertEqual(data["daily_target"], data["review_goal"])
@@ -187,6 +190,9 @@ class StaticDesignContractTests(unittest.TestCase):
         base = (ROOT / "templates" / "base.html").read_text(encoding="utf-8")
         script = (ROOT / "static" / "js" / "onboarding.js").read_text(encoding="utf-8")
         self.assertIn('id="onboarding-overlay"', base)
+        self.assertIn('id="welcome-overlay"', base)
+        self.assertIn('id="welcome-start-guide"', base)
+        self.assertIn('id="welcome-skip-guide"', base)
         self.assertEqual(base.count("data-onboarding-panel="), 4)
         for copy in ("从今天的词汇任务开始", "连接 DeepSeek", "六维成绩", "AI 负责提效"):
             self.assertIn(copy, base)
@@ -194,6 +200,8 @@ class StaticDesignContractTests(unittest.TestCase):
         self.assertIn("cet-onboarding-v1", script)
         self.assertIn("window.location.pathname === '/'", script)
         self.assertIn("cet:open-onboarding", script)
+        self.assertIn("window.CETHandleNativeBack", script)
+        self.assertIn("我的 → 新手指引", base)
         self.assertIn("/api/ai/config/verify-save", script)
         self.assertIn('id="open-deepseek-guide"', base)
         self.assertIn('id="deepseek-guide-overlay"', base)
@@ -224,8 +232,20 @@ class StaticDesignContractTests(unittest.TestCase):
         navigation = profile[profile.index('<nav class="settings-index"'):profile.index('</nav>')]
         self.assertLess(navigation.index('href="#wordbooks"'), navigation.index('href="#updates"'))
         self.assertLess(navigation.index('href="#updates"'), navigation.index('href="#support"'))
+        self.assertLess(navigation.index('href="#onboarding-help"'), navigation.index('href="#support"'))
         self.assertLess(profile.index('id="wordbooks"'), profile.index('id="updates"'))
         self.assertLess(profile.index('id="updates"'), profile.index('id="support"'))
+        self.assertLess(profile.index('id="onboarding-help"'), profile.index('id="support"'))
+
+    def test_control_shares_global_bilingual_assistant_preferences(self):
+        template = (ROOT / "templates" / "control.html").read_text(encoding="utf-8")
+        script = (ROOT / "static" / "js" / "control.js").read_text(encoding="utf-8")
+        backend = (ROOT / "routes" / "api_ai.py").read_text(encoding="utf-8")
+        for element_id in ("control-language-switch", "control-english-scenes", "control-scene-select", "control-scene-start"):
+            self.assertIn(f'id="{element_id}"', template)
+        self.assertIn("/api/ai/preferences", script)
+        self.assertIn("start_scene", script)
+        self.assertNotIn("Skill 控制台保留原有中文工作流", backend)
 
     def test_profile_skills_are_collapsed_and_update_requires_confirmation(self):
         profile = (ROOT / "templates" / "profile.html").read_text(encoding="utf-8")
@@ -238,14 +258,15 @@ class StaticDesignContractTests(unittest.TestCase):
         self.assertIn("summary?.setAttribute('aria-expanded'", script)
         self.assertIn("body: JSON.stringify({confirm: true})", script)
 
-    def test_bilingual_assistant_controls_exist_on_home_and_notes_only(self):
+    def test_bilingual_assistant_controls_exist_on_home_notes_and_control(self):
         home = (ROOT / "templates" / "index.html").read_text(encoding="utf-8")
         notes = (ROOT / "templates" / "notes.html").read_text(encoding="utf-8")
         control = (ROOT / "templates" / "control.html").read_text(encoding="utf-8")
         for document in (home, notes):
             self.assertIn('data-assistant-language="zh"', document)
             self.assertIn('data-assistant-language="en"', document)
-        self.assertNotIn('data-assistant-language', control)
+        self.assertIn('data-control-language="zh"', control)
+        self.assertIn('data-control-language="en"', control)
         self.assertIn('notes-scene-grid', notes)
         self.assertIn('home-scene-select', home)
 
@@ -339,6 +360,12 @@ class StaticDesignContractTests(unittest.TestCase):
         for path in (ROOT / "static" / "js").glob("*.js"):
             with self.subTest(path=path.name):
                 self.assertNotIn("</script>", path.read_text(encoding="utf-8"))
+
+    def test_windows_source_launchers_keep_utf8_bom_for_powershell_51(self):
+        for name in ("启动英语网站.ps1", "英语网站后台服务.ps1"):
+            path = ROOT / "scripts" / name
+            with self.subTest(path=name):
+                self.assertTrue(path.read_bytes().startswith(b"\xef\xbb\xbf"))
 
 
 if __name__ == "__main__":

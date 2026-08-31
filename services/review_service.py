@@ -147,7 +147,7 @@ def get_listening_review_candidates(limit=40):
             placeholders = ','.join('?' for _ in used_ids)
             exclusion = f"AND w.id NOT IN ({placeholders})" if used_ids else ''
             supplements = db.execute(f'''
-                SELECT uw.*, w.id AS word_id, w.word, w.phonetic,
+                SELECT uw.*, w.id AS listening_word_id, w.word, w.phonetic,
                        w.part_of_speech, w.meanings, w.frequency,
                        '当前词库补充' AS priority_reason
                 FROM wordbook_words wbw
@@ -167,7 +167,7 @@ def get_listening_review_candidates(limit=40):
             ''', (book_id, *used_ids, limit - len(result))).fetchall()
             for row in supplements:
                 item = _row_to_dict(row)
-                item['word_id'] = row['word_id']
+                item['word_id'] = row['listening_word_id']
                 item['priority_reason'] = row['priority_reason']
                 item['status'] = item.get('status') or '陌生'
                 result.append(item)
@@ -457,8 +457,12 @@ def preview_review(word_id):
 
 def _row_to_dict(r):
     import json
+    from services.pronunciation_service import audio_url
+    word_id = r['word_id']
+    if word_id is None and 'listening_word_id' in r.keys():
+        word_id = r['listening_word_id']
     return {
-        'word_id': r['word_id'],
+        'word_id': word_id,
         'word': r['word'],
         'phonetic': r['phonetic'],
         'part_of_speech': r['part_of_speech'],
@@ -468,4 +472,5 @@ def _row_to_dict(r):
         'review_count': r['review_count'],
         'ebbinghaus_stage': r['ebbinghaus_stage'],
         'next_review': r['next_review'],
+        'audio_url': audio_url(word_id),
     }

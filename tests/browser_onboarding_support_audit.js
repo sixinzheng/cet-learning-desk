@@ -11,11 +11,21 @@ fs.mkdirSync(output, {recursive: true});
 async function auditViewport(browser, width, height) {
     const context = await browser.newContext({viewport: {width, height}});
     const page = await context.newPage();
+    page.setDefaultTimeout(8000);
     const errors = [];
     page.on('console', message => { if (message.type() === 'error') errors.push(message.text()); });
     page.on('pageerror', error => errors.push(error.message));
 
     await page.goto(`${baseUrl}/`, {waitUntil: 'domcontentloaded'});
+    await page.locator('#welcome-overlay').waitFor({state: 'visible'});
+    const welcome = {
+        title: await page.locator('#welcome-title').textContent(),
+        dialog: await page.locator('.welcome-dialog').boundingBox(),
+        actions: await page.locator('.welcome-actions').boundingBox(),
+        viewportHeight: await page.evaluate(() => window.innerHeight),
+    };
+    await page.screenshot({path: path.join(output, `welcome-${width}.png`), fullPage: false});
+    await page.locator('#welcome-start-guide').click();
     await page.locator('#onboarding-overlay').waitFor({state: 'visible'});
     const first = {
         panelCount: await page.locator('[data-onboarding-panel]').count(),
@@ -66,7 +76,8 @@ async function auditViewport(browser, width, height) {
     const stored = await page.evaluate(() => JSON.parse(localStorage.getItem('cet-onboarding-v1') || '{}'));
     await page.reload({waitUntil: 'domcontentloaded'});
     await page.waitForTimeout(450);
-    const stayedDismissed = await page.locator('#onboarding-overlay').isHidden();
+    const stayedDismissed = await page.locator('#onboarding-overlay').isHidden()
+        && await page.locator('#welcome-overlay').isHidden();
 
     await page.goto(`${baseUrl}/profile`, {waitUntil: 'domcontentloaded'});
     await page.locator('#open-onboarding').click();
@@ -84,7 +95,7 @@ async function auditViewport(browser, width, height) {
     const supportClosed = await page.locator('#support-modal').isHidden();
     const focusReturned = await page.evaluate(() => document.activeElement?.id === 'support-author-button');
     await context.close();
-    return {first, guide, lastTitle, stored, stayedDismissed, support, supportClosed, focusReturned, errors};
+    return {welcome, first, guide, lastTitle, stored, stayedDismissed, support, supportClosed, focusReturned, errors};
 }
 
 (async () => {
@@ -96,6 +107,8 @@ async function auditViewport(browser, width, height) {
     fs.writeFileSync(path.join(output, 'report.json'), JSON.stringify(report, null, 2));
     console.log(JSON.stringify(report, null, 2));
     const failed = [desktop, mobile].some(result =>
+        !result.welcome.title.includes('欢迎') ||
+        !result.welcome.actions || result.welcome.actions.bottom > result.welcome.viewportHeight + 1 ||
         result.first.panelCount !== 4 ||
         !result.first.firstTitle.includes('词汇任务') ||
         result.guide.titles.length !== 4 ||
@@ -106,7 +119,7 @@ async function auditViewport(browser, width, height) {
         result.guide.viewportOverflow > 1 ||
         !result.guide.focusReturned ||
         !result.lastTitle.includes('尊重你的边界') ||
-        result.stored.status !== 'completed' ||
+        result.stored.status !== 'completed' || result.stored.version !== 2 ||
         !result.stayedDismissed ||
         result.first.viewportOverflow > 1 ||
         result.support.imageCount !== 2 ||

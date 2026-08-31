@@ -189,10 +189,12 @@ def lookup_word():
     import json
     result = {
         'found': True,
+        'id': row['id'],
         'word': row['word'],
         'phonetic': row['phonetic'],
         'meanings': json.loads(row['meanings']),
         'frequency': row['frequency'],
+        'audio_url': f'/api/words/{int(row["id"])}/audio',
     }
     db.close()
     return jsonify(result)

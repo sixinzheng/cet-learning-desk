@@ -2,6 +2,7 @@ from flask import Blueprint, jsonify, request
 from database import get_db
 from services.level_service import get_level_summary, calculate_level
 from datetime import date, timedelta
+import hashlib
 from services.review_service import (
     get_due_reviews, get_due_count, record_review,
     init_new_word, promote_to_fuzzy, advance_word, preview_review,
@@ -29,9 +30,40 @@ def dashboard():
         "SELECT new_words_count FROM study_logs WHERE study_date=?", (today,)
     ).fetchone()
     learned_today = int(learned_row['new_words_count'] or 0) if learned_row else 0
-    new_words = db.execute(
-        "SELECT COUNT(*) as c FROM user_words WHERE status='陌生'"
-    ).fetchone()['c']
+    current_book_row = db.execute(
+        "SELECT value FROM user_settings WHERE key='current_wordbook'"
+    ).fetchone()
+    current_book_id = None
+    if current_book_row and str(current_book_row['value']).isdigit():
+        candidate = int(current_book_row['value'])
+        if db.execute("SELECT 1 FROM wordbooks WHERE id=?", (candidate,)).fetchone():
+            current_book_id = candidate
+    if current_book_id is None:
+        default_book = db.execute(
+            "SELECT id FROM wordbooks WHERE is_builtin=1 ORDER BY id LIMIT 1"
+        ).fetchone()
+        current_book_id = int(default_book['id']) if default_book else None
+
+    if current_book_id is None:
+        new_available_count = 0
+        wordbook_unmastered_remaining = 0
+    else:
+        book_counts = db.execute(
+            """
+            SELECT
+                COUNT(CASE WHEN uw.word_id IS NULL OR uw.status='陌生' THEN 1 END) AS available_new,
+                COUNT(CASE WHEN uw.status IS NULL OR uw.status NOT IN ('掌握','熟记') THEN 1 END) AS unmastered
+            FROM wordbook_words wbw
+            LEFT JOIN user_words uw ON uw.word_id=wbw.word_id
+            WHERE wbw.wordbook_id=?
+            """,
+            (current_book_id,),
+        ).fetchone()
+        new_available_count = int(book_counts['available_new'] or 0)
+        wordbook_unmastered_remaining = int(book_counts['unmastered'] or 0)
+
+    new_goal_remaining = max(daily_new - learned_today, 0)
+    new_task_remaining = min(new_goal_remaining, new_available_count)
     # 累计已学单词数（进入过学习流程的词，任务3：首页展示）
     learned_words = db.execute("SELECT COUNT(*) as c FROM user_words").fetchone()['c']
 
@@ -119,7 +151,12 @@ def dashboard():
     db.close()
 
     return jsonify({
-        'today_new': min(max(daily_new - learned_today, 0), new_words),
+        # today_new 保留为旧前端兼容别名；新代码应读取语义明确的字段。
+        'today_new': new_task_remaining,
+        'new_goal_remaining': new_goal_remaining,
+        'new_task_remaining': new_task_remaining,
+        'new_available_count': new_available_count,
+        'wordbook_unmastered_remaining': wordbook_unmastered_remaining,
         'today_review': due_review,
         'daily_target': daily_new,
         'learned_today': learned_today,
@@ -164,6 +201,7 @@ def get_new_words():
     if not book_id:
         book = db.execute("SELECT id, name FROM wordbooks WHERE is_builtin=1 ORDER BY id LIMIT 1").fetchone()
         if not book:
+            db.close()
             return jsonify({'words': [], 'book_id': None, 'book_name': None})
         book_id, book_name = book['id'], book['name']
 
@@ -174,15 +212,25 @@ def get_new_words():
         LEFT JOIN user_words uw ON w.id = uw.word_id
         WHERE wbw.wordbook_id = ?
           AND (uw.status IS NULL OR uw.status = '陌生')
-        ORDER BY w.frequency DESC
-        LIMIT ?
-    ''', (book_id, limit)).fetchall()
+    ''', (book_id,)).fetchall()
+
+    # 每日稳定乱序：同一天刷新保持顺序，次日或切换词书后重新洗牌。
+    # 不使用 Python hash()（进程间随机盐）或 SQLite RANDOM()（每次请求变化）。
+    shuffle_seed = f'{date.today().isoformat()}:{book_id}:'
+    rows = sorted(
+        rows,
+        key=lambda row: hashlib.sha256(
+            f'{shuffle_seed}{int(row["id"])}'.encode('utf-8')
+        ).digest(),
+    )[:max(0, limit)]
 
     words = [{
         'id': r['id'], 'word': r['word'], 'phonetic': r['phonetic'],
         'part_of_speech': r['part_of_speech'], 'meanings': r['meanings'],
         'frequency': r['frequency'], 'status': r['status'] or '陌生',
+        'audio_url': f'/api/words/{int(r["id"])}/audio',
     } for r in rows]
+    db.close()
     return jsonify({'words': words, 'book_id': book_id, 'book_name': book_name})
 
 
