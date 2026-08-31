@@ -58,9 +58,6 @@ node_modules/
 .coverage
 .pytest_cache/
 
-# Private or unrelated local documents
-/周旋论文_组合式月球着陆气囊_中文复述报告.md
-
 # OS and editor files
 .DS_Store
 Thumbs.db
