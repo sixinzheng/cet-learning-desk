@@ -129,6 +129,15 @@ def fetch_latest_release(
         content = response.content
     except requests.Timeout as exc:
         raise UpdateServiceError("检查更新超时，请确认网络后重试。", code="timeout", status=504) from exc
+    except requests.HTTPError as exc:
+        response_status = getattr(getattr(exc, "response", None), "status_code", 0)
+        if response_status in {403, 429}:
+            raise UpdateServiceError(
+                "GitHub 暂时限制了检查频率，请稍后重试。",
+                code="rate_limited",
+                status=503,
+            ) from exc
+        raise UpdateServiceError("暂时无法连接 GitHub，请稍后重试。", code="network_error", status=503) from exc
     except requests.RequestException as exc:
         raise UpdateServiceError("暂时无法连接 GitHub，请稍后重试。", code="network_error", status=503) from exc
     if len(content) > _MAX_RELEASE_RESPONSE:

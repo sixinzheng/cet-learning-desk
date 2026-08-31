@@ -51,7 +51,7 @@ import java.util.concurrent.Executors;
 
 public class MainActivity extends Activity {
     private static final String TAG = "CETLearningDesk";
-    private static final String RESOURCE_VERSION = "0.3.0";
+    private static final String RESOURCE_VERSION = BuildConfig.VERSION_NAME;
     private static final String UPDATE_MANIFEST_URL = "https://github.com/sixinzheng/cet-learning-desk/releases/latest/download/android-latest.json";
     private static final long MAX_APK_BYTES = 250L * 1024L * 1024L;
     private static final int UPDATE_PERMISSION_REQUEST = 4103;

@@ -47,7 +47,7 @@ def request_json(url: str, token: str, *, method: str = "GET", payload: dict | N
             "Accept": "application/vnd.github+json",
             "Authorization": f"Bearer {token}",
             "X-GitHub-Api-Version": "2022-11-28",
-            "User-Agent": "CETLearningDesk-ReleaseSetup/0.3.0",
+            "User-Agent": "CETLearningDesk-ReleaseSetup/1",
             **({"Content-Type": "application/json"} if body is not None else {}),
         },
     )

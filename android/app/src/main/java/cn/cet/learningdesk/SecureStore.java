@@ -81,7 +81,10 @@ public final class SecureStore {
     }
 
     public static synchronized void setApiKey(String value) throws Exception {
-        preferences().edit().putString(API_KEY, encrypt(value)).apply();
+        String encrypted = encrypt(value);
+        if (!preferences().edit().putString(API_KEY, encrypted).commit()) {
+            throw new IllegalStateException("API Key 安全配置写入失败");
+        }
     }
 
     public static synchronized String getApiKey() {
@@ -97,6 +100,8 @@ public final class SecureStore {
     }
 
     public static synchronized void deleteApiKey() {
-        preferences().edit().remove(API_KEY).apply();
+        if (!preferences().edit().remove(API_KEY).commit()) {
+            throw new IllegalStateException("API Key 安全配置删除失败");
+        }
     }
 }

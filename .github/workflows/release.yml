@@ -156,15 +156,19 @@ jobs:
         run: |
           set -euo pipefail
           version="${GITHUB_REF_NAME#v}"
+          android_version_code="$(python -c 'from app_version import ANDROID_VERSION_CODE; print(ANDROID_VERSION_CODE)')"
+          notes_file="docs/releases/${GITHUB_REF_NAME}.md"
+          test -f "$notes_file"
           windows="dist/CETLearningDesk-Windows-x64-v${version}-setup.exe"
           signature="${windows}.sig"
           android="dist/CETLearningDesk-Android-arm64-v${version}.apk"
           python scripts/create_release_manifests.py \
             --version "$version" \
-            --android-version-code 3 \
+            --android-version-code "$android_version_code" \
             --windows "$windows" \
             --windows-signature "$signature" \
             --android "$android" \
+            --notes-file "$notes_file" \
             --output dist
       - name: Publish stable GitHub Release
         env:
@@ -172,13 +176,15 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          notes_file="docs/releases/${GITHUB_REF_NAME}.md"
+          test -f "$notes_file"
           if [[ "$GITHUB_REF_NAME" == *-* ]]; then
             echo "Prerelease tags are not allowed in the stable channel" >&2
             exit 1
           fi
           if gh release view "$GITHUB_REF_NAME" >/dev/null 2>&1; then
             gh release upload "$GITHUB_REF_NAME" dist/* --clobber
-            gh release edit "$GITHUB_REF_NAME" --draft=false --prerelease=false
+            gh release edit "$GITHUB_REF_NAME" --draft=false --prerelease=false --notes-file "$notes_file"
           else
-            gh release create "$GITHUB_REF_NAME" dist/* --verify-tag --generate-notes --title "四六级学习台 $GITHUB_REF_NAME"
+            gh release create "$GITHUB_REF_NAME" dist/* --verify-tag --notes-file "$notes_file" --title "四六级学习台 $GITHUB_REF_NAME"
           fi

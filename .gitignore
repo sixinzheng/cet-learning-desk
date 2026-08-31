@@ -15,6 +15,7 @@ __pycache__/
 /.deps/
 /.runtime_deps/
 /.venv/
+/.test-venv/
 /venv/
 
 # JavaScript, Rust and desktop build output
@@ -46,6 +47,7 @@ node_modules/
 /templates/.impeccable/
 /home-refinement-artifacts/
 /.impeccable/
+/.impeccable-detector-runtime/
 
 # Logs and transient files
 *.log

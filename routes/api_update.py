@@ -56,6 +56,12 @@ def status():
 @bp.post("/prepare")
 @_require_csrf
 def prepare():
+    if (request.get_json(silent=True) or {}).get("confirm") is not True:
+        return jsonify({
+            "error": "请先确认更新说明与数据保护方式。",
+            "code": "confirmation_required",
+            "progress": progress_snapshot(),
+        }), 400
     try:
         payload = prepare_update()
         print(f"CET_UPDATE_TICKET={payload['ticket']}", flush=True)

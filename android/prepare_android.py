@@ -4,10 +4,18 @@ from __future__ import annotations
 
 import json
 import shutil
+import subprocess
+import sys
 from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+from app_version import APP_VERSION
+
+
 ANDROID_ROOT = ROOT / 'android'
 PYTHON_TARGET = ANDROID_ROOT / 'app' / 'src' / 'main' / 'python'
 ASSET_TARGET = ANDROID_ROOT / 'app' / 'src' / 'main' / 'assets' / 'app_resources'
@@ -42,6 +50,42 @@ def _copy_python_tree(source: Path, destination: Path) -> None:
     )
 
 
+def _validate_runtime_imports() -> None:
+    """Fail the build if generated Android modules cannot reach seed assets."""
+    probe = (
+        "import sys;"
+        "sys.path.insert(0, sys.argv[1]);"
+        "import android_backend;"
+        "android_backend._activate_resource_imports(sys.argv[2]);"
+        "import seed.reading_catalog, seed.reading_corpus_loader;"
+        "print('Android runtime imports OK')"
+    )
+    try:
+        result = subprocess.run(
+            [
+                sys.executable,
+                '-I',
+                '-c',
+                probe,
+                str(PYTHON_TARGET.resolve()),
+                str(ASSET_TARGET.resolve()),
+            ],
+            check=True,
+            capture_output=True,
+            text=True,
+            encoding='utf-8',
+            timeout=30,
+        )
+    except (subprocess.CalledProcessError, subprocess.TimeoutExpired) as error:
+        stdout = getattr(error, 'stdout', '') or ''
+        stderr = getattr(error, 'stderr', '') or ''
+        raise RuntimeError(
+            'Android 运行时模块校验失败。\n'
+            f'{stdout}{stderr}'.strip()
+        ) from error
+    print(result.stdout.strip())
+
+
 def main() -> None:
     _reset_generated(PYTHON_TARGET)
     _reset_generated(ASSET_TARGET)
@@ -62,7 +106,7 @@ def main() -> None:
         if path.is_file()
     )
     manifest = {
-        'version': '0.3.0',
+        'version': APP_VERSION,
         'file_count': len(files),
         'files': files,
     }
@@ -70,6 +114,7 @@ def main() -> None:
         json.dumps(manifest, ensure_ascii=False, indent=2),
         encoding='utf-8',
     )
+    _validate_runtime_imports()
     print(f'Android Python sources: {len(PYTHON_FILES)} files + {len(PYTHON_DIRECTORIES)} packages')
     print(f'Android assets: {len(files)} files')
 

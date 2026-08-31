@@ -222,8 +222,21 @@ class StaticDesignContractTests(unittest.TestCase):
     def test_profile_wordbooks_precede_support_in_navigation_and_content(self):
         profile = (ROOT / "templates" / "profile.html").read_text(encoding="utf-8")
         navigation = profile[profile.index('<nav class="settings-index"'):profile.index('</nav>')]
-        self.assertLess(navigation.index('href="#wordbooks"'), navigation.index('href="#support"'))
-        self.assertLess(profile.index('id="wordbooks"'), profile.index('id="support"'))
+        self.assertLess(navigation.index('href="#wordbooks"'), navigation.index('href="#updates"'))
+        self.assertLess(navigation.index('href="#updates"'), navigation.index('href="#support"'))
+        self.assertLess(profile.index('id="wordbooks"'), profile.index('id="updates"'))
+        self.assertLess(profile.index('id="updates"'), profile.index('id="support"'))
+
+    def test_profile_skills_are_collapsed_and_update_requires_confirmation(self):
+        profile = (ROOT / "templates" / "profile.html").read_text(encoding="utf-8")
+        script = (ROOT / "static" / "js" / "profile.js").read_text(encoding="utf-8")
+        skills_tag = profile[profile.index('<details id="skills"'):profile.index('>', profile.index('<details id="skills"')) + 1]
+        self.assertNotIn(" open", skills_tag)
+        self.assertIn('aria-expanded="false"', profile)
+        self.assertIn("skill-summary-count", profile)
+        self.assertIn("box.querySelectorAll('.skill-item[open]')", script)
+        self.assertIn("summary?.setAttribute('aria-expanded'", script)
+        self.assertIn("body: JSON.stringify({confirm: true})", script)
 
     def test_bilingual_assistant_controls_exist_on_home_and_notes_only(self):
         home = (ROOT / "templates" / "index.html").read_text(encoding="utf-8")

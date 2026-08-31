@@ -27,6 +27,7 @@ def main() -> None:
     parser.add_argument("--windows", required=True, type=Path)
     parser.add_argument("--windows-signature", required=True, type=Path)
     parser.add_argument("--android", required=True, type=Path)
+    parser.add_argument("--notes-file", type=Path)
     parser.add_argument("--output", required=True, type=Path)
     args = parser.parse_args()
     version = args.version.lstrip("v")
@@ -35,6 +36,12 @@ def main() -> None:
     args.output.mkdir(parents=True, exist_ok=True)
     published = datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
     notes = "稳定版更新。完整说明请查看 GitHub Release。"
+    if args.notes_file:
+        if not args.notes_file.is_file():
+            parser.error(f"release notes file not found: {args.notes_file}")
+        notes = args.notes_file.read_text(encoding="utf-8").strip()
+        if not notes:
+            parser.error("release notes file is empty")
     latest = {
         "version": version,
         "notes": notes,

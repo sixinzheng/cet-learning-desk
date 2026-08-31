@@ -144,7 +144,7 @@
                 : '<p class="skill-item__rules">尚未添加个人补充规则</p>';
             const panelId = `skill-panel-${escapeHtml(skill.slug)}`;
             return `<details class="skill-item${skill.enabled ? ' is-enabled' : ''}" data-skill="${escapeHtml(skill.slug)}">
-                <summary aria-controls="${panelId}">
+                <summary aria-controls="${panelId}" aria-expanded="false">
                     <span class="skill-item__index"><span>${tag}</span><strong>${escapeHtml(skill.display_name)}</strong></span>
                     <span class="skill-item__purpose">${escapeHtml(skill.description)}</span>
                     <span class="skill-item__state${skill.enabled ? ' is-on' : ''}">${skill.enabled ? '已启用' : '已关闭'}</span>
@@ -160,12 +160,18 @@
                 </div>
             </details>`;
         }).join('');
-        box.querySelectorAll('.skill-item').forEach(item => item.addEventListener('toggle', () => {
-            if (!item.open) return;
-            box.querySelectorAll('.skill-item[open]').forEach(other => {
-                if (other !== item) other.open = false;
+        box.querySelectorAll('.skill-item').forEach(item => {
+            const summary = item.querySelector(':scope > summary');
+            const syncExpanded = () => summary?.setAttribute('aria-expanded', item.open ? 'true' : 'false');
+            item.addEventListener('toggle', () => {
+                syncExpanded();
+                if (!item.open) return;
+                box.querySelectorAll('.skill-item[open]').forEach(other => {
+                    if (other !== item) other.open = false;
+                });
             });
-        }));
+            syncExpanded();
+        });
         box.querySelectorAll('[data-skill-toggle]').forEach(button => button.addEventListener('click', async () => {
             const current = skills.find(skill => skill.slug === button.dataset.skillToggle);
             if (!current) return;
@@ -285,7 +291,9 @@
         if (!progress) return;
         const holder = $('update-progress');
         holder.hidden = !['backing_up', 'backup_ready', 'ready_for_native', 'downloading', 'verifying', 'installing'].includes(progress.stage);
-        $('update-progress-bar').style.width = `${Math.max(0, Math.min(100, Number(progress.percent || 0)))}%`;
+        const percent = Math.max(0, Math.min(100, Number(progress.percent || 0)));
+        holder.setAttribute('aria-valuenow', String(Math.round(percent)));
+        $('update-progress-bar').style.setProperty('--update-progress-scale', String(percent / 100));
         if (progress.message) $('update-state-copy').textContent = progress.message;
         $('update-state').dataset.state = progress.stage || 'idle';
     }
@@ -393,13 +401,17 @@
     function initSkillDisclosure() {
         const disclosure = $('skills');
         if (!disclosure) return;
+        const summary = disclosure.querySelector(':scope > summary');
+        const syncExpanded = () => summary?.setAttribute('aria-expanded', disclosure.open ? 'true' : 'false');
         const revealHash = () => {
             if (window.location.hash !== '#skills') return;
             disclosure.open = true;
             requestAnimationFrame(() => disclosure.scrollIntoView({block: 'start'}));
         };
+        disclosure.addEventListener('toggle', syncExpanded);
         document.querySelector('a[href="#skills"]')?.addEventListener('click', () => { disclosure.open = true; });
         window.addEventListener('hashchange', revealHash);
+        syncExpanded();
         revealHash();
     }
 

@@ -1,3 +1,8 @@
+param(
+    [string]$UnsignedApkPath = "",
+    [string]$SignedApkPath = ""
+)
+
 $ErrorActionPreference = "Stop"
 $androidRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
 $sdkRoot = Join-Path $env:LOCALAPPDATA "Android\Sdk"
@@ -5,8 +10,21 @@ $buildTools = Join-Path $sdkRoot "build-tools\36.0.0"
 $apksigner = Join-Path $buildTools "apksigner.bat"
 $zipalign = Join-Path $buildTools "zipalign.exe"
 $keytool = "C:\Program Files\Java\latest\jdk-21\bin\keytool.exe"
-$unsignedApk = Join-Path $androidRoot "app\build\outputs\apk\release\app-release-unsigned.apk"
-$signedApk = Join-Path $androidRoot "app\build\outputs\apk\release\CET-Learning-Desk-Android-arm64-v0.3.0.apk"
+$unsignedApk = if ($UnsignedApkPath) {
+    [IO.Path]::GetFullPath($UnsignedApkPath)
+} else {
+    Join-Path $androidRoot "app\build\outputs\apk\release\app-release-unsigned.apk"
+}
+$versionSource = Get-Content -LiteralPath (Join-Path (Split-Path -Parent $androidRoot) "app_version.py") -Raw -Encoding UTF8
+if ($versionSource -notmatch 'APP_VERSION\s*=\s*"([0-9]+\.[0-9]+\.[0-9]+)"') {
+    throw "Unable to read APP_VERSION from app_version.py"
+}
+$appVersion = $Matches[1]
+$signedApk = if ($SignedApkPath) {
+    [IO.Path]::GetFullPath($SignedApkPath)
+} else {
+    Join-Path $androidRoot "app\build\outputs\apk\release\CET-Learning-Desk-Android-arm64-v$appVersion.apk"
+}
 $signingRoot = Join-Path $env:LOCALAPPDATA "CETLearningDesk\signing"
 $keyStore = Join-Path $signingRoot "android-release.jks"
 $secretFile = Join-Path $signingRoot "android-signing-secret.clixml"

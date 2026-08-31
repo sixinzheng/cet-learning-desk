@@ -5,24 +5,30 @@ import unittest
 from pathlib import Path
 from unittest import mock
 
+import requests
+
 import database
 from app import create_app
 from services import update_service
 
 
 class FakeResponse:
-    def __init__(self, payload, status=200):
+    def __init__(self, payload, status=200, *, content=None, json_error=None):
         import json
         self.payload = payload
         self.status_code = status
-        self.content = json.dumps(payload).encode("utf-8")
+        self.content = content if content is not None else json.dumps(payload).encode("utf-8")
+        self.json_error = json_error
 
     def raise_for_status(self):
         if self.status_code >= 400:
-            import requests
-            raise requests.HTTPError(str(self.status_code))
+            error = requests.HTTPError(str(self.status_code))
+            error.response = self
+            raise error
 
     def json(self):
+        if self.json_error:
+            raise self.json_error
         return self.payload
 
 
@@ -77,6 +83,36 @@ class SafeUpdateTests(unittest.TestCase):
             )
         self.assertEqual(caught.exception.code, "untrusted_release")
 
+    def test_release_failures_are_bounded_and_classified(self):
+        def timeout(*args, **kwargs):
+            raise requests.Timeout("slow")
+
+        with self.assertRaises(update_service.UpdateServiceError) as caught:
+            update_service.fetch_latest_release(http_get=timeout)
+        self.assertEqual(caught.exception.code, "timeout")
+
+        with self.assertRaises(update_service.UpdateServiceError) as caught:
+            update_service.fetch_latest_release(
+                http_get=lambda *args, **kwargs: FakeResponse({}, status=429)
+            )
+        self.assertEqual(caught.exception.code, "rate_limited")
+
+        with self.assertRaises(update_service.UpdateServiceError) as caught:
+            update_service.fetch_latest_release(
+                http_get=lambda *args, **kwargs: FakeResponse({}, json_error=ValueError("bad json"))
+            )
+        self.assertEqual(caught.exception.code, "invalid_json")
+
+        oversized = b"x" * (update_service._MAX_RELEASE_RESPONSE + 1)
+        with self.assertRaises(update_service.UpdateServiceError) as caught:
+            update_service.fetch_latest_release(
+                http_get=lambda *args, **kwargs: FakeResponse({}, content=oversized)
+            )
+        self.assertEqual(caught.exception.code, "oversized_release")
+
+        older = update_service._release_payload(stable_release("0.2.9"))
+        self.assertFalse(older["update_available"])
+
     def test_online_backup_is_consistent_and_keeps_only_three(self):
         paths = []
         for index in range(4):
@@ -95,6 +131,44 @@ class SafeUpdateTests(unittest.TestCase):
         finally:
             newest.close()
 
+    def test_backup_stops_on_low_space_or_failed_quick_check(self):
+        with mock.patch.object(
+            update_service.shutil,
+            "disk_usage",
+            return_value=mock.Mock(free=0),
+        ):
+            with self.assertRaises(update_service.UpdateServiceError) as caught:
+                update_service.create_verified_backup("0.3.0", "0.3.1")
+        self.assertEqual(caught.exception.code, "insufficient_space")
+        self.assertEqual(
+            list((Path(self.temp_dir.name) / "update-backups").glob("vocab-before-*.db")),
+            [],
+        )
+
+        real_connect = sqlite3.connect
+        call_count = 0
+
+        class FailedCheck:
+            def execute(self, _sql):
+                return mock.Mock(fetchone=lambda: ("corrupt",))
+
+            def close(self):
+                return None
+
+        def connect_with_failed_check(*args, **kwargs):
+            nonlocal call_count
+            call_count += 1
+            if call_count == 3:
+                return FailedCheck()
+            return real_connect(*args, **kwargs)
+
+        with mock.patch.object(update_service.sqlite3, "connect", side_effect=connect_with_failed_check):
+            with self.assertRaises(update_service.UpdateServiceError) as caught:
+                update_service.create_verified_backup("0.3.0", "0.3.1")
+        self.assertEqual(caught.exception.code, "backup_check_failed")
+        backups = list((Path(self.temp_dir.name) / "update-backups").glob("vocab-before-*.db"))
+        self.assertEqual(backups, [])
+
     def test_source_mode_never_prepares_an_installer(self):
         with mock.patch.object(update_service, "current_platform", return_value="source"):
             with self.assertRaises(update_service.UpdateServiceError) as caught:
@@ -102,6 +176,28 @@ class SafeUpdateTests(unittest.TestCase):
                     http_get=lambda *args, **kwargs: FakeResponse(stable_release())
                 )
         self.assertEqual(caught.exception.code, "source_mode")
+
+    def test_native_ticket_is_one_time_and_platform_scoped(self):
+        backup_path = Path(self.temp_dir.name) / "vocab-before-0.3.1-to-0.3.2.db"
+        with mock.patch.object(update_service, "current_platform", return_value="windows"), mock.patch.object(
+            update_service, "create_verified_backup", return_value=backup_path
+        ):
+            prepared = update_service.prepare_update(
+                http_get=lambda *args, **kwargs: FakeResponse(stable_release("0.3.2"))
+            )
+        ticket = prepared["ticket"]
+        self.assertFalse(update_service.validate_native_ticket(ticket, "android"))
+        self.assertFalse(update_service.validate_native_ticket(ticket, "windows"))
+
+        with mock.patch.object(update_service, "current_platform", return_value="windows"), mock.patch.object(
+            update_service, "create_verified_backup", return_value=backup_path
+        ):
+            prepared = update_service.prepare_update(
+                http_get=lambda *args, **kwargs: FakeResponse(stable_release("0.3.2"))
+            )
+        ticket = prepared["ticket"]
+        self.assertTrue(update_service.validate_native_ticket(ticket, "windows"))
+        self.assertFalse(update_service.validate_native_ticket(ticket, "windows"))
 
     def test_update_routes_require_csrf_and_expose_source_status(self):
         app = create_app()
@@ -122,13 +218,20 @@ class SafeUpdateTests(unittest.TestCase):
         token = status.get_json()["csrf_token"]
         rejected = client.post("/api/app/update/prepare", json={})
         self.assertEqual(rejected.status_code, 403)
+        unconfirmed = client.post(
+            "/api/app/update/prepare",
+            json={},
+            headers={"X-CSRF-Token": token},
+        )
+        self.assertEqual(unconfirmed.status_code, 400)
+        self.assertEqual(unconfirmed.get_json()["code"], "confirmation_required")
         with mock.patch(
             "routes.api_update.prepare_update",
             side_effect=update_service.UpdateServiceError("源码模式", code="source_mode", status=409),
         ):
             source = client.post(
                 "/api/app/update/prepare",
-                json={},
+                json={"confirm": True},
                 headers={"X-CSRF-Token": token},
             )
         self.assertEqual(source.status_code, 409)
