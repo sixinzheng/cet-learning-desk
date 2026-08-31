@@ -19,6 +19,7 @@ from app_version import APP_VERSION
 ANDROID_ROOT = ROOT / 'android'
 PYTHON_TARGET = ANDROID_ROOT / 'app' / 'src' / 'main' / 'python'
 ASSET_TARGET = ANDROID_ROOT / 'app' / 'src' / 'main' / 'assets' / 'app_resources'
+SEED_DATABASE = ROOT / 'resources' / 'distribution' / 'vocab.seed.db'
 
 PYTHON_FILES = (
     'app_version.py',
@@ -30,13 +31,16 @@ PYTHON_FILES = (
 )
 PYTHON_DIRECTORIES = ('routes', 'services', 'models')
 ASSET_DIRECTORIES = ('templates', 'static', 'resources', 'skills', 'seed')
+ASSET_IGNORE_PATTERNS = ('__pycache__', '*.pyc', '*.pyo', '.impeccable')
 
 
 def _verify_pronunciation_pack() -> None:
+    if not SEED_DATABASE.is_file():
+        raise RuntimeError(f'Android 构建缺少发行种子库：{SEED_DATABASE}')
     command = [
         sys.executable,
         str(ROOT / 'scripts' / 'verify_pronunciation_pack.py'),
-        '--database', str(ROOT / 'data' / 'vocab.db'),
+        '--database', str(SEED_DATABASE),
     ]
     result = subprocess.run(command, cwd=ROOT, capture_output=True, text=True, encoding='utf-8')
     if result.returncode != 0:
@@ -114,7 +118,7 @@ def main() -> None:
     for relative in ASSET_DIRECTORIES:
         shutil.copytree(
             ROOT / relative, ASSET_TARGET / relative,
-            ignore=shutil.ignore_patterns('__pycache__', '*.pyc', '*.pyo'),
+            ignore=shutil.ignore_patterns(*ASSET_IGNORE_PATTERNS),
         )
 
     files = sorted(

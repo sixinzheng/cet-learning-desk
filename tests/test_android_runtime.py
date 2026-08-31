@@ -5,9 +5,16 @@ import tempfile
 import unittest
 from pathlib import Path
 from unittest import mock
+import json
+import zipfile
 
 import android_backend
 from android import prepare_android
+from scripts.verify_android_apk import (
+    VerificationError,
+    _normalized_entry_names,
+    verify_apk,
+)
 
 
 class AndroidRuntimeTests(unittest.TestCase):
@@ -48,6 +55,83 @@ class AndroidRuntimeTests(unittest.TestCase):
         self.assertIn(str(prepare_android.PYTHON_TARGET.resolve()), command)
         self.assertIn(str(prepare_android.ASSET_TARGET.resolve()), command)
         self.assertTrue(run.call_args.kwargs["check"])
+
+    def test_pronunciation_verification_uses_release_seed_database(self):
+        completed = mock.Mock(returncode=0, stdout="Pronunciation pack OK\n", stderr="")
+        with mock.patch("android.prepare_android.subprocess.run", return_value=completed) as run:
+            prepare_android._verify_pronunciation_pack()
+        command = run.call_args.args[0]
+        database_index = command.index("--database") + 1
+        self.assertEqual(Path(command[database_index]), prepare_android.SEED_DATABASE)
+        self.assertNotIn(str(prepare_android.ROOT / "data" / "vocab.db"), command)
+
+    def _build_apk_fixture(self, root: Path, *, include_seed: bool = True):
+        seed = root / "vocab.seed.db"
+        seed.write_bytes(b"SQLite format 3\x00" + b"\x00" * 1024)
+        pronunciation = root / "pronunciation-pack-v1.zip"
+        pronunciation.write_bytes(b"pronunciation-fixture")
+        files = ["resources/pronunciation/pronunciation-pack-v1.zip"]
+        if include_seed:
+            files.append("resources/distribution/vocab.seed.db")
+        manifest = {"version": "9.9.9", "file_count": len(files), "files": files}
+        apk = root / "fixture.apk"
+        with zipfile.ZipFile(apk, "w") as archive:
+            archive.writestr(
+                "assets/app_resources/android-resource-manifest.json",
+                json.dumps(manifest),
+            )
+            archive.writestr(
+                "assets/app_resources/resources/pronunciation/pronunciation-pack-v1.zip",
+                pronunciation.read_bytes(),
+            )
+            if include_seed:
+                archive.writestr(
+                    "assets/app_resources/resources/distribution/vocab.seed.db",
+                    seed.read_bytes(),
+                )
+        return apk, seed, pronunciation
+
+    def test_apk_verifier_accepts_complete_offline_runtime(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            apk, seed, pronunciation = self._build_apk_fixture(Path(temp_dir))
+            result = verify_apk(
+                apk,
+                seed=seed,
+                pronunciation_pack=pronunciation,
+                expected_version="9.9.9",
+            )
+        self.assertEqual(result["resource_files"], 2)
+
+    def test_apk_verifier_rejects_shell_without_seed_database(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            apk, seed, pronunciation = self._build_apk_fixture(
+                Path(temp_dir), include_seed=False
+            )
+            with self.assertRaisesRegex(VerificationError, "vocab.seed.db"):
+                verify_apk(
+                    apk,
+                    seed=seed,
+                    pronunciation_pack=pronunciation,
+                    expected_version="9.9.9",
+                )
+
+    def test_apk_verifier_normalizes_aapt_utf8_names_without_zip_flag(self):
+        original = "assets/app_resources/seed/reading_corpus/教育.json"
+        mojibake = original.encode("utf-8").decode("cp437")
+        archive = mock.Mock()
+        archive.namelist.return_value = [mojibake]
+        self.assertIn(original, _normalized_entry_names(archive))
+
+    def test_android_assets_exclude_impeccable_development_cache(self):
+        self.assertIn(".impeccable", prepare_android.ASSET_IGNORE_PATTERNS)
+
+    def test_release_workflow_stops_and_checks_built_apk(self):
+        workflow = (self.ROOT / ".github/workflows/release.yml").read_text(
+            encoding="utf-8"
+        )
+        self.assertIn("Android resource preparation failed", workflow)
+        self.assertIn("scripts/verify_android_apk.py", workflow)
+        self.assertIn("Android APK offline runtime verification failed", workflow)
 
     def test_secure_store_reports_only_durable_writes(self):
         source = (self.ROOT / "android/app/src/main/java/cn/cet/learningdesk/SecureStore.java").read_text(

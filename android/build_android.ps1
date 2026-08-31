@@ -52,4 +52,9 @@ $apk = Join-Path $androidRoot "app\build\outputs\apk\release\app-release-unsigne
 if (-not (Test-Path -LiteralPath $apk)) {
     throw "未找到生成的 APK：$apk"
 }
+& $Python (Join-Path $projectRoot "scripts\verify_android_apk.py") `
+    --apk $apk `
+    --seed (Join-Path $projectRoot "resources\distribution\vocab.seed.db") `
+    --pronunciation-pack (Join-Path $projectRoot "resources\pronunciation\pronunciation-pack-v1.zip")
+if ($LASTEXITCODE -ne 0) { throw "Android APK 离线资源校验失败" }
 Write-Host "Unsigned APK: $apk"

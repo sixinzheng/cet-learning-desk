@@ -26,6 +26,8 @@ def main() -> int:
     parser.add_argument('--pack', type=Path, default=Path('resources/pronunciation/pronunciation-pack-v1.zip'))
     parser.add_argument('--max-bytes', type=int, default=250 * 1024 * 1024)
     args = parser.parse_args()
+    if not args.database.is_file():
+        raise SystemExit(f'Pronunciation verification database is missing: {args.database}')
     manifest = json.loads(args.manifest.read_text(encoding='utf-8'))
     connection = sqlite3.connect(args.database)
     try:

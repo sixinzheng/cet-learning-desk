@@ -24,8 +24,11 @@ jobs:
       - name: Verify tag and version contract
         shell: pwsh
         run: |
+          $ErrorActionPreference = "Stop"
           python scripts/check_app_version.py
+          if ($LASTEXITCODE -ne 0) { throw "Version contract check failed" }
           $version = python -c "from app_version import APP_VERSION; print(APP_VERSION)"
+          if ($LASTEXITCODE -ne 0) { throw "Unable to read application version" }
           if ($env:GITHUB_REF_NAME -ne "v$version") { throw "Tag $env:GITHUB_REF_NAME does not match v$version" }
       - name: Run regression tests
         run: python -m unittest discover -s tests -p "test_*.py"
@@ -111,11 +114,26 @@ jobs:
       - name: Prepare Android resources
         shell: pwsh
         run: |
+          $ErrorActionPreference = "Stop"
           $env:CET_BUILD_PYTHON = (Get-Command python).Source
           python android/prepare_android.py
+          if ($LASTEXITCODE -ne 0) { throw "Android resource preparation failed" }
           Push-Location android
-          gradle --no-daemon :app:assembleRelease
-          Pop-Location
+          try {
+            gradle --no-daemon :app:assembleRelease
+            if ($LASTEXITCODE -ne 0) { throw "Android Gradle build failed" }
+          } finally {
+            Pop-Location
+          }
+          $unsigned = Join-Path $PWD "android\app\build\outputs\apk\release\app-release-unsigned.apk"
+          $version = python -c "from app_version import APP_VERSION; print(APP_VERSION)"
+          if ($LASTEXITCODE -ne 0) { throw "Unable to read application version" }
+          python scripts/verify_android_apk.py `
+            --apk $unsigned `
+            --seed resources/distribution/vocab.seed.db `
+            --pronunciation-pack resources/pronunciation/pronunciation-pack-v1.zip `
+            --version $version
+          if ($LASTEXITCODE -ne 0) { throw "Android APK offline runtime verification failed" }
       - name: Sign and verify Android APK
         shell: pwsh
         run: |
