@@ -1,7 +1,7 @@
 """应用版本与官方发布通道的唯一 Python 来源。"""
 
-APP_VERSION = "0.3.3"
-ANDROID_VERSION_CODE = 6
+APP_VERSION = "0.3.4"
+ANDROID_VERSION_CODE = 7
 
 GITHUB_OWNER = "sixinzheng"
 GITHUB_REPOSITORY = "cet-learning-desk"

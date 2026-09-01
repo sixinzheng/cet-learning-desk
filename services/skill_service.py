@@ -47,7 +47,7 @@ BUILTIN_SKILLS = (
         'slug': 'language-analyst',
         'display_name': '语言分析师',
         'description': '分析长难句、生成例句、选词填空与词汇融合练习。',
-        'feature_prefixes': ['sentence_analysis', 'word_sentences', 'fusion_sentence', 'generate_cloze'],
+        'feature_prefixes': ['sentence_analysis', 'word_sentences', 'word_enrichment', 'fusion_sentence', 'generate_cloze'],
         'source_path': '',
     },
 )

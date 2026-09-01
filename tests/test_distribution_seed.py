@@ -36,6 +36,21 @@ class DistributionSeedTests(unittest.TestCase):
                     db.execute("SELECT COUNT(*) FROM site_skills WHERE is_builtin=0").fetchone()[0],
                     0,
                 )
+                hidden = db.execute(
+                    "SELECT id,is_builtin,is_hidden FROM wordbooks WHERE name='阅读词汇缓存'"
+                ).fetchone()
+                self.assertIsNotNone(hidden)
+                self.assertEqual(hidden[1:], (1, 1))
+                self.assertEqual(
+                    db.execute(
+                        "SELECT COUNT(*) FROM wordbook_words WHERE wordbook_id=?", (hidden[0],)
+                    ).fetchone()[0],
+                    db.execute("SELECT COUNT(*) FROM words").fetchone()[0],
+                )
+                self.assertEqual(
+                    db.execute("SELECT COUNT(*) FROM words WHERE source='ai_reading'").fetchone()[0],
+                    0,
+                )
             finally:
                 db.close()
 

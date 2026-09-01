@@ -44,6 +44,7 @@ def init_db():
             name TEXT NOT NULL,
             description TEXT DEFAULT '',
             is_builtin INTEGER DEFAULT 0,
+            is_hidden INTEGER DEFAULT 0,
             created_date TEXT DEFAULT (date('now'))
         );
 
@@ -158,6 +159,22 @@ def init_db():
             mark_type TEXT NOT NULL DEFAULT 'green',
             created_at TEXT NOT NULL DEFAULT (datetime('now','localtime')),
             UNIQUE(article_id, word_index, mark_type)
+        );
+
+        -- 阅读查词 AI 补充：与可信基础词义分离，按单词缓存并可明确刷新。
+        CREATE TABLE IF NOT EXISTS word_ai_details (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            word_id INTEGER NOT NULL UNIQUE,
+            surface_form TEXT NOT NULL DEFAULT '',
+            article_id INTEGER,
+            context_excerpt TEXT NOT NULL DEFAULT '',
+            detail_json TEXT NOT NULL DEFAULT '{}',
+            model TEXT NOT NULL DEFAULT '',
+            prompt_version TEXT NOT NULL DEFAULT 'reading-word-v1',
+            generated_at TEXT NOT NULL DEFAULT (datetime('now','localtime')),
+            updated_at TEXT NOT NULL DEFAULT (datetime('now','localtime')),
+            FOREIGN KEY (word_id) REFERENCES words(id) ON DELETE CASCADE,
+            FOREIGN KEY (article_id) REFERENCES reading_articles(id) ON DELETE SET NULL
         );
 
         -- 单选题库
@@ -409,7 +426,14 @@ def init_db():
             ON daily_word_completions(completion_date, completion_type);
         CREATE INDEX IF NOT EXISTS idx_reading_jobs_status
             ON reading_generation_jobs(status, created_at);
+        CREATE INDEX IF NOT EXISTS idx_word_ai_details_article
+            ON word_ai_details(article_id, updated_at);
     ''')
+    wordbook_columns = {
+        row[1] for row in conn.execute("PRAGMA table_info(wordbooks)").fetchall()
+    }
+    if 'is_hidden' not in wordbook_columns:
+        conn.execute("ALTER TABLE wordbooks ADD COLUMN is_hidden INTEGER DEFAULT 0")
     # 迁移：为旧数据库添加 question_type 列
     try:
         conn.execute("ALTER TABLE reading_articles ADD COLUMN question_type TEXT DEFAULT 'careful_reading'")
@@ -624,8 +648,29 @@ def init_db():
     # 内置「我的收藏」词库：首次初始化时自动创建（收藏单词统一收进这里）
     if not conn.execute("SELECT id FROM wordbooks WHERE name='我的收藏' LIMIT 1").fetchone():
         conn.execute(
-            "INSERT INTO wordbooks (name, description, is_builtin) VALUES ('我的收藏', '收藏的单词自动收进这里', 1)"
+            "INSERT INTO wordbooks (name, description, is_builtin, is_hidden) VALUES ('我的收藏', '收藏的单词自动收进这里', 1, 0)"
         )
+
+    # 隐藏的全量词汇缓存不出现在词书选择中；每次启动幂等补齐未来新增词。
+    hidden_book = conn.execute(
+        "SELECT id FROM wordbooks WHERE name='阅读词汇缓存' LIMIT 1"
+    ).fetchone()
+    if hidden_book:
+        hidden_book_id = hidden_book['id']
+        conn.execute(
+            "UPDATE wordbooks SET is_builtin=1,is_hidden=1 WHERE id=?",
+            (hidden_book_id,),
+        )
+    else:
+        hidden_book_id = conn.execute(
+            "INSERT INTO wordbooks (name,description,is_builtin,is_hidden) "
+            "VALUES ('阅读词汇缓存','阅读查词与 AI 补充使用的内部全量词库',1,1)"
+        ).lastrowid
+    conn.execute(
+        "INSERT OR IGNORE INTO wordbook_words (wordbook_id,word_id) "
+        "SELECT ?,id FROM words",
+        (hidden_book_id,),
+    )
 
     conn.commit()
     conn.close()

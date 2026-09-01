@@ -18,7 +18,7 @@ class Word:
     @staticmethod
     def list_by_wordbook(wordbook_id, offset=0, limit=50):
         db = get_db()
-        return db.execute('''
+        rows = db.execute('''
             SELECT w.*, uw.status, uw.review_count, uw.correct_count,
                    uw.next_review, uw.ebbinghaus_stage, uw.consecutive_correct
             FROM words w
@@ -28,6 +28,8 @@ class Word:
             ORDER BY w.frequency DESC
             LIMIT ? OFFSET ?
         ''', (wordbook_id, limit, offset)).fetchall()
+        db.close()
+        return rows
 
     @staticmethod
     def get_sentences(word_id):
@@ -199,7 +201,12 @@ class Word:
     @staticmethod
     def get_wordbooks():
         db = get_db()
-        return db.execute("SELECT * FROM wordbooks ORDER BY is_builtin DESC, id").fetchall()
+        rows = db.execute(
+            "SELECT * FROM wordbooks WHERE COALESCE(is_hidden,0)=0 "
+            "ORDER BY is_builtin DESC, id"
+        ).fetchall()
+        db.close()
+        return rows
 
     @staticmethod
     def create_wordbook(name, description=''):
@@ -209,20 +216,28 @@ class Word:
             (name, description)
         )
         db.commit()
-        return cur.lastrowid
+        wordbook_id = cur.lastrowid
+        db.close()
+        return wordbook_id
 
     @staticmethod
     def get_favorite_book():
         """定位内置「我的收藏」词库（不存在则自动创建），返回 id。"""
         db = get_db()
-        row = db.execute("SELECT id FROM wordbooks WHERE name='我的收藏' LIMIT 1").fetchone()
+        row = db.execute(
+            "SELECT id FROM wordbooks WHERE name='我的收藏' AND COALESCE(is_hidden,0)=0 LIMIT 1"
+        ).fetchone()
         if row:
-            return row['id']
+            favorite_id = row['id']
+            db.close()
+            return favorite_id
         cur = db.execute(
-            "INSERT INTO wordbooks (name, description, is_builtin) VALUES ('我的收藏', '收藏的单词自动收进这里', 1)"
+            "INSERT INTO wordbooks (name, description, is_builtin, is_hidden) VALUES ('我的收藏', '收藏的单词自动收进这里', 1, 0)"
         )
         db.commit()
-        return cur.lastrowid
+        favorite_id = cur.lastrowid
+        db.close()
+        return favorite_id
 
     @staticmethod
     def is_favorite(word_id):
@@ -273,3 +288,5 @@ class Word:
             return True
         except:
             return False
+        finally:
+            db.close()

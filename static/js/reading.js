@@ -1,7 +1,9 @@
 function readingApp() {
     return {
         articles: [], currentArticle: null, selectedAnswers: {}, annotations: {},
-        markMode: 'green', fontSize: 17, activeTopic: '', startedAt: 0,
+        markMode: null, masteryVisible: false, vocabularyTab: 'learning',
+        currentLookup: null, paintStroke: null,
+        fontSize: 17, activeTopic: '', startedAt: 0,
         sessionSaved: false, modalLastFocus: null, lastResultHtml: '', inventory: null,
 
         async init() {
@@ -35,7 +37,9 @@ function readingApp() {
             document.getElementById('answer-card-close')?.addEventListener('click', () => this.closeDialog('answer-card-modal'));
             document.getElementById('reading-answer-card-fab')?.addEventListener('click', () => this.openAnswerCard());
             document.getElementById('word-modal-close')?.addEventListener('click', () => this.closeDialog('word-modal'));
-            ['answer-card-modal', 'word-modal'].forEach(id => document.getElementById(id)?.addEventListener('click', event => {
+            document.getElementById('vocabulary-modal-close')?.addEventListener('click', () => this.closeDialog('vocabulary-modal'));
+            document.querySelectorAll('[data-vocabulary-tab]').forEach(button => button.addEventListener('click', () => this.setVocabularyTab(button.dataset.vocabularyTab)));
+            ['answer-card-modal', 'word-modal', 'vocabulary-modal'].forEach(id => document.getElementById(id)?.addEventListener('click', event => {
                 if (event.target.id === id) this.closeDialog(id);
             }));
             document.addEventListener('keydown', event => this.handleGlobalKey(event));
@@ -191,6 +195,7 @@ function readingApp() {
                     api(`/api/reading/articles/${id}`), api(`/api/reading/articles/${id}/annotations`),
                 ]);
                 this.currentArticle = data; this.annotations = annotationData.annotations || {};
+                this.markMode = null; this.masteryVisible = false; this.currentLookup = null;
                 this.selectedAnswers = {}; this.startedAt = Date.now(); this.sessionSaved = false; this.lastResultHtml = '';
                 this.renderArticleList(); this.renderArticle();
             } catch (error) {
@@ -207,11 +212,13 @@ function readingApp() {
             const percentage = total > 0 ? Math.round(mastered / total * 100) : 0;
             const difficulty = Math.max(0, Math.min(6, Number(article.difficulty) || 0));
             const sourceLink = article.source_url ? `<a class="reading-source-link" href="${this.escapeHtml(article.source_url)}" target="_blank" rel="noopener noreferrer">查看题材参考</a>` : '';
-            const sourceMeta = article.source_url ? `<details class="reading-source-meta"><summary>来源与原创说明</summary><dl><div><dt>来源</dt><dd>${this.escapeHtml(article.source_name || article.source)}</dd></div><div><dt>原题</dt><dd>${this.escapeHtml(article.source_title || '未提供')}</dd></div><div><dt>发布</dt><dd>${this.escapeHtml(article.source_published_at || '未提供')}</dd></div><div><dt>检索</dt><dd>${this.escapeHtml(article.retrieved_at || '未提供')}</dd></div><div><dt>核验</dt><dd>${this.escapeHtml(article.source_verification || '未提供')}</dd></div><div><dt>说明</dt><dd>${this.escapeHtml(article.adaptation_note || article.adaptation_notes || '本站原创改写')}</dd></div></dl></details>` : '';
+            const sourceMeta = article.source_url ? `<button class="reading-source-toggle" id="reading-source-toggle" type="button" aria-expanded="false" aria-controls="reading-source-panel">来源与原创说明</button>` : '';
+            const sourcePanel = article.source_url ? `<div class="reading-source-panel" id="reading-source-panel" hidden><dl><div><dt>来源</dt><dd>${this.escapeHtml(article.source_name || article.source)}</dd></div><div><dt>原题</dt><dd>${this.escapeHtml(article.source_title || '未提供')}</dd></div><div><dt>发布</dt><dd>${this.escapeHtml(article.source_published_at || '未提供')}</dd></div><div><dt>检索</dt><dd>${this.escapeHtml(article.retrieved_at || '未提供')}</dd></div><div><dt>核验</dt><dd>${this.escapeHtml(article.source_verification || '未提供')}</dd></div><div><dt>说明</dt><dd>${this.escapeHtml(article.adaptation_note || article.adaptation_notes || '本站原创改写')}</dd></div></dl></div>` : '';
             area.innerHTML = `<article class="reading-task" aria-labelledby="reading-article-title">
-                <header class="practice-context-bar reading-context-bar"><div><p class="task-kicker">ARTICLE / 当前文章</p><h2 id="reading-article-title">${this.escapeHtml(article.title)}</h2><p>${this.escapeHtml(article.source)} · ${Number(article.word_count) || 0} 词 · 难度 ${difficulty} · ${this.escapeHtml(this.displayLabel(article.topic) || '未分类')}</p>${sourceLink}${sourceMeta}</div><div class="reading-toolbar" aria-label="正文字号"><button class="btn btn-secondary" type="button" id="reading-font-down" aria-label="缩小正文字号">A−</button><output id="reading-font-size" aria-live="polite">${this.fontSize}px</output><button class="btn btn-secondary" type="button" id="reading-font-up" aria-label="放大正文字号">A＋</button></div></header>
-                <div class="reading-evidence-strip"><div class="reading-evidence-copy"><span>本文词汇掌握</span><strong>${percentage}%</strong><small>已掌握 ${mastered} / ${total || 0}</small></div><div class="reading-mastery-track" role="progressbar" aria-label="本文词汇掌握程度" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${percentage}"><span style="width:${percentage}%"></span></div></div>
-                <div class="mark-toolbar" role="toolbar" aria-label="正文标注模式"><span class="mark-toolbar__label">按住并拖选文字进行标注</span><button class="mark-btn" data-mark="green" type="button" aria-pressed="${this.markMode === 'green'}">重点理解</button><button class="mark-btn" data-mark="red" type="button" aria-pressed="${this.markMode === 'red'}">陌生表达</button><button class="mark-btn" data-mark="erase" type="button" aria-pressed="${this.markMode === 'erase'}">清除标注</button></div>
+                <header class="practice-context-bar reading-context-bar"><div class="reading-context-main"><p class="task-kicker">ARTICLE / 当前文章</p><h2 id="reading-article-title">${this.escapeHtml(article.title)}</h2><p>${this.escapeHtml(article.source)} · ${Number(article.word_count) || 0} 词 · 难度 ${difficulty} · ${this.escapeHtml(this.displayLabel(article.topic) || '未分类')}</p><div class="reading-source-actions">${sourceLink}${sourceMeta}</div>${sourcePanel}</div><div class="reading-toolbar" aria-label="正文字号"><button class="btn btn-secondary" type="button" id="reading-font-down" aria-label="缩小正文字号">A−</button><output id="reading-font-size" aria-live="polite">${this.fontSize}px</output><button class="btn btn-secondary" type="button" id="reading-font-up" aria-label="放大正文字号">A＋</button></div></header>
+                <div class="reading-vocabulary-tools"><button class="reading-evidence-toggle" id="reading-mastery-toggle" type="button" aria-pressed="false"><span class="reading-evidence-copy"><span>本文词汇掌握</span><strong id="reading-mastery-percentage">${percentage}%</strong><small id="reading-mastery-count">已掌握 ${mastered} / ${total || 0}</small></span><span class="reading-mastery-track" role="progressbar" aria-label="本文词汇掌握程度" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${percentage}"><span style="width:${percentage}%"></span></span><b id="reading-mastery-action">显示正文标色</b></button><button class="reading-vocabulary-list-button" id="reading-vocabulary-list" type="button">查看本文词表</button></div>
+                <div class="reading-mastery-legend" id="reading-mastery-legend" hidden aria-label="词汇掌握状态图例"><span data-status="unlisted">未收录</span><span data-status="stranger">陌生</span><span data-status="vague">模糊</span><span data-status="consolidating">巩固</span><span data-status="mastered">掌握</span><span data-status="familiar">熟记</span></div>
+                <div class="mark-toolbar" role="toolbar" aria-label="正文标注模式"><span class="mark-toolbar__label">选择模式后滑动涂抹；再次点击退出</span><button class="mark-btn" data-mark="green" type="button" aria-pressed="false">重点理解</button><button class="mark-btn" data-mark="red" type="button" aria-pressed="false">陌生表达</button><button class="mark-btn" data-mark="erase" type="button" aria-pressed="false">清除标注</button></div>
                 <div class="article-content" style="font-size:${this.fontSize}px" id="article-text">${this.renderArticleText(article.content)}</div>
                 <section class="reading-after-article" aria-label="文章后续操作"><p>阅读过程中可随时使用右下角答题卡作答，已选答案会自动保留。</p><div><button class="btn btn-secondary" id="reading-ai-generate" type="button">AI 生成更多题目</button><a class="btn btn-secondary" href="/control?article_id=${Number(article.id)}">和 AI 聊本篇</a></div><div id="reading-page-result" class="answer-panel" hidden aria-live="polite"></div></section>
             </article>`;
@@ -221,6 +228,7 @@ function readingApp() {
         renderArticleText(content) {
             let wordIndex = 0;
             let tokenIndex = 0;
+            const occurrences = {};
             return String(content || '').split(/(\s+)/).map(part => {
                 if (/^\s+$/.test(part)) return part;
                 const token = tokenIndex++;
@@ -228,7 +236,10 @@ function readingApp() {
                 if (!match) return this.escapeHtml(part);
                 const [, prefix, word, suffix] = match;
                 const index = prefix || suffix ? 100000 + token : wordIndex++;
-                return `${this.escapeHtml(prefix)}<span class="article-word-ann${this.wordMarkClass(index)}" data-widx="${index}" data-word="${this.escapeHtml(word)}" tabindex="0" aria-label="${this.escapeHtml(word)}，拖选标注，回车查词">${this.escapeHtml(word)}</span>${this.escapeHtml(suffix)}`;
+                const normalized = word.toLowerCase().replace('’', "'");
+                const occurrence = occurrences[normalized] || 0;
+                occurrences[normalized] = occurrence + 1;
+                return `${this.escapeHtml(prefix)}<span class="article-word-ann${this.wordMarkClass(index)}" data-widx="${index}" data-word="${this.escapeHtml(word)}" data-occurrence="${occurrence}" tabindex="0" aria-label="${this.escapeHtml(word)}，回车查词">${this.escapeHtml(word)}</span>${this.escapeHtml(suffix)}`;
             }).join('');
         },
 
@@ -237,14 +248,34 @@ function readingApp() {
             document.getElementById('reading-font-up')?.addEventListener('click', () => this.changeFont(1));
             document.getElementById('reading-ai-generate')?.addEventListener('click', () => this.generateAIQuestions());
             document.querySelectorAll('.mark-btn').forEach(button => button.addEventListener('click', () => this.setMarkMode(button.dataset.mark)));
-            document.getElementById('article-text')?.addEventListener('mouseup', event => this.markSelectedWords(event));
+            document.getElementById('reading-mastery-toggle')?.addEventListener('click', () => this.toggleMasteryOverlay());
+            document.getElementById('reading-vocabulary-list')?.addEventListener('click', () => this.openVocabularyModal());
+            document.getElementById('reading-source-toggle')?.addEventListener('click', event => {
+                const panel = document.getElementById('reading-source-panel');
+                if (!panel) return;
+                const open = panel.hidden;
+                panel.hidden = !open;
+                event.currentTarget.setAttribute('aria-expanded', String(open));
+            });
+            const article = document.getElementById('article-text');
+            article?.addEventListener('pointerdown', event => this.startPaintStroke(event));
+            article?.addEventListener('pointermove', event => this.continuePaintStroke(event));
+            article?.addEventListener('pointerup', event => this.finishPaintStroke(event));
+            article?.addEventListener('pointercancel', event => this.finishPaintStroke(event));
             document.querySelectorAll('.article-word-ann').forEach(word => {
-                word.addEventListener('dblclick', event => { event.preventDefault(); this.lookupWordClick(word.dataset.word); });
+                word.addEventListener('dblclick', event => { event.preventDefault(); this.lookupWordClick(word.dataset.word, Number(word.dataset.occurrence) || 0); });
+                word.addEventListener('click', event => {
+                    if (this.markMode || !matchMedia('(pointer: coarse)').matches) return;
+                    event.preventDefault();
+                    this.lookupWordClick(word.dataset.word, Number(word.dataset.occurrence) || 0);
+                });
                 word.addEventListener('keydown', event => {
-                    if (event.key === 'Enter') { event.preventDefault(); this.lookupWordClick(word.dataset.word); }
+                    if (event.key === 'Enter') { event.preventDefault(); this.lookupWordClick(word.dataset.word, Number(word.dataset.occurrence) || 0); }
                     if (event.key === ' ') { event.preventDefault(); this.markWord(Number(word.dataset.widx)); }
                 });
             });
+            this.syncMarkMode();
+            this.applyMasteryOverlay();
         },
 
         renderAnswerQuestions(container) {
@@ -295,56 +326,204 @@ function readingApp() {
         },
 
         setMarkMode(mode) {
-            this.markMode = mode;
-            document.querySelectorAll('.mark-btn').forEach(button => {
-                const active = button.dataset.mark === mode;
-                button.classList.toggle('is-active', active); button.setAttribute('aria-pressed', String(active));
-            });
+            this.markMode = this.markMode === mode ? null : mode;
+            this.syncMarkMode();
         },
 
-        markSelectedWords(event) {
-            if (event.button !== 0 || event.detail > 1) return;
+        syncMarkMode() {
+            document.querySelectorAll('.mark-btn').forEach(button => {
+                const active = button.dataset.mark === this.markMode;
+                button.classList.toggle('is-active', active); button.setAttribute('aria-pressed', String(active));
+            });
             const article = document.getElementById('article-text');
-            const selection = window.getSelection();
-            if (!article || !selection || selection.isCollapsed || !selection.rangeCount) return;
-            if (!article.contains(selection.anchorNode) || !article.contains(selection.focusNode)) return;
-            const range = selection.getRangeAt(0);
-            const indices = Array.from(article.querySelectorAll('.article-word-ann'))
-                .filter(word => { try { return range.intersectsNode(word); } catch (_) { return false; } })
-                .map(word => Number(word.dataset.widx));
-            if (!indices.length) return;
-            this.setWordsMark(indices);
-            selection.removeAllRanges();
+            article?.classList.toggle('is-marking', Boolean(this.markMode));
+            const toolbar = document.querySelector('.mark-toolbar');
+            toolbar?.classList.toggle('is-engaged', Boolean(this.markMode));
+        },
+
+        startPaintStroke(event) {
+            if (!this.markMode || event.button !== 0) return;
+            const word = event.target.closest?.('.article-word-ann');
+            if (!word) return;
+            event.preventDefault();
+            event.currentTarget.setPointerCapture?.(event.pointerId);
+            this.paintStroke = {pointerId:event.pointerId, mode:this.markMode, indices:new Set()};
+            this.paintWordAt(word);
+        },
+
+        continuePaintStroke(event) {
+            if (!this.paintStroke || this.paintStroke.pointerId !== event.pointerId) return;
+            event.preventDefault();
+            const word = document.elementFromPoint(event.clientX, event.clientY)?.closest?.('.article-word-ann');
+            if (word) this.paintWordAt(word);
+        },
+
+        paintWordAt(word) {
+            if (!this.paintStroke || !word) return;
+            const index = Number(word.dataset.widx);
+            if (!Number.isFinite(index) || this.paintStroke.indices.has(index)) return;
+            this.paintStroke.indices.add(index);
+            const marks = this.annotations[index] || [];
+            if (this.paintStroke.mode === 'erase') this.annotations[index] = [];
+            else if (!marks.includes(this.paintStroke.mode)) this.annotations[index] = marks.concat(this.paintStroke.mode);
+            this.applyWordMark(word, index);
+        },
+
+        finishPaintStroke(event) {
+            if (!this.paintStroke || this.paintStroke.pointerId !== event.pointerId) return;
+            event.preventDefault();
+            const stroke = this.paintStroke;
+            this.paintStroke = null;
+            this.saveWordsMark([...stroke.indices], stroke.mode);
+        },
+
+        async saveWordsMark(indices, mode) {
+            if (!this.currentArticle || !indices.length || !mode) return;
+            try {
+                await api(`/api/reading/articles/${this.currentArticle.id}/annotations/batch`, {
+                    method:'POST', body:JSON.stringify({word_indices:indices, mode}),
+                });
+            } catch (_) {
+                showToast('标注暂未保存，已恢复上次状态。', 'error');
+                try {
+                    const data = await api(`/api/reading/articles/${this.currentArticle.id}/annotations`);
+                    this.annotations = data.annotations || {};
+                    document.querySelectorAll('.article-word-ann').forEach(word => this.applyWordMark(word, Number(word.dataset.widx)));
+                } catch (_) {}
+            }
         },
 
         async setWordsMark(indices) {
-            if (!this.currentArticle) return;
-            const mode = this.markMode || 'green';
-            const requests = [];
+            if (!this.currentArticle || !this.markMode) return;
+            const mode = this.markMode;
             [...new Set(indices)].forEach(index => {
                 const marks = this.annotations[index] || [];
                 if (mode === 'erase') {
-                    marks.forEach(mark => requests.push(api(`/api/reading/articles/${this.currentArticle.id}/annotations`, {method:'DELETE', body:JSON.stringify({word_index:index, mark_type:mark})})));
                     this.annotations[index] = [];
                 } else if (!marks.includes(mode)) {
                     this.annotations[index] = marks.concat(mode);
-                    requests.push(api(`/api/reading/articles/${this.currentArticle.id}/annotations`, {method:'POST', body:JSON.stringify({word_index:index, mark_type:mode})}));
                 }
                 this.applyWordMark(document.querySelector(`.article-word-ann[data-widx="${index}"]`), index);
             });
-            try { await Promise.all(requests); }
-            catch (_) { showToast('部分标注暂未保存，正在恢复文章。', 'error'); await this.loadArticle(this.currentArticle.id); }
+            await this.saveWordsMark(indices, mode);
         },
 
         markWord(index) {
-            if (!this.currentArticle) return;
-            const mode = this.markMode || 'green', element = document.querySelector(`.article-word-ann[data-widx="${index}"]`), marks = this.annotations[index] || [];
+            if (!this.currentArticle || !this.markMode) {
+                showToast('请先选择一种标注模式。', 'info');
+                return;
+            }
+            const mode = this.markMode, element = document.querySelector(`.article-word-ann[data-widx="${index}"]`), marks = this.annotations[index] || [];
             let request;
             if (mode === 'erase') { request = Promise.all(marks.map(mark => api(`/api/reading/articles/${this.currentArticle.id}/annotations`, {method:'DELETE', body:JSON.stringify({word_index:index, mark_type:mark})}))); this.annotations[index] = []; }
             else if (marks.includes(mode)) { this.annotations[index] = marks.filter(mark => mark !== mode); request = api(`/api/reading/articles/${this.currentArticle.id}/annotations`, {method:'DELETE', body:JSON.stringify({word_index:index, mark_type:mode})}); }
             else { this.annotations[index] = marks.concat(mode); request = api(`/api/reading/articles/${this.currentArticle.id}/annotations`, {method:'POST', body:JSON.stringify({word_index:index, mark_type:mode})}); }
             this.applyWordMark(element, index);
             Promise.resolve(request).catch(() => { showToast('标注暂未保存，请重试。', 'error'); this.loadArticle(this.currentArticle.id); });
+        },
+
+        masteryClass(status) {
+            return ({'未收录':'unlisted','陌生':'stranger','模糊':'vague','巩固':'consolidating','掌握':'mastered','熟记':'familiar'})[status] || 'unlisted';
+        },
+
+        toggleMasteryOverlay() {
+            this.masteryVisible = !this.masteryVisible;
+            this.applyMasteryOverlay();
+        },
+
+        applyMasteryOverlay() {
+            document.querySelectorAll('.article-word-ann').forEach(word => {
+                word.classList.remove('mastery-unlisted','mastery-stranger','mastery-vague','mastery-consolidating','mastery-mastered','mastery-familiar');
+                word.removeAttribute('data-mastery');
+            });
+            if (this.masteryVisible) {
+                (this.currentArticle?.vocabulary?.words || []).forEach(item => {
+                    const statusClass = this.masteryClass(item.status);
+                    (item.positions || []).forEach(index => {
+                        const word = document.querySelector(`.article-word-ann[data-widx="${index}"]`);
+                        word?.classList.add(`mastery-${statusClass}`);
+                        word?.setAttribute('data-mastery', item.status);
+                    });
+                });
+            }
+            const toggle = document.getElementById('reading-mastery-toggle');
+            toggle?.setAttribute('aria-pressed', String(this.masteryVisible));
+            toggle?.classList.toggle('is-active', this.masteryVisible);
+            const action = document.getElementById('reading-mastery-action');
+            if (action) action.textContent = this.masteryVisible ? '隐藏正文标色' : '显示正文标色';
+            const legend = document.getElementById('reading-mastery-legend');
+            if (legend) legend.hidden = !this.masteryVisible;
+        },
+
+        openVocabularyModal() {
+            this.vocabularyTab = 'learning';
+            this.renderVocabularyList();
+            this.openDialog('vocabulary-modal');
+        },
+
+        renderVocabularyList() {
+            const words = this.currentArticle?.vocabulary?.words || [];
+            const learning = words.filter(item => !item.is_mastered);
+            const mastered = words.filter(item => item.is_mastered);
+            document.querySelectorAll('[data-vocabulary-tab]').forEach(button => {
+                const active = button.dataset.vocabularyTab === this.vocabularyTab;
+                button.classList.toggle('is-active', active);
+                button.setAttribute('aria-selected', String(active));
+            });
+            const counts = document.getElementById('vocabulary-modal-counts');
+            if (counts) counts.textContent = `待掌握 ${learning.length} · 已掌握 ${mastered.length}`;
+            const list = document.getElementById('vocabulary-word-list');
+            if (!list) return;
+            const selected = this.vocabularyTab === 'mastered' ? mastered : learning;
+            if (!selected.length) {
+                list.innerHTML = `<div class="region-state region-state--empty"><strong>${this.vocabularyTab === 'mastered' ? '还没有已掌握词汇' : '本文词汇已经全部掌握'}</strong><span>切换上方分类可查看另一组词汇。</span></div>`;
+                return;
+            }
+            list.innerHTML = selected.map(item => `<article class="vocabulary-word-row"><button class="vocabulary-word-open" type="button" data-open-word="${this.escapeHtml(item.display_word)}" data-occurrence="0"><span><strong>${this.escapeHtml(item.display_word)}</strong>${item.headword !== item.display_word ? `<small>词头 ${this.escapeHtml(item.headword)}</small>` : ''}</span><b data-status="${this.masteryClass(item.status)}">${this.escapeHtml(item.status)}</b></button>${item.found ? `<button class="vocabulary-favorite${item.is_favorite ? ' is-active' : ''}" type="button" data-favorite-word="${Number(item.id)}" aria-pressed="${Boolean(item.is_favorite)}">${item.is_favorite ? '已收藏' : '收藏'}</button>` : `<button class="vocabulary-enrich" type="button" data-open-word="${this.escapeHtml(item.display_word)}" data-occurrence="0">AI 补全</button>`}</article>`).join('');
+            list.querySelectorAll('[data-open-word]').forEach(button => button.addEventListener('click', () => {
+                this.closeDialog('vocabulary-modal');
+                this.lookupWordClick(button.dataset.openWord, Number(button.dataset.occurrence) || 0);
+            }));
+            list.querySelectorAll('[data-favorite-word]').forEach(button => button.addEventListener('click', () => this.toggleVocabularyFavorite(Number(button.dataset.favoriteWord))));
+        },
+
+        setVocabularyTab(tab) {
+            if (!['learning','mastered'].includes(tab)) return;
+            this.vocabularyTab = tab;
+            this.renderVocabularyList();
+        },
+
+        async toggleVocabularyFavorite(wordId) {
+            try {
+                const result = await api('/api/words/favorite', {method:'PUT', body:JSON.stringify({word_id:wordId})});
+                (this.currentArticle?.vocabulary?.words || []).forEach(item => {
+                    if (Number(item.id) === wordId) item.is_favorite = Boolean(result.is_favorite);
+                });
+                if (this.currentLookup && Number(this.currentLookup.id) === wordId) this.currentLookup.is_favorite = Boolean(result.is_favorite);
+                this.renderVocabularyList();
+                showToast(result.is_favorite ? '已收藏本词。' : '已取消收藏。', 'success');
+            } catch (error) {
+                showToast(error.message || '收藏状态保存失败。', 'error');
+            }
+        },
+
+        async refreshVocabulary() {
+            if (!this.currentArticle) return;
+            const fresh = await api(`/api/reading/articles/${this.currentArticle.id}`);
+            this.currentArticle.vocabulary = fresh.vocabulary;
+            this.currentArticle.word_stats = fresh.word_stats;
+            const stats = fresh.word_stats || {};
+            const percentage = Number(stats.percentage) || 0;
+            const percentageNode = document.getElementById('reading-mastery-percentage');
+            const countNode = document.getElementById('reading-mastery-count');
+            const track = document.querySelector('.reading-mastery-track');
+            if (percentageNode) percentageNode.textContent = `${percentage}%`;
+            if (countNode) countNode.textContent = `已掌握 ${Number(stats.mastered) || 0} / ${Number(stats.total_vocab) || 0}`;
+            if (track) {
+                track.setAttribute('aria-valuenow', String(percentage));
+                const bar = track.querySelector('span'); if (bar) bar.style.width = `${percentage}%`;
+            }
+            this.applyMasteryOverlay();
         },
 
         changeFont(delta) {
@@ -356,7 +535,7 @@ function readingApp() {
             try { window.localStorage.setItem('reading-font-size', String(this.fontSize)); } catch (_) {}
         },
 
-        async lookupWordClick(word) {
+        async lookupWordClick(word, occurrence = 0) {
             const detail = document.getElementById('lookup-detail');
             document.getElementById('lookup-word-title').textContent = word;
             const pronounce = document.getElementById('lookup-pronounce');
@@ -365,9 +544,70 @@ function readingApp() {
             this.openDialog('word-modal');
             try {
                 const data = await api(`/api/reading/lookup-word?word=${encodeURIComponent(word)}`);
+                this.currentLookup = {...data, surface_word:word, occurrence};
                 if (pronounce && data.found) pronounce.onclick = () => speakEnglish(word, {wordId: data.id, audioUrl: data.audio_url});
-            detail.innerHTML = data.found ? `<div class="lookup-result"><p>${this.escapeHtml(data.phonetic || '')}</p><strong>${this.escapeHtml((data.meanings || []).join('；'))}</strong><small>考频：${Number(data.frequency) || 0} / 5</small></div>` : '<div class="region-state region-state--empty"><strong>当前词库没有收录</strong><span>仍可使用设备英文语音听发音，并把它记进笔记稍后整理。</span></div>';
+                this.renderLookupDetail();
             } catch (error) { detail.innerHTML = `<div class="region-state region-state--error"><strong>查词失败</strong><span>${this.escapeHtml(error.message || '请稍后重试。')}</span></div>`; }
+        },
+
+        renderLookupDetail() {
+            const detail = document.getElementById('lookup-detail');
+            const data = this.currentLookup;
+            if (!detail || !data) return;
+            if (!data.found) {
+                detail.innerHTML = `<div class="lookup-empty"><strong>当前词库没有收录</strong><p>可以继续使用设备英文语音，也可以按需调用一次 AI；成功后详情会保存在本机，下次直接读取。</p><button class="btn btn-primary" id="lookup-enrich" type="button">AI 补全这个词</button></div>`;
+                document.getElementById('lookup-enrich')?.addEventListener('click', () => this.enrichCurrentWord(false));
+                return;
+            }
+            const ai = data.ai_detail;
+            const matchNote = data.match_type === 'inflection' ? `<p class="lookup-match-note">文中词形 <b>${this.escapeHtml(data.surface_word)}</b> 已匹配词头 <b>${this.escapeHtml(data.word)}</b>，无需 AI 也能读取基础词义。</p>` : '';
+            const aiBlock = ai ? `<section class="lookup-ai-detail"><div class="lookup-ai-heading"><div><span>AI 补充 · 已缓存在本机</span><strong>${this.escapeHtml(ai.context_meaning)}</strong></div><button class="text-button" id="lookup-refresh-ai" type="button">重新完善</button></div>${ai.form_note ? `<p>${this.escapeHtml(ai.form_note)}</p>` : ''}<dl><div><dt>当前语境例句</dt><dd><b>${this.escapeHtml(ai.context_example?.en || '')}</b><span>${this.escapeHtml(ai.context_example?.zh || '')}</span></dd></div><div><dt>其他常见词义</dt><dd>${(ai.additional_meanings || []).map(item => `<span>${this.escapeHtml(item)}</span>`).join('') || '<span>没有额外高频词义</span>'}</dd></div><div><dt>${this.escapeHtml(ai.other_example?.meaning || '其他词义例句')}</dt><dd><b>${this.escapeHtml(ai.other_example?.en || '')}</b><span>${this.escapeHtml(ai.other_example?.zh || '')}</span></dd></div></dl></section>` : `<section class="lookup-ai-offer"><strong>需要更完整的语境解释？</strong><p>AI 会补充当前语境词义、其他常见词义和两条例句，并只保存为独立补充，不改动基础词库。</p><button class="btn btn-secondary" id="lookup-enrich" type="button">让 AI 完善</button></section>`;
+            detail.innerHTML = `<div class="lookup-result"><div class="lookup-result__facts"><p>${this.escapeHtml(data.phonetic || '')} ${this.escapeHtml(data.part_of_speech || '')}</p><strong>${this.escapeHtml((data.meanings || []).join('；'))}</strong><small>考频 ${Number(data.frequency) || 0} / 5 · 当前状态 ${this.escapeHtml(data.status || '陌生')}</small></div>${matchNote}<button class="lookup-favorite${data.is_favorite ? ' is-active' : ''}" id="lookup-favorite" type="button" aria-pressed="${Boolean(data.is_favorite)}">${data.is_favorite ? '已收藏' : '收藏本词'}</button>${aiBlock}</div>`;
+            document.getElementById('lookup-favorite')?.addEventListener('click', async () => {
+                await this.toggleVocabularyFavorite(Number(data.id));
+                this.renderLookupDetail();
+            });
+            document.getElementById('lookup-enrich')?.addEventListener('click', () => this.enrichCurrentWord(false));
+            document.getElementById('lookup-refresh-ai')?.addEventListener('click', event => {
+                if (event.currentTarget.dataset.confirmed !== 'true') {
+                    event.currentTarget.dataset.confirmed = 'true';
+                    event.currentTarget.textContent = '再次点击确认调用 AI';
+                    window.setTimeout(() => {
+                        if (event.currentTarget?.isConnected) {
+                            event.currentTarget.dataset.confirmed = 'false';
+                            event.currentTarget.textContent = '重新完善';
+                        }
+                    }, 5000);
+                    return;
+                }
+                this.enrichCurrentWord(true);
+            });
+        },
+
+        async enrichCurrentWord(refresh) {
+            if (!this.currentLookup || !this.currentArticle) return;
+            const button = document.getElementById(refresh ? 'lookup-refresh-ai' : 'lookup-enrich');
+            if (button) { button.disabled = true; button.textContent = 'AI 正在整理…'; }
+            try {
+                const status = await api('/api/ai/config/status');
+                if (!status.configured) throw new Error('请先到“我的 → AI 服务”配置 DeepSeek API Key。');
+                const response = await fetch('/api/ai/enrich-word', {
+                    method:'POST', headers:{'Content-Type':'application/json','X-CSRF-Token':status.csrf_token},
+                    body:JSON.stringify({article_id:this.currentArticle.id,surface_word:this.currentLookup.surface_word,occurrence:this.currentLookup.occurrence,refresh:Boolean(refresh)}),
+                });
+                const data = await response.json().catch(() => ({}));
+                if (!response.ok) throw new Error(data.error || 'AI 单词详情生成失败。');
+                this.currentLookup = {...data, surface_word:this.currentLookup.surface_word, occurrence:this.currentLookup.occurrence};
+                document.getElementById('lookup-word-title').textContent = this.currentLookup.surface_word;
+                const pronounce = document.getElementById('lookup-pronounce');
+                if (pronounce && data.found) pronounce.onclick = () => speakEnglish(data.surface_form || data.word, {wordId:data.id,audioUrl:data.audio_url});
+                this.renderLookupDetail();
+                await this.refreshVocabulary();
+                showToast(data.cached ? '已读取本机缓存。' : 'AI 详情已保存到本机。', 'success');
+            } catch (error) {
+                showToast(error.message || 'AI 单词详情生成失败。', 'error');
+                this.renderLookupDetail();
+            }
         },
 
         openAnswerCard() {

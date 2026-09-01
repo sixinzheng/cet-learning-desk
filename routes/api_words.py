@@ -209,6 +209,7 @@ def wordbooks():
             'learning': int(stats['learning'] or 0),
             'is_current': b['id'] == current,
         })
+    db.close()
     return jsonify({'wordbooks': result})
 
 
@@ -221,27 +222,39 @@ def current_wordbook():
         book_id = int(value['value']) if value and value['value'].isdigit() else None
         name = None
         if book_id:
-            book = db.execute("SELECT id, name FROM wordbooks WHERE id=?", (book_id,)).fetchone()
+            book = db.execute(
+                "SELECT id, name FROM wordbooks WHERE id=? AND COALESCE(is_hidden,0)=0",
+                (book_id,),
+            ).fetchone()
             if not book:
                 book_id = None
             else:
                 name = book['name']
         if book_id is None:
-            book = db.execute("SELECT id, name FROM wordbooks WHERE is_builtin=1 ORDER BY id LIMIT 1").fetchone()
+            book = db.execute(
+                "SELECT id, name FROM wordbooks WHERE is_builtin=1 AND COALESCE(is_hidden,0)=0 ORDER BY id LIMIT 1"
+            ).fetchone()
             if book:
                 book_id, name = book['id'], book['name']
+        db.close()
         return jsonify({'book_id': book_id, 'book_name': name})
 
     data = request.json or {}
     book_id = data.get('book_id')
     if not book_id:
+        db.close()
         return jsonify({'error': '缺少book_id'}), 400
-    book = db.execute("SELECT id, name FROM wordbooks WHERE id=?", (book_id,)).fetchone()
+    book = db.execute(
+        "SELECT id, name FROM wordbooks WHERE id=? AND COALESCE(is_hidden,0)=0",
+        (book_id,),
+    ).fetchone()
     if not book:
+        db.close()
         return jsonify({'error': '词库不存在'}), 404
     db.execute("INSERT OR REPLACE INTO user_settings (key, value) VALUES ('current_wordbook', ?)",
                (str(book_id),))
     db.commit()
+    db.close()
     return jsonify({'ok': True, 'book_id': book_id, 'book_name': book['name']})
 
 
@@ -257,6 +270,13 @@ def create_wordbook():
 
 @bp.route('/wordbooks/<int:book_id>/words')
 def wordbook_words(book_id):
+    db = get_db()
+    visible = db.execute(
+        "SELECT 1 FROM wordbooks WHERE id=? AND COALESCE(is_hidden,0)=0", (book_id,)
+    ).fetchone()
+    db.close()
+    if not visible:
+        return jsonify({'error': '词库不存在'}), 404
     offset = request.args.get('offset', 0, type=int)
     limit = request.args.get('limit', 50, type=int)
     rows = Word.list_by_wordbook(book_id, offset, limit)

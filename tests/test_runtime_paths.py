@@ -84,6 +84,17 @@ class RuntimePathTests(unittest.TestCase):
             self.assertEqual(self.read_marker(target), 'already-complete')
             self.assertFalse((root / 'vocab.db.installing').exists())
 
+    def test_seed_install_never_overwrites_existing_user_database(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = pathlib.Path(tmp)
+            seed = root / 'seed.db'
+            target = root / 'vocab.db'
+            self.create_seed(seed, 'new-release-seed')
+            self.create_seed(target, 'persisted-user-data')
+            _install_seed(str(seed), str(target))
+            self.assertEqual(self.read_marker(target), 'persisted-user-data')
+            self.assertFalse((root / 'vocab.db.installing').exists())
+
 
 if __name__ == '__main__':
     unittest.main()

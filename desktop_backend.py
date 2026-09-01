@@ -12,18 +12,40 @@ import time
 import traceback
 
 
-def _parse_args():
+DEFAULT_DESKTOP_PORT = 5099
+PORT_RELEASE_WAIT_SECONDS = 8.0
+
+
+def _parse_args(argv=None):
     parser = argparse.ArgumentParser()
-    parser.add_argument('--port', type=int, default=0)
+    # 桌面 WebView 的 localStorage 以 origin（包含端口）隔离。使用随机端口会让
+    # 新手引导、字号、头像等本地状态在每次启动时看起来被重置。
+    parser.add_argument('--port', type=int, default=DEFAULT_DESKTOP_PORT)
     parser.add_argument('--parent-pid', type=int, default=0)
     parser.add_argument('--data-dir', default='')
-    return parser.parse_args()
+    return parser.parse_args(argv)
 
 
 def _free_port() -> int:
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as probe:
         probe.bind(('127.0.0.1', 0))
         return int(probe.getsockname()[1])
+
+
+def _wait_for_port_release(port: int, timeout: float = PORT_RELEASE_WAIT_SECONDS) -> None:
+    """短暂等待上一个 sidecar 退出，避免快速重启时误报端口占用。"""
+    deadline = time.monotonic() + max(0.0, timeout)
+    while True:
+        with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as probe:
+            try:
+                probe.bind(('127.0.0.1', port))
+                return
+            except OSError as error:
+                if time.monotonic() >= deadline:
+                    raise RuntimeError(
+                        f'桌面学习服务固定端口 {port} 被其他程序占用，请关闭占用程序后重试。'
+                    ) from error
+        time.sleep(0.2)
 
 
 def _parent_alive(pid: int) -> bool:
@@ -60,6 +82,8 @@ def main() -> int:
     from waitress import create_server
 
     port = args.port if args.port > 0 else _free_port()
+    if args.port > 0:
+        _wait_for_port_release(port)
     app = create_app()
     server = create_server(app, host='127.0.0.1', port=port, threads=8)
     if args.parent_pid:

@@ -206,7 +206,19 @@ function studyApp() {
             }
             try { await api('/api/study/answer', {method:'POST', body:JSON.stringify({word_id:this.currentWordId, correct, mode:'learn'})}); }
             catch(e) { showToast('本题结果暂未计入记录，请稍后重试。', 'error'); }
-            setTimeout(() => { this.phase = 'card'; }, 300);
+            setTimeout(() => {
+                this.phase = 'card';
+                requestAnimationFrame(() => requestAnimationFrame(() => this.focusAnswerCardOnMobile()));
+            }, 300);
+        },
+
+        focusAnswerCardOnMobile() {
+            if (!window.matchMedia('(max-width: 767px)').matches) return;
+            const card = document.getElementById('study-card-phase');
+            if (!card) return;
+            const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            card.scrollIntoView({block:'start', behavior:reduceMotion ? 'auto' : 'smooth'});
+            card.querySelector('.mode-header')?.focus({preventScroll:true});
         },
 
         retryQuiz() {

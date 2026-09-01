@@ -85,9 +85,25 @@
         function barOption(entries) {
             var maxValue = Math.max.apply(null, entries.map(function (e) { return e[1]; }).concat([1]));
             return {
-                grid: { left: 82, right: 40, top: 14, bottom: 24 },
-                xAxis: { type: 'value', max: Math.max(5, Math.ceil(maxValue * 1.12)), minInterval: 1 },
-                yAxis: { type: 'category', data: entries.map(function (e) { return e[0]; }) },
+                animationDuration: 360,
+                grid: { left: 8, right: 28, top: 12, bottom: 24, containLabel: true },
+                xAxis: {
+                    type: 'value',
+                    max: Math.max(5, Math.ceil(maxValue * 1.18)),
+                    minInterval: 1,
+                    splitNumber: 4,
+                    axisLine: { lineStyle: { color: colors.grid } },
+                    axisTick: { show: false },
+                    axisLabel: { color: colors.muted, hideOverlap: true },
+                    splitLine: { lineStyle: { color: '#e9e1d4' } },
+                },
+                yAxis: {
+                    type: 'category',
+                    data: entries.map(function (e) { return e[0]; }),
+                    axisLine: { lineStyle: { color: colors.grid } },
+                    axisTick: { show: false },
+                    axisLabel: { color: colors.muted, width: 86, overflow: 'truncate' },
+                },
                 tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' }, formatter: function (params) { return params[0].name + '：累计 ' + params[0].value; } },
                 series: [{ type: 'bar', data: entries.map(function (e) { return e[1]; }), itemStyle: { color: colors.indigo }, barWidth: 14, label: { show: true, position: 'right', color: colors.muted } }],
             };

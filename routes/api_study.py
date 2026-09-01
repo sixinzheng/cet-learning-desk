@@ -36,11 +36,14 @@ def dashboard():
     current_book_id = None
     if current_book_row and str(current_book_row['value']).isdigit():
         candidate = int(current_book_row['value'])
-        if db.execute("SELECT 1 FROM wordbooks WHERE id=?", (candidate,)).fetchone():
+        if db.execute(
+            "SELECT 1 FROM wordbooks WHERE id=? AND COALESCE(is_hidden,0)=0",
+            (candidate,),
+        ).fetchone():
             current_book_id = candidate
     if current_book_id is None:
         default_book = db.execute(
-            "SELECT id FROM wordbooks WHERE is_builtin=1 ORDER BY id LIMIT 1"
+            "SELECT id FROM wordbooks WHERE is_builtin=1 AND COALESCE(is_hidden,0)=0 ORDER BY id LIMIT 1"
         ).fetchone()
         current_book_id = int(default_book['id']) if default_book else None
 
@@ -193,13 +196,24 @@ def get_new_words():
         saved = db.execute("SELECT value FROM user_settings WHERE key='current_wordbook'").fetchone()
         if saved and saved['value'].isdigit():
             candidate = int(saved['value'])
-            if db.execute("SELECT id FROM wordbooks WHERE id=?", (candidate,)).fetchone():
+            if db.execute(
+                "SELECT id FROM wordbooks WHERE id=? AND COALESCE(is_hidden,0)=0",
+                (candidate,),
+            ).fetchone():
                 book_id = candidate
     if book_id:
-        row = db.execute("SELECT id, name FROM wordbooks WHERE id=?", (book_id,)).fetchone()
-        book_name = row['name'] if row else None
+        row = db.execute(
+            "SELECT id, name FROM wordbooks WHERE id=? AND COALESCE(is_hidden,0)=0",
+            (book_id,),
+        ).fetchone()
+        if row:
+            book_name = row['name']
+        else:
+            book_id = None
     if not book_id:
-        book = db.execute("SELECT id, name FROM wordbooks WHERE is_builtin=1 ORDER BY id LIMIT 1").fetchone()
+        book = db.execute(
+            "SELECT id, name FROM wordbooks WHERE is_builtin=1 AND COALESCE(is_hidden,0)=0 ORDER BY id LIMIT 1"
+        ).fetchone()
         if not book:
             db.close()
             return jsonify({'words': [], 'book_id': None, 'book_name': None})

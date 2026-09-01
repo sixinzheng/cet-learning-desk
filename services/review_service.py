@@ -136,9 +136,14 @@ def get_listening_review_candidates(limit=40):
             "SELECT value FROM user_settings WHERE key='current_wordbook'"
         ).fetchone()
         book_id = int(saved['value']) if saved and str(saved['value']).isdigit() else None
+        if book_id and not db.execute(
+            "SELECT 1 FROM wordbooks WHERE id=? AND COALESCE(is_hidden,0)=0",
+            (book_id,),
+        ).fetchone():
+            book_id = None
         if not book_id:
             book = db.execute(
-                "SELECT id FROM wordbooks WHERE is_builtin=1 ORDER BY id LIMIT 1"
+                "SELECT id FROM wordbooks WHERE is_builtin=1 AND COALESCE(is_hidden,0)=0 ORDER BY id LIMIT 1"
             ).fetchone()
             book_id = book['id'] if book else None
 

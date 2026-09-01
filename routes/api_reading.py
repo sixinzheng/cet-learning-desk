@@ -6,6 +6,7 @@ from database import get_db
 from seed.reading_catalog import TOPICS
 from services.difficulty_service import get_training_difficulty
 from services.reading_inventory_service import enable_refill, inventory_snapshot
+from services.word_enrichment_service import article_vocabulary, lookup_word as lookup_article_word
 
 bp = Blueprint('reading', __name__)
 
@@ -89,24 +90,13 @@ def article_detail(article_id):
         "SELECT * FROM reading_questions WHERE article_id=? ORDER BY id", (article_id,)
     ).fetchall()
 
-    # 词汇统计：分析文章中单词的用户掌握情况
     import json
-    word_stats = json.loads(article['word_stats'] or '{}')
-    if not word_stats:
-        # 简易计算：统计文章内容中认识的词
-        content_words = set(article['content'].lower().split())
-        known = 0
-        for w in content_words:
-            w_clean = w.strip('.,;:!?"\'()[]{}')
-            if len(w_clean) > 2:
-                row = db.execute("SELECT uw.status FROM words w JOIN user_words uw ON w.id=uw.word_id WHERE w.word=?", (w_clean,)).fetchone()
-                if row and row['status'] in ('巩固', '掌握', '熟记'):
-                    known += 1
-        total = len([w for w in content_words if len(w.strip('.,;:!?"\'()[]{}')) > 2])
-        word_stats = {
-            'mastered': known if total > 0 else 0,
-            'total_vocab': total if total > 0 else len(content_words),
-        }
+    vocabulary = article_vocabulary(article)
+    word_stats = {
+        'mastered': vocabulary['mastered'],
+        'total_vocab': vocabulary['total_vocab'],
+        'percentage': vocabulary['percentage'],
+    }
 
     question_items = [{
         'id': q['id'],
@@ -136,6 +126,7 @@ def article_detail(article_id):
         'source_verification': article['source_verification'],
         'origin': article['origin'],
         'word_stats': word_stats,
+        'vocabulary': vocabulary,
         'questions': question_items,
     }
     db.close()
@@ -181,22 +172,9 @@ def lookup_word():
     word = request.args.get('word', '').strip().lower()
     if not word:
         return jsonify({'found': False})
-    db = get_db()
-    row = db.execute("SELECT * FROM words WHERE word=?", (word,)).fetchone()
-    if not row:
-        db.close()
-        return jsonify({'found': False})
-    import json
-    result = {
-        'found': True,
-        'id': row['id'],
-        'word': row['word'],
-        'phonetic': row['phonetic'],
-        'meanings': json.loads(row['meanings']),
-        'frequency': row['frequency'],
-        'audio_url': f'/api/words/{int(row["id"])}/audio',
-    }
-    db.close()
+    result = lookup_article_word(word)
+    if result.get('found'):
+        result['audio_url'] = f'/api/words/{int(result["id"])}/audio'
     return jsonify(result)
 
 
@@ -241,3 +219,36 @@ def delete_annotation(article_id):
     db.execute("DELETE FROM article_annotations WHERE article_id=? AND word_index=? AND mark_type=?", (article_id, idx, mark_type))
     db.commit(); db.close()
     return jsonify({'ok': True})
+
+
+@bp.route('/articles/<int:article_id>/annotations/batch', methods=['POST'])
+def save_annotations_batch(article_id):
+    data = request.get_json(silent=True) or {}
+    mode = str(data.get('mode') or '')
+    raw_indices = data.get('word_indices') or []
+    if mode not in ('green', 'red', 'erase') or not isinstance(raw_indices, list):
+        return jsonify({'error': '批量标注参数无效。'}), 400
+    try:
+        indices = sorted({int(value) for value in raw_indices if int(value) >= 0})
+    except (TypeError, ValueError):
+        return jsonify({'error': '标注位置无效。'}), 400
+    if not indices or len(indices) > 500:
+        return jsonify({'error': '请选择 1–500 个词进行标注。'}), 400
+    db = get_db()
+    exists = db.execute("SELECT 1 FROM reading_articles WHERE id=?", (article_id,)).fetchone()
+    if not exists:
+        db.close()
+        return jsonify({'error': '文章不存在。'}), 404
+    if mode == 'erase':
+        marks = ','.join('?' for _ in indices)
+        db.execute(
+            f"DELETE FROM article_annotations WHERE article_id=? AND word_index IN ({marks})",
+            (article_id, *indices),
+        )
+    else:
+        db.executemany(
+            "INSERT OR IGNORE INTO article_annotations (article_id,word_index,mark_type) VALUES (?,?,?)",
+            [(article_id, index, mode) for index in indices],
+        )
+    db.commit(); db.close()
+    return jsonify({'ok': True, 'mode': mode, 'word_indices': indices})

@@ -15,6 +15,7 @@ from services.skill_service import (
     create_custom_skill, delete_custom_skill, get_site_skill, list_site_skills,
     skill_prompt, update_site_skill,
 )
+from services.word_enrichment_service import enrich_word
 
 
 bp = Blueprint('ai', __name__)
@@ -849,6 +850,28 @@ def generate_reading_questions_endpoint():
         inserted += 1
     db.commit(); db.close()
     return jsonify({'ok': True, 'generated': inserted, 'count': count})
+
+
+@bp.route('/enrich-word', methods=['POST'])
+@_require_csrf
+def enrich_word_endpoint():
+    payload = request.get_json(silent=True) or {}
+    try:
+        result = enrich_word(
+            article_id=payload.get('article_id'),
+            surface_word=payload.get('surface_word'),
+            occurrence=payload.get('occurrence', 0),
+            refresh=bool(payload.get('refresh', False)),
+        )
+    except ValueError as exc:
+        return jsonify({'error': str(exc)}), 400
+    except LookupError as exc:
+        return jsonify({'error': str(exc)}), 404
+    except AIServiceError as exc:
+        return jsonify({'error': str(exc), 'code': exc.code}), exc.status
+    if result.get('found'):
+        result['audio_url'] = f'/api/words/{int(result["id"])}/audio'
+    return jsonify(result)
 
 
 @bp.route('/generate-cloze', methods=['POST'])
