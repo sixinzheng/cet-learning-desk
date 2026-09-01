@@ -56,6 +56,41 @@ async function sameLineSpan(page) {
     const page = await context.newPage();
     const errors = watchErrors(page);
 
+    let difficultyRouteHits = 0;
+    await page.route('**/api/study/difficulty-setting', async route => {
+      difficultyRouteHits += 1;
+      if (route.request().method() === 'GET') {
+        await route.fulfill({json:{difficulty:null,label:'未设置'}});
+      } else {
+        await route.continue();
+      }
+    });
+    await page.goto(`${baseUrl}/learn`, {waitUntil:'networkidle'});
+    const difficultyPrompt = page.locator('#difficulty-prompt');
+    const promptState = await page.evaluate(() => ({
+      width:innerWidth,
+      mobile:matchMedia('(max-width: 767px)').matches,
+      hidden:document.getElementById('difficulty-prompt')?.hidden,
+      display:getComputedStyle(document.getElementById('difficulty-prompt')).display,
+      summary:document.getElementById('learn-difficulty-summary')?.textContent,
+    }));
+    assert(await difficultyPrompt.isVisible(), `${viewport.width}px 未设置难度时没有显示提醒；route=${difficultyRouteHits} state=${JSON.stringify(promptState)}`);
+    const promptHeights = await page.locator('.difficulty-prompt__actions button').evaluateAll(nodes => nodes.map(node => Math.round(node.getBoundingClientRect().height)));
+    assert(promptHeights.every(value => value >= 48), `${viewport.width}px 难度提醒按钮触控高度不足 48px`);
+    await page.locator('#difficulty-prompt-later').tap();
+    assert(!(await difficultyPrompt.isVisible()), `${viewport.width}px “稍后”没有关闭本次提醒`);
+    await page.reload({waitUntil:'networkidle'});
+    assert(await difficultyPrompt.isVisible(), `${viewport.width}px “稍后”后下次进入没有再次提醒`);
+    await page.locator('#difficulty-prompt-go').tap();
+    await page.waitForTimeout(650);
+    const difficultyTarget = await page.evaluate(() => {
+      const section = document.getElementById('training-difficulty').getBoundingClientRect();
+      const radio = document.querySelector('input[name="training-difficulty"]');
+      return {top:Math.round(section.top),focused:document.activeElement === radio};
+    });
+    assert(difficultyTarget.top >= 55 && difficultyTarget.top <= 200, `${viewport.width}px 没有定位到难度区域：${JSON.stringify(difficultyTarget)}`);
+    assert(difficultyTarget.focused, `${viewport.width}px 定位后未聚焦第一个难度选项`);
+
     await page.goto(`${baseUrl}/growth`, {waitUntil:'networkidle'});
     await page.waitForSelector('#g-achievements canvas', {timeout:10000});
     const growth = await page.evaluate(() => {
@@ -106,6 +141,11 @@ async function sameLineSpan(page) {
     assert(header.sourceHeights.every(value => value >= 48), `${viewport.width}px 来源按钮触控高度不足 48px`);
     assert(header.fontCentered && header.fontButtonHeights.every(value => value >= 48), `${viewport.width}px 字号控制未居中或触控高度不足`);
     assert(header.overflowX <= 1, `${viewport.width}px 阅读页横向溢出`);
+    const mobileArticleList = await page.locator('#article-list').evaluate(node => ({
+      maxBlockSize:getComputedStyle(node).maxBlockSize,
+      overflowY:getComputedStyle(node).overflowY,
+    }));
+    assert(mobileArticleList.maxBlockSize === 'none' && mobileArticleList.overflowY === 'visible', `${viewport.width}px 手机文章列表被错误改成嵌套滚动`);
 
     const mark = page.locator('.mark-btn[data-mark="green"]');
     assert((await mark.getAttribute('aria-pressed')) === 'false', '标注模式没有默认退出');
@@ -237,8 +277,15 @@ async function sameLineSpan(page) {
   const desktopFit = await desktop.evaluate(() => ({
     overflowX:document.documentElement.scrollWidth-document.documentElement.clientWidth,
     sourceDisplay:getComputedStyle(document.querySelector('.reading-source-actions')).display,
+    articleList:(() => {
+      const node=document.getElementById('article-list'); const style=getComputedStyle(node);
+      return {overflowY:style.overflowY,clientHeight:node.clientHeight,scrollHeight:node.scrollHeight,maxBlockSize:style.maxBlockSize};
+    })(),
   }));
   assert(desktopFit.overflowX <= 1, '桌面阅读页横向溢出');
+  assert(desktopFit.articleList.overflowY === 'auto', '桌面文章列表没有独立纵向滚动');
+  assert(desktopFit.articleList.clientHeight <= 544, `桌面文章列表过高：${desktopFit.articleList.clientHeight}px`);
+  assert(desktopFit.articleList.scrollHeight >= desktopFit.articleList.clientHeight, '桌面文章列表尺寸异常');
   assert(desktopErrors.length === 0, `桌面控制台错误：${desktopErrors.join(' | ')}`);
   report.desktop = {desktopToolbarPosition,desktopFit};
   await desktop.screenshot({path:path.join(output,'reading-desktop-vocabulary.png'),fullPage:false});

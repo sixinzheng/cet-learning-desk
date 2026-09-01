@@ -60,6 +60,7 @@ def create_app():
     from routes.api_writing import bp as writing_bp
     from routes.api_ai import bp as ai_bp
     from routes.api_update import bp as update_bp
+    from routes.api_device_sync import bp as device_sync_bp
 
     app.register_blueprint(words_bp, url_prefix='/api/words')
     app.register_blueprint(study_bp, url_prefix='/api/study')
@@ -72,6 +73,7 @@ def create_app():
     app.register_blueprint(cloze_bp, url_prefix='/api/practice')
     app.register_blueprint(ai_bp, url_prefix='/api/ai')
     app.register_blueprint(update_bp, url_prefix='/api/app/update')
+    app.register_blueprint(device_sync_bp, url_prefix='/api/device-sync')
 
     # 只有用户在阅读页明确开启过自动补库时才跨重启恢复；
     # 测试库和新安装默认不会发起付费 AI 请求。

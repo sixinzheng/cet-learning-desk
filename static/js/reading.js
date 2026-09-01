@@ -198,6 +198,10 @@ function readingApp() {
                 this.markMode = null; this.masteryVisible = false; this.currentLookup = null;
                 this.selectedAnswers = {}; this.startedAt = Date.now(); this.sessionSaved = false; this.lastResultHtml = '';
                 this.renderArticleList(); this.renderArticle();
+                requestAnimationFrame(() => {
+                    const current = document.querySelector('#article-list .article-item[aria-current="true"]');
+                    current?.scrollIntoView({block:'nearest',inline:'nearest'});
+                });
             } catch (error) {
                 if (area) area.innerHTML = `<div class="region-state region-state--error"><strong>文章加载失败</strong><span>${this.escapeHtml(error.message || '请检查本地服务后重试。')}</span><button type="button" class="btn btn-secondary" id="reading-article-retry">重新加载</button></div>`;
                 document.getElementById('reading-article-retry')?.addEventListener('click', () => this.loadArticle(id));

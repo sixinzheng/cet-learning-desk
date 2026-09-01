@@ -3,6 +3,48 @@
     if(!root)return;
     const $=id=>document.getElementById(id);
     const radios=()=>document.querySelectorAll('input[name="training-difficulty"]');
+    const mobileQuery=window.matchMedia('(max-width: 767px)');
+    const prompt=$('difficulty-prompt');
+    const promptCard=prompt?.querySelector('[role="dialog"]');
+    let promptReturnFocus=null;
+
+    function closeDifficultyPrompt(){
+        if(!prompt||prompt.hidden)return;
+        prompt.hidden=true;
+        document.body.classList.remove('modal-open');
+        promptReturnFocus?.focus?.({preventScroll:true});
+    }
+
+    function openDifficultyPrompt(){
+        if(!prompt||!mobileQuery.matches)return;
+        promptReturnFocus=document.activeElement;
+        prompt.hidden=false;
+        document.body.classList.add('modal-open');
+        requestAnimationFrame(()=>promptCard?.focus({preventScroll:true}));
+    }
+
+    function focusDifficultyPicker(){
+        closeDifficultyPrompt();
+        const section=$('training-difficulty');
+        const firstRadio=radios()[0];
+        if(!section||!firstRadio)return;
+        const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        section.scrollIntoView({behavior:reduced?'auto':'smooth',block:'start'});
+        window.setTimeout(()=>firstRadio.focus({preventScroll:true}),reduced?0:420);
+    }
+
+    $('difficulty-prompt-later')?.addEventListener('click',closeDifficultyPrompt);
+    $('difficulty-prompt-go')?.addEventListener('click',focusDifficultyPicker);
+    prompt?.addEventListener('click',event=>{if(event.target===prompt)closeDifficultyPrompt();});
+    document.addEventListener('keydown',event=>{
+        if(event.key==='Escape'&&!prompt?.hidden)closeDifficultyPrompt();
+        if(event.key!=='Tab'||prompt?.hidden)return;
+        const focusable=[...prompt.querySelectorAll('button:not([disabled])')];
+        if(!focusable.length)return;
+        const first=focusable[0],last=focusable[focusable.length-1];
+        if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus();}
+        else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus();}
+    });
 
     // 今日专项进度 + 当前节奏 + 专项目录计数
     try{
@@ -32,6 +74,7 @@
         const summary=$('learn-difficulty-summary');
         summary.textContent=data.difficulty?`当前按「${data.label}」档位出题。`:'当前未设置，按全部难度出题。';
         $('difficulty-hint').textContent=data.difficulty?`已保存为「${data.label}」，专项将按此难度出题。`:'当前未设置，按全部难度出题。';
+        if(!data.difficulty)openDifficultyPrompt();
     }catch(_){
         $('learn-difficulty-summary').textContent='难度设置读取失败，请刷新重试。';
     }
@@ -45,6 +88,7 @@
             $('difficulty-hint').textContent=`已保存为「${data.label}」，阅读、听力、单词专练将按此难度出题，写作按对应标准批改。`;
             const summary=$('learn-difficulty-summary');
             if(summary)summary.textContent=`当前按「${data.label}」档位出题。`;
+            closeDifficultyPrompt();
             showToast(`训练难度已保存为「${data.label}」。`,'success');
         }catch(error){showToast(error.message||'保存失败，请重试。','error');}
     });

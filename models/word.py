@@ -1,4 +1,5 @@
 from database import get_db
+from services.device_sync_data import clear_tombstone, record_tombstone
 
 
 class Word:
@@ -260,8 +261,12 @@ class Word:
             "SELECT 1 FROM wordbook_words WHERE wordbook_id=? AND word_id=?",
             (fav, word_id)
         ).fetchone()
+        word_row = db.execute("SELECT word FROM words WHERE id=?", (word_id,)).fetchone()
+        word_key = str(word_row['word']).strip().lower() if word_row else ''
         if exists:
             db.execute("DELETE FROM wordbook_words WHERE wordbook_id=? AND word_id=?", (fav, word_id))
+            if word_key:
+                record_tombstone('favorite', 'favorite:' + word_key, db=db)
             db.commit()
             db.close()
             return False, fav
@@ -274,6 +279,8 @@ class Word:
             "INSERT OR IGNORE INTO wordbook_words (wordbook_id, word_id) VALUES (?,?)",
             (fav, word_id)
         )
+        if word_key:
+            clear_tombstone('favorite', 'favorite:' + word_key, db=db)
         db.commit()
         db.close()
         return True, fav

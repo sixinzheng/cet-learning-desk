@@ -23,6 +23,17 @@
     <section class="training-directory section-block" aria-labelledby="training-title"><div class="section-heading"><div><p class="eyebrow">FOUR WORKSPACES</p><h2 id="training-title">专项训练</h2></div><p>每项保留自己的题型与反馈方式</p></div>
         <div class="training-directory__grid"><a href="/reading" data-workspace="reading"><span>01 / READING</span><h3>阅读训练</h3><p>真题与外刊文章，完成题目后查看逐项解析。</p><b id="count-reading">-- 次记录</b></a><a href="/listening" data-workspace="listening"><span>02 / LISTENING</span><h3>听力训练</h3><p>分层听解，听辨、理解、对话逐层递进。</p><b id="count-listening">-- 次记录</b></a><a href="/cloze" data-workspace="cloze"><span>03 / WORD CLOZE</span><h3>单词专练</h3><p>选词填空：给出原形词，回填正确词形。</p><b id="count-cloze">-- 次记录</b></a><a href="/writing" data-workspace="writing"><span>04 / WRITING</span><h3>写作批改</h3><p>提交作文，在 AI 可用时获得结构与语言反馈。</p><b id="count-writing">-- 次记录</b></a></div>
     </section>
+    <div class="modal-overlay difficulty-prompt" id="difficulty-prompt" hidden>
+        <section class="modal-card difficulty-prompt__card" role="dialog" aria-modal="true" aria-labelledby="difficulty-prompt-title" aria-describedby="difficulty-prompt-copy" tabindex="-1">
+            <p class="difficulty-prompt__label">开始训练前</p>
+            <h2 id="difficulty-prompt-title">先选一个适合你的训练难度</h2>
+            <p id="difficulty-prompt-copy">阅读、听力、单词专练和写作会按这个档位安排内容。现在选择，后面的训练会更准确。</p>
+            <div class="difficulty-prompt__actions">
+                <button type="button" class="btn btn-secondary" id="difficulty-prompt-later">稍后</button>
+                <button type="button" class="btn btn-primary" id="difficulty-prompt-go">去选择难度</button>
+            </div>
+        </section>
+    </div>
 </div>
 {% endblock %}
 {% block scripts %}<script src="{{ asset('js/learn.js') }}"></script>{% endblock %}

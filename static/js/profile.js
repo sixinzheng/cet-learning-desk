@@ -290,7 +290,7 @@
     function renderUpdateProgress(progress) {
         if (!progress) return;
         const holder = $('update-progress');
-        holder.hidden = !['backing_up', 'backup_ready', 'ready_for_native', 'downloading', 'verifying', 'installing'].includes(progress.stage);
+        holder.hidden = !['backing_up', 'backup_ready', 'ready_for_native', 'checking_manifest', 'manifest_retry', 'downloading', 'download_retry', 'verifying', 'installing'].includes(progress.stage);
         const percent = Math.max(0, Math.min(100, Number(progress.percent || 0)));
         holder.setAttribute('aria-valuenow', String(Math.round(percent)));
         $('update-progress-bar').style.setProperty('--update-progress-scale', String(percent / 100));
@@ -415,6 +415,160 @@
         revealHash();
     }
 
+    let deviceSyncPoll = 0;
+    let pendingPairingCode = '';
+    let deviceSyncCsrfPromise = null;
+
+    async function ensureDeviceSyncCsrf() {
+        if (csrf) return csrf;
+        if (!deviceSyncCsrfPromise) {
+            deviceSyncCsrfPromise = api('/api/device-sync/status')
+                .then(data => {
+                    csrf = data.csrf_token || '';
+                    if (!csrf) throw new Error('没有取得设备同步安全令牌，请刷新页面后重试。');
+                    return csrf;
+                })
+                .finally(() => { deviceSyncCsrfPromise = null; });
+        }
+        return deviceSyncCsrfPromise;
+    }
+
+    function renderDeviceSyncState(stage, title, message) {
+        const state = $('device-sync-state');
+        if (!state) return;
+        state.dataset.state = stage || 'idle';
+        $('device-sync-title').textContent = title || '设备同步';
+        $('device-sync-copy').textContent = message || '';
+    }
+
+    function renderDeviceSyncPreview(payload) {
+        const summary = payload?.summary || {};
+        const device = payload?.device || {};
+        $('device-sync-peer').textContent = `电脑：${device.device_name || '未命名设备'} · 临时连接将在 10 分钟内关闭`;
+        ['words','favorites','notes','practice','conversations'].forEach(key => {
+            const field = $(`device-sync-preview-${key}`);
+            if (field) field.textContent = String(Number(summary[key] || 0));
+        });
+        $('device-sync-preview').hidden = false;
+    }
+
+    async function inspectDeviceSyncCode() {
+        const code = String($('device-sync-manual-code')?.value || pendingPairingCode).trim();
+        if (!code) { showToast('请先扫描或粘贴完整配对码。','warning'); return; }
+        if (!window.CETNativeSync || typeof window.CETNativeSync.inspect !== 'function') {
+            showToast('设备同步需要 Android 安装版。','error'); return;
+        }
+        const button = $('device-sync-inspect');
+        button.disabled = true;
+        renderDeviceSyncState('inspecting','正在验证电脑','正在申请一次性本机票据并核对临时证书。');
+        try {
+            await ensureDeviceSyncCsrf();
+            const result = await api('/api/device-sync/mobile-ticket', {
+                method:'POST',headers:{'X-CSRF-Token':csrf},body:'{}',
+            });
+            pendingPairingCode = code;
+            window.CETNativeSync.inspect(code,result.ticket);
+        } catch (error) {
+            renderDeviceSyncState('error','无法开始验证',error.message || '本机同步票据创建失败。');
+            button.disabled = false;
+        }
+    }
+
+    function renderDesktopPairing(data) {
+        $('device-sync-pairing').hidden = false;
+        $('device-sync-qr').src = data.qr_data_url || '';
+        $('device-sync-code').value = data.pairing_code || '';
+        $('device-sync-address').textContent = `${(data.addresses || []).join(' / ')}:${data.port} · 到期后自动关闭`;
+        $('device-sync-start').hidden = true;
+        renderDeviceSyncState('waiting','等待手机连接','请在 Android 版“我的 → 设备同步”扫描二维码。');
+    }
+
+    async function pollDeviceSync() {
+        try {
+            const data = await api('/api/device-sync/status');
+            csrf = csrf || data.csrf_token || '';
+            if (data.stage === 'completed') {
+                renderDeviceSyncState('completed','两台设备已同步','合并结果已写入并通过数据库完整性检查。');
+                $('device-sync-start').hidden = false;
+                $('device-sync-start').textContent = '再次同步';
+                $('device-sync-pairing').hidden = true;
+                clearInterval(deviceSyncPoll); deviceSyncPoll = 0;
+            } else if (data.stage === 'error') {
+                renderDeviceSyncState('error','同步未完成',data.error || '两端备份已经保留，请重试。');
+            }
+        } catch (_) {}
+    }
+
+    function initDeviceSync() {
+        const platform = root.dataset.appPlatform || 'source';
+        $('device-sync-desktop').hidden = platform !== 'windows';
+        $('device-sync-mobile').hidden = platform !== 'android';
+        $('device-sync-source').hidden = platform === 'windows' || platform === 'android';
+        if (platform === 'windows') {
+            $('device-sync-start').addEventListener('click',async()=>{
+                const button=$('device-sync-start'); button.disabled=true;
+                renderDeviceSyncState('starting','正在开启临时连接','正在生成临时证书、一次性令牌和二维码。');
+                try {
+                    await ensureDeviceSyncCsrf();
+                    const data=await api('/api/device-sync/sessions',{method:'POST',headers:{'X-CSRF-Token':csrf},body:'{}'});
+                    csrf=csrf||data.csrf_token||''; renderDesktopPairing(data);
+                    if(deviceSyncPoll)clearInterval(deviceSyncPoll);
+                    deviceSyncPoll=window.setInterval(pollDeviceSync,2000);
+                } catch(error){renderDeviceSyncState('error','无法开启同步',error.message||'请确认电脑已连接专用 Wi-Fi。');}
+                finally{button.disabled=false;}
+            });
+            $('device-sync-cancel').addEventListener('click',async()=>{
+                try{await ensureDeviceSyncCsrf();await api('/api/device-sync/sessions/current',{method:'DELETE',headers:{'X-CSRF-Token':csrf}});}catch(_){}
+                if(deviceSyncPoll)clearInterval(deviceSyncPoll);deviceSyncPoll=0;
+                $('device-sync-pairing').hidden=true;$('device-sync-start').hidden=false;
+                renderDeviceSyncState('idle','临时连接已关闭','没有数据被发送。');
+            });
+            $('device-sync-copy-code').addEventListener('click',async()=>{
+                const code=$('device-sync-code').value;
+                try{await navigator.clipboard.writeText(code);showToast('完整配对码已复制。','success');}
+                catch(_){$('device-sync-code').select();document.execCommand('copy');showToast('完整配对码已复制。','success');}
+            });
+        } else if (platform === 'android') {
+            $('device-sync-scan').addEventListener('click',()=>{
+                if(window.CETNativeSync?.scanPairingCode)window.CETNativeSync.scanPairingCode();
+                else showToast('当前环境不能调用扫码功能，请粘贴配对码。','warning');
+            });
+            $('device-sync-inspect').addEventListener('click',inspectDeviceSyncCode);
+            $('device-sync-confirm').addEventListener('click',()=>{
+                $('device-sync-confirm').disabled=true;
+                window.CETNativeSync?.confirm?.();
+            });
+            $('device-sync-mobile-cancel').addEventListener('click',()=>{
+                window.CETNativeSync?.cancel?.();$('device-sync-preview').hidden=true;
+                $('device-sync-inspect').disabled=false;$('device-sync-confirm').disabled=false;
+                renderDeviceSyncState('idle','已取消本次同步','电脑的临时连接会在到期后自动关闭。');
+            });
+        }
+        api('/api/device-sync/status').then(data=>{csrf=csrf||data.csrf_token||'';}).catch(()=>{});
+    }
+
+    window.CETDeviceSync = {
+        onPairingCode(code){
+            pendingPairingCode=String(code||'');$('device-sync-manual-code').value=pendingPairingCode;
+            inspectDeviceSyncCode();
+        },
+        onProgress(payload){
+            let data=payload||{};
+            if(typeof payload==='string'){
+                try{data=JSON.parse(payload);}catch(_){data={stage:'error',title:'同步状态异常',message:'手机返回了无法识别的同步状态。'};}
+            }
+            renderDeviceSyncState(data.stage,data.title,data.message);
+            if(data.stage==='preview'){
+                renderDeviceSyncPreview(data);$('device-sync-inspect').disabled=false;
+            } else if(data.stage==='completed'){
+                $('device-sync-preview').hidden=true;$('device-sync-confirm').disabled=false;
+                showToast('手机和电脑已完成双向同步。','success');
+            } else if(data.stage==='error'||data.stage==='cancelled'){
+                $('device-sync-inspect').disabled=false;$('device-sync-confirm').disabled=false;
+            }
+        },
+    };
+
     window.CETUpdateNative = {
         onProgress(payload) {
             let progress = payload;
@@ -428,6 +582,10 @@
             renderUpdateProgress(progress || {});
             if (progress?.title) $('update-state-title').textContent = progress.title;
             if (progress?.message) $('update-state-copy').textContent = progress.message;
+            if (progress?.stage === 'error') {
+                $('update-check').disabled = false;
+                $('update-check').textContent = progress?.resumable ? '继续安全更新' : '重新检查';
+            }
         },
     };
 
@@ -442,6 +600,7 @@
     initSupportModal();
     initUpdateCenter();
     initSkillDisclosure();
+    initDeviceSync();
 
     try {
         const [books] = await Promise.all([

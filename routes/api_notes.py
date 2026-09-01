@@ -4,6 +4,7 @@ from datetime import date, timedelta
 from flask import Blueprint, jsonify, request
 from database import get_db
 from services.ai_service import generate_daily_summary
+from services.device_sync_data import note_key, record_tombstone
 
 bp = Blueprint('notes', __name__)
 
@@ -45,6 +46,23 @@ def _daily_payload(row, note_date):
         'ai_summary': summary,
         'has_ai_summary': bool(data.get('has_ai_summary') or summary),
     }
+
+
+def _category_path(db, category_id):
+    category_id = int(category_id or 0)
+    if category_id == 0:
+        return ''
+    row = db.execute(
+        "SELECT id,parent_id,name FROM note_categories WHERE id=?", (category_id,)
+    ).fetchone()
+    if not row or int(row['id']) == 0:
+        return ''
+    parent = db.execute(
+        "SELECT id,name FROM note_categories WHERE id=?", (int(row['parent_id'] or 0),)
+    ).fetchone()
+    if parent and int(parent['id']) != 0:
+        return f"{str(parent['name']).strip()} / {str(row['name']).strip()}"
+    return str(row['name']).strip()
 
 
 # ---------- 分类目录（一级/二级树） ----------
@@ -170,6 +188,9 @@ def update_note(nid):
     row = db.execute("SELECT * FROM notes WHERE id=?", (nid,)).fetchone()
     if not row:
         db.close(); return jsonify({'error': '笔记不存在。'}), 404
+    old_payload = dict(row)
+    old_payload['category_path'] = _category_path(db, row['category_id'])
+    old_key = note_key(old_payload)
     title = str(data.get('title', row['title'])).strip()
     content = str(data.get('content', row['content'])).strip()
     category_id = int(data.get('category_id', row['category_id']))
@@ -179,6 +200,8 @@ def update_note(nid):
         "UPDATE notes SET title=?,content=?,category_id=?,note_date=?,color=?,updated_at=datetime('now','localtime') WHERE id=?",
         (title, content, category_id, note_date, color, nid),
     )
+    if title != row['title'] or category_id != row['category_id']:
+        record_tombstone('note', old_key, db=db)
     db.commit(); db.close()
     return jsonify({'ok': True, 'id': nid})
 
@@ -186,6 +209,11 @@ def update_note(nid):
 @bp.delete('/notes/<int:nid>')
 def delete_note(nid):
     db = get_db()
+    row = db.execute("SELECT * FROM notes WHERE id=?", (nid,)).fetchone()
+    if row:
+        payload = dict(row)
+        payload['category_path'] = _category_path(db, row['category_id'])
+        record_tombstone('note', note_key(payload), db=db)
     cur = db.execute("DELETE FROM notes WHERE id=?", (nid,))
     if cur.rowcount == 0:
         db.close(); return jsonify({'error': '笔记不存在。'}), 404
@@ -290,6 +318,11 @@ def delete_note_by_date(note_date):
     if not _valid_note_date(note_date):
         return jsonify({'error': '日期格式必须为 YYYY-MM-DD。'}), 400
     db = get_db()
+    rows = db.execute("SELECT * FROM notes WHERE note_date=?", (note_date,)).fetchall()
+    for row in rows:
+        payload = dict(row)
+        payload['category_path'] = _category_path(db, payload.get('category_id', 0))
+        record_tombstone('note', note_key(payload), db=db)
     cur = db.execute("DELETE FROM notes WHERE note_date=?", (note_date,))
     if cur.rowcount == 0:
         _close_owned_db(db)

@@ -5,7 +5,7 @@
     <header class="page-heading"><div><p class="eyebrow">LOCAL SETTINGS / 我的</p><h1>工具、能力与本地服务</h1><p>在这里管理学习工具、AI 能力、本地数据与完整词书目录。</p></div><a class="btn btn-secondary" href="/growth">查看段位档案</a></header>
     <div data-region-status class="region-state region-state--loading">正在读取本地设置…</div>
     <div class="settings-layout">
-        <nav class="settings-index" aria-label="设置目录"><a href="#tools">学习工具</a><a href="#skills">AI Skills</a><a href="#services">AI 服务</a><a href="#local-data">本地数据</a><a href="#wordbooks">词库</a><a href="#updates">安全更新</a><a href="#onboarding-help">新手指引</a><a href="#support">支持作者</a></nav>
+        <nav class="settings-index" aria-label="设置目录"><a href="#tools">学习工具</a><a href="#skills">AI Skills</a><a href="#services">AI 服务</a><a href="#local-data">本地数据</a><a href="#device-sync">设备同步</a><a href="#wordbooks">词库</a><a href="#updates">安全更新</a><a href="#onboarding-help">新手指引</a><a href="#support">支持作者</a></nav>
         <div class="settings-content">
             <section id="tools" class="settings-section"><div><p class="eyebrow">TOOLS</p><h2>学习工具</h2><p>笔记用于复盘，导出用于生成可打印练习。</p></div><div class="tool-links"><a href="/notes"><b>学习笔记</b><span>查看、编辑与整理历史笔记</span></a><a href="/export"><b>打印导出</b><span>选择阅读题生成 Word 文件</span></a></div></section>
             <details id="skills" class="settings-section settings-section--skills settings-disclosure">
@@ -38,7 +38,29 @@
                     <p id="ai-config-message" class="field-help" role="status"></p>
                 </div>
             </section>
-            <section id="local-data" class="settings-section"><div><p class="eyebrow">PRIVACY</p><h2>本地数据说明</h2><p>词汇状态、复习进度、学习日志、段位与笔记保存在这台电脑的 SQLite 数据库中。本网站没有新增云同步或多用户功能。</p></div><div class="local-note"><strong>需要备份时</strong><p>先退出正在运行的网站，再复制项目中的数据库文件。不要在网站运行时直接替换数据库。</p></div></section>
+            <section id="local-data" class="settings-section"><div><p class="eyebrow">PRIVACY</p><h2>本地数据说明</h2><p>词汇状态、复习进度、学习日志、段位与笔记仍保存在当前设备的 SQLite 数据库中，不上传云端，也没有多用户账号服务器。</p></div><div class="local-note"><strong>设备同步不会传密钥</strong><p>同一 Wi-Fi 同步只在用户确认后临时开启，DeepSeek API Key、会话密钥、更新缓存与设备权限永不进入同步包。</p></div></section>
+            <section id="device-sync" class="settings-section settings-section--sync">
+                <div><p class="eyebrow">DEVICE SYNC</p><h2>手机与电脑同步</h2><p>让 Windows 和 Android 在同一 Wi-Fi 下双向合并学习记录。同步前两端都会生成数据库备份，临时连接最多保留 10 分钟。</p></div>
+                <div class="device-sync-panel" id="device-sync-panel" aria-live="polite">
+                    <div class="device-sync-state" id="device-sync-state" data-state="idle"><span aria-hidden="true"></span><div><strong id="device-sync-title">尚未开始</strong><p id="device-sync-copy">电脑发起临时连接，手机扫描二维码后确认同步。</p></div></div>
+                    <div class="device-sync-desktop" id="device-sync-desktop" hidden>
+                        <button type="button" class="btn btn-primary" id="device-sync-start">开启 10 分钟同步</button>
+                        <div class="device-sync-pairing" id="device-sync-pairing" hidden>
+                            <img id="device-sync-qr" alt="手机与电脑设备同步二维码">
+                            <div><strong>用 Android 版扫描</strong><p id="device-sync-address"></p><label for="device-sync-code">无法扫码时，复制完整配对码</label><textarea id="device-sync-code" rows="4" readonly spellcheck="false"></textarea><div class="device-sync-actions"><button type="button" class="btn btn-secondary" id="device-sync-copy-code">复制配对码</button><button type="button" class="btn btn-secondary" id="device-sync-cancel">关闭连接</button></div></div>
+                        </div>
+                    </div>
+                    <div class="device-sync-mobile" id="device-sync-mobile" hidden>
+                        <div class="device-sync-actions"><button type="button" class="btn btn-primary" id="device-sync-scan">扫描电脑二维码</button></div>
+                        <label for="device-sync-manual-code">或粘贴电脑显示的完整配对码</label>
+                        <textarea id="device-sync-manual-code" rows="4" spellcheck="false" autocomplete="off" placeholder="cet-sync:…"></textarea>
+                        <button type="button" class="btn btn-secondary" id="device-sync-inspect">验证这台电脑</button>
+                        <div class="device-sync-preview" id="device-sync-preview" hidden><h3>确认本次合并</h3><p id="device-sync-peer"></p><dl><div><dt>词汇状态</dt><dd id="device-sync-preview-words">0</dd></div><div><dt>收藏</dt><dd id="device-sync-preview-favorites">0</dd></div><div><dt>笔记</dt><dd id="device-sync-preview-notes">0</dd></div><div><dt>训练记录</dt><dd id="device-sync-preview-practice">0</dd></div><div><dt>AI 对话</dt><dd id="device-sync-preview-conversations">0</dd></div></dl><div class="device-sync-actions"><button type="button" class="btn btn-secondary" id="device-sync-mobile-cancel">取消</button><button type="button" class="btn btn-primary" id="device-sync-confirm">确认双向同步</button></div></div>
+                    </div>
+                    <div class="device-sync-source" id="device-sync-source" hidden><p>源码浏览器模式不开放局域网端口。请使用 Windows 安装版发起同步，Android 安装版扫码接收。</p></div>
+                    <p class="field-help">如果 Windows 防火墙询问是否允许访问，请只允许“专用网络”。应用不会自动修改防火墙规则。</p>
+                </div>
+            </section>
             <details id="wordbooks" class="settings-section settings-section--wordbooks settings-disclosure">
                 <summary><span><span class="eyebrow">WORDBOOKS</span><strong>完整词库目录</strong><small>查看封面、收录量、掌握进度与预览</small></span><span class="settings-disclosure__action"><span>展开管理</span><span>收起目录</span></span></summary>
                 <div id="profile-wordbooks" class="wordbook-list"><p>正在读取词库…</p></div>

@@ -23,3 +23,15 @@ versioned manifest containing the model and configuration checksums.
 
 - Piper: https://github.com/OHF-Voice/piper1-gpl (GPL-3.0)
 - Voice model card: https://huggingface.co/rhasspy/piper-voices/raw/main/en/en_US/ljspeech/high/MODEL_CARD
+
+## Device sync dependencies
+
+The encrypted local-device pairing flow uses the following libraries:
+
+- `cryptography`: Apache License 2.0 or BSD-3-Clause
+- `qrcode`: BSD License
+- ZXing Android Embedded by JourneyApps: Apache License 2.0
+- ZXing Core: Apache License 2.0
+
+Their complete license texts are included by the respective package and Android
+dependency metadata in distributed builds.

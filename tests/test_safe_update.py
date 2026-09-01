@@ -113,6 +113,38 @@ class SafeUpdateTests(unittest.TestCase):
         older = update_service._release_payload(stable_release("0.2.9"))
         self.assertFalse(older["update_available"])
 
+    def test_android_api_timeout_falls_back_to_fixed_manifest(self):
+        calls = []
+        manifest = {
+            "version": "99.0.0",
+            "version_code": 999,
+            "apk_url": "https://github.com/sixinzheng/cet-learning-desk/releases/download/v99.0.0/app.apk",
+            "sha256": "a" * 64,
+            "size": 123,
+        }
+
+        def fake_get(url, **_kwargs):
+            calls.append(url)
+            if len(calls) == 1:
+                raise requests.Timeout("api slow")
+            return FakeResponse(manifest)
+
+        with mock.patch.object(update_service, "IS_ANDROID", True):
+            release = update_service.fetch_latest_release(http_get=fake_get)
+        self.assertEqual(release["tag_name"], "v99.0.0")
+        self.assertEqual(len(calls), 2)
+
+    def test_android_updater_source_contains_resume_and_long_read_timeout(self):
+        source = Path("android/app/src/main/java/cn/cet/learningdesk/MainActivity.java").read_text(encoding="utf-8")
+        self.assertIn('setRequestProperty("Range"', source)
+        self.assertIn("APK_READ_TIMEOUT_MS = 120000", source)
+        self.assertIn("Content-Range", source)
+        self.assertIn("UPDATE_MAX_ATTEMPTS = 3", source)
+        self.assertIn("expectedSize <= 0", source)
+        self.assertIn("largestPartialUpdateBytes", source)
+        self.assertIn("verifyApkIdentity(apk, versionCode);", source)
+        self.assertIn("apk.delete();\n            throw error;", source)
+
     def test_online_backup_is_consistent_and_keeps_only_three(self):
         paths = []
         for index in range(4):

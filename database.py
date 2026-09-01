@@ -418,6 +418,34 @@ def init_db():
             updated_at TEXT NOT NULL DEFAULT (datetime('now','localtime'))
         );
 
+        -- 局域网设备同步只保存本机身份、已知设备和删除墓碑；不保存配对令牌或密钥。
+        CREATE TABLE IF NOT EXISTS device_sync_state (
+            key TEXT PRIMARY KEY,
+            value TEXT NOT NULL DEFAULT ''
+        );
+        CREATE TABLE IF NOT EXISTS device_sync_peers (
+            device_id TEXT PRIMARY KEY,
+            device_name TEXT NOT NULL DEFAULT '',
+            platform TEXT NOT NULL DEFAULT '',
+            last_sync_at TEXT NOT NULL DEFAULT ''
+        );
+        CREATE TABLE IF NOT EXISTS device_sync_tombstones (
+            entity_type TEXT NOT NULL,
+            entity_key TEXT NOT NULL,
+            deleted_at TEXT NOT NULL,
+            origin_device_id TEXT NOT NULL DEFAULT '',
+            PRIMARY KEY(entity_type, entity_key)
+        );
+        CREATE TABLE IF NOT EXISTS device_sync_records (
+            entity_type TEXT NOT NULL,
+            entity_key TEXT NOT NULL,
+            record_uuid TEXT NOT NULL UNIQUE,
+            modified_at_utc TEXT NOT NULL,
+            origin_device_id TEXT NOT NULL DEFAULT '',
+            content_hash TEXT NOT NULL DEFAULT '',
+            PRIMARY KEY(entity_type, entity_key)
+        );
+
         CREATE INDEX IF NOT EXISTS idx_ai_usage_created ON ai_usage_events(created_at);
         CREATE INDEX IF NOT EXISTS idx_ai_messages_conversation ON ai_messages(conversation_id, id);
         CREATE INDEX IF NOT EXISTS idx_ai_memories_active ON ai_memories(active, last_observed);
@@ -428,6 +456,10 @@ def init_db():
             ON reading_generation_jobs(status, created_at);
         CREATE INDEX IF NOT EXISTS idx_word_ai_details_article
             ON word_ai_details(article_id, updated_at);
+        CREATE INDEX IF NOT EXISTS idx_device_sync_tombstones_time
+            ON device_sync_tombstones(deleted_at);
+        CREATE INDEX IF NOT EXISTS idx_device_sync_records_modified
+            ON device_sync_records(modified_at_utc);
     ''')
     wordbook_columns = {
         row[1] for row in conn.execute("PRAGMA table_info(wordbooks)").fetchall()

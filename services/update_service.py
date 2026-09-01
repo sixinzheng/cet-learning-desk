@@ -26,6 +26,10 @@ from runtime_paths import IS_ANDROID, IS_DESKTOP
 
 
 _MAX_RELEASE_RESPONSE = 2 * 1024 * 1024
+_ANDROID_MANIFEST_URL = (
+    "https://github.com/sixinzheng/cet-learning-desk/"
+    "releases/latest/download/android-latest.json"
+)
 _BACKUP_KEEP_COUNT = 3
 _TICKET_TTL_SECONDS = 10 * 60
 _STATE_LOCK = threading.RLock()
@@ -33,6 +37,11 @@ _PROGRESS: dict[str, Any] = {
     "stage": "idle",
     "percent": 0,
     "message": "尚未开始更新。",
+    "downloaded_bytes": 0,
+    "total_bytes": 0,
+    "retry_count": 0,
+    "resumable": False,
+    "error_code": "",
     "updated_at": "",
 }
 _TICKETS: dict[str, dict[str, Any]] = {}
@@ -64,6 +73,11 @@ def _set_progress(stage: str, percent: int, message: str, **extra: Any) -> None:
             "stage": stage,
             "percent": max(0, min(100, int(percent))),
             "message": message,
+            "downloaded_bytes": 0,
+            "total_bytes": 0,
+            "retry_count": 0,
+            "resumable": False,
+            "error_code": "",
             "updated_at": _now_iso(),
             **extra,
         })
@@ -128,6 +142,8 @@ def fetch_latest_release(
         response.raise_for_status()
         content = response.content
     except requests.Timeout as exc:
+        if IS_ANDROID:
+            return _fetch_android_manifest_release(http_get=http_get, timeout=timeout)
         raise UpdateServiceError("检查更新超时，请确认网络后重试。", code="timeout", status=504) from exc
     except requests.HTTPError as exc:
         response_status = getattr(getattr(exc, "response", None), "status_code", 0)
@@ -139,6 +155,8 @@ def fetch_latest_release(
             ) from exc
         raise UpdateServiceError("暂时无法连接 GitHub，请稍后重试。", code="network_error", status=503) from exc
     except requests.RequestException as exc:
+        if IS_ANDROID:
+            return _fetch_android_manifest_release(http_get=http_get, timeout=timeout)
         raise UpdateServiceError("暂时无法连接 GitHub，请稍后重试。", code="network_error", status=503) from exc
     if len(content) > _MAX_RELEASE_RESPONSE:
         raise UpdateServiceError("发布信息异常过大，已停止更新。", code="oversized_release", status=502)
@@ -146,6 +164,59 @@ def fetch_latest_release(
         return _validate_release(response.json())
     except ValueError as exc:
         raise UpdateServiceError("GitHub 返回的发布信息无法解析。", code="invalid_json", status=502) from exc
+
+
+def _fetch_android_manifest_release(
+    *,
+    http_get: Callable[..., Any] = requests.get,
+    timeout: tuple[int, int] = (8, 30),
+) -> dict[str, Any]:
+    """GitHub API 不可用时，仅为 Android 读取同仓库固定发布清单。"""
+    try:
+        response = http_get(
+            _ANDROID_MANIFEST_URL,
+            headers={"User-Agent": f"CETLearningDesk/{APP_VERSION}"},
+            timeout=(max(8, timeout[0]), max(30, timeout[1])),
+        )
+        response.raise_for_status()
+        content = response.content
+        if len(content) > 256 * 1024:
+            raise UpdateServiceError("Android 发布清单异常过大。", code="oversized_manifest", status=502)
+        manifest = response.json()
+    except UpdateServiceError:
+        raise
+    except requests.Timeout as exc:
+        raise UpdateServiceError(
+            "连接 Android 发布清单超时，请检查网络后重试。",
+            code="manifest_timeout",
+            status=504,
+        ) from exc
+    except (requests.RequestException, ValueError) as exc:
+        raise UpdateServiceError(
+            "GitHub API 和 Android 发布清单均暂时不可用，请稍后重试。",
+            code="manifest_unavailable",
+            status=503,
+        ) from exc
+
+    if not isinstance(manifest, dict):
+        raise UpdateServiceError("Android 发布清单格式不正确。", code="invalid_manifest", status=502)
+    version = str(manifest.get("version") or "").lstrip("v")
+    _version_tuple(version)
+    apk_url = str(manifest.get("apk_url") or "")
+    expected_prefix = GITHUB_REPOSITORY_URL + "/releases/"
+    if not apk_url.startswith(expected_prefix):
+        raise UpdateServiceError("Android 安装包不属于官方仓库。", code="untrusted_manifest", status=502)
+    size = int(manifest.get("size") or 0)
+    return _validate_release({
+        "draft": False,
+        "prerelease": False,
+        "tag_name": f"v{version}",
+        "name": f"Android v{version}",
+        "body": "GitHub API 连接失败，已通过固定发布清单完成版本检查。",
+        "published_at": "",
+        "html_url": f"{GITHUB_REPOSITORY_URL}/releases/tag/v{version}",
+        "assets": [{"name": "CET-Learning-Desk-Android-arm64.apk", "size": size}],
+    })
 
 
 def _release_payload(release: dict[str, Any]) -> dict[str, Any]:
