@@ -19,14 +19,20 @@ from typing import Any
 
 from services.device_sync_data import (
     MAX_PACKAGE_BYTES,
+    PROTOCOL_VERSION,
     DeviceSyncError,
-    apply_package,
+    build_sync_report,
+    commit_prepared_package,
     device_identity,
+    discard_prepared_package,
     export_package,
     merge_packages,
     package_summary,
+    prepare_package,
+    utc_now,
     validate_package,
 )
+from services.level_service import calculate_level
 
 
 SESSION_TTL_SECONDS = 10 * 60
@@ -49,7 +55,7 @@ def decode_pairing_code(code: str) -> dict[str, Any]:
         payload = json.loads(raw.decode("utf-8"))
     except (ValueError, UnicodeError, json.JSONDecodeError) as exc:
         raise DeviceSyncError("配对码无法识别，请重新扫描。", code="invalid_pairing_code") from exc
-    if not isinstance(payload, dict) or payload.get("v") != 1:
+    if not isinstance(payload, dict) or payload.get("v") != PROTOCOL_VERSION:
         raise DeviceSyncError("配对码版本不受支持，请更新两台设备。", code="pairing_version")
     return payload
 
@@ -154,7 +160,7 @@ class _SyncServer(ThreadingHTTPServer):
 
 
 class _Handler(BaseHTTPRequestHandler):
-    server_version = "CETDeviceSync/1"
+    server_version = "CETDeviceSync/2"
 
     def log_message(self, _format: str, *_args: Any) -> None:
         return
@@ -171,12 +177,16 @@ class _Handler(BaseHTTPRequestHandler):
         if not _authorized(self, session["token"]):
             _write_json(self, 401, {"error": "配对令牌不正确。", "code": "unauthorized"})
             return
-        if self.path != "/sync/v1/handshake":
-            _write_json(self, 404, {"error": "接口不存在。"})
+        if self.path != "/sync/v2/handshake":
+            code = "protocol_mismatch" if self.path == "/sync/v1/handshake" else "not_found"
+            _write_json(self, 426 if code == "protocol_mismatch" else 404, {
+                "error": "同步协议已升级，请先更新电脑和手机两端。" if code == "protocol_mismatch" else "接口不存在。",
+                "code": code,
+            })
             return
         package = export_package()
         _write_json(self, 200, {
-            "protocol_version": 1,
+            "protocol_version": PROTOCOL_VERSION,
             "session_id": session["session_id"],
             "device": package["device"],
             "summary": package_summary(package),
@@ -191,34 +201,114 @@ class _Handler(BaseHTTPRequestHandler):
         if not _authorized(self, session["token"]):
             _write_json(self, 401, {"error": "配对令牌不正确。", "code": "unauthorized"})
             return
-        if self.path != "/sync/v1/exchange":
-            _write_json(self, 404, {"error": "接口不存在。"})
+        if self.path.startswith("/sync/v1/"):
+            _write_json(self, 426, {
+                "error": "同步协议已升级，请先更新电脑和手机两端。",
+                "code": "protocol_mismatch",
+            })
             return
         length = int(self.headers.get("Content-Length") or 0)
         if length <= 0 or length > MAX_PACKAGE_BYTES + 1024 * 1024:
             _write_json(self, 413, {"error": "同步数据包体积异常。", "code": "package_too_large"})
             return
-        with _LOCK:
-            if session.get("used"):
-                _write_json(self, 409, {"error": "该一次性同步会话已使用。", "code": "session_used"})
-                return
-            session["stage"] = "merging"
         try:
-            incoming = json.loads(self.rfile.read(length).decode("utf-8"))
-            validate_package(incoming)
-            local = export_package()
-            merged = merge_packages(local, incoming)
-            applied = apply_package(merged, peer=incoming["device"])
-            with _LOCK:
-                session["stage"] = "completed"
-                session["used"] = True
-                session["peer"] = incoming["device"]
-                session["summary"] = package_summary(merged)
-            _write_json(self, 200, {"ok": True, "merged": merged, "desktop": applied})
-            # Close the LAN listener as soon as the response has left the socket.
-            closer = threading.Timer(0.5, stop_session, kwargs={"preserve_status": True})
-            closer.daemon = True
-            closer.start()
+            body = json.loads(self.rfile.read(length).decode("utf-8"))
+            if self.path == "/sync/v2/exchange":
+                with _LOCK:
+                    if session.get("used"):
+                        _write_json(self, 409, {"error": "该一次性同步会话已使用。", "code": "session_used"})
+                        return
+                    if session.get("transaction_id"):
+                        _write_json(self, 200, {
+                            "ok": True, "transaction_id": session["transaction_id"],
+                            "merged": session["merged"], "sync_report": session["sync_report"],
+                        })
+                        return
+                    session["stage"] = "merging"
+                    session["transaction_stage"] = "merging"
+                incoming = validate_package(body)
+                local = export_package()
+                merged = merge_packages(local, incoming)
+                transaction_id = secrets.token_urlsafe(18)
+                report = build_sync_report(local, incoming, merged)
+                report["transaction_id"] = transaction_id
+                prepared = prepare_package(merged, transaction_id, peer=incoming["device"])
+                with _LOCK:
+                    session.update({
+                        "stage": "exchanged", "transaction_stage": "desktop_prepared",
+                        "transaction_id": transaction_id, "peer": incoming["device"],
+                        "local_package": local, "incoming_package": incoming,
+                        "merged": merged, "sync_report": report,
+                        "desktop_prepared": prepared,
+                        "summary": package_summary(merged),
+                        "awaiting_peer_confirmation": True,
+                    })
+                _write_json(self, 200, {
+                    "ok": True, "transaction_id": transaction_id,
+                    "merged": merged, "sync_report": report,
+                })
+                return
+
+            if self.path == "/sync/v2/commit":
+                transaction_id = str(body.get("transaction_id") or "")
+                with _LOCK:
+                    if transaction_id != session.get("transaction_id"):
+                        raise DeviceSyncError("同步事务编号不一致，请重新配对。", code="transaction_mismatch", status=409)
+                    already_applied = session.get("desktop_result")
+                    session["stage"] = "committing"
+                    session["transaction_stage"] = "desktop_commit"
+                if not already_applied:
+                    applied = commit_prepared_package(transaction_id)
+                    with _LOCK:
+                        session["desktop_result"] = applied
+                    try:
+                        calculate_level(reason="device_sync")
+                    except Exception:
+                        applied["recalculation_warning"] = "段位历史将在下次打开页面时自动补算。"
+                else:
+                    applied = already_applied
+                with _LOCK:
+                    session["stage"] = "awaiting_mobile_confirmation"
+                    session["transaction_stage"] = "awaiting_mobile_confirmation"
+                _write_json(self, 200, {
+                    "ok": True, "transaction_id": transaction_id,
+                    "desktop": applied, "sync_report": session.get("sync_report"),
+                })
+                return
+
+            if self.path == "/sync/v2/complete":
+                transaction_id = str(body.get("transaction_id") or "")
+                with _LOCK:
+                    if transaction_id != session.get("transaction_id"):
+                        raise DeviceSyncError("同步事务编号不一致，请重新配对。", code="transaction_mismatch", status=409)
+                    if not session.get("desktop_result"):
+                        raise DeviceSyncError("电脑端尚未提交合并结果。", code="desktop_not_committed", status=409)
+                    report = dict(session.get("sync_report") or {})
+                    report["completed_at"] = utc_now()
+                    report["snapshots"] = {
+                        "desktop": {
+                            "before": session["desktop_result"].get("before", {}),
+                            "after": session["desktop_result"].get("after", {}),
+                        },
+                        "mobile": {
+                            "before": (body.get("mobile") or {}).get("before", {}),
+                            "after": (body.get("mobile") or {}).get("after", {}),
+                        },
+                    }
+                    session.update({
+                        "stage": "completed", "transaction_stage": "completed",
+                        "used": True, "awaiting_peer_confirmation": False,
+                        "mobile_result": body.get("mobile") or {}, "sync_report": report,
+                    })
+                _write_json(self, 200, {
+                    "ok": True, "transaction_id": transaction_id, "sync_report": report,
+                })
+                closer = threading.Timer(0.5, stop_session, kwargs={"preserve_status": True})
+                closer.daemon = True
+                closer.start()
+                return
+
+            _write_json(self, 404, {"error": "接口不存在。", "code": "not_found"})
         except DeviceSyncError as exc:
             with _LOCK:
                 session["stage"] = "error"; session["error"] = str(exc)
@@ -250,7 +340,7 @@ def start_session() -> dict[str, Any]:
     expires_epoch = time.time() + SESSION_TTL_SECONDS
     expires_at = datetime.fromtimestamp(expires_epoch, timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z")
     pairing_payload = {
-        "v": 1, "url": f"https://{addresses[0]}:{port}", "token": token,
+        "v": PROTOCOL_VERSION, "url": f"https://{addresses[0]}:{port}", "token": token,
         "fingerprint": fingerprint, "session_id": session_id, "expires_at": expires_at,
     }
     pairing_code = "cet-sync:" + _b64url(json.dumps(pairing_payload, separators=(",", ":")).encode("utf-8"))
@@ -260,11 +350,12 @@ def start_session() -> dict[str, Any]:
             "session_id": session_id, "token": token, "fingerprint": fingerprint,
             "addresses": addresses, "port": port, "expires_epoch": expires_epoch,
             "expires_at": expires_at, "pairing_code": pairing_code, "stage": "waiting",
+            "transaction_stage": "waiting", "awaiting_peer_confirmation": False,
             "used": False, "server": server, "thread": thread, "temp_dir": temp_dir,
             "device": device_identity(),
         }
     thread.start()
-    timer = threading.Timer(SESSION_TTL_SECONDS, stop_session)
+    timer = threading.Timer(SESSION_TTL_SECONDS, _expire_session)
     timer.daemon = True
     timer.start()
     with _LOCK:
@@ -285,6 +376,10 @@ def session_snapshot(*, include_pairing: bool = False) -> dict[str, Any]:
             "addresses": session["addresses"], "port": session["port"],
             "device": session["device"], "peer": session.get("peer"),
             "summary": session.get("summary"), "error": session.get("error", ""),
+            "transaction_id": session.get("transaction_id", ""),
+            "transaction_stage": session.get("transaction_stage", session.get("stage", "waiting")),
+            "sync_report": session.get("sync_report"),
+            "awaiting_peer_confirmation": bool(session.get("awaiting_peer_confirmation", False)),
         }
         if include_pairing:
             payload["pairing_code"] = session["pairing_code"]
@@ -307,12 +402,17 @@ def stop_session(*, preserve_status: bool = False) -> None:
                 "device": session.get("device"),
                 "peer": session.get("peer"),
                 "summary": session.get("summary"),
+                "transaction_id": session.get("transaction_id", ""),
+                "transaction_stage": session.get("transaction_stage", session.get("stage", "completed")),
+                "sync_report": session.get("sync_report"),
+                "awaiting_peer_confirmation": bool(session.get("awaiting_peer_confirmation", False)),
                 "error": session.get("error", ""),
             }
         elif not preserve_status:
             _LAST_SNAPSHOT = None
     if not session:
         return
+    transaction_id = session.get("transaction_id", "")
     timer = session.get("timer")
     if timer:
         timer.cancel()
@@ -327,6 +427,17 @@ def stop_session(*, preserve_status: bool = False) -> None:
         for child in Path(directory).glob("*"):
             child.unlink(missing_ok=True)
         Path(directory).rmdir()
+    discard_prepared_package(transaction_id)
+
+
+def _expire_session() -> None:
+    with _LOCK:
+        if _SESSION and _SESSION.get("stage") != "completed":
+            _SESSION["stage"] = "error"
+            _SESSION["transaction_stage"] = "expired"
+            _SESSION["error"] = "同步会话已过期；两端未同时确认，因此没有显示成功。"
+            _SESSION["awaiting_peer_confirmation"] = False
+    stop_session(preserve_status=True)
 
 
 def issue_mobile_ticket() -> str:
@@ -336,16 +447,21 @@ def issue_mobile_ticket() -> str:
         expired = [key for key, item in _MOBILE_TICKETS.items() if item["expires"] <= now]
         for key in expired:
             _MOBILE_TICKETS.pop(key, None)
-        _MOBILE_TICKETS[token] = {"expires": now + 5 * 60, "uses": set()}
+        _MOBILE_TICKETS[token] = {"expires": now + 5 * 60, "uses": {}}
     return token
 
 
 def authorize_mobile_ticket(token: str, purpose: str) -> bool:
     with _LOCK:
         item = _MOBILE_TICKETS.get(str(token or ""))
-        if not item or item["expires"] <= time.time() or purpose in item["uses"]:
+        if not item or item["expires"] <= time.time():
             return False
-        item["uses"].add(purpose)
+        uses = item["uses"]
+        count = int(uses.get(purpose, 0))
+        limit = 3 if purpose in {"prepare", "commit"} else 1
+        if count >= limit:
+            return False
+        uses[purpose] = count + 1
         if purpose == "apply":
             _MOBILE_TICKETS.pop(str(token or ""), None)
         return True

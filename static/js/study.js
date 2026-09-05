@@ -437,11 +437,19 @@ function studyApp() {
         },
 
         splitMeanings(value) {
-            return String(value || '')
+            const items = String(value || '')
                 .replace(/\\n/g, '\n')
                 .split(/[；;\n]+/)
                 .map(item => item.trim())
                 .filter(Boolean);
+            return items.reduce((result, item) => {
+                if (/^[\u3400-\u9fff]$/.test(item) && result.length) {
+                    result[result.length - 1] += `；${item}`;
+                } else {
+                    result.push(item);
+                }
+                return result;
+            }, []);
         },
         shuffle(arr) { const a=[...arr]; for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];} return a; },
     };

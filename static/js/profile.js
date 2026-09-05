@@ -10,6 +10,8 @@
     let supportLastFocus = null;
     let updateLastFocus = null;
     let updateRelease = null;
+    let deviceSyncResultLastFocus = null;
+    let lastShownSyncTransaction = '';
 
     function escapeHtml(value) {
         return String(value ?? '').replace(/[&<>'"]/g, char => ({
@@ -419,6 +421,74 @@
     let pendingPairingCode = '';
     let deviceSyncCsrfPromise = null;
 
+    const syncCategoryLabels = {
+        vocabulary: '词汇状态', favorites: '收藏与词库', learning: '学习与复习',
+        annotations: '阅读标注', settings: '难度与设置', notes: '笔记', ai: 'AI 内容',
+    };
+
+    function initDeviceSyncResultModal() {
+        const overlay = $('device-sync-result-modal');
+        if (!overlay) return;
+        const dialog = overlay.querySelector('[role="dialog"]');
+        const close = () => {
+            overlay.hidden = true;
+            document.body.classList.remove('has-modal-open');
+            pollDeviceSync();
+            if (deviceSyncResultLastFocus && document.contains(deviceSyncResultLastFocus)) deviceSyncResultLastFocus.focus();
+        };
+        overlay.querySelectorAll('[data-device-sync-result-close]').forEach(button => button.addEventListener('click', close));
+        overlay.addEventListener('click', event => { if (event.target === overlay) close(); });
+        overlay.addEventListener('keydown', event => {
+            if (event.key === 'Escape') { event.preventDefault(); close(); return; }
+            if (event.key !== 'Tab') return;
+            const focusable = [...dialog.querySelectorAll('button:not([disabled]),a[href]')]
+                .filter(element => element.offsetParent !== null);
+            if (!focusable.length) return;
+            const first = focusable[0], last = focusable.at(-1);
+            if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+            else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+        });
+    }
+
+    function openDeviceSyncResult(report) {
+        if (!report) return;
+        const transactionId = String(report.transaction_id || '');
+        if (transactionId && transactionId === lastShownSyncTransaction) return;
+        lastShownSyncTransaction = transactionId;
+        const platform = root.dataset.appPlatform || 'source';
+        const changes = report[platform === 'windows' ? 'desktop' : 'mobile'] || {};
+        const snapshots = report.snapshots?.[platform === 'windows' ? 'desktop' : 'mobile'] || {};
+        const before = snapshots.before || {};
+        const after = snapshots.after || {};
+        const changedRows = Object.entries(syncCategoryLabels).map(([key, label]) => {
+            const item = changes[key] || {};
+            const changed = Number(item.added || 0) + Number(item.updated || 0) + Number(item.deleted || 0);
+            if (!changed && !Number(item.conflicts || 0)) return '';
+            const details = [
+                item.added ? `新增 ${Number(item.added)}` : '',
+                item.updated ? `更新 ${Number(item.updated)}` : '',
+                item.deleted ? `删除 ${Number(item.deleted)}` : '',
+                item.conflicts ? `冲突副本 ${Number(item.conflicts)}` : '',
+            ].filter(Boolean).join(' · ');
+            return `<div><strong>${label}</strong><span>${escapeHtml(details)}</span><b>同步后 ${Number(item.total_after || 0)}</b></div>`;
+        }).filter(Boolean);
+        $('device-sync-result-list').innerHTML = changedRows.length
+            ? changedRows.join('')
+            : '<div class="device-sync-result-empty"><strong>两端数据已经一致</strong><span>本次检查没有发现需要新增或更新的记录。</span></div>';
+        const rankBefore = before.rank_name || `Lv.${Number(before.rank || 1)}`;
+        const rankAfter = after.rank_name || `Lv.${Number(after.rank || before.rank || 1)}`;
+        $('device-sync-result-hero').innerHTML = `
+            <div><span>段位</span><strong>${escapeHtml(rankBefore)} → ${escapeHtml(rankAfter)}</strong></div>
+            <div><span>已掌握词汇</span><strong>${Number(before.mastered_words || 0)} → ${Number(after.mastered_words || 0)}</strong></div>`;
+        const names = (report.devices || []).map(item => item?.device_name).filter(Boolean).join(' ↔ ');
+        $('device-sync-result-meta').textContent = `${names || '电脑与手机'} · ${String(report.completed_at || '').replace('T',' ').replace('Z','')}`;
+        const overlay = $('device-sync-result-modal');
+        deviceSyncResultLastFocus = document.activeElement;
+        overlay.hidden = false;
+        document.body.classList.add('has-modal-open');
+        requestAnimationFrame(() => overlay.querySelector('[role="dialog"]')?.focus());
+    }
+
     async function ensureDeviceSyncCsrf() {
         if (csrf) return csrf;
         if (!deviceSyncCsrfPromise) {
@@ -493,6 +563,9 @@
                 $('device-sync-start').textContent = '再次同步';
                 $('device-sync-pairing').hidden = true;
                 clearInterval(deviceSyncPoll); deviceSyncPoll = 0;
+                openDeviceSyncResult(data.sync_report);
+            } else if (data.stage === 'awaiting_mobile_confirmation' || data.awaiting_peer_confirmation) {
+                renderDeviceSyncState('confirming','等待手机最终确认','电脑已写入合并结果；手机完成落库和校验后才会显示成功。');
             } else if (data.stage === 'error') {
                 renderDeviceSyncState('error','同步未完成',data.error || '两端备份已经保留，请重试。');
             }
@@ -562,7 +635,7 @@
                 renderDeviceSyncPreview(data);$('device-sync-inspect').disabled=false;
             } else if(data.stage==='completed'){
                 $('device-sync-preview').hidden=true;$('device-sync-confirm').disabled=false;
-                showToast('手机和电脑已完成双向同步。','success');
+                openDeviceSyncResult(data.sync_report);
             } else if(data.stage==='error'||data.stage==='cancelled'){
                 $('device-sync-inspect').disabled=false;$('device-sync-confirm').disabled=false;
             }
@@ -600,6 +673,7 @@
     initSupportModal();
     initUpdateCenter();
     initSkillDisclosure();
+    initDeviceSyncResultModal();
     initDeviceSync();
 
     try {

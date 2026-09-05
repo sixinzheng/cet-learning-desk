@@ -370,7 +370,12 @@ function reviewApp() {
             return a;
         },
         splitMeanings(value) {
-            return String(value || '').replace(/\\n/g, '\n').split(/[；;\n]+/).map(item => item.trim()).filter(Boolean);
+            const items = String(value || '').replace(/\\n/g, '\n').split(/[；;\n]+/).map(item => item.trim()).filter(Boolean);
+            return items.reduce((result, item) => {
+                if (/^[\u3400-\u9fff]$/.test(item) && result.length) result[result.length - 1] += `；${item}`;
+                else result.push(item);
+                return result;
+            }, []);
         },
     };
 }

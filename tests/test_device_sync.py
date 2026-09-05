@@ -19,8 +19,11 @@ from services import device_sync_service
 from services.device_sync_data import (
     DeviceSyncError,
     apply_package,
+    build_sync_report,
+    commit_prepared_package,
     export_package,
     merge_packages,
+    prepare_package,
     validate_package,
 )
 
@@ -112,6 +115,70 @@ class DeviceSyncTests(unittest.TestCase):
             uuid.UUID(item["record_uuid"])
             self.assertTrue(item["modified_at_utc"].endswith("Z"))
 
+    def test_record_metadata_controls_word_and_setting_conflicts(self):
+        packages = []
+        for index, (status, reviews, difficulty, changed_at) in enumerate((
+            ("掌握", 7, "3", "2026-09-01T08:00:00Z"),
+            ("模糊", 2, "5", "2026-09-02T08:00:00Z"),
+        )):
+            db = self._db(index)
+            word_id = db.execute("SELECT id FROM words ORDER BY id LIMIT 1").fetchone()[0]
+            db.execute(
+                "INSERT OR REPLACE INTO user_words(word_id,status,review_count) VALUES(?,?,?)",
+                (word_id, status, reviews),
+            )
+            db.execute("INSERT OR REPLACE INTO user_settings(key,value) VALUES('training_difficulty',?)", (difficulty,))
+            db.commit(); db.close()
+            export_package()
+            db = self._db(index)
+            db.execute("UPDATE device_sync_records SET modified_at_utc=? WHERE entity_type IN ('user_words','user_settings')", (changed_at,))
+            db.commit(); db.close()
+            packages.append(export_package())
+
+        merged = merge_packages(*packages)
+        word = merged["data"]["user_words"][0]
+        setting = next(item for item in merged["data"]["user_settings"] if item["key"] == "training_difficulty")
+        self.assertEqual(word["status"], "模糊")
+        self.assertEqual(word["review_count"], 7)
+        self.assertEqual(setting["value"], "5")
+
+        report = build_sync_report(packages[0], packages[1], merged)
+        self.assertGreaterEqual(report["desktop"]["vocabulary"]["updated"], 1)
+        self.assertGreaterEqual(report["desktop"]["settings"]["updated"], 1)
+        for index in (0, 1):
+            database.DB_PATH = self.paths[index]
+            result = apply_package(merged)
+            self.assertIn("before", result)
+            self.assertIn("after", result)
+            db = database.get_db()
+            saved = db.execute("SELECT status,review_count FROM user_words ORDER BY word_id LIMIT 1").fetchone()
+            self.assertEqual((saved["status"], saved["review_count"]), ("模糊", 7))
+            db.close()
+
+    def test_prepare_does_not_touch_live_database_before_atomic_commit(self):
+        database.DB_PATH = self.paths[1]
+        db = database.get_db()
+        db.execute("INSERT INTO notes(category_id,title,content,note_date) VALUES(0,'手机新增','只在手机','2026-09-05')")
+        db.commit(); db.close()
+        incoming = export_package()
+
+        database.DB_PATH = self.paths[0]
+        local = export_package()
+        merged = merge_packages(local, incoming)
+        transaction_id = "test-atomic-prepare"
+        prepared = prepare_package(merged, transaction_id, peer=incoming["device"])
+        self.assertTrue(prepared["prepared"])
+        db = database.get_db()
+        self.assertEqual(db.execute("SELECT COUNT(*) FROM notes WHERE title='手机新增'").fetchone()[0], 0)
+        db.close()
+
+        committed = commit_prepared_package(transaction_id)
+        self.assertTrue(committed["committed"])
+        db = database.get_db()
+        self.assertEqual(db.execute("SELECT COUNT(*) FROM notes WHERE title='手机新增'").fetchone()[0], 1)
+        self.assertEqual(db.execute("PRAGMA quick_check").fetchone()[0], "ok")
+        db.close()
+
     def test_custom_wordbooks_and_diverged_notes_are_preserved(self):
         packages = []
         for index, content in enumerate(("电脑修改", "手机修改")):
@@ -161,6 +228,21 @@ class DeviceSyncTests(unittest.TestCase):
         exported = client.get(f"/api/device-sync/native-package/{ticket}")
         self.assertEqual(exported.status_code, 200)
         self.assertEqual(client.get(f"/api/device-sync/native-package/{ticket}").status_code, 403)
+        transaction_id = "route-prepare-commit"
+        prepared = client.post(f"/api/device-sync/native-prepare/{ticket}", json={
+            "package": exported.get_json()["package"],
+            "transaction_id": transaction_id,
+        })
+        self.assertEqual(prepared.status_code, 200)
+        committed = client.post(f"/api/device-sync/native-commit/{ticket}", json={
+            "transaction_id": transaction_id,
+        })
+        self.assertEqual(committed.status_code, 200)
+        for expected_status in (200, 200, 403):
+            retried = client.post(f"/api/device-sync/native-commit/{ticket}", json={
+                "transaction_id": transaction_id,
+            })
+            self.assertEqual(retried.status_code, expected_status)
 
     def test_tls_session_uses_one_time_pairing_material_and_closes(self):
         database.DB_PATH = self.paths[0]
@@ -180,18 +262,40 @@ class DeviceSyncTests(unittest.TestCase):
             session = device_sync_service.start_session()
         pairing = device_sync_service.decode_pairing_code(session["pairing_code"])
         context = ssl._create_unverified_context()
-        connection = http.client.HTTPSConnection("127.0.0.1", session["port"], context=context, timeout=10)
-        body = json.dumps(package, ensure_ascii=False).encode("utf-8")
-        connection.request("POST", "/sync/v1/exchange", body=body, headers={
-            "Authorization": "Bearer " + pairing["token"],
-            "Content-Type": "application/json",
-            "Content-Length": str(len(body)),
+        def post(path, value):
+            connection = http.client.HTTPSConnection("127.0.0.1", session["port"], context=context, timeout=10)
+            body = json.dumps(value, ensure_ascii=False).encode("utf-8")
+            connection.request("POST", path, body=body, headers={
+                "Authorization": "Bearer " + pairing["token"],
+                "Content-Type": "application/json",
+                "Content-Length": str(len(body)),
+            })
+            response = connection.getresponse()
+            result = response.status, json.loads(response.read().decode("utf-8"))
+            connection.close()
+            return result
+
+        status, exchanged = post("/sync/v2/exchange", package)
+        self.assertEqual(status, 200)
+        self.assertTrue(exchanged["ok"])
+        transaction_id = exchanged["transaction_id"]
+        self.assertNotEqual(device_sync_service.session_snapshot()["stage"], "completed")
+        status, committed = post("/sync/v2/commit", {"transaction_id": transaction_id})
+        self.assertEqual(status, 200)
+        self.assertEqual(device_sync_service.session_snapshot()["stage"], "awaiting_mobile_confirmation")
+        status, retried_commit = post("/sync/v2/commit", {"transaction_id": transaction_id})
+        self.assertEqual(status, 200)
+        self.assertEqual(
+            committed["desktop"]["backup_name"],
+            retried_commit["desktop"]["backup_name"],
+        )
+        status, completed = post("/sync/v2/complete", {
+            "transaction_id": transaction_id,
+            "mobile": {"before": {}, "after": {}, "counts": {}},
         })
-        response = connection.getresponse()
-        payload = json.loads(response.read().decode("utf-8"))
-        connection.close()
-        self.assertEqual(response.status, 200)
-        self.assertTrue(payload["ok"])
+        self.assertEqual(status, 200)
+        self.assertTrue(completed["ok"])
+        self.assertIn("sync_report", completed)
         deadline = time.time() + 4
         listener_closed = False
         while time.time() < deadline:

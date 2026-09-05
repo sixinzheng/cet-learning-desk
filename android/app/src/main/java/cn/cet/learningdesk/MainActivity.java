@@ -94,6 +94,11 @@ public class MainActivity extends Activity {
     private PairingData pendingPairing;
     private String pendingSyncTicket;
     private JSONObject pendingPeer;
+    private JSONObject pendingMergedPackage;
+    private String pendingTransactionId;
+    private JSONObject pendingDesktopResult;
+    private JSONObject pendingMobileResult;
+    private boolean pendingLocalPrepared;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -274,10 +279,19 @@ public class MainActivity extends Activity {
 
         @JavascriptInterface
         public void cancel() {
-            pendingPairing = null;
-            pendingSyncTicket = null;
-            pendingPeer = null;
+            clearPendingSync();
         }
+    }
+
+    private void clearPendingSync() {
+        pendingPairing = null;
+        pendingSyncTicket = null;
+        pendingPeer = null;
+        pendingMergedPackage = null;
+        pendingTransactionId = null;
+        pendingDesktopResult = null;
+        pendingMobileResult = null;
+        pendingLocalPrepared = false;
     }
 
     private void launchSyncScanner() {
@@ -295,7 +309,7 @@ public class MainActivity extends Activity {
         if (value.startsWith("cet-sync:")) value = value.substring(9);
         byte[] decoded = Base64.decode(value, Base64.URL_SAFE | Base64.NO_WRAP | Base64.NO_PADDING);
         JSONObject payload = new JSONObject(new String(decoded, StandardCharsets.UTF_8));
-        if (payload.optInt("v", 0) != 1) throw new IOException("配对码版本不受支持");
+        if (payload.optInt("v", 0) != 2) throw new IOException("同步协议已升级，请先更新电脑和手机两端");
         String baseUrl = payload.optString("url", "");
         String token = payload.optString("token", "");
         String fingerprint = payload.optString("fingerprint", "").toLowerCase(Locale.ROOT);
@@ -314,7 +328,7 @@ public class MainActivity extends Activity {
         try {
             PairingData pairing = parsePairingCode(pairingCode);
             notifyDeviceSync("inspecting", "正在验证电脑", "正在核对临时证书与一次性配对令牌。", null);
-            HttpsURLConnection connection = openPinnedSyncConnection(pairing, "/sync/v1/handshake", "GET");
+            HttpsURLConnection connection = openPinnedSyncConnection(pairing, "/sync/v2/handshake", "GET");
             JSONObject handshake;
             try {
                 handshake = readJsonResponse(connection, 512 * 1024);
@@ -327,9 +341,14 @@ public class MainActivity extends Activity {
             pendingPairing = pairing;
             pendingSyncTicket = String.valueOf(localTicket == null ? "" : localTicket).trim();
             pendingPeer = handshake.optJSONObject("device");
+            pendingMergedPackage = null;
+            pendingTransactionId = null;
+            pendingDesktopResult = null;
+            pendingMobileResult = null;
+            pendingLocalPrepared = false;
             notifyDeviceSync("preview", "已安全连接电脑", "请核对设备和数据摘要后确认同步。", handshake);
         } catch (Exception error) {
-            pendingPairing = null; pendingSyncTicket = null; pendingPeer = null;
+            clearPendingSync();
             notifyDeviceSync("error", "无法连接电脑", safeErrorMessage(error), null);
         }
     }
@@ -342,32 +361,85 @@ public class MainActivity extends Activity {
             return;
         }
         try {
-            notifyDeviceSync("exporting", "正在备份手机数据", "手机会先生成并校验同步前备份。", null);
-            JSONObject localEnvelope = localSyncRequest(
-                    "/api/device-sync/native-package/" + URLEncoder.encode(ticket, StandardCharsets.UTF_8.name()),
-                    "GET", null);
-            JSONObject localPackage = localEnvelope.getJSONObject("package");
+            JSONObject merged = pendingMergedPackage;
+            String transactionId = pendingTransactionId;
+            if (merged == null || transactionId == null) {
+                notifyDeviceSync("exporting", "正在备份手机数据", "手机会先生成并校验同步前备份。", null);
+                JSONObject localEnvelope = localSyncRequest(
+                        "/api/device-sync/native-package/" + URLEncoder.encode(ticket, StandardCharsets.UTF_8.name()),
+                        "GET", null);
+                JSONObject localPackage = localEnvelope.getJSONObject("package");
 
-            notifyDeviceSync("exchanging", "正在双向合并", "通过临时加密通道交换学习记录。", null);
-            HttpsURLConnection exchange = openPinnedSyncConnection(pairing, "/sync/v1/exchange", "POST");
-            JSONObject response;
-            try {
-                writeJsonBody(exchange, localPackage.toString());
-                response = readJsonResponse(exchange, MAX_SYNC_PACKAGE_BYTES);
-            } finally {
-                exchange.disconnect();
+                notifyDeviceSync("exchanging", "正在双向合并", "通过临时加密通道交换学习记录。", null);
+                HttpsURLConnection exchange = openPinnedSyncConnection(pairing, "/sync/v2/exchange", "POST");
+                JSONObject response;
+                try {
+                    writeJsonBody(exchange, localPackage.toString());
+                    response = readJsonResponse(exchange, MAX_SYNC_PACKAGE_BYTES);
+                } finally {
+                    exchange.disconnect();
+                }
+                merged = response.getJSONObject("merged");
+                transactionId = response.getString("transaction_id");
+                pendingMergedPackage = merged;
+                pendingTransactionId = transactionId;
             }
-            JSONObject merged = response.getJSONObject("merged");
-            JSONObject applyBody = new JSONObject();
-            applyBody.put("package", merged);
-            applyBody.put("peer", pendingPeer == null ? JSONObject.NULL : pendingPeer);
 
-            notifyDeviceSync("applying", "正在写入合并结果", "写入后还会检查手机数据库完整性。", null);
-            JSONObject applied = localSyncRequest(
-                    "/api/device-sync/native-apply/" + URLEncoder.encode(ticket, StandardCharsets.UTF_8.name()),
-                    "POST", applyBody.toString());
-            notifyDeviceSync("completed", "手机和电脑已同步", "两端备份均已保留，本次临时连接即将关闭。", applied);
-            pendingPairing = null; pendingSyncTicket = null; pendingPeer = null;
+            if (!pendingLocalPrepared) {
+                JSONObject prepareBody = new JSONObject();
+                prepareBody.put("package", merged);
+                prepareBody.put("peer", pendingPeer == null ? JSONObject.NULL : pendingPeer);
+                prepareBody.put("transaction_id", transactionId);
+                notifyDeviceSync("preparing", "正在校验双方副本", "手机与电脑都准备好同一份结果后才会修改正式数据。", null);
+                localSyncRequest(
+                        "/api/device-sync/native-prepare/" + URLEncoder.encode(ticket, StandardCharsets.UTF_8.name()),
+                        "POST", prepareBody.toString());
+                pendingLocalPrepared = true;
+            }
+
+            JSONObject commitBody = new JSONObject();
+            commitBody.put("transaction_id", transactionId);
+            JSONObject committed = pendingDesktopResult;
+            if (committed == null) {
+                notifyDeviceSync("committing", "正在提交电脑数据", "两端准备副本均已校验，正在原子替换电脑数据库。", null);
+                HttpsURLConnection commit = openPinnedSyncConnection(pairing, "/sync/v2/commit", "POST");
+                try {
+                    writeJsonBody(commit, commitBody.toString());
+                    committed = readJsonResponse(commit, 1024 * 1024);
+                    pendingDesktopResult = committed;
+                } finally {
+                    commit.disconnect();
+                }
+            }
+            JSONObject applied = pendingMobileResult;
+            if (applied == null) {
+                JSONObject mobileCommitBody = new JSONObject();
+                mobileCommitBody.put("transaction_id", transactionId);
+                notifyDeviceSync("applying", "正在提交手机数据", "写入后还会再次检查手机数据库完整性。", null);
+                applied = localSyncRequest(
+                        "/api/device-sync/native-commit/" + URLEncoder.encode(ticket, StandardCharsets.UTF_8.name()),
+                        "POST", mobileCommitBody.toString());
+                pendingMobileResult = applied;
+            }
+            JSONObject completeBody = new JSONObject();
+            completeBody.put("transaction_id", transactionId);
+            completeBody.put("mobile", applied);
+            notifyDeviceSync("confirming", "正在确认手机结果", "只有两端都通过校验后才会显示同步成功。", null);
+            HttpsURLConnection complete = openPinnedSyncConnection(pairing, "/sync/v2/complete", "POST");
+            JSONObject completed;
+            try {
+                writeJsonBody(complete, completeBody.toString());
+                completed = readJsonResponse(complete, 2 * 1024 * 1024);
+            } finally {
+                complete.disconnect();
+            }
+            JSONObject result = new JSONObject();
+            result.put("transaction_id", transactionId);
+            result.put("sync_report", completed.optJSONObject("sync_report"));
+            result.put("mobile", applied);
+            result.put("desktop", committed.optJSONObject("desktop"));
+            notifyDeviceSync("completed", "手机和电脑已同步", "两端数据均已写入并通过完整性检查。", result);
+            clearPendingSync();
         } catch (Exception error) {
             notifyDeviceSync("error", "同步未完成", safeErrorMessage(error) + "。同步前备份已经保留。", null);
         }

@@ -7,7 +7,14 @@ from functools import wraps
 
 from flask import Blueprint, jsonify, request, session
 
-from services.device_sync_data import DeviceSyncError, apply_package, export_package, package_summary
+from services.device_sync_data import (
+    DeviceSyncError,
+    apply_package,
+    commit_prepared_package,
+    export_package,
+    package_summary,
+    prepare_package,
+)
 from services.device_sync_service import (
     authorize_mobile_ticket,
     issue_mobile_ticket,
@@ -15,6 +22,7 @@ from services.device_sync_service import (
     start_session,
     stop_session,
 )
+from services.level_service import calculate_level
 
 
 bp = Blueprint("device_sync", __name__)
@@ -95,8 +103,45 @@ def native_apply(ticket: str):
     try:
         package = body.get("package")
         result = apply_package(package, peer=body.get("peer"))
+        calculate_level(reason="device_sync")
         return jsonify(result)
     except DeviceSyncError as exc:
         return jsonify({"error": str(exc), "code": exc.code}), exc.status
     except Exception:
         return jsonify({"error": "手机端应用同步数据失败，备份已经保留。", "code": "apply_failed"}), 500
+
+
+@bp.post("/native-prepare/<ticket>")
+def native_prepare(ticket: str):
+    if not _local_only() or not authorize_mobile_ticket(ticket, "prepare"):
+        return jsonify({"error": "同步票据无效或已使用。", "code": "invalid_ticket"}), 403
+    body = request.get_json(silent=True) or {}
+    try:
+        result = prepare_package(
+            body.get("package"),
+            str(body.get("transaction_id") or ""),
+            peer=body.get("peer"),
+        )
+        return jsonify(result)
+    except DeviceSyncError as exc:
+        return jsonify({"error": str(exc), "code": exc.code}), exc.status
+    except Exception:
+        return jsonify({"error": "手机端准备同步副本失败，正式数据没有修改。", "code": "prepare_failed"}), 500
+
+
+@bp.post("/native-commit/<ticket>")
+def native_commit(ticket: str):
+    if not _local_only() or not authorize_mobile_ticket(ticket, "commit"):
+        return jsonify({"error": "同步票据无效或已使用。", "code": "invalid_ticket"}), 403
+    body = request.get_json(silent=True) or {}
+    try:
+        result = commit_prepared_package(str(body.get("transaction_id") or ""))
+        try:
+            calculate_level(reason="device_sync")
+        except Exception:
+            result["recalculation_warning"] = "段位历史将在下次打开页面时自动补算。"
+        return jsonify(result)
+    except DeviceSyncError as exc:
+        return jsonify({"error": str(exc), "code": exc.code}), exc.status
+    except Exception:
+        return jsonify({"error": "手机端提交同步结果失败，可使用备份恢复。", "code": "commit_failed"}), 500

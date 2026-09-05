@@ -18,7 +18,9 @@ PUBLIC_TABLES = {
 PERSONAL_TABLES = {
     'ai_action_drafts', 'ai_conversations', 'ai_daily_greetings', 'ai_memories',
     'ai_messages', 'ai_usage_events', 'article_annotations',
-    'daily_word_completions', 'export_queue', 'note_categories', 'notes',
+    'daily_word_completions', 'device_sync_peers', 'device_sync_records',
+    'device_sync_state', 'device_sync_tombstones', 'export_queue',
+    'note_categories', 'notes',
     'practice_sessions', 'reading_generation_jobs', 'study_logs', 'user_level',
     'user_settings', 'user_words', 'word_ai_details', 'word_links',
 }

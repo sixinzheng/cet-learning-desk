@@ -123,6 +123,23 @@
             <footer class="update-modal__actions"><button type="button" class="btn btn-secondary" data-update-close>暂不更新</button><button type="button" class="btn btn-primary" id="update-install">备份并安全更新</button></footer>
         </section>
     </div>
+
+    <div class="modal-overlay device-sync-result-modal" id="device-sync-result-modal" hidden>
+        <section class="modal-card device-sync-result-modal__card" role="dialog" aria-modal="true" aria-labelledby="device-sync-result-title" aria-describedby="device-sync-result-copy" tabindex="-1">
+            <header class="device-sync-result-modal__header">
+                <p>DEVICE SYNC</p>
+                <h2 id="device-sync-result-title">两台设备已同步</h2>
+                <p id="device-sync-result-copy">电脑与手机都已写入同一份合并结果。</p>
+            </header>
+            <div class="device-sync-result-hero" id="device-sync-result-hero"></div>
+            <div class="device-sync-result-list" id="device-sync-result-list" aria-live="polite"></div>
+            <p class="device-sync-result-meta" id="device-sync-result-meta"></p>
+            <footer class="device-sync-result-actions">
+                <button type="button" class="btn btn-secondary" data-device-sync-result-close>关闭</button>
+                <a class="btn btn-primary" href="/">查看同步后的首页</a>
+            </footer>
+        </section>
+    </div>
 </div>
 {% endblock %}
 {% block scripts %}<script src="{{ asset('js/profile.js') }}"></script>{% endblock %}

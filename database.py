@@ -446,6 +446,71 @@ def init_db():
             PRIMARY KEY(entity_type, entity_key)
         );
 
+        -- Record user-word and setting mutations when they happen.  Export-time
+        -- timestamps cannot tell which offline device really changed last.
+        CREATE TRIGGER IF NOT EXISTS trg_sync_user_words_insert
+        AFTER INSERT ON user_words
+        BEGIN
+            INSERT INTO device_sync_records(
+                entity_type,entity_key,record_uuid,modified_at_utc,origin_device_id,content_hash
+            ) SELECT
+                'user_words',lower(w.word),
+                lower(hex(randomblob(4))||'-'||hex(randomblob(2))||'-'||hex(randomblob(2))||'-'||hex(randomblob(2))||'-'||hex(randomblob(6))),
+                strftime('%Y-%m-%dT%H:%M:%fZ','now'),
+                COALESCE((SELECT value FROM device_sync_state WHERE key='device_id'),''),''
+            FROM words w WHERE w.id=NEW.word_id
+            ON CONFLICT(entity_type,entity_key) DO UPDATE SET
+                modified_at_utc=excluded.modified_at_utc,
+                origin_device_id=excluded.origin_device_id,
+                content_hash='';
+        END;
+        CREATE TRIGGER IF NOT EXISTS trg_sync_user_words_update
+        AFTER UPDATE ON user_words
+        BEGIN
+            INSERT INTO device_sync_records(
+                entity_type,entity_key,record_uuid,modified_at_utc,origin_device_id,content_hash
+            ) SELECT
+                'user_words',lower(w.word),
+                lower(hex(randomblob(4))||'-'||hex(randomblob(2))||'-'||hex(randomblob(2))||'-'||hex(randomblob(2))||'-'||hex(randomblob(6))),
+                strftime('%Y-%m-%dT%H:%M:%fZ','now'),
+                COALESCE((SELECT value FROM device_sync_state WHERE key='device_id'),''),''
+            FROM words w WHERE w.id=NEW.word_id
+            ON CONFLICT(entity_type,entity_key) DO UPDATE SET
+                modified_at_utc=excluded.modified_at_utc,
+                origin_device_id=excluded.origin_device_id,
+                content_hash='';
+        END;
+        CREATE TRIGGER IF NOT EXISTS trg_sync_user_settings_insert
+        AFTER INSERT ON user_settings
+        BEGIN
+            INSERT INTO device_sync_records(
+                entity_type,entity_key,record_uuid,modified_at_utc,origin_device_id,content_hash
+            ) VALUES(
+                'user_settings',NEW.key,
+                lower(hex(randomblob(4))||'-'||hex(randomblob(2))||'-'||hex(randomblob(2))||'-'||hex(randomblob(2))||'-'||hex(randomblob(6))),
+                strftime('%Y-%m-%dT%H:%M:%fZ','now'),
+                COALESCE((SELECT value FROM device_sync_state WHERE key='device_id'),''),''
+            ) ON CONFLICT(entity_type,entity_key) DO UPDATE SET
+                modified_at_utc=excluded.modified_at_utc,
+                origin_device_id=excluded.origin_device_id,
+                content_hash='';
+        END;
+        CREATE TRIGGER IF NOT EXISTS trg_sync_user_settings_update
+        AFTER UPDATE ON user_settings
+        BEGIN
+            INSERT INTO device_sync_records(
+                entity_type,entity_key,record_uuid,modified_at_utc,origin_device_id,content_hash
+            ) VALUES(
+                'user_settings',NEW.key,
+                lower(hex(randomblob(4))||'-'||hex(randomblob(2))||'-'||hex(randomblob(2))||'-'||hex(randomblob(2))||'-'||hex(randomblob(6))),
+                strftime('%Y-%m-%dT%H:%M:%fZ','now'),
+                COALESCE((SELECT value FROM device_sync_state WHERE key='device_id'),''),''
+            ) ON CONFLICT(entity_type,entity_key) DO UPDATE SET
+                modified_at_utc=excluded.modified_at_utc,
+                origin_device_id=excluded.origin_device_id,
+                content_hash='';
+        END;
+
         CREATE INDEX IF NOT EXISTS idx_ai_usage_created ON ai_usage_events(created_at);
         CREATE INDEX IF NOT EXISTS idx_ai_messages_conversation ON ai_messages(conversation_id, id);
         CREATE INDEX IF NOT EXISTS idx_ai_memories_active ON ai_memories(active, last_observed);

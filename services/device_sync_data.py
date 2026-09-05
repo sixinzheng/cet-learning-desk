@@ -22,9 +22,10 @@ from typing import Any, Iterable
 import database
 
 
-PROTOCOL_VERSION = 1
+PROTOCOL_VERSION = 2
 MAX_PACKAGE_BYTES = 32 * 1024 * 1024
 _SYNC_BACKUP_KEEP = 5
+_COMMITTED_RESULTS: dict[tuple[str, str], dict[str, Any]] = {}
 _SECRET_SETTING_PARTS = (
     "api_key", "secret", "token", "csrf", "credential", "password", "session",
 )
@@ -191,7 +192,7 @@ def _sync_record_metadata(
                 continue
             content_hash = _hash(item)
             row = db.execute("""
-                SELECT content_hash FROM device_sync_records
+                SELECT content_hash,modified_at_utc,origin_device_id FROM device_sync_records
                 WHERE entity_type=? AND entity_key=?
             """, (entity_type, entity_key)).fetchone()
             if row is None:
@@ -204,15 +205,32 @@ def _sync_record_metadata(
                         entity_type,entity_key,record_uuid,modified_at_utc,origin_device_id,content_hash
                     ) VALUES(?,?,?,?,?,?)
                 """, (entity_type, entity_key, record_uuid, now, identity["device_id"], content_hash))
+            elif not str(row["content_hash"] or ""):
+                # Mutation triggers have already recorded the real change time.
+                # Fill the hash without replacing that time with the export time.
+                db.execute("""
+                    UPDATE device_sync_records SET content_hash=?,origin_device_id=?
+                    WHERE entity_type=? AND entity_key=?
+                """, (
+                    content_hash, str(row["origin_device_id"] or identity["device_id"]),
+                    entity_type, entity_key,
+                ))
             elif str(row["content_hash"] or "") != content_hash:
                 db.execute("""
                     UPDATE device_sync_records SET modified_at_utc=?,origin_device_id=?,content_hash=?
                     WHERE entity_type=? AND entity_key=?
                 """, (now, identity["device_id"], content_hash, entity_type, entity_key))
-    return _row_dicts(db, """
+    rows = _row_dicts(db, """
         SELECT entity_type,entity_key,record_uuid,modified_at_utc,origin_device_id,content_hash
         FROM device_sync_records ORDER BY entity_type,entity_key
     """)
+    allowed = {
+        (entity_type, _portable_entity_key(entity_type, item))
+        for entity_type, items in data.items()
+        if entity_type not in {"record_meta", "tombstones"} and isinstance(items, list)
+        for item in items
+    }
+    return [row for row in rows if (row["entity_type"], row["entity_key"]) in allowed]
 
 
 def record_tombstone(
@@ -412,9 +430,109 @@ def _merge_lww(left: list[dict[str, Any]], right: list[dict[str, Any]], key) -> 
     return [result[key] for key in sorted(result)]
 
 
+def _meta_map(data: dict[str, Any]) -> dict[tuple[str, str], dict[str, Any]]:
+    return {
+        (str(item.get("entity_type") or ""), str(item.get("entity_key") or "")): item
+        for item in data.get("record_meta", [])
+        if item.get("entity_type") and item.get("entity_key")
+    }
+
+
+def _version_for(
+    entity_type: str,
+    entity_key: str,
+    item: dict[str, Any],
+    metadata: dict[tuple[str, str], dict[str, Any]],
+) -> tuple[str, str, str]:
+    meta = metadata.get((entity_type, entity_key), {})
+    return (
+        str(meta.get("modified_at_utc") or _record_time(item) or ""),
+        str(meta.get("origin_device_id") or ""),
+        str(meta.get("content_hash") or _hash(item)),
+    )
+
+
+def _merge_lww_with_metadata(
+    entity_type: str,
+    left: list[dict[str, Any]],
+    right: list[dict[str, Any]],
+    key,
+    left_meta: dict[tuple[str, str], dict[str, Any]],
+    right_meta: dict[tuple[str, str], dict[str, Any]],
+) -> list[dict[str, Any]]:
+    result = _keyed(left, key)
+    versions = {
+        item_key: _version_for(entity_type, item_key, item, left_meta)
+        for item_key, item in result.items()
+    }
+    for item_key, item in _keyed(right, key).items():
+        incoming_version = _version_for(entity_type, item_key, item, right_meta)
+        if item_key not in result or incoming_version >= versions[item_key]:
+            result[item_key] = item
+            versions[item_key] = incoming_version
+    return [result[item_key] for item_key in sorted(result)]
+
+
+def _merge_user_words(
+    left: list[dict[str, Any]],
+    right: list[dict[str, Any]],
+    left_meta: dict[tuple[str, str], dict[str, Any]],
+    right_meta: dict[tuple[str, str], dict[str, Any]],
+) -> list[dict[str, Any]]:
+    """Use true record versions while keeping monotonic learning evidence."""
+    left_items = _keyed(left, lambda item: _word_key(item.get("word")))
+    right_items = _keyed(right, lambda item: _word_key(item.get("word")))
+    result: list[dict[str, Any]] = []
+    for word in sorted(set(left_items) | set(right_items)):
+        local = left_items.get(word)
+        remote = right_items.get(word)
+        if local is None or remote is None:
+            result.append(dict(local or remote or {}))
+            continue
+        local_version = _version_for("user_words", word, local, left_meta)
+        remote_version = _version_for("user_words", word, remote, right_meta)
+        if local_version == remote_version and _hash(local) != _hash(remote):
+            # Legacy databases did not stamp mutations. Prefer the strongest
+            # observable learning evidence instead of whichever device exported last.
+            local_version = (
+                str(local.get("last_reviewed") or ""),
+                f"{int(local.get('review_count') or 0):09d}",
+                f"{int(local.get('ebbinghaus_stage') or 0):09d}",
+            )
+            remote_version = (
+                str(remote.get("last_reviewed") or ""),
+                f"{int(remote.get('review_count') or 0):09d}",
+                f"{int(remote.get('ebbinghaus_stage') or 0):09d}",
+            )
+        winner = dict(remote if remote_version >= local_version else local)
+        for field in ("review_count", "correct_count"):
+            winner[field] = max(int(local.get(field) or 0), int(remote.get(field) or 0))
+        result.append(winner)
+    return result
+
+
 def _merge_union(left: list[dict[str, Any]], right: list[dict[str, Any]], key) -> list[dict[str, Any]]:
     result = _keyed(left, key)
     result.update({k: v for k, v in _keyed(right, key).items() if k not in result})
+    return [result[key] for key in sorted(result)]
+
+
+def _merge_study_logs(left: list[dict[str, Any]], right: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Keep legacy daily aggregates monotonic without adding both devices twice."""
+    result = _keyed(left, lambda item: item.get("study_date"))
+    numeric_fields = {
+        "new_words_count", "review_words_count", "reading_count", "listening_count",
+        "writing_count", "grammar_count", "total_minutes",
+    }
+    for day, incoming in _keyed(right, lambda item: item.get("study_date")).items():
+        current = result.get(day)
+        if current is None:
+            result[day] = incoming
+            continue
+        merged = dict(max((current, incoming), key=lambda item: (_record_time(item), _hash(item))))
+        for field in numeric_fields & (set(current) | set(incoming)):
+            merged[field] = max(int(current.get(field) or 0), int(incoming.get(field) or 0))
+        result[day] = merged
     return [result[key] for key in sorted(result)]
 
 
@@ -508,16 +626,22 @@ def merge_packages(local: dict[str, Any], remote: dict[str, Any]) -> dict[str, A
     remote = validate_package(remote)
     ld, rd = local["data"], remote["data"]
     merged: dict[str, Any] = {}
+    local_meta, remote_meta = _meta_map(ld), _meta_map(rd)
     merged["words"] = _merge_lww(ld.get("words", []), rd.get("words", []), lambda x: _word_key(x.get("word")))
-    merged["user_words"] = _merge_lww(ld.get("user_words", []), rd.get("user_words", []), lambda x: _word_key(x.get("word")))
+    merged["user_words"] = _merge_user_words(
+        ld.get("user_words", []), rd.get("user_words", []), local_meta, remote_meta,
+    )
     merged["favorites"] = sorted({_word_key(item) for item in ld.get("favorites", []) + rd.get("favorites", []) if _word_key(item)})
     merged["wordbooks"] = _merge_wordbooks(ld.get("wordbooks", []), rd.get("wordbooks", []))
-    merged["study_logs"] = _merge_lww(ld.get("study_logs", []), rd.get("study_logs", []), lambda x: x.get("study_date"))
+    merged["study_logs"] = _merge_study_logs(ld.get("study_logs", []), rd.get("study_logs", []))
     merged["daily_word_completions"] = _merge_union(ld.get("daily_word_completions", []), rd.get("daily_word_completions", []), lambda x: f"{x.get('completion_date')}|{_word_key(x.get('word'))}|{x.get('completion_type')}")
     merged["practice_sessions"] = _merge_union(ld.get("practice_sessions", []), rd.get("practice_sessions", []), lambda x: x.get("idempotency_key"))
     merged["article_annotations"] = _merge_union(ld.get("article_annotations", []), rd.get("article_annotations", []), lambda x: f"{x.get('article_key')}|{x.get('word_index')}|{x.get('mark_type')}")
     merged["notes"] = _merge_notes(ld.get("notes", []), rd.get("notes", []))
-    merged["user_settings"] = _merge_lww(ld.get("user_settings", []), rd.get("user_settings", []), lambda x: x.get("key"))
+    merged["user_settings"] = _merge_lww_with_metadata(
+        "user_settings", ld.get("user_settings", []), rd.get("user_settings", []),
+        lambda x: str(x.get("key") or ""), local_meta, remote_meta,
+    )
     merged["word_ai_details"] = _merge_lww(ld.get("word_ai_details", []), rd.get("word_ai_details", []), lambda x: _word_key(x.get("word")))
     merged["ai_conversations"] = _merge_lww(ld.get("ai_conversations", []), rd.get("ai_conversations", []), lambda x: x.get("_key"))
     merged["ai_memories"] = _merge_union(ld.get("ai_memories", []), rd.get("ai_memories", []), lambda x: _hash({k:v for k,v in x.items() if k != 'id'}))
@@ -550,6 +674,73 @@ def merge_packages(local: dict[str, Any], remote: dict[str, Any]) -> dict[str, A
     }
     package["checksum"] = hashlib.sha256(_canonical(package).encode("utf-8")).hexdigest()
     return package
+
+
+_REPORT_GROUPS = {
+    "vocabulary": ("user_words",),
+    "favorites": ("favorites", "wordbooks"),
+    "learning": ("study_logs", "daily_word_completions", "practice_sessions"),
+    "annotations": ("article_annotations",),
+    "settings": ("user_settings",),
+    "notes": ("notes",),
+    "ai": (
+        "word_ai_details", "ai_conversations", "ai_memories",
+        "ai_daily_greetings", "ai_usage_events", "site_skills",
+    ),
+}
+
+
+def _entity_index(entity_type: str, items: Any) -> dict[str, str]:
+    if not isinstance(items, list):
+        return {}
+    result: dict[str, str] = {}
+    for item in items:
+        key = _portable_entity_key(entity_type, item)
+        if key:
+            result[key] = _hash(item)
+    return result
+
+
+def package_diff(before: dict[str, Any], after: dict[str, Any]) -> dict[str, dict[str, int]]:
+    """Return actual per-category changes needed to reach ``after``."""
+    before_data = validate_package(before)["data"]
+    after_data = validate_package(after)["data"]
+    report: dict[str, dict[str, int]] = {}
+    for group, entity_types in _REPORT_GROUPS.items():
+        added = updated = deleted = unchanged = total = 0
+        for entity_type in entity_types:
+            old = _entity_index(entity_type, before_data.get(entity_type, []))
+            new = _entity_index(entity_type, after_data.get(entity_type, []))
+            added += len(set(new) - set(old))
+            deleted += len(set(old) - set(new))
+            updated += sum(1 for key in set(old) & set(new) if old[key] != new[key])
+            unchanged += sum(1 for key in set(old) & set(new) if old[key] == new[key])
+            total += len(new)
+        report[group] = {
+            "added": added, "updated": updated, "deleted": deleted,
+            "conflicts": 0, "unchanged": unchanged, "total_after": total,
+        }
+    before_notes = _entity_index("notes", before_data.get("notes", []))
+    after_notes = after_data.get("notes", [])
+    conflict_count = sum(
+        1 for item in after_notes
+        if "同步冲突副本" in str(item.get("title") or "")
+        and _portable_entity_key("notes", item) not in before_notes
+    )
+    report["notes"]["conflicts"] = conflict_count
+    report["notes"]["added"] = max(0, report["notes"]["added"] - conflict_count)
+    return report
+
+
+def build_sync_report(local: dict[str, Any], remote: dict[str, Any], merged: dict[str, Any]) -> dict[str, Any]:
+    return {
+        "protocol_version": PROTOCOL_VERSION,
+        "completed_at": "",
+        "devices": [local.get("device", {}), remote.get("device", {})],
+        "desktop": package_diff(local, merged),
+        "mobile": package_diff(remote, merged),
+        "totals": package_summary(merged),
+    }
 
 
 def create_sync_backup(label: str = "sync") -> Path:
@@ -609,14 +800,28 @@ def _category_id(db: sqlite3.Connection, path: str) -> int:
     return parent
 
 
-def apply_package(package: dict[str, Any], *, peer: dict[str, Any] | None = None) -> dict[str, Any]:
+def _connect_database(path: str | os.PathLike[str]) -> sqlite3.Connection:
+    db = sqlite3.connect(os.fspath(path))
+    db.row_factory = sqlite3.Row
+    db.execute("PRAGMA foreign_keys=ON")
+    return db
+
+
+def apply_package(
+    package: dict[str, Any],
+    *,
+    peer: dict[str, Any] | None = None,
+    db_path: str | os.PathLike[str] | None = None,
+    create_backup: bool = True,
+) -> dict[str, Any]:
     package = validate_package(package)
-    backup = create_sync_backup("sync")
+    backup = create_sync_backup("sync") if create_backup else None
     data = package["data"]
-    db = database.get_db()
+    db = database.get_db() if db_path is None else _connect_database(db_path)
     counts: dict[str, int] = {}
     try:
         _ensure_sync_tables(db)
+        before_snapshot = sync_state_snapshot(db)
         db.execute("BEGIN IMMEDIATE")
         catalog = {_word_key(item.get("word")): item for item in data.get("words", [])}
         for item in data.get("user_words", []):
@@ -693,11 +898,17 @@ def apply_package(package: dict[str, Any], *, peer: dict[str, Any] | None = None
         for item in data.get("practice_sessions", []):
             columns = list(item)
             db.execute(f"INSERT OR IGNORE INTO practice_sessions({','.join(columns)}) VALUES({','.join('?' for _ in columns)})", tuple(item[key] for key in columns))
+        counts["learning"] = (
+            len(data.get("study_logs", []))
+            + len(data.get("daily_word_completions", []))
+            + len(data.get("practice_sessions", []))
+        )
 
         for item in data.get("article_annotations", []):
             article_id = _article_id(db, str(item.get("article_key") or ""))
             if article_id:
                 db.execute("INSERT OR IGNORE INTO article_annotations(article_id,word_index,mark_type,created_at) VALUES(?,?,?,?)", (article_id, int(item.get("word_index") or 0), item.get("mark_type") or "green", item.get("created_at") or utc_now()))
+        counts["annotations"] = len(data.get("article_annotations", []))
 
         current_notes = {}
         categories = _category_paths(db)
@@ -718,6 +929,7 @@ def apply_package(package: dict[str, Any], *, peer: dict[str, Any] | None = None
             key = str(item.get("key") or "")
             if key and not any(part in key.lower() for part in _SECRET_SETTING_PARTS):
                 db.execute("INSERT INTO user_settings(key,value) VALUES(?,?) ON CONFLICT(key) DO UPDATE SET value=excluded.value", (key, str(item.get("value") or "")))
+        counts["settings"] = len(data.get("user_settings", []))
 
         for item in data.get("word_ai_details", []):
             word_id = _ensure_word(db, item.get("word", ""), catalog)
@@ -797,12 +1009,127 @@ def apply_package(package: dict[str, Any], *, peer: dict[str, Any] | None = None
         check = db.execute("PRAGMA quick_check").fetchone()
         if not check or check[0] != "ok":
             raise DeviceSyncError("同步后的数据库未通过完整性检查。", code="apply_check_failed", status=500)
-        return {"ok": True, "backup_name": backup.name, "counts": counts}
+        after_snapshot = sync_state_snapshot(db)
+        return {
+            "ok": True, "backup_name": backup.name if backup else "", "counts": counts,
+            "before": before_snapshot, "after": after_snapshot,
+        }
     except Exception:
         db.rollback()
         raise
     finally:
         db.close()
+
+
+def _staging_path(transaction_id: str) -> Path:
+    transaction = str(transaction_id or "").strip()
+    if len(transaction) < 8 or len(transaction) > 160:
+        raise DeviceSyncError("同步事务编号无效。", code="invalid_transaction", status=409)
+    safe_name = hashlib.sha256(transaction.encode("utf-8")).hexdigest()
+    directory = Path(database.DB_PATH).resolve().parent / "sync-staging"
+    directory.mkdir(parents=True, exist_ok=True)
+    return directory / f"{safe_name}.db"
+
+
+def _database_snapshot_at(path: Path) -> dict[str, Any]:
+    db = _connect_database(path)
+    try:
+        check = db.execute("PRAGMA quick_check").fetchone()
+        if not check or check[0] != "ok":
+            raise DeviceSyncError("待提交数据库未通过完整性检查。", code="prepare_check_failed", status=500)
+        return sync_state_snapshot(db)
+    finally:
+        db.close()
+
+
+def prepare_package(
+    package: dict[str, Any],
+    transaction_id: str,
+    *,
+    peer: dict[str, Any] | None = None,
+) -> dict[str, Any]:
+    """Apply a merge to an isolated online backup without touching live data."""
+    stage = _staging_path(transaction_id)
+    if stage.exists():
+        return {
+            "ok": True,
+            "transaction_id": transaction_id,
+            "before": sync_state_snapshot(),
+            "after": _database_snapshot_at(stage),
+            "prepared": True,
+        }
+
+    temporary = stage.with_suffix(".preparing")
+    temporary.unlink(missing_ok=True)
+    source = database.get_db()
+    destination = _connect_database(temporary)
+    try:
+        source.execute("PRAGMA wal_checkpoint(PASSIVE)")
+        source.backup(destination)
+        destination.commit()
+    finally:
+        destination.close()
+        source.close()
+    try:
+        result = apply_package(
+            package,
+            peer=peer,
+            db_path=temporary,
+            create_backup=False,
+        )
+        os.replace(temporary, stage)
+        return {
+            **result,
+            "transaction_id": transaction_id,
+            "prepared": True,
+        }
+    except Exception:
+        temporary.unlink(missing_ok=True)
+        raise
+
+
+def commit_prepared_package(transaction_id: str) -> dict[str, Any]:
+    """Atomically replace the live DB only after the staged copy passed checks."""
+    cache_key = (str(Path(database.DB_PATH).resolve()), str(transaction_id or ""))
+    if cache_key in _COMMITTED_RESULTS:
+        return dict(_COMMITTED_RESULTS[cache_key])
+    stage = _staging_path(transaction_id)
+    if not stage.exists():
+        raise DeviceSyncError("没有找到已准备的同步结果，请重新配对。", code="prepare_missing", status=409)
+    before = sync_state_snapshot()
+    after = _database_snapshot_at(stage)
+    backup = create_sync_backup("sync")
+
+    live = Path(database.DB_PATH).resolve()
+    db = database.get_db()
+    try:
+        db.execute("PRAGMA wal_checkpoint(TRUNCATE)")
+    finally:
+        db.close()
+    for suffix in ("-wal", "-shm"):
+        Path(str(live) + suffix).unlink(missing_ok=True)
+    os.replace(stage, live)
+    verified = _database_snapshot_at(live)
+    result = {
+        "ok": True,
+        "transaction_id": transaction_id,
+        "backup_name": backup.name,
+        "before": before,
+        "after": verified or after,
+        "committed": True,
+    }
+    _COMMITTED_RESULTS[cache_key] = result
+    while len(_COMMITTED_RESULTS) > 32:
+        _COMMITTED_RESULTS.pop(next(iter(_COMMITTED_RESULTS)))
+    return dict(result)
+
+
+def discard_prepared_package(transaction_id: str) -> None:
+    if not transaction_id:
+        return
+    stage = _staging_path(transaction_id)
+    stage.unlink(missing_ok=True)
+    stage.with_suffix(".preparing").unlink(missing_ok=True)
 
 
 def package_summary(package: dict[str, Any]) -> dict[str, int]:
@@ -815,3 +1142,33 @@ def package_summary(package: dict[str, Any]) -> dict[str, int]:
         "practice": len(data.get("practice_sessions", [])),
         "conversations": len(data.get("ai_conversations", [])),
     }
+
+
+def sync_state_snapshot(db: sqlite3.Connection | None = None) -> dict[str, Any]:
+    owned = db is None
+    db = db or database.get_db()
+    try:
+        from services.level_service import evaluate_level
+
+        level = evaluate_level(db)
+        words = db.execute("""
+            SELECT COUNT(*) AS tracked,
+                   COUNT(CASE WHEN status IN ('巩固','掌握','熟记') THEN 1 END) AS mastered
+            FROM user_words
+        """).fetchone()
+        favorites = db.execute("""
+            SELECT COUNT(*) FROM wordbook_words wbw
+            JOIN wordbooks wb ON wb.id=wbw.wordbook_id
+            WHERE wb.name='我的收藏' AND COALESCE(wb.is_hidden,0)=0
+        """).fetchone()[0]
+        return {
+            "rank": int(level["rank"]), "rank_name": str(level["name"]),
+            "score": float(level["total_score"]),
+            "tracked_words": int(words["tracked"] or 0),
+            "mastered_words": int(words["mastered"] or 0),
+            "favorites": int(favorites or 0),
+            "notes": int(db.execute("SELECT COUNT(*) FROM notes").fetchone()[0]),
+        }
+    finally:
+        if owned:
+            db.close()
